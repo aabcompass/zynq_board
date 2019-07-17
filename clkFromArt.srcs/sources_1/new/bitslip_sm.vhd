@@ -53,7 +53,9 @@ entity bitslip_sm is
            dataout10: out STD_LOGIC_VECTOR(7 downto 0);
            dataout11: out STD_LOGIC_VECTOR(7 downto 0);
            dataout12: out STD_LOGIC_VECTOR(7 downto 0);
-           bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0)
+           bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0);
+           dataout_valid: out std_logic;
+           dataout_last: out std_logic
            );
 end bitslip_sm;
 
@@ -61,6 +63,25 @@ architecture Behavioral of bitslip_sm is
 
 	signal frame_data: std_logic_vector(7 downto 0) := (others => '0');
 	signal bitslip_cmd: std_logic := '0';
+	
+	signal dataout0_i: std_logic_vector(7 downto 0);
+	signal dataout1_i: std_logic_vector(7 downto 0);
+	signal dataout2_i: std_logic_vector(7 downto 0);
+	signal dataout3_i: std_logic_vector(7 downto 0);
+	signal dataout4_i: std_logic_vector(7 downto 0);
+	signal dataout5_i: std_logic_vector(7 downto 0);
+	signal dataout6_i: std_logic_vector(7 downto 0);
+	signal dataout7_i: std_logic_vector(7 downto 0);
+	signal dataout8_i: std_logic_vector(7 downto 0);
+	signal dataout9_i: std_logic_vector(7 downto 0);
+	signal dataout10_i: std_logic_vector(7 downto 0);
+	signal dataout11_i: std_logic_vector(7 downto 0);
+	signal dataout12_i: std_logic_vector(7 downto 0);
+	
+	signal valid_i: std_logic := '0';
+	
+	signal tlast_cnt: std_logic_vector(6 downto 0)  := (others => '0');
+	signal tlast_allowed: std_logic := '0';
 
 begin
 
@@ -68,19 +89,19 @@ begin
 		remix: process(clk)
 		begin
 			if(rising_edge(clk)) then
-				dataout0(i) <= data_in(0+13*i); 
-				dataout1(i) <= data_in(1+13*i); 
-				dataout2(i) <= data_in(2+13*i); 
-				dataout3(i) <= data_in(3+13*i); 
-				dataout4(i) <= data_in(4+13*i); 
-				dataout5(i) <= data_in(5+13*i); 
-				dataout6(i) <= data_in(6+13*i); 
-				dataout7(i) <= data_in(7+13*i); 
-				dataout8(i) <= data_in(8+13*i); 
-				dataout9(i) <= data_in(9+13*i); 
-				dataout10(i) <= data_in(10+13*i); 
-				dataout11(i) <= data_in(11+13*i); 
-				dataout12(i) <= data_in(12+13*i); 
+				dataout0_i(i) <= data_in(0+13*i); 
+				dataout1_i(i) <= data_in(1+13*i); 
+				dataout2_i(i) <= data_in(2+13*i); 
+				dataout3_i(i) <= data_in(3+13*i); 
+				dataout4_i(i) <= data_in(4+13*i); 
+				dataout5_i(i) <= data_in(5+13*i); 
+				dataout6_i(i) <= data_in(6+13*i); 
+				dataout7_i(i) <= data_in(7+13*i); 
+				dataout8_i(i) <= data_in(8+13*i); 
+				dataout9_i(i) <= data_in(9+13*i); 
+				dataout10_i(i) <= data_in(10+13*i); 
+				dataout11_i(i) <= data_in(11+13*i); 
+				dataout12_i(i) <= data_in(12+13*i); 
 				frame_data(i) <= data_in(12+13*i);
 			end if;
 		end process;
@@ -105,7 +126,38 @@ begin
 			end case;
 		end if;
 	end process;
+	
+	tlast_counter: process(clk)
+	begin
+		if(rising_edge(clk)) then
+			if(valid_i = '1' and dataout12_i(0) = '0') then
+				tlast_cnt <= tlast_cnt + 1;
+				if(tlast_cnt = "1111111") then
+					tlast_allowed <= '1';
+				else
+					tlast_allowed <= '0';
+				end if;
+			end if;
+		end if;
+	end process;
 		
 	bitlslip_vector <= (others => bitslip_cmd);
+	
+	dataout0 <= dataout0_i when rising_edge(clk);
+	dataout1 <= dataout1_i when rising_edge(clk);
+	dataout2 <= dataout2_i when rising_edge(clk);
+	dataout3 <= dataout3_i when rising_edge(clk);
+	dataout4 <= dataout4_i when rising_edge(clk);
+	dataout5 <= dataout5_i when rising_edge(clk);
+	dataout6 <= dataout6_i when rising_edge(clk);
+	dataout7 <= dataout7_i when rising_edge(clk);
+	dataout8 <= dataout8_i when rising_edge(clk);
+	dataout9 <= dataout9_i when rising_edge(clk);
+	dataout10 <= dataout10_i when rising_edge(clk);
+	dataout11 <= dataout11_i when rising_edge(clk);
+	dataout12 <= dataout12_i when rising_edge(clk);
+	valid_i <= dataout12_i(0) when rising_edge(clk);
+	dataout_valid <= valid_i;
+	dataout_last <= valid_i and not dataout12_i(0) and tlast_allowed;
 
 end Behavioral;

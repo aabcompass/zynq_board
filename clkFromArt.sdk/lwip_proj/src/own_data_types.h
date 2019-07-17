@@ -1,0 +1,46 @@
+/*
+ * own_data_types.h
+ *
+ *  Created on: Apr 29, 2019
+ *      Author: alx
+ */
+
+#ifndef SRC_OWN_DATA_TYPES_H_
+#define SRC_OWN_DATA_TYPES_H_
+
+typedef struct
+{
+	u32 current_thr;
+	u32 current_pixel;
+} DebugSettings;
+
+typedef struct
+{
+	u32 start_dac_value;
+	u32 stop_dac_value;
+	u32 step_dac_value;
+	u32 accumulation;
+	u32 current_dac_value;
+	u32 is_scurve_being_gathered;
+	u32 scurve_counter;
+} SCurveStruct;
+
+typedef struct
+{
+	u32 mode;
+	u32 ftp_files_mode;
+	//u32 is_started;
+	int file_counter_l1;
+	int file_counter_l2;
+	int file_counter_l3;
+	int file_counter_cc;
+	u32 artix_locked;
+	int is_simple_packets;
+	int is_HVPS_OK;
+	int err_SDcard; //SD-card error during mount. 0 - OK
+	int err_artix_bin; // Error during artix.bin load. 0 - Ok
+	int is_artix_loaded;
+} InstrumentState;
+
+
+#endif /* SRC_OWN_DATA_TYPES_H_ */
