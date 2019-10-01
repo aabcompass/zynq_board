@@ -35,4 +35,12 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 0;
 	}
+	else if(c == 'X') // artix Gen mode
+	{
+		*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0xFFFFFFFF;
+	}
+	else if(c == 'x')
+	{
+		*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
+	}
 }

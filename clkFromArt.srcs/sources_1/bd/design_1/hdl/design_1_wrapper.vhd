@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Wed Jun 19 11:50:14 2019
+--Date        : Tue Oct  1 15:41:40 2019
 --Host        : alx-hp-envy-notebook running 64-bit Ubuntu 16.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -46,6 +46,9 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
+    artx_done_0 : in STD_LOGIC;
+    artx_initb_io_0_tri_io : inout STD_LOGIC;
+    artx_programb_io_0_tri_io : inout STD_LOGIC;
     cs_dac_n_0 : out STD_LOGIC;
     cs_dac_p_0 : out STD_LOGIC;
     cs_exp_n_0 : out STD_LOGIC;
@@ -54,6 +57,7 @@ entity design_1_wrapper is
     data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     intr_n_0 : in STD_LOGIC;
     intr_p_0 : in STD_LOGIC;
+    io0_o_0 : out STD_LOGIC;
     loadb_sc_pc_0 : out STD_LOGIC;
     miso_n_0 : in STD_LOGIC;
     miso_p_0 : in STD_LOGIC;
@@ -61,6 +65,7 @@ entity design_1_wrapper is
     mosi_p_0 : out STD_LOGIC;
     resetb_pc_0 : out STD_LOGIC;
     sck_n_0 : out STD_LOGIC;
+    sck_o_0 : out STD_LOGIC;
     sck_p_0 : out STD_LOGIC;
     select_din_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
@@ -98,9 +103,15 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     CLK_IN_D_0_clk_n : in STD_LOGIC;
     CLK_IN_D_0_clk_p : in STD_LOGIC;
-    Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_initb_io_0_tri_o : out STD_LOGIC;
+    artx_initb_io_0_tri_t : out STD_LOGIC;
+    artx_initb_io_0_tri_i : in STD_LOGIC;
+    artx_programb_io_0_tri_o : out STD_LOGIC;
+    artx_programb_io_0_tri_t : out STD_LOGIC;
+    artx_programb_io_0_tri_i : in STD_LOGIC;
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     sck_p_0 : out STD_LOGIC;
@@ -121,19 +132,50 @@ architecture STRUCTURE of design_1_wrapper is
     resetb_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
     sr_rstb_pc_0 : out STD_LOGIC;
-    sr_ck_pc_0 : out STD_LOGIC;
-    sr_ck_pc_2 : out STD_LOGIC;
     sr_ck_pc_1 : out STD_LOGIC;
+    sr_ck_pc_2 : out STD_LOGIC;
+    sr_ck_pc_0 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     CLK_HV_p_0 : out STD_LOGIC;
     CLK_HV_n_0 : out STD_LOGIC;
     DATA_HV_p_0 : out STD_LOGIC;
     DATA_HV_n_0 : out STD_LOGIC;
-    Dout_3 : out STD_LOGIC_VECTOR ( 2 downto 0 )
+    Dout_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    io0_o_0 : out STD_LOGIC;
+    sck_o_0 : out STD_LOGIC;
+    artx_done_0 : in STD_LOGIC
   );
   end component design_1;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal artx_initb_io_0_tri_i : STD_LOGIC;
+  signal artx_initb_io_0_tri_o : STD_LOGIC;
+  signal artx_initb_io_0_tri_t : STD_LOGIC;
+  signal artx_programb_io_0_tri_i : STD_LOGIC;
+  signal artx_programb_io_0_tri_o : STD_LOGIC;
+  signal artx_programb_io_0_tri_t : STD_LOGIC;
 begin
+artx_initb_io_0_tri_iobuf: component IOBUF
+     port map (
+      I => artx_initb_io_0_tri_o,
+      IO => artx_initb_io_0_tri_io,
+      O => artx_initb_io_0_tri_i,
+      T => artx_initb_io_0_tri_t
+    );
+artx_programb_io_0_tri_iobuf: component IOBUF
+     port map (
+      I => artx_programb_io_0_tri_o,
+      IO => artx_programb_io_0_tri_io,
+      O => artx_programb_io_0_tri_i,
+      T => artx_programb_io_0_tri_t
+    );
 design_1_i: component design_1
      port map (
       CLK_HV_n_0 => CLK_HV_n_0,
@@ -169,6 +211,13 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       GTU_HV_n_0 => GTU_HV_n_0,
       GTU_HV_p_0 => GTU_HV_p_0,
+      artx_done_0 => artx_done_0,
+      artx_initb_io_0_tri_i => artx_initb_io_0_tri_i,
+      artx_initb_io_0_tri_o => artx_initb_io_0_tri_o,
+      artx_initb_io_0_tri_t => artx_initb_io_0_tri_t,
+      artx_programb_io_0_tri_i => artx_programb_io_0_tri_i,
+      artx_programb_io_0_tri_o => artx_programb_io_0_tri_o,
+      artx_programb_io_0_tri_t => artx_programb_io_0_tri_t,
       cs_dac_n_0 => cs_dac_n_0,
       cs_dac_p_0 => cs_dac_p_0,
       cs_exp_n_0 => cs_exp_n_0,
@@ -177,6 +226,7 @@ design_1_i: component design_1
       data_in_from_pins_p_0(12 downto 0) => data_in_from_pins_p_0(12 downto 0),
       intr_n_0 => intr_n_0,
       intr_p_0 => intr_p_0,
+      io0_o_0 => io0_o_0,
       loadb_sc_pc_0 => loadb_sc_pc_0,
       miso_n_0 => miso_n_0,
       miso_p_0 => miso_p_0,
@@ -184,6 +234,7 @@ design_1_i: component design_1
       mosi_p_0 => mosi_p_0,
       resetb_pc_0 => resetb_pc_0,
       sck_n_0 => sck_n_0,
+      sck_o_0 => sck_o_0,
       sck_p_0 => sck_p_0,
       select_din_pc_0 => select_din_pc_0,
       select_sc_probe_pc_0 => select_sc_probe_pc_0,

@@ -128,6 +128,45 @@ int IicPhyReset(void);
 #endif
 #endif
 
+
+int LoadArtix()
+{
+	int err;
+	char artixBitstream[10000000]; // 10 MBytes
+	int artixBitstream_size;
+	instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR)  & 0x7;
+	xil_printf("artix_locked=%d\n\r",  instrumentState.artix_locked);
+	if(instrumentState.artix_locked == 7)
+	{
+		print("Artix already loaded.\n\r");
+		return 0;
+	}
+	else
+	{
+		print("Loading bitstream to the cross board\n\r");
+		PrepareArtixConfiguration();
+		err = ReadArtixBitstream(&artixBitstream, &artixBitstream_size);
+		if(!err) {
+			SetBitstreamPtr(&artixBitstream, artixBitstream_size);
+			init_loadbit_spi();
+			upload_bit();
+			print("Cross board has been loaded\n\r");
+			instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR);
+			instrumentState.is_artix_loaded = GetArtixLoadState();
+			xil_printf("GetArtixLoadState() returns %d\n\r", instrumentState.is_artix_loaded);
+			xil_printf("artix_locked = %x\n\r", instrumentState.artix_locked);
+			return 0;
+		}
+		else
+		{
+			print("Cross board NOT loaded\n\r");
+			return err;
+		}
+	}
+}
+
+
+
 int main()
 {
 #if LWIP_IPV6==0
@@ -239,10 +278,14 @@ int main()
 	if(!instrumentState.is_HVPS_OK)
 		print("HVPS seems not connected or powered\n\r");
 
+	print("SD card file system initialization...\n\r");
+	instrumentState.err_SDcard = FfsSdPolledInit();
+	if(instrumentState.err_SDcard)
+		xil_printf("err_SDcard = %d\n\r", instrumentState.err_SDcard);
+
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
-	//if(!instrumentState.err_SDcard)
-	if(0)
+	if(!instrumentState.err_SDcard)
 	{
 		instrumentState.err_artix_bin = LoadArtix();
 		if(instrumentState.err_artix_bin)
@@ -253,6 +296,7 @@ int main()
 
 	print("Starting TCP client Telnet server on port 23 ...\n\r");
 	start_telnet_cmd();
+
 
 	/* start the application (web server, rxtest, txtest, etc..) */
 	start_application();

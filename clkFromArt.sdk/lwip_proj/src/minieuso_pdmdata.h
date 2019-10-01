@@ -100,23 +100,23 @@ typedef struct
 typedef struct
 {
 	// Unix timestamp
-	TimeStamp_dual ts;
+	TimeStamp_dual ts; //8
 	// Flags
-	uint32_t trig_type;
+	uint32_t trig_type; //4
 	// Cathode status
-	uint8_t cathode_status[12];
+	uint8_t cathode_status[12]; //12
 	// raw data (2.5 us GTU)
-	uint8_t raw_data [N_OF_FRAMES_L1_V0][N_OF_PIXEL_PER_PDM];
-} DATA_TYPE_SCI_L1_V2;
+	uint8_t raw_data [N_OF_FRAMES_L1_V0][N_OF_PIXEL_PER_PDM]; //294912
+} DATA_TYPE_SCI_L1_V2; //294936
 
 // At the end of lifecycle Zynq packs DATA_TYPE_SCI_L1 structures in the structure Z_DATA_TYPE_SCI_L1 (with header)
 // and sends it to DP
 
 typedef struct
 {
-	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L1_V2 payload;
-} Z_DATA_TYPE_SCI_L1_V2;
+	ZynqBoardHeader zbh; //8
+	DATA_TYPE_SCI_L1_V2 payload; //294936
+} Z_DATA_TYPE_SCI_L1_V2; //294944
 
 
 // If L2 occurred, Zynq makes:
@@ -129,23 +129,23 @@ typedef struct
 typedef struct
 {
 	// Unix timestamp
-	TimeStamp_dual ts;
+	TimeStamp_dual ts; //8
 	// Flags
-	uint32_t trig_type;
+	uint32_t trig_type; //4
 	// Cathode status
-	uint8_t cathode_status[12];
+	uint8_t cathode_status[12]; //12
 	// intergrated data
-	uint16_t int16_data[N_OF_FRAMES_L2_V0][N_OF_PIXEL_PER_PDM];
-} DATA_TYPE_SCI_L2_V2;
+	uint16_t int16_data[N_OF_FRAMES_L2_V0][N_OF_PIXEL_PER_PDM]; //589824
+} DATA_TYPE_SCI_L2_V2; //589848
 
 // At the end of lifecycle Zynq packs DATA_TYPE_SCI_L2 structures in the structure Z_DATA_TYPE_SCI_L2 (with header)
 // and sends it to DP
 
 typedef struct
 {
-	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L2_V2 payload;
-} Z_DATA_TYPE_SCI_L2_V2;
+	ZynqBoardHeader zbh; //8
+	DATA_TYPE_SCI_L2_V2 payload; //589848
+} Z_DATA_TYPE_SCI_L2_V2; //589856
 
 // L3 events are automatically generated at the end of lifecycle.  Zynq makes:
 // 1) the timestamp for this event,
@@ -158,21 +158,21 @@ typedef struct
 typedef struct
 {
 	// Unix timestamp
-	TimeStamp_dual ts;
+	TimeStamp_dual ts; //8
 	// Flags
-	uint32_t trig_type;
+	uint32_t trig_type; //4
 	// Cathode status
-	uint8_t cathode_status[12];
+	uint8_t cathode_status[12]; //12
 	// HVPS status
-	uint32_t hv_status;
+	uint32_t hv_status; //4
 	// double integrated data
-	uint32_t int32_data[N_OF_FRAMES_L3_V0][N_OF_PIXEL_PER_PDM];
+	uint32_t int32_data[N_OF_FRAMES_L3_V0][N_OF_PIXEL_PER_PDM]; //1179648
 } DATA_TYPE_SCI_L3_V2;
 
 typedef struct
 {
-	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L3_V2 payload;
+	ZynqBoardHeader zbh; //8
+	DATA_TYPE_SCI_L3_V2 payload; //1179676
 } Z_DATA_TYPE_SCI_L3_V2;
 
 /* zynq packet passed to the CPU every 5.24 s */
@@ -182,10 +182,10 @@ typedef struct
 #define MAX_PACKETS_L3 1
 typedef struct
 {
-  Z_DATA_TYPE_SCI_L1_V2 level1_data[MAX_PACKETS_L1]; /* 294932 * 4 bytes */
-  Z_DATA_TYPE_SCI_L2_V2 level2_data[MAX_PACKETS_L2]; /* 589844 * 4 bytes */
-  Z_DATA_TYPE_SCI_L3_V2 level3_data[MAX_PACKETS_L3]; /* 1179668 bytes */
-} DATA_TYPE_SCI_ALLTRG_V1;
+  Z_DATA_TYPE_SCI_L1_V2 level1_data[MAX_PACKETS_L1]; /* 294944 * 4 bytes */
+  Z_DATA_TYPE_SCI_L2_V2 level2_data[MAX_PACKETS_L2]; /* 589856 * 4 bytes */
+  Z_DATA_TYPE_SCI_L3_V2 level3_data[MAX_PACKETS_L3]; /* 1179684 bytes */
+} DATA_TYPE_SCI_ALLTRG_V1; //4718884
 
 
 //Trigger types in data out files :

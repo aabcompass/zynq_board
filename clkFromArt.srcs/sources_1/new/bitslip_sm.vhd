@@ -24,6 +24,9 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
+
+Library xpm;
+use xpm.vcomponents.all;
 			
 
 -- Uncomment the following library declaration if using
@@ -39,6 +42,7 @@ entity bitslip_sm is
     Generic (C_SERIALIZATION: integer := 8;
     				C_DATA_WIDTH: integer:= 8);
     Port ( clk : in STD_LOGIC;
+    				run : in STD_LOGIC;
            data_in : in STD_LOGIC_VECTOR (103 downto 0);
            dataout0: out STD_LOGIC_VECTOR(7 downto 0);
            dataout1: out STD_LOGIC_VECTOR(7 downto 0);
@@ -82,8 +86,29 @@ architecture Behavioral of bitslip_sm is
 	
 	signal tlast_cnt: std_logic_vector(6 downto 0)  := (others => '0');
 	signal tlast_allowed: std_logic := '0';
+	
+	signal dataout_last_d0: std_logic := '0';
+	signal run_d1: std_logic := '0';
 
 begin
+
+
+   xpm_cdc_single_inst : xpm_cdc_single
+   generic map (
+      DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+      INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+                           -- values
+      SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+      SRC_INPUT_REG => 0   -- DECIMAL; integer; 0=do not register input, 1=register input
+   )
+   port map (
+      dest_out => run_d1, -- 1-bit output: src_in synchronized to the destination clock domain. This output
+                            -- is registered.
+
+      dest_clk => clk, -- 1-bit input: Clock signal for the destination clock domain.
+      src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+      src_in => run      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
+   );
 
 	remix_gen: for i in 0 to C_DATA_WIDTH-1 generate
 		remix: process(clk)
@@ -157,7 +182,29 @@ begin
 	dataout11 <= dataout11_i when rising_edge(clk);
 	dataout12 <= dataout12_i when rising_edge(clk);
 	valid_i <= dataout12_i(0) when rising_edge(clk);
-	dataout_valid <= valid_i;
-	dataout_last <= valid_i and not dataout12_i(0) and tlast_allowed;
+	
+	dataout_last_d0 <= valid_i and not dataout12_i(0) and tlast_allowed;
+	
+	data_en_process: process(clk)
+		variable state : integer range 0 to 1  := 0;
+	begin
+		if(rising_edge(clk)) then
+			case state is
+				when 0 => if(run_d1 = '1') then
+										if(dataout_last_d0 = '1' and valid_i = '1') then
+											state := state + 1;
+										end if;
+									end if;
+				when 1 => dataout_valid <= valid_i;
+									dataout_last <= dataout_last_d0;
+									if(run_d1 = '0') then
+										if(valid_i = '0') then
+											state := 0;
+										end if;
+									end if;
+			end case;
+		end if;
+	end process;
+	
 
 end Behavioral;
