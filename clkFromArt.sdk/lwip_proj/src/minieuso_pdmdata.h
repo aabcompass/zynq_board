@@ -180,6 +180,7 @@ typedef struct
 #define MAX_PACKETS_L1 4
 #define MAX_PACKETS_L2 4
 #define MAX_PACKETS_L3 1
+
 typedef struct
 {
   Z_DATA_TYPE_SCI_L1_V2 level1_data[MAX_PACKETS_L1]; /* 294944 * 4 bytes */

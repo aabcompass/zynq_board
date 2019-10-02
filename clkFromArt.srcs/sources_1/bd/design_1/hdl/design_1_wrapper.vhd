@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Tue Oct  1 15:41:40 2019
+--Date        : Wed Oct  2 11:40:33 2019
 --Host        : alx-hp-envy-notebook running 64-bit Ubuntu 16.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -109,9 +109,9 @@ architecture STRUCTURE of design_1_wrapper is
     artx_programb_io_0_tri_o : out STD_LOGIC;
     artx_programb_io_0_tri_t : out STD_LOGIC;
     artx_programb_io_0_tri_i : in STD_LOGIC;
-    Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     sck_p_0 : out STD_LOGIC;
@@ -132,9 +132,9 @@ architecture STRUCTURE of design_1_wrapper is
     resetb_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
     sr_rstb_pc_0 : out STD_LOGIC;
-    sr_ck_pc_1 : out STD_LOGIC;
-    sr_ck_pc_2 : out STD_LOGIC;
     sr_ck_pc_0 : out STD_LOGIC;
+    sr_ck_pc_2 : out STD_LOGIC;
+    sr_ck_pc_1 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     CLK_HV_p_0 : out STD_LOGIC;

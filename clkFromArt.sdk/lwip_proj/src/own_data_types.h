@@ -5,6 +5,8 @@
  *      Author: alx
  */
 
+#include "minieuso_pdmdata.h"
+
 #ifndef SRC_OWN_DATA_TYPES_H_
 #define SRC_OWN_DATA_TYPES_H_
 
@@ -41,6 +43,12 @@ typedef struct
 	int err_artix_bin; // Error during artix.bin load. 0 - Ok
 	int is_artix_loaded;
 } InstrumentState;
+
+typedef struct
+{
+	DATA_TYPE_SCI_ALLTRG_V1 sci_data;
+	u32 is_occupied;
+} DATA_TYPE_SCI_ALLTRG_RECORD;
 
 
 #endif /* SRC_OWN_DATA_TYPES_H_ */

@@ -39,9 +39,6 @@
 #include "xil_printf.h"
 #endif
 
-int transfer_data() {
-	return 0;
-}
 
 void print_app_header()
 {

@@ -195,7 +195,7 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>Dout_2</spirit:name>
+          <spirit:name>Dout_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -215,7 +215,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>Dout_0</spirit:name>
+          <spirit:name>Dout_2</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -357,7 +357,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_1</spirit:name>
+          <spirit:name>sr_ck_pc_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -369,7 +369,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_0</spirit:name>
+          <spirit:name>sr_ck_pc_1</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -1029,7 +1029,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="axis_data_fifo" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axis_data_fifo_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="FIFO_DEPTH">4096</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_DEPTH">256</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="FIFO_MODE">2</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
@@ -1309,7 +1309,7 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_quad_spi_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_USE_STARTUP">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_FIFO_DEPTH">256</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_FIFO_DEPTH">16</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -1472,9 +1472,9 @@
       <spirit:adHocConnection>
         <spirit:name>xlslice_Zynq_Dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlslice_Zynq" spirit:portRef="Dout"/>
-        <spirit:externalPortReference spirit:portRef="Dout_0"/>
-        <spirit:externalPortReference spirit:portRef="Dout_1"/>
         <spirit:externalPortReference spirit:portRef="Dout_2"/>
+        <spirit:externalPortReference spirit:portRef="Dout_1"/>
+        <spirit:externalPortReference spirit:portRef="Dout_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>data_in_from_pins_p_0_1</spirit:name>
@@ -1513,6 +1513,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_artix_conf_v1_0_0" spirit:portRef="s00_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="ext_spi_clk"/>
+        <spirit:internalPortReference spirit:componentRef="gpio_ctrl" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
@@ -1526,7 +1527,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M05_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M06_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M07_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="gpio_ctrl" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M08_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1579,6 +1579,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_artix_conf_v1_0_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="gpio_ctrl" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="S00_ARESETN"/>
@@ -1590,7 +1591,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M05_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M06_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M07_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="gpio_ctrl" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M08_ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1898,9 +1898,9 @@
       <spirit:adHocConnection>
         <spirit:name>spaciroc3_sc_0_sr_ck_pc</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spaciroc3_sc_0" spirit:portRef="sr_ck_pc"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
         <spirit:externalPortReference spirit:portRef="sr_ck_pc_1"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>HV_AERA_IP_0_GTU_HV_p</spirit:name>

@@ -16,6 +16,8 @@ XAxiDma_Config* CfgPtr_raw;
 
 uint8_t  DataDMA__RawPMT[N_FRAMES_DMA_RAW][N_OF_PIXELS_PER_PMT] __attribute__ ((aligned (64)));
 
+DATA_TYPE_SCI_ALLTRG_V1 zynqPacket;
+
 void DmaReset()
 {
 	XAxiDma_Reset(&dma_raw);
@@ -60,8 +62,13 @@ void PrintData()
 {
 	int i,j=0;
 	Xil_DCacheInvalidateRange((INTPTR)&DataDMA__RawPMT[0][0], sizeof(DataDMA__RawPMT));
-	for(i=0;i<N_OF_PIXELS_PER_PMT;i++)
+	for(j=0;j<N_FRAMES_DMA_RAW;j++)
 	{
-		xil_printf("%d. %02x\n\r", i, DataDMA__RawPMT[j][i]);
+		xil_printf("%d: ", j);
+		for(i=0;i<N_OF_PIXELS_PER_PMT;i++)
+		{
+			xil_printf("%02x ", DataDMA__RawPMT[j][i]);
+		}
+		print("\n\r");
 	}
 }

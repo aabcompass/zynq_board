@@ -297,6 +297,11 @@ int main()
 	print("Starting TCP client Telnet server on port 23 ...\n\r");
 	start_telnet_cmd();
 
+	print("Memory file system init ...\n\r");
+	FileSystemInit();
+	print("Starting FTP server ...\n\r");
+	start_ftp_server_cmd();
+
 
 	/* start the application (web server, rxtest, txtest, etc..) */
 	start_application();
@@ -316,7 +321,7 @@ int main()
 			TcpSlowTmrFlag = 0;
 		}
 		xemacif_input(echo_netif);
-		transfer_data();
+		send_data_sm();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))
 		{
