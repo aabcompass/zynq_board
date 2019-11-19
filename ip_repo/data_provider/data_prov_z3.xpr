@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PSRCDIR/sources_1"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/myip2_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/myip_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../zed_dma_linux2/ip_repo"/>
@@ -59,14 +60,15 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/data_provider_z3.vhd">
+      <File Path="$PSRCDIR/sources_1/new/axi_data_provider_z3.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/axi_data_provider_z3.vhd">
+      <File Path="$PSRCDIR/sources_1/new/data_provider_z3.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -127,6 +129,7 @@
     <FileSet Name="selectio_wiz_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/selectio_wiz_1">
       <File Path="$PSRCDIR/sources_1/ip/selectio_wiz_1/selectio_wiz_1.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

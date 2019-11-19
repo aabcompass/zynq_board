@@ -94,12 +94,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	u32 pmt_trig1,  pmt_trig2,  ec_trig1,  ec_trig2,  pdm_trig1,  pdm_trig2;
 	// print command
 	print("TCP: ");
-	for(i=0; i<p->len; i++)
-		xil_printf("%c", *(char*)(p->payload+i));
+	//for(i=0; i<p->len; i++)
+	//	xil_printf("%c", *(char*)(p->payload+i));
 	print("\r");
 	if(strncmp(p->payload, "help", 4) == 0)
 	{
-		char ok_eomess_str[] = "Mini-EUSO PDM DP console\n\r";
+		char ok_eomess_str[] = "K-EUSO PDM DP console\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
 	else if(strncmp(p->payload, "test connect", 12) == 0)

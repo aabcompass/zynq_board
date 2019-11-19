@@ -273,10 +273,12 @@ int main()
 
 	SetDefaultParameters();
 
-	print("HVPS expander initialization...\n\r");
+	print("HVPS expander initialization...");
 	instrumentState.is_HVPS_OK = expIni(); //init hv
 	if(!instrumentState.is_HVPS_OK)
 		print("HVPS seems not connected or powered\n\r");
+	else
+		print("Ok\n\r");
 
 	print("SD card file system initialization...\n\r");
 	instrumentState.err_SDcard = FfsSdPolledInit();
@@ -293,6 +295,9 @@ int main()
 	}
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
+
+	print("HLS peripherals initialization...\n\r");
+	InitHLS_peripherals();
 
 	print("Starting TCP client Telnet server on port 23 ...\n\r");
 	start_telnet_cmd();

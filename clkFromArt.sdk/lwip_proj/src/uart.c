@@ -25,7 +25,11 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'p')
 	{
-		PrintData();
+		PrintData_raw();
+	}
+	else if(c == 'P')
+	{
+		PrintData_scv();
 	}
 	else if(c == 'T') // artix Gen mode
 	{
