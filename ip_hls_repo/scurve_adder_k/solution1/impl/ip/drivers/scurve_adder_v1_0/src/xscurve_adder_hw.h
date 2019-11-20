@@ -25,8 +25,8 @@
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 : Data signal of N_ADDS
-//        bit 7~0 - N_ADDS[7:0] (Read/Write)
-//        others  - reserved
+//        bit 15~0 - N_ADDS[15:0] (Read/Write)
+//        others   - reserved
 // 0x14 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -35,5 +35,5 @@
 #define XSCURVE_ADDER_CTRL_BUS_ADDR_IER         0x08
 #define XSCURVE_ADDER_CTRL_BUS_ADDR_ISR         0x0c
 #define XSCURVE_ADDER_CTRL_BUS_ADDR_N_ADDS_DATA 0x10
-#define XSCURVE_ADDER_CTRL_BUS_BITS_N_ADDS_DATA 8
+#define XSCURVE_ADDER_CTRL_BUS_BITS_N_ADDS_DATA 16
 

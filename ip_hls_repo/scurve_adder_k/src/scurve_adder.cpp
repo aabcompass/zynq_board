@@ -16,8 +16,8 @@ Channels are output sequentially and the number of channels processed can be spe
 
 #include "scurve_adder.h"
 
-void scurve_adder(STREAM_16 &in_stream0,
-		STREAM_32 &out_stream, uint8_t N_ADDS/*, uint8_t CH_INFO*/) {
+void scurve_adder(STREAM_16 &in_stream0 /*two uint8 per transfer*/,
+		STREAM_64 &out_stream /*two uint32 per transfer*/, uint16_t N_ADDS/*, uint8_t CH_INFO*/) {
 
 	//Define the interfaces
 	#pragma HLS INTERFACE axis port=in_stream0
@@ -33,7 +33,7 @@ void scurve_adder(STREAM_16 &in_stream0,
 	 
 	AXI_DATA_16 dub_pix_ch0[N_PIXELS/2];
 
-	AXI_DATA_32 sum_pix_tot;
+	AXI_DATA_64 sum_pix_tot;
 
 	//Check last channel to read out
 	N = 0;
@@ -74,9 +74,9 @@ void scurve_adder(STREAM_16 &in_stream0,
 	for (i = 0; i < N_PIXELS/2; i++) {
 	#pragma HLS PIPELINE
 
-		sum_pix_tot.data = sum_pix2_ch0[i]<<16 | sum_pix1_ch0[i];
-		sum_pix_tot.keep = 15;
-		sum_pix_tot.strb = 15;
+		sum_pix_tot.data = (long)sum_pix2_ch0[i]<<32 | sum_pix1_ch0[i];
+		sum_pix_tot.keep = 31;
+		sum_pix_tot.strb = 31;
 		sum_pix_tot.user = dub_pix_ch0[0].user;
 		sum_pix_tot.id = dub_pix_ch0[0].id;
 		sum_pix_tot.dest = dub_pix_ch0[0].dest;

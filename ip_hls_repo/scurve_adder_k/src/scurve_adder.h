@@ -27,7 +27,7 @@ typedef hls::stream<AXI_DATA_256> STREAM_256;
 typedef hls::stream<AXI_DATA_512> STREAM_512;
 
 void scurve_adder(STREAM_16 &in_stream0,
-		STREAM_32 &out_stream, uint8_t N_ADDS);
+		STREAM_64 &out_stream, uint16_t N_ADDS);
 
 #endif
 

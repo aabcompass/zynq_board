@@ -38,7 +38,7 @@ module scurve_adder_CTRL_BUS_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [7:0]                    N_ADDS
+    output wire [15:0]                   N_ADDS
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -60,8 +60,8 @@ module scurve_adder_CTRL_BUS_s_axi
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 : Data signal of N_ADDS
-//        bit 7~0 - N_ADDS[7:0] (Read/Write)
-//        others  - reserved
+//        bit 15~0 - N_ADDS[15:0] (Read/Write)
+//        others   - reserved
 // 0x14 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -103,7 +103,7 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [7:0]                    int_N_ADDS = 'b0;
+    reg  [15:0]                   int_N_ADDS = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -212,7 +212,7 @@ always @(posedge ACLK) begin
                     rdata <= int_isr;
                 end
                 ADDR_N_ADDS_DATA_0: begin
-                    rdata <= int_N_ADDS[7:0];
+                    rdata <= int_N_ADDS[15:0];
                 end
             endcase
         end
@@ -320,13 +320,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_N_ADDS[7:0]
+// int_N_ADDS[15:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_N_ADDS[7:0] <= 0;
+        int_N_ADDS[15:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_N_ADDS_DATA_0)
-            int_N_ADDS[7:0] <= (WDATA[31:0] & wmask) | (int_N_ADDS[7:0] & ~wmask);
+            int_N_ADDS[15:0] <= (WDATA[31:0] & wmask) | (int_N_ADDS[15:0] & ~wmask);
     end
 end
 

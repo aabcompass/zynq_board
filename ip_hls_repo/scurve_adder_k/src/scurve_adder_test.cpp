@@ -6,9 +6,9 @@ int main() {
 	/* DEFINITIONS */
 	STREAM_16 inputStream_SW_0, inputStream_HW_0; 
 
-	STREAM_32 outputStream_SW, outputStream_HW;
+	STREAM_64 outputStream_SW, outputStream_HW;
 
-	uint8_t N_ADDS = 30;
+	uint16_t N_ADDS = 30;
 	uint8_t N_CH = 1;
 
 	uint16_t concat;
@@ -23,10 +23,10 @@ int main() {
 	AXI_DATA_16 dub_pix_ch0[N_PIXELS/2];
 
 	AXI_DATA_16 A;
-	AXI_DATA_32 sum_pix_tot;
+	AXI_DATA_64 sum_pix_tot;
 
-	int CH_INFO = 1;//0x3F;
-	std::bitset<6> channel_info(CH_INFO);
+	//int CH_INFO = 1;//0x3F;
+	//std::bitset<6> channel_info(CH_INFO);
 
 
 	/* SCURVE ADDER TESTBENCH */
@@ -75,7 +75,7 @@ int main() {
 	//Populate the output stream for processed channels only
 	//TLAST signal is output for channel # = highest set bit in CH_INFO
 	for (i = 0; i < N_PIXELS/2; i++){
-		sum_pix_tot.data = sum_pix2_ch0[i]<<16 | sum_pix1_ch0[i];
+		sum_pix_tot.data = (long)sum_pix2_ch0[i]<<32 | sum_pix1_ch0[i];
 		sum_pix_tot.keep = dub_pix_ch0[0].keep;
 		sum_pix_tot.strb = dub_pix_ch0[0].strb;
 		sum_pix_tot.user = dub_pix_ch0[0].user;
@@ -90,11 +90,11 @@ int main() {
 
 	//Read the output and test
 	for (i = 0; i < (N_PIXELS/2)*N_CH; i++) {
-		AXI_DATA_32 B_HW;
-		AXI_DATA_32 B_SW;
+		AXI_DATA_64 B_HW;
+		AXI_DATA_64 B_SW;
 		outputStream_HW.read(B_HW);
 		outputStream_SW.read(B_SW);
-		printf("SW: %u HW: %u \n", (int)B_SW.data, (int)B_HW.data);
+		printf("SW: %lu HW: %lu \n", (long)B_SW.data, (long)B_HW.data);
 
 		if (B_HW.data != B_SW.data) {
 			error_count++;

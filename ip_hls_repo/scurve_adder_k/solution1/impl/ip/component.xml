@@ -178,10 +178,10 @@ ue {}} bitwidth {attribs {resolve_type immediate dependency {} format long minim
 imum {} maximum {}} value 0}}} RVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type 
 immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {sig
 ned {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minim
-um {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WSTRB {datatype {name {attribs {res
-olve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {
-}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} 
-format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}</spirit:value>
+um {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WSTRB {datatype {name {attribs {re
+solve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum 
+{}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {}
+ format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -452,7 +452,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.OUT_STREAM.TDATA_NUM_BYTES">4</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.OUT_STREAM.TDATA_NUM_BYTES">8</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>TDEST_WIDTH</spirit:name>
@@ -468,7 +468,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.OUT_STREAM.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}} TUSER {datatype {name {attribs {r
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.OUT_STREAM.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 64} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}} TUSER {datatype {name {attribs {r
 esolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
@@ -747,9 +747,9 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
           </spirit:reset>
           <spirit:field>
             <spirit:name>N_ADDS</spirit:name>
-            <spirit:description>Bit 7 to 0 Data signal of N_ADDS</spirit:description>
+            <spirit:description>Bit 15 to 0 Data signal of N_ADDS</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">8</spirit:bitWidth>
+            <spirit:bitWidth spirit:format="long">16</spirit:bitWidth>
             <spirit:access>write-only</spirit:access>
             <spirit:writeValueConstraint>
               <spirit:minimum>0</spirit:minimum>
@@ -760,8 +760,8 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
           <spirit:field>
             <spirit:name>RESERVED</spirit:name>
             <spirit:description>Reserved.  0s on read.</spirit:description>
-            <spirit:bitOffset>8</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">24</spirit:bitWidth>
+            <spirit:bitOffset>16</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">16</spirit:bitWidth>
             <spirit:access>read-only</spirit:access>
             <spirit:writeValueConstraint>
               <spirit:minimum>0</spirit:minimum>
@@ -788,7 +788,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4a2d22e4</spirit:value>
+            <spirit:value>e7295cd7</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -804,7 +804,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a44e4ebd</spirit:value>
+            <spirit:value>e506bb60</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -820,7 +820,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>671cccd6</spirit:value>
+            <spirit:value>6b8c68dc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -836,7 +836,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>600c06ee</spirit:value>
+            <spirit:value>b8c08857</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -850,7 +850,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2800081a</spirit:value>
+            <spirit:value>302733b4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1402,7 +1402,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:left spirit:format="long">63</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1436,7 +1436,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:left spirit:format="long">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1453,7 +1453,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:left spirit:format="long">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1624,7 +1624,7 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
       <spirit:file>
         <spirit:name>hdl/vhdl/scurve_adder.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_ef1b9927</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_2bb040d5</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1771,15 +1771,15 @@ esolve_type immediate dependency {} format string minimum {} maximum {}} value {
       </xilinx:taxonomies>
       <xilinx:displayName>Scurve_adder</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1911182037</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-11-18T17:37:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1911191808</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-11-19T15:09:10Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f94eb45f"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="1e0255b8"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d0981d90"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="d2bfb129"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0913f8b1"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3168d0dd"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="809bb349"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="4cc5fb26"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="79823f82"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="61fd53f4"/>
     </xilinx:packagingInfo>

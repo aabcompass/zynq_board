@@ -29,47 +29,52 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/.apc/.src</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/.apc/.tb</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/.apc/.tb</location>
+		</link>
+		<link>
+			<name>.reference/ap_axi_sdata.h</name>
+			<type>1</type>
+			<location>/opt/Xilinx/Vivado/2018.1/include/ap_axi_sdata.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/solution1/.tcls</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/scurve_adder.cpp</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/src/scurve_adder.cpp</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder.cpp</location>
 		</link>
 		<link>
 			<name>source/scurve_adder.h</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/src/scurve_adder.h</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder.h</location>
 		</link>
 		<link>
 			<name>testbench/scurve_adder_test.cpp</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/src/scurve_adder_test.cpp</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder_test.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/solution1/solution1.directive</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/solution1/directives.tcl</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_repo/scurve_adder_k/solution1/script.tcl</location>
+			<location>/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

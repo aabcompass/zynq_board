@@ -41,7 +41,7 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    N_ADDS                :out  STD_LOGIC_VECTOR(7 downto 0)
+    N_ADDS                :out  STD_LOGIC_VECTOR(15 downto 0)
 );
 end entity scurve_adder_CTRL_BUS_s_axi;
 
@@ -65,8 +65,8 @@ end entity scurve_adder_CTRL_BUS_s_axi;
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
 -- 0x10 : Data signal of N_ADDS
---        bit 7~0 - N_ADDS[7:0] (Read/Write)
---        others  - reserved
+--        bit 15~0 - N_ADDS[15:0] (Read/Write)
+--        others   - reserved
 -- 0x14 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -103,7 +103,7 @@ architecture behave of scurve_adder_CTRL_BUS_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_N_ADDS          : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_N_ADDS          : UNSIGNED(15 downto 0) := (others => '0');
 
 
 begin
@@ -226,7 +226,7 @@ begin
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_N_ADDS_DATA_0 =>
-                        rdata_data <= RESIZE(int_N_ADDS(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_N_ADDS(15 downto 0), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -370,7 +370,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_N_ADDS_DATA_0) then
-                    int_N_ADDS(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_N_ADDS(7 downto 0));
+                    int_N_ADDS(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_N_ADDS(15 downto 0));
                 end if;
             end if;
         end if;
