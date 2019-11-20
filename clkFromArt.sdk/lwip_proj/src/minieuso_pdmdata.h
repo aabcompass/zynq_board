@@ -15,8 +15,8 @@
 // Constants
 
 #define N_OF_PIXELS_PER_PMT		64 /* number of pixel on PMT */
-#define N_OF_PMT_PER_ECASIC 	6	/* number of PMT on EC ASIC board */
-#define N_OF_ECASIC_PER_PDM		6  /* number of EC ASIC boards in PDM */
+#define N_OF_PMT_PER_ECASIC 	1	/* number of PMT on EC ASIC board */
+#define N_OF_ECASIC_PER_PDM		1  /* number of EC ASIC boards in PDM */
 
 #define N_OF_PIXEL_PER_PDM		(N_OF_PIXELS_PER_PMT * N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM)
 
@@ -72,11 +72,11 @@ typedef struct
 
 
 // Number of small GTU frames recorded with L1 event
-#define N_OF_FRAMES_L1_V0	128
+#define N_OF_FRAMES_D1_V0	128
 // Number of big GTU frames recorded with L2 event
-#define N_OF_FRAMES_L2_V0	128
+#define N_OF_FRAMES_D2_V0	128
 // Number of huge GTU frames recorded with L3 event
-#define N_OF_FRAMES_L3_V0	128
+#define N_OF_FRAMES_D3_V0	128
 
 // Small/Big/Huge GTU scale factors
 // Small GTU = 2.5 us
@@ -106,7 +106,7 @@ typedef struct
 	// Cathode status
 	uint8_t cathode_status[12]; //12
 	// raw data (2.5 us GTU)
-	uint8_t raw_data [N_OF_FRAMES_L1_V0][N_OF_PIXEL_PER_PDM]; //294912
+	uint8_t raw_data [N_OF_FRAMES_D1_V0][N_OF_PIXEL_PER_PDM]; //294912
 } DATA_TYPE_SCI_L1_V2; //294936
 
 // At the end of lifecycle Zynq packs DATA_TYPE_SCI_L1 structures in the structure Z_DATA_TYPE_SCI_L1 (with header)
@@ -135,7 +135,7 @@ typedef struct
 	// Cathode status
 	uint8_t cathode_status[12]; //12
 	// intergrated data
-	uint16_t int16_data[N_OF_FRAMES_L2_V0][N_OF_PIXEL_PER_PDM]; //589824
+	uint16_t int16_data[N_OF_FRAMES_D2_V0][N_OF_PIXEL_PER_PDM]; //589824
 } DATA_TYPE_SCI_L2_V2; //589848
 
 // At the end of lifecycle Zynq packs DATA_TYPE_SCI_L2 structures in the structure Z_DATA_TYPE_SCI_L2 (with header)
@@ -166,7 +166,7 @@ typedef struct
 	// HVPS status
 	uint32_t hv_status; //4
 	// double integrated data
-	uint32_t int32_data[N_OF_FRAMES_L3_V0][N_OF_PIXEL_PER_PDM]; //1179648
+	uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXEL_PER_PDM]; //1179648
 } DATA_TYPE_SCI_L3_V2;
 
 typedef struct

@@ -287,12 +287,12 @@ int main()
 
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
-	if(!instrumentState.err_SDcard)
-	{
-		instrumentState.err_artix_bin = LoadArtix();
-		if(instrumentState.err_artix_bin)
-			xil_printf("err_artix_bin = %d\n\r", instrumentState.err_artix_bin);
-	}
+//	if(!instrumentState.err_SDcard)
+//	{
+//		instrumentState.err_artix_bin = LoadArtix();
+//		if(instrumentState.err_artix_bin)
+//			xil_printf("err_artix_bin = %d\n\r", instrumentState.err_artix_bin);
+//	}
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
 

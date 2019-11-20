@@ -123,7 +123,24 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		strcat(ans_str, "\r\n");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
-//	else if(sscanf(p->payload, "instrument mode %d %d",
+	else if(strncmp(p->payload, "acq live", 8) == 0)
+	{
+		err_t err;
+		u32* p;
+		GetPtrForLive(&p);
+//		char str[] = "Ok\n\r";
+		err = tcp_write(tpcb, p, 4 * N_OF_PIXEL_PER_PDM, 1);
+		//for(i=0;i<63;i++)
+		//	xil_printf("%08x ", *(p+i));
+		//tcp_sent(tpcb, sent_callback);
+		//xil_printf("@err = %d\n\r", err);
+		//live_sent = 0;
+		//xil_printf("err = %d\n\r", err);
+		//err = tcp_output(tpcb);
+		//xil_printf("err = %d\n\r", err);
+	}
+
+	//	else if(sscanf(p->payload, "instrument mode %d %d",
 //			&param, &param2) == 2)
 //	{
 //		ProcessInstrumentModeCommand(tpcb, param, param2);

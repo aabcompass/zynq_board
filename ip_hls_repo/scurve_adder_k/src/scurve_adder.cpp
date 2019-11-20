@@ -75,8 +75,8 @@ void scurve_adder(STREAM_16 &in_stream0 /*two uint8 per transfer*/,
 	#pragma HLS PIPELINE
 
 		sum_pix_tot.data = (long)sum_pix2_ch0[i]<<32 | sum_pix1_ch0[i];
-		sum_pix_tot.keep = 31;
-		sum_pix_tot.strb = 31;
+		sum_pix_tot.keep = 63;
+		sum_pix_tot.strb = 63;
 		sum_pix_tot.user = dub_pix_ch0[0].user;
 		sum_pix_tot.id = dub_pix_ch0[0].id;
 		sum_pix_tot.dest = dub_pix_ch0[0].dest;

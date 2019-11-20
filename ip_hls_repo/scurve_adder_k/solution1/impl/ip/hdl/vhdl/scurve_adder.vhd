@@ -88,7 +88,7 @@ architecture behav of scurve_adder is
     constant ap_const_lv6_0 : STD_LOGIC_VECTOR (5 downto 0) := "000000";
     constant ap_const_lv21_0 : STD_LOGIC_VECTOR (20 downto 0) := "000000000000000000000";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv8_1F : STD_LOGIC_VECTOR (7 downto 0) := "00011111";
+    constant ap_const_lv8_3F : STD_LOGIC_VECTOR (7 downto 0) := "00111111";
     constant ap_const_lv6_20 : STD_LOGIC_VECTOR (5 downto 0) := "100000";
     constant ap_const_lv6_1 : STD_LOGIC_VECTOR (5 downto 0) := "000001";
     constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
@@ -1945,7 +1945,7 @@ begin
     out_stream_V_id_V_1_vld_out <= out_stream_V_id_V_1_state(0);
     out_stream_V_keep_V_1_ack_in <= out_stream_V_keep_V_1_state(1);
     out_stream_V_keep_V_1_ack_out <= out_stream_TREADY;
-    out_stream_V_keep_V_1_data_out <= ap_const_lv8_1F;
+    out_stream_V_keep_V_1_data_out <= ap_const_lv8_3F;
     out_stream_V_keep_V_1_sel <= out_stream_V_keep_V_1_sel_rd;
 
     out_stream_V_keep_V_1_vld_in_assign_proc : process(ap_CS_fsm_pp2_stage0, ap_enable_reg_pp2_iter1, exitcond_reg_577, ap_block_pp2_stage0_11001)
@@ -1987,7 +1987,7 @@ begin
     out_stream_V_last_V_1_vld_out <= out_stream_V_last_V_1_state(0);
     out_stream_V_strb_V_1_ack_in <= out_stream_V_strb_V_1_state(1);
     out_stream_V_strb_V_1_ack_out <= out_stream_TREADY;
-    out_stream_V_strb_V_1_data_out <= ap_const_lv8_1F;
+    out_stream_V_strb_V_1_data_out <= ap_const_lv8_3F;
     out_stream_V_strb_V_1_sel <= out_stream_V_strb_V_1_sel_rd;
 
     out_stream_V_strb_V_1_vld_in_assign_proc : process(ap_CS_fsm_pp2_stage0, ap_enable_reg_pp2_iter1, exitcond_reg_577, ap_block_pp2_stage0_11001)

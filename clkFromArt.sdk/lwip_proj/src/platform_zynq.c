@@ -267,7 +267,7 @@ void platform_setup_interrupts_AB(void)
 	XScuGic_Enable(&intc, TIMER_IRPT_INTR);
 
 	//SetupHVPSIntrSystem(&intc);
-	//SetupDMAIntrSystem(&intc);
+	SetupDMAIntrSystem(&intc);
 
 
 	return;

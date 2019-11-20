@@ -12,12 +12,12 @@ void ProcessUartCommands(struct netif *netif, char c)
 	int i, j, k, occupancy;//, cc_fifo_occupancy0, cc_fifo_occupancy1, cc_fifo_occupancy2;
 	u16* reg_data;
 	u16* p;
-	static int num = 0;
+	static int num = 1;
 	static int ec = 0;
 
 	if(c == 'd')
 	{
-		DmaStart1();
+		//DmaStart1();
 	}
 	else if(c == 'r')
 	{
@@ -29,7 +29,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'P')
 	{
-		PrintData_scv();
+		PrintData_scv(num);
 	}
 	else if(c == 'T') // artix Gen mode
 	{
@@ -46,5 +46,15 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'x')
 	{
 		*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
+	}
+	else if(c == '+')
+	{
+		num++;
+		xil_printf("num=%d\n\r", num);
+	}
+	else if(c == '-')
+	{
+		num--;
+		xil_printf("num=%d\n\r", num);
 	}
 }

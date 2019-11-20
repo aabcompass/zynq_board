@@ -1824,7 +1824,7 @@ assign out_stream_V_keep_V_1_ack_in = out_stream_V_keep_V_1_state[1'd1];
 
 assign out_stream_V_keep_V_1_ack_out = out_stream_TREADY;
 
-assign out_stream_V_keep_V_1_data_out = 8'd31;
+assign out_stream_V_keep_V_1_data_out = 8'd63;
 
 assign out_stream_V_keep_V_1_sel = out_stream_V_keep_V_1_sel_rd;
 
@@ -1848,7 +1848,7 @@ assign out_stream_V_strb_V_1_ack_in = out_stream_V_strb_V_1_state[1'd1];
 
 assign out_stream_V_strb_V_1_ack_out = out_stream_TREADY;
 
-assign out_stream_V_strb_V_1_data_out = 8'd31;
+assign out_stream_V_strb_V_1_data_out = 8'd63;
 
 assign out_stream_V_strb_V_1_sel = out_stream_V_strb_V_1_sel_rd;
 

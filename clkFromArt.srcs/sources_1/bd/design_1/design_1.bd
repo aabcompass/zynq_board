@@ -195,7 +195,7 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>Dout_2</spirit:name>
+          <spirit:name>Dout_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -215,7 +215,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>Dout_0</spirit:name>
+          <spirit:name>Dout_2</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -357,7 +357,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_1</spirit:name>
+          <spirit:name>sr_ck_pc_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -369,7 +369,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_0</spirit:name>
+          <spirit:name>sr_ck_pc_1</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -1293,7 +1293,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconcat_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="NUM_PORTS">5</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_PORTS">6</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -1403,6 +1403,18 @@
         <spirit:componentRef spirit:library="user" spirit:name="axi_data_provider_z3" spirit:vendor="user.org" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_data_provider_z3_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axis_data_fifo_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axis_data_fifo" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axis_data_fifo_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="TID_WIDTH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="TDEST_WIDTH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="TUSER_WIDTH">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="HAS_TSTRB">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="HAS_TKEEP">0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -1542,28 +1554,9 @@
         <spirit:activeInterface spirit:busRef="M09_AXI" spirit:componentRef="axi_interconnect_1"/>
       </spirit:interconnection>
       <spirit:interconnection>
-        <spirit:name>scurve_adder_0_out_stream</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_stream" spirit:componentRef="scurve_adder_0"/>
-        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_dma_sc"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:interconnection>
-      <spirit:monitorInterconnection>
-        <spirit:name>scurve_adder_0_out_stream</spirit:name>
-        <spirit:monitoredActiveInterface spirit:busRef="out_stream" spirit:componentRef="scurve_adder_0"/>
-        <spirit:monitorInterface spirit:busRef="SLOT_2_AXIS" spirit:componentRef="system_ila_0"/>
-      </spirit:monitorInterconnection>
-      <spirit:interconnection>
         <spirit:name>axi_interconnect_1_M10_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="S_AXI_LITE" spirit:componentRef="axi_dma_sc"/>
         <spirit:activeInterface spirit:busRef="M10_AXI" spirit:componentRef="axi_interconnect_1"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>S01_AXI_1</spirit:name>
-        <spirit:activeInterface spirit:busRef="S01_AXI" spirit:componentRef="axi_interconnect_0"/>
-        <spirit:activeInterface spirit:busRef="M_AXI_S2MM" spirit:componentRef="axi_dma_sc"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_interconnect_1_M11_AXI</spirit:name>
@@ -1580,6 +1573,26 @@
         <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="axi_data_provider_z3_0"/>
         <spirit:activeInterface spirit:busRef="M12_AXI" spirit:componentRef="axi_interconnect_1"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>scurve_adder_0_out_stream</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_stream" spirit:componentRef="scurve_adder_0"/>
+        <spirit:activeInterface spirit:busRef="S_AXIS" spirit:componentRef="axis_data_fifo_1"/>
+      </spirit:interconnection>
+      <spirit:monitorInterconnection>
+        <spirit:name>scurve_adder_0_out_stream</spirit:name>
+        <spirit:monitoredActiveInterface spirit:busRef="out_stream" spirit:componentRef="scurve_adder_0"/>
+        <spirit:monitorInterface spirit:busRef="SLOT_2_AXIS" spirit:componentRef="system_ila_0"/>
+      </spirit:monitorInterconnection>
+      <spirit:interconnection>
+        <spirit:name>S01_AXI_1</spirit:name>
+        <spirit:activeInterface spirit:busRef="S01_AXI" spirit:componentRef="axi_interconnect_0"/>
+        <spirit:activeInterface spirit:busRef="M_AXI_S2MM" spirit:componentRef="axi_dma_sc"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axis_data_fifo_1_M_AXIS</spirit:name>
+        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_dma_sc"/>
+        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="axis_data_fifo_1"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -1595,9 +1608,9 @@
       <spirit:adHocConnection>
         <spirit:name>xlslice_Zynq_Dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlslice_Zynq" spirit:portRef="Dout"/>
-        <spirit:externalPortReference spirit:portRef="Dout_0"/>
-        <spirit:externalPortReference spirit:portRef="Dout_1"/>
         <spirit:externalPortReference spirit:portRef="Dout_2"/>
+        <spirit:externalPortReference spirit:portRef="Dout_1"/>
+        <spirit:externalPortReference spirit:portRef="Dout_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>data_in_from_pins_p_0_1</spirit:name>
@@ -1663,6 +1676,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M10_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M11_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M12_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="axis_data_fifo_1" spirit:portRef="s_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="scurve_adder_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1738,6 +1752,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M10_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M11_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M12_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="axis_data_fifo_1" spirit:portRef="s_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="scurve_adder_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -2045,9 +2060,9 @@
       <spirit:adHocConnection>
         <spirit:name>spaciroc3_sc_0_sr_ck_pc</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spaciroc3_sc_0" spirit:portRef="sr_ck_pc"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
         <spirit:externalPortReference spirit:portRef="sr_ck_pc_1"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>HV_AERA_IP_0_GTU_HV_p</spirit:name>
@@ -2156,6 +2171,11 @@
         <spirit:name>axi_fifo_mm_s_testing_interrupt</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_fifo_mm_s_testing" spirit:portRef="interrupt"/>
         <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In4"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_dma_sc_s2mm_introut</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_dma_sc" spirit:portRef="s2mm_introut"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In5"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="scurve_adder.cpp" path="/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder.cpp"/>
     <originFiles name="scurve_adder.h" path="/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder.h"/>
+    <originFiles name="scurve_adder.cpp" path="/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder.cpp"/>
   </source>
   <testbench>
     <originFiles name="scurve_adder_test.cpp" path="/home/alx/xil_proj/zynq_board/clkFromArt_2/ip_hls_repo/scurve_adder_k/src/scurve_adder_test.cpp"/>
