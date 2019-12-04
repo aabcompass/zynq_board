@@ -59,7 +59,8 @@ entity bitslip_sm is
            dataout12: out STD_LOGIC_VECTOR(7 downto 0);
            bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0);
            dataout_valid: out std_logic;
-           dataout_last: out std_logic
+           dataout_last: out std_logic;
+           rst_selectio: out std_logic := '1'
            );
 end bitslip_sm;
 
@@ -109,6 +110,15 @@ begin
       src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
       src_in => run      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
    );
+
+	selectio_rst_process: process(clk)
+	begin
+		if(rising_edge(clk)) then
+			if(run_d1 = '1') then
+				rst_selectio <= '0';
+			end if;
+		end if;
+	end process;
 
 	remix_gen: for i in 0 to C_DATA_WIDTH-1 generate
 		remix: process(clk)
