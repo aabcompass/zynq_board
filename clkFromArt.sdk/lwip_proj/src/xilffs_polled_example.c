@@ -1,5 +1,5 @@
 
-#define FILENAME_ARTIX_BITSTREAM "artix.bin"
+
 #define FILENAME_SPACIROC_CONF "spaciroc.bin"
 
 #include "xparameters.h"	/* SDK generated parameters */
@@ -172,13 +172,13 @@ int WriteFileToSDCard(char * data, int size, char * filename)
 	return XST_SUCCESS;
 }
 
-int ReadArtixBitstream(char * data, int* size)
+int ReadArtixBitstream(char * data, int* size, char* filename)
 {
 	FRESULT Res;
 	FILINFO fno;
 	UINT NumBytesRead;
 
-	Res = f_stat(FILENAME_ARTIX_BITSTREAM, &fno);
+	Res = f_stat(/*FILENAME_ARTIX_BITSTREAM_1_BOARD*/filename, &fno);
 	if(Res != FR_OK)
 	{
 		xil_printf("f_stat returned %d\n\r", Res);
@@ -191,7 +191,7 @@ int ReadArtixBitstream(char * data, int* size)
 
 	*size =  fno.fsize;
 
-	Res = f_open(&fil, FILENAME_ARTIX_BITSTREAM, FA_READ);
+	Res = f_open(&fil, filename, FA_READ);
 	if (Res) {
 		return Res;
 	}

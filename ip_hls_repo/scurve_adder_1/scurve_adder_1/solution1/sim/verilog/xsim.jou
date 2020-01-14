@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Dec  7 12:25:46 2019
+# Process ID: 16045
+# Current directory: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_1/scurve_adder_1/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/scurve_adder/xsim_script.tcl}
+# Log file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_1/scurve_adder_1/solution1/sim/verilog/xsim.log
+# Journal file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_1/scurve_adder_1/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/scurve_adder/xsim_script.tcl
+source scurve_adder.tcl

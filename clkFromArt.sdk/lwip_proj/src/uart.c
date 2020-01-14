@@ -6,6 +6,7 @@
  */
 #include "xil_types.h"
 #include "xparameters.h"
+#include "common.h"
 
 void ProcessUartCommands(struct netif *netif, char c)
 {
@@ -56,5 +57,14 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		num--;
 		xil_printf("num=%d\n\r", num);
+	}
+	else if(c == 'l')
+	{
+		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+	}
+	else if(c == 'L')
+	{
+		LoadArtix(FILENAME_ARTIX_PARAMETERS);
+		ArtixLatch();
 	}
 }

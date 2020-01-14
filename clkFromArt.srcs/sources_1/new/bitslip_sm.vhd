@@ -56,6 +56,7 @@ entity bitslip_sm is
            dataout9: out STD_LOGIC_VECTOR(7 downto 0);
            dataout10: out STD_LOGIC_VECTOR(7 downto 0);
            dataout11: out STD_LOGIC_VECTOR(7 downto 0);
+           dataout: out STD_LOGIC_VECTOR(8*12-1 downto 0);
            dataout12: out STD_LOGIC_VECTOR(7 downto 0);
            bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0);
            dataout_valid: out std_logic;
@@ -65,6 +66,8 @@ entity bitslip_sm is
 end bitslip_sm;
 
 architecture Behavioral of bitslip_sm is
+
+	signal dataout_d0: STD_LOGIC_VECTOR(8*12-1 downto 0) := (others => '0');
 
 	signal frame_data: std_logic_vector(7 downto 0) := (others => '0');
 	signal bitslip_cmd: std_logic := '0';
@@ -92,6 +95,9 @@ architecture Behavioral of bitslip_sm is
 	signal run_d1: std_logic := '0';
 
 begin
+
+		
+	
 
 
    xpm_cdc_single_inst : xpm_cdc_single
@@ -191,9 +197,24 @@ begin
 	dataout10 <= dataout10_i when rising_edge(clk);
 	dataout11 <= dataout11_i when rising_edge(clk);
 	dataout12 <= dataout12_i when rising_edge(clk);
+	dataout_d0 <= dataout11_i & 
+						dataout10_i & 
+						dataout9_i & 
+						dataout8_i & 
+						dataout7_i & 
+						dataout6_i & 
+						dataout5_i & 
+						dataout4_i & 
+						dataout3_i & 
+						dataout2_i & 
+						dataout1_i & 
+						dataout0_i when rising_edge(clk); 
+						
+	dataout <= dataout_d0 when rising_edge(clk); 
+						
 	valid_i <= dataout12_i(0) when rising_edge(clk);
 	
-	dataout_last_d0 <= valid_i and not dataout12_i(0) and tlast_allowed;
+	dataout_last_d0 <= valid_i and not dataout12_i(0);-- and tlast_allowed;
 	
 	data_en_process: process(clk)
 		variable state : integer range 0 to 1  := 0;

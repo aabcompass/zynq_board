@@ -1,0 +1,13 @@
+sv work "glbl.v"
+sv xil_defaultlib "scurve_adder_dub_fYi.v"
+sv xil_defaultlib "scurve_adder_dub_dEe.v"
+sv xil_defaultlib "scurve_adder_dub_eOg.v"
+sv xil_defaultlib "scurve_adder.autotb.v"
+sv xil_defaultlib "AESL_axi_s_out_stream.v"
+sv xil_defaultlib "AESL_axi_s_in_stream0.v"
+sv xil_defaultlib "scurve_adder_sum_bkb.v"
+sv xil_defaultlib "scurve_adder.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "scurve_adder_CTRL_BUS_s_axi.v"
+sv xil_defaultlib "AESL_axi_slave_CTRL_BUS.v"
+

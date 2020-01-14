@@ -17,12 +17,13 @@ entity axi_artix_conf_v1_0 is
 	port (
 		-- Users to add ports here
 		artx_programb_o: out std_logic;
-        artx_programb_i: in std_logic;
-        artx_programb_t: out std_logic;
-        artx_initb_o: out std_logic;
-        artx_initb_i: in std_logic;
-        artx_initb_t: out std_logic;
-        artx_done: in std_logic;
+    artx_programb_i: in std_logic;
+    artx_programb_t: out std_logic;
+    artx_initb_o: out std_logic;
+    artx_initb_i: in std_logic;
+    artx_initb_t: out std_logic;
+    artx_done: in std_logic;
+    artx_latch: out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -69,6 +70,7 @@ architecture arch_imp of axi_artix_conf_v1_0 is
         artx_initb_i: in std_logic;
         artx_initb_t: out std_logic;
         artx_done: in std_logic;
+        artx_latch: out std_logic;
 
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
@@ -111,6 +113,7 @@ axi_artix_conf_v1_0_S00_AXI_inst : axi_artix_conf_v1_0_S00_AXI
 		artx_initb_i => artx_initb_i,--: in std_logic;
 		artx_initb_t => artx_initb_t,--: out std_logic;
 		artx_done => artx_done,--: in std_logic;
+		artx_latch => artx_latch,
 
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,

@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName scurve_adder.cpp_pre.cpp.tb.cpp

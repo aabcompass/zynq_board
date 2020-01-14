@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Thu Nov 28 20:27:57 2019
+--Date        : Tue Jan 14 15:52:09 2020
 --Host        : alx-hp-envy-notebook running 64-bit Ubuntu 16.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -37,7 +37,8 @@ entity design_1_wrapper is
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Dout_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    Dout_4 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_5 : out STD_LOGIC_VECTOR ( 0 to 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -48,13 +49,24 @@ entity design_1_wrapper is
     GTU_HV_p_0 : out STD_LOGIC;
     artx_done_0 : in STD_LOGIC;
     artx_initb_io_0_tri_io : inout STD_LOGIC;
+    artx_latch_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_latch_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_latch_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_programb_io_0_tri_io : inout STD_LOGIC;
     cs_dac_n_0 : out STD_LOGIC;
     cs_dac_p_0 : out STD_LOGIC;
     cs_exp_n_0 : out STD_LOGIC;
     cs_exp_p_0 : out STD_LOGIC;
     data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
     data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    diff_clk_in_0_clk_n : in STD_LOGIC;
+    diff_clk_in_0_clk_p : in STD_LOGIC;
+    diff_clk_in_1_clk_n : in STD_LOGIC;
+    diff_clk_in_1_clk_p : in STD_LOGIC;
     intr_n_0 : in STD_LOGIC;
     intr_p_0 : in STD_LOGIC;
     io0_o_0 : out STD_LOGIC;
@@ -66,6 +78,9 @@ entity design_1_wrapper is
     resetb_pc_0 : out STD_LOGIC;
     sck_n_0 : out STD_LOGIC;
     sck_o_0 : out STD_LOGIC;
+    sck_o_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_3 : out STD_LOGIC_VECTOR ( 0 to 0 );
     sck_p_0 : out STD_LOGIC;
     select_din_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
@@ -109,6 +124,10 @@ architecture STRUCTURE of design_1_wrapper is
     artx_programb_io_0_tri_o : out STD_LOGIC;
     artx_programb_io_0_tri_t : out STD_LOGIC;
     artx_programb_io_0_tri_i : in STD_LOGIC;
+    diff_clk_in_0_clk_n : in STD_LOGIC;
+    diff_clk_in_0_clk_p : in STD_LOGIC;
+    diff_clk_in_1_clk_n : in STD_LOGIC;
+    diff_clk_in_1_clk_p : in STD_LOGIC;
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -141,10 +160,21 @@ architecture STRUCTURE of design_1_wrapper is
     CLK_HV_n_0 : out STD_LOGIC;
     DATA_HV_p_0 : out STD_LOGIC;
     DATA_HV_n_0 : out STD_LOGIC;
-    Dout_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
     io0_o_0 : out STD_LOGIC;
     sck_o_0 : out STD_LOGIC;
-    artx_done_0 : in STD_LOGIC
+    artx_done_0 : in STD_LOGIC;
+    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    Dout_4 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_5 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_latch_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_latch_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    artx_latch_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_3 : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1;
   component IOBUF is
@@ -202,7 +232,8 @@ design_1_i: component design_1
       Dout_0(0) => Dout_0(0),
       Dout_1(0) => Dout_1(0),
       Dout_2(0) => Dout_2(0),
-      Dout_3(2 downto 0) => Dout_3(2 downto 0),
+      Dout_4(0) => Dout_4(0),
+      Dout_5(0) => Dout_5(0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
@@ -215,6 +246,9 @@ design_1_i: component design_1
       artx_initb_io_0_tri_i => artx_initb_io_0_tri_i,
       artx_initb_io_0_tri_o => artx_initb_io_0_tri_o,
       artx_initb_io_0_tri_t => artx_initb_io_0_tri_t,
+      artx_latch_0(0) => artx_latch_0(0),
+      artx_latch_1(0) => artx_latch_1(0),
+      artx_latch_2(0) => artx_latch_2(0),
       artx_programb_io_0_tri_i => artx_programb_io_0_tri_i,
       artx_programb_io_0_tri_o => artx_programb_io_0_tri_o,
       artx_programb_io_0_tri_t => artx_programb_io_0_tri_t,
@@ -223,7 +257,15 @@ design_1_i: component design_1
       cs_exp_n_0 => cs_exp_n_0,
       cs_exp_p_0 => cs_exp_p_0,
       data_in_from_pins_n_0(12 downto 0) => data_in_from_pins_n_0(12 downto 0),
+      data_in_from_pins_n_1(12 downto 0) => data_in_from_pins_n_1(12 downto 0),
+      data_in_from_pins_n_2(12 downto 0) => data_in_from_pins_n_2(12 downto 0),
       data_in_from_pins_p_0(12 downto 0) => data_in_from_pins_p_0(12 downto 0),
+      data_in_from_pins_p_1(12 downto 0) => data_in_from_pins_p_1(12 downto 0),
+      data_in_from_pins_p_2(12 downto 0) => data_in_from_pins_p_2(12 downto 0),
+      diff_clk_in_0_clk_n => diff_clk_in_0_clk_n,
+      diff_clk_in_0_clk_p => diff_clk_in_0_clk_p,
+      diff_clk_in_1_clk_n => diff_clk_in_1_clk_n,
+      diff_clk_in_1_clk_p => diff_clk_in_1_clk_p,
       intr_n_0 => intr_n_0,
       intr_p_0 => intr_p_0,
       io0_o_0 => io0_o_0,
@@ -235,6 +277,9 @@ design_1_i: component design_1
       resetb_pc_0 => resetb_pc_0,
       sck_n_0 => sck_n_0,
       sck_o_0 => sck_o_0,
+      sck_o_1(0) => sck_o_1(0),
+      sck_o_2(0) => sck_o_2(0),
+      sck_o_3(0) => sck_o_3(0),
       sck_p_0 => sck_p_0,
       select_din_pc_0 => select_din_pc_0,
       select_sc_probe_pc_0 => select_sc_probe_pc_0,

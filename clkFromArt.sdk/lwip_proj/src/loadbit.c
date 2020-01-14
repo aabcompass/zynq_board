@@ -9,6 +9,8 @@
 #include "xparameters.h"
 #include "xspi.h"
 
+
+
 XSpi spi;
 u8 * bitstream;
 int bitsize;
@@ -25,17 +27,17 @@ int bitsize;
 
 void PrepareArtixConfiguration()
 {
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = 0;
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = 0;
+	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = (1<<BIT_PROGRAMB) | (1<<BIT_INITB);
+	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (1<<BIT_PROGRAMB) | (1<<BIT_INITB);
 }
 
-void StartArtixConfiguration()
-{
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (LINE_ACTIVE<<BIT_PROGRAMB);
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (LINE_ACTIVE<<BIT_PROGRAMB) | (LINE_ACTIVE<<BIT_INITB);
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (LINE_ACTIVE<<BIT_INITB);
-	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = 0;
-}
+//void StartArtixConfiguration()
+//{
+//	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = 0;//(LINE_ACTIVE<<BIT_PROGRAMB);
+////	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (LINE_ACTIVE<<BIT_PROGRAMB) | (LINE_ACTIVE<<BIT_INITB);
+////	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (LINE_ACTIVE<<BIT_INITB);
+//	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = (1<<BIT_PROGRAMB) | (1<<BIT_INITB);
+//}
 
 void init_loadbit_spi()
 {
@@ -61,11 +63,11 @@ void upload_bit()
 }
 
 
-void reset_spi()
-{
-	XSpi_Reset(&spi);
-	init_loadbit_spi();
-}
+//void reset_spi()
+//{
+//	XSpi_Reset(&spi);
+//	init_loadbit_spi();
+//}
 
 u8* SetBitstreamPtr(char* ptr, int size)
 {
@@ -76,4 +78,10 @@ u8* SetBitstreamPtr(char* ptr, int size)
 u32 GetArtixLoadState()
 {
 	return *(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_INDATA);
+}
+
+void ArtixLatch()
+{
+	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = (1<<BIT_DONE);
+	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = 0;
 }

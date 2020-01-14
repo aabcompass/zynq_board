@@ -1,0 +1,370 @@
+
+
+================================================================
+== Vivado HLS Report for 'scurve_adder'
+================================================================
+* Date:           Sat Dec  7 12:24:29 2019
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        scurve_adder_1
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z035ffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      3.77|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |   73|  2097196|   73|  2097196|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |     Trip    |          |
+        | Loop Name| min |   max   |  Latency |  achieved |   target  |    Count    | Pipelined|
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+        |- Loop 1  |   32|       32|         1|          1|          1|           32|    yes   |
+        |- Loop 2  |    0|  2097123|         5|          1|          1| 0 ~ 2097120 |    yes   |
+        |- Loop 3  |   34|       34|         4|          1|          1|           32|    yes   |
+        +----------+-----+---------+----------+-----------+-----------+-------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 5
+  * Pipeline-2: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 3
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 5, States = { 4 5 6 7 8 }
+  Pipeline-2 : II = 1, D = 4, States = { 11 12 13 14 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (exitcond1)
+	2  / (!exitcond1)
+3 --> 
+	4  / true
+4 --> 
+	9  / (exitcond_flatten)
+	5  / (!exitcond_flatten)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	4  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	15  / (exitcond)
+	12  / (!exitcond)
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	11  / true
+15 --> 
+
+* FSM state operations: 
+
+ <State 1> : 1.30ns
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %in_stream0_V_data_V), !map !63"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2* %in_stream0_V_keep_V), !map !67"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2* %in_stream0_V_strb_V), !map !71"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2* %in_stream0_V_user_V), !map !75"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream0_V_last_V), !map !79"
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i5* %in_stream0_V_id_V), !map !83"
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i6* %in_stream0_V_dest_V), !map !87"
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %out_stream_V_data_V), !map !91"
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %out_stream_V_keep_V), !map !95"
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %out_stream_V_strb_V), !map !99"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2* %out_stream_V_user_V), !map !103"
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_last_V), !map !107"
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i5* %out_stream_V_id_V), !map !111"
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i6* %out_stream_V_dest_V), !map !115"
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %N_ADDS), !map !119"
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @scurve_adder_str) nounwind"
+ST_1 : Operation 32 [1/1] (1.00ns)   --->   "%N_ADDS_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %N_ADDS)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%sum_pix1_ch0 = alloca [32 x i32], align 16" [scurve_adder.cpp:32]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%sum_pix2_ch0 = alloca [32 x i32], align 16" [scurve_adder.cpp:32]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%dub_pix_ch0_user_V = alloca [32 x i2], align 1" [scurve_adder.cpp:34]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%dub_pix_ch0_id_V = alloca [32 x i5], align 1" [scurve_adder.cpp:34]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%dub_pix_ch0_dest_V = alloca [32 x i6], align 1" [scurve_adder.cpp:34]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %in_stream0_V_data_V, i2* %in_stream0_V_keep_V, i2* %in_stream0_V_strb_V, i2* %in_stream0_V_user_V, i1* %in_stream0_V_last_V, i5* %in_stream0_V_id_V, i6* %in_stream0_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:23]
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_stream_V_data_V, i8* %out_stream_V_keep_V, i8* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:24]
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %N_ADDS, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:25]
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:26]
+ST_1 : Operation 42 [1/1] (1.30ns)   --->   "br label %0" [scurve_adder.cpp:43]
+
+ <State 2> : 2.77ns
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%i = phi i6 [ %i_3, %1 ], [ 0, %.preheader124 ]"
+ST_2 : Operation 44 [1/1] (1.18ns)   --->   "%exitcond1 = icmp eq i6 %i, -32" [scurve_adder.cpp:43]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"
+ST_2 : Operation 46 [1/1] (1.61ns)   --->   "%i_3 = add i6 %i, 1" [scurve_adder.cpp:43]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader1.preheader, label %1" [scurve_adder.cpp:43]
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str5)" [scurve_adder.cpp:43]
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:44]
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_1 = zext i6 %i to i64" [scurve_adder.cpp:45]
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%sum_pix1_ch0_addr = getelementptr inbounds [32 x i32]* %sum_pix1_ch0, i64 0, i64 %tmp_1" [scurve_adder.cpp:45]
+ST_2 : Operation 52 [1/1] (2.77ns)   --->   "store i32 0, i32* %sum_pix1_ch0_addr, align 4" [scurve_adder.cpp:45]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%sum_pix2_ch0_addr = getelementptr inbounds [32 x i32]* %sum_pix2_ch0, i64 0, i64 %tmp_1" [scurve_adder.cpp:46]
+ST_2 : Operation 54 [1/1] (2.77ns)   --->   "store i32 0, i32* %sum_pix2_ch0_addr, align 4" [scurve_adder.cpp:46]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str5, i32 %tmp_7)" [scurve_adder.cpp:47]
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "br label %0" [scurve_adder.cpp:43]
+
+ <State 3> : 1.30ns
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%tmp = call i21 @_ssdm_op_BitConcatenate.i21.i16.i5(i16 %N_ADDS_read, i5 0)"
+ST_3 : Operation 58 [1/1] (1.30ns)   --->   "br label %.preheader85" [scurve_adder.cpp:50]
+
+ <State 4> : 3.77ns
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i21 [ 0, %.preheader1.preheader ], [ %indvar_flatten_next, %.preheader1 ]"
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%i_1 = phi i6 [ 0, %.preheader1.preheader ], [ %i_5, %.preheader1 ]"
+ST_4 : Operation 61 [1/1] (1.99ns)   --->   "%exitcond_flatten = icmp eq i21 %indvar_flatten, %tmp"   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 62 [1/1] (1.88ns)   --->   "%indvar_flatten_next = add i21 %indvar_flatten, 1"   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %.preheader.preheader, label %.preheader1"
+ST_4 : Operation 64 [1/1] (1.18ns)   --->   "%exitcond2 = icmp eq i6 %i_1, -32" [scurve_adder.cpp:53]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 65 [1/1] (0.97ns)   --->   "%i_1_mid2 = select i1 %exitcond2, i6 0, i6 %i_1" [scurve_adder.cpp:53]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 66 [2/2] (0.00ns)   --->   "%empty_6 = call { i16, i2, i2, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i16P.i2P.i2P.i2P.i1P.i5P.i6P(i16* %in_stream0_V_data_V, i2* %in_stream0_V_keep_V, i2* %in_stream0_V_strb_V, i2* %in_stream0_V_user_V, i1* %in_stream0_V_last_V, i5* %in_stream0_V_id_V, i6* %in_stream0_V_dest_V)" [scurve_adder.cpp:63]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_4 : Operation 67 [1/1] (1.61ns)   --->   "%i_5 = add i6 1, %i_1_mid2" [scurve_adder.cpp:53]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 2.77ns
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_s = zext i6 %i_1_mid2 to i64" [scurve_adder.cpp:63]
+ST_5 : Operation 69 [1/2] (0.00ns)   --->   "%empty_6 = call { i16, i2, i2, i2, i1, i5, i6 } @_ssdm_op_Read.axis.volatile.i16P.i2P.i2P.i2P.i1P.i5P.i6P(i16* %in_stream0_V_data_V, i2* %in_stream0_V_keep_V, i2* %in_stream0_V_strb_V, i2* %in_stream0_V_user_V, i1* %in_stream0_V_last_V, i5* %in_stream0_V_id_V, i6* %in_stream0_V_dest_V)" [scurve_adder.cpp:63]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_data_V = extractvalue { i16, i2, i2, i2, i1, i5, i6 } %empty_6, 0" [scurve_adder.cpp:63]
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_user_V = extractvalue { i16, i2, i2, i2, i1, i5, i6 } %empty_6, 3" [scurve_adder.cpp:63]
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_id_V = extractvalue { i16, i2, i2, i2, i1, i5, i6 } %empty_6, 5" [scurve_adder.cpp:63]
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_dest_V = extractvalue { i16, i2, i2, i2, i1, i5, i6 } %empty_6, 6" [scurve_adder.cpp:63]
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%dub_pix_ch0_user_V_a_1 = getelementptr [32 x i2]* %dub_pix_ch0_user_V, i64 0, i64 %tmp_s" [scurve_adder.cpp:63]
+ST_5 : Operation 75 [1/1] (1.75ns)   --->   "store i2 %tmp_user_V, i2* %dub_pix_ch0_user_V_a_1, align 4" [scurve_adder.cpp:63]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%dub_pix_ch0_id_V_add_1 = getelementptr [32 x i5]* %dub_pix_ch0_id_V, i64 0, i64 %tmp_s" [scurve_adder.cpp:63]
+ST_5 : Operation 77 [1/1] (1.75ns)   --->   "store i5 %tmp_id_V, i5* %dub_pix_ch0_id_V_add_1, align 2" [scurve_adder.cpp:63]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%dub_pix_ch0_dest_V_a_1 = getelementptr [32 x i6]* %dub_pix_ch0_dest_V, i64 0, i64 %tmp_s" [scurve_adder.cpp:63]
+ST_5 : Operation 79 [1/1] (1.75ns)   --->   "store i6 %tmp_dest_V, i6* %dub_pix_ch0_dest_V_a_1, align 1" [scurve_adder.cpp:63]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_2 = trunc i16 %tmp_data_V to i8" [scurve_adder.cpp:64]
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%phitmp = call i8 @_ssdm_op_PartSelect.i8.i16.i32.i32(i16 %tmp_data_V, i32 8, i32 15)" [scurve_adder.cpp:65]
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%sum_pix1_ch0_addr_2 = getelementptr inbounds [32 x i32]* %sum_pix1_ch0, i64 0, i64 %tmp_s" [scurve_adder.cpp:66]
+ST_5 : Operation 83 [2/2] (2.77ns)   --->   "%sum_pix1_ch0_load_1 = load i32* %sum_pix1_ch0_addr_2, align 4" [scurve_adder.cpp:66]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%sum_pix2_ch0_addr_2 = getelementptr inbounds [32 x i32]* %sum_pix2_ch0, i64 0, i64 %tmp_s" [scurve_adder.cpp:67]
+ST_5 : Operation 85 [2/2] (2.77ns)   --->   "%sum_pix2_ch0_load_1 = load i32* %sum_pix2_ch0_addr_2, align 4" [scurve_adder.cpp:67]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+
+ <State 6> : 2.77ns
+ST_6 : Operation 86 [1/2] (2.77ns)   --->   "%sum_pix1_ch0_load_1 = load i32* %sum_pix1_ch0_addr_2, align 4" [scurve_adder.cpp:66]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_6 : Operation 87 [1/2] (2.77ns)   --->   "%sum_pix2_ch0_load_1 = load i32* %sum_pix2_ch0_addr_2, align 4" [scurve_adder.cpp:67]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+
+ <State 7> : 2.25ns
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_9 = zext i8 %tmp_2 to i32" [scurve_adder.cpp:66]
+ST_7 : Operation 89 [1/1] (2.24ns)   --->   "%tmp_8 = add nsw i32 %tmp_9, %sum_pix1_ch0_load_1" [scurve_adder.cpp:66]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_10 = zext i8 %phitmp to i32" [scurve_adder.cpp:67]
+ST_7 : Operation 91 [1/1] (2.24ns)   --->   "%tmp_11 = add nsw i32 %tmp_10, %sum_pix2_ch0_load_1" [scurve_adder.cpp:67]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 2.77ns
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str6)" [scurve_adder.cpp:53]
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:54]
+ST_8 : Operation 94 [1/1] (2.77ns)   --->   "store i32 %tmp_8, i32* %sum_pix1_ch0_addr_2, align 4" [scurve_adder.cpp:66]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_8 : Operation 95 [1/1] (2.77ns)   --->   "store i32 %tmp_11, i32* %sum_pix2_ch0_addr_2, align 4" [scurve_adder.cpp:67]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_8 : Operation 96 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str6, i32 %tmp_4)" [scurve_adder.cpp:68]
+ST_8 : Operation 97 [1/1] (0.00ns)   --->   "br label %.preheader85" [scurve_adder.cpp:53]
+
+ <State 9> : 1.75ns
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%dub_pix_ch0_user_V_a = getelementptr [32 x i2]* %dub_pix_ch0_user_V, i64 0, i64 0" [scurve_adder.cpp:80]
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%dub_pix_ch0_id_V_add = getelementptr [32 x i5]* %dub_pix_ch0_id_V, i64 0, i64 0" [scurve_adder.cpp:81]
+ST_9 : Operation 100 [1/1] (0.00ns)   --->   "%dub_pix_ch0_dest_V_a = getelementptr [32 x i6]* %dub_pix_ch0_dest_V, i64 0, i64 0" [scurve_adder.cpp:82]
+ST_9 : Operation 101 [2/2] (1.75ns)   --->   "%sum_pix_tot_user_V = load i2* %dub_pix_ch0_user_V_a, align 4" [scurve_adder.cpp:80]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_9 : Operation 102 [2/2] (1.75ns)   --->   "%sum_pix_tot_id_V = load i5* %dub_pix_ch0_id_V_add, align 2" [scurve_adder.cpp:81]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_9 : Operation 103 [2/2] (1.75ns)   --->   "%sum_pix_tot_dest_V = load i6* %dub_pix_ch0_dest_V_a, align 1" [scurve_adder.cpp:82]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+
+ <State 10> : 1.75ns
+ST_10 : Operation 104 [1/2] (1.75ns)   --->   "%sum_pix_tot_user_V = load i2* %dub_pix_ch0_user_V_a, align 4" [scurve_adder.cpp:80]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_10 : Operation 105 [1/2] (1.75ns)   --->   "%sum_pix_tot_id_V = load i5* %dub_pix_ch0_id_V_add, align 2" [scurve_adder.cpp:81]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_10 : Operation 106 [1/2] (1.75ns)   --->   "%sum_pix_tot_dest_V = load i6* %dub_pix_ch0_dest_V_a, align 1" [scurve_adder.cpp:82]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_10 : Operation 107 [1/1] (1.30ns)   --->   "br label %.preheader" [scurve_adder.cpp:74]
+
+ <State 11> : 2.77ns
+ST_11 : Operation 108 [1/1] (0.00ns)   --->   "%i_2 = phi i6 [ %i_4, %2 ], [ 0, %.preheader.preheader ]"
+ST_11 : Operation 109 [1/1] (1.18ns)   --->   "%exitcond = icmp eq i6 %i_2, -32" [scurve_adder.cpp:74]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 110 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"
+ST_11 : Operation 111 [1/1] (1.61ns)   --->   "%i_4 = add i6 %i_2, 1" [scurve_adder.cpp:74]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 112 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [scurve_adder.cpp:74]
+ST_11 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_3 = zext i6 %i_2 to i64" [scurve_adder.cpp:77]
+ST_11 : Operation 114 [1/1] (0.00ns)   --->   "%sum_pix2_ch0_addr_1 = getelementptr inbounds [32 x i32]* %sum_pix2_ch0, i64 0, i64 %tmp_3" [scurve_adder.cpp:77]
+ST_11 : Operation 115 [2/2] (2.77ns)   --->   "%sum_pix2_ch0_load = load i32* %sum_pix2_ch0_addr_1, align 4" [scurve_adder.cpp:77]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_11 : Operation 116 [1/1] (0.00ns)   --->   "%sum_pix1_ch0_addr_1 = getelementptr inbounds [32 x i32]* %sum_pix1_ch0, i64 0, i64 %tmp_3" [scurve_adder.cpp:77]
+ST_11 : Operation 117 [2/2] (2.77ns)   --->   "%sum_pix1_ch0_load = load i32* %sum_pix1_ch0_addr_1, align 4" [scurve_adder.cpp:77]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_11 : Operation 118 [1/1] (1.18ns)   --->   "%tmp_last_V = icmp eq i6 %i_2, 31" [scurve_adder.cpp:83]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+ <State 12> : 2.77ns
+ST_12 : Operation 119 [1/2] (2.77ns)   --->   "%sum_pix2_ch0_load = load i32* %sum_pix2_ch0_addr_1, align 4" [scurve_adder.cpp:77]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+ST_12 : Operation 120 [1/2] (2.77ns)   --->   "%sum_pix1_ch0_load = load i32* %sum_pix1_ch0_addr_1, align 4" [scurve_adder.cpp:77]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 6> <Depth = 32> <RAM>
+
+ <State 13> : 0.81ns
+ST_13 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_5 = call i64 @_ssdm_op_BitConcatenate.i64.i32.i32(i32 %sum_pix2_ch0_load, i32 0)" [scurve_adder.cpp:77]
+ST_13 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_6 = sext i32 %sum_pix1_ch0_load to i64" [scurve_adder.cpp:77]
+ST_13 : Operation 123 [1/1] (0.80ns)   --->   "%tmp_data_V_1 = or i64 %tmp_5, %tmp_6" [scurve_adder.cpp:77]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 124 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i64P.i8P.i8P.i2P.i1P.i5P.i6P(i64* %out_stream_V_data_V, i8* %out_stream_V_keep_V, i8* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, i64 %tmp_data_V_1, i8 63, i8 63, i2 %sum_pix_tot_user_V, i1 %tmp_last_V, i5 %sum_pix_tot_id_V, i6 %sum_pix_tot_dest_V)" [scurve_adder.cpp:89]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+ <State 14> : 0.00ns
+ST_14 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_12 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str7)" [scurve_adder.cpp:74]
+ST_14 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [scurve_adder.cpp:75]
+ST_14 : Operation 127 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i64P.i8P.i8P.i2P.i1P.i5P.i6P(i64* %out_stream_V_data_V, i8* %out_stream_V_keep_V, i8* %out_stream_V_strb_V, i2* %out_stream_V_user_V, i1* %out_stream_V_last_V, i5* %out_stream_V_id_V, i6* %out_stream_V_dest_V, i64 %tmp_data_V_1, i8 63, i8 63, i2 %sum_pix_tot_user_V, i1 %tmp_last_V, i5 %sum_pix_tot_id_V, i6 %sum_pix_tot_dest_V)" [scurve_adder.cpp:89]   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_14 : Operation 128 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str7, i32 %tmp_12)" [scurve_adder.cpp:90]
+ST_14 : Operation 129 [1/1] (0.00ns)   --->   "br label %.preheader" [scurve_adder.cpp:74]
+
+ <State 15> : 0.00ns
+ST_15 : Operation 130 [1/1] (0.00ns)   --->   "ret void" [scurve_adder.cpp:91]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', scurve_adder.cpp:43) [44]  (1.3 ns)
+
+ <State 2>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', scurve_adder.cpp:43) [44]  (0 ns)
+	'getelementptr' operation ('sum_pix1_ch0_addr', scurve_adder.cpp:45) [53]  (0 ns)
+	'store' operation (scurve_adder.cpp:45) of constant 0 on array 'sum_pix1_ch0', scurve_adder.cpp:32 [54]  (2.77 ns)
+
+ <State 3>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [63]  (1.3 ns)
+
+ <State 4>: 3.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', scurve_adder.cpp:53) [64]  (0 ns)
+	'icmp' operation ('exitcond2', scurve_adder.cpp:53) [69]  (1.19 ns)
+	'select' operation ('i_1_mid2', scurve_adder.cpp:53) [70]  (0.972 ns)
+	'add' operation ('i', scurve_adder.cpp:53) [98]  (1.61 ns)
+
+ <State 5>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('sum_pix1_ch0_addr_2', scurve_adder.cpp:66) [88]  (0 ns)
+	'load' operation ('sum_pix1_ch0_load_1', scurve_adder.cpp:66) on array 'sum_pix1_ch0', scurve_adder.cpp:32 [89]  (2.77 ns)
+
+ <State 6>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('sum_pix1_ch0_load_1', scurve_adder.cpp:66) on array 'sum_pix1_ch0', scurve_adder.cpp:32 [89]  (2.77 ns)
+
+ <State 7>: 2.25ns
+The critical path consists of the following:
+	'add' operation ('tmp_8', scurve_adder.cpp:66) [90]  (2.25 ns)
+
+ <State 8>: 2.77ns
+The critical path consists of the following:
+	'store' operation (scurve_adder.cpp:66) of variable 'tmp_8', scurve_adder.cpp:66 on array 'sum_pix1_ch0', scurve_adder.cpp:32 [91]  (2.77 ns)
+
+ <State 9>: 1.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('dub_pix_ch0_user_V_a', scurve_adder.cpp:80) [101]  (0 ns)
+	'load' operation ('sum_pix_tot.user.V', scurve_adder.cpp:80) on array 'dub_pix_ch0.user.V', scurve_adder.cpp:34 [104]  (1.75 ns)
+
+ <State 10>: 1.75ns
+The critical path consists of the following:
+	'load' operation ('sum_pix_tot.user.V', scurve_adder.cpp:80) on array 'dub_pix_ch0.user.V', scurve_adder.cpp:34 [104]  (1.75 ns)
+
+ <State 11>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', scurve_adder.cpp:74) [109]  (0 ns)
+	'getelementptr' operation ('sum_pix2_ch0_addr_1', scurve_adder.cpp:77) [118]  (0 ns)
+	'load' operation ('sum_pix2_ch0_load', scurve_adder.cpp:77) on array 'sum_pix2_ch0', scurve_adder.cpp:32 [119]  (2.77 ns)
+
+ <State 12>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('sum_pix2_ch0_load', scurve_adder.cpp:77) on array 'sum_pix2_ch0', scurve_adder.cpp:32 [119]  (2.77 ns)
+
+ <State 13>: 0.806ns
+The critical path consists of the following:
+	'or' operation ('val', scurve_adder.cpp:77) [124]  (0.806 ns)
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

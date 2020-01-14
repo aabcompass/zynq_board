@@ -56,6 +56,8 @@
 #include "xuartps_hw.h"
 
 #include "own_data_types.h"
+#include "common.h"
+
 
 /* defined by each RAW mode application */
 void print_app_header();
@@ -129,26 +131,29 @@ int IicPhyReset(void);
 #endif
 
 
-int LoadArtix()
+int LoadArtix(char * filename)
 {
 	int err;
 	char artixBitstream[10000000]; // 10 MBytes
 	int artixBitstream_size;
 	instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR)  & 0x7;
 	xil_printf("artix_locked=%d\n\r",  instrumentState.artix_locked);
-	if(instrumentState.artix_locked == 7)
-	{
-		print("Artix already loaded.\n\r");
-		return 0;
-	}
-	else
+//	if(instrumentState.artix_locked == 7)
+//	{
+//		print("Artix already loaded.\n\r");
+//		return 0;
+//	}
+//	else
 	{
 		print("Loading bitstream to the cross board\n\r");
 		PrepareArtixConfiguration();
-		err = ReadArtixBitstream(&artixBitstream, &artixBitstream_size);
+
+		err = ReadArtixBitstream(&artixBitstream, &artixBitstream_size, filename);
 		if(!err) {
 			SetBitstreamPtr(&artixBitstream, artixBitstream_size);
 			init_loadbit_spi();
+			//print("StartArtixConfiguration()\n\r");
+			//StartArtixConfiguration(); //???
 			upload_bit();
 			print("Cross board has been loaded\n\r");
 			instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR);
@@ -169,7 +174,8 @@ int LoadArtix()
 
 int main()
 {
-#if LWIP_IPV6==0
+
+	#if LWIP_IPV6==0
 	ip_addr_t ipaddr, netmask, gw;
 	char c_uart[] = {0, 0};
 
@@ -284,6 +290,13 @@ int main()
 	instrumentState.err_SDcard = FfsSdPolledInit();
 	if(instrumentState.err_SDcard)
 		xil_printf("err_SDcard = %d\n\r", instrumentState.err_SDcard);
+
+	//print("ARTIX SPI initialization...\n\r");
+	//init_loadbit_spi();
+	print("ARTIX loading...\n\r");
+	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
