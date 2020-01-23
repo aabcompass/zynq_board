@@ -24,6 +24,9 @@ SCurveStruct sCurveStruct;
 InstrumentState instrumentState;
 DebugSettings debugSettings;
 
+u32 live_sent = 0;
+u32* ptr4live;
+
 void SetInstrumentMode(u32 mode)
 {
 //	instrumentState.mode = mode;
@@ -79,6 +82,18 @@ void SendErrorCommand(struct tcp_pcb *tpcb,  int err_code)
 //
 //}
 
+void sent_callback(void *arg, struct tcp_pcb *tpcb, u16_t len)
+{
+
+	err_t err;
+	if(live_sent == 0)
+	{
+		err = tcp_write(tpcb, ptr4live + (4 * N_OF_PIXEL_PER_PDM / 2), 4 * N_OF_PIXEL_PER_PDM / 2, 1);
+		//xil_printf("!err_t=%d\n\r", err);
+		live_sent = 1;
+	}
+}
+
 void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 {
 	u8 str_len=0; char reply[128];
@@ -126,15 +141,15 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, "acq live", 8) == 0)
 	{
 		err_t err;
-		u32* p;
-		GetPtrForLive(&p);
+
+		GetPtrForLive(&ptr4live);
 //		char str[] = "Ok\n\r";
-		err = tcp_write(tpcb, p, 4 * N_OF_PIXEL_PER_PDM, 1);
+		err = tcp_write(tpcb, ptr4live, 4 * N_OF_PIXEL_PER_PDM / 2, 1);
 		//for(i=0;i<63;i++)
 		//	xil_printf("%08x ", *(p+i));
-		//tcp_sent(tpcb, sent_callback);
+		tcp_sent(tpcb, sent_callback);
 		//xil_printf("@err = %d\n\r", err);
-		//live_sent = 0;
+		live_sent = 0;
 		//xil_printf("err = %d\n\r", err);
 		//err = tcp_output(tpcb);
 		//xil_printf("err = %d\n\r", err);

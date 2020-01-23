@@ -215,8 +215,8 @@ begin
 	begin
 	  if rising_edge(S_AXI_ACLK) then 
 	    if S_AXI_ARESETN = '0' then
-	      slv_reg0 <= (others => '0');
-	      slv_reg1 <= (others => '0');
+	      slv_reg0 <= (0 to 1 => '1', others => '0');
+	      slv_reg1 <= (0 to 1 => '1', others => '0');
 	      slv_reg2 <= (others => '0');
 	      --slv_reg3 <= (others => '0');
 	    else
@@ -388,12 +388,12 @@ begin
 	-- Add user logic here
 	
     -- outs
-	artx_programb_o <= slv_reg0(0);
-	artx_initb_o <= slv_reg0(1);
+	artx_programb_o <= '1';--slv_reg0(0);
+	artx_initb_o <= '1';--slv_reg0(1);
 	artx_latch <= slv_reg0(2);
     -- tristates
-	artx_programb_t <= not slv_reg1(0);
-	artx_initb_t <= not slv_reg1(1);
+	artx_programb_t <= not '1';--slv_reg1(0);
+	artx_initb_t <= not '1';--slv_reg1(1);
     -- ins
 	slv_reg3(0) <= artx_programb_i;
 	slv_reg3(1) <= artx_initb_i;

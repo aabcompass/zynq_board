@@ -2,12 +2,12 @@
 # xsim v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Dec 10 16:04:54 2019
-# Process ID: 5124
-# Current directory: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog
+# Start of session at: Wed Jan 15 10:42:52 2020
+# Process ID: 22545
+# Current directory: /home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog
 # Command line: xsim -mode tcl -source {xsim.dir/scurve_adder36/xsim_script.tcl}
-# Log file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.log
-# Journal file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.jou
+# Log file: /home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.log
+# Journal file: /home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.jou
 #-----------------------------------------------------------
 source xsim.dir/scurve_adder36/xsim_script.tcl
 source scurve_adder36.tcl

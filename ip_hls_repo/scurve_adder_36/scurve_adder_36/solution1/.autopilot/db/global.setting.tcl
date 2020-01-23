@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z035:ffg676:-2"
 set SourceFiles {sc {} c ../../scurve_adder.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/solution1.directive}
+set DirectiveFile {/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/solution1.directive}
 set TBFiles {verilog ../../scurve_adder_test.cpp bc ../../scurve_adder_test.cpp vhdl ../../scurve_adder_test.cpp sc ../../scurve_adder_test.cpp cas ../../scurve_adder_test.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

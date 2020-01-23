@@ -15,8 +15,8 @@
 // Constants
 
 #define N_OF_PIXELS_PER_PMT		64 /* number of pixel on PMT */
-#define N_OF_PMT_PER_ECASIC 	1	/* number of PMT on EC ASIC board */
-#define N_OF_ECASIC_PER_PDM		1  /* number of EC ASIC boards in PDM */
+#define N_OF_PMT_PER_ECASIC 	6	/* number of PMT on EC ASIC board */
+#define N_OF_ECASIC_PER_PDM		6  /* number of EC ASIC boards in PDM */
 
 #define N_OF_PIXEL_PER_PDM		(N_OF_PIXELS_PER_PMT * N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM)
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'scurve_adder36'
 ================================================================
-* Date:           Tue Dec 10 16:03:49 2019
+* Date:           Wed Jan 15 10:41:55 2020
 
 * Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
 * Project:        scurve_adder_36
@@ -433,8 +433,8 @@ The critical path consists of the following:
  <State 2>: 2.77ns
 The critical path consists of the following:
 	'phi' operation ('i') with incoming values : ('i', scurve_adder.cpp:43) [55]  (0 ns)
-	'getelementptr' operation ('sum_pix_ch0_13_addr', scurve_adder.cpp:46) [90]  (0 ns)
-	'store' operation (scurve_adder.cpp:46) of constant 0 on array 'sum_pix_ch0[13]', scurve_adder.cpp:32 [91]  (2.77 ns)
+	'getelementptr' operation ('sum_pix_ch0_9_addr', scurve_adder.cpp:46) [82]  (0 ns)
+	'store' operation (scurve_adder.cpp:46) of constant 0 on array 'sum_pix_ch0[9]', scurve_adder.cpp:32 [83]  (2.77 ns)
 
  <State 3>: 1.95ns
 The critical path consists of the following:
@@ -449,8 +449,8 @@ The critical path consists of the following:
 
  <State 5>: 2.77ns
 The critical path consists of the following:
-	'getelementptr' operation ('sum_pix_ch0_11_addr_2', scurve_adder.cpp:66) [187]  (0 ns)
-	'load' operation ('sum_pix_ch0_11_load_1', scurve_adder.cpp:66) on array 'sum_pix_ch0[11]', scurve_adder.cpp:32 [188]  (2.77 ns)
+	'getelementptr' operation ('sum_pix_ch0_10_addr_2', scurve_adder.cpp:66) [181]  (0 ns)
+	'load' operation ('sum_pix_ch0_10_load_1', scurve_adder.cpp:66) on array 'sum_pix_ch0[10]', scurve_adder.cpp:32 [182]  (2.77 ns)
 
  <State 6>: 2.77ns
 The critical path consists of the following:

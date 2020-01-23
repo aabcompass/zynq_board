@@ -146,7 +146,7 @@ int LoadArtix(char * filename)
 //	else
 	{
 		print("Loading bitstream to the cross board\n\r");
-		PrepareArtixConfiguration();
+		//PrepareArtixConfiguration();
 
 		err = ReadArtixBitstream(&artixBitstream, &artixBitstream_size, filename);
 		if(!err) {
@@ -294,6 +294,7 @@ int main()
 	//print("ARTIX SPI initialization...\n\r");
 	//init_loadbit_spi();
 	print("ARTIX loading...\n\r");
+	//PrepareArtixConfiguration();
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);

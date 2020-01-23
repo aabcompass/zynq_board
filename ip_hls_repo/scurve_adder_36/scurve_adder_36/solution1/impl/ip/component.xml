@@ -1717,8 +1717,8 @@ resolve_type immediate dependency {} format string minimum {} maximum {}} value 
       </xilinx:taxonomies>
       <xilinx:displayName>Scurve_adder36</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1912101606</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-12-10T13:06:52Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2001151046</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-01-15T07:46:15Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>

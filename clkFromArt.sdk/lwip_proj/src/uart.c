@@ -7,6 +7,7 @@
 #include "xil_types.h"
 #include "xparameters.h"
 #include "common.h"
+#include "data_provider.h"
 
 void ProcessUartCommands(struct netif *netif, char c)
 {
@@ -42,11 +43,14 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'X') // artix Gen mode
 	{
-		*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0xFFFFFFFF;
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= (1<<BIT_RUN) | (1<<BIT_START_SIG);
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_RUN_DATACONV) | (1<<BIT_INFINITE);
+		//*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0xFFFFFFFF;
 	}
 	else if(c == 'x')
 	{
-		*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_RUN);
+		//*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
 	}
 	else if(c == '+')
 	{
@@ -64,7 +68,16 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'L')
 	{
-		LoadArtix(FILENAME_ARTIX_PARAMETERS);
-		ArtixLatch();
+//		LoadArtix(FILENAME_ARTIX_PARAMETERS);
+//		ArtixLatch);
 	}
+	else if(c == 'g')
+	{
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_GTU_1US);
+	}
+	else if(c == 'G')
+	{
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
+	}
+
 }
