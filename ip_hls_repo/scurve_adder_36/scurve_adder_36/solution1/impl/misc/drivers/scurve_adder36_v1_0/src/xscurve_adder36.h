@@ -89,6 +89,8 @@ void XScurve_adder36_DisableAutoRestart(XScurve_adder36 *InstancePtr);
 
 void XScurve_adder36_Set_N_ADDS(XScurve_adder36 *InstancePtr, u32 Data);
 u32 XScurve_adder36_Get_N_ADDS(XScurve_adder36 *InstancePtr);
+void XScurve_adder36_Set_TEST_MODE(XScurve_adder36 *InstancePtr, u32 Data);
+u32 XScurve_adder36_Get_TEST_MODE(XScurve_adder36 *InstancePtr);
 
 void XScurve_adder36_InterruptGlobalEnable(XScurve_adder36 *InstancePtr);
 void XScurve_adder36_InterruptGlobalDisable(XScurve_adder36 *InstancePtr);

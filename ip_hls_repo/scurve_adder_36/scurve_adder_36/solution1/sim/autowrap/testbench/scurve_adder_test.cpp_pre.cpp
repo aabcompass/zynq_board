@@ -51745,7 +51745,7 @@ typedef hls::stream<AXI_DATA_256> STREAM_256;
 typedef hls::stream<AXI_DATA_512> STREAM_512;
 
 void scurve_adder36(STREAM_128 &in_stream0,
-  STREAM_512 &out_stream, uint16_t N_ADDS);
+  STREAM_512 &out_stream, uint16_t N_ADDS, uint32_t TEST_MODE);
 
 
 typedef ap_uint<128> uint128_t;
@@ -51762,6 +51762,7 @@ int main() {
 
  uint16_t N_ADDS = 30;
  uint8_t N_CH = 1;
+ uint32_t is_test_mode = 1;
 
  uint128_t concat;
  int error_count;
@@ -51841,9 +51842,19 @@ int main() {
 
  for (i = 0; i < 2304/16; i++) {
   sum_pix_tot.data = 0;
-  for(j = 0; j < 16; j++) {
-   sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
-   printf("D: i=%d j=%d\n", i, j);
+  if(!is_test_mode)
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+    printf("D: i=%d j=%d\n", i, j);
+   }
+  }
+  else
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)(i*16 +j) << (32*j));
+    printf("D: i=%d j=%d\n", i, j);
+   }
   }
   sum_pix_tot.keep = dub_pix_ch0[0].keep;
   sum_pix_tot.strb = dub_pix_ch0[0].strb;
@@ -51856,7 +51867,7 @@ int main() {
 
  printf("\n\rHW started\n\r");
  scurve_adder36(inputStream_HW_0,
-   outputStream_HW, N_ADDS);
+   outputStream_HW, N_ADDS, is_test_mode);
 
 
 

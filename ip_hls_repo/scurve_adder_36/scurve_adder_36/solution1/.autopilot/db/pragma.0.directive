@@ -22,6 +22,13 @@
 <directive functionLabel="" functionName="scurve_adder36" label="">
 <pragma name="INTERFACE">
 <option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="TEST_MODE"/>
+<option name="bundle" value="CTRL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="scurve_adder36" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
 <option name="port" positionalBoolean="4" value="return"/>
 <option name="bundle" value="CTRL_BUS"/>
 </pragma>

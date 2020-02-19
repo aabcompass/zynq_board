@@ -93,6 +93,23 @@ u32 XScurve_adder36_Get_N_ADDS(XScurve_adder36 *InstancePtr) {
     return Data;
 }
 
+void XScurve_adder36_Set_TEST_MODE(XScurve_adder36 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XScurve_adder36_WriteReg(InstancePtr->Ctrl_bus_BaseAddress, XSCURVE_ADDER36_CTRL_BUS_ADDR_TEST_MODE_DATA, Data);
+}
+
+u32 XScurve_adder36_Get_TEST_MODE(XScurve_adder36 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XScurve_adder36_ReadReg(InstancePtr->Ctrl_bus_BaseAddress, XSCURVE_ADDER36_CTRL_BUS_ADDR_TEST_MODE_DATA);
+    return Data;
+}
+
 void XScurve_adder36_InterruptGlobalEnable(XScurve_adder36 *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

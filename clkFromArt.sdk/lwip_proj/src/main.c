@@ -172,6 +172,7 @@ int LoadArtix(char * filename)
 
 
 
+
 int main()
 {
 
@@ -295,18 +296,17 @@ int main()
 	//init_loadbit_spi();
 	print("ARTIX loading...\n\r");
 	//PrepareArtixConfiguration();
+
+	*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 
+	SetArtixTransmitDelay(10);
+
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
-//	if(!instrumentState.err_SDcard)
-//	{
-//		instrumentState.err_artix_bin = LoadArtix();
-//		if(instrumentState.err_artix_bin)
-//			xil_printf("err_artix_bin = %d\n\r", instrumentState.err_artix_bin);
-//	}
+
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
 

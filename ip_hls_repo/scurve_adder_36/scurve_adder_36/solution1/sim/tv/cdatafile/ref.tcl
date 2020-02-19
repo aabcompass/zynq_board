@@ -14,5 +14,6 @@ set depth_list {
 {out_stream_V_id_V 144}
 {out_stream_V_dest_V 144}
 {N_ADDS 1}
+{TEST_MODE 1}
 }
 set trans_num 1

@@ -29239,7 +29239,7 @@ typedef hls::stream<AXI_DATA_256> STREAM_256;
 typedef hls::stream<AXI_DATA_512> STREAM_512;
 
 void scurve_adder36(STREAM_128 &in_stream0,
-  STREAM_512 &out_stream, uint16_t N_ADDS);
+  STREAM_512 &out_stream, uint16_t N_ADDS, uint32_t TEST_MODE);
 
 
 typedef ap_uint<128> uint128_t;
@@ -29248,12 +29248,15 @@ typedef ap_uint<512> uint512_t;
 #18 "scurve_adder.cpp" 2
 
 void scurve_adder36(STREAM_128 &in_stream0 ,
-  STREAM_512 &out_stream , uint16_t N_ADDS ) {
+  STREAM_512 &out_stream ,
+  uint16_t N_ADDS ,
+  uint32_t TEST_MODE) {
 
 
 _ssdm_op_SpecInterface(&in_stream0, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(&out_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(N_ADDS, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(TEST_MODE, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
 
  int i, j, k, l;
@@ -29322,9 +29325,19 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
   }
 
   sum_pix_tot.data = 0;
-  for(j = 0; j < 16; j++) {
-   sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+  if(!TEST_MODE)
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+   }
   }
+  else
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)(i*16 +j) << (32*j));
+   }
+  }
+
 
   out_stream.write(sum_pix_tot);
  }

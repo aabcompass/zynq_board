@@ -20,7 +20,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "295",
+    "Latency": "296",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -361,6 +361,21 @@
               "description": "Reserved.  0s on read."
             }
           ]
+        },
+        {
+          "offset": "0x18",
+          "name": "TEST_MODE",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of TEST_MODE",
+          "fields": [{
+              "offset": "0",
+              "width": "32",
+              "name": "TEST_MODE",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 31 to 0 Data signal of TEST_MODE"
+            }]
         }
       ],
       "memories": "",
@@ -389,7 +404,7 @@
         },
         "WDATA": {
           "Type": "integer unsigned",
-          "Width": "16"
+          "Width": "32"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -401,7 +416,7 @@
         },
         "RDATA": {
           "Type": "integer unsigned",
-          "Width": "16"
+          "Width": "32"
         }
       },
       "data_width": "32",
@@ -580,6 +595,14 @@
       "handshakeRef": "ap_none",
       "Object": "CTRL_BUS"
     },
+    "TEST_MODE": {
+      "interfaceRef": "s_axi_CTRL_BUS",
+      "dir": "in",
+      "offset": "24",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL_BUS"
+    },
     "ap_ctrl": {
       "interfaceRef": "s_axi_CTRL_BUS",
       "dir": "in",
@@ -616,49 +639,49 @@
     "out_stream_V_data_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_dest_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_keep_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_strb_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_user_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_last_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     },
     "out_stream_V_id_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "6"
+      "firstOutLatency": "7"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "scurve_adder36"},
     "Metrics": {"scurve_adder36": {
         "Latency": {
-          "LatencyBest": "295",
+          "LatencyBest": "296",
           "LatencyAvg": "",
-          "LatencyWorst": "9437338",
-          "PipelineIIMin": "296",
-          "PipelineIIMax": "9437339",
-          "PipelineII": "296 ~ 9437339",
+          "LatencyWorst": "9437339",
+          "PipelineIIMin": "297",
+          "PipelineIIMax": "9437340",
+          "PipelineII": "297 ~ 9437340",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -687,22 +710,22 @@
           {
             "Name": "Loop 3",
             "TripCount": "144",
-            "Latency": "145",
+            "Latency": "146",
             "PipelineII": "1",
-            "PipelineDepth": "3"
+            "PipelineDepth": "4"
           }
         ],
         "Area": {
           "BRAM_18K": "32",
-          "FF": "3976",
-          "LUT": "2246",
+          "FF": "4191",
+          "LUT": "3228",
           "DSP48E": "0"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2020-01-15 10:41:58 MSK",
+    "Time": "2020-02-03 17:52:58 MSK",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.1"
   }

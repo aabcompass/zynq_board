@@ -61,7 +61,8 @@ entity data_converter is
     	m_axis_tuser : out STD_LOGIC_VECTOR(5 downto 0);
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
-    	m_axis_tready : in STD_LOGIC    	
+    	m_axis_tready : in STD_LOGIC;
+    	prog_reset_p: in std_logic    	
     	);
 end data_converter;
 
@@ -231,6 +232,8 @@ architecture Behavioral of data_converter is
 	signal last_transfer_sw1: std_logic_vector(N_ART-1 downto 0) := (others => '0');
 	signal start_sw1: std_logic_vector(N_ART-1 downto 0) := (others => '0');
 	signal start_sw1_ch: std_logic_vector(1 downto 0) := (others => '0');
+	
+	signal m_axis_aresetn2: std_logic;
 
 	attribute KEEP : string;
 	attribute KEEP of start_sw1: signal is "TRUE";
@@ -241,6 +244,8 @@ architecture Behavioral of data_converter is
 
 begin
 
+	m_axis_aresetn2 <= m_axis_aresetn and (not prog_reset_p);
+	
 	tdata_art <= tdata_art2 & tdata_art1 & tdata_art0;
 	clk_art <= clk_art2 & clk_art1 & clk_art0;
 	tvalid_art <= tvalid_art2 & tvalid_art1 & tvalid_art0;
@@ -318,7 +323,7 @@ begin
 			i_cc : axis_dataconv_cc
 				PORT MAP (
 					s_axis_aresetn => s_axis_aresetn,
-					m_axis_aresetn => m_axis_aresetn,
+					m_axis_aresetn => m_axis_aresetn2,
 					s_axis_aclk => clk_art(i),
 					s_axis_tvalid => tvalid_art(i),
 					s_axis_tready => open,
@@ -336,7 +341,7 @@ begin
 					wr_rst_busy => open,
 					rd_rst_busy => open,
 					s_aclk => m_axis_aclk,
-					s_aresetn => m_axis_aresetn,
+					s_aresetn => m_axis_aresetn2,
 					s_axis_tvalid => m_axis_tvalid_cc,
 					s_axis_tready => m_axis_tready_cc,
 					s_axis_tdata => m_axis_tdata_cc,
@@ -351,7 +356,7 @@ begin
 				i_dwc : axis_dataconv_dwc
 				PORT MAP (
 					aclk => m_axis_aclk,
-					aresetn => m_axis_aresetn,
+					aresetn => m_axis_aresetn2,
 					s_axis_tvalid => m_axis_tvalid_fifo0b,
 					s_axis_tready => m_axis_tready_fifo0b,
 					s_axis_tdata => m_axis_tdata_fifo0b,
@@ -366,7 +371,7 @@ begin
 			i_slice1: axis_dataconv_slice_0
 				PORT MAP (
 					aclk => m_axis_aclk,
-					aresetn => m_axis_aresetn,
+					aresetn => m_axis_aresetn2,
 					s_axis_tvalid => m_axis_tvalid_dwc,
 					s_axis_tready => m_axis_tready_dwc,
 					s_axis_tdata => m_axis_tdata_dwc,
@@ -381,7 +386,7 @@ begin
 			i_slice0 : axis_dataconv_slice_0
 				PORT MAP (
 					aclk => m_axis_aclk,
-					aresetn => m_axis_aresetn,
+					aresetn => m_axis_aresetn2,
 					s_axis_tvalid => m_axis_tvalid_slice0p,
 					s_axis_tready => m_axis_tready_slice0p,
 					s_axis_tdata => m_axis_tdata_slice0p,
@@ -403,7 +408,7 @@ begin
 				variable state : integer range 0 to 2 := 0;
 			begin
 				if(rising_edge(m_axis_aclk)) then
-					if(m_axis_aresetn = '0') then
+					if(m_axis_aresetn2 = '0') then
 						state := 0;
 					else
 						case state is
@@ -430,7 +435,7 @@ begin
 	start_seq: process(m_axis_aclk)
 	begin
 		if(rising_edge(m_axis_aclk)) then
-			if(m_axis_aresetn = '0') then
+			if(m_axis_aresetn2 = '0') then
 				start <= (0 => '1', others => '0');
 				start_ch <= (others => '0');
 			elsif(last_transfer = start) then
@@ -449,7 +454,7 @@ begin
   generic map (n_bytes => 16, n_lines => 12, log_n_lines => 4)
   PORT MAP (
     aclk => m_axis_aclk,
-    aresetn => m_axis_aresetn,
+    aresetn => m_axis_aresetn2,
     n_line => start_ch, 
     s_axis_tvalid => m_axis_tvalid_slice,
     s_axis_tready => m_axis_tready_slice,
@@ -497,7 +502,7 @@ begin
 				variable state : integer range 0 to 2 := 0;
 			begin
 				if(rising_edge(m_axis_aclk)) then
-					if(m_axis_aresetn = '0') then
+					if(m_axis_aresetn2 = '0') then
 						state := 0;
 					else
 						case state is
@@ -526,7 +531,7 @@ begin
 		start_seq_sw1: process(m_axis_aclk)
 		begin
 			if(rising_edge(m_axis_aclk)) then
-				if(m_axis_aresetn = '0') then
+				if(m_axis_aresetn2 = '0') then
 					start_sw1 <= (0 => '1', others => '0');
 					start_sw1_ch <= (others => '0');
 				elsif(last_transfer_sw1 = start_sw1) then
@@ -545,7 +550,7 @@ begin
 	generic map (n_bytes => 16, n_lines => 3, log_n_lines => 2)
     PORT MAP (
       aclk => m_axis_aclk,
-      aresetn => m_axis_aresetn,
+      aresetn => m_axis_aresetn2,
       n_line => start_sw1_ch,
       s_axis_tvalid => s_axis_tvalid_sw1,
       s_axis_tready => s_axis_tready_sw1,

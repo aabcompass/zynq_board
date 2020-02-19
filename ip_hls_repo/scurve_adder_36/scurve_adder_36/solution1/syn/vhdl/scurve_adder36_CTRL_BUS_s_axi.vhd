@@ -41,7 +41,8 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    N_ADDS                :out  STD_LOGIC_VECTOR(15 downto 0)
+    N_ADDS                :out  STD_LOGIC_VECTOR(15 downto 0);
+    TEST_MODE             :out  STD_LOGIC_VECTOR(31 downto 0)
 );
 end entity scurve_adder36_CTRL_BUS_s_axi;
 
@@ -68,6 +69,9 @@ end entity scurve_adder36_CTRL_BUS_s_axi;
 --        bit 15~0 - N_ADDS[15:0] (Read/Write)
 --        others   - reserved
 -- 0x14 : reserved
+-- 0x18 : Data signal of TEST_MODE
+--        bit 31~0 - TEST_MODE[31:0] (Read/Write)
+-- 0x1c : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of scurve_adder36_CTRL_BUS_s_axi is
@@ -75,12 +79,14 @@ architecture behave of scurve_adder36_CTRL_BUS_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL       : INTEGER := 16#00#;
-    constant ADDR_GIE           : INTEGER := 16#04#;
-    constant ADDR_IER           : INTEGER := 16#08#;
-    constant ADDR_ISR           : INTEGER := 16#0c#;
-    constant ADDR_N_ADDS_DATA_0 : INTEGER := 16#10#;
-    constant ADDR_N_ADDS_CTRL   : INTEGER := 16#14#;
+    constant ADDR_AP_CTRL          : INTEGER := 16#00#;
+    constant ADDR_GIE              : INTEGER := 16#04#;
+    constant ADDR_IER              : INTEGER := 16#08#;
+    constant ADDR_ISR              : INTEGER := 16#0c#;
+    constant ADDR_N_ADDS_DATA_0    : INTEGER := 16#10#;
+    constant ADDR_N_ADDS_CTRL      : INTEGER := 16#14#;
+    constant ADDR_TEST_MODE_DATA_0 : INTEGER := 16#18#;
+    constant ADDR_TEST_MODE_CTRL   : INTEGER := 16#1c#;
     constant ADDR_BITS         : INTEGER := 5;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -104,6 +110,7 @@ architecture behave of scurve_adder36_CTRL_BUS_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_N_ADDS          : UNSIGNED(15 downto 0) := (others => '0');
+    signal int_TEST_MODE       : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -227,6 +234,8 @@ begin
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_N_ADDS_DATA_0 =>
                         rdata_data <= RESIZE(int_N_ADDS(15 downto 0), 32);
+                    when ADDR_TEST_MODE_DATA_0 =>
+                        rdata_data <= RESIZE(int_TEST_MODE(31 downto 0), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -239,6 +248,7 @@ begin
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
     N_ADDS               <= STD_LOGIC_VECTOR(int_N_ADDS);
+    TEST_MODE            <= STD_LOGIC_VECTOR(int_TEST_MODE);
 
     process (ACLK)
     begin
@@ -371,6 +381,17 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_N_ADDS_DATA_0) then
                     int_N_ADDS(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_N_ADDS(15 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_TEST_MODE_DATA_0) then
+                    int_TEST_MODE(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_TEST_MODE(31 downto 0));
                 end if;
             end if;
         end if;

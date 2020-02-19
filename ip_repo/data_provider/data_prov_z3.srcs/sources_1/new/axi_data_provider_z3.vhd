@@ -20,7 +20,11 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+
+	
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -63,6 +67,9 @@ entity axi_data_provider_z3 is
     	m_axis_tvalid: out std_logic;
     	m_axis_tready: in std_logic;
     	m_axis_tlast: out std_logic;
+    	
+    	aux_in: in std_logic_vector(31 downto 0);
+    	reset_data_conv: out std_logic;
    	
     	
     	
@@ -1279,8 +1286,10 @@ begin
 	start_sig <= slv_reg0(0);
 	run <= slv_reg0(1);
 	prog_reset <= slv_reg0(2);
+	reset_data_conv <= slv_reg1(0);
 	num_of_frames <= slv_reg3;
 	infinite <= slv_reg10(0);
+	slv_reg16(0) <= pass;
 	
 	dozer: process(S_AXI_ACLK)
 		variable state : integer range 0 to 2 := 0;
@@ -1296,6 +1305,7 @@ begin
 											state := state + 1;
 										end if;
 										pass <= '0';
+										cnt <= (0 => '1', others => '0');
 					when 1 => if(s_axis_tvalid = '1' and s_axis_tlast = '1') then
 											state := state + 1;
 											pass <= '1';
@@ -1310,6 +1320,7 @@ begin
 											else
 												if(run = '1') then
 													state := state - 1;
+													cnt <= cnt + 1;
 												else
 													pass <= '0';
 													state := state + 1;
@@ -1331,17 +1342,18 @@ begin
 --		end if;
 --	end process;
 
-    	m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
-    	m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
-    	m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
-    	s_axis_tready <= '1';--: out std_logic := '1';
-    	m_axis_tlast <= s_axis_tlast;--: in std_logic;
-    	
+	m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
+	m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
+	m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
+	s_axis_tready <= '1';--: out std_logic := '1';
+	m_axis_tlast <= s_axis_tlast;--: in std_logic;
+
 --     	m_axis_tdata: out std_logic_vector(127 downto 0);
 --    	m_axis_tuser: out std_logic_vector(5 downto 0);
 --    	m_axis_tvalid: out std_logic;
 --    	m_axis_tready: in std_logic;
 --    	m_axis_tlast: out std_logic;
+	slv_reg17 <= aux_in;
 
 	
 end Behavioral;

@@ -38,7 +38,8 @@ module scurve_adder36_CTRL_BUS_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [15:0]                   N_ADDS
+    output wire [15:0]                   N_ADDS,
+    output wire [31:0]                   TEST_MODE
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -63,23 +64,28 @@ module scurve_adder36_CTRL_BUS_s_axi
 //        bit 15~0 - N_ADDS[15:0] (Read/Write)
 //        others   - reserved
 // 0x14 : reserved
+// 0x18 : Data signal of TEST_MODE
+//        bit 31~0 - TEST_MODE[31:0] (Read/Write)
+// 0x1c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL       = 5'h00,
-    ADDR_GIE           = 5'h04,
-    ADDR_IER           = 5'h08,
-    ADDR_ISR           = 5'h0c,
-    ADDR_N_ADDS_DATA_0 = 5'h10,
-    ADDR_N_ADDS_CTRL   = 5'h14,
-    WRIDLE             = 2'd0,
-    WRDATA             = 2'd1,
-    WRRESP             = 2'd2,
-    WRRESET            = 2'd3,
-    RDIDLE             = 2'd0,
-    RDDATA             = 2'd1,
-    RDRESET            = 2'd2,
+    ADDR_AP_CTRL          = 5'h00,
+    ADDR_GIE              = 5'h04,
+    ADDR_IER              = 5'h08,
+    ADDR_ISR              = 5'h0c,
+    ADDR_N_ADDS_DATA_0    = 5'h10,
+    ADDR_N_ADDS_CTRL      = 5'h14,
+    ADDR_TEST_MODE_DATA_0 = 5'h18,
+    ADDR_TEST_MODE_CTRL   = 5'h1c,
+    WRIDLE                = 2'd0,
+    WRDATA                = 2'd1,
+    WRRESP                = 2'd2,
+    WRRESET               = 2'd3,
+    RDIDLE                = 2'd0,
+    RDDATA                = 2'd1,
+    RDRESET               = 2'd2,
     ADDR_BITS         = 5;
 
 //------------------------Local signal-------------------
@@ -104,6 +110,7 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [15:0]                   int_N_ADDS = 'b0;
+    reg  [31:0]                   int_TEST_MODE = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -214,6 +221,9 @@ always @(posedge ACLK) begin
                 ADDR_N_ADDS_DATA_0: begin
                     rdata <= int_N_ADDS[15:0];
                 end
+                ADDR_TEST_MODE_DATA_0: begin
+                    rdata <= int_TEST_MODE[31:0];
+                end
             endcase
         end
     end
@@ -224,6 +234,7 @@ end
 assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
 assign N_ADDS    = int_N_ADDS;
+assign TEST_MODE = int_TEST_MODE;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -327,6 +338,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_N_ADDS_DATA_0)
             int_N_ADDS[15:0] <= (WDATA[31:0] & wmask) | (int_N_ADDS[15:0] & ~wmask);
+    end
+end
+
+// int_TEST_MODE[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_TEST_MODE[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_TEST_MODE_DATA_0)
+            int_TEST_MODE[31:0] <= (WDATA[31:0] & wmask) | (int_TEST_MODE[31:0] & ~wmask);
     end
 end
 

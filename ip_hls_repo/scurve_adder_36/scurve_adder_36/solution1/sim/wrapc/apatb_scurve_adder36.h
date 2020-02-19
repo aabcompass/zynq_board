@@ -7,4 +7,5 @@
 extern void AESL_WRAP_scurve_adder36 (
 hls::stream<struct ap_axis<128, 6, 5, 6 > > (&in_stream0),
 hls::stream<struct ap_axis<512, 6, 5, 6 > > (&out_stream),
-unsigned short N_ADDS);
+unsigned short N_ADDS,
+unsigned int TEST_MODE);

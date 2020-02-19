@@ -226,6 +226,18 @@ set Interface2 "wire"
 set DataType2 "unsigned short"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
 lappend PortList $Port2
+set PortName3 "TEST_MODE"
+set BitWidth3 "32"
+set ArrayOpt3 ""
+set Const3 "0"
+set Volatile3 "0"
+set Pointer3 "0"
+set Reference3 "0"
+set Dims3 [list 0]
+set Interface3 "wire"
+set DataType3 "unsigned int"
+set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Volatile3 $ArrayOpt3]
+lappend PortList $Port3
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 1 

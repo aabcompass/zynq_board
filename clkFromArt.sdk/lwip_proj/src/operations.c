@@ -8,7 +8,7 @@
 //#include "xscurve_adder.h"
 //#include "xscurve_adder_hw.h"
 
-#include "xscurve_adder36.h".h"
+#include "xscurve_adder36.h"
 #include "xscurve_adder36_hw.h"
 
 
@@ -30,5 +30,16 @@ void InitHLS_peripherals()
 	xil_printf("XScurve_adder36_Initialize rets %d\n\r", status);
 	XScurve_adder36_Set_N_ADDS(&scurve_adder36, 16384);
 	XScurve_adder36_EnableAutoRestart(&scurve_adder36);
+	XScurve_adder36_Start(&scurve_adder36);
+}
+
+void SA_set_TestMode(u32 mode)
+{
+	XScurve_adder36_Set_TEST_MODE(&scurve_adder36, mode);
+}
+
+void SA_restart()
+{
+	*(u32*)(scurve_adder36.Ctrl_bus_BaseAddress) = 0;
 	XScurve_adder36_Start(&scurve_adder36);
 }

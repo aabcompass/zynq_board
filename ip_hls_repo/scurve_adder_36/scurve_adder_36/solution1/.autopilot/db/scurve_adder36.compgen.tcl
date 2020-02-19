@@ -102,6 +102,14 @@ N_ADDS {
 	offset 16
 	offset_end 23
 }
+TEST_MODE { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 24
+	offset_end 31
+}
 }
 
 

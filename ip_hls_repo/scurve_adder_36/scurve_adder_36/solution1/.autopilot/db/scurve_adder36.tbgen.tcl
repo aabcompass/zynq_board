@@ -1,20 +1,21 @@
 set C_TypeInfoList {{ 
-"scurve_adder36" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"in_stream0": [[], {"reference": "0"}] }, {"out_stream": [[], {"reference": "1"}] }, {"N_ADDS": [[],"2"] }],[],""], 
-"0": [ "STREAM_128", {"typedef": [[[],"3"],""]}], 
-"3": [ "stream<ap_axis<128, 6, 5, 6> >", {"hls_type": {"stream": [[[[],"4"]],"5"]}}], 
-"4": [ "ap_axis<128, 6, 5, 6>", {"struct": [[],[{"D":[[], {"scalar": { "int": 128}}]},{"U":[[], {"scalar": { "int": 6}}]},{"TI":[[], {"scalar": { "int": 5}}]},{"TD":[[], {"scalar": { "int": 6}}]}],[{ "data": [[], "6"]},{ "keep": [[], "7"]},{ "strb": [[], "7"]},{ "user": [[], "8"]},{ "last": [[], "9"]},{ "id": [[], "10"]},{ "dest": [[], "8"]}],""]}], 
-"6": [ "ap_int<128>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 128}}]],""]}}], 
-"8": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}], 
-"10": [ "ap_uint<5>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 5}}]],""]}}], 
+"scurve_adder36" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"in_stream0": [[], {"reference": "0"}] }, {"out_stream": [[], {"reference": "1"}] }, {"N_ADDS": [[],"2"] }, {"TEST_MODE": [[],"3"] }],[],""], 
+"3": [ "uint32_t", {"typedef": [[[], {"scalar": "unsigned int"}],""]}], 
+"0": [ "STREAM_128", {"typedef": [[[],"4"],""]}], 
+"4": [ "stream<ap_axis<128, 6, 5, 6> >", {"hls_type": {"stream": [[[[],"5"]],"6"]}}], 
+"5": [ "ap_axis<128, 6, 5, 6>", {"struct": [[],[{"D":[[], {"scalar": { "int": 128}}]},{"U":[[], {"scalar": { "int": 6}}]},{"TI":[[], {"scalar": { "int": 5}}]},{"TD":[[], {"scalar": { "int": 6}}]}],[{ "data": [[], "7"]},{ "keep": [[], "8"]},{ "strb": [[], "8"]},{ "user": [[], "9"]},{ "last": [[], "10"]},{ "id": [[], "11"]},{ "dest": [[], "9"]}],""]}], 
+"7": [ "ap_int<128>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 128}}]],""]}}], 
+"9": [ "ap_uint<6>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 6}}]],""]}}], 
+"11": [ "ap_uint<5>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 5}}]],""]}}], 
 "2": [ "uint16_t", {"typedef": [[[], {"scalar": "unsigned short"}],""]}], 
-"7": [ "ap_uint<16>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 16}}]],""]}}], 
-"1": [ "STREAM_512", {"typedef": [[[],"11"],""]}], 
-"11": [ "stream<ap_axis<512, 6, 5, 6> >", {"hls_type": {"stream": [[[[],"12"]],"5"]}}], 
-"12": [ "ap_axis<512, 6, 5, 6>", {"struct": [[],[{"D":[[], {"scalar": { "int": 512}}]},{"U":[[], {"scalar": { "int": 6}}]},{"TI":[[], {"scalar": { "int": 5}}]},{"TD":[[], {"scalar": { "int": 6}}]}],[{ "data": [[], "13"]},{ "keep": [[], "14"]},{ "strb": [[], "14"]},{ "user": [[], "8"]},{ "last": [[], "9"]},{ "id": [[], "10"]},{ "dest": [[], "8"]}],""]}], 
-"13": [ "ap_int<512>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 512}}]],""]}}], 
-"14": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
-"9": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}],
-"5": ["hls", ""]
+"8": [ "ap_uint<16>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 16}}]],""]}}], 
+"1": [ "STREAM_512", {"typedef": [[[],"12"],""]}], 
+"12": [ "stream<ap_axis<512, 6, 5, 6> >", {"hls_type": {"stream": [[[[],"13"]],"6"]}}], 
+"13": [ "ap_axis<512, 6, 5, 6>", {"struct": [[],[{"D":[[], {"scalar": { "int": 512}}]},{"U":[[], {"scalar": { "int": 6}}]},{"TI":[[], {"scalar": { "int": 5}}]},{"TD":[[], {"scalar": { "int": 6}}]}],[{ "data": [[], "14"]},{ "keep": [[], "15"]},{ "strb": [[], "15"]},{ "user": [[], "9"]},{ "last": [[], "10"]},{ "id": [[], "11"]},{ "dest": [[], "9"]}],""]}], 
+"14": [ "ap_int<512>", {"hls_type": {"ap_int": [[[[], {"scalar": { "int": 512}}]],""]}}], 
+"15": [ "ap_uint<64>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 64}}]],""]}}], 
+"10": [ "ap_uint<1>", {"hls_type": {"ap_uint": [[[[], {"scalar": { "int": 1}}]],""]}}],
+"6": ["hls", ""]
 }}
 set moduleName scurve_adder36
 set isTaskLevelControl 1
@@ -44,6 +45,7 @@ set C_modelArgList {
 	{ out_stream_V_id_V int 5 regular {axi_s 1 volatile  { out_stream ID } }  }
 	{ out_stream_V_dest_V int 6 regular {axi_s 1 volatile  { out_stream Dest } }  }
 	{ N_ADDS uint 16 regular {axi_slave 0}  }
+	{ TEST_MODE int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "in_stream0_V_data_V", "interface" : "axis", "bitwidth" : 128, "direction" : "READONLY", "bitSlice":[{"low":0,"up":127,"cElement": [{"cName": "in_stream0.V.data.V","cData": "int128","bit_use": { "low": 0,"up": 127},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
@@ -60,7 +62,8 @@ set C_modelArgMapList {[
  	{ "Name" : "out_stream_V_last_V", "interface" : "axis", "bitwidth" : 1, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "out_stream.V.last.V","cData": "uint1","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "out_stream_V_id_V", "interface" : "axis", "bitwidth" : 5, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":4,"cElement": [{"cName": "out_stream.V.id.V","cData": "uint5","bit_use": { "low": 0,"up": 4},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "out_stream_V_dest_V", "interface" : "axis", "bitwidth" : 6, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":5,"cElement": [{"cName": "out_stream.V.dest.V","cData": "uint6","bit_use": { "low": 0,"up": 5},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
- 	{ "Name" : "N_ADDS", "interface" : "axi_slave", "bundle":"CTRL_BUS","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "N_ADDS","cData": "unsigned short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} ]}
+ 	{ "Name" : "N_ADDS", "interface" : "axi_slave", "bundle":"CTRL_BUS","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "N_ADDS","cData": "unsigned short","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} , 
+ 	{ "Name" : "TEST_MODE", "interface" : "axi_slave", "bundle":"CTRL_BUS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "TEST_MODE","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":24}, "offset_end" : {"in":31}} ]}
 # RTL Port declarations: 
 set portNum 38
 set portList { 
@@ -104,7 +107,7 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_CTRL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWADDR" },"address":[{"name":"scurve_adder36","role":"start","value":"0","valid_bit":"0"},{"name":"scurve_adder36","role":"continue","value":"0","valid_bit":"4"},{"name":"scurve_adder36","role":"auto_start","value":"0","valid_bit":"7"},{"name":"N_ADDS","role":"data","value":"16"}] },
+	{ "name": "s_axi_CTRL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWADDR" },"address":[{"name":"scurve_adder36","role":"start","value":"0","valid_bit":"0"},{"name":"scurve_adder36","role":"continue","value":"0","valid_bit":"4"},{"name":"scurve_adder36","role":"auto_start","value":"0","valid_bit":"7"},{"name":"N_ADDS","role":"data","value":"16"},{"name":"TEST_MODE","role":"data","value":"24"}] },
 	{ "name": "s_axi_CTRL_BUS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWVALID" } },
 	{ "name": "s_axi_CTRL_BUS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWREADY" } },
 	{ "name": "s_axi_CTRL_BUS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "WVALID" } },
@@ -150,7 +153,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "295", "EstimateLatencyMax" : "9437338",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "296", "EstimateLatencyMax" : "9437339",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -174,7 +177,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_stream_V_last_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "out_stream_V_id_V", "Type" : "Axis", "Direction" : "O"},
 			{"Name" : "out_stream_V_dest_V", "Type" : "Axis", "Direction" : "O"},
-			{"Name" : "N_ADDS", "Type" : "None", "Direction" : "I"}]},
+			{"Name" : "N_ADDS", "Type" : "None", "Direction" : "I"},
+			{"Name" : "TEST_MODE", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.scurve_adder36_CTRL_BUS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sum_pix_ch0_0_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sum_pix_ch0_1_U", "Parent" : "0"},
@@ -203,20 +207,21 @@ set ArgLastReadFirstWriteLatency {
 		in_stream0_V_last_V {Type I LastRead 3 FirstWrite -1}
 		in_stream0_V_id_V {Type I LastRead 3 FirstWrite -1}
 		in_stream0_V_dest_V {Type I LastRead 3 FirstWrite -1}
-		out_stream_V_data_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_user_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_last_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_id_V {Type O LastRead -1 FirstWrite 6}
-		out_stream_V_dest_V {Type O LastRead -1 FirstWrite 6}
-		N_ADDS {Type I LastRead 0 FirstWrite -1}}}
+		out_stream_V_data_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_keep_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_strb_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_user_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_last_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_id_V {Type O LastRead -1 FirstWrite 7}
+		out_stream_V_dest_V {Type O LastRead -1 FirstWrite 7}
+		N_ADDS {Type I LastRead 0 FirstWrite -1}
+		TEST_MODE {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "295", "Max" : "9437338"}
-	, {"Name" : "Interval", "Min" : "296", "Max" : "9437339"}
+	{"Name" : "Latency", "Min" : "296", "Max" : "9437339"}
+	, {"Name" : "Interval", "Min" : "297", "Max" : "9437340"}
 ]}
 
 set PipelineEnableSignalInfo {[

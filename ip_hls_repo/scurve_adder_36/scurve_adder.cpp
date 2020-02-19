@@ -17,12 +17,15 @@ Channels are output sequentially and the number of channels processed can be spe
 #include "scurve_adder.h"
 
 void scurve_adder36(STREAM_128 &in_stream0 /*16 uint8 per transfer*/,
-		STREAM_512 &out_stream /*two uint32 per transfer*/, uint16_t N_ADDS/*, uint8_t CH_INFO*/) {
+		STREAM_512 &out_stream /*two uint32 per transfer*/,
+		uint16_t N_ADDS/*, uint8_t CH_INFO*/,
+		uint32_t TEST_MODE) {
 
 	//Define the interfaces
 	#pragma HLS INTERFACE axis port=in_stream0
 	#pragma HLS INTERFACE axis port=out_stream
 	#pragma HLS INTERFACE s_axilite port=N_ADDS bundle=CTRL_BUS
+	#pragma HLS INTERFACE s_axilite port=TEST_MODE bundle=CTRL_BUS
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL_BUS
 
 	int i, j, k, l;
@@ -91,9 +94,19 @@ void scurve_adder36(STREAM_128 &in_stream0 /*16 uint8 per transfer*/,
 		}
 
 		sum_pix_tot.data = 0;
-		for(j = 0; j < K_PAR; j++) {
-			sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+		if(!TEST_MODE)
+		{
+			for(j = 0; j < K_PAR; j++) {
+				sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+			}
 		}
+		else
+		{
+			for(j = 0; j < K_PAR; j++) {
+				sum_pix_tot.data |= ((uint512_t)(i*K_PAR+j) << (32*j));
+			}
+		}
+
 
 		out_stream.write(sum_pix_tot);
 	}

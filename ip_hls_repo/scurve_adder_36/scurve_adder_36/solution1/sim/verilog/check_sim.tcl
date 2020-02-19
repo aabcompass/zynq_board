@@ -98,6 +98,7 @@ proc check_tvin_file {} {
          "c.scurve_adder36.autotvin_out_stream_V_id_V.dat"
          "c.scurve_adder36.autotvin_out_stream_V_dest_V.dat"
          "c.scurve_adder36.autotvin_N_ADDS.dat"
+         "c.scurve_adder36.autotvin_TEST_MODE.dat"
          "c.scurve_adder36.autotvout_out_stream_V_data_V.dat"
          "c.scurve_adder36.autotvout_out_stream_V_keep_V.dat"
          "c.scurve_adder36.autotvout_out_stream_V_strb_V.dat"

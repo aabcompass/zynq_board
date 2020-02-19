@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'scurve_adder36'" level="0">
-<item name = "Date">Wed Jan 15 10:41:55 2020
+<item name = "Date">Mon Feb  3 17:52:56 2020
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">scurve_adder_36</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">295, 9437338, 295, 9437338, none</column>
+<column name="">296, 9437339, 296, 9437339, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -37,7 +37,7 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">144, 144, 1, 1, 1, 144, yes</column>
 <column name="- Loop 2">0, 9437043, 5, 1, 1, 0 ~ 9437040, yes</column>
-<column name="- Loop 3">145, 145, 3, 1, 1, 144, yes</column>
+<column name="- Loop 3">146, 146, 4, 1, 1, 144, yes</column>
 </table>
 </item>
 </section>

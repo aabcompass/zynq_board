@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/36ch_3/ip_repo/data_converter/clkFromArt.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/36ch_4/ip_repo/data_converter/clkFromArt.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="81dc52bea3b64c91a038faa54d50b392"/>

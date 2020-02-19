@@ -120,6 +120,8 @@ using namespace sc_dt;
 #define WRAPC_STREAM_EGRESS_STATUS_out_stream_V_dest_V  "../tv/stream_size/stream_egress_status_out_stream_V_dest_V.dat"
 // wrapc file define: "N_ADDS"
 #define AUTOTB_TVIN_N_ADDS  "../tv/cdatafile/c.scurve_adder36.autotvin_N_ADDS.dat"
+// wrapc file define: "TEST_MODE"
+#define AUTOTB_TVIN_TEST_MODE  "../tv/cdatafile/c.scurve_adder36.autotvin_TEST_MODE.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
@@ -157,6 +159,7 @@ class INTER_TCL_FILE {
 			out_stream_V_id_V_depth = 0;
 			out_stream_V_dest_V_depth = 0;
 			N_ADDS_depth = 0;
+			TEST_MODE_depth = 0;
 			trans_num =0;
 		}
 
@@ -191,6 +194,7 @@ class INTER_TCL_FILE {
 			total_list << "{out_stream_V_id_V " << out_stream_V_id_V_depth << "}\n";
 			total_list << "{out_stream_V_dest_V " << out_stream_V_dest_V_depth << "}\n";
 			total_list << "{N_ADDS " << N_ADDS_depth << "}\n";
+			total_list << "{TEST_MODE " << TEST_MODE_depth << "}\n";
 			return total_list.str();
 		}
 
@@ -213,6 +217,7 @@ class INTER_TCL_FILE {
 		int out_stream_V_id_V_depth;
 		int out_stream_V_dest_V_depth;
 		int N_ADDS_depth;
+		int TEST_MODE_depth;
 		int trans_num;
 
 	private:
@@ -223,12 +228,14 @@ class INTER_TCL_FILE {
 extern void scurve_adder36 (
 hls::stream<ap_axis<128, 6, 5, 6 > > (&in_stream0),
 hls::stream<ap_axis<512, 6, 5, 6 > > (&out_stream),
-unsigned short N_ADDS);
+unsigned short N_ADDS,
+unsigned int TEST_MODE);
 
 void AESL_WRAP_scurve_adder36 (
 hls::stream<ap_axis<128, 6, 5, 6 > > (&in_stream0),
 hls::stream<ap_axis<512, 6, 5, 6 > > (&out_stream),
-unsigned short N_ADDS)
+unsigned short N_ADDS,
+unsigned int TEST_MODE)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -1517,6 +1524,10 @@ unsigned short N_ADDS)
 		char* tvin_N_ADDS = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_N_ADDS);
 
+		// "TEST_MODE"
+		char* tvin_TEST_MODE = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_TEST_MODE);
+
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
@@ -1581,6 +1592,48 @@ unsigned short N_ADDS)
 		sprintf(tvin_N_ADDS, "[[/transaction]] \n");
 		aesl_fh.write(AUTOTB_TVIN_N_ADDS, tvin_N_ADDS);
 
+		// [[transaction]]
+		sprintf(tvin_TEST_MODE, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_TEST_MODE, tvin_TEST_MODE);
+
+		sc_bv<32> TEST_MODE_tvin_wrapc_buffer;
+
+		// RTL Name: TEST_MODE
+		{
+			// bitslice(31, 0)
+			{
+				// celement: TEST_MODE(31, 0)
+				{
+					// carray: (0) => (0) @ (0)
+					{
+						// sub                   : 
+						// ori_name              : TEST_MODE
+						// sub_1st_elem          : 
+						// ori_name_1st_elem     : TEST_MODE
+						// regulate_c_name       : TEST_MODE
+						// input_type_conversion : TEST_MODE
+						if (&(TEST_MODE) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<32> TEST_MODE_tmp_mem;
+							TEST_MODE_tmp_mem = TEST_MODE;
+							TEST_MODE_tvin_wrapc_buffer.range(31, 0) = TEST_MODE_tmp_mem.range(31, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_TEST_MODE, "%s\n", (TEST_MODE_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_TEST_MODE, tvin_TEST_MODE);
+		}
+
+		tcl_file.set_num(1, &tcl_file.TEST_MODE_depth);
+		sprintf(tvin_TEST_MODE, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_TEST_MODE, tvin_TEST_MODE);
+
 		// push back input stream: "in_stream0"
 		for (int i = 0; i < aesl_tmp_1; i++)
 		{
@@ -1596,7 +1649,7 @@ unsigned short N_ADDS)
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		scurve_adder36(in_stream0, out_stream, N_ADDS);
+		scurve_adder36(in_stream0, out_stream, N_ADDS, TEST_MODE);
 
 		CodeState = DUMP_OUTPUTS;
 		// record input size to tv3: "in_stream0"
@@ -2608,6 +2661,8 @@ unsigned short N_ADDS)
 		delete [] wrapc_stream_size_out_out_stream_V_dest_V;
 		// release memory allocation: "N_ADDS"
 		delete [] tvin_N_ADDS;
+		// release memory allocation: "TEST_MODE"
+		delete [] tvin_TEST_MODE;
 
 		AESL_transaction++;
 

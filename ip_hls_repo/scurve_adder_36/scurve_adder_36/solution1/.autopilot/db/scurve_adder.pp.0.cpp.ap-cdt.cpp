@@ -29239,7 +29239,7 @@ typedef hls::stream<AXI_DATA_256> STREAM_256;
 typedef hls::stream<AXI_DATA_512> STREAM_512;
 #pragma empty_line
 void scurve_adder36(STREAM_128 &in_stream0,
-  STREAM_512 &out_stream, uint16_t N_ADDS);
+  STREAM_512 &out_stream, uint16_t N_ADDS, uint32_t TEST_MODE);
 #pragma empty_line
 #pragma empty_line
 typedef ap_uint<128> uint128_t;
@@ -29248,12 +29248,15 @@ typedef ap_uint<512> uint512_t;
 #pragma line 18 "scurve_adder.cpp" 2
 #pragma empty_line
 void scurve_adder36(STREAM_128 &in_stream0 ,
-  STREAM_512 &out_stream , uint16_t N_ADDS ) {
+  STREAM_512 &out_stream ,
+  uint16_t N_ADDS ,
+  uint32_t TEST_MODE) {
 #pragma empty_line
 #pragma empty_line
 #pragma HLS INTERFACE axis port=&in_stream0
 #pragma HLS INTERFACE axis port=&out_stream
 #pragma HLS INTERFACE s_axilite port=N_ADDS bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=TEST_MODE bundle=CTRL_BUS
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL_BUS
 #pragma empty_line
  int i, j, k, l;
@@ -29322,9 +29325,19 @@ void scurve_adder36(STREAM_128 &in_stream0 ,
   }
 #pragma empty_line
   sum_pix_tot.data = 0;
-  for(j = 0; j < 16; j++) {
-   sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+  if(!TEST_MODE)
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)sum_pix_ch0[j][i] << (32*j));
+   }
   }
+  else
+  {
+   for(j = 0; j < 16; j++) {
+    sum_pix_tot.data |= ((uint512_t)(i*16 +j) << (32*j));
+   }
+  }
+#pragma empty_line
 #pragma empty_line
   out_stream.write(sum_pix_tot);
  }

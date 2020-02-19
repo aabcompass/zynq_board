@@ -32,6 +32,7 @@
 `define AESL_DEPTH_out_stream_V_id_V 1
 `define AESL_DEPTH_out_stream_V_dest_V 1
 `define AESL_DEPTH_N_ADDS 1
+`define AESL_DEPTH_TEST_MODE 1
 `define AUTOTB_TVIN_in_stream0_V_data_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_data_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_keep_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_keep_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_strb_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_strb_V.dat"
@@ -47,6 +48,7 @@
 `define AUTOTB_TVIN_out_stream_V_id_V  "../tv/cdatafile/c.scurve_adder36.autotvin_out_stream_V_id_V.dat"
 `define AUTOTB_TVIN_out_stream_V_dest_V  "../tv/cdatafile/c.scurve_adder36.autotvin_out_stream_V_dest_V.dat"
 `define AUTOTB_TVIN_N_ADDS  "../tv/cdatafile/c.scurve_adder36.autotvin_N_ADDS.dat"
+`define AUTOTB_TVIN_TEST_MODE  "../tv/cdatafile/c.scurve_adder36.autotvin_TEST_MODE.dat"
 `define AUTOTB_TVIN_in_stream0_V_data_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_in_stream0_V_data_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_keep_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_in_stream0_V_keep_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_strb_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_in_stream0_V_strb_V.dat"
@@ -62,6 +64,7 @@
 `define AUTOTB_TVIN_out_stream_V_id_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_out_stream_V_id_V.dat"
 `define AUTOTB_TVIN_out_stream_V_dest_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_out_stream_V_dest_V.dat"
 `define AUTOTB_TVIN_N_ADDS_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_N_ADDS.dat"
+`define AUTOTB_TVIN_TEST_MODE_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvin_TEST_MODE.dat"
 `define AUTOTB_TVOUT_out_stream_V_data_V  "../tv/cdatafile/c.scurve_adder36.autotvout_out_stream_V_data_V.dat"
 `define AUTOTB_TVOUT_out_stream_V_keep_V  "../tv/cdatafile/c.scurve_adder36.autotvout_out_stream_V_keep_V.dat"
 `define AUTOTB_TVOUT_out_stream_V_strb_V  "../tv/cdatafile/c.scurve_adder36.autotvout_out_stream_V_strb_V.dat"
@@ -80,7 +83,7 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 1;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 9437338;
+parameter LATENCY_ESTIMATION = 9437339;
 parameter LENGTH_in_stream0_V_data_V = 4320;
 parameter LENGTH_in_stream0_V_keep_V = 4320;
 parameter LENGTH_in_stream0_V_strb_V = 4320;
@@ -96,6 +99,7 @@ parameter LENGTH_out_stream_V_last_V = 144;
 parameter LENGTH_out_stream_V_id_V = 144;
 parameter LENGTH_out_stream_V_dest_V = 144;
 parameter LENGTH_N_ADDS = 1;
+parameter LENGTH_TEST_MODE = 1;
 
 task read_token;
     input integer fp;
@@ -161,6 +165,7 @@ wire [5 : 0] out_stream_TUSER;
 wire [0 : 0] out_stream_TLAST;
 wire [4 : 0] out_stream_TID;
 wire [5 : 0] out_stream_TDEST;
+wire [31 : 0] TEST_MODE;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -223,7 +228,8 @@ wire ap_rst_n_n;
     .out_stream_TUSER(out_stream_TUSER),
     .out_stream_TLAST(out_stream_TLAST),
     .out_stream_TID(out_stream_TID),
-    .out_stream_TDEST(out_stream_TDEST));
+    .out_stream_TDEST(out_stream_TDEST),
+    .TEST_MODE(TEST_MODE));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -300,6 +306,60 @@ end
 
 
 
+
+
+// The signal of port TEST_MODE
+reg [31: 0] AESL_REG_TEST_MODE = 0;
+assign TEST_MODE = AESL_REG_TEST_MODE;
+initial begin : read_file_process_TEST_MODE
+    integer fp;
+    integer err;
+    integer ret;
+    integer proc_rand;
+    reg [1047  : 0] token;
+    integer i;
+    reg transaction_finish;
+    integer transaction_idx;
+    transaction_idx = 0;
+    wait(AESL_reset === 1);
+    fp = $fopen(`AUTOTB_TVIN_TEST_MODE,"r");
+    if(fp == 0) begin       // Failed to open file
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_TEST_MODE);
+        $display("ERROR: Simulation using HLS TB failed.");
+        $finish;
+    end
+    read_token(fp, token);
+    if (token != "[[[runtime]]]") begin
+        $display("ERROR: Simulation using HLS TB failed.");
+        $finish;
+    end
+    read_token(fp, token);
+    while (token != "[[[/runtime]]]") begin
+        if (token != "[[transaction]]") begin
+            $display("ERROR: Simulation using HLS TB failed.");
+              $finish;
+        end
+        read_token(fp, token);  // skip transaction number
+          read_token(fp, token);
+            # 0.2;
+            while(ready_wire !== 1) begin
+                @(posedge AESL_clock);
+                # 0.2;
+            end
+        if(token != "[[/transaction]]") begin
+            ret = $sscanf(token, "0x%x", AESL_REG_TEST_MODE);
+              if (ret != 1) begin
+                  $display("Failed to parse token!");
+                $display("ERROR: Simulation using HLS TB failed.");
+                  $finish;
+              end
+            @(posedge AESL_clock);
+              read_token(fp, token);
+        end
+          read_token(fp, token);
+    end
+    $fclose(fp);
+end
 
 
 reg [31:0] ap_c_n_tvin_trans_num_in_stream0_V_data_V;
@@ -518,6 +578,9 @@ reg [31:0] size_out_stream_V_dest_V_backup;
 reg end_N_ADDS;
 reg [31:0] size_N_ADDS;
 reg [31:0] size_N_ADDS_backup;
+reg end_TEST_MODE;
+reg [31:0] size_TEST_MODE;
+reg [31:0] size_TEST_MODE_backup;
 
 initial begin : initial_process
     integer proc_rand;
