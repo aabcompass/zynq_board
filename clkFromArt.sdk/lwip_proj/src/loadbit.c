@@ -48,6 +48,7 @@ void init_loadbit_spi()
 	XStatus Status;
 	XSpi_Initialize(&spi, XPAR_AXI_QUAD_SPI_0_DEVICE_ID);
 
+	//Status = XSpi_SetOptions(&spi, XSP_MASTER_OPTION | /*XSP_CLK_PHASE_1_OPTION | */XSP_CLK_ACTIVE_LOW_OPTION);
 	Status = XSpi_SetOptions(&spi, XSP_MASTER_OPTION);
 	if (Status != XST_SUCCESS) {
 		xil_printf("XSpi_SetOptions returns %d\n\r", Status);
