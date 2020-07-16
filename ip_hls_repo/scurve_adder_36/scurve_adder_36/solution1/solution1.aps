@@ -10,6 +10,7 @@
     </clockList>
     <config>
         <schedule model="scurve_adder36"/>
+        <config_rtl encoding="onehot" reset="all" reset_async="0" reset_level="high"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">

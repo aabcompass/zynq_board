@@ -165,7 +165,6 @@ wire [5 : 0] out_stream_TUSER;
 wire [0 : 0] out_stream_TLAST;
 wire [4 : 0] out_stream_TID;
 wire [5 : 0] out_stream_TDEST;
-wire [31 : 0] TEST_MODE;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -228,8 +227,7 @@ wire ap_rst_n_n;
     .out_stream_TUSER(out_stream_TUSER),
     .out_stream_TLAST(out_stream_TLAST),
     .out_stream_TID(out_stream_TID),
-    .out_stream_TDEST(out_stream_TDEST),
-    .TEST_MODE(TEST_MODE));
+    .out_stream_TDEST(out_stream_TDEST));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -307,59 +305,6 @@ end
 
 
 
-
-// The signal of port TEST_MODE
-reg [31: 0] AESL_REG_TEST_MODE = 0;
-assign TEST_MODE = AESL_REG_TEST_MODE;
-initial begin : read_file_process_TEST_MODE
-    integer fp;
-    integer err;
-    integer ret;
-    integer proc_rand;
-    reg [1047  : 0] token;
-    integer i;
-    reg transaction_finish;
-    integer transaction_idx;
-    transaction_idx = 0;
-    wait(AESL_reset === 1);
-    fp = $fopen(`AUTOTB_TVIN_TEST_MODE,"r");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_TEST_MODE);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    if (token != "[[[runtime]]]") begin
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    while (token != "[[[/runtime]]]") begin
-        if (token != "[[transaction]]") begin
-            $display("ERROR: Simulation using HLS TB failed.");
-              $finish;
-        end
-        read_token(fp, token);  // skip transaction number
-          read_token(fp, token);
-            # 0.2;
-            while(ready_wire !== 1) begin
-                @(posedge AESL_clock);
-                # 0.2;
-            end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_TEST_MODE);
-              if (ret != 1) begin
-                  $display("Failed to parse token!");
-                $display("ERROR: Simulation using HLS TB failed.");
-                  $finish;
-              end
-            @(posedge AESL_clock);
-              read_token(fp, token);
-        end
-          read_token(fp, token);
-    end
-    $fclose(fp);
-end
 
 
 reg [31:0] ap_c_n_tvin_trans_num_in_stream0_V_data_V;

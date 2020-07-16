@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="scurve_adder36" xd:componentRef="scurve_adder36" xd:initiationInterval="9437340" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="scurve_adder36" xd:componentRef="scurve_adder36" xd:initiationInterval="9437340" xd:clockPeriod="4.000" xd:sequential="true" xd:hostMachine="64" xd:reset="all">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
   <xd:arg xd:name="in_stream0.data" xd:originalName="in_stream0" xd:direction="in" xd:interfaceRef="in_stream0" xd:busTypeRef="axis" xd:dataWidth="128"/>
   <xd:arg xd:name="in_stream0.keep" xd:originalName="in_stream0" xd:direction="in" xd:interfaceRef="in_stream0" xd:busTypeRef="axis" xd:dataWidth="16"/>

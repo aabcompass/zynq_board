@@ -3,7 +3,7 @@
   "RtlTop": "scurve_adder36",
   "RtlPrefix": "",
   "SourceLanguage": "cpp",
-  "ResetStyle": "control",
+  "ResetStyle": "all",
   "GenerateBdFiles": "1",
   "HostMachineBits": "64",
   "Target": {
@@ -12,9 +12,7 @@
     "Package": "ffg676",
     "Speed": "-2"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Config": ["config_rtl -encoding=onehot -reset=all -reset_async=0 -reset_level=high"]},
   "ClockInfo": {
     "ClockName": "ap_clk",
     "ClockPeriod": "4",
@@ -725,7 +723,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2020-02-03 17:52:58 MSK",
+    "Time": "2020-07-16 15:08:12 MSK",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.1"
   }

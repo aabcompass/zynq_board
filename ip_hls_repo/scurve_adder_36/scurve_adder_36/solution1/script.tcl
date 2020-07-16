@@ -10,6 +10,7 @@ add_files -tb scurve_adder_test.cpp
 open_solution "solution1"
 set_part {xc7z035ffg676-2}
 create_clock -period 4 -name default
+config_rtl -encoding onehot -reset all -reset_level high
 #source "./scurve_adder_36/solution1/directives.tcl"
 csim_design -compiler gcc
 csynth_design

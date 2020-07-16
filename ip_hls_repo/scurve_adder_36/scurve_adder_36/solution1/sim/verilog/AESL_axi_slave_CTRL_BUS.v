@@ -42,15 +42,20 @@ module AESL_axi_slave_CTRL_BUS (
 
 //------------------------Parameter----------------------
 `define TV_IN_N_ADDS "../tv/cdatafile/c.scurve_adder36.autotvin_N_ADDS.dat"
+`define TV_IN_TEST_MODE "../tv/cdatafile/c.scurve_adder36.autotvin_TEST_MODE.dat"
 parameter ADDR_WIDTH = 5;
 parameter DATA_WIDTH = 32;
 parameter N_ADDS_DEPTH = 1;
 reg [31 : 0] N_ADDS_OPERATE_DEPTH = 0;
 parameter N_ADDS_c_bitwidth = 16;
+parameter TEST_MODE_DEPTH = 1;
+reg [31 : 0] TEST_MODE_OPERATE_DEPTH = 0;
+parameter TEST_MODE_c_bitwidth = 32;
 parameter START_ADDR = 0;
 parameter scurve_adder36_continue_addr = 0;
 parameter scurve_adder36_auto_start_addr = 0;
 parameter N_ADDS_data_in_addr = 16;
+parameter TEST_MODE_data_in_addr = 24;
 parameter STATUS_ADDR = 0;
 
 output [ADDR_WIDTH - 1 : 0] TRAN_s_axi_CTRL_BUS_AWADDR;
@@ -95,6 +100,8 @@ reg [DATA_WIDTH - 1 : 0] RDATA_reg = 0;
 reg  BREADY_reg = 0;
 reg [DATA_WIDTH - 1 : 0] mem_N_ADDS [N_ADDS_DEPTH - 1 : 0];
 reg N_ADDS_write_data_finish;
+reg [DATA_WIDTH - 1 : 0] mem_TEST_MODE [TEST_MODE_DEPTH - 1 : 0];
+reg TEST_MODE_write_data_finish;
 reg AESL_ready_out_index_reg = 0;
 reg AESL_write_start_finish = 0;
 reg AESL_ready_reg;
@@ -105,10 +112,15 @@ reg AESL_auto_restart_index_reg;
 reg process_0_finish = 0;
 reg process_1_finish = 0;
 reg process_2_finish = 0;
+reg process_3_finish = 0;
 //write N_ADDS reg
 reg [31 : 0] write_N_ADDS_count = 0;
 reg write_N_ADDS_run_flag = 0;
 reg write_one_N_ADDS_data_done = 0;
+//write TEST_MODE reg
+reg [31 : 0] write_TEST_MODE_count = 0;
+reg write_TEST_MODE_run_flag = 0;
+reg write_one_TEST_MODE_data_done = 0;
 reg [31 : 0] write_start_count = 0;
 reg write_start_run_flag = 0;
 
@@ -131,13 +143,13 @@ assign TRAN_CTRL_BUS_write_start_finish = AESL_write_start_finish;
 assign TRAN_CTRL_BUS_done_out = AESL_done_index_reg;
 assign TRAN_CTRL_BUS_ready_out = AESL_ready_out_index_reg;
 assign TRAN_CTRL_BUS_idle_out = AESL_idle_index_reg;
-assign TRAN_CTRL_BUS_write_data_finish = 1 & N_ADDS_write_data_finish;
+assign TRAN_CTRL_BUS_write_data_finish = 1 & N_ADDS_write_data_finish & TEST_MODE_write_data_finish;
 always @(TRAN_CTRL_BUS_ready_in or ready_initial) 
 begin
     AESL_ready_reg <= TRAN_CTRL_BUS_ready_in | ready_initial;
 end
 
-always @(reset or process_0_finish or process_1_finish or process_2_finish ) begin
+always @(reset or process_0_finish or process_1_finish or process_2_finish or process_3_finish ) begin
     if (reset == 0) begin
         ongoing_process_number <= 0;
     end
@@ -148,6 +160,9 @@ always @(reset or process_0_finish or process_1_finish or process_2_finish ) beg
             ongoing_process_number <= ongoing_process_number + 1;
     end
     else if (ongoing_process_number == 2 && process_2_finish == 1) begin
+            ongoing_process_number <= ongoing_process_number + 1;
+    end
+    else if (ongoing_process_number == 3 && process_3_finish == 1) begin
             ongoing_process_number <= 0;
     end
 end
@@ -389,6 +404,79 @@ initial begin : write_N_ADDS
         @(posedge clk);
     end    
 end
+always @(reset or posedge clk) begin
+    if (reset == 0) begin
+        TEST_MODE_write_data_finish <= 0;
+        write_TEST_MODE_run_flag <= 0; 
+        write_TEST_MODE_count = 0;
+        count_operate_depth_by_bitwidth_and_depth (TEST_MODE_c_bitwidth, TEST_MODE_DEPTH, TEST_MODE_OPERATE_DEPTH);
+    end
+    else begin
+        if (TRAN_CTRL_BUS_start_in === 1) begin
+            TEST_MODE_write_data_finish <= 0;
+        end
+        if (AESL_ready_reg === 1) begin
+            write_TEST_MODE_run_flag <= 1; 
+            write_TEST_MODE_count = 0;
+        end
+        if (write_one_TEST_MODE_data_done === 1) begin
+            write_TEST_MODE_count = write_TEST_MODE_count + 1;
+            if (write_TEST_MODE_count == TEST_MODE_OPERATE_DEPTH) begin
+                write_TEST_MODE_run_flag <= 0; 
+                TEST_MODE_write_data_finish <= 1;
+            end
+        end
+    end
+end
+
+initial begin : write_TEST_MODE
+    integer write_TEST_MODE_resp;
+    integer process_num ;
+    integer get_ack;
+    integer four_byte_num;
+    integer c_bitwidth;
+    integer i;
+    integer j;
+    reg [31 : 0] TEST_MODE_data_tmp_reg;
+    wait(reset === 1);
+    @(posedge clk);
+    c_bitwidth = TEST_MODE_c_bitwidth;
+    process_num = 2;
+    count_c_data_four_byte_num_by_bitwidth (c_bitwidth , four_byte_num) ;
+    while (1) begin
+        process_2_finish <= 0;
+
+        if (ongoing_process_number === process_num && process_busy === 0 ) begin
+            get_ack = 1;
+            if (write_TEST_MODE_run_flag === 1 && get_ack === 1) begin
+                process_busy = 1;
+                //write TEST_MODE data 
+                for (i = 0 ; i < four_byte_num ; i = i+1) begin
+                    if (TEST_MODE_c_bitwidth < 32) begin
+                        TEST_MODE_data_tmp_reg = mem_TEST_MODE[write_TEST_MODE_count];
+                    end
+                    else begin
+                        for (j=0 ; j<32 ; j = j + 1) begin
+                            if (i*32 + j < TEST_MODE_c_bitwidth) begin
+                                TEST_MODE_data_tmp_reg[j] = mem_TEST_MODE[write_TEST_MODE_count][i*32 + j];
+                            end
+                            else begin
+                                TEST_MODE_data_tmp_reg[j] = 0;
+                            end
+                        end
+                    end
+                    write (TEST_MODE_data_in_addr + write_TEST_MODE_count * four_byte_num * 4 + i * 4, TEST_MODE_data_tmp_reg, write_TEST_MODE_resp);
+                end
+                process_busy = 0;
+                write_one_TEST_MODE_data_done <= 1;
+                @(posedge clk);
+                write_one_TEST_MODE_data_done <= 0;
+            end   
+            process_2_finish <= 1;
+        end
+        @(posedge clk);
+    end    
+end
 
 always @(reset or posedge clk) begin
     if (reset == 0) begin
@@ -415,9 +503,9 @@ initial begin : write_start
     integer write_start_resp;
     wait(reset === 1);
     @(posedge clk);
-    process_num = 2;
+    process_num = 3;
     while (1) begin
-        process_2_finish = 0;
+        process_3_finish = 0;
         if (ongoing_process_number === process_num && process_busy === 0 ) begin
             if (write_start_run_flag === 1) begin
                 process_busy = 1;
@@ -429,7 +517,7 @@ initial begin : write_start
                 @(posedge clk);
                 AESL_write_start_finish <= 0;
             end
-            process_2_finish <= 1;
+            process_3_finish <= 1;
         end 
         @(posedge clk);
     end
@@ -528,6 +616,100 @@ initial begin : read_N_ADDS_file_process
       if (factor == 2) begin
           if (i%factor != 0) begin
               mem_N_ADDS [i/factor] = mem_tmp;
+          end
+      end 
+      read_token(fp, token); 
+      if(token != "[[/transaction]]") begin 
+          $display("ERROR: Simulation using HLS TB failed.");
+          $finish; 
+      end 
+      read_token(fp, token); 
+      transaction_idx = transaction_idx + 1; 
+  end 
+  $fclose(fp); 
+end 
+ 
+//------------------------Read file------------------------ 
+ 
+// Read data from file 
+initial begin : read_TEST_MODE_file_process 
+  integer fp; 
+  integer ret; 
+  integer factor; 
+  reg [127 : 0] token; 
+  reg [127 : 0] token_tmp; 
+  //reg [TEST_MODE_c_bitwidth - 1 : 0] token_tmp; 
+  reg [DATA_WIDTH - 1 : 0] mem_tmp; 
+  reg [ 8*5 : 1] str;
+  integer transaction_idx; 
+  integer i; 
+  transaction_idx = 0; 
+  mem_tmp [DATA_WIDTH - 1 : 0] = 0;
+  count_seperate_factor_by_bitwidth (TEST_MODE_c_bitwidth , factor);
+  fp = $fopen(`TV_IN_TEST_MODE ,"r"); 
+  if(fp == 0) begin                               // Failed to open file 
+      $display("Failed to open file \"%s\"!", `TV_IN_TEST_MODE); 
+      $finish; 
+  end 
+  read_token(fp, token); 
+  if (token != "[[[runtime]]]") begin             // Illegal format 
+      $display("ERROR: Simulation using HLS TB failed.");
+      $finish; 
+  end 
+  read_token(fp, token); 
+  while (token != "[[[/runtime]]]") begin 
+      if (token != "[[transaction]]") begin 
+          $display("ERROR: Simulation using HLS TB failed.");
+          $finish; 
+      end 
+      read_token(fp, token);                        // skip transaction number 
+      @(posedge clk);
+      # 0.2;
+      while(AESL_ready_reg !== 1) begin
+          @(posedge clk); 
+          # 0.2;
+      end
+      for(i = 0; i < TEST_MODE_DEPTH; i = i + 1) begin 
+          read_token(fp, token); 
+          ret = $sscanf(token, "0x%x", token_tmp); 
+          if (factor == 4) begin
+              if (i%factor == 0) begin
+                  mem_tmp [7 : 0] = token_tmp;
+              end
+              if (i%factor == 1) begin
+                  mem_tmp [15 : 8] = token_tmp;
+              end
+              if (i%factor == 2) begin
+                  mem_tmp [23 : 16] = token_tmp;
+              end
+              if (i%factor == 3) begin
+                  mem_tmp [31 : 24] = token_tmp;
+                  mem_TEST_MODE [i/factor] = mem_tmp;
+                  mem_tmp [DATA_WIDTH - 1 : 0] = 0;
+              end
+          end
+          if (factor == 2) begin
+              if (i%factor == 0) begin
+                  mem_tmp [15 : 0] = token_tmp;
+              end
+              if (i%factor == 1) begin
+                  mem_tmp [31 : 16] = token_tmp;
+                  mem_TEST_MODE [i/factor] = mem_tmp;
+                  mem_tmp [DATA_WIDTH - 1: 0] = 0;
+              end
+          end
+          if (factor == 1) begin
+              mem_TEST_MODE [i] = token_tmp;
+          end
+      end 
+      if (factor == 4) begin
+          if (i%factor != 0) begin
+              mem_TEST_MODE [i/factor] = mem_tmp;
+          end
+      end
+      if (factor == 2) begin
+          if (i%factor != 0) begin
+              mem_TEST_MODE [i/factor] = mem_tmp;
           end
       end 
       read_token(fp, token); 

@@ -2,12 +2,12 @@
 <Messages>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;scurve_adder.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 352.848 ; gain = 0.188 ; free physical = 2566 ; free virtual = 23813" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 352.848 ; gain = 0.188 ; free physical = 2563 ; free virtual = 23812" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:23 ; elapsed = 00:00:13 . Memory (MB): peak = 358.562 ; gain = 0.191 ; free physical = 3099 ; free virtual = 26052" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 358.562 ; gain = 0.191 ; free physical = 3097 ; free virtual = 26052" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 353.062 ; gain = 0.402 ; free physical = 2550 ; free virtual = 23801" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 358.773 ; gain = 0.402 ; free physical = 3083 ; free virtual = 26040" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:27 ; elapsed = 00:00:17 . Memory (MB): peak = 480.660 ; gain = 128.000 ; free physical = 2543 ; free virtual = 23795" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 486.371 ; gain = 128.000 ; free physical = 3076 ; free virtual = 26034" tag=""/>
 	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;Loop-1&apos; (scurve_adder.cpp:46) in function &apos;scurve_adder36&apos; for pipelining." tag=""/>
 	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;Loop-2.1&apos; (scurve_adder.cpp:57) in function &apos;scurve_adder36&apos; for pipelining." tag=""/>
 	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;Loop-3&apos; (scurve_adder.cpp:80) in function &apos;scurve_adder36&apos; for pipelining." tag=""/>
@@ -17,9 +17,9 @@
 	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-3.2&apos; (scurve_adder.cpp:105) in function &apos;scurve_adder36&apos; completely." tag=""/>
 	<Message prefix="[XFORM 203-102]" severity="INFO" keynum="697" content="Partitioning array &apos;sum_pix_ch0&apos; (scurve_adder.cpp:35) in dimension 1 automatically." tag=""/>
 	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (scurve_adder.cpp:80:33) to (scurve_adder.cpp:80:27) in function &apos;scurve_adder36&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 481.023 ; gain = 128.363 ; free physical = 2524 ; free virtual = 23781" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 486.734 ; gain = 128.363 ; free physical = 3045 ; free virtual = 26009" tag=""/>
 	<Message prefix="[XFORM 203-541]" severity="INFO" keynum="789" content="Flattening a loop nest &apos;Loop-2&apos; (scurve_adder.cpp:54:7) in function &apos;scurve_adder36&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 481.023 ; gain = 128.363 ; free physical = 2519 ; free virtual = 23777" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 486.734 ; gain = 128.363 ; free physical = 3042 ; free virtual = 26007" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;scurve_adder36&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
@@ -33,16 +33,17 @@
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;Loop 3&apos;." tag=""/>
 	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 18.9 seconds; current allocated memory: 88.231 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 18.64 seconds; current allocated memory: 88.306 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.25 seconds; current allocated memory: 89.323 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.25 seconds; current allocated memory: 89.398 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;scurve_adder36&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="431" content="Design contains AXI ports. Reset is fixed to synchronous and active low." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;scurve_adder36/in_stream0_V_data_V&apos; to &apos;axis&apos; (register, both mode)." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;scurve_adder36/in_stream0_V_keep_V&apos; to &apos;axis&apos; (register, both mode)." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;scurve_adder36/in_stream0_V_strb_V&apos; to &apos;axis&apos; (register, both mode)." tag=""/>
@@ -78,11 +79,11 @@
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;scurve_adder36_sum_pix_ch0_14&apos; to &apos;scurve_adder36_supcA&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;scurve_adder36_sum_pix_ch0_15&apos; to &apos;scurve_adder36_suqcK&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;scurve_adder36&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.39 seconds; current allocated memory: 92.391 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.41 seconds; current allocated memory: 92.486 MB." tag=""/>
 	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;scurve_adder36_subkb_ram (RAM)&apos; using block RAMs." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 481.023 ; gain = 128.363 ; free physical = 2513 ; free virtual = 23767" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:30 ; elapsed = 00:00:21 . Memory (MB): peak = 486.734 ; gain = 128.363 ; free physical = 3050 ; free virtual = 25996" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for scurve_adder36." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for scurve_adder36." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for scurve_adder36." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 21.2 seconds; peak allocated memory: 92.391 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 20.99 seconds; peak allocated memory: 92.486 MB." tag=""/>
 </Messages>

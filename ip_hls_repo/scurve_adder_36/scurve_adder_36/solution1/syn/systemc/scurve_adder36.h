@@ -654,6 +654,10 @@ struct scurve_adder36 : public sc_module {
     static const sc_lv<12> ap_const_lv12_E;
     static const sc_lv<12> ap_const_lv12_F;
     static const sc_lv<32> ap_const_lv32_6;
+    static const sc_lv<16> ap_const_lv16_0;
+    static const sc_lv<128> ap_const_lv128_lc_1;
+    static const sc_lv<512> ap_const_lv512_lc_1;
+    static const sc_lv<12> ap_const_lv12_0;
     // Thread declarations
     void thread_ap_var_for_const0();
     void thread_ap_var_for_const1();

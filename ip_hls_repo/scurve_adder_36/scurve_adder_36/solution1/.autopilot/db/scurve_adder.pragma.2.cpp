@@ -1,5 +1,5 @@
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp"
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp" 1
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp"
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 155 "<built-in>" 3
@@ -144,7 +144,7 @@ extern "C" {
 }
 # 8 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp" 2
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/.autopilot/db/scurve_adder.pragma.1.cpp" 2
 # 1 "scurve_adder.cpp"
 # 1 "scurve_adder.cpp" 1
 # 1 "<built-in>" 1

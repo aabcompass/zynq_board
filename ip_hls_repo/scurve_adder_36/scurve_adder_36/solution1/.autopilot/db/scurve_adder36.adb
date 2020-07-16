@@ -538,7 +538,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="11" tracking_level="0" version="0">
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second class_id="12" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -582,7 +582,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -626,7 +626,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -670,7 +670,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -714,7 +714,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -758,7 +758,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -802,7 +802,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -846,7 +846,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -890,7 +890,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -934,7 +934,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -978,7 +978,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1022,7 +1022,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1066,7 +1066,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1110,7 +1110,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1154,7 +1154,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1198,7 +1198,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1242,7 +1242,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1319,7 +1319,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1364,7 +1364,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1409,7 +1409,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1455,7 +1455,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1499,7 +1499,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1545,7 +1545,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1590,7 +1590,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1636,7 +1636,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1681,7 +1681,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1727,7 +1727,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1772,7 +1772,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1818,7 +1818,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1863,7 +1863,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1909,7 +1909,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1954,7 +1954,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2000,7 +2000,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2045,7 +2045,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2091,7 +2091,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2136,7 +2136,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2182,7 +2182,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2227,7 +2227,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2273,7 +2273,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2318,7 +2318,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2364,7 +2364,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2409,7 +2409,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2455,7 +2455,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2500,7 +2500,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2546,7 +2546,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2591,7 +2591,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2637,7 +2637,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2682,7 +2682,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2728,7 +2728,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2773,7 +2773,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2819,7 +2819,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2864,7 +2864,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2910,7 +2910,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2955,7 +2955,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3154,7 +3154,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3358,7 +3358,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3403,7 +3403,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3449,7 +3449,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3493,7 +3493,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3544,7 +3544,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3588,7 +3588,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3632,7 +3632,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3676,7 +3676,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3722,7 +3722,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3766,7 +3766,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3811,7 +3811,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3857,7 +3857,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3904,7 +3904,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3948,7 +3948,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -3994,7 +3994,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4038,7 +4038,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4083,7 +4083,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4129,7 +4129,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4176,7 +4176,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4220,7 +4220,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4266,7 +4266,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4310,7 +4310,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4355,7 +4355,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4401,7 +4401,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4448,7 +4448,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4492,7 +4492,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4538,7 +4538,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4582,7 +4582,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4627,7 +4627,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4673,7 +4673,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4720,7 +4720,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4764,7 +4764,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4810,7 +4810,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4854,7 +4854,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4899,7 +4899,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4945,7 +4945,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -4992,7 +4992,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5036,7 +5036,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5082,7 +5082,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5126,7 +5126,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5171,7 +5171,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5217,7 +5217,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5264,7 +5264,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5308,7 +5308,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5354,7 +5354,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5398,7 +5398,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5443,7 +5443,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5489,7 +5489,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5536,7 +5536,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5580,7 +5580,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5626,7 +5626,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5670,7 +5670,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5715,7 +5715,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5761,7 +5761,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5808,7 +5808,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5852,7 +5852,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5898,7 +5898,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5942,7 +5942,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -5987,7 +5987,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6033,7 +6033,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6080,7 +6080,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6124,7 +6124,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6170,7 +6170,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6214,7 +6214,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6259,7 +6259,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6305,7 +6305,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6352,7 +6352,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6396,7 +6396,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6442,7 +6442,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6486,7 +6486,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6531,7 +6531,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6577,7 +6577,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6624,7 +6624,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6668,7 +6668,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6714,7 +6714,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6758,7 +6758,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6803,7 +6803,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6849,7 +6849,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6896,7 +6896,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6940,7 +6940,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -6986,7 +6986,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7030,7 +7030,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7075,7 +7075,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7121,7 +7121,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7168,7 +7168,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7212,7 +7212,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7258,7 +7258,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7302,7 +7302,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7347,7 +7347,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7393,7 +7393,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7440,7 +7440,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7484,7 +7484,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7530,7 +7530,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7574,7 +7574,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7619,7 +7619,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7665,7 +7665,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7712,7 +7712,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7756,7 +7756,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7802,7 +7802,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7846,7 +7846,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7891,7 +7891,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7937,7 +7937,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -7982,7 +7982,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8026,7 +8026,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8071,7 +8071,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8148,7 +8148,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8193,7 +8193,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8238,7 +8238,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8284,7 +8284,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8329,7 +8329,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8373,7 +8373,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8419,7 +8419,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8463,7 +8463,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8509,7 +8509,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8553,7 +8553,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8599,7 +8599,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8643,7 +8643,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8689,7 +8689,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8733,7 +8733,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8779,7 +8779,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8823,7 +8823,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8869,7 +8869,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8913,7 +8913,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -8959,7 +8959,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9003,7 +9003,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9049,7 +9049,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9093,7 +9093,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9139,7 +9139,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9183,7 +9183,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9229,7 +9229,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9273,7 +9273,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9319,7 +9319,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9363,7 +9363,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9409,7 +9409,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9453,7 +9453,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9499,7 +9499,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9543,7 +9543,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9589,7 +9589,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9633,7 +9633,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9679,7 +9679,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9723,7 +9723,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9769,7 +9769,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9813,7 +9813,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9873,7 +9873,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9919,7 +9919,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -9963,7 +9963,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10008,7 +10008,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10052,7 +10052,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10097,7 +10097,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10141,7 +10141,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10186,7 +10186,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10230,7 +10230,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10275,7 +10275,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10319,7 +10319,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10364,7 +10364,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10408,7 +10408,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10453,7 +10453,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10497,7 +10497,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10542,7 +10542,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10586,7 +10586,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10631,7 +10631,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10675,7 +10675,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10720,7 +10720,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10764,7 +10764,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10809,7 +10809,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10853,7 +10853,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10898,7 +10898,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10942,7 +10942,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -10987,7 +10987,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11031,7 +11031,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11076,7 +11076,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11120,7 +11120,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11165,7 +11165,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11209,7 +11209,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11254,7 +11254,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11314,7 +11314,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11358,7 +11358,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11404,7 +11404,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11462,7 +11462,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -11506,7 +11506,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+                  <first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>

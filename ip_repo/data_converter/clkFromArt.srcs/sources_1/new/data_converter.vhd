@@ -62,7 +62,8 @@ entity data_converter is
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
     	m_axis_tready : in STD_LOGIC;
-    	prog_reset_p: in std_logic    	
+    	prog_reset_p: in std_logic;
+    	zeros: in std_logic_vector(12*3-1 downto 0)    	
     	);
 end data_converter;
 
@@ -212,7 +213,8 @@ architecture Behavioral of data_converter is
       m_axis_tlast : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       m_axis_tuser : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
       s_req_suppress : IN STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0);
-      s_decode_err : OUT STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0)
+      s_decode_err : OUT STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0);
+      zeros: in std_logic_vector(n_lines-1 DOWNTO 0)
     );
 	end COMPONENT;
 	
@@ -311,6 +313,7 @@ begin
 			signal m_axis_tdata_slice0p: std_logic_vector(8*16-1 downto 0) := (others => '0');
 			signal m_axis_tready_fifo0b, m_axis_tvalid_fifo0b, m_axis_tlast_fifo0b: std_logic := '0';
 			signal m_axis_tdata_fifo0b: std_logic_vector(7 downto 0) := X"00";
+			signal m_axis_tdata_fifo0b_zero: std_logic_vector(7 downto 0) := X"00";
 			
 			signal pass: std_logic := '0';
 
@@ -352,6 +355,7 @@ begin
 					m_axis_tlast => m_axis_tlast_fifo0b
 				);		
 			
+	 			m_axis_tdata_fifo0b_zero <= m_axis_tdata_fifo0b and not (7 downto 0 => zeros(i*N_PMT+j)); 
 	 
 				i_dwc : axis_dataconv_dwc
 				PORT MAP (
@@ -359,7 +363,7 @@ begin
 					aresetn => m_axis_aresetn2,
 					s_axis_tvalid => m_axis_tvalid_fifo0b,
 					s_axis_tready => m_axis_tready_fifo0b,
-					s_axis_tdata => m_axis_tdata_fifo0b,
+					s_axis_tdata => m_axis_tdata_fifo0b_zero,
 					s_axis_tlast => m_axis_tlast_fifo0b,
 					m_axis_tvalid => m_axis_tvalid_dwc,
 					m_axis_tready => m_axis_tready_dwc,
@@ -467,7 +471,8 @@ begin
     m_axis_tlast => m_axis_tlast_sw0,
     m_axis_tuser => m_axis_tuser_sw0,
     s_req_suppress => (others => '0'),
-    s_decode_err => s_decode_err
+    s_decode_err => s_decode_err,
+    zeros => zeros((i+1)*N_PMT-1 downto i*N_PMT) --zeros: in std_logic_vector(n_lines-1 DOWNTO 0)
   );
   
   	s_axis_tlast_fifo1 <= m_axis_tlast_sw0(0)  -- Generate TLast only with the last PMT data
@@ -563,7 +568,8 @@ begin
       m_axis_tlast => m_axis_tlast_sw1,
       m_axis_tuser => m_axis_tuser_sw1,
       s_req_suppress => (others => '0'),
-      s_decode_err => s_decode_err_sw1
+      s_decode_err => s_decode_err_sw1,
+      zeros => (others => '1')
     );
 
 

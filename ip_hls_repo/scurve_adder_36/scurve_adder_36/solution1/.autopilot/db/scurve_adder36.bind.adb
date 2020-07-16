@@ -531,14 +531,14 @@
 						<id>36</id>
 						<name>sum_pix_ch0_0</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -575,14 +575,14 @@
 						<id>37</id>
 						<name>sum_pix_ch0_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -619,14 +619,14 @@
 						<id>38</id>
 						<name>sum_pix_ch0_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -663,14 +663,14 @@
 						<id>39</id>
 						<name>sum_pix_ch0_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -707,14 +707,14 @@
 						<id>40</id>
 						<name>sum_pix_ch0_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -751,14 +751,14 @@
 						<id>41</id>
 						<name>sum_pix_ch0_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -795,14 +795,14 @@
 						<id>42</id>
 						<name>sum_pix_ch0_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -839,14 +839,14 @@
 						<id>43</id>
 						<name>sum_pix_ch0_7</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -883,14 +883,14 @@
 						<id>44</id>
 						<name>sum_pix_ch0_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -927,14 +927,14 @@
 						<id>45</id>
 						<name>sum_pix_ch0_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -971,14 +971,14 @@
 						<id>46</id>
 						<name>sum_pix_ch0_10</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1015,14 +1015,14 @@
 						<id>47</id>
 						<name>sum_pix_ch0_11</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1059,14 +1059,14 @@
 						<id>48</id>
 						<name>sum_pix_ch0_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1103,14 +1103,14 @@
 						<id>49</id>
 						<name>sum_pix_ch0_13</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1147,14 +1147,14 @@
 						<id>50</id>
 						<name>sum_pix_ch0_14</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1191,14 +1191,14 @@
 						<id>51</id>
 						<name>sum_pix_ch0_15</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>35</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1235,14 +1235,14 @@
 						<id>57</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>46</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1312,14 +1312,14 @@
 						<id>60</id>
 						<name>exitcond1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>46</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1357,14 +1357,14 @@
 						<id>62</id>
 						<name>i_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>46</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1402,14 +1402,14 @@
 						<id>63</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>46</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1448,14 +1448,14 @@
 						<id>67</id>
 						<name>tmp_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1492,14 +1492,14 @@
 						<id>68</id>
 						<name>sum_pix_ch0_0_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1538,14 +1538,14 @@
 						<id>69</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1583,14 +1583,14 @@
 						<id>70</id>
 						<name>sum_pix_ch0_1_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1629,14 +1629,14 @@
 						<id>71</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1674,14 +1674,14 @@
 						<id>72</id>
 						<name>sum_pix_ch0_2_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1720,14 +1720,14 @@
 						<id>73</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1765,14 +1765,14 @@
 						<id>74</id>
 						<name>sum_pix_ch0_3_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1811,14 +1811,14 @@
 						<id>75</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1856,14 +1856,14 @@
 						<id>76</id>
 						<name>sum_pix_ch0_4_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1902,14 +1902,14 @@
 						<id>77</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1947,14 +1947,14 @@
 						<id>78</id>
 						<name>sum_pix_ch0_5_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -1993,14 +1993,14 @@
 						<id>79</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2038,14 +2038,14 @@
 						<id>80</id>
 						<name>sum_pix_ch0_6_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2084,14 +2084,14 @@
 						<id>81</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2129,14 +2129,14 @@
 						<id>82</id>
 						<name>sum_pix_ch0_7_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2175,14 +2175,14 @@
 						<id>83</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2220,14 +2220,14 @@
 						<id>84</id>
 						<name>sum_pix_ch0_8_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2266,14 +2266,14 @@
 						<id>85</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2311,14 +2311,14 @@
 						<id>86</id>
 						<name>sum_pix_ch0_9_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2357,14 +2357,14 @@
 						<id>87</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2402,14 +2402,14 @@
 						<id>88</id>
 						<name>sum_pix_ch0_10_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2448,14 +2448,14 @@
 						<id>89</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2493,14 +2493,14 @@
 						<id>90</id>
 						<name>sum_pix_ch0_11_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2539,14 +2539,14 @@
 						<id>91</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2584,14 +2584,14 @@
 						<id>92</id>
 						<name>sum_pix_ch0_12_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2630,14 +2630,14 @@
 						<id>93</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2675,14 +2675,14 @@
 						<id>94</id>
 						<name>sum_pix_ch0_13_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2721,14 +2721,14 @@
 						<id>95</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2766,14 +2766,14 @@
 						<id>96</id>
 						<name>sum_pix_ch0_14_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2812,14 +2812,14 @@
 						<id>97</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2857,14 +2857,14 @@
 						<id>98</id>
 						<name>sum_pix_ch0_15_addr</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2903,14 +2903,14 @@
 						<id>99</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>49</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2948,14 +2948,14 @@
 						<id>101</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>46</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3147,14 +3147,14 @@
 						<id>108</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3351,14 +3351,14 @@
 						<id>116</id>
 						<name>exitcond</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>57</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3396,14 +3396,14 @@
 						<id>117</id>
 						<name>i_1_mid2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>57</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3442,14 +3442,14 @@
 						<id>120</id>
 						<name>tmp_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>66</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3486,14 +3486,14 @@
 						<id>121</id>
 						<name>empty_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>66</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3537,14 +3537,14 @@
 						<id>122</id>
 						<name>tmp_data_V</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>66</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3581,14 +3581,14 @@
 						<id>123</id>
 						<name>tmp_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3625,14 +3625,14 @@
 						<id>124</id>
 						<name>tmp_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3669,14 +3669,14 @@
 						<id>125</id>
 						<name>sum_pix_ch0_0_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3715,14 +3715,14 @@
 						<id>126</id>
 						<name>sum_pix_ch0_0_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3759,14 +3759,14 @@
 						<id>127</id>
 						<name>tmp_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3804,14 +3804,14 @@
 						<id>128</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3850,14 +3850,14 @@
 						<id>129</id>
 						<name>phitmp_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3897,14 +3897,14 @@
 						<id>130</id>
 						<name>tmp_28_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3941,14 +3941,14 @@
 						<id>131</id>
 						<name>sum_pix_ch0_1_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -3987,14 +3987,14 @@
 						<id>132</id>
 						<name>sum_pix_ch0_1_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4031,14 +4031,14 @@
 						<id>133</id>
 						<name>tmp_29_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4076,14 +4076,14 @@
 						<id>134</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4122,14 +4122,14 @@
 						<id>135</id>
 						<name>phitmp_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4169,14 +4169,14 @@
 						<id>136</id>
 						<name>tmp_28_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4213,14 +4213,14 @@
 						<id>137</id>
 						<name>sum_pix_ch0_2_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4259,14 +4259,14 @@
 						<id>138</id>
 						<name>sum_pix_ch0_2_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4303,14 +4303,14 @@
 						<id>139</id>
 						<name>tmp_29_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4348,14 +4348,14 @@
 						<id>140</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4394,14 +4394,14 @@
 						<id>141</id>
 						<name>phitmp_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4441,14 +4441,14 @@
 						<id>142</id>
 						<name>tmp_28_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4485,14 +4485,14 @@
 						<id>143</id>
 						<name>sum_pix_ch0_3_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4531,14 +4531,14 @@
 						<id>144</id>
 						<name>sum_pix_ch0_3_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4575,14 +4575,14 @@
 						<id>145</id>
 						<name>tmp_29_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4620,14 +4620,14 @@
 						<id>146</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4666,14 +4666,14 @@
 						<id>147</id>
 						<name>phitmp_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4713,14 +4713,14 @@
 						<id>148</id>
 						<name>tmp_28_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4757,14 +4757,14 @@
 						<id>149</id>
 						<name>sum_pix_ch0_4_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4803,14 +4803,14 @@
 						<id>150</id>
 						<name>sum_pix_ch0_4_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4847,14 +4847,14 @@
 						<id>151</id>
 						<name>tmp_29_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4892,14 +4892,14 @@
 						<id>152</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4938,14 +4938,14 @@
 						<id>153</id>
 						<name>phitmp_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -4985,14 +4985,14 @@
 						<id>154</id>
 						<name>tmp_28_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5029,14 +5029,14 @@
 						<id>155</id>
 						<name>sum_pix_ch0_5_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5075,14 +5075,14 @@
 						<id>156</id>
 						<name>sum_pix_ch0_5_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5119,14 +5119,14 @@
 						<id>157</id>
 						<name>tmp_29_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5164,14 +5164,14 @@
 						<id>158</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5210,14 +5210,14 @@
 						<id>159</id>
 						<name>phitmp_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5257,14 +5257,14 @@
 						<id>160</id>
 						<name>tmp_28_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5301,14 +5301,14 @@
 						<id>161</id>
 						<name>sum_pix_ch0_6_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5347,14 +5347,14 @@
 						<id>162</id>
 						<name>sum_pix_ch0_6_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5391,14 +5391,14 @@
 						<id>163</id>
 						<name>tmp_29_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5436,14 +5436,14 @@
 						<id>164</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5482,14 +5482,14 @@
 						<id>165</id>
 						<name>phitmp_7</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5529,14 +5529,14 @@
 						<id>166</id>
 						<name>tmp_28_7</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5573,14 +5573,14 @@
 						<id>167</id>
 						<name>sum_pix_ch0_7_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5619,14 +5619,14 @@
 						<id>168</id>
 						<name>sum_pix_ch0_7_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5663,14 +5663,14 @@
 						<id>169</id>
 						<name>tmp_29_7</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5708,14 +5708,14 @@
 						<id>170</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5754,14 +5754,14 @@
 						<id>171</id>
 						<name>phitmp_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5801,14 +5801,14 @@
 						<id>172</id>
 						<name>tmp_28_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5845,14 +5845,14 @@
 						<id>173</id>
 						<name>sum_pix_ch0_8_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5891,14 +5891,14 @@
 						<id>174</id>
 						<name>sum_pix_ch0_8_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5935,14 +5935,14 @@
 						<id>175</id>
 						<name>tmp_29_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -5980,14 +5980,14 @@
 						<id>176</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6026,14 +6026,14 @@
 						<id>177</id>
 						<name>phitmp_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6073,14 +6073,14 @@
 						<id>178</id>
 						<name>tmp_28_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6117,14 +6117,14 @@
 						<id>179</id>
 						<name>sum_pix_ch0_9_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6163,14 +6163,14 @@
 						<id>180</id>
 						<name>sum_pix_ch0_9_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6207,14 +6207,14 @@
 						<id>181</id>
 						<name>tmp_29_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6252,14 +6252,14 @@
 						<id>182</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6298,14 +6298,14 @@
 						<id>183</id>
 						<name>phitmp_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6345,14 +6345,14 @@
 						<id>184</id>
 						<name>tmp_28_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6389,14 +6389,14 @@
 						<id>185</id>
 						<name>sum_pix_ch0_10_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6435,14 +6435,14 @@
 						<id>186</id>
 						<name>sum_pix_ch0_10_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6479,14 +6479,14 @@
 						<id>187</id>
 						<name>tmp_29_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6524,14 +6524,14 @@
 						<id>188</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6570,14 +6570,14 @@
 						<id>189</id>
 						<name>phitmp_10</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6617,14 +6617,14 @@
 						<id>190</id>
 						<name>tmp_28_10</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6661,14 +6661,14 @@
 						<id>191</id>
 						<name>sum_pix_ch0_11_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6707,14 +6707,14 @@
 						<id>192</id>
 						<name>sum_pix_ch0_11_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6751,14 +6751,14 @@
 						<id>193</id>
 						<name>tmp_29_10</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6796,14 +6796,14 @@
 						<id>194</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6842,14 +6842,14 @@
 						<id>195</id>
 						<name>phitmp_11</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6889,14 +6889,14 @@
 						<id>196</id>
 						<name>tmp_28_11</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6933,14 +6933,14 @@
 						<id>197</id>
 						<name>sum_pix_ch0_12_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -6979,14 +6979,14 @@
 						<id>198</id>
 						<name>sum_pix_ch0_12_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7023,14 +7023,14 @@
 						<id>199</id>
 						<name>tmp_29_11</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7068,14 +7068,14 @@
 						<id>200</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7114,14 +7114,14 @@
 						<id>201</id>
 						<name>phitmp_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7161,14 +7161,14 @@
 						<id>202</id>
 						<name>tmp_28_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7205,14 +7205,14 @@
 						<id>203</id>
 						<name>sum_pix_ch0_13_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7251,14 +7251,14 @@
 						<id>204</id>
 						<name>sum_pix_ch0_13_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7295,14 +7295,14 @@
 						<id>205</id>
 						<name>tmp_29_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7340,14 +7340,14 @@
 						<id>206</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7386,14 +7386,14 @@
 						<id>207</id>
 						<name>phitmp_13</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7433,14 +7433,14 @@
 						<id>208</id>
 						<name>tmp_28_13</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7477,14 +7477,14 @@
 						<id>209</id>
 						<name>sum_pix_ch0_14_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7523,14 +7523,14 @@
 						<id>210</id>
 						<name>sum_pix_ch0_14_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7567,14 +7567,14 @@
 						<id>211</id>
 						<name>tmp_29_13</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7612,14 +7612,14 @@
 						<id>212</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7658,14 +7658,14 @@
 						<id>213</id>
 						<name>phitmp_14</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>68</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7705,14 +7705,14 @@
 						<id>214</id>
 						<name>tmp_28_14</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7749,14 +7749,14 @@
 						<id>215</id>
 						<name>sum_pix_ch0_15_addr_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7795,14 +7795,14 @@
 						<id>216</id>
 						<name>sum_pix_ch0_15_load</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7839,14 +7839,14 @@
 						<id>217</id>
 						<name>tmp_29_14</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7884,14 +7884,14 @@
 						<id>218</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>69</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7930,14 +7930,14 @@
 						<id>220</id>
 						<name>i_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>57</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -7975,14 +7975,14 @@
 						<id>221</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>57</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8019,14 +8019,14 @@
 						<id>223</id>
 						<name>tmp_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>97</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8064,14 +8064,14 @@
 						<id>224</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>80</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8141,14 +8141,14 @@
 						<id>227</id>
 						<name>exitcond4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>80</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8186,14 +8186,14 @@
 						<id>229</id>
 						<name>i_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>80</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8231,14 +8231,14 @@
 						<id>230</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>80</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8277,14 +8277,14 @@
 						<id>234</id>
 						<name>tmp_last_V</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>89</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8322,14 +8322,14 @@
 						<id>235</id>
 						<name>tmp_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8366,14 +8366,14 @@
 						<id>236</id>
 						<name>sum_pix_ch0_0_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8412,14 +8412,14 @@
 						<id>237</id>
 						<name>sum_pix_ch0_0_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8456,14 +8456,14 @@
 						<id>238</id>
 						<name>sum_pix_ch0_1_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8502,14 +8502,14 @@
 						<id>239</id>
 						<name>sum_pix_ch0_1_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8546,14 +8546,14 @@
 						<id>240</id>
 						<name>sum_pix_ch0_2_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8592,14 +8592,14 @@
 						<id>241</id>
 						<name>sum_pix_ch0_2_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8636,14 +8636,14 @@
 						<id>242</id>
 						<name>sum_pix_ch0_3_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8682,14 +8682,14 @@
 						<id>243</id>
 						<name>sum_pix_ch0_3_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8726,14 +8726,14 @@
 						<id>244</id>
 						<name>sum_pix_ch0_4_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8772,14 +8772,14 @@
 						<id>245</id>
 						<name>sum_pix_ch0_4_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8816,14 +8816,14 @@
 						<id>246</id>
 						<name>sum_pix_ch0_5_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8862,14 +8862,14 @@
 						<id>247</id>
 						<name>sum_pix_ch0_5_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8906,14 +8906,14 @@
 						<id>248</id>
 						<name>sum_pix_ch0_6_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8952,14 +8952,14 @@
 						<id>249</id>
 						<name>sum_pix_ch0_6_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -8996,14 +8996,14 @@
 						<id>250</id>
 						<name>sum_pix_ch0_7_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9042,14 +9042,14 @@
 						<id>251</id>
 						<name>sum_pix_ch0_7_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9086,14 +9086,14 @@
 						<id>252</id>
 						<name>sum_pix_ch0_8_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9132,14 +9132,14 @@
 						<id>253</id>
 						<name>sum_pix_ch0_8_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9176,14 +9176,14 @@
 						<id>254</id>
 						<name>sum_pix_ch0_9_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9222,14 +9222,14 @@
 						<id>255</id>
 						<name>sum_pix_ch0_9_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9266,14 +9266,14 @@
 						<id>256</id>
 						<name>sum_pix_ch0_10_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9312,14 +9312,14 @@
 						<id>257</id>
 						<name>sum_pix_ch0_10_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9356,14 +9356,14 @@
 						<id>258</id>
 						<name>sum_pix_ch0_11_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9402,14 +9402,14 @@
 						<id>259</id>
 						<name>sum_pix_ch0_11_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9446,14 +9446,14 @@
 						<id>260</id>
 						<name>sum_pix_ch0_12_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9492,14 +9492,14 @@
 						<id>261</id>
 						<name>sum_pix_ch0_12_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9536,14 +9536,14 @@
 						<id>262</id>
 						<name>sum_pix_ch0_13_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9582,14 +9582,14 @@
 						<id>263</id>
 						<name>sum_pix_ch0_13_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9626,14 +9626,14 @@
 						<id>264</id>
 						<name>sum_pix_ch0_14_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9672,14 +9672,14 @@
 						<id>265</id>
 						<name>sum_pix_ch0_14_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9716,14 +9716,14 @@
 						<id>266</id>
 						<name>sum_pix_ch0_15_addr_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9762,14 +9762,14 @@
 						<id>267</id>
 						<name>sum_pix_ch0_15_load_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9806,14 +9806,14 @@
 						<id>268</id>
 						<name>sum_pix_tot_data_V_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>100</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9866,14 +9866,14 @@
 						<id>269</id>
 						<name>tmp_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9912,14 +9912,14 @@
 						<id>270</id>
 						<name>tmp_3_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -9956,14 +9956,14 @@
 						<id>271</id>
 						<name>val_assign_1_s</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10001,14 +10001,14 @@
 						<id>272</id>
 						<name>val_assign_1_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10045,14 +10045,14 @@
 						<id>273</id>
 						<name>val_assign_1_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10090,14 +10090,14 @@
 						<id>274</id>
 						<name>val_assign_1_1_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10134,14 +10134,14 @@
 						<id>275</id>
 						<name>val_assign_1_2</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10179,14 +10179,14 @@
 						<id>276</id>
 						<name>val_assign_1_2_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10223,14 +10223,14 @@
 						<id>277</id>
 						<name>val_assign_1_3</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10268,14 +10268,14 @@
 						<id>278</id>
 						<name>val_assign_1_3_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10312,14 +10312,14 @@
 						<id>279</id>
 						<name>val_assign_1_4</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10357,14 +10357,14 @@
 						<id>280</id>
 						<name>val_assign_1_4_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10401,14 +10401,14 @@
 						<id>281</id>
 						<name>val_assign_1_5</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10446,14 +10446,14 @@
 						<id>282</id>
 						<name>val_assign_1_5_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10490,14 +10490,14 @@
 						<id>283</id>
 						<name>val_assign_1_6</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10535,14 +10535,14 @@
 						<id>284</id>
 						<name>val_assign_1_6_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10579,14 +10579,14 @@
 						<id>285</id>
 						<name>val_assign_1_7</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10624,14 +10624,14 @@
 						<id>286</id>
 						<name>val_assign_1_7_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10668,14 +10668,14 @@
 						<id>287</id>
 						<name>val_assign_1_8</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10713,14 +10713,14 @@
 						<id>288</id>
 						<name>val_assign_1_8_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10757,14 +10757,14 @@
 						<id>289</id>
 						<name>val_assign_1_9</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10802,14 +10802,14 @@
 						<id>290</id>
 						<name>val_assign_1_9_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10846,14 +10846,14 @@
 						<id>291</id>
 						<name>val_assign_1_10</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10891,14 +10891,14 @@
 						<id>292</id>
 						<name>val_assign_1_10_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10935,14 +10935,14 @@
 						<id>293</id>
 						<name>val_assign_1_11</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -10980,14 +10980,14 @@
 						<id>294</id>
 						<name>val_assign_1_11_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11024,14 +11024,14 @@
 						<id>295</id>
 						<name>val_assign_1_12</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11069,14 +11069,14 @@
 						<id>296</id>
 						<name>val_assign_1_12_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11113,14 +11113,14 @@
 						<id>297</id>
 						<name>val_assign_1_13</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11158,14 +11158,14 @@
 						<id>298</id>
 						<name>val_assign_1_13_cast</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11202,14 +11202,14 @@
 						<id>299</id>
 						<name>val_assign_1_14</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11247,14 +11247,14 @@
 						<id>300</id>
 						<name>tmp</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11307,14 +11307,14 @@
 						<id>301</id>
 						<name>sum_pix_tot_data_V_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>106</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11351,14 +11351,14 @@
 						<id>302</id>
 						<name>tmp_data_V_1</name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>111</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11397,14 +11397,14 @@
 						<id>303</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>111</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11455,14 +11455,14 @@
 						<id>305</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>80</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -11499,14 +11499,14 @@
 						<id>307</id>
 						<name></name>
 						<fileName>scurve_adder.cpp</fileName>
-						<fileDirectory>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</fileDirectory>
+						<fileDirectory>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</fileDirectory>
 						<lineNumber>113</lineNumber>
 						<contextFuncName>scurve_adder36</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36</first>
+								<first>/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>

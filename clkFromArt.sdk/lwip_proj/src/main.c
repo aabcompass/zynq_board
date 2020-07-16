@@ -304,6 +304,9 @@ int main()
 
 	SetArtixTransmitDelay(10);
 
+	//print("SetPMTZero ...\n\r");
+	//SetPMTZero();
+
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
 

@@ -37,7 +37,9 @@ architecture Behavioral of data_converter_tb is
     	m_axis_tuser : out STD_LOGIC_VECTOR(5 downto 0);
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
-    	m_axis_tready : in STD_LOGIC    	
+    	m_axis_tready : in STD_LOGIC;
+    	prog_reset_p: in std_logic;
+    	zeros: in std_logic_vector(12*3-1 downto 0)    	    	    	
     	);
 	end component;
 	
@@ -182,7 +184,9 @@ begin
     	m_axis_tuser => open,--: : out STD_LOGIC_VECTOR(5 downto 0);
     	m_axis_tvalid => open,--: : out STD_LOGIC;
     	m_axis_tlast => open,--: : out STD_LOGIC;
-    	m_axis_tready => '1' --: : in STD_LOGIC    	
+    	m_axis_tready => '1', --: : in STD_LOGIC   
+    	prog_reset_p => '0',
+    	zeros => (1 to 9 => '1', others => '0') 	
     	);
 
 end Behavioral;

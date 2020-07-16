@@ -26,11 +26,15 @@ void InitHLS_peripherals()
 //	XScurve_adder_EnableAutoRestart(&scurve_adder);
 //	XScurve_adder_Start(&scurve_adder);
 
-	status = XScurve_adder36_Initialize(&scurve_adder36, XPAR_SCURVE_ADDER36_0_DEVICE_ID);
 	xil_printf("XScurve_adder36_Initialize rets %d\n\r", status);
+	status = XScurve_adder36_Initialize(&scurve_adder36, XPAR_SCURVE_ADDER36_0_DEVICE_ID);
+	xil_printf("XScurve_adder36_Set_N_ADDS\n\r");
 	XScurve_adder36_Set_N_ADDS(&scurve_adder36, 16384);
+	xil_printf("XScurve_adder36_EnableAutoRestart\n\r");
 	XScurve_adder36_EnableAutoRestart(&scurve_adder36);
+	xil_printf("XScurve_adder36_Start\n\r");
 	XScurve_adder36_Start(&scurve_adder36);
+	xil_printf("XScurve_adder36_Initialize rets %d\n\r", status);
 }
 
 void SA_set_TestMode(u32 mode)

@@ -52,7 +52,8 @@ entity dataconv_switch is
       m_axis_tlast : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       m_axis_tuser : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
       s_req_suppress : IN STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0);
-      s_decode_err : OUT STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0)
+      s_decode_err : OUT STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0);
+      zeros: in std_logic_vector(n_lines-1 DOWNTO 0)
     );
 end dataconv_switch;
 
@@ -72,7 +73,11 @@ begin
 					m_axis_tvalid(0) <= s_axis_tvalid(i);
 					m_axis_tlast(0) <= s_axis_tlast((i));
 					m_axis_tuser(5 downto 0) <= s_axis_tuser(6*((i)+1)-1 downto 6*(i));
+					--if(zeros(i) = '0') then
 					m_axis_tdata(n_bytes*8-1 DOWNTO 0) <= s_axis_tdata(n_bytes*8*((i)+1)-1  downto  n_bytes*8*(i));
+					--else
+					--	m_axis_tdata(n_bytes*8-1 DOWNTO 0) <= (others => '0');
+					--end if;
 				end if;
 			end loop;
 		end if;

@@ -70,6 +70,8 @@ entity axi_data_provider_z3 is
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	reset_data_conv: out std_logic;
+    	reset_scurve_adder: out std_logic;
+    	zero_pmts: out std_logic_vector(35 downto 0);
    	
     	
     	
@@ -1287,6 +1289,7 @@ begin
 	run <= slv_reg0(1);
 	prog_reset <= slv_reg0(2);
 	reset_data_conv <= slv_reg1(0);
+	reset_scurve_adder <= not slv_reg1(1);
 	num_of_frames <= slv_reg3;
 	infinite <= slv_reg10(0);
 	slv_reg16(0) <= pass;
@@ -1349,11 +1352,12 @@ begin
 	m_axis_tlast <= s_axis_tlast;--: in std_logic;
 
 --     	m_axis_tdata: out std_logic_vector(127 downto 0);
---    	m_axis_tuser: out std_logic_vector(5 downto 0);
+--    	m_axis_tuser: out std_logic_vector(5 downto 0); 
 --    	m_axis_tvalid: out std_logic;
 --    	m_axis_tready: in std_logic;
 --    	m_axis_tlast: out std_logic;
 	slv_reg17 <= aux_in;
+	zero_pmts <= slv_reg12(11 downto 0) & slv_reg11(27 downto 16) & slv_reg11(11 downto 0);
 
 	
 end Behavioral;

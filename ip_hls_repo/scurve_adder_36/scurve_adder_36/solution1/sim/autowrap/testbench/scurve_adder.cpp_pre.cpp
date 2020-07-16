@@ -1,9 +1,9 @@
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
-# 17 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
-# 1 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 1
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+# 17 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+# 1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 1
 
 
 
@@ -1357,7 +1357,7 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 955 "/usr/include/stdlib.h" 2 3 4
 # 967 "/usr/include/stdlib.h" 3 4
 }
-# 5 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+# 5 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 # 1 "/opt/Xilinx/Vivado/2018.1/include/hls_stream.h" 1
 # 79 "/opt/Xilinx/Vivado/2018.1/include/hls_stream.h"
 # 1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/queue" 1 3
@@ -26338,7 +26338,7 @@ class stream
 };
 
 }
-# 6 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+# 6 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 # 1 "/opt/Xilinx/Vivado/2018.1/include/ap_axi_sdata.h" 1
 # 86 "/opt/Xilinx/Vivado/2018.1/include/ap_axi_sdata.h"
 # 1 "/opt/Xilinx/Vivado/2018.1/include/ap_int.h" 1
@@ -50524,7 +50524,7 @@ template<int D,int U,int TI,int TD>
     ap_uint<TI> id;
     ap_uint<TD> dest;
   };
-# 7 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+# 7 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 # 1 "/usr/include/inttypes.h" 1 3 4
 # 266 "/usr/include/inttypes.h" 3 4
 extern "C" {
@@ -50563,7 +50563,7 @@ extern uintmax_t wcstoumax (const wchar_t *__restrict __nptr,
      throw ();
 # 432 "/usr/include/inttypes.h" 3 4
 }
-# 8 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+# 8 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 # 1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bitset" 1 3
 # 47 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bitset" 3
        
@@ -51748,8 +51748,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 9 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
-# 19 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.h"
+# 9 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+# 19 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h"
 typedef ap_axis<16,6,5,6> AXI_DATA_16;
 typedef ap_axis<32,6,5,6> AXI_DATA_32;
 typedef ap_axis<64,6,5,6> AXI_DATA_64;
@@ -51770,7 +51770,7 @@ void scurve_adder36(STREAM_128 &in_stream0,
 typedef ap_uint<128> uint128_t;
 
 typedef ap_uint<512> uint512_t;
-# 18 "/home/alx/xil_proj/zynq_board/36ch_4/ip_hls_repo/scurve_adder_36/scurve_adder.cpp" 2
+# 18 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp" 2
 
 void scurve_adder36(STREAM_128 &in_stream0 ,
   STREAM_512 &out_stream ,
@@ -51781,6 +51781,7 @@ void scurve_adder36(STREAM_128 &in_stream0 ,
 #pragma HLS INTERFACE axis port=in_stream0
 #pragma HLS INTERFACE axis port=out_stream
 #pragma HLS INTERFACE s_axilite port=N_ADDS bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=TEST_MODE bundle=CTRL_BUS
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL_BUS
 
  int i, j, k, l;
