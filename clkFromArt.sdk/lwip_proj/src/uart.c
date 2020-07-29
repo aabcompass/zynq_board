@@ -22,6 +22,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 	if(c == 'd')
 	{
 		//DmaStart1();
+		 ResetScurveAdder();
+		 InitHLS_peripherals();
 	}
 	else if(c == 's')
 	{

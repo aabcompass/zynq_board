@@ -314,6 +314,7 @@ int main()
 	ResetSPACIROC3();
 
 	print("HLS peripherals initialization...\n\r");
+	ResetScurveAdder();
 	InitHLS_peripherals();
 
 	print("Starting TCP client Telnet server on port 23 ...\n\r");
