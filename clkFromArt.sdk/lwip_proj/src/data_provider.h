@@ -26,4 +26,7 @@
 #define BIT_GTU_1US				1 /*GTU clk mode - 1 or 2.5.  Must be setup prior to starts*/
 #define BIT_RUN_DATACONV		2 /*Run data converter which is BEFORE the data_provider*/
 
+
+int IsDataProviderStarted();
+
 #endif /* SRC_DATA_PROVIDER_H_ */

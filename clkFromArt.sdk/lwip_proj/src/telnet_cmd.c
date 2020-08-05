@@ -106,7 +106,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	double double_param, double_param2, double_param3;
 	int ret;
 	int turn[NUM_OF_HV];
-	static int is_dp_started = 0;
+
 	u32 pmt_trig1,  pmt_trig2,  ec_trig1,  ec_trig2,  pdm_trig1,  pdm_trig2;
 	// print command
 	print("TCP: ");
@@ -142,9 +142,17 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, "acq live", 8) == 0)
 	{
 		err_t err;
-		if(!is_dp_started)
+		if(!IsDataProviderStarted())
+		{
+			StopDataProviderForLive();
+			for(i=0;i<10000000;i++); //Pause ~ 0.1.
+			ResetDataConverter();
+			for(i=0;i<10000000;i++); //Pause ~ 0.1.
+			ResetScurveAdder();
+			InitHLS_peripherals();
+			for(i=0;i<10000000;i++); //Pause ~ 0.1.
 			StartDataProviderForLive();
-		is_dp_started = 1;
+		}
 		GetPtrForLive(&ptr4live);
 //		char str[] = "Ok\n\r";
 		err = tcp_write(tpcb, ptr4live, 4 * N_OF_PIXEL_PER_PDM / 2, 1);
