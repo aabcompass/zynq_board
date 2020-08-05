@@ -24,14 +24,14 @@ void StartDataProviderForLive()
 
 void StopDataProviderForLive()
 {
-	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~((1<<BIT_RUN_DATACONV) | (1<<BIT_INFINITE));
 	is_dp_started = 0;
 	print("Data provider stopped\n\r");
 }
 
 void ResetDataConverter()
 {
-	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
+	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
 	print("Switching off SERDES\n\r");
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATACONV_RESET) = (1<<BIT_DATACONV_RESET);
 	print("Resetting data converter\n\r");
