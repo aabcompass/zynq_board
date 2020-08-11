@@ -8,12 +8,15 @@
 #ifndef SRC_DATA_PROVIDER_H_
 #define SRC_DATA_PROVIDER_H_
 
+#include "xbasic_types.h"
+
 #define REGW_DATAPROV_FLAGS		0
 #define REGW_DATACONV_RESET		1
 #define REGW_DATAPROV_N_FRAMES	3
 #define REGW_DATAPROV_FLAGS2	10
 #define REGW_DATAPROV_PMTZERO_01	11
 #define REGW_DATAPROV_PMTZERO_2	12
+#define REGW_DATAPROV_CLKEN		13
 
 //REGW_DATAPROV_FLAGS
 #define BIT_START_SIG			0 /*Start Data Provider*/
@@ -25,8 +28,13 @@
 #define BIT_INFINITE			0 /*Provide data infinitely regardless of REGW_DATAPROV_N_FRAMES*/
 #define BIT_GTU_1US				1 /*GTU clk mode - 1 or 2.5.  Must be setup prior to starts*/
 #define BIT_RUN_DATACONV		2 /*Run data converter which is BEFORE the data_provider*/
+//REGW_DATAPROV_CLKEN
+#define BIT_ART_CLKEN			0 /*Clock enable for artix clk. Set GTU time before to run artix clock*/
 
 
 int IsDataProviderStarted();
+void RunArtix(u32 is_gtu_1us);
+void ArtixClkEn(u32 en);
+void SetGtuFreq1us(u32 is_gtu_1us);
 
 #endif /* SRC_DATA_PROVIDER_H_ */

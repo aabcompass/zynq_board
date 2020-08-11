@@ -237,6 +237,7 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
 	
+	signal art_clk_en: std_logic := '0';
 	signal art_clk_i: std_logic := '0';
 	signal gtu_1us: std_logic := '0';
 	signal run: std_logic := '0';
@@ -1236,22 +1237,25 @@ begin
 
 ----------------------------------------------------------------------------
 	gtu_1us <= slv_reg10(1);
+	art_clk_en <= slv_reg13(0);
 
-	artix_clk_gen: process(S_AXI_ACLK)
+	artix_clk_gen: process(S_AXI_ACLK) -- S_AXI_ACLK = 200 MHz
 		variable cnt : integer;
 	begin
 		if(rising_edge(S_AXI_ACLK)) then
-			if(gtu_1us = '1') then
-				art_clk_i <= not art_clk_i;
-			else
-				if(cnt = 5) then
-					art_clk_i <= not art_clk_i;
-					cnt := 1;
-				else
-					if(cnt = 3) then
+			if(art_clk_en = '1') then
+				if(gtu_1us = '1') then -- art_clk_i  = 100 MHz
+					art_clk_i <= not art_clk_i; 
+				else                   -- art_clk_i  = 40 MHz
+					if(cnt = 5) then
 						art_clk_i <= not art_clk_i;
+						cnt := 1;
+					else
+						if(cnt = 3) then
+							art_clk_i <= not art_clk_i;
+						end if;
+						cnt := cnt + 1;
 					end if;
-					cnt := cnt + 1;
 				end if;
 			end if;
 		end if;

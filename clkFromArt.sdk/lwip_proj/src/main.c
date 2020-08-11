@@ -297,12 +297,19 @@ int main()
 	print("ARTIX loading...\n\r");
 	//PrepareArtixConfiguration();
 
+
+	print("Starting Artix clock\n\r");
+	SetGtuFreq1us(1);
+	ArtixClkEn();
+
+
+	print("Loading FW to Artixes\n\r");
 	*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 
-	SetArtixTransmitDelay(10);
+	SetArtixTransmitDelay(11);
 
 	//print("SetPMTZero ...\n\r");
 	//SetPMTZero();

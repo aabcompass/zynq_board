@@ -27,6 +27,8 @@ DebugSettings debugSettings;
 u32 live_sent = 0;
 u32* ptr4live;
 
+
+
 void SetInstrumentMode(u32 mode)
 {
 //	instrumentState.mode = mode;
@@ -327,6 +329,19 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 //		sprintf(reply, "%d\n\r", GetIndSCPixelMask());
 //		tcp_write(tpcb, reply, strlen(reply), 1);
 //	}
+
+	else if(strncmp(p->payload, "gtu 1us", 7) == 0)
+	{
+		RunArtix(1);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, "gtu 2.5us", 9) == 0)
+	{
+		RunArtix(0);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, "hvps status interrupt", 21) == 0)
 	{
 		sprintf(reply, "%d\n\r", GetIntrState());

@@ -8,7 +8,9 @@
 #include "xparameters.h"
 #include "common.h"
 #include "data_provider.h"
+#include "ftp_server.h"
 
+char tmp_array[10000000];
 
 void ProcessUartCommands(struct netif *netif, char c)
 {
@@ -131,6 +133,10 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'G')
 	{
 		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
+	}
+	else if(c == 'f')
+	{
+		CreateFile("testfile.bin", tmp_array, 10000000, 0, file_scidata);
 	}
 
 }

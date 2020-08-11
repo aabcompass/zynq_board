@@ -56,3 +56,34 @@ int IsDataProviderStarted()
 {
 	return is_dp_started;
 }
+
+void ArtixClkEn(u32 en)
+{
+	if(en)
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_CLKEN) |= (1<<BIT_ART_CLKEN);
+	else
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_CLKEN) &= ~(1<<BIT_ART_CLKEN);
+}
+
+void SetGtuFreq1us(u32 is_gtu_1us)
+{
+	if(is_gtu_1us)
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_GTU_1US);
+	else
+		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
+}
+
+void RunArtix(u32 is_gtu_1us)
+{
+	ArtixClkEn(0);
+	xil_printf("Artix clock stopped.\n\r");
+	SetGtuFreq1us(is_gtu_1us);
+	xil_printf("Starting Artix clock...");
+	ArtixClkEn(1);
+	xil_printf("Ok\n\r");
+	xil_printf("SetArtixTransmitDelay...");
+	if(is_gtu_1us)
+		SetArtixTransmitDelay(11);
+	else
+		SetArtixTransmitDelay(10);
+}
