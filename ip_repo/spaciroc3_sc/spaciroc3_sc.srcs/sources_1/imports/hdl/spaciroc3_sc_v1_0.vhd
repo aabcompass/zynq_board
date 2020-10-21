@@ -24,7 +24,7 @@ entity spaciroc3_sc is
     sr_in_pc : out  STD_LOGIC_vector(6-1 downto 0) := (others => '0');
 		sr_ck_pc : out  STD_LOGIC := '0';
 		sr_rstb_pc : out  STD_LOGIC := '0';
-		sr_out_pc: in std_logic;
+		sr_out_pc: in STD_LOGIC_vector(5 downto 0);
 		select_sc_probe_pc, resetb_pc: out std_logic;
 		select_din_pc: out std_logic := '1';
 		loadb_sc_pc: out std_logic := '1';
@@ -35,6 +35,13 @@ entity spaciroc3_sc is
 		s00_axis_tdata: in std_logic_vector(C_S00_AXI_DATA_WIDTH*6-1 downto 0);
 		s00_axis_tvalid: in std_logic;
 		s00_axis_tready: out std_logic;
+		
+		m00_axis_tvalid : OUT STD_LOGIC;
+    m00_axis_tready : IN STD_LOGIC;
+    m00_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    m00_axis_tlast : OUT STD_LOGIC;           
+		
+		
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
 		s00_axi_aresetn	: in std_logic;
@@ -77,7 +84,7 @@ architecture arch_imp of spaciroc3_sc is
     sr_in_pc : out  STD_LOGIC_vector(5 downto 0) := (others => '0');
 		sr_ck_pc : out  STD_LOGIC := '0';
 		sr_rstb_pc : out  STD_LOGIC := '0';
-		sr_out_pc: in std_logic;
+		sr_out_pc: in STD_LOGIC_vector(5 downto 0);
 		select_sc_probe_pc, resetb_pc: out std_logic;
 		select_din_pc: out std_logic := '1';
 		loadb_sc_pc: out std_logic := '1';
@@ -88,6 +95,12 @@ architecture arch_imp of spaciroc3_sc is
 		s00_axis_tdata: in std_logic_vector(C_S00_AXI_DATA_WIDTH*6-1 downto 0);
 		s00_axis_tvalid: in std_logic;
 		s00_axis_tready: out std_logic;
+
+		m00_axis_tvalid : OUT STD_LOGIC;
+    m00_axis_tready : IN STD_LOGIC;
+    m00_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    m00_axis_tlast : OUT STD_LOGIC;           
+
 		
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
@@ -139,6 +152,11 @@ spaciroc3_sc_v1_0_S00_AXI_inst : spaciroc3_sc_v1_0_S00_AXI
 		s00_axis_tdata	=> s00_axis_tdata,--: in std_logic_vector(C_S00_AXI_DATA_WIDTH*6-1 downto 0);
 		s00_axis_tvalid	=> s00_axis_tvalid,--: in std_logic;
 		s00_axis_tready	=> s00_axis_tready,--: out std_logic;
+
+    m00_axis_tvalid => m00_axis_tvalid,--: OUT STD_LOGIC;
+    m00_axis_tready => m00_axis_tready,--: IN STD_LOGIC;
+    m00_axis_tdata => m00_axis_tdata,--: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    m00_axis_tlast => m00_axis_tlast,--: OUT STD_LOGIC           
 
 
 		S_AXI_ACLK	=> s00_axi_aclk,

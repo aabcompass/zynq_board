@@ -15,11 +15,14 @@ entity spaciroc3_sc_top is
 					 N_SECTIONS: integer := 6);
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
+           reset_rb_fifo:  in STD_LOGIC;
+           cmd_reg: in std_logic_vector(31 downto 0);
+           readback_fifo_cnt: out std_logic_vector(13 downto 0);
            --EXTERNAL PINS
            sr_in_pc : out  STD_LOGIC_vector(N_LINES-1 downto 0) := (others => '0'); -- sc data
            sr_ck_pc : out  STD_LOGIC := '0'; -- sc clk
            sr_rstb_pc : out  STD_LOGIC := '1'; -- sc reset 
-           sr_out_pc: in std_logic; -- sc feedback
+           sr_out_pc: in STD_LOGIC_vector(N_LINES-1 downto 0); -- sc feedback
            select_sc_probe_pc: out std_logic := '1'; -- select between sc and probes
            resetb_pc: out std_logic := '0'; -- reset entire ASIC
            --select_din_pc: out std_logic := '1'; -- always one
@@ -38,7 +41,13 @@ entity spaciroc3_sc_top is
            -- data to be sent separately (in individual mode)
            s00_axis_tdata:  in std_logic_vector(32*N_LINES-1 downto 0);
            s00_axis_tvalid: in std_logic;
-           s00_axis_tready: out std_logic := '0'
+           s00_axis_tready: out std_logic := '0';
+ 
+ 					 m00_axis_tvalid : OUT STD_LOGIC;
+           m00_axis_tready : IN STD_LOGIC;
+           m00_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+           m00_axis_tlast : OUT STD_LOGIC
+          
            --current_chip: out std_logic_vector(2 downto 0) := "000"--;
            -- data to be downloaded
 					 --configuration_sc: in std_logic_vector(N_SC_BITS-1 downto 0);
@@ -70,6 +79,52 @@ architecture Behavioral of spaciroc3_sc_top is
 	signal status2 : std_logic_vector(3 downto 0) := "0000";
 	signal tready_cnt : std_logic_vector(15 downto 0) := (others => '0');
 
+
+
+	COMPONENT fifo_generator_1to8
+		PORT (
+			clk : IN STD_LOGIC;
+			srst : IN STD_LOGIC;
+			din : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+			wr_en : IN STD_LOGIC;
+			rd_en : IN STD_LOGIC;
+			dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			full : OUT STD_LOGIC;
+			empty : OUT STD_LOGIC;
+			valid : OUT STD_LOGIC;
+			wr_data_count : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT axis_dwc_6to4
+		PORT (
+			aclk : IN STD_LOGIC;
+			aresetn : IN STD_LOGIC;
+			s_axis_tvalid : IN STD_LOGIC;
+			s_axis_tready : OUT STD_LOGIC;
+			s_axis_tdata : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
+			--s_axis_tlast : IN STD_LOGIC;
+			m_axis_tvalid : OUT STD_LOGIC;
+			m_axis_tready : IN STD_LOGIC;
+			m_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)---;
+			--m_axis_tkeep : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+			--m_axis_tlast : OUT STD_LOGIC
+		);
+	END COMPONENT;
+	
+	signal reset_rb_fifo_n: std_logic;
+	signal cmd_reg_d1 : std_logic_vector(31 downto 0) := (others => '0');
+	signal one_more_bit_inject: std_logic := '0';
+	signal sr_ck_pc_f: std_logic := '0';
+	signal readback_fifo_wr_en: std_logic := '0';
+	signal readback_fifo_rd_en: std_logic := '0';
+	signal readback_fifo_dout: std_logic_vector(8*N_LINES-1 downto 0) := (others => '0');
+	signal readback_fifo_dout_dv: std_logic_vector(N_LINES-1 downto 0) := (others => '0');
+	signal readback_fifo_cnt_i: std_logic_vector(14*N_LINES-1 downto 0);
+	
+	signal m00_axis_tdata_i: std_logic_vector(31 downto 0) := (others => '0');
+
+
 	attribute keep : string;  
 	attribute keep of rst_i: signal is "true"; 
 	attribute keep of load_sc_cnt: signal is "true"; 
@@ -84,10 +139,11 @@ architecture Behavioral of spaciroc3_sc_top is
 	attribute keep of status2: signal is "true"; 
 	attribute keep of sr_ck_pc_cnt: signal is "true"; 
 	attribute keep of tready_cnt: signal is "true"; 
-
-
+	attribute keep of readback_fifo_dout_dv: signal is "true"; 
+	
 begin
 
+	cmd_reg_d1 <= cmd_reg when rising_edge(clk);
 
 	-- process for reset entire ASI
 	resetb_former_gen1: if(sim = '0') generate
@@ -168,10 +224,12 @@ begin
 											state := state + 1;
 											load_sc_cnt <= (0 => '1', others => '0');
 											sr_ck_pc <= '0';
+											sr_ck_pc_f <= '1';
 										else
 											load_sc_cnt <= load_sc_cnt + 1;
 										end if;
-				when 5 =>   if(load_sc_bits_cnt = N_SC_BITS-1) then
+				when 5 =>   sr_ck_pc_f <= '0';
+										if(load_sc_bits_cnt = N_SC_BITS-1) then
 											state := state + 1;
 											load_sc_bits_cnt <= (others => '0');
 										else
@@ -403,6 +461,61 @@ begin
 			end if;
 		end process;
 	end generate;
+	
+	-- Readback slowcontrol stream
+	one_more_bit_inject <= cmd_reg(0) and (not cmd_reg_d1(0)); 
+	readback_fifo_wr_en <= sr_ck_pc_f OR one_more_bit_inject;
+	
+	readback_fifo_1to8_gen: for i in N_LINES-1 downto 0 generate
+		i_fifo_generator_1to8 : fifo_generator_1to8
+				PORT MAP (
+					clk => clk,
+					srst => reset_rb_fifo,
+					din => sr_out_pc(i downto i),
+					wr_en => readback_fifo_wr_en,
+					rd_en => readback_fifo_rd_en,
+					dout => readback_fifo_dout(i*8+7 downto i*8),
+					full => open,
+					empty => open,
+					valid => readback_fifo_dout_dv(i),
+					wr_data_count  => readback_fifo_cnt_i(14*i+13 downto 14*i)--: OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
+				);		
+	end generate; 
+	
+	readback_fifo_cnt <= readback_fifo_cnt_i(13 downto 0);
+	
+	reset_rb_fifo_n <=  not reset_rb_fifo;
+	
+	i_axis_dwc_6to4 : axis_dwc_6to4
+	  PORT MAP (
+	    aclk => clk,
+	    aresetn => reset_rb_fifo_n,
+	    s_axis_tvalid => readback_fifo_dout_dv(0),
+	    s_axis_tready => readback_fifo_rd_en,
+	    s_axis_tdata => readback_fifo_dout,
+	    --s_axis_tlast => readback_fifo_tlast,
+	    m_axis_tvalid => m00_axis_tvalid,
+	    m_axis_tready => m00_axis_tready,
+	    m_axis_tdata => m00_axis_tdata--,
+	    --m_axis_tkeep => open,
+	    --m_axis_tlast => m00_axis_tlast
+	  );
+	  
+	  m00_axis_tlast <= '1';
+
+--	test_process: process(clk)
+--	begin
+--		if(rising_edge(clk)) then
+--			m00_axis_tvalid <= readback_fifo_wr_en;
+--			m00_axis_tlast <= '1';
+--			if(readback_fifo_wr_en = '1') then
+--				m00_axis_tdata_i(15 downto 0) <= m00_axis_tdata_i(15 downto 0) + 1;
+--				m00_axis_tdata_i(31 downto 16) <= m00_axis_tdata_i(31 downto 16) + 1;
+--			end if;
+--		end if;
+--	end process;
+	
+	--m00_axis_tdata <= m00_axis_tdata_i;
 	
 end Behavioral;
 

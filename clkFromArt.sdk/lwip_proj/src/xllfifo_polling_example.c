@@ -81,8 +81,6 @@ int XLlFifoPollingInit()
 	int Error;
 	Status = XST_SUCCESS;
 
-	/* Initial setup for Uart16550 */
-
 	/* Initialize the Device Configuration Interface driver */
 	Config = XLlFfio_LookupConfig(SC_FIFO_DEVICE_ID);
 	if (!Config) {
@@ -167,52 +165,81 @@ u32 GetSC3FifoVacancy()
 {
 	return XLlFifo_iTxVacancy(&FifoInstance);
 }
-///*****************************************************************************/
-///*
-//*
-//* RxReceive routine.It will receive the data from the FIFO.
-//*
-//* @param	InstancePtr is a pointer to the instance of the
-//*		XLlFifo instance.
-//*
-//* @param	DestinationAddr is the address where to copy the received data.
-//*
-//* @return	-XST_SUCCESS to indicate success
-//*		-XST_FAILURE to indicate failure
-//*
-//* @note		None
-//*
-//******************************************************************************/
-//int RxReceive (XLlFifo *InstancePtr, u32* DestinationAddr)
-//{
-//
-//	int i;
-//	int Status;
-//	u32 RxWord;
-//	static u32 ReceiveLength;
-//
-//	xil_printf(" Receiving data ....\n\r");
-//	/* Read Recieve Length */
-//	ReceiveLength = (XLlFifo_iRxGetLen(InstancePtr))/WORD_SIZE;
-//
-//	/* Start Receiving */
-//	for ( i=0; i < ReceiveLength; i++){
-//		RxWord = 0;
-//		RxWord = XLlFifo_RxGetWord(InstancePtr);
-//
-//		if(XLlFifo_iRxOccupancy(InstancePtr)){
-//			RxWord = XLlFifo_RxGetWord(InstancePtr);
-//		}
-//		*(DestinationAddr+i) = RxWord;
-//	}
-//
-//	Status = XLlFifo_IsRxDone(InstancePtr);
-//	if(Status != TRUE){
-//		xil_printf("Failing in receive complete ... \r\n");
-//		return XST_FAILURE;
-//	}
-//
-//	return XST_SUCCESS;
-//}
+
+
+int RxReceiveAll(u32* DestinationAddr, u32* ReceivedWords)
+{
+	u32 ReceivedWordsLocal=0;
+	*ReceivedWords=0;
+	do
+	{
+		RxReceive(DestinationAddr + (*ReceivedWords), &ReceivedWordsLocal);
+		*ReceivedWords += ReceivedWordsLocal;
+		xil_printf("%d %d\n\r", ReceivedWordsLocal, *ReceivedWords);
+	}
+	while(ReceivedWordsLocal !=0 );
+}
+
+/*****************************************************************************/
+/*
+*
+* RxReceive routine.It will receive the data from the FIFO.
+*
+* @param	InstancePtr is a pointer to the instance of the
+*		XLlFifo instance.
+*
+* @param	DestinationAddr is the address where to copy the received data.
+*
+* @return	-XST_SUCCESS to indicate success
+*		-XST_FAILURE to indicate failure
+*
+* @note		None
+*
+******************************************************************************/
+int RxReceive (u32* DestinationAddr, u32* ReceivedWords)
+{
+
+	int i=0, WORD_SIZE=4;
+	int Status;
+	u32 RxWord;
+	static u32 ReceiveLength;
+
+	*ReceivedWords = 0;
+
+	if(XLlFifo_iRxOccupancy(&FifoInstance))
+	{
+		xil_printf(" Receiving data ....\n\r");
+		/* Read Recieve Length */
+		ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstance))/WORD_SIZE;
+		xil_printf("ReceiveLength(words)=%d\n\r", ReceiveLength);
+		/* Start Receiving */
+		//for ( i=0; i < ReceiveLength; i++){
+			RxWord = 0;
+			RxWord = XLlFifo_RxGetWord(&FifoInstance);
+
+			//if(XLlFifo_iRxOccupancy(&FifoInstance)){
+			//	print("?");
+			//	RxWord = XLlFifo_RxGetWord(&FifoInstance);
+			//}
+			*(DestinationAddr+i) = RxWord;
+			xil_printf(" RxWord=%08x\n\r", RxWord);
+		//}
+
+		*ReceivedWords = 1;//i;
+
+		Status = XLlFifo_IsRxDone(&FifoInstance);
+		if(Status != TRUE){
+			xil_printf("Failing in receive complete ... \r\n");
+			return XST_FAILURE;
+		}
+	}
+	else
+	{
+		print("RX fifo empty\n\r");
+	}
+
+	return XST_SUCCESS;
+}
+
 
 

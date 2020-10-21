@@ -27,7 +27,7 @@ entity spaciroc3_sc_v1_0_S00_AXI is
 		sr_in_pc : out  STD_LOGIC_vector(N_LINES-1 downto 0) := (others => '0');
 		sr_ck_pc : out  STD_LOGIC := '0';
 		sr_rstb_pc : out  STD_LOGIC := '0';
-		sr_out_pc: in std_logic;
+		sr_out_pc: in STD_LOGIC_vector(N_LINES-1 downto 0);
 		select_sc_probe_pc, resetb_pc: out std_logic;
 		select_din_pc: out std_logic := '1';
 		loadb_sc_pc: out std_logic := '1';
@@ -38,6 +38,12 @@ entity spaciroc3_sc_v1_0_S00_AXI is
 		s00_axis_tdata: in std_logic_vector(32*6-1 downto 0);
 		s00_axis_tvalid: in std_logic;
 		s00_axis_tready: out std_logic;
+		
+		m00_axis_tvalid : OUT STD_LOGIC;
+    m00_axis_tready : IN STD_LOGIC;
+    m00_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    m00_axis_tlast : OUT STD_LOGIC;           
+
 		
 		-- User ports ends
 		-- Do not modify the ports beyond this line
@@ -109,6 +115,8 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
 
 	attribute keep_hierarchy : string;
 	attribute keep_hierarchy of arch_imp : architecture is "yes";
+	
+	signal readback_fifo_cnt: std_logic_vector(13 downto 0);
 
 
 	-- AXI4LITE signals
@@ -213,11 +221,14 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
 					 N_LINES: integer := 6);
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
+           reset_rb_fifo:  in STD_LOGIC;
+           cmd_reg: in std_logic_vector(31 downto 0);
+           readback_fifo_cnt: out std_logic_vector(13 downto 0);
            --EXTERNAL PINS
            sr_in_pc : out  STD_LOGIC_vector(N_LINES-1 downto 0) := (others => '0');
            sr_ck_pc : out  STD_LOGIC := '0';
            sr_rstb_pc : out  STD_LOGIC := '0';
-           sr_out_pc: in std_logic;
+           sr_out_pc: in STD_LOGIC_vector(N_LINES-1 downto 0);
            select_sc_probe_pc, resetb_pc: out std_logic;
            --select_din_pc: out std_logic := '1';
            loadb_sc_pc: out std_logic := '1';
@@ -235,7 +246,12 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
            -- data to be sent separately
            s00_axis_tdata:  in std_logic_vector(32*N_LINES-1 downto 0);
            s00_axis_tvalid: in std_logic;
-           s00_axis_tready: out std_logic
+           s00_axis_tready: out std_logic;
+ 					 
+ 					 m00_axis_tvalid : OUT STD_LOGIC;
+           m00_axis_tready : IN STD_LOGIC;
+           m00_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+           m00_axis_tlast : OUT STD_LOGIC           
            );
 	end component;
 	
@@ -337,7 +353,7 @@ begin
 	      --slv_reg2 <= (others => '0');
 	      slv_reg3 <= (others => '0');
 	      slv_reg4 <= (others => '0');
-	      slv_reg5 <= (others => '0');
+	      --slv_reg5 <= (others => '0');
 	      slv_reg6 <= (others => '0');
 	      slv_reg7 <= (others => '0');
 	      slv_reg8 <= (others => '0');
@@ -440,14 +456,14 @@ begin
 	                slv_reg4(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"000101" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 5
-	                slv_reg5(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
+--	          when b"000101" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 5
+--	                slv_reg5(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
 	          when b"000110" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
@@ -918,7 +934,7 @@ begin
 	            --slv_reg2 <= slv_reg2;
 	            slv_reg3 <= slv_reg3;
 	            slv_reg4 <= slv_reg4;
-	            slv_reg5 <= slv_reg5;
+	            --slv_reg5 <= slv_reg5;
 	            slv_reg6 <= slv_reg6;
 	            slv_reg7 <= slv_reg7;
 	            slv_reg8 <= slv_reg8;
@@ -1225,11 +1241,16 @@ begin
 	select_din_pc <= slv_reg3(2);
 	slv_reg2(1) <= resetb_pc_i;
 	resetb_pc <= resetb_pc_i;
+	slv_reg5(13 downto 0) <= readback_fifo_cnt;
+	
 	
 	-- Add user logic here
 	i_spaciroc3_sc_top : spaciroc3_sc_top
     Port map( clk => S_AXI_ACLK, --: in STD_LOGIC;
            reset => slv_reg1(0),--: in STD_LOGIC;
+           reset_rb_fifo => slv_reg1(1),
+           cmd_reg => slv_reg4,
+           readback_fifo_cnt => readback_fifo_cnt,--slv_reg5(13 dowto 0),
            --EXTERNAL PINS
            sr_in_pc => sr_in_pc, --: out  STD_LOGIC := '1';
            sr_ck_pc => sr_ck_pc, --: out  STD_LOGIC := '0';
@@ -1253,7 +1274,12 @@ begin
            -- data to be sent separately
            s00_axis_tdata => s00_axis_tdata,--:  in std_logic_vector(31*N_LINES-1 downto 0);
            s00_axis_tvalid => s00_axis_tvalid,--: in std_logic;
-           s00_axis_tready => s00_axis_tready--: out std_logic
+           s00_axis_tready => s00_axis_tready,--: out std_logic
+           
+           m00_axis_tvalid => m00_axis_tvalid,--: OUT STD_LOGIC;
+           m00_axis_tready => m00_axis_tready,--: IN STD_LOGIC;
+           m00_axis_tdata => m00_axis_tdata,--: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+           m00_axis_tlast => m00_axis_tlast--: OUT STD_LOGIC           
           );
 	-- User logic ends
 

@@ -19,6 +19,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	u16* p;
 	static int num = 8;
 	static int ec = 0;
+	u32 ReceivedWords;
 
 
 	if(c == 'd')
@@ -26,6 +27,30 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//DmaStart1();
 		 ResetScurveAdder();
 		 InitHLS_peripherals();
+	}
+	else if(c == '*')
+	{
+		print("XPAR_SPACIROC3_SC_0_BASEADDR:\n\r");
+		for(i=0;i<32;i++)
+		{
+			if(i%4 == 0) print("\n\r");
+			xil_printf("%08X ", *(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR+4*i));
+		}
+	}
+	else if(c == '/')
+	{
+		ResetSPACIROC3_fifo_rb();
+	}
+	else if(c == '%')
+	{
+		//FRB_tlast_on();
+		ReceivedWords = 0;
+		RxReceiveAll(tmp_array, &ReceivedWords);
+		xil_printf("ReceivedWords=%d\n\r", ReceivedWords);
+	}
+	else if(c == 'i')
+	{
+		RB_inject_bit();
 	}
 	else if(c == 's')
 	{
