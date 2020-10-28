@@ -141,18 +141,27 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		strcat(ans_str, "\r\n");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(strncmp(p->payload, "acq stop", 8) == 0)
+	{
+		StopDataProviderForLive();
+		//ResetDataConverter();
+		//ResetScurveAdder();
+		//InitHLS_peripherals();
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, "acq live", 8) == 0)
 	{
 		err_t err;
 		if(!IsDataProviderStarted())
 		{
 			StopDataProviderForLive();
-			for(i=0;i<10000000;i++); //Pause ~ 0.1.
+			for(i=0;i<100000000;i++); //Pause ~ 0.1.
 			ResetDataConverter();
-			for(i=0;i<10000000;i++); //Pause ~ 0.1.
+			for(i=0;i<100000000;i++); //Pause ~ 0.1.
 			ResetScurveAdder();
 			InitHLS_peripherals();
-			for(i=0;i<10000000;i++); //Pause ~ 0.1.
+			for(i=0;i<100000000;i++); //Pause ~ 0.1.
 			StartDataProviderForLive();
 		}
 		GetPtrForLive(&ptr4live);
@@ -168,100 +177,6 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//xil_printf("err = %d\n\r", err);
 	}
 
-	//	else if(sscanf(p->payload, "instrument mode %d %d",
-//			&param, &param2) == 2)
-//	{
-//		ProcessInstrumentModeCommand(tpcb, param, param2);
-////		if(param == 0)
-////			SendLogToFTP();
-////		SetInstrumentMode(param);
-////		SetTime(param2);
-////		DateTime dateTime;
-////		convertUnixTimeToDate(param2, &dateTime);
-////		xil_printf("%s\n\r", formatDate(&dateTime, 0));
-////
-////		char ok_eomess_str[] = "Ok\n\r";
-////		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
-////		//if(param == 0)
-////		//	SendLogToFTP();
-//	}
-//	else if(sscanf(p->payload, "instrument mode %d",
-//			&param) == 1)
-//	{
-//		ProcessInstrumentModeCommand(tpcb, param, 0);
-//		if(instrumentState.err_SDcard)
-//		{
-//			print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//			SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_SDcard);
-//		}
-//		else if(instrumentState.err_artix_bin)
-//		{
-//			print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//			SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_artix_bin);
-//		}
-//		else if(instrumentState.artix_locked == 0)
-//		{
-//			print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//			SendErrorCommand(tpcb, ERR_ARTIX_NOT_LOCKED);
-//		}
-//		else
-//		{
-//			if(param == 0)
-//				SendLogToFTP();
-//			else
-//				xil_printf("Removing all sci data files from FTP server... Removed %d files\n\r", RemoveAllSciDataFilesFromFTP());
-//			SetInstrumentMode(param);
-//			RunStopping(); // old bug!
-//			char ok_eomess_str[] = "Ok\n\r";
-//			tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
-//		}
-//	}
-//	else if(strncmp(p->payload, "instrument start", 16) == 0)
-//	{
-//		//This function does nothing (for compatibility)
-//		char ok_eomess_str[] = "Ok\n\r";
-//		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
-//	}
-//	else if(strncmp(p->payload, "instrument stop", 15) == 0)
-//	{
-//		//This function does nothing
-//		char ok_eomess_str[] = "Ok\n\r";
-//		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
-//	}
-//	else if(sscanf(p->payload, "acq scurve %d %d %d %d",
-//			&param0,
-//			&param1,
-//			&param2,
-//			&param3) == 4)
-//	{
-//		if(instrumentState.mode == 0/*INSTRUMENT_MODE_NONE*/)
-//		{
-//			print("Starting S-curve gathering...\n\r");
-//			u32 datasize = 0;
-//			ret = StartScurveGathering(param0, param1, param2, param3);
-//			char str[] = "Ok\n\r";
-//			tcp_write(tpcb, str, sizeof(str), 1);
-//		}
-//		else
-//		{
-//			char str[20];
-//			sprintf(str, "Error %d\n\r", ERR_INSTR_MODE_MUSTBE_0);
-//			tcp_write(tpcb, str, sizeof(str), 1);
-//		}
-//	}
-//	else if(strncmp(p->payload, "acq scurve status", 17) == 0)
-//	{
-//		SCurveStruct* pSCurveStruct;
-//		pSCurveStruct = GetSCurveStruct();
-//		sprintf(reply, "CurrentDAC=%d GatheringInProgress=%d\n\r", pSCurveStruct->current_dac_value, pSCurveStruct->is_scurve_being_gathered);
-//		tcp_write(tpcb, reply, strlen(reply), 1);
-//	}
-//	else if(sscanf(p->payload, "acq test %d", &param) == 1)
-//	{
-//		SetDataProviderTestMode(param);
-//		char str[] = "Ok\n\r";
-//		tcp_write(tpcb, str, sizeof(str), 1);
-//	}
 	else if(sscanf(p->payload, "slowctrl all dac %d", &param) == 1)
 	{
 		debugSettings.current_thr = param;

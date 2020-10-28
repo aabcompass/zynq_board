@@ -31,6 +31,7 @@ entity spaciroc3_sc_top is
            start: in std_logic := '0'; --start load sc
            done: out std_logic := '0'; -- unused
            is_same_data: in std_logic := '0'; -- simple mode or individual mode
+           en_sr_rstb_pc : in std_logic := '0';
            -- data to be sent to all chips (in simple mode)
            general_reg0: in std_logic_vector(31 downto 0);
            general_reg1: in std_logic_vector(31 downto 0);
@@ -196,7 +197,9 @@ begin
 				-- assert the reset sc
 				when 0 => 	if(start = '1') then
 											state := state + 1;
-											sr_rstb_pc <= '0';
+											if(en_sr_rstb_pc = '0') then
+												sr_rstb_pc <= '0';
+											end if;
 											sr_ck_pc_cnt <= (others => '0');
 										end if;
 				-- deassert reset in some time

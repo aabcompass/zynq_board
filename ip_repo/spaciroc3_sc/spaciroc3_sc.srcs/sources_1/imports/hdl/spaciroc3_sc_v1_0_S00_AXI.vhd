@@ -236,6 +236,7 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
            start: in std_logic := '0';
            done: out std_logic := '0';
            is_same_data: in std_logic := '0';
+           en_sr_rstb_pc : in std_logic := '0';
            -- data to be sent to all chips
            general_reg0: in std_logic_vector(31 downto 0);
            general_reg1: in std_logic_vector(31 downto 0);
@@ -1264,6 +1265,7 @@ begin
            start => slv_reg0(0),--: in std_logic := '0';
            done => slv_reg2(0),--: out std_logic := '0';
            is_same_data => slv_reg3(0),--: in std_logic := '0';
+           en_sr_rstb_pc => slv_reg3(3),
            -- data to be sent to all chips
            general_reg0 => slv_reg8,--: in std_logic_vector(31 downto 0);
            general_reg1 => slv_reg9,--: in std_logic_vector(31 downto 0);

@@ -303,6 +303,7 @@ int main()
 	ArtixClkEn();
 
 
+
 	print("Loading FW to Artixes\n\r");
 	*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
@@ -338,7 +339,7 @@ int main()
 	print("DMA_init()\n\r");
 	DMA_init();
 
-
+	StartDataProviderInitial();
 
 	/* receive and process packets */
 	while (1) {

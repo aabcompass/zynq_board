@@ -20,6 +20,7 @@ void SetDefaultSCParameters()
 {
 	slowctrl_samedata.misc_reg0 = 0x0FA20007;
 	slowctrl_samedata.x2_tst_msk_dac = 0x00C000C0;
+	//slowctrl_samedata.x2_tst_msk_dac = 0x00000000;
 	slowctrl_samedata.misc_reg1 = 0x00000000;
 	slowctrl_samedata.x4_gain = 0x00000000;
 	slowctrl_samedata.x4_dac_7b_sub = 0x00000000;
@@ -237,7 +238,7 @@ void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_3) = data->x4_gain;
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_4) = data->x4_dac_7b_sub;
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_5) = data->misc_reg2;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_IS_SAME_DATA) | (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);
+	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_IS_SAME_DATA) | (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
 }
@@ -246,7 +247,7 @@ void LoadSameDataToSlowControl2(u32 current_dac_value)
 {
 	u32 s_value=0, i;
 	xil_printf("dac=%d ", current_dac_value);
-	slowctrl_samedata.misc_reg0 = 0x07A20007 | current_dac_value<<7 | s_value<<3;
+	slowctrl_samedata.misc_reg0 = (0x07A20007 | current_dac_value<<7 | s_value<<3);
 	LoadSameDataToSlowControl(&slowctrl_samedata);
 	for(i=0;i<1000000;i++);
 }
@@ -254,7 +255,7 @@ void LoadSameDataToSlowControl2(u32 current_dac_value)
 void LoadIndividualDataToSlowControl()
 {
 	TxFIFOSend((char*)&reformatted, sizeof(reformatted)/4);
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);
+	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
 }

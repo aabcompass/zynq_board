@@ -17,6 +17,7 @@
 #define REGW_DATAPROV_PMTZERO_01	11
 #define REGW_DATAPROV_PMTZERO_2	12
 #define REGW_DATAPROV_CLKEN		13
+#define REGR_DATAPROV_STATUS	16
 
 //REGW_DATAPROV_FLAGS
 #define BIT_START_SIG			0 /*Start Data Provider*/
@@ -30,6 +31,8 @@
 #define BIT_RUN_DATACONV		2 /*Run data converter which is BEFORE the data_provider*/
 //REGW_DATAPROV_CLKEN
 #define BIT_ART_CLKEN			0 /*Clock enable for artix clk. Set GTU time before to run artix clock*/
+//REGR_DATAPROV_STATUS
+#define BIT_DP_PASS				0
 
 
 int IsDataProviderStarted();

@@ -1501,17 +1501,17 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_data_provider_z3_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="axi_data_provider_z3" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_data_provider_z3_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>spaciroc3_sc_0</spirit:instanceName>
         <spirit:componentRef spirit:library="user" spirit:name="spaciroc3_sc" spirit:vendor="user.org" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_spaciroc3_sc_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axi_data_provider_z3_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="axi_data_provider_z3" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_data_provider_z3_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -1682,7 +1682,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_artix_conf_v1_0_0" spirit:portRef="s00_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="data_converter_1" spirit:portRef="m_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="scurve_adder36_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
@@ -1703,6 +1702,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M13_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M14_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>util_ds_buf_0_BUFG_O</spirit:name>
@@ -1740,7 +1740,6 @@
         <spirit:internalPortReference spirit:componentRef="data_converter_1" spirit:portRef="areset_art"/>
         <spirit:internalPortReference spirit:componentRef="data_converter_1" spirit:portRef="m_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Op1"/>
-        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="S00_ARESETN"/>
@@ -1759,6 +1758,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M13_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M14_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ARESETN_1</spirit:name>

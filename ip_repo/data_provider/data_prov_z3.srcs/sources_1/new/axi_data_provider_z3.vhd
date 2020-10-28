@@ -23,6 +23,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
 
 	
 
@@ -247,6 +248,7 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal infinite: std_logic := '0';
 	
 	signal num_of_frames, cnt: std_logic_vector(31 downto 0) := (0 => '1', others => '0');
+	signal sm_state: std_logic_vector(3 downto 0) := "0000";
 
 begin
 
@@ -1297,6 +1299,7 @@ begin
 	num_of_frames <= slv_reg3;
 	infinite <= slv_reg10(0);
 	slv_reg16(0) <= pass;
+	slv_reg16(7 downto 4) <= sm_state;
 	
 	dozer: process(S_AXI_ACLK)
 		variable state : integer range 0 to 2 := 0;
@@ -1337,7 +1340,8 @@ begin
 					when 4 => if(start_sig = '0') then
 											state := 0;
 										end if;
-				end case;			
+				end case;
+				sm_state <= conv_std_logic_vector(state, 4);		
 			end if;
 		end if;
 	end process;

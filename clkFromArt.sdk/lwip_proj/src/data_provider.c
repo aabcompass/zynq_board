@@ -11,6 +11,7 @@
 
 static int is_dp_started = 0;
 
+
 void StartDataProviderForLive()
 {
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_INFINITE);
@@ -22,12 +23,38 @@ void StartDataProviderForLive()
 	print("Data provider started\n\r");
 }
 
+u32 IsDataProviderPass()
+{
+	return *(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGR_DATAPROV_STATUS) & (1<<BIT_DP_PASS);
+}
+
+void StopDataProvider()
+{
+	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_INFINITE);
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) &= ~(1<<BIT_RUN);
+	do {print("%");} while(IsDataProviderPass());
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_RUN_DATACONV);
+}
+
 void StopDataProviderForLive()
 {
-	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~((1<<BIT_RUN_DATACONV) | (1<<BIT_INFINITE));
+	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~((1<<BIT_RUN_DATACONV) | (1<<BIT_INFINITE));
+	StopDataProvider();
 	is_dp_started = 0;
 	print("Data provider stopped\n\r");
 }
+
+void StartDataProviderInitial()
+{
+	int i;
+	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_N_FRAMES) = 0;
+	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= ((1<<BIT_START_SIG) | (1<<BIT_INFINITE));
+	//for(i=0;i<100000000;i++);
+	StartDataProviderForLive();
+	for(i=0;i<100000000;i++);
+	StopDataProviderForLive();
+}
+
 
 void ResetDataConverter()
 {

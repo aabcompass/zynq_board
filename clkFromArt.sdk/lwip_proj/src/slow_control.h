@@ -23,10 +23,12 @@
 
 #define BIT_START			0
 #define BIT_DONE			0
+//REGW_SLOWCTRL_CONFIG
 #define BIT_IS_SAME_DATA	0
 #define BIT_USER_LED		1
-#define BIT_USER_LED		1
 #define BIT_SELECT_DIN		2
+#define BIT_EN_SR_RSTB_PC	3
+
 #define BIT_RESET			0
 
 #define REGW_SLOWCTRL_CONTROLREG	0

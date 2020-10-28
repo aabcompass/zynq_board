@@ -36,6 +36,12 @@ void ProcessUartCommands(struct netif *netif, char c)
 			if(i%4 == 0) print("\n\r");
 			xil_printf("%08X ", *(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR+4*i));
 		}
+		print("XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR:\n\r");
+		for(i=0;i<64;i++)
+		{
+			if(i%4 == 0) print("\n\r");
+			xil_printf("%08X ", *(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*i));
+		}
 	}
 	else if(c == '/')
 	{
@@ -50,7 +56,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'i')
 	{
-		RB_inject_bit();
+		//RB_inject_bit();
+		StartDataProviderInitial();
 	}
 	else if(c == 's')
 	{
@@ -113,7 +120,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'x')
 	{
 		StopDataProviderForLive();
-		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
+		//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
 		//*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
 	}
 	else if(c == '+')
