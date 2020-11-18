@@ -68,6 +68,13 @@ entity axi_data_provider_z3 is
     	m_axis_tvalid: out std_logic;
     	m_axis_tready: in std_logic;
     	m_axis_tlast: out std_logic;
+
+     	m01_axis_tdata: out std_logic_vector(127 downto 0);
+    	m01_axis_tuser: out std_logic_vector(5 downto 0);
+    	m01_axis_tvalid: out std_logic;
+    	m01_axis_tready: in std_logic;
+    	m01_axis_tlast: out std_logic;
+
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	reset_data_conv: out std_logic;
@@ -1358,6 +1365,12 @@ begin
 	m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
 	s_axis_tready <= '1';--: out std_logic := '1';
 	m_axis_tlast <= s_axis_tlast;--: in std_logic;
+
+	m01_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
+	m01_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
+	m01_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
+	m01_axis_tlast <= s_axis_tlast;--: in std_logic;
+
 
 --     	m_axis_tdata: out std_logic_vector(127 downto 0);
 --    	m_axis_tuser: out std_logic_vector(5 downto 0); 

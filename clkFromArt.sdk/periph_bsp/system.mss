@@ -6,6 +6,7 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 6.6
  PARAMETER PROC_INSTANCE = ps7_cortexa9_0
+ PARAMETER sleep_timer = ps7_globaltimer_0
  PARAMETER stdin = ps7_uart_0
  PARAMETER stdout = ps7_uart_0
 END
@@ -280,6 +281,12 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = generic
  PARAMETER DRIVER_VER = 2.0
  PARAMETER HW_INSTANCE = spaciroc3_sc_0
+END
+
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = generic
+ PARAMETER DRIVER_VER = 2.0
+ PARAMETER HW_INSTANCE = axis_flow_control_d1_0
 END
 
 
