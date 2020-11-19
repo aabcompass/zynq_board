@@ -36,6 +36,7 @@ typedef struct
 	int file_counter_l2;
 	int file_counter_l3;
 	int file_counter_cc;
+	int file_counter_hv;
 	u32 artix_locked;
 	int is_simple_packets;
 	int is_HVPS_OK;
@@ -49,6 +50,18 @@ typedef struct
 	DATA_TYPE_SCI_ALLTRG_V1 sci_data;
 	u32 is_occupied;
 } DATA_TYPE_SCI_ALLTRG_RECORD;
+
+typedef struct
+{
+	u8 flash_state;
+	u32 corever;
+	u32 toBeReset;
+	u32 access_denied;
+	u8 severity; // 0 - max;  ... then low
+	char device_modelname[12];
+	u8 isPrinting;
+	u8 no_files;
+} SystemSettings;
 
 
 #endif /* SRC_OWN_DATA_TYPES_H_ */

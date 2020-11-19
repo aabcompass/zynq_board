@@ -7,8 +7,9 @@
 #ifndef SRC_AXIS_FLOWCTRL_H_
 #define SRC_AXIS_FLOWCTRL_H_
 
+#include "xbasic_types.h"
 
-
+#define  	XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR XPAR_AXIS_FLOW_CONTROL_D1_0_BASEADDR
 
 #define REGW_FLAGS					0 /* 3=periodic_trig_en 2=en_algo_trig  1=en_int_trig 0=is_started*/
 #define REGW_CLR_FLAGS				1 /* 5=clr_trig_service 4=clr_gtu_cnt 3=restart_intr 2=clr_all 1=clear_error 0=clr_trans_counter*/
@@ -21,7 +22,7 @@
 #define REGW_D1_N_GTU_AFTER_TRIG	8 /* num_of_gtus_after_trig in HDL */
 #define REGW_NUM_OF_TRIGS_FLAGS2	9 /* 15:0 = number of triggers per cycle 5,24s*/
 #define REGW_UNIX_TIME				10
-#define REGW_TLAST_REMOVER_PHASE	11
+#define REGW_TLAST_REMOVER_PHASE	11 /*not needed in K-EUSO / SPB-2*/
 #define REGW_TRIGGER_RELAX_TIME		12 /* must be = 0 */
 
 #define REGR_FC_SM_STATE			14 /*16=trig_flag 4=pass_intr 3:0=sm_state*/
@@ -74,6 +75,14 @@
 #define BIT_FC_TRIG_EVENTS_LOG_EN		(1<<19)
 
 #define BIT_FC_STATUS_DMA_ERROR			(1<<18)
+
+int IsD1DMA_error();
+u32 GetTrigNGTU_L1();
+u32 GetTrigType_L1();
+u32 GetUnixTimestamp_L1();
+int Get_N1();
+void D1_release();
+int IsD1Triggered();
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

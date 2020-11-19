@@ -39,5 +39,7 @@ int IsDataProviderStarted();
 void RunArtix(u32 is_gtu_1us);
 void ArtixClkEn(u32 en);
 void SetGtuFreq1us(u32 is_gtu_1us);
+void StartDataProviderForLive();
+void StopDataProviderForLive();
 
 #endif /* SRC_DATA_PROVIDER_H_ */

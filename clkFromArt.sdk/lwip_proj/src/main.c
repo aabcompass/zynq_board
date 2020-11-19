@@ -175,6 +175,10 @@ int LoadArtix(char * filename)
 
 int main()
 {
+	print("Starting main program...\n\r");
+	print("Memory allocation for big arrays...\n\r");
+	mem_alloc();
+
 
 	#if LWIP_IPV6==0
 	ip_addr_t ipaddr, netmask, gw;
@@ -333,6 +337,9 @@ int main()
 	print("Starting FTP server ...\n\r");
 	start_ftp_server_cmd();
 
+	print("Flow control initialization...\n\r");
+	FlowControlInit_D1();
+
 
 	/* start the application (web server, rxtest, txtest, etc..) */
 	start_application();
@@ -353,6 +360,9 @@ int main()
 		}
 		xemacif_input(echo_netif);
 		send_data_sm();
+		DataPathSM();
+		L1_trigger_service();
+		StopSM();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))
 		{
