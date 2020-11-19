@@ -23,7 +23,7 @@ void SetDefaultSCParameters()
 	//slowctrl_samedata.x2_tst_msk_dac = 0x00000000;
 	slowctrl_samedata.misc_reg1 = 0x00000000;
 	slowctrl_samedata.x4_gain = 0x00000000;
-	slowctrl_samedata.x4_dac_7b_sub = 0x40404040;//0x00000000;
+	slowctrl_samedata.x4_dac_7b_sub = 0x00000000;
 	slowctrl_samedata.misc_reg2 = 0x00000000;
 }
 
