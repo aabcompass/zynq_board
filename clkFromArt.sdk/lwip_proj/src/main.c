@@ -346,7 +346,7 @@ int main()
 	print("DMA_init()\n\r");
 	DMA_init();
 
-	StartDataProviderInitial();
+	//StartDataProviderInitial();
 
 	/* receive and process packets */
 	while (1) {
