@@ -30,6 +30,12 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == '*')
 	{
+		print("XPAR_AXIS_FLOW_CONTROL_D1_0_BASEADDR:\n\r");
+		for(i=0;i<32;i++)
+		{
+			if(i%4 == 0) print("\n\r");
+			xil_printf("%08X ", *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_0_BASEADDR+4*i));
+		}
 		print("XPAR_SPACIROC3_SC_0_BASEADDR:\n\r");
 		for(i=0;i<32;i++)
 		{
@@ -57,7 +63,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'i')
 	{
 		//RB_inject_bit();
-		StartDataProviderInitial();
+		//StartDataProviderInitial();
+		FlowControlTRG();
 	}
 	else if(c == 's')
 	{

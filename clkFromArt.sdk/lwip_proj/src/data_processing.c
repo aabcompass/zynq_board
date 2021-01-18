@@ -62,6 +62,7 @@ static enum  {
 
 DATA_TYPE_SCI_ALLTRG_RECORD* sci_data;
 
+
 void DmaReset(XAxiDma* pdma)
 {
 	XAxiDma_Reset(pdma);

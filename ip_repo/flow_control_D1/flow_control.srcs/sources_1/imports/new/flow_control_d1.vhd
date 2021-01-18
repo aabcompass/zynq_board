@@ -239,12 +239,6 @@ architecture Behavioral of flow_control_d1 is
 	
 	signal m_axis_tlast_key : std_logic := '0';
 	signal m_axis_tlast_i : std_logic := '0';
-	signal m_axis_tlast_allowed : std_logic := '0';
-	signal m_axis_tlast_allowed_d1 : std_logic := '0';
-	
-	
-	signal m_axis_tdata_i: std_logic_vector(C_AXIS_DWIDTH-1 downto 0) := (others => '0');--=> s_axis_tdata_not_buffered,
-	signal m_axis_tdata_fc: std_logic_vector(C_AXIS_DWIDTH-1 downto 0) := (others => '0');--=> s_axis_tdata_not_buffered,
 
 	signal m_axis_tvalid_fc, m_axis_tready_fc, m_axis_tlast_fc: std_logic := '0';
 	
@@ -270,7 +264,7 @@ architecture Behavioral of flow_control_d1 is
 	
 	signal s_axis_tvalid_d1, s_axis_tlast_d1: std_logic := '0';
 	signal s_axis_tdata_d1: std_logic_vector(127 downto 0) := (others => '0');
-	signal m_axis_tdata_buf: std_logic_vector(63 downto 0) := (others => '0');
+	--signal m_axis_tdata_buf: std_logic_vector(63 downto 0) := (others => '0');
 
   signal tlast_remover_cnt: std_logic_vector(2 downto 0) := "000";
 	signal clr_tlast_remover: std_logic := '0';
@@ -278,8 +272,6 @@ architecture Behavioral of flow_control_d1 is
 	signal m_axis_tready_sink: std_logic := '0';
 	signal fifo_half: std_logic := '0';
 	signal m_axis_tvalid_i: std_logic := '0';
-	signal m_axis_tready_buf: std_logic := '0';
-	signal m_axis_tvalid_buf: std_logic := '0';
 	
 	signal trans_counter_i: std_logic_vector(C_CNT_DWIDTH-1 downto 0) := (others => '0');
 	signal gtu_sig_counter_i: std_logic_vector(31 downto 0) := (others => '0');
@@ -294,23 +286,24 @@ architecture Behavioral of flow_control_d1 is
 	signal cmd_inject_16_events, cmd_inject_16_events_d0, cmd_inject_16_events_d1: std_logic := '0';
 	
 	signal tlast_out_cnt: std_logic_vector(15 downto 0) := (others => '0');
-	signal m_axis_tlast_buf: std_logic := '0';
 	
 	signal trigger_relax_time_cnt: std_logic_vector(23 downto 0) := (others => '0');
 	
 	signal tuser_tlast_d1: std_logic_vector(5 downto 0) := (others => '0');
-
+	
+	signal m_axis_tdata_dwc: std_logic_vector(63 downto 0) := (others => '0');
+	signal m_axis_tdata_key: std_logic_vector(127 downto 0) := (others => '0');
+	signal m_axis_tvalid_dwc, m_axis_tready_dwc, m_axis_tlast_dwc: std_logic := '0';
+	signal m_axis_tlast_dwc2: std_logic := '0';
 
 	attribute keep : string; 
 	attribute keep of s_axis_tlast_d1: signal is "true";  
 	attribute keep of m_axis_tvalid_key: signal is "true";  
 	attribute keep of m_axis_tready_key: signal is "true";  
-	attribute keep of m_axis_tlast_allowed: signal is "true";  
 	attribute keep of axis_fifo_fc_count: signal is "true";  
 	attribute keep of sm_state: signal is "true";  
 	attribute keep of sm_state_sink: signal is "true";  
 	attribute keep of trig_type: signal is "true";  
-	attribute keep of m_axis_tdata_i: signal is "true";  
 	attribute keep of periodic_trig_gtu_period: signal is "true";  
 	attribute keep of periodic_trig_gen_cnt: signal is "true";  
 	attribute keep of periodic_trig: signal is "true";  
@@ -328,6 +321,7 @@ architecture Behavioral of flow_control_d1 is
 	attribute keep of release: signal is "true";  
 
 	signal s_axis_ta_event_tdata_d1: std_logic_vector(31 downto 0) := (others => '0');
+
 
 begin
 
@@ -650,16 +644,24 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 --  	end if;
 --  end process;
 
-	tuser_tlast_d1 <= tuser_tlast when rising_edge(s_axis_aclk);
+	--tuser_tlast_d1 <= tuser_tlast when rising_edge(s_axis_aclk);
  
- 	pass_tlast <= '1' when s_axis_tuser = tuser_tlast_d1 else '0';
- 
-  s_axis_tready <= '1';
-  s_axis_tvalid_d1 <= s_axis_tvalid when rising_edge(s_axis_aclk);
-  s_axis_tdata_d1 <= s_axis_tdata when rising_edge(s_axis_aclk);
-  s_axis_tlast_d1 <= s_axis_tlast and pass_tlast when rising_edge(s_axis_aclk);
- 
-    
+ 	tlast_former_process: process(s_axis_aclk)
+ 	begin
+ 		if(rising_edge(s_axis_aclk)) then
+ 			if(s_axis_tuser = tuser_tlast_d1) then
+ 				pass_tlast <= '1';
+ 			else
+ 				pass_tlast <= '0';
+ 			end if;
+ 			s_axis_tvalid_d1 <= s_axis_tvalid;
+ 			s_axis_tdata_d1 <= s_axis_tdata; 
+ 			s_axis_tlast_d1 <= s_axis_tlast and pass_tlast;
+			s_axis_tready <= '1';
+ 		end if;
+ 	end process;
+ 	
+
 	i_axis_fifo_fc : axis_fifo_fc
 	PORT MAP (
 		s_axis_aresetn => s_axis_aresetn,
@@ -668,34 +670,33 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		s_axis_tlast => s_axis_tlast_d1,
 		s_axis_tready => open,
 		s_axis_tdata => s_axis_tdata_d1,
-		m_axis_tvalid => m_axis_tvalid_fc,
-		m_axis_tlast => m_axis_tlast_fc,
-		m_axis_tready => m_axis_tready_fc,
-		m_axis_tdata => m_axis_tdata_fc,
+		m_axis_tvalid => m_axis_tvalid_key,
+		m_axis_tlast => m_axis_tlast_key,
+		m_axis_tready => m_axis_tready_key,
+		m_axis_tdata => m_axis_tdata_key,
 		axis_data_count => axis_fifo_fc_count,
 		axis_wr_data_count => open,
 		axis_rd_data_count => open
 	);
-	
+
+	--m_axis_tready_key <= m_axis_tready_buf and (pass or m_axis_tready_sink);
+	m_axis_tready_key <= (pass and m_axis_tready_fc) or m_axis_tready_sink;
+	m_axis_tvalid_fc <= m_axis_tvalid_key and pass;
+	--m_axis_tlast <= m_axis_tlast_key and pass;
+
 	dwc : axis_dwidth_converter_0
 	  PORT MAP (
 	    aclk => s_axis_aclk,
 	    aresetn => s_axis_aresetn,
 	    s_axis_tvalid => m_axis_tvalid_fc,
 	    s_axis_tready => m_axis_tready_fc,
-	    s_axis_tdata => m_axis_tdata_fc,
-	    s_axis_tlast => m_axis_tlast_fc,
-	    m_axis_tvalid => m_axis_tvalid_key,
-	    m_axis_tready => m_axis_tready_key,
-	    m_axis_tdata => m_axis_tdata_buf,
-	    m_axis_tlast => m_axis_tlast_key
+	    s_axis_tdata => m_axis_tdata_key,
+	    s_axis_tlast => m_axis_tlast_key,
+	    m_axis_tvalid => m_axis_tvalid_dwc,
+	    m_axis_tready => m_axis_tready_dwc,
+	    m_axis_tdata => m_axis_tdata_dwc,
+	    m_axis_tlast => m_axis_tlast_dwc
 	  );
-
-	--m_axis_tready_key <= m_axis_tready_buf and (pass or m_axis_tready_sink);
-	m_axis_tready_key <= (pass or m_axis_tready_sink);
-	m_axis_tvalid_i <= m_axis_tvalid_key and pass;
-	m_axis_tvalid_buf <= m_axis_tvalid_i;
-	--m_axis_tlast <= m_axis_tlast_key and pass;
 
 	comparator: process(s_axis_aclk)
 	begin
@@ -709,7 +710,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 
 	sink_process: process(s_axis_aclk)
-		variable state : integer range 0 to 2 := 0;
+		variable state : integer range 0 to 6 := 0;
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clr_sink_sm = '1') then
@@ -731,21 +732,25 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 											m_axis_tready_sink <= '0';
 										end if;
 										trig_latch_clr <= '0';
-					when 1 => if(m_axis_tlast_key = '1') then
+					when 1 => if(m_axis_tlast_key = '1' and m_axis_tlast_key = '1' and m_axis_tready_key = '1') then
 											m_axis_tready_sink <= '0';
 											pass <= '1';
 											m_axis_tlast_cnt <= conv_std_logic_vector(1, 16);
 											state := state + 1;
 										end if;
-					when 2 => if(m_axis_tlast_key = '1') then
+					when 2 => if(m_axis_tlast_key = '1' and m_axis_tlast_key = '1' and m_axis_tready_key = '1') then
 											if(m_axis_tlast_cnt = num_of_gtus_after_trig) then
 												pass <= '0';
 												trig_latch_clr <= '1';
-												state := 0;
+												state := state + 1;
 											else
 												m_axis_tlast_cnt <= m_axis_tlast_cnt + 1;
 											end if;
 										end if;
+					when 3 => state := state + 1;
+					when 4 => state := state + 1;
+					when 5 => state := state + 1;
+					when 6 => state := 0;
 				end case;
 			end if;
 		end if;
@@ -755,15 +760,16 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		begin
 		if(rising_edge(s_axis_aclk)) then
 			-- here we count all transfers accepted from DMA
-			if(m_axis_tready_buf = '1' and m_axis_tvalid_i = '1') then
+			if(m_axis_tready_dwc = '1' and m_axis_tvalid_dwc = '1') then
 				maxis_accepted_cnt_i <= maxis_accepted_cnt_i + 1;
 			end if;
 			-- here we count all transfers, whether accepted or not
-			if(m_axis_tvalid_i = '1') then
+			if(m_axis_tvalid_dwc = '1') then
 				maxis_trans_cnt_i <= maxis_trans_cnt_i + 1;
 			end if;
 		end if; 	
 	end process;
+	
 	maxis_trans_cnt <= maxis_trans_cnt_i;
 	maxis_accepted_cnt <= maxis_accepted_cnt_i;
 	
@@ -772,7 +778,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		if(rising_edge(s_axis_aclk)) then
 			if(clr_all = '1' or release = '1') then
 				dma_error <= '0';
-			elsif(m_axis_tready_buf = '0') then
+			elsif(m_axis_tready_dwc = '0') then
 				dma_error <= '1';
 			end if;
 		end if;
@@ -782,19 +788,19 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clr_all = '1') then
-				m_axis_tlast_buf <= '0';
+				m_axis_tlast_dwc2 <= '0';
 				tlast_out_cnt <= X"0000";
 			else
-				if(m_axis_tvalid_buf = '1' and  m_axis_tready_buf = '1') then
-					if(tlast_out_cnt = X"47FE") then --8FFE was in Mini
+				if(m_axis_tvalid_dwc = '1') then
+					if(tlast_out_cnt = X"8FFE") then --8FFE was in Mini
 						tlast_out_cnt <= tlast_out_cnt + 1;
-						m_axis_tlast_buf <= '1';
-					elsif(tlast_out_cnt = X"47FF") then
+						m_axis_tlast_dwc2 <= '1';
+					elsif(tlast_out_cnt = X"8FFF") then 
 						tlast_out_cnt <= X"0000";
-						m_axis_tlast_buf <= '0';
+						m_axis_tlast_dwc2 <= '0';
 					else
 						tlast_out_cnt <= tlast_out_cnt + 1;
-						m_axis_tlast_buf <= '0';
+						m_axis_tlast_dwc2 <= '0';
 					end if;
 				end if;
 			end if;
@@ -805,10 +811,10 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	  PORT MAP (
 	    s_axis_aresetn => s_axis_aresetn,
 	    s_axis_aclk => s_axis_aclk,
-	    s_axis_tvalid => m_axis_tvalid_buf,
-	    s_axis_tlast => m_axis_tlast_buf,
-	    s_axis_tready => m_axis_tready_buf,
-	    s_axis_tdata => m_axis_tdata_buf,
+	    s_axis_tvalid => m_axis_tvalid_dwc,
+	    s_axis_tlast => m_axis_tlast_dwc2,
+	    s_axis_tready => m_axis_tready_dwc,
+	    s_axis_tdata => m_axis_tdata_dwc,
 	    m_axis_tvalid => m_axis_tvalid,
 	    m_axis_tlast => m_axis_tlast_i,
 	    m_axis_tready => m_axis_tready,

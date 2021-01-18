@@ -12,7 +12,7 @@
 #define  	XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR XPAR_AXIS_FLOW_CONTROL_D1_0_BASEADDR
 
 #define REGW_FLAGS					0 /* 3=periodic_trig_en 2=en_algo_trig  1=en_int_trig 0=is_started*/
-#define REGW_CLR_FLAGS				1 /* 5=clr_trig_service 4=clr_gtu_cnt 3=restart_intr 2=clr_all 1=clear_error 0=clr_trans_counter*/
+#define REGW_CLR_FLAGS				1 /* 17=cmd_inject_16_events_d0 16=trig_immediate 7=clr_sink_sm 6=clr_tlast_remover 5=clr_trig_service 4=clr_gtu_cnt 3=restart_intr 2=clr_all 1=clear_error 0=clr_trans_counter*/
 #define REGW_TRIG_DELAY				2 /* the delay betweenf trigger event and message about it*/ //trig_delay UNUSED
 #define REGW_EDGE_FLAGS				3 /* 2=set_unix_time 1=trig_force 0=release */
 #define REGW_D1_FIFO_THR			4 /* fifo_thr in HDL*/
@@ -24,6 +24,7 @@
 #define REGW_UNIX_TIME				10
 #define REGW_TLAST_REMOVER_PHASE	11 /*not needed in K-EUSO / SPB-2*/
 #define REGW_TRIGGER_RELAX_TIME		12 /* must be = 0 */
+#define REGW_TUSER_TLAST			13 /*TUSER value when tlast must be = 1*/
 
 #define REGR_FC_SM_STATE			14 /*16=trig_flag 4=pass_intr 3:0=sm_state*/
 #define REGR_GTU_CNT				15 /*number of GTU after last GTU counter reset*/
