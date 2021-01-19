@@ -5,7 +5,7 @@
  *      Author: alx
  */
 
-#include "minieuso_pdmdata.h"
+#include "pdmdata.h"
 
 #ifndef SRC_OWN_DATA_TYPES_H_
 #define SRC_OWN_DATA_TYPES_H_
@@ -47,7 +47,7 @@ typedef struct
 
 typedef struct
 {
-	DATA_TYPE_SCI_ALLTRG_V1 sci_data;
+	DATA_TYPE_SCI_ALLTRG_V2 sci_data;
 	u32 is_occupied;
 } DATA_TYPE_SCI_ALLTRG_RECORD;
 

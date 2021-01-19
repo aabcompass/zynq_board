@@ -8,7 +8,7 @@
 //#include "axis_flowctrl_d1.h"
 //#include "axis_flowctrl_d2.h"
 #include "own_data_types.h"
-#include "minieuso_pdmdata.h"
+#include "pdmdata.h"
 #include "unix_date_time.h"
 //#include "xl2_trigger.h"
 
@@ -120,28 +120,28 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char ok_eomess_str[] = "K-EUSO PDM DP console\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
-	else if(strncmp(p->payload, "test connect", 12) == 0)
+	else if(strncmp(p->payload, TCP_CMD_TEST_CONNECT, 12) == 0)
 	{
 		char ok_eomess_str[] = "Ok\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
-	else if(strncmp(p->payload, "instrument status", 17) == 0)
+	else if(strncmp(p->payload, TCP_CMD_INSTR_STATUS, 17) == 0)
 	{
 		sprintf(reply, "%d %d\n\r", /*GetFTP_bin_State()*/40, instrumentState.mode);
 		tcp_write(tpcb, reply, sizeof(reply), 1);
 	}
-	else if(strncmp(p->payload, "instrument ver", 14) == 0)
+	else if(strncmp(p->payload, TCP_CMD_GET_VER, 14) == 0)
 	{
 		//char ok_eomess_str[] = "Ok\n\r";
 		strcpy(ans_str, __DATE__);
 		strcat(ans_str, " ");
 		strcat(ans_str, __TIME__);
 		strcat(ans_str, " ");
-		strcat(ans_str, MINIEUSO_ZYNQ_VER_STRING);
+		strcat(ans_str, ZYNQ3_VER_STRING);
 		strcat(ans_str, "\r\n");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
-	else if(strncmp(p->payload, "acq stop", 8) == 0)
+	else if(strncmp(p->payload, TCP_CMD_ACQ_STOP, 8) == 0)
 	{
 		StopDataProviderForLive();
 		//ResetDataConverter();
@@ -150,7 +150,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(strncmp(p->payload, "acq live", 8) == 0)
+	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;
 		if(!IsDataProviderStarted())
@@ -177,38 +177,38 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//xil_printf("err = %d\n\r", err);
 	}
 
-	else if(sscanf(p->payload, "slowctrl all dac %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL, &param) == 1)
 	{
 		debugSettings.current_thr = param;
 		LoadSameDataToSlowControl2(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "slowctrl line %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_LINE, &param) == 1)
 	{
 		SetIndSCCurrentLine(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "slowctrl asic %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ASIC, &param) == 1)
 	{
 		SetIndSCCurrentAsic(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "slowctrl pixel %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_PIX, &param) == 1)
 	{
 		SetIndSCCurrentPixel(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "slowctrl dac10 %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_DAC10, &param) == 1)
 	{
 		SetIndSCDac10(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "slowctrl dac7 %d", &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_DAC7, &param) == 1)
 	{
 		SetIndSCDac7(param);
 		char str[] = "Ok\n\r";
@@ -223,18 +223,18 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 //		char str[] = "Ok\n\r";
 //		tcp_write(tpcb, str, sizeof(str), 1);
 //	}
-	else if(strncmp(p->payload, "slowctrl apply", 14) == 0)
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_APPLY, 14) == 0)
 	{
 		SendUserIndSCSettingsToSp3();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(strncmp(p->payload, "slowctrl dac10?", 15) == 0)
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_GET_DAC10, 15) == 0)
 	{
 		sprintf(reply, "%d\n\r", GetIndSCDac10());
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-	else if(strncmp(p->payload, "slowctrl dac7?", 14) == 0)
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_GET_DAC7, 14) == 0)
 	{
 		sprintf(reply, "%d\n\r", GetIndSCDac7());
 		tcp_write(tpcb, reply, strlen(reply), 1);
@@ -245,24 +245,24 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 //		tcp_write(tpcb, reply, strlen(reply), 1);
 //	}
 
-	else if(strncmp(p->payload, "gtu 1us", 7) == 0)
+	else if(strncmp(p->payload, TCP_CMD_GTU_1US, 7) == 0)
 	{
 		RunArtix(1);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(strncmp(p->payload, "gtu 2.5us", 9) == 0)
+	else if(strncmp(p->payload, TCP_CMD_GTU_2_5US, 9) == 0)
 	{
 		RunArtix(0);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(strncmp(p->payload, "hvps status interrupt", 21) == 0)
+	else if(strncmp(p->payload, TCP_CMD_HVPS_STATUS_INTR, 21) == 0)
 	{
 		sprintf(reply, "%d\n\r", GetIntrState());
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-	else if(sscanf(p->payload, "hvps turnon %d %d %d %d %d %d %d %d %d",
+	else if(sscanf(p->payload, TCP_CMD_HVPS_TURNON,
 			&turn[0], &turn[1], &turn[2], &turn[3], &turn[4], &turn[5], &turn[6], &turn[7], &turn[8]) == 9)
 	{
 		if(!instrumentState.is_HVPS_OK)
@@ -281,35 +281,35 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "hvps turnoff %d %d %d %d %d %d %d %d %d",
+	else if(sscanf(p->payload, TCP_CMD_HVPS_TURNOFF,
 			&turn[0], &turn[1], &turn[2], &turn[3], &turn[4], &turn[5], &turn[6], &turn[7], &turn[8]) == 9)
 	{
 		char str[] = "Ok\n\r";
 		HV_turnOFF_list(turn);
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "hvps setdac %d %d %d %d %d %d %d %d %d",
+	else if(sscanf(p->payload, TCP_CMD_HVPS_SETDAC,
 			&turn[0], &turn[1], &turn[2], &turn[3], &turn[4], &turn[5], &turn[6], &turn[7], &turn[8]) == 9)
 	{
 		char str[] = "Ok\n\r";
 		setDacValue_list(turn);
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, "hvps cathode %d %d %d %d %d %d %d %d %d",
+	else if(sscanf(p->payload, TCP_CMD_HVPS_CATHODE,
 			&turn[0], &turn[1], &turn[2], &turn[3], &turn[4], &turn[5], &turn[6], &turn[7], &turn[8]) == 9)
 	{
 		HV_setCathodeVoltage(turn);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(strncmp(p->payload, "hvps status gpio", 16) == 0)
+	else if(strncmp(p->payload, TCP_CMD_HVPS_STATUS_GPIO, 16) == 0)
 	{
 		HV_getStatus(turn);
 		sprintf(reply, "%x %x %x %x %x %x %x %x %x\n\r",
 				turn[0], turn[1], turn[2], turn[3], turn[4], turn[5], turn[6], turn[7], turn[8]);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-	else if(strncmp(p->payload, "exit", 4) == 0 || strncmp(p->payload, "quit", 4) == 0)
+	else if(strncmp(p->payload, TCP_CMD_HVPS_EXIT, 4) == 0 || strncmp(p->payload, "quit", 4) == 0)
 	{
 		tcp_close(tpcb);
 	}

@@ -7,7 +7,7 @@
 
 #include "xbasic_types.h"
 #include "xil_types.h"
-#include "minieuso_pdmdata.h"
+#include "pdmdata.h"
 
 #ifndef SLOW_CONTROL_H_
 #define SLOW_CONTROL_H_

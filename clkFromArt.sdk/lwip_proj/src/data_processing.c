@@ -5,7 +5,7 @@
  *      Author: alx
  */
 #include "xaxidma.h"
-#include "minieuso_pdmdata.h"
+#include "pdmdata.h"
 #include "pdmdata_hw.h"
 #include "xparameters.h"
 #include "xil_types.h"
@@ -28,7 +28,7 @@ uint8_t  DataDMA_D1[N_ALT_BUFFERS][N_TRIG_BUFFERS_DMA_D1][N_FRAMES_DMA_D1][N_OF_
 
 uint32_t  DataDMA_D3[N_ALT_BUFFERS][N_TRIG_BUFFERS_DMA_D3][N_FRAMES_DMA_D3][N_OF_PIXEL_PER_PDM] __attribute__ ((aligned (64)));
 
-DATA_TYPE_SCI_ALLTRG_V1 zynqPacket;
+DATA_TYPE_SCI_ALLTRG_V2 zynqPacket;
 
 volatile u32 dma_intr_counter_d1 = 0, dma_intr_counter_d2 = 0, dma_intr_counter_d3 = 0;
 volatile u32 prev_alt_buffer = 0, current_alt_buffer = 0;
@@ -422,13 +422,13 @@ void CopyEventData_trig()
 		zynqPacket.level1_data[i].payload.trig_type = triggerInfoD1[prev_alt_buffer][i].trigger_type;
 		zynqPacket.level1_data[i].payload.ts.n_gtu = triggerInfoD1[prev_alt_buffer][i].n_gtu;
 		zynqPacket.level1_data[i].payload.ts.unix_time = triggerInfoD1[prev_alt_buffer][i].unix_timestamp;
-		memcpy(&zynqPacket.level1_data[i].payload.cathode_status[0],  &triggerInfoD1[prev_alt_buffer][i].hv_data[0], NUM_OF_HV);
+		//memcpy(&zynqPacket.level1_data[i].payload.cathode_status[0],  &triggerInfoD1[prev_alt_buffer][i].hv_data[0], NUM_OF_HV);
 
 		/*
 		 * If the data around trigger is not edge crossed by DMA page. In this case one pass copy is used.
 		 */
 
-		memcpy_invalidate(&zynqPacket.level1_data[i].payload.raw_data[0][0],
+		memcpy_invalidate(&zynqPacket.level1_data[i].payload.frames[0].raw_data[0],
 				&DataDMA_D1[prev_alt_buffer%2][i][0][0],
 				N_OF_PIXEL_PER_PDM * N_OF_FRAMES_D1_V0);
 
@@ -440,19 +440,19 @@ void CopyEventData_trig()
 		// Mark the trigger as copied (sent)
 		triggerInfoD1[prev_alt_buffer][i].is_sent = 1;
 	}
-	//copy D3
-	for(i=0;i<Get_N3();i++)
-	{
-		zynqPacket.level3_data[i].payload.trig_type = triggerInfoD3[prev_alt_buffer][i].trigger_type;
-		zynqPacket.level3_data[i].payload.ts.n_gtu = triggerInfoD3[prev_alt_buffer][i].n_gtu;
-		zynqPacket.level3_data[i].payload.ts.unix_time = triggerInfoD3[prev_alt_buffer][i].unix_timestamp;
-		memcpy(&zynqPacket.level3_data[i].payload.cathode_status[0],  &triggerInfoD3[prev_alt_buffer][i].hv_data[0], NUM_OF_HV);
-		memcpy_invalidate(&zynqPacket.level3_data[i].payload.int32_data[0][0],
-				&DataDMA_D3[prev_alt_buffer%2][0][0],
-				N_OF_PIXEL_PER_PDM * N_OF_FRAMES_D1_V0*sizeof(uint32_t));
-		// Mark the trigger as copied (sent)
-		triggerInfoD3[prev_alt_buffer][i].is_sent = 1;
-	}
+//	//copy D3
+//	for(i=0;i<Get_N3();i++)
+//	{
+//		zynqPacket.level3_data[i].payload.trig_type = triggerInfoD3[prev_alt_buffer][i].trigger_type;
+//		zynqPacket.level3_data[i].payload.ts.n_gtu = triggerInfoD3[prev_alt_buffer][i].n_gtu;
+//		zynqPacket.level3_data[i].payload.ts.unix_time = triggerInfoD3[prev_alt_buffer][i].unix_timestamp;
+//		memcpy(&zynqPacket.level3_data[i].payload.cathode_status[0],  &triggerInfoD3[prev_alt_buffer][i].hv_data[0], NUM_OF_HV);
+//		memcpy_invalidate(&zynqPacket.level3_data[i].payload.int32_data[0][0],
+//				&DataDMA_D3[prev_alt_buffer%2][0][0],
+//				N_OF_PIXEL_PER_PDM * N_OF_FRAMES_D1_V0*sizeof(uint32_t));
+//		// Mark the trigger as copied (sent)
+//		triggerInfoD3[prev_alt_buffer][i].is_sent = 1;
+//	}
 }
 
 void* Get_ZYNQ_PACKET()
@@ -531,14 +531,14 @@ void DataPathSM()
 				{
 					current_scidata_record = i;
 					xil_printf("[%d]\n\r", current_scidata_record);
-					memcpy((char*)&sci_data[current_scidata_record].sci_data, (char*)Get_ZYNQ_PACKET(), sizeof(DATA_TYPE_SCI_ALLTRG_V1));
+					memcpy((char*)&sci_data[current_scidata_record].sci_data, (char*)Get_ZYNQ_PACKET(), sizeof(DATA_TYPE_SCI_ALLTRG_V2));
 					sci_data[current_scidata_record].is_occupied = 1;
 					//xil_printf("link addr %08X occupied\n\r", &sci_data[current_scidata_record]);
 					// create file
 					if((instrumentState.file_counter_cc+1)%25 == 0) SendHVPSLogToFTP(0);
 
 
-					ret = CreateFile(filename_str, &sci_data[current_scidata_record].sci_data, sizeof(DATA_TYPE_SCI_ALLTRG_V1), 0, file_scidata);
+					ret = CreateFile(filename_str, &sci_data[current_scidata_record].sci_data, sizeof(DATA_TYPE_SCI_ALLTRG_V2), 0, file_scidata);
 					if(ret<0) xil_printf("CreateFile returns error %d\n\r", ret);
 
 					break;

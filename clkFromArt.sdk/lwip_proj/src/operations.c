@@ -12,7 +12,7 @@
 #include "xscurve_adder36_hw.h"
 
 
-#include "minieuso_pdmdata.h"
+#include "pdmdata.h"
 
 //XScurve_adder scurve_adder;
 XScurve_adder36 scurve_adder36;
