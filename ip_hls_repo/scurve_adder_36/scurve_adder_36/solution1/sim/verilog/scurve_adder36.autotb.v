@@ -33,6 +33,7 @@
 `define AESL_DEPTH_out_stream_V_dest_V 1
 `define AESL_DEPTH_N_ADDS 1
 `define AESL_DEPTH_TEST_MODE 1
+`define AESL_DEPTH_K_TLAST 1
 `define AUTOTB_TVIN_in_stream0_V_data_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_data_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_keep_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_keep_V.dat"
 `define AUTOTB_TVIN_in_stream0_V_strb_V  "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_strb_V.dat"
@@ -81,7 +82,7 @@
 `define AUTOTB_TVOUT_out_stream_V_dest_V_out_wrapc  "../tv/rtldatafile/rtl.scurve_adder36.autotvout_out_stream_V_dest_V.dat"
 module `AUTOTB_TOP;
 
-parameter AUTOTB_TRANSACTION_NUM = 1;
+parameter AUTOTB_TRANSACTION_NUM = 2;
 parameter PROGRESS_TIMEOUT = 10000000;
 parameter LATENCY_ESTIMATION = 9437339;
 parameter LENGTH_in_stream0_V_data_V = 4320;
@@ -129,14 +130,14 @@ reg AESL_done_delay2 = 0;
 reg AESL_ready_delay = 0;
 wire ready;
 wire ready_wire;
-wire [4 : 0] CTRL_BUS_AWADDR;
+wire [5 : 0] CTRL_BUS_AWADDR;
 wire  CTRL_BUS_AWVALID;
 wire  CTRL_BUS_AWREADY;
 wire  CTRL_BUS_WVALID;
 wire  CTRL_BUS_WREADY;
 wire [31 : 0] CTRL_BUS_WDATA;
 wire [3 : 0] CTRL_BUS_WSTRB;
-wire [4 : 0] CTRL_BUS_ARADDR;
+wire [5 : 0] CTRL_BUS_ARADDR;
 wire  CTRL_BUS_ARVALID;
 wire  CTRL_BUS_ARREADY;
 wire  CTRL_BUS_RVALID;
@@ -291,6 +292,7 @@ begin
         slave_done_status <= 1;
     end
 end
+
 
 
 

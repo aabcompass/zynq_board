@@ -23,7 +23,7 @@
 `define TV_OUT_out_stream_TDEST "../tv/rtldatafile/rtl.scurve_adder36.autotvout_out_stream_V_dest_V.dat"
 `define EGRESS_STATUS_out_stream_TDEST "../tv/stream_size/stream_egress_status_out_stream_V_dest_V.dat"
 
-`define AUTOTB_TRANSACTION_NUM 1
+`define AUTOTB_TRANSACTION_NUM 2
 
 module AESL_axi_s_out_stream (
     input clk,

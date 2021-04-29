@@ -12,11 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="scurve_adder_36" solutionName="solution1" date="2020-07-16T15:08:11.111+0300" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="scurve_adder_36" solutionName="solution1" date="2021-03-22T19:55:16.862+0300" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (scurve_adder.cpp:49:6) in function 'scurve_adder36' : &#xA;&#xA;&#xA;more than one sub loop." projectName="scurve_adder_36" solutionName="solution1" date="2021-03-22T19:55:16.358+0300" type="Warning"/>
       </synLog>
-      <simLog>
-        <logs message="WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the &quot;-mt off -v 1&quot; switches to see more information from the C compiler. The following environment variables have been detected:&#xA;    LIBRARY_PATH" projectName="scurve_adder_36" solutionName="solution1" date="2020-07-16T15:08:58.329+0300" type="Warning"/>
-      </simLog>
+      <simLog/>
       <mgLog/>
       <packageLog/>
       <csimLog/>

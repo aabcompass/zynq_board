@@ -9,8 +9,12 @@
 #include "common.h"
 #include "data_provider.h"
 #include "ftp_server.h"
+#include "own_data_types.h"
+#include "dma_handling.h"
 
 char tmp_array[10000000];
+
+extern InstrumentState instrumentState;
 
 void ProcessUartCommands(struct netif *netif, char c)
 {
@@ -25,8 +29,16 @@ void ProcessUartCommands(struct netif *netif, char c)
 	if(c == 'd')
 	{
 		//DmaStart1();
-		 ResetScurveAdder();
-		 InitHLS_peripherals();
+		 //ResetScurveAdder();
+		 //InitHLS_peripherals();
+		Set_n_d3_per_file(N_D3_PER_FILE);
+		SetIntegration(N_INTEGRATION);
+		ScurveAdderReInit();
+		L3Start(FINITE, N_D3_PER_FILE);
+	}
+	else if(c == 'A')
+	{
+		StartDataProviderFor1D3frame(GetIntegration()*N_D3_PER_FILE);
 	}
 	else if(c == '*')
 	{
@@ -48,6 +60,21 @@ void ProcessUartCommands(struct netif *netif, char c)
 			if(i%4 == 0) print("\n\r");
 			xil_printf("%08X ", *(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*i));
 		}
+	}
+	else if(c == 's')
+	{
+		xil_printf("GetFTPstate()=%d\n\r", GetFTPstate());
+		//xil_printf("GetDataPathSM_state()=%d\n\r", GetDataPathSM_state());
+		xil_printf("IsDataProviderPass()=%d\n\r", IsDataProviderPass());
+		//xil_printf("GetInstrumentMode()=%d\n\r", GetInstrumentMode());
+		xil_printf("instrumentState.file_counter_cc=%d\n\r", instrumentState.file_counter_cc);
+		xil_printf("GetIntegration()=%d\n\r", GetIntegration());
+
+		MmgPrintFiles();
+		PrintFS();
+		DMAStatus();
+		//SendMapping();
+		ConfTrigger();
 	}
 	else if(c == '/')
 	{
@@ -78,11 +105,11 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'p')
 	{
-		PrintData_raw();
+		//PrintData_raw();
 	}
 	else if(c == 'P')
 	{
-		PrintData_scv(num);
+		//PrintData_scv(num);
 	}
 	else if(c == '+') // artix Gen mode
 	{
@@ -104,10 +131,26 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//SA_set_TestMode(0);
 		SetArtixTestMode(0);
 	}
+	else if(c == 'W') // artix Gen mode
+	{
+		DataProvTestMode(1,  1, 0, 99);
+	}
+	else if(c == 'w')
+	{
+		DataProvTestMode(0, 1, 0, 99);
+	}
 	else if(c == 'Q') // artix Gen mode
 	{
 		//SA_set_TestMode(1);
 		SetArtixTestMode2(1);
+	}
+	else if(c == 'c')
+	{
+		ArtixClkEn(1);
+	}
+	else if(c == 'C') // artix Gen mode
+	{
+		ArtixClkEn(0);
 	}
 	else if(c == 'q')
 	{
@@ -117,18 +160,10 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'X') // artix Gen mode
 	{
 		StartDataProviderForLive();
-//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_N_FRAMES) = 16384;
-//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= (1<<BIT_RUN) | (1<<BIT_START_SIG);
-//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) &= ~(1<<BIT_START_SIG);
-//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_RUN_DATACONV) | (1<<BIT_INFINITE);
-
-		//*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0xFFFFFFFF;
 	}
 	else if(c == 'x')
 	{
 		StopDataProviderForLive();
-		//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
-		//*(u32*)(XPAR_GPIO_CTRL_BASEADDR) = 0;
 	}
 	else if(c == '+')
 	{
@@ -175,7 +210,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'f')
 	{
-		CreateFile("testfile.bin", tmp_array, 10000000, 0, file_scidata);
+		CreateTestFiles();
 	}
 
 }

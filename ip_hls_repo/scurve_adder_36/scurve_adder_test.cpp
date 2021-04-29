@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "stdio.h"
 #include "scurve_adder.h"
 
 int main() {
@@ -9,6 +9,7 @@ int main() {
 	STREAM_512 outputStream_SW, outputStream_HW;
 
 	uint16_t N_ADDS = 30;
+	uint16_t K_TLAST = 1;
 	uint8_t N_CH = 1;
 	uint32_t is_test_mode = 1;
 
@@ -115,7 +116,7 @@ int main() {
 	/* HARDWARE IMPLEMENTATION */
 	printf("\n\rHW started\n\r");
 	scurve_adder36(inputStream_HW_0,
-			outputStream_HW, N_ADDS, is_test_mode);
+			outputStream_HW, N_ADDS, is_test_mode, K_TLAST);
 	//printf("\n\rHW 2nd started\n\r");
 	//scurve_adder(inputStream_HW_0,
 	//		outputStream_HW, N_ADDS);

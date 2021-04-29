@@ -22,7 +22,7 @@ using namespace sc_dt;
 struct scurve_adder36_subkb_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 32;
-  static const unsigned AddressRange = 144;
+  static const unsigned AddressRange = 180;
   static const unsigned AddressWidth = 8;
 
 //latency = 1
@@ -112,7 +112,7 @@ SC_MODULE(scurve_adder36_subkb) {
 
 
 static const unsigned DataWidth = 32;
-static const unsigned AddressRange = 144;
+static const unsigned AddressRange = 180;
 static const unsigned AddressWidth = 8;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;

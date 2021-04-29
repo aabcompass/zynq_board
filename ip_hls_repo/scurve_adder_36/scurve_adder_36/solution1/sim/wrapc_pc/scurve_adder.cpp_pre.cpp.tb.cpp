@@ -5,33 +5,39 @@
 // 
 // ==============================================================
 
-#1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+#1 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
 #1 "<built-in>"
 #1 "<command-line>"
-#1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
-#17 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
-#1 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 1
+#1 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+#17 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.cpp"
+#1 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 1
 
 
 
 #1 "/usr/include/stdlib.h" 1 3 4
-#24 "/usr/include/stdlib.h" 3 4
-#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 1 3 4
-#339 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 3 4
+#25 "/usr/include/stdlib.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
+#1 "/usr/include/features.h" 1 3 4
+#402 "/usr/include/features.h" 3 4
+#1 "/usr/include/stdc-predef.h" 1 3 4
+#403 "/usr/include/features.h" 2 3 4
+#424 "/usr/include/features.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
-#410 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+#427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-#411 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
-#340 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 2 3 4
-#362 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 3 4
+#428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+#429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+#425 "/usr/include/features.h" 2 3 4
+#448 "/usr/include/features.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
 #10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
 #11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
-#363 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h" 2 3 4
-#25 "/usr/include/stdlib.h" 2 3 4
-
-
+#449 "/usr/include/features.h" 2 3 4
+#34 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 2 3 4
+#26 "/usr/include/stdlib.h" 2 3 4
 
 
 
@@ -40,7 +46,7 @@
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
 #212 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-#33 "/usr/include/stdlib.h" 2 3 4
+#32 "/usr/include/stdlib.h" 2 3 4
 
 extern "C" {
 
@@ -48,25 +54,305 @@ extern "C" {
 
 
 
-
 #1 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 1 3 4
-#50 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 3 4
+#52 "/usr/include/x86_64-linux-gnu/bits/waitflags.h" 3 4
 typedef enum
 {
   P_ALL,
   P_PID,
   P_PGID
 } idtype_t;
-#42 "/usr/include/stdlib.h" 2 3 4
+#40 "/usr/include/stdlib.h" 2 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 1 3 4
-#64 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 3 4
-#1 "/usr/include/endian.h" 1 3 4
-#36 "/usr/include/endian.h" 3 4
-#1 "/usr/include/x86_64-linux-gnu/bits/endian.h" 1 3 4
-#37 "/usr/include/endian.h" 2 3 4
-#60 "/usr/include/endian.h" 3 4
-#1 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 1 3 4
-#27 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+#41 "/usr/include/stdlib.h" 2 3 4
+#55 "/usr/include/stdlib.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 1 3 4
+#75 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 3 4
+typedef _Complex float __cfloat128 __attribute__ ((__mode__ (__TC__)));
+#87 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 3 4
+typedef __float128 _Float128;
+#120 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 1 3 4
+#24 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+#25 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 2 3 4
+#207 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+typedef float _Float32;
+#244 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+typedef double _Float64;
+#261 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+typedef double _Float32x;
+#278 "/usr/include/x86_64-linux-gnu/bits/floatn-common.h" 3 4
+typedef long double _Float64x;
+#121 "/usr/include/x86_64-linux-gnu/bits/floatn.h" 2 3 4
+#56 "/usr/include/stdlib.h" 2 3 4
+
+
+typedef struct
+  {
+    int quot;
+    int rem;
+  } div_t;
+
+
+
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } ldiv_t;
+
+
+
+
+
+__extension__ typedef struct
+  {
+    long long int quot;
+    long long int rem;
+  } lldiv_t;
+#97 "/usr/include/stdlib.h" 3 4
+extern size_t __ctype_get_mb_cur_max (void) throw () ;
+
+
+
+extern double atof (const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern int atoi (const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern long int atol (const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+__extension__ extern long long int atoll (const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern double strtod (const char *__restrict __nptr,
+        char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern float strtof (const char *__restrict __nptr,
+       char **__restrict __endptr) throw () __attribute__ ((__nonnull__ (1)));
+
+extern long double strtold (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+#140 "/usr/include/stdlib.h" 3 4
+extern _Float32 strtof32 (const char *__restrict __nptr,
+     char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float64 strtof64 (const char *__restrict __nptr,
+     char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float128 strtof128 (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float32x strtof32x (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern _Float64x strtof64x (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1)));
+#176 "/usr/include/stdlib.h" 3 4
+extern long int strtol (const char *__restrict __nptr,
+   char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+extern unsigned long int strtoul (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+__extension__
+extern long long int strtoq (const char *__restrict __nptr,
+        char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+__extension__
+extern unsigned long long int strtouq (const char *__restrict __nptr,
+           char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+__extension__
+extern long long int strtoll (const char *__restrict __nptr,
+         char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+__extension__
+extern unsigned long long int strtoull (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int strfromd (char *__dest, size_t __size, const char *__format,
+       double __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+extern int strfromf (char *__dest, size_t __size, const char *__format,
+       float __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+extern int strfroml (char *__dest, size_t __size, const char *__format,
+       long double __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+#232 "/usr/include/stdlib.h" 3 4
+extern int strfromf32 (char *__dest, size_t __size, const char * __format,
+         _Float32 __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf64 (char *__dest, size_t __size, const char * __format,
+         _Float64 __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf128 (char *__dest, size_t __size, const char * __format,
+   _Float128 __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf32x (char *__dest, size_t __size, const char * __format,
+   _Float32x __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+
+extern int strfromf64x (char *__dest, size_t __size, const char * __format,
+   _Float64x __f)
+     throw () __attribute__ ((__nonnull__ (3)));
+#272 "/usr/include/stdlib.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+#22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+#28 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+};
+
+typedef struct __locale_struct *__locale_t;
+#23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+#273 "/usr/include/stdlib.h" 2 3 4
+
+extern long int strtol_l (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base,
+     locale_t __loc) throw () __attribute__ ((__nonnull__ (1, 4)));
+
+extern unsigned long int strtoul_l (const char *__restrict __nptr,
+        char **__restrict __endptr,
+        int __base, locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4)));
+
+__extension__
+extern long long int strtoll_l (const char *__restrict __nptr,
+    char **__restrict __endptr, int __base,
+    locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4)));
+
+__extension__
+extern unsigned long long int strtoull_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       int __base, locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4)));
+
+extern double strtod_l (const char *__restrict __nptr,
+   char **__restrict __endptr, locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+extern float strtof_l (const char *__restrict __nptr,
+         char **__restrict __endptr, locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+extern long double strtold_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+#316 "/usr/include/stdlib.h" 3 4
+extern _Float32 strtof32_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float64 strtof64_l (const char *__restrict __nptr,
+       char **__restrict __endptr,
+       locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float128 strtof128_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float32x strtof32x_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern _Float64x strtof64x_l (const char *__restrict __nptr,
+         char **__restrict __endptr,
+         locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+#385 "/usr/include/stdlib.h" 3 4
+extern char *l64a (long int __n) throw () ;
+
+
+extern long int a64l (const char *__s)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
+#27 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+extern "C" {
+
 #1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
 #27 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
@@ -97,9 +383,18 @@ typedef unsigned long int __uint64_t;
 
 typedef long int __quad_t;
 typedef unsigned long int __u_quad_t;
-#121 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+
+
+
+
+
+
+
+typedef long int __intmax_t;
+typedef unsigned long int __uintmax_t;
+#130 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
-#122 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+#131 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 
 
 typedef unsigned long int __dev_t;
@@ -160,7 +455,6 @@ typedef unsigned long int __syscall_ulong_t;
 
 
 typedef __off64_t __loff_t;
-typedef __quad_t *__qaddr_t;
 typedef char *__caddr_t;
 
 
@@ -168,246 +462,12 @@ typedef long int __intptr_t;
 
 
 typedef unsigned int __socklen_t;
-#28 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
-#1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-#29 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
 
 
 
 
-
-
-#1 "/usr/include/x86_64-linux-gnu/bits/byteswap-16.h" 1 3 4
-#36 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
-#44 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
-static __inline unsigned int
-__bswap_32 (unsigned int __bsx)
-{
-  return __builtin_bswap32 (__bsx);
-}
-#108 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
-static __inline __uint64_t
-__bswap_64 (__uint64_t __bsx)
-{
-  return __builtin_bswap64 (__bsx);
-}
-#61 "/usr/include/endian.h" 2 3 4
-#65 "/usr/include/x86_64-linux-gnu/bits/waitstatus.h" 2 3 4
-
-union wait
-  {
-    int w_status;
-    struct
-      {
-
- unsigned int __w_termsig:7;
- unsigned int __w_coredump:1;
- unsigned int __w_retcode:8;
- unsigned int:16;
-
-
-
-
-
-
-
-      } __wait_terminated;
-    struct
-      {
-
- unsigned int __w_stopval:8;
- unsigned int __w_stopsig:8;
- unsigned int:16;
-
-
-
-
-
-
-      } __wait_stopped;
-  };
-#43 "/usr/include/stdlib.h" 2 3 4
-#95 "/usr/include/stdlib.h" 3 4
-
-
-typedef struct
-  {
-    int quot;
-    int rem;
-  } div_t;
-
-
-
-typedef struct
-  {
-    long int quot;
-    long int rem;
-  } ldiv_t;
-
-
-
-
-
-
-
-__extension__ typedef struct
-  {
-    long long int quot;
-    long long int rem;
-  } lldiv_t;
-
-
-#139 "/usr/include/stdlib.h" 3 4
-extern size_t __ctype_get_mb_cur_max (void) throw () ;
-
-
-
-
-extern double atof (const char *__nptr)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
-
-extern int atoi (const char *__nptr)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
-
-extern long int atol (const char *__nptr)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
-
-
-
-
-
-__extension__ extern long long int atoll (const char *__nptr)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
-
-
-
-
-
-extern double strtod (const char *__restrict __nptr,
-        char **__restrict __endptr)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-extern float strtof (const char *__restrict __nptr,
-       char **__restrict __endptr) throw () __attribute__ ((__nonnull__ (1)));
-
-extern long double strtold (const char *__restrict __nptr,
-       char **__restrict __endptr)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-extern long int strtol (const char *__restrict __nptr,
-   char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-extern unsigned long int strtoul (const char *__restrict __nptr,
-      char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-
-__extension__
-extern long long int strtoq (const char *__restrict __nptr,
-        char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-__extension__
-extern unsigned long long int strtouq (const char *__restrict __nptr,
-           char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-__extension__
-extern long long int strtoll (const char *__restrict __nptr,
-         char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-__extension__
-extern unsigned long long int strtoull (const char *__restrict __nptr,
-     char **__restrict __endptr, int __base)
-     throw () __attribute__ ((__nonnull__ (1)));
-
-#235 "/usr/include/stdlib.h" 3 4
-#1 "/usr/include/xlocale.h" 1 3 4
-#27 "/usr/include/xlocale.h" 3 4
-typedef struct __locale_struct
-{
-
-  struct __locale_data *__locales[13];
-
-
-  const unsigned short int *__ctype_b;
-  const int *__ctype_tolower;
-  const int *__ctype_toupper;
-
-
-  const char *__names[13];
-} *__locale_t;
-
-
-typedef __locale_t locale_t;
-#236 "/usr/include/stdlib.h" 2 3 4
-
-
-
-extern long int strtol_l (const char *__restrict __nptr,
-     char **__restrict __endptr, int __base,
-     __locale_t __loc) throw () __attribute__ ((__nonnull__ (1, 4)));
-
-extern unsigned long int strtoul_l (const char *__restrict __nptr,
-        char **__restrict __endptr,
-        int __base, __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 4)));
-
-__extension__
-extern long long int strtoll_l (const char *__restrict __nptr,
-    char **__restrict __endptr, int __base,
-    __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 4)));
-
-__extension__
-extern unsigned long long int strtoull_l (const char *__restrict __nptr,
-       char **__restrict __endptr,
-       int __base, __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 4)));
-
-extern double strtod_l (const char *__restrict __nptr,
-   char **__restrict __endptr, __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 3)));
-
-extern float strtof_l (const char *__restrict __nptr,
-         char **__restrict __endptr, __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 3)));
-
-extern long double strtold_l (const char *__restrict __nptr,
-         char **__restrict __endptr,
-         __locale_t __loc)
-     throw () __attribute__ ((__nonnull__ (1, 3)));
-#305 "/usr/include/stdlib.h" 3 4
-extern char *l64a (long int __n) throw () ;
-
-
-extern long int a64l (const char *__s)
-     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
-
-
-
-
-#1 "/usr/include/x86_64-linux-gnu/sys/types.h" 1 3 4
-#27 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-extern "C" {
-
-
+typedef int __sig_atomic_t;
+#30 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
 
 
@@ -501,27 +561,47 @@ typedef __caddr_t caddr_t;
 
 
 typedef __key_t key_t;
-#132 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-#1 "/usr/include/time.h" 1 3 4
-#57 "/usr/include/time.h" 3 4
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/clock_t.h" 1 3 4
+
+
+
+
 
 
 typedef __clock_t clock_t;
+#128 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h" 1 3 4
 
 
 
-#73 "/usr/include/time.h" 3 4
+
+
+
+typedef __clockid_t clockid_t;
+#130 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/time_t.h" 1 3 4
+
+
+
+
 
 
 typedef __time_t time_t;
+#131 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/timer_t.h" 1 3 4
 
 
 
-#91 "/usr/include/time.h" 3 4
-typedef __clockid_t clockid_t;
-#103 "/usr/include/time.h" 3 4
+
+
+
 typedef __timer_t timer_t;
-#133 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#132 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
 
 
@@ -536,27 +616,85 @@ typedef __suseconds_t suseconds_t;
 
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#147 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#146 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
 
 
 typedef unsigned long int ulong;
 typedef unsigned short int ushort;
 typedef unsigned int uint;
-#194 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
-typedef int int8_t __attribute__ ((__mode__ (__QI__)));
-typedef int int16_t __attribute__ ((__mode__ (__HI__)));
-typedef int int32_t __attribute__ ((__mode__ (__SI__)));
-typedef int int64_t __attribute__ ((__mode__ (__DI__)));
 
 
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 1 3 4
+#24 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 3 4
+typedef __int8_t int8_t;
+typedef __int16_t int16_t;
+typedef __int32_t int32_t;
+typedef __int64_t int64_t;
+#157 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#178 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef unsigned int u_int8_t __attribute__ ((__mode__ (__QI__)));
 typedef unsigned int u_int16_t __attribute__ ((__mode__ (__HI__)));
 typedef unsigned int u_int32_t __attribute__ ((__mode__ (__SI__)));
 typedef unsigned int u_int64_t __attribute__ ((__mode__ (__DI__)));
 
 typedef int register_t __attribute__ ((__mode__ (__word__)));
-#219 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+#194 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+#1 "/usr/include/endian.h" 1 3 4
+#36 "/usr/include/endian.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/endian.h" 1 3 4
+#37 "/usr/include/endian.h" 2 3 4
+#60 "/usr/include/endian.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 1 3 4
+#28 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+#29 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
+
+
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/byteswap-16.h" 1 3 4
+#36 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 2 3 4
+#44 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+static __inline unsigned int
+__bswap_32 (unsigned int __bsx)
+{
+  return __builtin_bswap32 (__bsx);
+}
+#108 "/usr/include/x86_64-linux-gnu/bits/byteswap.h" 3 4
+static __inline __uint64_t
+__bswap_64 (__uint64_t __bsx)
+{
+  return __builtin_bswap64 (__bsx);
+}
+#61 "/usr/include/endian.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 1 3 4
+#32 "/usr/include/x86_64-linux-gnu/bits/uintn-identity.h" 3 4
+static __inline __uint16_t
+__uint16_identity (__uint16_t __x)
+{
+  return __x;
+}
+
+static __inline __uint32_t
+__uint32_identity (__uint32_t __x)
+{
+  return __x;
+}
+
+static __inline __uint64_t
+__uint64_identity (__uint64_t __x)
+{
+  return __x;
+}
+#62 "/usr/include/endian.h" 2 3 4
+#195 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
 #1 "/usr/include/x86_64-linux-gnu/sys/select.h" 1 3 4
 #30 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/select.h" 1 3 4
@@ -566,47 +704,53 @@ typedef int register_t __attribute__ ((__mode__ (__word__)));
 #31 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
 
 
-#1 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 1 3 4
-#22 "/usr/include/x86_64-linux-gnu/bits/sigset.h" 3 4
-typedef int __sig_atomic_t;
+#1 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 1 3 4
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h" 1 3 4
 
 
 
 
 typedef struct
-  {
-    unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
-  } __sigset_t;
+{
+  unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
+} __sigset_t;
+#5 "/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h" 2 3 4
+
+
+typedef __sigset_t sigset_t;
 #34 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
 
 
 
-typedef __sigset_t sigset_t;
+#1 "/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h" 1 3 4
 
 
 
 
 
-#1 "/usr/include/time.h" 1 3 4
-#120 "/usr/include/time.h" 3 4
-struct timespec
-  {
-    __time_t tv_sec;
-    __syscall_slong_t tv_nsec;
-  };
-#44 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
 
-#1 "/usr/include/x86_64-linux-gnu/bits/time.h" 1 3 4
-#30 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
+
 struct timeval
-  {
-    __time_t tv_sec;
-    __suseconds_t tv_usec;
-  };
-#46 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
-#54 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+{
+  __time_t tv_sec;
+  __suseconds_t tv_usec;
+};
+#38 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 1 3 4
+#9 "/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h" 3 4
+struct timespec
+{
+  __time_t tv_sec;
+  __syscall_slong_t tv_nsec;
+};
+#40 "/usr/include/x86_64-linux-gnu/sys/select.h" 2 3 4
+#49 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 typedef long int __fd_mask;
-#64 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+#59 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 typedef struct
   {
 
@@ -626,41 +770,43 @@ typedef struct
 
 
 typedef __fd_mask fd_mask;
-#96 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+#91 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 extern "C" {
-#106 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+#101 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 extern int select (int __nfds, fd_set *__restrict __readfds,
      fd_set *__restrict __writefds,
      fd_set *__restrict __exceptfds,
      struct timeval *__restrict __timeout);
-#118 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+#113 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 extern int pselect (int __nfds, fd_set *__restrict __readfds,
       fd_set *__restrict __writefds,
       fd_set *__restrict __exceptfds,
       const struct timespec *__restrict __timeout,
       const __sigset_t *__restrict __sigmask);
-#131 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
+#126 "/usr/include/x86_64-linux-gnu/sys/select.h" 3 4
 }
-#220 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#198 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
+
+
+
+
 
 
 #1 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 1 3 4
-#24 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+#41 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/sysmacros.h" 1 3 4
+#42 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 2 3 4
+#71 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
 extern "C" {
 
-__extension__
-extern unsigned int gnu_dev_major (unsigned long long int __dev)
-     throw () __attribute__ ((__const__));
-__extension__
-extern unsigned int gnu_dev_minor (unsigned long long int __dev)
-     throw () __attribute__ ((__const__));
-__extension__
-extern unsigned long long int gnu_dev_makedev (unsigned int __major,
-            unsigned int __minor)
-     throw () __attribute__ ((__const__));
-#58 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
+extern unsigned int gnu_dev_major (__dev_t __dev) throw () __attribute__ ((__const__));
+extern unsigned int gnu_dev_minor (__dev_t __dev) throw () __attribute__ ((__const__));
+extern __dev_t gnu_dev_makedev (unsigned int __major, unsigned int __minor) throw () __attribute__ ((__const__));
+#85 "/usr/include/x86_64-linux-gnu/sys/sysmacros.h" 3 4
 }
-#223 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#206 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+
 
 
 
@@ -682,7 +828,7 @@ typedef __fsblkcnt_t fsblkcnt_t;
 
 
 typedef __fsfilcnt_t fsfilcnt_t;
-#262 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
+#246 "/usr/include/x86_64-linux-gnu/sys/types.h" 3 4
 typedef __blkcnt64_t blkcnt64_t;
 typedef __fsblkcnt64_t fsblkcnt64_t;
 typedef __fsfilcnt64_t fsfilcnt64_t;
@@ -692,21 +838,40 @@ typedef __fsfilcnt64_t fsfilcnt64_t;
 
 
 #1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 1 3 4
-#21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+#23 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 1 3 4
+#77 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 1 3 4
+#21 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-#22 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 2 3 4
-#60 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-typedef unsigned long int pthread_t;
-
-
-union pthread_attr_t
+#22 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 2 3 4
+#65 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
+struct __pthread_rwlock_arch_t
 {
-  char __size[56];
-  long int __align;
+  unsigned int __readers;
+  unsigned int __writers;
+  unsigned int __wrphase_futex;
+  unsigned int __writers_futex;
+  unsigned int __pad3;
+  unsigned int __pad4;
+
+  int __cur_writer;
+  int __shared;
+  signed char __rwelision;
+
+
+
+
+  unsigned char __pad1[7];
+
+
+  unsigned long int __pad2;
+
+
+  unsigned int __flags;
+#99 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h" 3 4
 };
-
-typedef union pthread_attr_t pthread_attr_t;
-
+#78 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 2 3 4
 
 
 
@@ -716,29 +881,64 @@ typedef struct __pthread_internal_list
   struct __pthread_internal_list *__prev;
   struct __pthread_internal_list *__next;
 } __pthread_list_t;
-#90 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-typedef union
+#118 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+struct __pthread_mutex_s
 {
-  struct __pthread_mutex_s
+  int __lock ;
+  unsigned int __count;
+  int __owner;
+
+  unsigned int __nusers;
+#148 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+  int __kind;
+
+
+
+
+
+  short __spins; short __elision;
+  __pthread_list_t __list;
+#165 "/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h" 3 4
+
+};
+
+
+
+
+struct __pthread_cond_s
+{
+  __extension__ union
   {
-    int __lock;
-    unsigned int __count;
-    int __owner;
+    __extension__ unsigned long long int __wseq;
+    struct
+    {
+      unsigned int __low;
+      unsigned int __high;
+    } __wseq32;
+  };
+  __extension__ union
+  {
+    __extension__ unsigned long long int __g1_start;
+    struct
+    {
+      unsigned int __low;
+      unsigned int __high;
+    } __g1_start32;
+  };
+  unsigned int __g_refs[2] ;
+  unsigned int __g_size[2];
+  unsigned int __g1_orig_size;
+  unsigned int __wrefs;
+  unsigned int __g_signals[2];
+};
+#24 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 2 3 4
 
-    unsigned int __nusers;
+
+
+typedef unsigned long int pthread_t;
 
 
 
-    int __kind;
-
-    short __spins;
-    short __elision;
-    __pthread_list_t __list;
-#125 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
-  } __data;
-  char __size[40];
-  long int __align;
-} pthread_mutex_t;
 
 typedef union
 {
@@ -748,23 +948,6 @@ typedef union
 
 
 
-
-typedef union
-{
-  struct
-  {
-    int __lock;
-    unsigned int __futex;
-    __extension__ unsigned long long int __total_seq;
-    __extension__ unsigned long long int __wakeup_seq;
-    __extension__ unsigned long long int __woken_seq;
-    void *__mutex;
-    unsigned int __nwaiters;
-    unsigned int __broadcast_seq;
-  } __data;
-  char __size[48];
-  __extension__ long long int __align;
-} pthread_cond_t;
 
 typedef union
 {
@@ -781,37 +964,39 @@ typedef unsigned int pthread_key_t;
 typedef int pthread_once_t;
 
 
+union pthread_attr_t
+{
+  char __size[56];
+  long int __align;
+};
+
+typedef union pthread_attr_t pthread_attr_t;
+
 
 
 
 typedef union
 {
-
-  struct
-  {
-    int __lock;
-    unsigned int __nr_readers;
-    unsigned int __readers_wakeup;
-    unsigned int __writer_wakeup;
-    unsigned int __nr_readers_queued;
-    unsigned int __nr_writers_queued;
-    int __writer;
-    int __shared;
-    signed char __rwelision;
+  struct __pthread_mutex_s __data;
+  char __size[40];
+  long int __align;
+} pthread_mutex_t;
 
 
+typedef union
+{
+  struct __pthread_cond_s __data;
+  char __size[48];
+  __extension__ long long int __align;
+} pthread_cond_t;
 
 
-    unsigned char __pad1[7];
 
 
-    unsigned long int __pad2;
 
-
-    unsigned int __flags;
-
-  } __data;
-#220 "/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h" 3 4
+typedef union
+{
+  struct __pthread_rwlock_arch_t __data;
   char __size[56];
   long int __align;
 } pthread_rwlock_t;
@@ -842,11 +1027,11 @@ typedef union
   char __size[4];
   int __align;
 } pthread_barrierattr_t;
-#271 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
+#255 "/usr/include/x86_64-linux-gnu/sys/types.h" 2 3 4
 
 
 }
-#315 "/usr/include/stdlib.h" 2 3 4
+#395 "/usr/include/stdlib.h" 2 3 4
 
 
 
@@ -905,11 +1090,9 @@ extern int setstate_r (char *__restrict __statebuf,
 
 
 
-
 extern int rand (void) throw ();
 
 extern void srand (unsigned int __seed) throw ();
-
 
 
 
@@ -993,11 +1176,6 @@ extern int lcong48_r (unsigned short int __param[7],
 
 
 
-
-
-
-
-
 extern void *malloc (size_t __size) throw () __attribute__ ((__malloc__)) ;
 
 extern void *calloc (size_t __nmemb, size_t __size)
@@ -1008,20 +1186,21 @@ extern void *calloc (size_t __nmemb, size_t __size)
 
 
 
-
-
-
-
 extern void *realloc (void *__ptr, size_t __size)
      throw () __attribute__ ((__warn_unused_result__));
 
+
+
+
+
+
+
+extern void *reallocarray (void *__ptr, size_t __nmemb, size_t __size)
+     throw () __attribute__ ((__warn_unused_result__));
+
+
+
 extern void free (void *__ptr) throw ();
-
-
-
-
-extern void cfree (void *__ptr) throw ();
-
 
 
 #1 "/usr/include/alloca.h" 1 3 4
@@ -1042,7 +1221,7 @@ extern void *alloca (size_t __size) throw ();
 
 
 }
-#493 "/usr/include/stdlib.h" 2 3 4
+#567 "/usr/include/stdlib.h" 2 3 4
 
 
 
@@ -1055,7 +1234,13 @@ extern void *valloc (size_t __size) throw () __attribute__ ((__malloc__)) ;
 
 extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
      throw () __attribute__ ((__nonnull__ (1))) ;
-#513 "/usr/include/stdlib.h" 3 4
+
+
+
+
+extern void *aligned_alloc (size_t __alignment, size_t __size)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__alloc_size__ (2))) ;
+
 
 
 extern void abort (void) throw () __attribute__ ((__noreturn__));
@@ -1063,15 +1248,15 @@ extern void abort (void) throw () __attribute__ ((__noreturn__));
 
 
 extern int atexit (void (*__func) (void)) throw () __attribute__ ((__nonnull__ (1)));
-#530 "/usr/include/stdlib.h" 3 4
 
 
 
 
-
+extern "C++" int at_quick_exit (void (*__func) (void))
+     throw () __asm ("at_quick_exit") __attribute__ ((__nonnull__ (1)));
+#607 "/usr/include/stdlib.h" 3 4
 extern int on_exit (void (*__func) (int __status, void *__arg), void *__arg)
      throw () __attribute__ ((__nonnull__ (1)));
-
 
 
 
@@ -1083,9 +1268,7 @@ extern void exit (int __status) throw () __attribute__ ((__noreturn__));
 
 
 
-
-
-
+extern void quick_exit (int __status) throw () __attribute__ ((__noreturn__));
 
 
 
@@ -1096,10 +1279,7 @@ extern void _Exit (int __status) throw () __attribute__ ((__noreturn__));
 
 
 
-
-
 extern char *getenv (const char *__name) throw () __attribute__ ((__nonnull__ (1))) ;
-
 
 
 
@@ -1130,40 +1310,31 @@ extern int unsetenv (const char *__name) throw () __attribute__ ((__nonnull__ (1
 
 
 extern int clearenv (void) throw ();
-#606 "/usr/include/stdlib.h" 3 4
+#672 "/usr/include/stdlib.h" 3 4
 extern char *mktemp (char *__template) throw () __attribute__ ((__nonnull__ (1)));
-#619 "/usr/include/stdlib.h" 3 4
+#685 "/usr/include/stdlib.h" 3 4
 extern int mkstemp (char *__template) __attribute__ ((__nonnull__ (1))) ;
-#629 "/usr/include/stdlib.h" 3 4
+#695 "/usr/include/stdlib.h" 3 4
 extern int mkstemp64 (char *__template) __attribute__ ((__nonnull__ (1))) ;
-#641 "/usr/include/stdlib.h" 3 4
+#707 "/usr/include/stdlib.h" 3 4
 extern int mkstemps (char *__template, int __suffixlen) __attribute__ ((__nonnull__ (1))) ;
-#651 "/usr/include/stdlib.h" 3 4
+#717 "/usr/include/stdlib.h" 3 4
 extern int mkstemps64 (char *__template, int __suffixlen)
      __attribute__ ((__nonnull__ (1))) ;
-#662 "/usr/include/stdlib.h" 3 4
+#728 "/usr/include/stdlib.h" 3 4
 extern char *mkdtemp (char *__template) throw () __attribute__ ((__nonnull__ (1))) ;
-#673 "/usr/include/stdlib.h" 3 4
+#739 "/usr/include/stdlib.h" 3 4
 extern int mkostemp (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
-#683 "/usr/include/stdlib.h" 3 4
+#749 "/usr/include/stdlib.h" 3 4
 extern int mkostemp64 (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
-#693 "/usr/include/stdlib.h" 3 4
+#759 "/usr/include/stdlib.h" 3 4
 extern int mkostemps (char *__template, int __suffixlen, int __flags)
      __attribute__ ((__nonnull__ (1))) ;
-#705 "/usr/include/stdlib.h" 3 4
+#771 "/usr/include/stdlib.h" 3 4
 extern int mkostemps64 (char *__template, int __suffixlen, int __flags)
      __attribute__ ((__nonnull__ (1))) ;
-
-
-
-
-
-
-
-
-
+#781 "/usr/include/stdlib.h" 3 4
 extern int system (const char *__command) ;
-
 
 
 
@@ -1171,7 +1342,7 @@ extern int system (const char *__command) ;
 
 extern char *canonicalize_file_name (const char *__name)
      throw () __attribute__ ((__nonnull__ (1))) ;
-#733 "/usr/include/stdlib.h" 3 4
+#797 "/usr/include/stdlib.h" 3 4
 extern char *realpath (const char *__restrict __name,
          char *__restrict __resolved) throw () ;
 
@@ -1188,7 +1359,6 @@ typedef __compar_fn_t comparison_fn_t;
 
 
 typedef int (*__compar_d_fn_t) (const void *, const void *, void *);
-
 
 
 
@@ -1217,10 +1387,8 @@ extern int abs (int __x) throw () __attribute__ ((__const__)) ;
 extern long int labs (long int __x) throw () __attribute__ ((__const__)) ;
 
 
-
 __extension__ extern long long int llabs (long long int __x)
      throw () __attribute__ ((__const__)) ;
-
 
 
 
@@ -1233,13 +1401,10 @@ extern ldiv_t ldiv (long int __numer, long int __denom)
      throw () __attribute__ ((__const__)) ;
 
 
-
-
 __extension__ extern lldiv_t lldiv (long long int __numer,
         long long int __denom)
      throw () __attribute__ ((__const__)) ;
-
-#811 "/usr/include/stdlib.h" 3 4
+#869 "/usr/include/stdlib.h" 3 4
 extern char *ecvt (double __value, int __ndigit, int *__restrict __decpt,
      int *__restrict __sign) throw () __attribute__ ((__nonnull__ (3, 4))) ;
 
@@ -1290,7 +1455,6 @@ extern int qfcvt_r (long double __value, int __ndigit,
 
 
 
-
 extern int mblen (const char *__s, size_t __n) throw ();
 
 
@@ -1315,9 +1479,8 @@ extern size_t wcstombs (char *__restrict __s,
 
 
 
-
 extern int rpmatch (const char *__response) throw () __attribute__ ((__nonnull__ (1))) ;
-#898 "/usr/include/stdlib.h" 3 4
+#954 "/usr/include/stdlib.h" 3 4
 extern int getsubopt (char **__restrict __optionp,
         char *const *__restrict __tokens,
         char **__restrict __valuep)
@@ -1328,7 +1491,21 @@ extern int getsubopt (char **__restrict __optionp,
 
 
 extern void setkey (const char *__key) throw () __attribute__ ((__nonnull__ (1)));
-#923 "/usr/include/stdlib.h" 3 4
+
+
+
+
+
+
+
+extern int posix_openpt (int __oflag) ;
+
+
+
+
+
+
+
 extern int grantpt (int __fd) throw ();
 
 
@@ -1358,13 +1535,12 @@ extern int getpt (void);
 
 extern int getloadavg (double __loadavg[], int __nelem)
      throw () __attribute__ ((__nonnull__ (1)));
-
-
+#1016 "/usr/include/stdlib.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/stdlib-float.h" 1 3 4
-#955 "/usr/include/stdlib.h" 2 3 4
-#967 "/usr/include/stdlib.h" 3 4
+#1017 "/usr/include/stdlib.h" 2 3 4
+#1026 "/usr/include/stdlib.h" 3 4
 }
-#5 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+#5 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 #1 "/opt/Xilinx/Vivado/2018.1/include/hls_stream.h" 1
 #79 "/opt/Xilinx/Vivado/2018.1/include/hls_stream.h"
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/queue" 1 3
@@ -9980,29 +10156,10 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 
-#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 1 3 4
-#46 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
-#1 "/usr/include/stdio.h" 1 3 4
-#44 "/usr/include/stdio.h" 3 4
-struct _IO_FILE;
-
-
-
-typedef struct _IO_FILE FILE;
-
-
-
-
-
-#64 "/usr/include/stdio.h" 3 4
-typedef struct _IO_FILE __FILE;
-#47 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4
-
-
-#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 1 3 4
-#40 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 3 4
-typedef __builtin_va_list __gnuc_va_list;
-#50 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4
+#1 "/usr/include/wchar.h" 1 3 4
+#27 "/usr/include/wchar.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#28 "/usr/include/wchar.h" 2 3 4
 
 
 
@@ -10011,32 +10168,59 @@ typedef __builtin_va_list __gnuc_va_list;
 
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#353 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4
-typedef unsigned int wint_t;
-#58 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4
+#36 "/usr/include/wchar.h" 2 3 4
+
+
+#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 1 3 4
+#40 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+#39 "/usr/include/wchar.h" 2 3 4
 
 #1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
-#60 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 2 3 4
-#85 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+#41 "/usr/include/wchar.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h" 1 3 4
+#20 "/usr/include/x86_64-linux-gnu/bits/types/wint_t.h" 3 4
+typedef unsigned int wint_t;
+#42 "/usr/include/wchar.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h" 1 3 4
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+#13 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
 typedef struct
 {
   int __count;
   union
   {
-    wint_t __wch;
+    unsigned int __wch;
     char __wchb[4];
   } __value;
 } __mbstate_t;
-#102 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
-
+#5 "/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h" 2 3 4
 
 typedef __mbstate_t mbstate_t;
+#43 "/usr/include/wchar.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
 
 
 
-#127 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+struct _IO_FILE;
+typedef struct _IO_FILE __FILE;
+#44 "/usr/include/wchar.h" 2 3 4
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+
+
+typedef struct _IO_FILE FILE;
+#47 "/usr/include/wchar.h" 2 3 4
+#79 "/usr/include/wchar.h" 3 4
 extern "C" {
-
 
 
 
@@ -10044,63 +10228,56 @@ struct tm;
 
 
 
-
-
-
-
-
-
 extern wchar_t *wcscpy (wchar_t *__restrict __dest,
-   __const wchar_t *__restrict __src) throw ();
+   const wchar_t *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
 
 extern wchar_t *wcsncpy (wchar_t *__restrict __dest,
-    __const wchar_t *__restrict __src, size_t __n)
-     throw ();
+    const wchar_t *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
 
 
 extern wchar_t *wcscat (wchar_t *__restrict __dest,
-   __const wchar_t *__restrict __src) throw ();
+   const wchar_t *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
 
 extern wchar_t *wcsncat (wchar_t *__restrict __dest,
-    __const wchar_t *__restrict __src, size_t __n)
-     throw ();
+    const wchar_t *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
 
 
-extern int wcscmp (__const wchar_t *__s1, __const wchar_t *__s2)
-     throw () __attribute__ ((__pure__));
+extern int wcscmp (const wchar_t *__s1, const wchar_t *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
-extern int wcsncmp (__const wchar_t *__s1, __const wchar_t *__s2, size_t __n)
-     throw () __attribute__ ((__pure__));
-
-
+extern int wcsncmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
-extern int wcscasecmp (__const wchar_t *__s1, __const wchar_t *__s2) throw ();
+
+extern int wcscasecmp (const wchar_t *__s1, const wchar_t *__s2) throw ();
 
 
-extern int wcsncasecmp (__const wchar_t *__s1, __const wchar_t *__s2,
+extern int wcsncasecmp (const wchar_t *__s1, const wchar_t *__s2,
    size_t __n) throw ();
 
 
 
+extern int wcscasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
+    locale_t __loc) throw ();
 
-
-extern int wcscasecmp_l (__const wchar_t *__s1, __const wchar_t *__s2,
-    __locale_t __loc) throw ();
-
-extern int wcsncasecmp_l (__const wchar_t *__s1, __const wchar_t *__s2,
-     size_t __n, __locale_t __loc) throw ();
-
+extern int wcsncasecmp_l (const wchar_t *__s1, const wchar_t *__s2,
+     size_t __n, locale_t __loc) throw ();
 
 
 
 
-extern int wcscoll (__const wchar_t *__s1, __const wchar_t *__s2) throw ();
+extern int wcscoll (const wchar_t *__s1, const wchar_t *__s2) throw ();
 
 
 
 extern size_t wcsxfrm (wchar_t *__restrict __s1,
-         __const wchar_t *__restrict __s2, size_t __n) throw ();
+         const wchar_t *__restrict __s2, size_t __n) throw ();
 
 
 
@@ -10108,91 +10285,116 @@ extern size_t wcsxfrm (wchar_t *__restrict __s1,
 
 
 
-
-extern int wcscoll_l (__const wchar_t *__s1, __const wchar_t *__s2,
-        __locale_t __loc) throw ();
-
-
-
-
-extern size_t wcsxfrm_l (wchar_t *__s1, __const wchar_t *__s2,
-    size_t __n, __locale_t __loc) throw ();
-
-
-extern wchar_t *wcsdup (__const wchar_t *__s) throw () __attribute__ ((__malloc__));
+extern int wcscoll_l (const wchar_t *__s1, const wchar_t *__s2,
+        locale_t __loc) throw ();
 
 
 
 
-extern wchar_t *wcschr (__const wchar_t *__wcs, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
+extern size_t wcsxfrm_l (wchar_t *__s1, const wchar_t *__s2,
+    size_t __n, locale_t __loc) throw ();
 
-extern wchar_t *wcsrchr (__const wchar_t *__wcs, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
+
+extern wchar_t *wcsdup (const wchar_t *__s) throw () __attribute__ ((__malloc__));
+
+
+
+
+extern "C++" wchar_t *wcschr (wchar_t *__wcs, wchar_t __wc)
+     throw () __asm ("wcschr") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wcschr (const wchar_t *__wcs, wchar_t __wc)
+     throw () __asm ("wcschr") __attribute__ ((__pure__));
 
 
 
 
 
-extern wchar_t *wcschrnul (__const wchar_t *__s, wchar_t __wc)
-     throw () __attribute__ ((__pure__));
 
-
-
-
-
-extern size_t wcscspn (__const wchar_t *__wcs, __const wchar_t *__reject)
+extern "C++" wchar_t *wcsrchr (wchar_t *__wcs, wchar_t __wc)
+     throw () __asm ("wcsrchr") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wcsrchr (const wchar_t *__wcs, wchar_t __wc)
+     throw () __asm ("wcsrchr") __attribute__ ((__pure__));
+#181 "/usr/include/wchar.h" 3 4
+extern wchar_t *wcschrnul (const wchar_t *__s, wchar_t __wc)
      throw () __attribute__ ((__pure__));
 
 
-extern size_t wcsspn (__const wchar_t *__wcs, __const wchar_t *__accept)
+
+
+extern size_t wcscspn (const wchar_t *__wcs, const wchar_t *__reject)
      throw () __attribute__ ((__pure__));
 
-extern wchar_t *wcspbrk (__const wchar_t *__wcs, __const wchar_t *__accept)
+
+extern size_t wcsspn (const wchar_t *__wcs, const wchar_t *__accept)
      throw () __attribute__ ((__pure__));
 
-extern wchar_t *wcsstr (__const wchar_t *__haystack, __const wchar_t *__needle)
-     throw () __attribute__ ((__pure__));
+
+extern "C++" wchar_t *wcspbrk (wchar_t *__wcs, const wchar_t *__accept)
+     throw () __asm ("wcspbrk") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wcspbrk (const wchar_t *__wcs,
+         const wchar_t *__accept)
+     throw () __asm ("wcspbrk") __attribute__ ((__pure__));
+
+
+
+
+
+
+extern "C++" wchar_t *wcsstr (wchar_t *__haystack, const wchar_t *__needle)
+     throw () __asm ("wcsstr") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wcsstr (const wchar_t *__haystack,
+        const wchar_t *__needle)
+     throw () __asm ("wcsstr") __attribute__ ((__pure__));
+
+
+
+
 
 
 extern wchar_t *wcstok (wchar_t *__restrict __s,
-   __const wchar_t *__restrict __delim,
+   const wchar_t *__restrict __delim,
    wchar_t **__restrict __ptr) throw ();
 
 
-extern size_t wcslen (__const wchar_t *__s) throw () __attribute__ ((__pure__));
+extern size_t wcslen (const wchar_t *__s) throw () __attribute__ ((__pure__));
 
 
 
 
-extern wchar_t *wcswcs (__const wchar_t *__haystack, __const wchar_t *__needle)
+extern "C++" wchar_t *wcswcs (wchar_t *__haystack, const wchar_t *__needle)
+     throw () __asm ("wcswcs") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wcswcs (const wchar_t *__haystack,
+        const wchar_t *__needle)
+     throw () __asm ("wcswcs") __attribute__ ((__pure__));
+#240 "/usr/include/wchar.h" 3 4
+extern size_t wcsnlen (const wchar_t *__s, size_t __maxlen)
      throw () __attribute__ ((__pure__));
 
 
 
 
-extern size_t wcsnlen (__const wchar_t *__s, size_t __maxlen)
-     throw () __attribute__ ((__pure__));
+
+extern "C++" wchar_t *wmemchr (wchar_t *__s, wchar_t __c, size_t __n)
+     throw () __asm ("wmemchr") __attribute__ ((__pure__));
+extern "C++" const wchar_t *wmemchr (const wchar_t *__s, wchar_t __c,
+         size_t __n)
+     throw () __asm ("wmemchr") __attribute__ ((__pure__));
 
 
 
 
 
-extern wchar_t *wmemchr (__const wchar_t *__s, wchar_t __c, size_t __n)
-     throw () __attribute__ ((__pure__));
 
-
-extern int wmemcmp (__const wchar_t *__restrict __s1,
-      __const wchar_t *__restrict __s2, size_t __n)
+extern int wmemcmp (const wchar_t *__s1, const wchar_t *__s2, size_t __n)
      throw () __attribute__ ((__pure__));
 
 
 extern wchar_t *wmemcpy (wchar_t *__restrict __s1,
-    __const wchar_t *__restrict __s2, size_t __n) throw ();
+    const wchar_t *__restrict __s2, size_t __n) throw ();
 
 
 
-extern wchar_t *wmemmove (wchar_t *__s1, __const wchar_t *__s2, size_t __n)
+extern wchar_t *wmemmove (wchar_t *__s1, const wchar_t *__s2, size_t __n)
      throw ();
 
 
@@ -10201,11 +10403,9 @@ extern wchar_t *wmemset (wchar_t *__s, wchar_t __c, size_t __n) throw ();
 
 
 
-
 extern wchar_t *wmempcpy (wchar_t *__restrict __s1,
-     __const wchar_t *__restrict __s2, size_t __n)
+     const wchar_t *__restrict __s2, size_t __n)
      throw ();
-
 
 
 
@@ -10219,51 +10419,46 @@ extern int wctob (wint_t __c) throw ();
 
 
 
-extern int mbsinit (__const mbstate_t *__ps) throw () __attribute__ ((__pure__));
+extern int mbsinit (const mbstate_t *__ps) throw () __attribute__ ((__pure__));
 
 
 
 extern size_t mbrtowc (wchar_t *__restrict __pwc,
-         __const char *__restrict __s, size_t __n,
-         mbstate_t *__p) throw ();
+         const char *__restrict __s, size_t __n,
+         mbstate_t *__restrict __p) throw ();
 
 
 extern size_t wcrtomb (char *__restrict __s, wchar_t __wc,
          mbstate_t *__restrict __ps) throw ();
 
 
-extern size_t __mbrlen (__const char *__restrict __s, size_t __n,
+extern size_t __mbrlen (const char *__restrict __s, size_t __n,
    mbstate_t *__restrict __ps) throw ();
-extern size_t mbrlen (__const char *__restrict __s, size_t __n,
+extern size_t mbrlen (const char *__restrict __s, size_t __n,
         mbstate_t *__restrict __ps) throw ();
-
-#357 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
-
-
-
+#337 "/usr/include/wchar.h" 3 4
 extern size_t mbsrtowcs (wchar_t *__restrict __dst,
-    __const char **__restrict __src, size_t __len,
+    const char **__restrict __src, size_t __len,
     mbstate_t *__restrict __ps) throw ();
 
 
 
 extern size_t wcsrtombs (char *__restrict __dst,
-    __const wchar_t **__restrict __src, size_t __len,
+    const wchar_t **__restrict __src, size_t __len,
     mbstate_t *__restrict __ps) throw ();
-
 
 
 
 
 
 extern size_t mbsnrtowcs (wchar_t *__restrict __dst,
-     __const char **__restrict __src, size_t __nmc,
+     const char **__restrict __src, size_t __nmc,
      size_t __len, mbstate_t *__restrict __ps) throw ();
 
 
 
 extern size_t wcsnrtombs (char *__restrict __dst,
-     __const wchar_t **__restrict __src,
+     const wchar_t **__restrict __src,
      size_t __nwc, size_t __len,
      mbstate_t *__restrict __ps) throw ();
 
@@ -10276,33 +10471,51 @@ extern int wcwidth (wchar_t __c) throw ();
 
 
 
-extern int wcswidth (__const wchar_t *__s, size_t __n) throw ();
+extern int wcswidth (const wchar_t *__s, size_t __n) throw ();
 
 
 
 
 
-
-extern double wcstod (__const wchar_t *__restrict __nptr,
+extern double wcstod (const wchar_t *__restrict __nptr,
         wchar_t **__restrict __endptr) throw ();
 
 
 
-extern float wcstof (__const wchar_t *__restrict __nptr,
+extern float wcstof (const wchar_t *__restrict __nptr,
        wchar_t **__restrict __endptr) throw ();
-extern long double wcstold (__const wchar_t *__restrict __nptr,
+extern long double wcstold (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr) throw ();
+#396 "/usr/include/wchar.h" 3 4
+extern _Float32 wcstof32 (const wchar_t *__restrict __nptr,
+     wchar_t **__restrict __endptr) throw ();
+
+
+
+extern _Float64 wcstof64 (const wchar_t *__restrict __nptr,
+     wchar_t **__restrict __endptr) throw ();
+
+
+
+extern _Float128 wcstof128 (const wchar_t *__restrict __nptr,
        wchar_t **__restrict __endptr) throw ();
 
 
 
+extern _Float32x wcstof32x (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr) throw ();
 
 
-extern long int wcstol (__const wchar_t *__restrict __nptr,
+
+extern _Float64x wcstof64x (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr) throw ();
+#428 "/usr/include/wchar.h" 3 4
+extern long int wcstol (const wchar_t *__restrict __nptr,
    wchar_t **__restrict __endptr, int __base) throw ();
 
 
 
-extern unsigned long int wcstoul (__const wchar_t *__restrict __nptr,
+extern unsigned long int wcstoul (const wchar_t *__restrict __nptr,
       wchar_t **__restrict __endptr, int __base)
      throw ();
 
@@ -10310,14 +10523,14 @@ extern unsigned long int wcstoul (__const wchar_t *__restrict __nptr,
 
 
 __extension__
-extern long long int wcstoll (__const wchar_t *__restrict __nptr,
+extern long long int wcstoll (const wchar_t *__restrict __nptr,
          wchar_t **__restrict __endptr, int __base)
      throw ();
 
 
 
 __extension__
-extern unsigned long long int wcstoull (__const wchar_t *__restrict __nptr,
+extern unsigned long long int wcstoull (const wchar_t *__restrict __nptr,
      wchar_t **__restrict __endptr,
      int __base) throw ();
 
@@ -10325,73 +10538,92 @@ extern unsigned long long int wcstoull (__const wchar_t *__restrict __nptr,
 
 
 
-
 __extension__
-extern long long int wcstoq (__const wchar_t *__restrict __nptr,
+extern long long int wcstoq (const wchar_t *__restrict __nptr,
         wchar_t **__restrict __endptr, int __base)
      throw ();
 
 
 
 __extension__
-extern unsigned long long int wcstouq (__const wchar_t *__restrict __nptr,
+extern unsigned long long int wcstouq (const wchar_t *__restrict __nptr,
            wchar_t **__restrict __endptr,
            int __base) throw ();
-#476 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
-extern long int wcstol_l (__const wchar_t *__restrict __nptr,
+
+
+
+
+
+
+extern long int wcstol_l (const wchar_t *__restrict __nptr,
      wchar_t **__restrict __endptr, int __base,
-     __locale_t __loc) throw ();
+     locale_t __loc) throw ();
 
-extern unsigned long int wcstoul_l (__const wchar_t *__restrict __nptr,
+extern unsigned long int wcstoul_l (const wchar_t *__restrict __nptr,
         wchar_t **__restrict __endptr,
-        int __base, __locale_t __loc) throw ();
+        int __base, locale_t __loc) throw ();
 
 __extension__
-extern long long int wcstoll_l (__const wchar_t *__restrict __nptr,
+extern long long int wcstoll_l (const wchar_t *__restrict __nptr,
     wchar_t **__restrict __endptr,
-    int __base, __locale_t __loc) throw ();
+    int __base, locale_t __loc) throw ();
 
 __extension__
-extern unsigned long long int wcstoull_l (__const wchar_t *__restrict __nptr,
+extern unsigned long long int wcstoull_l (const wchar_t *__restrict __nptr,
        wchar_t **__restrict __endptr,
-       int __base, __locale_t __loc)
+       int __base, locale_t __loc)
      throw ();
 
-extern double wcstod_l (__const wchar_t *__restrict __nptr,
-   wchar_t **__restrict __endptr, __locale_t __loc)
+extern double wcstod_l (const wchar_t *__restrict __nptr,
+   wchar_t **__restrict __endptr, locale_t __loc)
      throw ();
 
-extern float wcstof_l (__const wchar_t *__restrict __nptr,
-         wchar_t **__restrict __endptr, __locale_t __loc)
+extern float wcstof_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr, locale_t __loc)
      throw ();
 
-extern long double wcstold_l (__const wchar_t *__restrict __nptr,
+extern long double wcstold_l (const wchar_t *__restrict __nptr,
          wchar_t **__restrict __endptr,
-         __locale_t __loc) throw ();
+         locale_t __loc) throw ();
+#511 "/usr/include/wchar.h" 3 4
+extern _Float32 wcstof32_l (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr,
+       locale_t __loc) throw ();
 
 
 
+extern _Float64 wcstof64_l (const wchar_t *__restrict __nptr,
+       wchar_t **__restrict __endptr,
+       locale_t __loc) throw ();
 
 
-extern double __wcstod_internal (__const wchar_t *__restrict __nptr,
-     wchar_t **__restrict __endptr, int __group)
+
+extern _Float128 wcstof128_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr,
+         locale_t __loc) throw ();
+
+
+
+extern _Float32x wcstof32x_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr,
+         locale_t __loc) throw ();
+
+
+
+extern _Float64x wcstof64x_l (const wchar_t *__restrict __nptr,
+         wchar_t **__restrict __endptr,
+         locale_t __loc) throw ();
+#551 "/usr/include/wchar.h" 3 4
+extern wchar_t *wcpcpy (wchar_t *__restrict __dest,
+   const wchar_t *__restrict __src) throw ();
+
+
+
+extern wchar_t *wcpncpy (wchar_t *__restrict __dest,
+    const wchar_t *__restrict __src, size_t __n)
      throw ();
-extern float __wcstof_internal (__const wchar_t *__restrict __nptr,
-    wchar_t **__restrict __endptr, int __group)
-     throw ();
-extern long double __wcstold_internal (__const wchar_t *__restrict __nptr,
-           wchar_t **__restrict __endptr,
-           int __group) throw ();
-#602 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
-extern wchar_t *wcpcpy (wchar_t *__dest, __const wchar_t *__src) throw ();
-
-
-
-extern wchar_t *wcpncpy (wchar_t *__dest, __const wchar_t *__src, size_t __n)
-     throw ();
-#616 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+#567 "/usr/include/wchar.h" 3 4
 extern __FILE *open_wmemstream (wchar_t **__bufloc, size_t *__sizeloc) throw ();
-
 
 
 
@@ -10405,17 +10637,17 @@ extern int fwide (__FILE *__fp, int __mode) throw ();
 
 
 extern int fwprintf (__FILE *__restrict __stream,
-       __const wchar_t *__restrict __format, ...)
+       const wchar_t *__restrict __format, ...)
                                                            ;
 
 
 
 
-extern int wprintf (__const wchar_t *__restrict __format, ...)
+extern int wprintf (const wchar_t *__restrict __format, ...)
                                                            ;
 
 extern int swprintf (wchar_t *__restrict __s, size_t __n,
-       __const wchar_t *__restrict __format, ...)
+       const wchar_t *__restrict __format, ...)
      throw () ;
 
 
@@ -10423,20 +10655,20 @@ extern int swprintf (wchar_t *__restrict __s, size_t __n,
 
 
 extern int vfwprintf (__FILE *__restrict __s,
-        __const wchar_t *__restrict __format,
+        const wchar_t *__restrict __format,
         __gnuc_va_list __arg)
                                                            ;
 
 
 
 
-extern int vwprintf (__const wchar_t *__restrict __format,
+extern int vwprintf (const wchar_t *__restrict __format,
        __gnuc_va_list __arg)
                                                            ;
 
 
 extern int vswprintf (wchar_t *__restrict __s, size_t __n,
-        __const wchar_t *__restrict __format,
+        const wchar_t *__restrict __format,
         __gnuc_va_list __arg)
      throw () ;
 
@@ -10446,55 +10678,36 @@ extern int vswprintf (wchar_t *__restrict __s, size_t __n,
 
 
 extern int fwscanf (__FILE *__restrict __stream,
-      __const wchar_t *__restrict __format, ...)
+      const wchar_t *__restrict __format, ...)
                                                           ;
 
 
 
 
-extern int wscanf (__const wchar_t *__restrict __format, ...)
+extern int wscanf (const wchar_t *__restrict __format, ...)
                                                           ;
 
-extern int swscanf (__const wchar_t *__restrict __s,
-      __const wchar_t *__restrict __format, ...)
+extern int swscanf (const wchar_t *__restrict __s,
+      const wchar_t *__restrict __format, ...)
      throw () ;
-
-
-
-
-
-
-
-
-
-
-
+#673 "/usr/include/wchar.h" 3 4
 extern int vfwscanf (__FILE *__restrict __s,
-       __const wchar_t *__restrict __format,
+       const wchar_t *__restrict __format,
        __gnuc_va_list __arg)
                                                           ;
 
 
 
 
-extern int vwscanf (__const wchar_t *__restrict __format,
+extern int vwscanf (const wchar_t *__restrict __format,
       __gnuc_va_list __arg)
                                                           ;
 
-extern int vswscanf (__const wchar_t *__restrict __s,
-       __const wchar_t *__restrict __format,
+extern int vswscanf (const wchar_t *__restrict __s,
+       const wchar_t *__restrict __format,
        __gnuc_va_list __arg)
      throw () ;
-
-
-
-
-
-
-
-
-
-
+#727 "/usr/include/wchar.h" 3 4
 extern wint_t fgetwc (__FILE *__stream);
 extern wint_t getwc (__FILE *__stream);
 
@@ -10531,7 +10744,7 @@ extern wchar_t *fgetws (wchar_t *__restrict __ws, int __n,
 
 
 
-extern int fputws (__const wchar_t *__restrict __ws,
+extern int fputws (const wchar_t *__restrict __ws,
      __FILE *__restrict __stream);
 
 
@@ -10540,8 +10753,7 @@ extern int fputws (__const wchar_t *__restrict __ws,
 
 
 extern wint_t ungetwc (wint_t __wc, __FILE *__stream);
-
-#777 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+#782 "/usr/include/wchar.h" 3 4
 extern wint_t getwc_unlocked (__FILE *__stream);
 extern wint_t getwchar_unlocked (void);
 
@@ -10560,10 +10772,10 @@ extern wint_t fgetwc_unlocked (__FILE *__stream);
 
 
 extern wint_t fputwc_unlocked (wchar_t __wc, __FILE *__stream);
-#803 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+#808 "/usr/include/wchar.h" 3 4
 extern wint_t putwc_unlocked (wchar_t __wc, __FILE *__stream);
 extern wint_t putwchar_unlocked (wchar_t __wc);
-#813 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+#818 "/usr/include/wchar.h" 3 4
 extern wchar_t *fgetws_unlocked (wchar_t *__restrict __ws, int __n,
      __FILE *__restrict __stream);
 
@@ -10573,7 +10785,7 @@ extern wchar_t *fgetws_unlocked (wchar_t *__restrict __ws, int __n,
 
 
 
-extern int fputws_unlocked (__const wchar_t *__restrict __ws,
+extern int fputws_unlocked (const wchar_t *__restrict __ws,
        __FILE *__restrict __stream);
 
 
@@ -10581,22 +10793,18 @@ extern int fputws_unlocked (__const wchar_t *__restrict __ws,
 
 
 
-
 extern size_t wcsftime (wchar_t *__restrict __s, size_t __maxsize,
-   __const wchar_t *__restrict __format,
-   __const struct tm *__restrict __tp) throw ();
-
-
-
+   const wchar_t *__restrict __format,
+   const struct tm *__restrict __tp) throw ();
 
 
 
 
 extern size_t wcsftime_l (wchar_t *__restrict __s, size_t __maxsize,
-     __const wchar_t *__restrict __format,
-     __const struct tm *__restrict __tp,
-     __locale_t __loc) throw ();
-#867 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/wchar.h" 3 4
+     const wchar_t *__restrict __format,
+     const struct tm *__restrict __tp,
+     locale_t __loc) throw ();
+#857 "/usr/include/wchar.h" 3 4
 }
 #47 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 2 3
 #64 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
@@ -10679,29 +10887,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
   using ::wcsrchr;
   using ::wcsstr;
   using ::wmemchr;
-
-
-  inline wchar_t*
-  wcschr(wchar_t* __p, wchar_t __c)
-  { return wcschr(const_cast<const wchar_t*>(__p), __c); }
-
-  inline wchar_t*
-  wcspbrk(wchar_t* __s1, const wchar_t* __s2)
-  { return wcspbrk(const_cast<const wchar_t*>(__s1), __s2); }
-
-  inline wchar_t*
-  wcsrchr(wchar_t* __p, wchar_t __c)
-  { return wcsrchr(const_cast<const wchar_t*>(__p), __c); }
-
-  inline wchar_t*
-  wcsstr(wchar_t* __s1, const wchar_t* __s2)
-  { return wcsstr(const_cast<const wchar_t*>(__s1), __s2); }
-
-  inline wchar_t*
-  wmemchr(wchar_t* __p, wchar_t __c, size_t __n)
-  { return wmemchr(const_cast<const wchar_t*>(__p), __c, __n); }
-
-
+#234 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwchar" 3
 
 }
 
@@ -11329,10 +11515,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #30 "/usr/include/locale.h" 2 3 4
 
 extern "C" {
-#50 "/usr/include/locale.h" 3 4
-
-
-
+#51 "/usr/include/locale.h" 3 4
 struct lconv
 {
 
@@ -11392,7 +11575,7 @@ struct lconv
 
   char int_p_sign_posn;
   char int_n_sign_posn;
-#120 "/usr/include/locale.h" 3 4
+#118 "/usr/include/locale.h" 3 4
 };
 
 
@@ -11401,24 +11584,22 @@ extern char *setlocale (int __category, const char *__locale) throw ();
 
 
 extern struct lconv *localeconv (void) throw ();
-
-
-#151 "/usr/include/locale.h" 3 4
-extern __locale_t newlocale (int __category_mask, const char *__locale,
-        __locale_t __base) throw ();
-#186 "/usr/include/locale.h" 3 4
-extern __locale_t duplocale (__locale_t __dataset) throw ();
+#141 "/usr/include/locale.h" 3 4
+extern locale_t newlocale (int __category_mask, const char *__locale,
+      locale_t __base) throw ();
+#176 "/usr/include/locale.h" 3 4
+extern locale_t duplocale (locale_t __dataset) throw ();
 
 
 
-extern void freelocale (__locale_t __dataset) throw ();
+extern void freelocale (locale_t __dataset) throw ();
 
 
 
 
 
 
-extern __locale_t uselocale (__locale_t __dataset) throw ();
+extern locale_t uselocale (locale_t __dataset) throw ();
 
 
 
@@ -11530,13 +11711,7 @@ extern const __int32_t **__ctype_tolower_loc (void)
      throw () __attribute__ ((__const__));
 extern const __int32_t **__ctype_toupper_loc (void)
      throw () __attribute__ ((__const__));
-#104 "/usr/include/ctype.h" 3 4
-
-
-
-
-
-
+#108 "/usr/include/ctype.h" 3 4
 extern int isalnum (int) throw ();
 extern int isalpha (int) throw ();
 extern int iscntrl (int) throw ();
@@ -11559,13 +11734,7 @@ extern int toupper (int __c) throw ();
 
 
 
-
-
-
-
 extern int isblank (int) throw ();
-
-
 
 
 
@@ -11587,30 +11756,30 @@ extern int toascii (int __c) throw ();
 
 extern int _toupper (int) throw ();
 extern int _tolower (int) throw ();
-#271 "/usr/include/ctype.h" 3 4
-extern int isalnum_l (int, __locale_t) throw ();
-extern int isalpha_l (int, __locale_t) throw ();
-extern int iscntrl_l (int, __locale_t) throw ();
-extern int isdigit_l (int, __locale_t) throw ();
-extern int islower_l (int, __locale_t) throw ();
-extern int isgraph_l (int, __locale_t) throw ();
-extern int isprint_l (int, __locale_t) throw ();
-extern int ispunct_l (int, __locale_t) throw ();
-extern int isspace_l (int, __locale_t) throw ();
-extern int isupper_l (int, __locale_t) throw ();
-extern int isxdigit_l (int, __locale_t) throw ();
+#251 "/usr/include/ctype.h" 3 4
+extern int isalnum_l (int, locale_t) throw ();
+extern int isalpha_l (int, locale_t) throw ();
+extern int iscntrl_l (int, locale_t) throw ();
+extern int isdigit_l (int, locale_t) throw ();
+extern int islower_l (int, locale_t) throw ();
+extern int isgraph_l (int, locale_t) throw ();
+extern int isprint_l (int, locale_t) throw ();
+extern int ispunct_l (int, locale_t) throw ();
+extern int isspace_l (int, locale_t) throw ();
+extern int isupper_l (int, locale_t) throw ();
+extern int isxdigit_l (int, locale_t) throw ();
 
-extern int isblank_l (int, __locale_t) throw ();
-
-
-
-extern int __tolower_l (int __c, __locale_t __l) throw ();
-extern int tolower_l (int __c, __locale_t __l) throw ();
+extern int isblank_l (int, locale_t) throw ();
 
 
-extern int __toupper_l (int __c, __locale_t __l) throw ();
-extern int toupper_l (int __c, __locale_t __l) throw ();
-#347 "/usr/include/ctype.h" 3 4
+
+extern int __tolower_l (int __c, locale_t __l) throw ();
+extern int tolower_l (int __c, locale_t __l) throw ();
+
+
+extern int __toupper_l (int __c, locale_t __l) throw ();
+extern int toupper_l (int __c, locale_t __l) throw ();
+#327 "/usr/include/ctype.h" 3 4
 }
 #45 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cctype" 2 3
 #64 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cctype" 3
@@ -11787,23 +11956,16 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #1 "/usr/include/pthread.h" 1 3 4
 #23 "/usr/include/pthread.h" 3 4
 #1 "/usr/include/sched.h" 1 3 4
-#28 "/usr/include/sched.h" 3 4
+#29 "/usr/include/sched.h" 3 4
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#29 "/usr/include/sched.h" 2 3 4
-
-
-
-
-
-#1 "/usr/include/time.h" 1 3 4
-#35 "/usr/include/sched.h" 2 3 4
+#30 "/usr/include/sched.h" 2 3 4
 #43 "/usr/include/sched.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/sched.h" 1 3 4
-#72 "/usr/include/x86_64-linux-gnu/bits/sched.h" 3 4
+#75 "/usr/include/x86_64-linux-gnu/bits/sched.h" 3 4
 struct sched_param
-  {
-    int __sched_priority;
-  };
+{
+  int sched_priority;
+};
 
 extern "C" {
 
@@ -11822,20 +11984,10 @@ extern int sched_getcpu (void) throw ();
 extern int setns (int __fd, int __nstype) throw ();
 
 
-
 }
-
-
-
-
-
-
-
-struct __sched_param
-  {
-    int __sched_priority;
-  };
-#118 "/usr/include/x86_64-linux-gnu/bits/sched.h" 3 4
+#44 "/usr/include/sched.h" 2 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 1 3 4
+#32 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 3 4
 typedef unsigned long int __cpu_mask;
 
 
@@ -11847,16 +11999,18 @@ typedef struct
 {
   __cpu_mask __bits[1024 / (8 * sizeof (__cpu_mask))];
 } cpu_set_t;
-#201 "/usr/include/x86_64-linux-gnu/bits/sched.h" 3 4
+#115 "/usr/include/x86_64-linux-gnu/bits/cpu-set.h" 3 4
 extern "C" {
 
 extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
-  throw ();
+     throw ();
 extern cpu_set_t *__sched_cpualloc (size_t __count) throw () ;
 extern void __sched_cpufree (cpu_set_t *__set) throw ();
 
 }
-#44 "/usr/include/sched.h" 2 3 4
+#45 "/usr/include/sched.h" 2 3 4
+
+
 
 
 
@@ -11888,7 +12042,7 @@ extern int sched_get_priority_min (int __algorithm) throw ();
 
 
 extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) throw ();
-#118 "/usr/include/sched.h" 3 4
+#121 "/usr/include/sched.h" 3 4
 extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
          const cpu_set_t *__cpuset) throw ();
 
@@ -11901,23 +12055,15 @@ extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
 #24 "/usr/include/pthread.h" 2 3 4
 #1 "/usr/include/time.h" 1 3 4
 #29 "/usr/include/time.h" 3 4
-extern "C" {
-
-
-
-
-
-
-
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#38 "/usr/include/time.h" 2 3 4
+#30 "/usr/include/time.h" 2 3 4
 
 
 
 #1 "/usr/include/x86_64-linux-gnu/bits/time.h" 1 3 4
-#88 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
+#73 "/usr/include/x86_64-linux-gnu/bits/time.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/timex.h" 1 3 4
-#25 "/usr/include/x86_64-linux-gnu/bits/timex.h" 3 4
+#26 "/usr/include/x86_64-linux-gnu/bits/timex.h" 3 4
 struct timex
 {
   unsigned int modes;
@@ -11947,7 +12093,7 @@ struct timex
   int :32; int :32; int :32; int :32;
   int :32; int :32; int :32;
 };
-#89 "/usr/include/x86_64-linux-gnu/bits/time.h" 2 3 4
+#74 "/usr/include/x86_64-linux-gnu/bits/time.h" 2 3 4
 
 extern "C" {
 
@@ -11955,8 +12101,17 @@ extern "C" {
 extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) throw ();
 
 }
-#42 "/usr/include/time.h" 2 3 4
-#131 "/usr/include/time.h" 3 4
+#34 "/usr/include/time.h" 2 3 4
+
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h" 1 3 4
+
+
+
+
 
 
 struct tm
@@ -11979,7 +12134,9 @@ struct tm
 
 
 };
-
+#40 "/usr/include/time.h" 2 3 4
+#48 "/usr/include/time.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h" 1 3 4
 
 
 
@@ -11992,10 +12149,10 @@ struct itimerspec
     struct timespec it_interval;
     struct timespec it_value;
   };
-
-
+#49 "/usr/include/time.h" 2 3 4
 struct sigevent;
-#186 "/usr/include/time.h" 3 4
+#68 "/usr/include/time.h" 3 4
+extern "C" {
 
 
 
@@ -12022,7 +12179,6 @@ extern size_t strftime (char *__restrict __s, size_t __maxsize,
 
 
 
-
 extern char *strptime (const char *__restrict __s,
          const char *__restrict __fmt, struct tm *__tp)
      throw ();
@@ -12032,18 +12188,16 @@ extern char *strptime (const char *__restrict __s,
 
 
 
-
 extern size_t strftime_l (char *__restrict __s, size_t __maxsize,
      const char *__restrict __format,
      const struct tm *__restrict __tp,
-     __locale_t __loc) throw ();
+     locale_t __loc) throw ();
 
 
 
 extern char *strptime_l (const char *__restrict __s,
     const char *__restrict __fmt, struct tm *__tp,
-    __locale_t __loc) throw ();
-
+    locale_t __loc) throw ();
 
 
 
@@ -12054,7 +12208,6 @@ extern struct tm *gmtime (const time_t *__timer) throw ();
 
 
 extern struct tm *localtime (const time_t *__timer) throw ();
-
 
 
 
@@ -12070,12 +12223,10 @@ extern struct tm *localtime_r (const time_t *__restrict __timer,
 
 
 
-
 extern char *asctime (const struct tm *__tp) throw ();
 
 
 extern char *ctime (const time_t *__timer) throw ();
-
 
 
 
@@ -12115,7 +12266,7 @@ extern long int timezone;
 
 
 extern int stime (const time_t *__when) throw ();
-#319 "/usr/include/time.h" 3 4
+#196 "/usr/include/time.h" 3 4
 extern time_t timegm (struct tm *__tp) throw ();
 
 
@@ -12123,7 +12274,7 @@ extern time_t timelocal (struct tm *__tp) throw ();
 
 
 extern int dysize (int __year) throw () __attribute__ ((__const__));
-#334 "/usr/include/time.h" 3 4
+#211 "/usr/include/time.h" 3 4
 extern int nanosleep (const struct timespec *__requested_time,
         struct timespec *__remaining);
 
@@ -12171,11 +12322,18 @@ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
 
 
 extern int timer_getoverrun (timer_t __timerid) throw ();
-#403 "/usr/include/time.h" 3 4
+
+
+
+
+
+extern int timespec_get (struct timespec *__ts, int __base)
+     throw () __attribute__ ((__nonnull__ (1)));
+#280 "/usr/include/time.h" 3 4
 extern int getdate_err;
-#412 "/usr/include/time.h" 3 4
+#289 "/usr/include/time.h" 3 4
 extern struct tm *getdate (const char *__string);
-#426 "/usr/include/time.h" 3 4
+#303 "/usr/include/time.h" 3 4
 extern int getdate_r (const char *__restrict __string,
         struct tm *__restrict __resbufp);
 
@@ -12196,6 +12354,7 @@ typedef long int __jmp_buf[8];
 #28 "/usr/include/pthread.h" 2 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
 #29 "/usr/include/pthread.h" 2 3 4
+
 
 
 
@@ -12249,7 +12408,7 @@ enum
   PTHREAD_PRIO_INHERIT,
   PTHREAD_PRIO_PROTECT
 };
-#114 "/usr/include/pthread.h" 3 4
+#115 "/usr/include/pthread.h" 3 4
 enum
 {
   PTHREAD_RWLOCK_PREFER_READER_NP,
@@ -12257,7 +12416,7 @@ enum
   PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP,
   PTHREAD_RWLOCK_DEFAULT_NP = PTHREAD_RWLOCK_PREFER_READER_NP
 };
-#155 "/usr/include/pthread.h" 3 4
+#156 "/usr/include/pthread.h" 3 4
 enum
 {
   PTHREAD_INHERIT_SCHED,
@@ -12285,7 +12444,7 @@ enum
   PTHREAD_PROCESS_SHARED
 
 };
-#190 "/usr/include/pthread.h" 3 4
+#191 "/usr/include/pthread.h" 3 4
 struct _pthread_cleanup_buffer
 {
   void (*__routine) (void *);
@@ -12309,7 +12468,7 @@ enum
   PTHREAD_CANCEL_ASYNCHRONOUS
 
 };
-#228 "/usr/include/pthread.h" 3 4
+#229 "/usr/include/pthread.h" 3 4
 extern "C" {
 
 
@@ -12564,10 +12723,10 @@ extern int pthread_setaffinity_np (pthread_t __th, size_t __cpusetsize,
 extern int pthread_getaffinity_np (pthread_t __th, size_t __cpusetsize,
        cpu_set_t *__cpuset)
      throw () __attribute__ ((__nonnull__ (3)));
-#494 "/usr/include/pthread.h" 3 4
+#495 "/usr/include/pthread.h" 3 4
 extern int pthread_once (pthread_once_t *__once_control,
     void (*__init_routine) (void)) __attribute__ ((__nonnull__ (1, 2)));
-#506 "/usr/include/pthread.h" 3 4
+#507 "/usr/include/pthread.h" 3 4
 extern int pthread_setcancelstate (int __state, int *__oldstate);
 
 
@@ -12594,7 +12753,7 @@ typedef struct
   } __cancel_jmp_buf[1];
   void *__pad[4];
 } __pthread_unwind_buf_t __attribute__ ((__aligned__));
-#540 "/usr/include/pthread.h" 3 4
+#541 "/usr/include/pthread.h" 3 4
 struct __pthread_cleanup_frame
 {
   void (*__cancel_routine) (void *);
@@ -12622,7 +12781,7 @@ class __pthread_cleanup_class
         &__cancel_type); }
   void __restore () const { pthread_setcanceltype (__cancel_type, 0); }
 };
-#742 "/usr/include/pthread.h" 3 4
+#743 "/usr/include/pthread.h" 3 4
 struct __jmp_buf_tag;
 extern int __sigsetjmp (struct __jmp_buf_tag *__env, int __savemask) throw ();
 
@@ -12679,7 +12838,7 @@ extern int pthread_mutex_consistent (pthread_mutex_t *__mutex)
 
 extern int pthread_mutex_consistent_np (pthread_mutex_t *__mutex)
      throw () __attribute__ ((__nonnull__ (1)));
-#806 "/usr/include/pthread.h" 3 4
+#807 "/usr/include/pthread.h" 3 4
 extern int pthread_mutexattr_init (pthread_mutexattr_t *__attr)
      throw () __attribute__ ((__nonnull__ (1)));
 
@@ -12753,7 +12912,7 @@ extern int pthread_mutexattr_setrobust (pthread_mutexattr_t *__attr,
 extern int pthread_mutexattr_setrobust_np (pthread_mutexattr_t *__attr,
         int __robustness)
      throw () __attribute__ ((__nonnull__ (1)));
-#888 "/usr/include/pthread.h" 3 4
+#889 "/usr/include/pthread.h" 3 4
 extern int pthread_rwlock_init (pthread_rwlock_t *__restrict __rwlock,
     const pthread_rwlockattr_t *__restrict
     __attr) throw () __attribute__ ((__nonnull__ (1)));
@@ -12858,7 +13017,7 @@ extern int pthread_cond_broadcast (pthread_cond_t *__cond)
 extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
          pthread_mutex_t *__restrict __mutex)
      __attribute__ ((__nonnull__ (1, 2)));
-#1000 "/usr/include/pthread.h" 3 4
+#1001 "/usr/include/pthread.h" 3 4
 extern int pthread_cond_timedwait (pthread_cond_t *__restrict __cond,
        pthread_mutex_t *__restrict __mutex,
        const struct timespec *__restrict __abstime)
@@ -12895,7 +13054,7 @@ extern int pthread_condattr_getclock (const pthread_condattr_t *
 extern int pthread_condattr_setclock (pthread_condattr_t *__attr,
           __clockid_t __clock_id)
      throw () __attribute__ ((__nonnull__ (1)));
-#1044 "/usr/include/pthread.h" 3 4
+#1045 "/usr/include/pthread.h" 3 4
 extern int pthread_spin_init (pthread_spinlock_t *__lock, int __pshared)
      throw () __attribute__ ((__nonnull__ (1)));
 
@@ -12952,7 +13111,7 @@ extern int pthread_barrierattr_getpshared (const pthread_barrierattr_t *
 extern int pthread_barrierattr_setpshared (pthread_barrierattr_t *__attr,
         int __pshared)
      throw () __attribute__ ((__nonnull__ (1)));
-#1111 "/usr/include/pthread.h" 3 4
+#1112 "/usr/include/pthread.h" 3 4
 extern int pthread_key_create (pthread_key_t *__key,
           void (*__destr_function) (void *))
      throw () __attribute__ ((__nonnull__ (1)));
@@ -12973,11 +13132,11 @@ extern int pthread_setspecific (pthread_key_t __key,
 extern int pthread_getcpuclockid (pthread_t __thread_id,
       __clockid_t *__clock_id)
      throw () __attribute__ ((__nonnull__ (2)));
-#1145 "/usr/include/pthread.h" 3 4
+#1146 "/usr/include/pthread.h" 3 4
 extern int pthread_atfork (void (*__prepare) (void),
       void (*__parent) (void),
       void (*__child) (void)) throw ();
-#1159 "/usr/include/pthread.h" 3 4
+#1160 "/usr/include/pthread.h" 3 4
 }
 #42 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/gthr-default.h" 2 3
 #1 "/usr/include/unistd.h" 1 3 4
@@ -14052,7 +14211,6 @@ extern int isatty (int __fd) throw ();
 
 
 
-
 extern int ttyslot (void) throw ();
 
 
@@ -14131,13 +14289,27 @@ extern int getlogin_r (char *__name, size_t __name_len) __attribute__ ((__nonnul
 
 
 extern int setlogin (const char *__name) throw () __attribute__ ((__nonnull__ (1)));
-#874 "/usr/include/unistd.h" 3 4
-#1 "/usr/include/getopt.h" 1 3 4
-#48 "/usr/include/getopt.h" 3 4
+
+
+
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 1 3 4
+#27 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 1 3 4
+#28 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
 extern "C" {
-#57 "/usr/include/getopt.h" 3 4
+
+
+
+
+
+
+
 extern char *optarg;
-#71 "/usr/include/getopt.h" 3 4
+#50 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
 extern int optind;
 
 
@@ -14148,12 +14320,17 @@ extern int opterr;
 
 
 extern int optopt;
-#150 "/usr/include/getopt.h" 3 4
+#91 "/usr/include/x86_64-linux-gnu/bits/getopt_core.h" 3 4
 extern int getopt (int ___argc, char *const *___argv, const char *__shortopts)
-       throw ();
-#185 "/usr/include/getopt.h" 3 4
+       throw () __attribute__ ((__nonnull__ (2, 3)));
+
 }
-#875 "/usr/include/unistd.h" 2 3 4
+#28 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 2 3 4
+
+extern "C" {
+#49 "/usr/include/x86_64-linux-gnu/bits/getopt_posix.h" 3 4
+}
+#873 "/usr/include/unistd.h" 2 3 4
 
 
 
@@ -14266,17 +14443,17 @@ extern int getpagesize (void) throw () __attribute__ ((__const__));
 
 
 extern int getdtablesize (void) throw ();
-#996 "/usr/include/unistd.h" 3 4
+#994 "/usr/include/unistd.h" 3 4
 extern int truncate (const char *__file, __off_t __length)
      throw () __attribute__ ((__nonnull__ (1))) ;
-#1008 "/usr/include/unistd.h" 3 4
+#1006 "/usr/include/unistd.h" 3 4
 extern int truncate64 (const char *__file, __off64_t __length)
      throw () __attribute__ ((__nonnull__ (1))) ;
-#1019 "/usr/include/unistd.h" 3 4
+#1017 "/usr/include/unistd.h" 3 4
 extern int ftruncate (int __fd, __off_t __length) throw () ;
-#1029 "/usr/include/unistd.h" 3 4
+#1027 "/usr/include/unistd.h" 3 4
 extern int ftruncate64 (int __fd, __off64_t __length) throw () ;
-#1040 "/usr/include/unistd.h" 3 4
+#1038 "/usr/include/unistd.h" 3 4
 extern int brk (void *__addr) throw () ;
 
 
@@ -14284,13 +14461,21 @@ extern int brk (void *__addr) throw () ;
 
 
 extern void *sbrk (intptr_t __delta) throw ();
-#1061 "/usr/include/unistd.h" 3 4
+#1059 "/usr/include/unistd.h" 3 4
 extern long int syscall (long int __sysno, ...) throw ();
-#1084 "/usr/include/unistd.h" 3 4
+#1082 "/usr/include/unistd.h" 3 4
 extern int lockf (int __fd, int __cmd, __off_t __len) ;
-#1094 "/usr/include/unistd.h" 3 4
+#1092 "/usr/include/unistd.h" 3 4
 extern int lockf64 (int __fd, int __cmd, __off64_t __len) ;
-#1115 "/usr/include/unistd.h" 3 4
+#1110 "/usr/include/unistd.h" 3 4
+ssize_t copy_file_range (int __infd, __off64_t *__pinoff,
+    int __outfd, __off64_t *__poutoff,
+    size_t __length, unsigned int __flags);
+
+
+
+
+
 extern int fdatasync (int __fildes);
 
 
@@ -14314,7 +14499,15 @@ extern void encrypt (char *__glibc_block, int __edflag)
 
 extern void swab (const void *__restrict __from, void *__restrict __to,
     ssize_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
-#1154 "/usr/include/unistd.h" 3 4
+#1167 "/usr/include/unistd.h" 3 4
+int getentropy (void *__buffer, size_t __length) ;
+
+
+
+
+
+
+
 }
 #43 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/gthr-default.h" 2 3
 
@@ -19245,27 +19438,13 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #41 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwctype" 3
 
 #42 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwctype" 3
-
-
-
-
-
-
-
-#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#150 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4
-typedef long int ptrdiff_t;
-#50 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwctype" 2 3
-
-
+#52 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cwctype" 3
 #1 "/usr/include/wctype.h" 1 3 4
-#49 "/usr/include/wctype.h" 3 4
-
-
-
+#38 "/usr/include/wctype.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 1 3 4
+#38 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
 typedef unsigned long int wctype_t;
-
-#71 "/usr/include/wctype.h" 3 4
+#56 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
 enum
 {
   __ISwupper = 0,
@@ -19298,7 +19477,6 @@ enum
 
 
 extern "C" {
-
 
 
 
@@ -19358,7 +19536,7 @@ extern int iswxdigit (wint_t __wc) throw ();
 
 
 extern int iswblank (wint_t __wc) throw ();
-#171 "/usr/include/wctype.h" 3 4
+#155 "/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h" 3 4
 extern wctype_t wctype (const char *__property) throw ();
 
 
@@ -19370,28 +19548,23 @@ extern int iswctype (wint_t __wc, wctype_t __desc) throw ();
 
 
 
-
-
-
-
-typedef const __int32_t *wctrans_t;
-
-
-
-
-
-
-
 extern wint_t towlower (wint_t __wc) throw ();
 
 
 extern wint_t towupper (wint_t __wc) throw ();
 
-
 }
-#213 "/usr/include/wctype.h" 3 4
+#39 "/usr/include/wctype.h" 2 3 4
+
+
+
+
+
 extern "C" {
 
+
+
+typedef const __int32_t *wctrans_t;
 
 
 
@@ -19406,67 +19579,66 @@ extern wint_t towctrans (wint_t __wc, wctrans_t __desc) throw ();
 
 
 
-
-extern int iswalnum_l (wint_t __wc, __locale_t __locale) throw ();
-
+extern int iswalnum_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswalpha_l (wint_t __wc, __locale_t __locale) throw ();
+
+extern int iswalpha_l (wint_t __wc, locale_t __locale) throw ();
 
 
-extern int iswcntrl_l (wint_t __wc, __locale_t __locale) throw ();
-
-
-
-extern int iswdigit_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswcntrl_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
-extern int iswgraph_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswdigit_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
-
-extern int iswlower_l (wint_t __wc, __locale_t __locale) throw ();
-
-
-extern int iswprint_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswgraph_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswpunct_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswlower_l (wint_t __wc, locale_t __locale) throw ();
+
+
+extern int iswprint_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswspace_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswpunct_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswupper_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswspace_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswxdigit_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswupper_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
 
-extern int iswblank_l (wint_t __wc, __locale_t __locale) throw ();
+extern int iswxdigit_l (wint_t __wc, locale_t __locale) throw ();
 
 
 
-extern wctype_t wctype_l (const char *__property, __locale_t __locale)
+
+extern int iswblank_l (wint_t __wc, locale_t __locale) throw ();
+
+
+
+extern wctype_t wctype_l (const char *__property, locale_t __locale)
      throw ();
 
 
 
-extern int iswctype_l (wint_t __wc, wctype_t __desc, __locale_t __locale)
+extern int iswctype_l (wint_t __wc, wctype_t __desc, locale_t __locale)
      throw ();
 
 
@@ -19474,20 +19646,19 @@ extern int iswctype_l (wint_t __wc, wctype_t __desc, __locale_t __locale)
 
 
 
-
-extern wint_t towlower_l (wint_t __wc, __locale_t __locale) throw ();
-
-
-extern wint_t towupper_l (wint_t __wc, __locale_t __locale) throw ();
+extern wint_t towlower_l (wint_t __wc, locale_t __locale) throw ();
 
 
+extern wint_t towupper_l (wint_t __wc, locale_t __locale) throw ();
 
-extern wctrans_t wctrans_l (const char *__property, __locale_t __locale)
+
+
+extern wctrans_t wctrans_l (const char *__property, locale_t __locale)
      throw ();
 
 
 extern wint_t towctrans_l (wint_t __wc, wctrans_t __desc,
-      __locale_t __locale) throw ();
+      locale_t __locale) throw ();
 
 
 
@@ -25681,6 +25852,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #pragma GCC visibility push(default)
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
+#150 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
 #50 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cxxabi.h" 2 3
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/x86_64-unknown-linux-gnu/bits/cxxabi_tweaks.h" 1 3
@@ -26345,7 +26518,7 @@ class stream
 };
 
 }
-#6 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+#6 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 #1 "/opt/Xilinx/Vivado/2018.1/include/ap_axi_sdata.h" 1
 #86 "/opt/Xilinx/Vivado/2018.1/include/ap_axi_sdata.h"
 #1 "/opt/Xilinx/Vivado/2018.1/include/ap_int.h" 1
@@ -26361,46 +26534,88 @@ class stream
 
 
 #1 "/usr/include/math.h" 1 3 4
-#28 "/usr/include/math.h" 3 4
+#27 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#28 "/usr/include/math.h" 2 3 4
+
+
+
+
+
+
 extern "C" {
+
+
+
 
 
 #1 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 1 3 4
 #25 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h" 1 3 4
 #26 "/usr/include/x86_64-linux-gnu/bits/math-vector.h" 2 3 4
-#32 "/usr/include/math.h" 2 3 4
-
-
-
-#1 "/usr/include/x86_64-linux-gnu/bits/huge_val.h" 1 3 4
-#36 "/usr/include/math.h" 2 3 4
-
-#1 "/usr/include/x86_64-linux-gnu/bits/huge_valf.h" 1 3 4
-#38 "/usr/include/math.h" 2 3 4
-#1 "/usr/include/x86_64-linux-gnu/bits/huge_vall.h" 1 3 4
-#39 "/usr/include/math.h" 2 3 4
-
-
-#1 "/usr/include/x86_64-linux-gnu/bits/inf.h" 1 3 4
-#42 "/usr/include/math.h" 2 3 4
-
-
-#1 "/usr/include/x86_64-linux-gnu/bits/nan.h" 1 3 4
-#45 "/usr/include/math.h" 2 3 4
-
-
-
-#1 "/usr/include/x86_64-linux-gnu/bits/mathdef.h" 1 3 4
-#28 "/usr/include/x86_64-linux-gnu/bits/mathdef.h" 3 4
+#41 "/usr/include/math.h" 2 3 4
+#138 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h" 1 3 4
+#139 "/usr/include/math.h" 2 3 4
+#149 "/usr/include/math.h" 3 4
 typedef float float_t;
 typedef double double_t;
-#49 "/usr/include/math.h" 2 3 4
-#83 "/usr/include/math.h" 3 4
+#190 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/fp-logb.h" 1 3 4
+#191 "/usr/include/math.h" 2 3 4
+#233 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/fp-fast.h" 1 3 4
+#234 "/usr/include/math.h" 2 3 4
+
+
+
+enum
+  {
+    FP_INT_UPWARD =
+
+      0,
+    FP_INT_DOWNWARD =
+
+      1,
+    FP_INT_TOWARDZERO =
+
+      2,
+    FP_INT_TONEARESTFROMZERO =
+
+      3,
+    FP_INT_TONEAREST =
+
+      4,
+  };
+#289 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+#21 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassify (double __value) throw ()
+     __attribute__ ((__const__));
+
+
+extern int __signbit (double __value) throw ()
+     __attribute__ ((__const__));
+
+
+
+extern int __isinf (double __value) throw () __attribute__ ((__const__));
+
+
+extern int __finite (double __value) throw () __attribute__ ((__const__));
+
+
+extern int __isnan (double __value) throw () __attribute__ ((__const__));
+
+
+extern int __iseqsig (double __x, double __y) throw ();
+
+
+extern int __issignaling (double __value) throw ()
+     __attribute__ ((__const__));
+#290 "/usr/include/math.h" 2 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
-#52 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
-
-
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern double acos (double __x) throw (); extern double __acos (double __x) throw ();
 
 extern double asin (double __x) throw (); extern double __asin (double __x) throw ();
@@ -26428,9 +26643,7 @@ extern double tanh (double __x) throw (); extern double __tanh (double __x) thro
 
 
 
-
  extern void sincos (double __x, double *__sinx, double *__cosx) throw (); extern void __sincos (double __x, double *__sinx, double *__cosx) throw ();
-
 
 
 
@@ -26440,8 +26653,6 @@ extern double acosh (double __x) throw (); extern double __acosh (double __x) th
 extern double asinh (double __x) throw (); extern double __asinh (double __x) throw ();
 
 extern double atanh (double __x) throw (); extern double __atanh (double __x) throw ();
-
-
 
 
 
@@ -26466,11 +26677,7 @@ extern double modf (double __x, double *__iptr) throw (); extern double __modf (
 
 
 
-
 extern double exp10 (double __x) throw (); extern double __exp10 (double __x) throw ();
-
-extern double pow10 (double __x) throw (); extern double __pow10 (double __x) throw ();
-
 
 
 
@@ -26486,14 +26693,10 @@ extern double logb (double __x) throw (); extern double __logb (double __x) thro
 
 
 
-
-
 extern double exp2 (double __x) throw (); extern double __exp2 (double __x) throw ();
 
 
 extern double log2 (double __x) throw (); extern double __log2 (double __x) throw ();
-
-
 
 
 
@@ -26507,18 +26710,12 @@ extern double sqrt (double __x) throw (); extern double __sqrt (double __x) thro
 
 
 
-
-
 extern double hypot (double __x, double __y) throw (); extern double __hypot (double __x, double __y) throw ();
 
 
 
 
-
-
 extern double cbrt (double __x) throw (); extern double __cbrt (double __x) throw ();
-
-
 
 
 
@@ -26535,23 +26732,9 @@ extern double floor (double __x) throw () __attribute__ ((__const__)); extern do
 
 
 extern double fmod (double __x, double __y) throw (); extern double __fmod (double __x, double __y) throw ();
-
-
-
-
-extern int __isinf (double __value) throw () __attribute__ ((__const__));
-
-
-extern int __finite (double __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
-
-
+#177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isinf (double __value) throw () __attribute__ ((__const__));
+
 
 
 
@@ -26568,26 +26751,14 @@ extern double significand (double __x) throw (); extern double __significand (do
 
 
 
+
 extern double copysign (double __x, double __y) throw () __attribute__ ((__const__)); extern double __copysign (double __x, double __y) throw () __attribute__ ((__const__));
 
 
 
 
-
-
 extern double nan (const char *__tagb) throw () __attribute__ ((__const__)); extern double __nan (const char *__tagb) throw () __attribute__ ((__const__));
-
-
-
-
-
-extern int __isnan (double __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
+#211 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isnan (double __value) throw () __attribute__ ((__const__));
 
 
@@ -26605,12 +26776,9 @@ extern double yn (int, double) throw (); extern double __yn (int, double) throw 
 
 
 
-
 extern double erf (double) throw (); extern double __erf (double) throw ();
 extern double erfc (double) throw (); extern double __erfc (double) throw ();
 extern double lgamma (double) throw (); extern double __lgamma (double) throw ();
-
-
 
 
 
@@ -26628,8 +26796,8 @@ extern double gamma (double) throw (); extern double __gamma (double) throw ();
 
 
 
-extern double lgamma_r (double, int *__signgamp) throw (); extern double __lgamma_r (double, int *__signgamp) throw ();
 
+extern double lgamma_r (double, int *__signgamp) throw (); extern double __lgamma_r (double, int *__signgamp) throw ();
 
 
 
@@ -26639,9 +26807,16 @@ extern double lgamma_r (double, int *__signgamp) throw (); extern double __lgamm
 extern double rint (double __x) throw (); extern double __rint (double __x) throw ();
 
 
-extern double nextafter (double __x, double __y) throw () __attribute__ ((__const__)); extern double __nextafter (double __x, double __y) throw () __attribute__ ((__const__));
+extern double nextafter (double __x, double __y) throw (); extern double __nextafter (double __x, double __y) throw ();
 
-extern double nexttoward (double __x, long double __y) throw () __attribute__ ((__const__)); extern double __nexttoward (double __x, long double __y) throw () __attribute__ ((__const__));
+extern double nexttoward (double __x, long double __y) throw (); extern double __nexttoward (double __x, long double __y) throw ();
+
+
+
+
+extern double nextdown (double __x) throw (); extern double __nextdown (double __x) throw ();
+
+extern double nextup (double __x) throw (); extern double __nextup (double __x) throw ();
 
 
 
@@ -26654,6 +26829,11 @@ extern double scalbn (double __x, int __n) throw (); extern double __scalbn (dou
 
 
 extern int ilogb (double __x) throw (); extern int __ilogb (double __x) throw ();
+
+
+
+
+extern long int llogb (double __x) throw (); extern long int __llogb (double __x) throw ();
 
 
 
@@ -26703,27 +26883,61 @@ extern double fmax (double __x, double __y) throw () __attribute__ ((__const__))
 extern double fmin (double __x, double __y) throw () __attribute__ ((__const__)); extern double __fmin (double __x, double __y) throw () __attribute__ ((__const__));
 
 
-
-extern int __fpclassify (double __value) throw ()
-     __attribute__ ((__const__));
-
-
-extern int __signbit (double __value) throw ()
-     __attribute__ ((__const__));
-
-
-
 extern double fma (double __x, double __y, double __z) throw (); extern double __fma (double __x, double __y, double __z) throw ();
 
 
 
 
+extern double roundeven (double __x) throw () __attribute__ ((__const__)); extern double __roundeven (double __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t fromfp (double __x, int __round, unsigned int __width) throw (); extern __intmax_t __fromfp (double __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t ufromfp (double __x, int __round, unsigned int __width) throw (); extern __uintmax_t __ufromfp (double __x, int __round, unsigned int __width) throw ()
+                              ;
 
 
 
 
-extern int __issignaling (double __value) throw ()
+extern __intmax_t fromfpx (double __x, int __round, unsigned int __width) throw (); extern __intmax_t __fromfpx (double __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t ufromfpx (double __x, int __round, unsigned int __width) throw (); extern __uintmax_t __ufromfpx (double __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern double fmaxmag (double __x, double __y) throw () __attribute__ ((__const__)); extern double __fmaxmag (double __x, double __y) throw () __attribute__ ((__const__));
+
+
+extern double fminmag (double __x, double __y) throw () __attribute__ ((__const__)); extern double __fminmag (double __x, double __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorder (double __x, double __y) throw ()
      __attribute__ ((__const__));
+
+
+extern int totalordermag (double __x, double __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalize (double *__cx, const double *__x) throw ();
+
+
+extern double getpayload (const double *__x) throw (); extern double __getpayload (const double *__x) throw ();
+
+
+extern int setpayload (double *__x, double __payload) throw ();
+
+
+extern int setpayloadsig (double *__x, double __payload) throw ();
+
 
 
 
@@ -26731,12 +26945,36 @@ extern int __issignaling (double __value) throw ()
 
 
 extern double scalb (double __x, double __n) throw (); extern double __scalb (double __x, double __n) throw ();
-#84 "/usr/include/math.h" 2 3 4
-#104 "/usr/include/math.h" 3 4
+#291 "/usr/include/math.h" 2 3 4
+#306 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+#21 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyf (float __value) throw ()
+     __attribute__ ((__const__));
+
+
+extern int __signbitf (float __value) throw ()
+     __attribute__ ((__const__));
+
+
+
+extern int __isinff (float __value) throw () __attribute__ ((__const__));
+
+
+extern int __finitef (float __value) throw () __attribute__ ((__const__));
+
+
+extern int __isnanf (float __value) throw () __attribute__ ((__const__));
+
+
+extern int __iseqsigf (float __x, float __y) throw ();
+
+
+extern int __issignalingf (float __value) throw ()
+     __attribute__ ((__const__));
+#307 "/usr/include/math.h" 2 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
-#52 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
-
-
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern float acosf (float __x) throw (); extern float __acosf (float __x) throw ();
 
 extern float asinf (float __x) throw (); extern float __asinf (float __x) throw ();
@@ -26764,9 +27002,7 @@ extern float tanhf (float __x) throw (); extern float __tanhf (float __x) throw 
 
 
 
-
  extern void sincosf (float __x, float *__sinx, float *__cosx) throw (); extern void __sincosf (float __x, float *__sinx, float *__cosx) throw ();
-
 
 
 
@@ -26776,8 +27012,6 @@ extern float acoshf (float __x) throw (); extern float __acoshf (float __x) thro
 extern float asinhf (float __x) throw (); extern float __asinhf (float __x) throw ();
 
 extern float atanhf (float __x) throw (); extern float __atanhf (float __x) throw ();
-
-
 
 
 
@@ -26802,11 +27036,7 @@ extern float modff (float __x, float *__iptr) throw (); extern float __modff (fl
 
 
 
-
 extern float exp10f (float __x) throw (); extern float __exp10f (float __x) throw ();
-
-extern float pow10f (float __x) throw (); extern float __pow10f (float __x) throw ();
-
 
 
 
@@ -26822,14 +27052,10 @@ extern float logbf (float __x) throw (); extern float __logbf (float __x) throw 
 
 
 
-
-
 extern float exp2f (float __x) throw (); extern float __exp2f (float __x) throw ();
 
 
 extern float log2f (float __x) throw (); extern float __log2f (float __x) throw ();
-
-
 
 
 
@@ -26843,18 +27069,12 @@ extern float sqrtf (float __x) throw (); extern float __sqrtf (float __x) throw 
 
 
 
-
-
 extern float hypotf (float __x, float __y) throw (); extern float __hypotf (float __x, float __y) throw ();
 
 
 
 
-
-
 extern float cbrtf (float __x) throw (); extern float __cbrtf (float __x) throw ();
-
-
 
 
 
@@ -26871,23 +27091,9 @@ extern float floorf (float __x) throw () __attribute__ ((__const__)); extern flo
 
 
 extern float fmodf (float __x, float __y) throw (); extern float __fmodf (float __x, float __y) throw ();
-
-
-
-
-extern int __isinff (float __value) throw () __attribute__ ((__const__));
-
-
-extern int __finitef (float __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
-
-
+#177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isinff (float __value) throw () __attribute__ ((__const__));
+
 
 
 
@@ -26904,26 +27110,14 @@ extern float significandf (float __x) throw (); extern float __significandf (flo
 
 
 
+
 extern float copysignf (float __x, float __y) throw () __attribute__ ((__const__)); extern float __copysignf (float __x, float __y) throw () __attribute__ ((__const__));
 
 
 
 
-
-
 extern float nanf (const char *__tagb) throw () __attribute__ ((__const__)); extern float __nanf (const char *__tagb) throw () __attribute__ ((__const__));
-
-
-
-
-
-extern int __isnanf (float __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
+#211 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isnanf (float __value) throw () __attribute__ ((__const__));
 
 
@@ -26941,12 +27135,9 @@ extern float ynf (int, float) throw (); extern float __ynf (int, float) throw ()
 
 
 
-
 extern float erff (float) throw (); extern float __erff (float) throw ();
 extern float erfcf (float) throw (); extern float __erfcf (float) throw ();
 extern float lgammaf (float) throw (); extern float __lgammaf (float) throw ();
-
-
 
 
 
@@ -26964,8 +27155,8 @@ extern float gammaf (float) throw (); extern float __gammaf (float) throw ();
 
 
 
-extern float lgammaf_r (float, int *__signgamp) throw (); extern float __lgammaf_r (float, int *__signgamp) throw ();
 
+extern float lgammaf_r (float, int *__signgamp) throw (); extern float __lgammaf_r (float, int *__signgamp) throw ();
 
 
 
@@ -26975,9 +27166,16 @@ extern float lgammaf_r (float, int *__signgamp) throw (); extern float __lgammaf
 extern float rintf (float __x) throw (); extern float __rintf (float __x) throw ();
 
 
-extern float nextafterf (float __x, float __y) throw () __attribute__ ((__const__)); extern float __nextafterf (float __x, float __y) throw () __attribute__ ((__const__));
+extern float nextafterf (float __x, float __y) throw (); extern float __nextafterf (float __x, float __y) throw ();
 
-extern float nexttowardf (float __x, long double __y) throw () __attribute__ ((__const__)); extern float __nexttowardf (float __x, long double __y) throw () __attribute__ ((__const__));
+extern float nexttowardf (float __x, long double __y) throw (); extern float __nexttowardf (float __x, long double __y) throw ();
+
+
+
+
+extern float nextdownf (float __x) throw (); extern float __nextdownf (float __x) throw ();
+
+extern float nextupf (float __x) throw (); extern float __nextupf (float __x) throw ();
 
 
 
@@ -26990,6 +27188,11 @@ extern float scalbnf (float __x, int __n) throw (); extern float __scalbnf (floa
 
 
 extern int ilogbf (float __x) throw (); extern int __ilogbf (float __x) throw ();
+
+
+
+
+extern long int llogbf (float __x) throw (); extern long int __llogbf (float __x) throw ();
 
 
 
@@ -27039,27 +27242,85 @@ extern float fmaxf (float __x, float __y) throw () __attribute__ ((__const__)); 
 extern float fminf (float __x, float __y) throw () __attribute__ ((__const__)); extern float __fminf (float __x, float __y) throw () __attribute__ ((__const__));
 
 
-
-extern int __fpclassifyf (float __value) throw ()
-     __attribute__ ((__const__));
-
-
-extern int __signbitf (float __value) throw ()
-     __attribute__ ((__const__));
-
-
-
 extern float fmaf (float __x, float __y, float __z) throw (); extern float __fmaf (float __x, float __y, float __z) throw ();
 
 
 
 
+extern float roundevenf (float __x) throw () __attribute__ ((__const__)); extern float __roundevenf (float __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw ()
+                              ;
 
 
 
 
-extern int __issignalingf (float __value) throw ()
+extern __intmax_t
+ fromfpxf
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (float __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern float fmaxmagf (float __x, float __y) throw () __attribute__ ((__const__)); extern float __fmaxmagf (float __x, float __y) throw () __attribute__ ((__const__));
+
+
+extern float fminmagf (float __x, float __y) throw () __attribute__ ((__const__)); extern float __fminmagf (float __x, float __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf (float __x, float __y) throw ()
      __attribute__ ((__const__));
+
+
+extern int totalordermagf (float __x, float __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef (float *__cx, const float *__x) throw ();
+
+
+extern float getpayloadf (const float *__x) throw (); extern float __getpayloadf (const float *__x) throw ();
+
+
+extern int setpayloadf (float *__x, float __payload) throw ();
+
+
+extern int setpayloadsigf (float *__x, float __payload) throw ();
+
 
 
 
@@ -27067,12 +27328,36 @@ extern int __issignalingf (float __value) throw ()
 
 
 extern float scalbf (float __x, float __n) throw (); extern float __scalbf (float __x, float __n) throw ();
-#105 "/usr/include/math.h" 2 3 4
-#151 "/usr/include/math.h" 3 4
+#308 "/usr/include/math.h" 2 3 4
+#349 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+#21 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyl (long double __value) throw ()
+     __attribute__ ((__const__));
+
+
+extern int __signbitl (long double __value) throw ()
+     __attribute__ ((__const__));
+
+
+
+extern int __isinfl (long double __value) throw () __attribute__ ((__const__));
+
+
+extern int __finitel (long double __value) throw () __attribute__ ((__const__));
+
+
+extern int __isnanl (long double __value) throw () __attribute__ ((__const__));
+
+
+extern int __iseqsigl (long double __x, long double __y) throw ();
+
+
+extern int __issignalingl (long double __value) throw ()
+     __attribute__ ((__const__));
+#350 "/usr/include/math.h" 2 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
-#52 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
-
-
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern long double acosl (long double __x) throw (); extern long double __acosl (long double __x) throw ();
 
 extern long double asinl (long double __x) throw (); extern long double __asinl (long double __x) throw ();
@@ -27100,9 +27385,7 @@ extern long double tanhl (long double __x) throw (); extern long double __tanhl 
 
 
 
-
  extern void sincosl (long double __x, long double *__sinx, long double *__cosx) throw (); extern void __sincosl (long double __x, long double *__sinx, long double *__cosx) throw ();
-
 
 
 
@@ -27112,8 +27395,6 @@ extern long double acoshl (long double __x) throw (); extern long double __acosh
 extern long double asinhl (long double __x) throw (); extern long double __asinhl (long double __x) throw ();
 
 extern long double atanhl (long double __x) throw (); extern long double __atanhl (long double __x) throw ();
-
-
 
 
 
@@ -27138,11 +27419,7 @@ extern long double modfl (long double __x, long double *__iptr) throw (); extern
 
 
 
-
 extern long double exp10l (long double __x) throw (); extern long double __exp10l (long double __x) throw ();
-
-extern long double pow10l (long double __x) throw (); extern long double __pow10l (long double __x) throw ();
-
 
 
 
@@ -27158,14 +27435,10 @@ extern long double logbl (long double __x) throw (); extern long double __logbl 
 
 
 
-
-
 extern long double exp2l (long double __x) throw (); extern long double __exp2l (long double __x) throw ();
 
 
 extern long double log2l (long double __x) throw (); extern long double __log2l (long double __x) throw ();
-
-
 
 
 
@@ -27179,18 +27452,12 @@ extern long double sqrtl (long double __x) throw (); extern long double __sqrtl 
 
 
 
-
-
 extern long double hypotl (long double __x, long double __y) throw (); extern long double __hypotl (long double __x, long double __y) throw ();
 
 
 
 
-
-
 extern long double cbrtl (long double __x) throw (); extern long double __cbrtl (long double __x) throw ();
-
-
 
 
 
@@ -27207,23 +27474,9 @@ extern long double floorl (long double __x) throw () __attribute__ ((__const__))
 
 
 extern long double fmodl (long double __x, long double __y) throw (); extern long double __fmodl (long double __x, long double __y) throw ();
-
-
-
-
-extern int __isinfl (long double __value) throw () __attribute__ ((__const__));
-
-
-extern int __finitel (long double __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
-
-
+#177 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isinfl (long double __value) throw () __attribute__ ((__const__));
+
 
 
 
@@ -27240,26 +27493,14 @@ extern long double significandl (long double __x) throw (); extern long double _
 
 
 
+
 extern long double copysignl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __copysignl (long double __x, long double __y) throw () __attribute__ ((__const__));
 
 
 
 
-
-
 extern long double nanl (const char *__tagb) throw () __attribute__ ((__const__)); extern long double __nanl (const char *__tagb) throw () __attribute__ ((__const__));
-
-
-
-
-
-extern int __isnanl (long double __value) throw () __attribute__ ((__const__));
-
-
-
-
-
-
+#211 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
 extern int isnanl (long double __value) throw () __attribute__ ((__const__));
 
 
@@ -27277,12 +27518,9 @@ extern long double ynl (int, long double) throw (); extern long double __ynl (in
 
 
 
-
 extern long double erfl (long double) throw (); extern long double __erfl (long double) throw ();
 extern long double erfcl (long double) throw (); extern long double __erfcl (long double) throw ();
 extern long double lgammal (long double) throw (); extern long double __lgammal (long double) throw ();
-
-
 
 
 
@@ -27300,8 +27538,8 @@ extern long double gammal (long double) throw (); extern long double __gammal (l
 
 
 
-extern long double lgammal_r (long double, int *__signgamp) throw (); extern long double __lgammal_r (long double, int *__signgamp) throw ();
 
+extern long double lgammal_r (long double, int *__signgamp) throw (); extern long double __lgammal_r (long double, int *__signgamp) throw ();
 
 
 
@@ -27311,9 +27549,16 @@ extern long double lgammal_r (long double, int *__signgamp) throw (); extern lon
 extern long double rintl (long double __x) throw (); extern long double __rintl (long double __x) throw ();
 
 
-extern long double nextafterl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __nextafterl (long double __x, long double __y) throw () __attribute__ ((__const__));
+extern long double nextafterl (long double __x, long double __y) throw (); extern long double __nextafterl (long double __x, long double __y) throw ();
 
-extern long double nexttowardl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __nexttowardl (long double __x, long double __y) throw () __attribute__ ((__const__));
+extern long double nexttowardl (long double __x, long double __y) throw (); extern long double __nexttowardl (long double __x, long double __y) throw ();
+
+
+
+
+extern long double nextdownl (long double __x) throw (); extern long double __nextdownl (long double __x) throw ();
+
+extern long double nextupl (long double __x) throw (); extern long double __nextupl (long double __x) throw ();
 
 
 
@@ -27326,6 +27571,11 @@ extern long double scalbnl (long double __x, int __n) throw (); extern long doub
 
 
 extern int ilogbl (long double __x) throw (); extern int __ilogbl (long double __x) throw ();
+
+
+
+
+extern long int llogbl (long double __x) throw (); extern long int __llogbl (long double __x) throw ();
 
 
 
@@ -27375,27 +27625,85 @@ extern long double fmaxl (long double __x, long double __y) throw () __attribute
 extern long double fminl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __fminl (long double __x, long double __y) throw () __attribute__ ((__const__));
 
 
-
-extern int __fpclassifyl (long double __value) throw ()
-     __attribute__ ((__const__));
-
-
-extern int __signbitl (long double __value) throw ()
-     __attribute__ ((__const__));
-
-
-
 extern long double fmal (long double __x, long double __y, long double __z) throw (); extern long double __fmal (long double __x, long double __y, long double __z) throw ();
 
 
 
 
+extern long double roundevenl (long double __x) throw () __attribute__ ((__const__)); extern long double __roundevenl (long double __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpl
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpl
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpl
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpl
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw ()
+                              ;
 
 
 
 
-extern int __issignalingl (long double __value) throw ()
+extern __intmax_t
+ fromfpxl
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxl
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxl
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxl
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (long double __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern long double fmaxmagl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __fmaxmagl (long double __x, long double __y) throw () __attribute__ ((__const__));
+
+
+extern long double fminmagl (long double __x, long double __y) throw () __attribute__ ((__const__)); extern long double __fminmagl (long double __x, long double __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderl (long double __x, long double __y) throw ()
      __attribute__ ((__const__));
+
+
+extern int totalordermagl (long double __x, long double __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizel (long double *__cx, const long double *__x) throw ();
+
+
+extern long double getpayloadl (const long double *__x) throw (); extern long double __getpayloadl (const long double *__x) throw ();
+
+
+extern int setpayloadl (long double *__x, long double __payload) throw ();
+
+
+extern int setpayloadsigl (long double *__x, long double __payload) throw ();
+
 
 
 
@@ -27403,10 +27711,1598 @@ extern int __issignalingl (long double __value) throw ()
 
 
 extern long double scalbl (long double __x, long double __n) throw (); extern long double __scalbl (long double __x, long double __n) throw ();
-#152 "/usr/include/math.h" 2 3 4
-#168 "/usr/include/math.h" 3 4
+#351 "/usr/include/math.h" 2 3 4
+#389 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 acosf32 (_Float32 __x) throw (); extern _Float32 __acosf32 (_Float32 __x) throw ();
+
+extern _Float32 asinf32 (_Float32 __x) throw (); extern _Float32 __asinf32 (_Float32 __x) throw ();
+
+extern _Float32 atanf32 (_Float32 __x) throw (); extern _Float32 __atanf32 (_Float32 __x) throw ();
+
+extern _Float32 atan2f32 (_Float32 __y, _Float32 __x) throw (); extern _Float32 __atan2f32 (_Float32 __y, _Float32 __x) throw ();
+
+
+ extern _Float32 cosf32 (_Float32 __x) throw (); extern _Float32 __cosf32 (_Float32 __x) throw ();
+
+ extern _Float32 sinf32 (_Float32 __x) throw (); extern _Float32 __sinf32 (_Float32 __x) throw ();
+
+extern _Float32 tanf32 (_Float32 __x) throw (); extern _Float32 __tanf32 (_Float32 __x) throw ();
+
+
+
+
+extern _Float32 coshf32 (_Float32 __x) throw (); extern _Float32 __coshf32 (_Float32 __x) throw ();
+
+extern _Float32 sinhf32 (_Float32 __x) throw (); extern _Float32 __sinhf32 (_Float32 __x) throw ();
+
+extern _Float32 tanhf32 (_Float32 __x) throw (); extern _Float32 __tanhf32 (_Float32 __x) throw ();
+
+
+
+
+ extern void sincosf32 (_Float32 __x, _Float32 *__sinx, _Float32 *__cosx) throw (); extern void __sincosf32 (_Float32 __x, _Float32 *__sinx, _Float32 *__cosx) throw ();
+
+
+
+
+extern _Float32 acoshf32 (_Float32 __x) throw (); extern _Float32 __acoshf32 (_Float32 __x) throw ();
+
+extern _Float32 asinhf32 (_Float32 __x) throw (); extern _Float32 __asinhf32 (_Float32 __x) throw ();
+
+extern _Float32 atanhf32 (_Float32 __x) throw (); extern _Float32 __atanhf32 (_Float32 __x) throw ();
+
+
+
+
+
+ extern _Float32 expf32 (_Float32 __x) throw (); extern _Float32 __expf32 (_Float32 __x) throw ();
+
+
+extern _Float32 frexpf32 (_Float32 __x, int *__exponent) throw (); extern _Float32 __frexpf32 (_Float32 __x, int *__exponent) throw ();
+
+
+extern _Float32 ldexpf32 (_Float32 __x, int __exponent) throw (); extern _Float32 __ldexpf32 (_Float32 __x, int __exponent) throw ();
+
+
+ extern _Float32 logf32 (_Float32 __x) throw (); extern _Float32 __logf32 (_Float32 __x) throw ();
+
+
+extern _Float32 log10f32 (_Float32 __x) throw (); extern _Float32 __log10f32 (_Float32 __x) throw ();
+
+
+extern _Float32 modff32 (_Float32 __x, _Float32 *__iptr) throw (); extern _Float32 __modff32 (_Float32 __x, _Float32 *__iptr) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern _Float32 exp10f32 (_Float32 __x) throw (); extern _Float32 __exp10f32 (_Float32 __x) throw ();
+
+
+
+
+extern _Float32 expm1f32 (_Float32 __x) throw (); extern _Float32 __expm1f32 (_Float32 __x) throw ();
+
+
+extern _Float32 log1pf32 (_Float32 __x) throw (); extern _Float32 __log1pf32 (_Float32 __x) throw ();
+
+
+extern _Float32 logbf32 (_Float32 __x) throw (); extern _Float32 __logbf32 (_Float32 __x) throw ();
+
+
+
+
+extern _Float32 exp2f32 (_Float32 __x) throw (); extern _Float32 __exp2f32 (_Float32 __x) throw ();
+
+
+extern _Float32 log2f32 (_Float32 __x) throw (); extern _Float32 __log2f32 (_Float32 __x) throw ();
+
+
+
+
+
+
+ extern _Float32 powf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __powf32 (_Float32 __x, _Float32 __y) throw ();
+
+
+extern _Float32 sqrtf32 (_Float32 __x) throw (); extern _Float32 __sqrtf32 (_Float32 __x) throw ();
+
+
+
+extern _Float32 hypotf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __hypotf32 (_Float32 __x, _Float32 __y) throw ();
+
+
+
+
+extern _Float32 cbrtf32 (_Float32 __x) throw (); extern _Float32 __cbrtf32 (_Float32 __x) throw ();
+
+
+
+
+
+
+extern _Float32 ceilf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __ceilf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32 fabsf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __fabsf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32 floorf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __floorf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32 fmodf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __fmodf32 (_Float32 __x, _Float32 __y) throw ();
+#196 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 copysignf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__)); extern _Float32 __copysignf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float32 nanf32 (const char *__tagb) throw () __attribute__ ((__const__)); extern _Float32 __nanf32 (const char *__tagb) throw () __attribute__ ((__const__));
+#217 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 j0f32 (_Float32) throw (); extern _Float32 __j0f32 (_Float32) throw ();
+extern _Float32 j1f32 (_Float32) throw (); extern _Float32 __j1f32 (_Float32) throw ();
+extern _Float32 jnf32 (int, _Float32) throw (); extern _Float32 __jnf32 (int, _Float32) throw ();
+extern _Float32 y0f32 (_Float32) throw (); extern _Float32 __y0f32 (_Float32) throw ();
+extern _Float32 y1f32 (_Float32) throw (); extern _Float32 __y1f32 (_Float32) throw ();
+extern _Float32 ynf32 (int, _Float32) throw (); extern _Float32 __ynf32 (int, _Float32) throw ();
+
+
+
+
+
+extern _Float32 erff32 (_Float32) throw (); extern _Float32 __erff32 (_Float32) throw ();
+extern _Float32 erfcf32 (_Float32) throw (); extern _Float32 __erfcf32 (_Float32) throw ();
+extern _Float32 lgammaf32 (_Float32) throw (); extern _Float32 __lgammaf32 (_Float32) throw ();
+
+
+
+
+extern _Float32 tgammaf32 (_Float32) throw (); extern _Float32 __tgammaf32 (_Float32) throw ();
+#249 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32 lgammaf32_r (_Float32, int *__signgamp) throw (); extern _Float32 __lgammaf32_r (_Float32, int *__signgamp) throw ();
+
+
+
+
+
+
+extern _Float32 rintf32 (_Float32 __x) throw (); extern _Float32 __rintf32 (_Float32 __x) throw ();
+
+
+extern _Float32 nextafterf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __nextafterf32 (_Float32 __x, _Float32 __y) throw ();
+
+
+
+
+
+
+extern _Float32 nextdownf32 (_Float32 __x) throw (); extern _Float32 __nextdownf32 (_Float32 __x) throw ();
+
+extern _Float32 nextupf32 (_Float32 __x) throw (); extern _Float32 __nextupf32 (_Float32 __x) throw ();
+
+
+
+extern _Float32 remainderf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __remainderf32 (_Float32 __x, _Float32 __y) throw ();
+
+
+
+extern _Float32 scalbnf32 (_Float32 __x, int __n) throw (); extern _Float32 __scalbnf32 (_Float32 __x, int __n) throw ();
+
+
+
+extern int ilogbf32 (_Float32 __x) throw (); extern int __ilogbf32 (_Float32 __x) throw ();
+
+
+
+
+extern long int llogbf32 (_Float32 __x) throw (); extern long int __llogbf32 (_Float32 __x) throw ();
+
+
+
+
+extern _Float32 scalblnf32 (_Float32 __x, long int __n) throw (); extern _Float32 __scalblnf32 (_Float32 __x, long int __n) throw ();
+
+
+
+extern _Float32 nearbyintf32 (_Float32 __x) throw (); extern _Float32 __nearbyintf32 (_Float32 __x) throw ();
+
+
+
+extern _Float32 roundf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __roundf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+
+extern _Float32 truncf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __truncf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float32 remquof32 (_Float32 __x, _Float32 __y, int *__quo) throw (); extern _Float32 __remquof32 (_Float32 __x, _Float32 __y, int *__quo) throw ();
+
+
+
+
+
+
+extern long int lrintf32 (_Float32 __x) throw (); extern long int __lrintf32 (_Float32 __x) throw ();
+__extension__
+extern long long int llrintf32 (_Float32 __x) throw (); extern long long int __llrintf32 (_Float32 __x) throw ();
+
+
+
+extern long int lroundf32 (_Float32 __x) throw (); extern long int __lroundf32 (_Float32 __x) throw ();
+__extension__
+extern long long int llroundf32 (_Float32 __x) throw (); extern long long int __llroundf32 (_Float32 __x) throw ();
+
+
+
+extern _Float32 fdimf32 (_Float32 __x, _Float32 __y) throw (); extern _Float32 __fdimf32 (_Float32 __x, _Float32 __y) throw ();
+
+
+extern _Float32 fmaxf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__)); extern _Float32 __fmaxf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32 fminf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__)); extern _Float32 __fminf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32 fmaf32 (_Float32 __x, _Float32 __y, _Float32 __z) throw (); extern _Float32 __fmaf32 (_Float32 __x, _Float32 __y, _Float32 __z) throw ();
+
+
+
+
+extern _Float32 roundevenf32 (_Float32 __x) throw () __attribute__ ((__const__)); extern _Float32 __roundevenf32 (_Float32 __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf32
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf32
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf32
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf32
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw ()
+                              ;
+
+
+
+
+extern __intmax_t
+ fromfpxf32
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf32
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf32
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf32
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32 __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern _Float32 fmaxmagf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__)); extern _Float32 __fmaxmagf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32 fminmagf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__)); extern _Float32 __fminmagf32 (_Float32 __x, _Float32 __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf32 (_Float32 __x, _Float32 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int totalordermagf32 (_Float32 __x, _Float32 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef32 (_Float32 *__cx, const _Float32 *__x) throw ();
+
+
+extern _Float32 getpayloadf32 (const _Float32 *__x) throw (); extern _Float32 __getpayloadf32 (const _Float32 *__x) throw ();
+
+
+extern int setpayloadf32 (_Float32 *__x, _Float32 __payload) throw ();
+
+
+extern int setpayloadsigf32 (_Float32 *__x, _Float32 __payload) throw ();
+#390 "/usr/include/math.h" 2 3 4
+#406 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 acosf64 (_Float64 __x) throw (); extern _Float64 __acosf64 (_Float64 __x) throw ();
+
+extern _Float64 asinf64 (_Float64 __x) throw (); extern _Float64 __asinf64 (_Float64 __x) throw ();
+
+extern _Float64 atanf64 (_Float64 __x) throw (); extern _Float64 __atanf64 (_Float64 __x) throw ();
+
+extern _Float64 atan2f64 (_Float64 __y, _Float64 __x) throw (); extern _Float64 __atan2f64 (_Float64 __y, _Float64 __x) throw ();
+
+
+ extern _Float64 cosf64 (_Float64 __x) throw (); extern _Float64 __cosf64 (_Float64 __x) throw ();
+
+ extern _Float64 sinf64 (_Float64 __x) throw (); extern _Float64 __sinf64 (_Float64 __x) throw ();
+
+extern _Float64 tanf64 (_Float64 __x) throw (); extern _Float64 __tanf64 (_Float64 __x) throw ();
+
+
+
+
+extern _Float64 coshf64 (_Float64 __x) throw (); extern _Float64 __coshf64 (_Float64 __x) throw ();
+
+extern _Float64 sinhf64 (_Float64 __x) throw (); extern _Float64 __sinhf64 (_Float64 __x) throw ();
+
+extern _Float64 tanhf64 (_Float64 __x) throw (); extern _Float64 __tanhf64 (_Float64 __x) throw ();
+
+
+
+
+ extern void sincosf64 (_Float64 __x, _Float64 *__sinx, _Float64 *__cosx) throw (); extern void __sincosf64 (_Float64 __x, _Float64 *__sinx, _Float64 *__cosx) throw ();
+
+
+
+
+extern _Float64 acoshf64 (_Float64 __x) throw (); extern _Float64 __acoshf64 (_Float64 __x) throw ();
+
+extern _Float64 asinhf64 (_Float64 __x) throw (); extern _Float64 __asinhf64 (_Float64 __x) throw ();
+
+extern _Float64 atanhf64 (_Float64 __x) throw (); extern _Float64 __atanhf64 (_Float64 __x) throw ();
+
+
+
+
+
+ extern _Float64 expf64 (_Float64 __x) throw (); extern _Float64 __expf64 (_Float64 __x) throw ();
+
+
+extern _Float64 frexpf64 (_Float64 __x, int *__exponent) throw (); extern _Float64 __frexpf64 (_Float64 __x, int *__exponent) throw ();
+
+
+extern _Float64 ldexpf64 (_Float64 __x, int __exponent) throw (); extern _Float64 __ldexpf64 (_Float64 __x, int __exponent) throw ();
+
+
+ extern _Float64 logf64 (_Float64 __x) throw (); extern _Float64 __logf64 (_Float64 __x) throw ();
+
+
+extern _Float64 log10f64 (_Float64 __x) throw (); extern _Float64 __log10f64 (_Float64 __x) throw ();
+
+
+extern _Float64 modff64 (_Float64 __x, _Float64 *__iptr) throw (); extern _Float64 __modff64 (_Float64 __x, _Float64 *__iptr) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern _Float64 exp10f64 (_Float64 __x) throw (); extern _Float64 __exp10f64 (_Float64 __x) throw ();
+
+
+
+
+extern _Float64 expm1f64 (_Float64 __x) throw (); extern _Float64 __expm1f64 (_Float64 __x) throw ();
+
+
+extern _Float64 log1pf64 (_Float64 __x) throw (); extern _Float64 __log1pf64 (_Float64 __x) throw ();
+
+
+extern _Float64 logbf64 (_Float64 __x) throw (); extern _Float64 __logbf64 (_Float64 __x) throw ();
+
+
+
+
+extern _Float64 exp2f64 (_Float64 __x) throw (); extern _Float64 __exp2f64 (_Float64 __x) throw ();
+
+
+extern _Float64 log2f64 (_Float64 __x) throw (); extern _Float64 __log2f64 (_Float64 __x) throw ();
+
+
+
+
+
+
+ extern _Float64 powf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __powf64 (_Float64 __x, _Float64 __y) throw ();
+
+
+extern _Float64 sqrtf64 (_Float64 __x) throw (); extern _Float64 __sqrtf64 (_Float64 __x) throw ();
+
+
+
+extern _Float64 hypotf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __hypotf64 (_Float64 __x, _Float64 __y) throw ();
+
+
+
+
+extern _Float64 cbrtf64 (_Float64 __x) throw (); extern _Float64 __cbrtf64 (_Float64 __x) throw ();
+
+
+
+
+
+
+extern _Float64 ceilf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __ceilf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64 fabsf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __fabsf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64 floorf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __floorf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64 fmodf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __fmodf64 (_Float64 __x, _Float64 __y) throw ();
+#196 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 copysignf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__)); extern _Float64 __copysignf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float64 nanf64 (const char *__tagb) throw () __attribute__ ((__const__)); extern _Float64 __nanf64 (const char *__tagb) throw () __attribute__ ((__const__));
+#217 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 j0f64 (_Float64) throw (); extern _Float64 __j0f64 (_Float64) throw ();
+extern _Float64 j1f64 (_Float64) throw (); extern _Float64 __j1f64 (_Float64) throw ();
+extern _Float64 jnf64 (int, _Float64) throw (); extern _Float64 __jnf64 (int, _Float64) throw ();
+extern _Float64 y0f64 (_Float64) throw (); extern _Float64 __y0f64 (_Float64) throw ();
+extern _Float64 y1f64 (_Float64) throw (); extern _Float64 __y1f64 (_Float64) throw ();
+extern _Float64 ynf64 (int, _Float64) throw (); extern _Float64 __ynf64 (int, _Float64) throw ();
+
+
+
+
+
+extern _Float64 erff64 (_Float64) throw (); extern _Float64 __erff64 (_Float64) throw ();
+extern _Float64 erfcf64 (_Float64) throw (); extern _Float64 __erfcf64 (_Float64) throw ();
+extern _Float64 lgammaf64 (_Float64) throw (); extern _Float64 __lgammaf64 (_Float64) throw ();
+
+
+
+
+extern _Float64 tgammaf64 (_Float64) throw (); extern _Float64 __tgammaf64 (_Float64) throw ();
+#249 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64 lgammaf64_r (_Float64, int *__signgamp) throw (); extern _Float64 __lgammaf64_r (_Float64, int *__signgamp) throw ();
+
+
+
+
+
+
+extern _Float64 rintf64 (_Float64 __x) throw (); extern _Float64 __rintf64 (_Float64 __x) throw ();
+
+
+extern _Float64 nextafterf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __nextafterf64 (_Float64 __x, _Float64 __y) throw ();
+
+
+
+
+
+
+extern _Float64 nextdownf64 (_Float64 __x) throw (); extern _Float64 __nextdownf64 (_Float64 __x) throw ();
+
+extern _Float64 nextupf64 (_Float64 __x) throw (); extern _Float64 __nextupf64 (_Float64 __x) throw ();
+
+
+
+extern _Float64 remainderf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __remainderf64 (_Float64 __x, _Float64 __y) throw ();
+
+
+
+extern _Float64 scalbnf64 (_Float64 __x, int __n) throw (); extern _Float64 __scalbnf64 (_Float64 __x, int __n) throw ();
+
+
+
+extern int ilogbf64 (_Float64 __x) throw (); extern int __ilogbf64 (_Float64 __x) throw ();
+
+
+
+
+extern long int llogbf64 (_Float64 __x) throw (); extern long int __llogbf64 (_Float64 __x) throw ();
+
+
+
+
+extern _Float64 scalblnf64 (_Float64 __x, long int __n) throw (); extern _Float64 __scalblnf64 (_Float64 __x, long int __n) throw ();
+
+
+
+extern _Float64 nearbyintf64 (_Float64 __x) throw (); extern _Float64 __nearbyintf64 (_Float64 __x) throw ();
+
+
+
+extern _Float64 roundf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __roundf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+
+extern _Float64 truncf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __truncf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float64 remquof64 (_Float64 __x, _Float64 __y, int *__quo) throw (); extern _Float64 __remquof64 (_Float64 __x, _Float64 __y, int *__quo) throw ();
+
+
+
+
+
+
+extern long int lrintf64 (_Float64 __x) throw (); extern long int __lrintf64 (_Float64 __x) throw ();
+__extension__
+extern long long int llrintf64 (_Float64 __x) throw (); extern long long int __llrintf64 (_Float64 __x) throw ();
+
+
+
+extern long int lroundf64 (_Float64 __x) throw (); extern long int __lroundf64 (_Float64 __x) throw ();
+__extension__
+extern long long int llroundf64 (_Float64 __x) throw (); extern long long int __llroundf64 (_Float64 __x) throw ();
+
+
+
+extern _Float64 fdimf64 (_Float64 __x, _Float64 __y) throw (); extern _Float64 __fdimf64 (_Float64 __x, _Float64 __y) throw ();
+
+
+extern _Float64 fmaxf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__)); extern _Float64 __fmaxf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64 fminf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__)); extern _Float64 __fminf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64 fmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) throw (); extern _Float64 __fmaf64 (_Float64 __x, _Float64 __y, _Float64 __z) throw ();
+
+
+
+
+extern _Float64 roundevenf64 (_Float64 __x) throw () __attribute__ ((__const__)); extern _Float64 __roundevenf64 (_Float64 __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf64
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf64
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf64
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf64
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw ()
+                              ;
+
+
+
+
+extern __intmax_t
+ fromfpxf64
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf64
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf64
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf64
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64 __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern _Float64 fmaxmagf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__)); extern _Float64 __fmaxmagf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64 fminmagf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__)); extern _Float64 __fminmagf64 (_Float64 __x, _Float64 __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf64 (_Float64 __x, _Float64 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int totalordermagf64 (_Float64 __x, _Float64 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef64 (_Float64 *__cx, const _Float64 *__x) throw ();
+
+
+extern _Float64 getpayloadf64 (const _Float64 *__x) throw (); extern _Float64 __getpayloadf64 (const _Float64 *__x) throw ();
+
+
+extern int setpayloadf64 (_Float64 *__x, _Float64 __payload) throw ();
+
+
+extern int setpayloadsigf64 (_Float64 *__x, _Float64 __payload) throw ();
+#407 "/usr/include/math.h" 2 3 4
+#420 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 1 3 4
+#21 "/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h" 3 4
+extern int __fpclassifyf128 (_Float128 __value) throw ()
+     __attribute__ ((__const__));
+
+
+extern int __signbitf128 (_Float128 __value) throw ()
+     __attribute__ ((__const__));
+
+
+
+extern int __isinff128 (_Float128 __value) throw () __attribute__ ((__const__));
+
+
+extern int __finitef128 (_Float128 __value) throw () __attribute__ ((__const__));
+
+
+extern int __isnanf128 (_Float128 __value) throw () __attribute__ ((__const__));
+
+
+extern int __iseqsigf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+extern int __issignalingf128 (_Float128 __value) throw ()
+     __attribute__ ((__const__));
+#421 "/usr/include/math.h" 2 3 4
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 acosf128 (_Float128 __x) throw (); extern _Float128 __acosf128 (_Float128 __x) throw ();
+
+extern _Float128 asinf128 (_Float128 __x) throw (); extern _Float128 __asinf128 (_Float128 __x) throw ();
+
+extern _Float128 atanf128 (_Float128 __x) throw (); extern _Float128 __atanf128 (_Float128 __x) throw ();
+
+extern _Float128 atan2f128 (_Float128 __y, _Float128 __x) throw (); extern _Float128 __atan2f128 (_Float128 __y, _Float128 __x) throw ();
+
+
+ extern _Float128 cosf128 (_Float128 __x) throw (); extern _Float128 __cosf128 (_Float128 __x) throw ();
+
+ extern _Float128 sinf128 (_Float128 __x) throw (); extern _Float128 __sinf128 (_Float128 __x) throw ();
+
+extern _Float128 tanf128 (_Float128 __x) throw (); extern _Float128 __tanf128 (_Float128 __x) throw ();
+
+
+
+
+extern _Float128 coshf128 (_Float128 __x) throw (); extern _Float128 __coshf128 (_Float128 __x) throw ();
+
+extern _Float128 sinhf128 (_Float128 __x) throw (); extern _Float128 __sinhf128 (_Float128 __x) throw ();
+
+extern _Float128 tanhf128 (_Float128 __x) throw (); extern _Float128 __tanhf128 (_Float128 __x) throw ();
+
+
+
+
+ extern void sincosf128 (_Float128 __x, _Float128 *__sinx, _Float128 *__cosx) throw (); extern void __sincosf128 (_Float128 __x, _Float128 *__sinx, _Float128 *__cosx) throw ();
+
+
+
+
+extern _Float128 acoshf128 (_Float128 __x) throw (); extern _Float128 __acoshf128 (_Float128 __x) throw ();
+
+extern _Float128 asinhf128 (_Float128 __x) throw (); extern _Float128 __asinhf128 (_Float128 __x) throw ();
+
+extern _Float128 atanhf128 (_Float128 __x) throw (); extern _Float128 __atanhf128 (_Float128 __x) throw ();
+
+
+
+
+
+ extern _Float128 expf128 (_Float128 __x) throw (); extern _Float128 __expf128 (_Float128 __x) throw ();
+
+
+extern _Float128 frexpf128 (_Float128 __x, int *__exponent) throw (); extern _Float128 __frexpf128 (_Float128 __x, int *__exponent) throw ();
+
+
+extern _Float128 ldexpf128 (_Float128 __x, int __exponent) throw (); extern _Float128 __ldexpf128 (_Float128 __x, int __exponent) throw ();
+
+
+ extern _Float128 logf128 (_Float128 __x) throw (); extern _Float128 __logf128 (_Float128 __x) throw ();
+
+
+extern _Float128 log10f128 (_Float128 __x) throw (); extern _Float128 __log10f128 (_Float128 __x) throw ();
+
+
+extern _Float128 modff128 (_Float128 __x, _Float128 *__iptr) throw (); extern _Float128 __modff128 (_Float128 __x, _Float128 *__iptr) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern _Float128 exp10f128 (_Float128 __x) throw (); extern _Float128 __exp10f128 (_Float128 __x) throw ();
+
+
+
+
+extern _Float128 expm1f128 (_Float128 __x) throw (); extern _Float128 __expm1f128 (_Float128 __x) throw ();
+
+
+extern _Float128 log1pf128 (_Float128 __x) throw (); extern _Float128 __log1pf128 (_Float128 __x) throw ();
+
+
+extern _Float128 logbf128 (_Float128 __x) throw (); extern _Float128 __logbf128 (_Float128 __x) throw ();
+
+
+
+
+extern _Float128 exp2f128 (_Float128 __x) throw (); extern _Float128 __exp2f128 (_Float128 __x) throw ();
+
+
+extern _Float128 log2f128 (_Float128 __x) throw (); extern _Float128 __log2f128 (_Float128 __x) throw ();
+
+
+
+
+
+
+ extern _Float128 powf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __powf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+extern _Float128 sqrtf128 (_Float128 __x) throw (); extern _Float128 __sqrtf128 (_Float128 __x) throw ();
+
+
+
+extern _Float128 hypotf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __hypotf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+
+
+extern _Float128 cbrtf128 (_Float128 __x) throw (); extern _Float128 __cbrtf128 (_Float128 __x) throw ();
+
+
+
+
+
+
+extern _Float128 ceilf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __ceilf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float128 fabsf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __fabsf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float128 floorf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __floorf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+extern _Float128 fmodf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __fmodf128 (_Float128 __x, _Float128 __y) throw ();
+#196 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 copysignf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__)); extern _Float128 __copysignf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float128 nanf128 (const char *__tagb) throw () __attribute__ ((__const__)); extern _Float128 __nanf128 (const char *__tagb) throw () __attribute__ ((__const__));
+#217 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 j0f128 (_Float128) throw (); extern _Float128 __j0f128 (_Float128) throw ();
+extern _Float128 j1f128 (_Float128) throw (); extern _Float128 __j1f128 (_Float128) throw ();
+extern _Float128 jnf128 (int, _Float128) throw (); extern _Float128 __jnf128 (int, _Float128) throw ();
+extern _Float128 y0f128 (_Float128) throw (); extern _Float128 __y0f128 (_Float128) throw ();
+extern _Float128 y1f128 (_Float128) throw (); extern _Float128 __y1f128 (_Float128) throw ();
+extern _Float128 ynf128 (int, _Float128) throw (); extern _Float128 __ynf128 (int, _Float128) throw ();
+
+
+
+
+
+extern _Float128 erff128 (_Float128) throw (); extern _Float128 __erff128 (_Float128) throw ();
+extern _Float128 erfcf128 (_Float128) throw (); extern _Float128 __erfcf128 (_Float128) throw ();
+extern _Float128 lgammaf128 (_Float128) throw (); extern _Float128 __lgammaf128 (_Float128) throw ();
+
+
+
+
+extern _Float128 tgammaf128 (_Float128) throw (); extern _Float128 __tgammaf128 (_Float128) throw ();
+#249 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float128 lgammaf128_r (_Float128, int *__signgamp) throw (); extern _Float128 __lgammaf128_r (_Float128, int *__signgamp) throw ();
+
+
+
+
+
+
+extern _Float128 rintf128 (_Float128 __x) throw (); extern _Float128 __rintf128 (_Float128 __x) throw ();
+
+
+extern _Float128 nextafterf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __nextafterf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+
+
+
+
+extern _Float128 nextdownf128 (_Float128 __x) throw (); extern _Float128 __nextdownf128 (_Float128 __x) throw ();
+
+extern _Float128 nextupf128 (_Float128 __x) throw (); extern _Float128 __nextupf128 (_Float128 __x) throw ();
+
+
+
+extern _Float128 remainderf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __remainderf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+
+extern _Float128 scalbnf128 (_Float128 __x, int __n) throw (); extern _Float128 __scalbnf128 (_Float128 __x, int __n) throw ();
+
+
+
+extern int ilogbf128 (_Float128 __x) throw (); extern int __ilogbf128 (_Float128 __x) throw ();
+
+
+
+
+extern long int llogbf128 (_Float128 __x) throw (); extern long int __llogbf128 (_Float128 __x) throw ();
+
+
+
+
+extern _Float128 scalblnf128 (_Float128 __x, long int __n) throw (); extern _Float128 __scalblnf128 (_Float128 __x, long int __n) throw ();
+
+
+
+extern _Float128 nearbyintf128 (_Float128 __x) throw (); extern _Float128 __nearbyintf128 (_Float128 __x) throw ();
+
+
+
+extern _Float128 roundf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __roundf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+
+extern _Float128 truncf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __truncf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float128 remquof128 (_Float128 __x, _Float128 __y, int *__quo) throw (); extern _Float128 __remquof128 (_Float128 __x, _Float128 __y, int *__quo) throw ();
+
+
+
+
+
+
+extern long int lrintf128 (_Float128 __x) throw (); extern long int __lrintf128 (_Float128 __x) throw ();
+__extension__
+extern long long int llrintf128 (_Float128 __x) throw (); extern long long int __llrintf128 (_Float128 __x) throw ();
+
+
+
+extern long int lroundf128 (_Float128 __x) throw (); extern long int __lroundf128 (_Float128 __x) throw ();
+__extension__
+extern long long int llroundf128 (_Float128 __x) throw (); extern long long int __llroundf128 (_Float128 __x) throw ();
+
+
+
+extern _Float128 fdimf128 (_Float128 __x, _Float128 __y) throw (); extern _Float128 __fdimf128 (_Float128 __x, _Float128 __y) throw ();
+
+
+extern _Float128 fmaxf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__)); extern _Float128 __fmaxf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float128 fminf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__)); extern _Float128 __fminf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float128 fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) throw (); extern _Float128 __fmaf128 (_Float128 __x, _Float128 __y, _Float128 __z) throw ();
+
+
+
+
+extern _Float128 roundevenf128 (_Float128 __x) throw () __attribute__ ((__const__)); extern _Float128 __roundevenf128 (_Float128 __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf128
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf128
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf128
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf128
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw ()
+                              ;
+
+
+
+
+extern __intmax_t
+ fromfpxf128
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf128
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf128
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf128
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float128 __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern _Float128 fmaxmagf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__)); extern _Float128 __fmaxmagf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__));
+
+
+extern _Float128 fminmagf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__)); extern _Float128 __fminmagf128 (_Float128 __x, _Float128 __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf128 (_Float128 __x, _Float128 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int totalordermagf128 (_Float128 __x, _Float128 __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef128 (_Float128 *__cx, const _Float128 *__x) throw ();
+
+
+extern _Float128 getpayloadf128 (const _Float128 *__x) throw (); extern _Float128 __getpayloadf128 (const _Float128 *__x) throw ();
+
+
+extern int setpayloadf128 (_Float128 *__x, _Float128 __payload) throw ();
+
+
+extern int setpayloadsigf128 (_Float128 *__x, _Float128 __payload) throw ();
+#424 "/usr/include/math.h" 2 3 4
+#440 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x acosf32x (_Float32x __x) throw (); extern _Float32x __acosf32x (_Float32x __x) throw ();
+
+extern _Float32x asinf32x (_Float32x __x) throw (); extern _Float32x __asinf32x (_Float32x __x) throw ();
+
+extern _Float32x atanf32x (_Float32x __x) throw (); extern _Float32x __atanf32x (_Float32x __x) throw ();
+
+extern _Float32x atan2f32x (_Float32x __y, _Float32x __x) throw (); extern _Float32x __atan2f32x (_Float32x __y, _Float32x __x) throw ();
+
+
+ extern _Float32x cosf32x (_Float32x __x) throw (); extern _Float32x __cosf32x (_Float32x __x) throw ();
+
+ extern _Float32x sinf32x (_Float32x __x) throw (); extern _Float32x __sinf32x (_Float32x __x) throw ();
+
+extern _Float32x tanf32x (_Float32x __x) throw (); extern _Float32x __tanf32x (_Float32x __x) throw ();
+
+
+
+
+extern _Float32x coshf32x (_Float32x __x) throw (); extern _Float32x __coshf32x (_Float32x __x) throw ();
+
+extern _Float32x sinhf32x (_Float32x __x) throw (); extern _Float32x __sinhf32x (_Float32x __x) throw ();
+
+extern _Float32x tanhf32x (_Float32x __x) throw (); extern _Float32x __tanhf32x (_Float32x __x) throw ();
+
+
+
+
+ extern void sincosf32x (_Float32x __x, _Float32x *__sinx, _Float32x *__cosx) throw (); extern void __sincosf32x (_Float32x __x, _Float32x *__sinx, _Float32x *__cosx) throw ();
+
+
+
+
+extern _Float32x acoshf32x (_Float32x __x) throw (); extern _Float32x __acoshf32x (_Float32x __x) throw ();
+
+extern _Float32x asinhf32x (_Float32x __x) throw (); extern _Float32x __asinhf32x (_Float32x __x) throw ();
+
+extern _Float32x atanhf32x (_Float32x __x) throw (); extern _Float32x __atanhf32x (_Float32x __x) throw ();
+
+
+
+
+
+ extern _Float32x expf32x (_Float32x __x) throw (); extern _Float32x __expf32x (_Float32x __x) throw ();
+
+
+extern _Float32x frexpf32x (_Float32x __x, int *__exponent) throw (); extern _Float32x __frexpf32x (_Float32x __x, int *__exponent) throw ();
+
+
+extern _Float32x ldexpf32x (_Float32x __x, int __exponent) throw (); extern _Float32x __ldexpf32x (_Float32x __x, int __exponent) throw ();
+
+
+ extern _Float32x logf32x (_Float32x __x) throw (); extern _Float32x __logf32x (_Float32x __x) throw ();
+
+
+extern _Float32x log10f32x (_Float32x __x) throw (); extern _Float32x __log10f32x (_Float32x __x) throw ();
+
+
+extern _Float32x modff32x (_Float32x __x, _Float32x *__iptr) throw (); extern _Float32x __modff32x (_Float32x __x, _Float32x *__iptr) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern _Float32x exp10f32x (_Float32x __x) throw (); extern _Float32x __exp10f32x (_Float32x __x) throw ();
+
+
+
+
+extern _Float32x expm1f32x (_Float32x __x) throw (); extern _Float32x __expm1f32x (_Float32x __x) throw ();
+
+
+extern _Float32x log1pf32x (_Float32x __x) throw (); extern _Float32x __log1pf32x (_Float32x __x) throw ();
+
+
+extern _Float32x logbf32x (_Float32x __x) throw (); extern _Float32x __logbf32x (_Float32x __x) throw ();
+
+
+
+
+extern _Float32x exp2f32x (_Float32x __x) throw (); extern _Float32x __exp2f32x (_Float32x __x) throw ();
+
+
+extern _Float32x log2f32x (_Float32x __x) throw (); extern _Float32x __log2f32x (_Float32x __x) throw ();
+
+
+
+
+
+
+ extern _Float32x powf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __powf32x (_Float32x __x, _Float32x __y) throw ();
+
+
+extern _Float32x sqrtf32x (_Float32x __x) throw (); extern _Float32x __sqrtf32x (_Float32x __x) throw ();
+
+
+
+extern _Float32x hypotf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __hypotf32x (_Float32x __x, _Float32x __y) throw ();
+
+
+
+
+extern _Float32x cbrtf32x (_Float32x __x) throw (); extern _Float32x __cbrtf32x (_Float32x __x) throw ();
+
+
+
+
+
+
+extern _Float32x ceilf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __ceilf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32x fabsf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __fabsf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32x floorf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __floorf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float32x fmodf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __fmodf32x (_Float32x __x, _Float32x __y) throw ();
+#196 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x copysignf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__)); extern _Float32x __copysignf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float32x nanf32x (const char *__tagb) throw () __attribute__ ((__const__)); extern _Float32x __nanf32x (const char *__tagb) throw () __attribute__ ((__const__));
+#217 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x j0f32x (_Float32x) throw (); extern _Float32x __j0f32x (_Float32x) throw ();
+extern _Float32x j1f32x (_Float32x) throw (); extern _Float32x __j1f32x (_Float32x) throw ();
+extern _Float32x jnf32x (int, _Float32x) throw (); extern _Float32x __jnf32x (int, _Float32x) throw ();
+extern _Float32x y0f32x (_Float32x) throw (); extern _Float32x __y0f32x (_Float32x) throw ();
+extern _Float32x y1f32x (_Float32x) throw (); extern _Float32x __y1f32x (_Float32x) throw ();
+extern _Float32x ynf32x (int, _Float32x) throw (); extern _Float32x __ynf32x (int, _Float32x) throw ();
+
+
+
+
+
+extern _Float32x erff32x (_Float32x) throw (); extern _Float32x __erff32x (_Float32x) throw ();
+extern _Float32x erfcf32x (_Float32x) throw (); extern _Float32x __erfcf32x (_Float32x) throw ();
+extern _Float32x lgammaf32x (_Float32x) throw (); extern _Float32x __lgammaf32x (_Float32x) throw ();
+
+
+
+
+extern _Float32x tgammaf32x (_Float32x) throw (); extern _Float32x __tgammaf32x (_Float32x) throw ();
+#249 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float32x lgammaf32x_r (_Float32x, int *__signgamp) throw (); extern _Float32x __lgammaf32x_r (_Float32x, int *__signgamp) throw ();
+
+
+
+
+
+
+extern _Float32x rintf32x (_Float32x __x) throw (); extern _Float32x __rintf32x (_Float32x __x) throw ();
+
+
+extern _Float32x nextafterf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __nextafterf32x (_Float32x __x, _Float32x __y) throw ();
+
+
+
+
+
+
+extern _Float32x nextdownf32x (_Float32x __x) throw (); extern _Float32x __nextdownf32x (_Float32x __x) throw ();
+
+extern _Float32x nextupf32x (_Float32x __x) throw (); extern _Float32x __nextupf32x (_Float32x __x) throw ();
+
+
+
+extern _Float32x remainderf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __remainderf32x (_Float32x __x, _Float32x __y) throw ();
+
+
+
+extern _Float32x scalbnf32x (_Float32x __x, int __n) throw (); extern _Float32x __scalbnf32x (_Float32x __x, int __n) throw ();
+
+
+
+extern int ilogbf32x (_Float32x __x) throw (); extern int __ilogbf32x (_Float32x __x) throw ();
+
+
+
+
+extern long int llogbf32x (_Float32x __x) throw (); extern long int __llogbf32x (_Float32x __x) throw ();
+
+
+
+
+extern _Float32x scalblnf32x (_Float32x __x, long int __n) throw (); extern _Float32x __scalblnf32x (_Float32x __x, long int __n) throw ();
+
+
+
+extern _Float32x nearbyintf32x (_Float32x __x) throw (); extern _Float32x __nearbyintf32x (_Float32x __x) throw ();
+
+
+
+extern _Float32x roundf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __roundf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+
+extern _Float32x truncf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __truncf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float32x remquof32x (_Float32x __x, _Float32x __y, int *__quo) throw (); extern _Float32x __remquof32x (_Float32x __x, _Float32x __y, int *__quo) throw ();
+
+
+
+
+
+
+extern long int lrintf32x (_Float32x __x) throw (); extern long int __lrintf32x (_Float32x __x) throw ();
+__extension__
+extern long long int llrintf32x (_Float32x __x) throw (); extern long long int __llrintf32x (_Float32x __x) throw ();
+
+
+
+extern long int lroundf32x (_Float32x __x) throw (); extern long int __lroundf32x (_Float32x __x) throw ();
+__extension__
+extern long long int llroundf32x (_Float32x __x) throw (); extern long long int __llroundf32x (_Float32x __x) throw ();
+
+
+
+extern _Float32x fdimf32x (_Float32x __x, _Float32x __y) throw (); extern _Float32x __fdimf32x (_Float32x __x, _Float32x __y) throw ();
+
+
+extern _Float32x fmaxf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__)); extern _Float32x __fmaxf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32x fminf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__)); extern _Float32x __fminf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32x fmaf32x (_Float32x __x, _Float32x __y, _Float32x __z) throw (); extern _Float32x __fmaf32x (_Float32x __x, _Float32x __y, _Float32x __z) throw ();
+
+
+
+
+extern _Float32x roundevenf32x (_Float32x __x) throw () __attribute__ ((__const__)); extern _Float32x __roundevenf32x (_Float32x __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf32x
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf32x
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf32x
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf32x
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw ()
+                              ;
+
+
+
+
+extern __intmax_t
+ fromfpxf32x
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf32x
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf32x
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf32x
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float32x __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern _Float32x fmaxmagf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__)); extern _Float32x __fmaxmagf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float32x fminmagf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__)); extern _Float32x __fminmagf32x (_Float32x __x, _Float32x __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf32x (_Float32x __x, _Float32x __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int totalordermagf32x (_Float32x __x, _Float32x __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef32x (_Float32x *__cx, const _Float32x *__x) throw ();
+
+
+extern _Float32x getpayloadf32x (const _Float32x *__x) throw (); extern _Float32x __getpayloadf32x (const _Float32x *__x) throw ();
+
+
+extern int setpayloadf32x (_Float32x *__x, _Float32x __payload) throw ();
+
+
+extern int setpayloadsigf32x (_Float32x *__x, _Float32x __payload) throw ();
+#441 "/usr/include/math.h" 2 3 4
+#457 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 1 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x acosf64x (_Float64x __x) throw (); extern _Float64x __acosf64x (_Float64x __x) throw ();
+
+extern _Float64x asinf64x (_Float64x __x) throw (); extern _Float64x __asinf64x (_Float64x __x) throw ();
+
+extern _Float64x atanf64x (_Float64x __x) throw (); extern _Float64x __atanf64x (_Float64x __x) throw ();
+
+extern _Float64x atan2f64x (_Float64x __y, _Float64x __x) throw (); extern _Float64x __atan2f64x (_Float64x __y, _Float64x __x) throw ();
+
+
+ extern _Float64x cosf64x (_Float64x __x) throw (); extern _Float64x __cosf64x (_Float64x __x) throw ();
+
+ extern _Float64x sinf64x (_Float64x __x) throw (); extern _Float64x __sinf64x (_Float64x __x) throw ();
+
+extern _Float64x tanf64x (_Float64x __x) throw (); extern _Float64x __tanf64x (_Float64x __x) throw ();
+
+
+
+
+extern _Float64x coshf64x (_Float64x __x) throw (); extern _Float64x __coshf64x (_Float64x __x) throw ();
+
+extern _Float64x sinhf64x (_Float64x __x) throw (); extern _Float64x __sinhf64x (_Float64x __x) throw ();
+
+extern _Float64x tanhf64x (_Float64x __x) throw (); extern _Float64x __tanhf64x (_Float64x __x) throw ();
+
+
+
+
+ extern void sincosf64x (_Float64x __x, _Float64x *__sinx, _Float64x *__cosx) throw (); extern void __sincosf64x (_Float64x __x, _Float64x *__sinx, _Float64x *__cosx) throw ();
+
+
+
+
+extern _Float64x acoshf64x (_Float64x __x) throw (); extern _Float64x __acoshf64x (_Float64x __x) throw ();
+
+extern _Float64x asinhf64x (_Float64x __x) throw (); extern _Float64x __asinhf64x (_Float64x __x) throw ();
+
+extern _Float64x atanhf64x (_Float64x __x) throw (); extern _Float64x __atanhf64x (_Float64x __x) throw ();
+
+
+
+
+
+ extern _Float64x expf64x (_Float64x __x) throw (); extern _Float64x __expf64x (_Float64x __x) throw ();
+
+
+extern _Float64x frexpf64x (_Float64x __x, int *__exponent) throw (); extern _Float64x __frexpf64x (_Float64x __x, int *__exponent) throw ();
+
+
+extern _Float64x ldexpf64x (_Float64x __x, int __exponent) throw (); extern _Float64x __ldexpf64x (_Float64x __x, int __exponent) throw ();
+
+
+ extern _Float64x logf64x (_Float64x __x) throw (); extern _Float64x __logf64x (_Float64x __x) throw ();
+
+
+extern _Float64x log10f64x (_Float64x __x) throw (); extern _Float64x __log10f64x (_Float64x __x) throw ();
+
+
+extern _Float64x modff64x (_Float64x __x, _Float64x *__iptr) throw (); extern _Float64x __modff64x (_Float64x __x, _Float64x *__iptr) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern _Float64x exp10f64x (_Float64x __x) throw (); extern _Float64x __exp10f64x (_Float64x __x) throw ();
+
+
+
+
+extern _Float64x expm1f64x (_Float64x __x) throw (); extern _Float64x __expm1f64x (_Float64x __x) throw ();
+
+
+extern _Float64x log1pf64x (_Float64x __x) throw (); extern _Float64x __log1pf64x (_Float64x __x) throw ();
+
+
+extern _Float64x logbf64x (_Float64x __x) throw (); extern _Float64x __logbf64x (_Float64x __x) throw ();
+
+
+
+
+extern _Float64x exp2f64x (_Float64x __x) throw (); extern _Float64x __exp2f64x (_Float64x __x) throw ();
+
+
+extern _Float64x log2f64x (_Float64x __x) throw (); extern _Float64x __log2f64x (_Float64x __x) throw ();
+
+
+
+
+
+
+ extern _Float64x powf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __powf64x (_Float64x __x, _Float64x __y) throw ();
+
+
+extern _Float64x sqrtf64x (_Float64x __x) throw (); extern _Float64x __sqrtf64x (_Float64x __x) throw ();
+
+
+
+extern _Float64x hypotf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __hypotf64x (_Float64x __x, _Float64x __y) throw ();
+
+
+
+
+extern _Float64x cbrtf64x (_Float64x __x) throw (); extern _Float64x __cbrtf64x (_Float64x __x) throw ();
+
+
+
+
+
+
+extern _Float64x ceilf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __ceilf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64x fabsf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __fabsf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64x floorf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __floorf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+extern _Float64x fmodf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __fmodf64x (_Float64x __x, _Float64x __y) throw ();
+#196 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x copysignf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__)); extern _Float64x __copysignf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float64x nanf64x (const char *__tagb) throw () __attribute__ ((__const__)); extern _Float64x __nanf64x (const char *__tagb) throw () __attribute__ ((__const__));
+#217 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x j0f64x (_Float64x) throw (); extern _Float64x __j0f64x (_Float64x) throw ();
+extern _Float64x j1f64x (_Float64x) throw (); extern _Float64x __j1f64x (_Float64x) throw ();
+extern _Float64x jnf64x (int, _Float64x) throw (); extern _Float64x __jnf64x (int, _Float64x) throw ();
+extern _Float64x y0f64x (_Float64x) throw (); extern _Float64x __y0f64x (_Float64x) throw ();
+extern _Float64x y1f64x (_Float64x) throw (); extern _Float64x __y1f64x (_Float64x) throw ();
+extern _Float64x ynf64x (int, _Float64x) throw (); extern _Float64x __ynf64x (int, _Float64x) throw ();
+
+
+
+
+
+extern _Float64x erff64x (_Float64x) throw (); extern _Float64x __erff64x (_Float64x) throw ();
+extern _Float64x erfcf64x (_Float64x) throw (); extern _Float64x __erfcf64x (_Float64x) throw ();
+extern _Float64x lgammaf64x (_Float64x) throw (); extern _Float64x __lgammaf64x (_Float64x) throw ();
+
+
+
+
+extern _Float64x tgammaf64x (_Float64x) throw (); extern _Float64x __tgammaf64x (_Float64x) throw ();
+#249 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+extern _Float64x lgammaf64x_r (_Float64x, int *__signgamp) throw (); extern _Float64x __lgammaf64x_r (_Float64x, int *__signgamp) throw ();
+
+
+
+
+
+
+extern _Float64x rintf64x (_Float64x __x) throw (); extern _Float64x __rintf64x (_Float64x __x) throw ();
+
+
+extern _Float64x nextafterf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __nextafterf64x (_Float64x __x, _Float64x __y) throw ();
+
+
+
+
+
+
+extern _Float64x nextdownf64x (_Float64x __x) throw (); extern _Float64x __nextdownf64x (_Float64x __x) throw ();
+
+extern _Float64x nextupf64x (_Float64x __x) throw (); extern _Float64x __nextupf64x (_Float64x __x) throw ();
+
+
+
+extern _Float64x remainderf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __remainderf64x (_Float64x __x, _Float64x __y) throw ();
+
+
+
+extern _Float64x scalbnf64x (_Float64x __x, int __n) throw (); extern _Float64x __scalbnf64x (_Float64x __x, int __n) throw ();
+
+
+
+extern int ilogbf64x (_Float64x __x) throw (); extern int __ilogbf64x (_Float64x __x) throw ();
+
+
+
+
+extern long int llogbf64x (_Float64x __x) throw (); extern long int __llogbf64x (_Float64x __x) throw ();
+
+
+
+
+extern _Float64x scalblnf64x (_Float64x __x, long int __n) throw (); extern _Float64x __scalblnf64x (_Float64x __x, long int __n) throw ();
+
+
+
+extern _Float64x nearbyintf64x (_Float64x __x) throw (); extern _Float64x __nearbyintf64x (_Float64x __x) throw ();
+
+
+
+extern _Float64x roundf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __roundf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+
+extern _Float64x truncf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __truncf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+
+
+extern _Float64x remquof64x (_Float64x __x, _Float64x __y, int *__quo) throw (); extern _Float64x __remquof64x (_Float64x __x, _Float64x __y, int *__quo) throw ();
+
+
+
+
+
+
+extern long int lrintf64x (_Float64x __x) throw (); extern long int __lrintf64x (_Float64x __x) throw ();
+__extension__
+extern long long int llrintf64x (_Float64x __x) throw (); extern long long int __llrintf64x (_Float64x __x) throw ();
+
+
+
+extern long int lroundf64x (_Float64x __x) throw (); extern long int __lroundf64x (_Float64x __x) throw ();
+__extension__
+extern long long int llroundf64x (_Float64x __x) throw (); extern long long int __llroundf64x (_Float64x __x) throw ();
+
+
+
+extern _Float64x fdimf64x (_Float64x __x, _Float64x __y) throw (); extern _Float64x __fdimf64x (_Float64x __x, _Float64x __y) throw ();
+
+
+extern _Float64x fmaxf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__)); extern _Float64x __fmaxf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64x fminf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__)); extern _Float64x __fminf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64x fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) throw (); extern _Float64x __fmaf64x (_Float64x __x, _Float64x __y, _Float64x __z) throw ();
+
+
+
+
+extern _Float64x roundevenf64x (_Float64x __x) throw () __attribute__ ((__const__)); extern _Float64x __roundevenf64x (_Float64x __x) throw () __attribute__ ((__const__));
+
+
+
+extern __intmax_t
+ fromfpf64x
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpf64x
+#344 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw ()
+                            ;
+
+
+
+extern __uintmax_t
+ ufromfpf64x
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpf64x
+#349 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw ()
+                              ;
+
+
+
+
+extern __intmax_t
+ fromfpxf64x
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw (); extern __intmax_t
+ __fromfpxf64x
+#355 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw ()
+                             ;
+
+
+
+
+extern __uintmax_t
+ ufromfpxf64x
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw (); extern __uintmax_t
+ __ufromfpxf64x
+#361 "/usr/include/x86_64-linux-gnu/bits/mathcalls.h" 3 4
+ (_Float64x __x, int __round, unsigned int __width) throw ()
+                               ;
+
+
+extern _Float64x fmaxmagf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__)); extern _Float64x __fmaxmagf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__));
+
+
+extern _Float64x fminmagf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__)); extern _Float64x __fminmagf64x (_Float64x __x, _Float64x __y) throw () __attribute__ ((__const__));
+
+
+extern int totalorderf64x (_Float64x __x, _Float64x __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int totalordermagf64x (_Float64x __x, _Float64x __y) throw ()
+     __attribute__ ((__const__));
+
+
+extern int canonicalizef64x (_Float64x *__cx, const _Float64x *__x) throw ();
+
+
+extern _Float64x getpayloadf64x (const _Float64x *__x) throw (); extern _Float64x __getpayloadf64x (const _Float64x *__x) throw ();
+
+
+extern int setpayloadf64x (_Float64x *__x, _Float64x __payload) throw ();
+
+
+extern int setpayloadsigf64x (_Float64x *__x, _Float64x __payload) throw ();
+#458 "/usr/include/math.h" 2 3 4
+#489 "/usr/include/math.h" 3 4
 extern int signgam;
-#209 "/usr/include/math.h" 3 4
+#569 "/usr/include/math.h" 3 4
 enum
   {
     FP_NAN =
@@ -27425,36 +29321,107 @@ enum
 
       4
   };
-#347 "/usr/include/math.h" 3 4
-typedef enum
+#684 "/usr/include/math.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/iscanonical.h" 1 3 4
+#23 "/usr/include/x86_64-linux-gnu/bits/iscanonical.h" 3 4
+extern int __iscanonicall (long double __x)
+     throw () __attribute__ ((__const__));
+#46 "/usr/include/x86_64-linux-gnu/bits/iscanonical.h" 3 4
+extern "C++" {
+inline int iscanonical (float __val) { return ((void) (__typeof (__val)) (__val), 1); }
+inline int iscanonical (double __val) { return ((void) (__typeof (__val)) (__val), 1); }
+inline int iscanonical (long double __val) { return __iscanonicall (__val); }
+
+inline int iscanonical (_Float128 __val) { return ((void) (__typeof (__val)) (__val), 1); }
+
+}
+#685 "/usr/include/math.h" 2 3 4
+#696 "/usr/include/math.h" 3 4
+extern "C++" {
+inline int issignaling (float __val) { return __issignalingf (__val); }
+inline int issignaling (double __val) { return __issignaling (__val); }
+inline int
+issignaling (long double __val)
 {
-  _IEEE_ = -1,
-  _SVID_,
-  _XOPEN_,
-  _POSIX_,
-  _ISOC_
-} _LIB_VERSION_TYPE;
 
 
 
+  return __issignalingl (__val);
 
-extern _LIB_VERSION_TYPE _LIB_VERSION;
-#370 "/usr/include/math.h" 3 4
-struct __exception
+}
 
+inline int issignaling (_Float128 __val) { return __issignalingf128 (__val); }
 
+}
+#725 "/usr/include/math.h" 3 4
+extern "C++" {
+#754 "/usr/include/math.h" 3 4
+template <class __T> inline bool
+iszero (__T __val)
+{
+  return __val == 0;
+}
 
+}
+#1205 "/usr/include/math.h" 3 4
+extern "C++" {
+template<typename> struct __iseqsig_type;
+
+template<> struct __iseqsig_type<float>
+{
+  static int __call (float __x, float __y) throw ()
   {
-    int type;
-    char *name;
-    double arg1;
-    double arg2;
-    double retval;
-  };
+    return __iseqsigf (__x, __y);
+  }
+};
+
+template<> struct __iseqsig_type<double>
+{
+  static int __call (double __x, double __y) throw ()
+  {
+    return __iseqsig (__x, __y);
+  }
+};
+
+template<> struct __iseqsig_type<long double>
+{
+  static int __call (long double __x, long double __y) throw ()
+  {
+
+    return __iseqsigl (__x, __y);
 
 
-extern int matherr (struct __exception *__exc) throw ();
-#534 "/usr/include/math.h" 3 4
+
+  }
+};
+
+
+template<> struct __iseqsig_type<_Float128>
+{
+  static int __call (_Float128 __x, _Float128 __y) throw ()
+  {
+    return __iseqsigf128 (__x, __y);
+  }
+};
+
+
+template<typename _T1, typename _T2>
+inline int
+iseqsig (_T1 __x, _T2 __y) throw ()
+{
+
+
+
+  typedef __typeof (((__x) + (__y) + 0.0f)) _T3;
+
+  return __iseqsig_type<_T3>::__call (__x, __y);
+}
+
+}
+
+
+
+
 }
 #47 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath" 2 3
 #77 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath" 3
@@ -28014,20 +29981,30 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 #60 "/opt/Xilinx/Vivado/2018.1/include/hls_fpo.h" 2
 #165 "/opt/Xilinx/Vivado/2018.1/include/hls_fpo.h"
 #1 "/usr/include/stdio.h" 1 3 4
-#29 "/usr/include/stdio.h" 3 4
+#27 "/usr/include/stdio.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#28 "/usr/include/stdio.h" 2 3 4
+
 extern "C" {
 
 
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
 #34 "/usr/include/stdio.h" 2 3 4
-#74 "/usr/include/stdio.h" 3 4
-#1 "/usr/include/libio.h" 1 3 4
-#31 "/usr/include/libio.h" 3 4
-#1 "/usr/include/_G_config.h" 1 3 4
-#15 "/usr/include/_G_config.h" 3 4
+
+
+
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/libio.h" 1 3 4
+#35 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 1 3 4
+#19 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 3 4
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#16 "/usr/include/_G_config.h" 2 3 4
+#20 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+
 
 
 
@@ -28043,13 +30020,12 @@ typedef struct
   __off64_t __pos;
   __mbstate_t __state;
 } _G_fpos64_t;
-#32 "/usr/include/libio.h" 2 3 4
-#49 "/usr/include/libio.h" 3 4
+#36 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+#53 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdarg.h" 1 3 4
-#50 "/usr/include/libio.h" 2 3 4
-#144 "/usr/include/libio.h" 3 4
+#54 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+#149 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_jump_t; struct _IO_FILE;
-
 
 
 
@@ -28067,7 +30043,7 @@ struct _IO_marker {
 
 
   int _pos;
-#173 "/usr/include/libio.h" 3 4
+#177 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 };
 
 
@@ -28078,7 +30054,7 @@ enum __codecvt_result
   __codecvt_error,
   __codecvt_noconv
 };
-#241 "/usr/include/libio.h" 3 4
+#245 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 struct _IO_FILE {
   int _flags;
 
@@ -28119,7 +30095,7 @@ struct _IO_FILE {
 
 
   _IO_lock_t *_lock;
-#289 "/usr/include/libio.h" 3 4
+#293 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
   __off64_t _offset;
 
 
@@ -28149,7 +30125,7 @@ struct _IO_FILE_plus;
 extern struct _IO_FILE_plus _IO_2_1_stdin_;
 extern struct _IO_FILE_plus _IO_2_1_stdout_;
 extern struct _IO_FILE_plus _IO_2_1_stderr_;
-#333 "/usr/include/libio.h" 3 4
+#337 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
 
 
@@ -28205,7 +30181,7 @@ extern "C" {
 extern int __underflow (_IO_FILE *);
 extern int __uflow (_IO_FILE *);
 extern int __overflow (_IO_FILE *, int);
-#429 "/usr/include/libio.h" 3 4
+#433 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int _IO_getc (_IO_FILE *__fp);
 extern int _IO_putc (int __c, _IO_FILE *__fp);
 extern int _IO_feof (_IO_FILE *__fp) throw ();
@@ -28220,7 +30196,7 @@ extern int _IO_peekc_locked (_IO_FILE *__fp);
 extern void _IO_flockfile (_IO_FILE *) throw ();
 extern void _IO_funlockfile (_IO_FILE *) throw ();
 extern int _IO_ftrylockfile (_IO_FILE *) throw ();
-#459 "/usr/include/libio.h" 3 4
+#462 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
    __gnuc_va_list, int *__restrict);
 extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
@@ -28232,27 +30208,24 @@ extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
 extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
 
 extern void _IO_free_backup_area (_IO_FILE *) throw ();
-#521 "/usr/include/libio.h" 3 4
+#524 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
 }
-#75 "/usr/include/stdio.h" 2 3 4
+#42 "/usr/include/stdio.h" 2 3 4
 
 
 
 
 typedef __gnuc_va_list va_list;
-#108 "/usr/include/stdio.h" 3 4
-
-
+#78 "/usr/include/stdio.h" 3 4
 typedef _G_fpos_t fpos_t;
 
 
 
 
-
 typedef _G_fpos64_t fpos64_t;
-#164 "/usr/include/stdio.h" 3 4
+#131 "/usr/include/stdio.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
-#165 "/usr/include/stdio.h" 2 3 4
+#132 "/usr/include/stdio.h" 2 3 4
 
 
 
@@ -28265,11 +30238,9 @@ extern struct _IO_FILE *stderr;
 
 
 
-
 extern int remove (const char *__filename) throw ();
 
 extern int rename (const char *__old, const char *__new) throw ();
-
 
 
 
@@ -28282,9 +30253,8 @@ extern int renameat (int __oldfd, const char *__old, int __newfd,
 
 
 
-
 extern FILE *tmpfile (void) ;
-#205 "/usr/include/stdio.h" 3 4
+#169 "/usr/include/stdio.h" 3 4
 extern FILE *tmpfile64 (void) ;
 
 
@@ -28294,12 +30264,10 @@ extern char *tmpnam (char *__s) throw () ;
 
 
 
-
 extern char *tmpnam_r (char *__s) throw () ;
-#227 "/usr/include/stdio.h" 3 4
+#190 "/usr/include/stdio.h" 3 4
 extern char *tempnam (const char *__dir, const char *__pfx)
      throw () __attribute__ ((__malloc__)) ;
-
 
 
 
@@ -28313,20 +30281,11 @@ extern int fclose (FILE *__stream);
 
 
 extern int fflush (FILE *__stream);
-
-#252 "/usr/include/stdio.h" 3 4
+#213 "/usr/include/stdio.h" 3 4
 extern int fflush_unlocked (FILE *__stream);
-#262 "/usr/include/stdio.h" 3 4
+#223 "/usr/include/stdio.h" 3 4
 extern int fcloseall (void);
-
-
-
-
-
-
-
-
-
+#232 "/usr/include/stdio.h" 3 4
 extern FILE *fopen (const char *__restrict __filename,
       const char *__restrict __modes) ;
 
@@ -28336,9 +30295,7 @@ extern FILE *fopen (const char *__restrict __filename,
 extern FILE *freopen (const char *__restrict __filename,
         const char *__restrict __modes,
         FILE *__restrict __stream) ;
-#295 "/usr/include/stdio.h" 3 4
-
-
+#256 "/usr/include/stdio.h" 3 4
 extern FILE *fopen64 (const char *__restrict __filename,
         const char *__restrict __modes) ;
 extern FILE *freopen64 (const char *__restrict __filename,
@@ -28373,7 +30330,6 @@ extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) throw () ;
 
 
 
-
 extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) throw ();
 
 
@@ -28384,13 +30340,11 @@ extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
 
 
 
-
 extern void setbuffer (FILE *__restrict __stream, char *__restrict __buf,
          size_t __size) throw ();
 
 
 extern void setlinebuf (FILE *__stream) throw ();
-
 
 
 
@@ -28426,8 +30380,6 @@ extern int vsprintf (char *__restrict __s, const char *__restrict __format,
 
 
 
-
-
 extern int snprintf (char *__restrict __s, size_t __maxlen,
        const char *__restrict __format, ...)
      throw () __attribute__ ((__format__ (__printf__, 3, 4)));
@@ -28435,7 +30387,6 @@ extern int snprintf (char *__restrict __s, size_t __maxlen,
 extern int vsnprintf (char *__restrict __s, size_t __maxlen,
         const char *__restrict __format, __gnuc_va_list __arg)
      throw () __attribute__ ((__format__ (__printf__, 3, 0)));
-
 
 
 
@@ -28466,7 +30417,6 @@ extern int dprintf (int __fd, const char *__restrict __fmt, ...)
 
 
 
-
 extern int fscanf (FILE *__restrict __stream,
      const char *__restrict __format, ...) ;
 
@@ -28477,15 +30427,7 @@ extern int scanf (const char *__restrict __format, ...) ;
 
 extern int sscanf (const char *__restrict __s,
      const char *__restrict __format, ...) throw ();
-#463 "/usr/include/stdio.h" 3 4
-
-
-
-
-
-
-
-
+#420 "/usr/include/stdio.h" 3 4
 extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
       __gnuc_va_list __arg)
      __attribute__ ((__format__ (__scanf__, 2, 0))) ;
@@ -28501,16 +30443,7 @@ extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
 extern int vsscanf (const char *__restrict __s,
       const char *__restrict __format, __gnuc_va_list __arg)
      throw () __attribute__ ((__format__ (__scanf__, 2, 0)));
-#522 "/usr/include/stdio.h" 3 4
-
-
-
-
-
-
-
-
-
+#477 "/usr/include/stdio.h" 3 4
 extern int fgetc (FILE *__stream);
 extern int getc (FILE *__stream);
 
@@ -28519,23 +30452,12 @@ extern int getc (FILE *__stream);
 
 
 extern int getchar (void);
-
-#550 "/usr/include/stdio.h" 3 4
+#495 "/usr/include/stdio.h" 3 4
 extern int getc_unlocked (FILE *__stream);
 extern int getchar_unlocked (void);
-#561 "/usr/include/stdio.h" 3 4
+#506 "/usr/include/stdio.h" 3 4
 extern int fgetc_unlocked (FILE *__stream);
-
-
-
-
-
-
-
-
-
-
-
+#517 "/usr/include/stdio.h" 3 4
 extern int fputc (int __c, FILE *__stream);
 extern int putc (int __c, FILE *__stream);
 
@@ -28544,8 +30466,7 @@ extern int putc (int __c, FILE *__stream);
 
 
 extern int putchar (int __c);
-
-#594 "/usr/include/stdio.h" 3 4
+#537 "/usr/include/stdio.h" 3 4
 extern int fputc_unlocked (int __c, FILE *__stream);
 
 
@@ -28573,17 +30494,14 @@ extern int putw (int __w, FILE *__stream);
 
 
 
-
 extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
      ;
-#638 "/usr/include/stdio.h" 3 4
+#577 "/usr/include/stdio.h" 3 4
 extern char *gets (char *__s) __attribute__ ((__deprecated__));
-
-
-#649 "/usr/include/stdio.h" 3 4
+#587 "/usr/include/stdio.h" 3 4
 extern char *fgets_unlocked (char *__restrict __s, int __n,
         FILE *__restrict __stream) ;
-#665 "/usr/include/stdio.h" 3 4
+#603 "/usr/include/stdio.h" 3 4
 extern __ssize_t __getdelim (char **__restrict __lineptr,
           size_t *__restrict __n, int __delimiter,
           FILE *__restrict __stream) ;
@@ -28600,7 +30518,6 @@ extern __ssize_t getdelim (char **__restrict __lineptr,
 extern __ssize_t getline (char **__restrict __lineptr,
        size_t *__restrict __n,
        FILE *__restrict __stream) ;
-
 
 
 
@@ -28636,16 +30553,14 @@ extern size_t fread (void *__restrict __ptr, size_t __size,
 
 extern size_t fwrite (const void *__restrict __ptr, size_t __size,
         size_t __n, FILE *__restrict __s);
-
-#726 "/usr/include/stdio.h" 3 4
+#662 "/usr/include/stdio.h" 3 4
 extern int fputs_unlocked (const char *__restrict __s,
       FILE *__restrict __stream);
-#737 "/usr/include/stdio.h" 3 4
+#673 "/usr/include/stdio.h" 3 4
 extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
          size_t __n, FILE *__restrict __stream) ;
 extern size_t fwrite_unlocked (const void *__restrict __ptr, size_t __size,
           size_t __n, FILE *__restrict __stream);
-
 
 
 
@@ -28664,36 +30579,25 @@ extern long int ftell (FILE *__stream) ;
 
 
 extern void rewind (FILE *__stream);
-
-#773 "/usr/include/stdio.h" 3 4
+#707 "/usr/include/stdio.h" 3 4
 extern int fseeko (FILE *__stream, __off_t __off, int __whence);
 
 
 
 
 extern __off_t ftello (FILE *__stream) ;
-#792 "/usr/include/stdio.h" 3 4
-
-
-
-
-
-
+#731 "/usr/include/stdio.h" 3 4
 extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
 
 
 
 
 extern int fsetpos (FILE *__stream, const fpos_t *__pos);
-#815 "/usr/include/stdio.h" 3 4
-
-
-
+#750 "/usr/include/stdio.h" 3 4
 extern int fseeko64 (FILE *__stream, __off64_t __off, int __whence);
 extern __off64_t ftello64 (FILE *__stream) ;
 extern int fgetpos64 (FILE *__restrict __stream, fpos64_t *__restrict __pos);
 extern int fsetpos64 (FILE *__stream, const fpos64_t *__pos);
-
 
 
 
@@ -28702,7 +30606,6 @@ extern void clearerr (FILE *__stream) throw ();
 extern int feof (FILE *__stream) throw () ;
 
 extern int ferror (FILE *__stream) throw () ;
-
 
 
 
@@ -28716,9 +30619,7 @@ extern int ferror_unlocked (FILE *__stream) throw () ;
 
 
 
-
 extern void perror (const char *__s);
-
 
 
 
@@ -28732,7 +30633,7 @@ extern const char *const sys_errlist[];
 
 extern int _sys_nerr;
 extern const char *const _sys_errlist[];
-#854 "/usr/include/stdio.h" 2 3 4
+#782 "/usr/include/stdio.h" 2 3 4
 
 
 
@@ -28743,7 +30644,7 @@ extern int fileno (FILE *__stream) throw () ;
 
 
 extern int fileno_unlocked (FILE *__stream) throw () ;
-#872 "/usr/include/stdio.h" 3 4
+#800 "/usr/include/stdio.h" 3 4
 extern FILE *popen (const char *__command, const char *__modes) ;
 
 
@@ -28792,7 +30693,7 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 
 extern void funlockfile (FILE *__stream) throw ();
-#942 "/usr/include/stdio.h" 3 4
+#868 "/usr/include/stdio.h" 3 4
 }
 #166 "/opt/Xilinx/Vivado/2018.1/include/hls_fpo.h" 2
 
@@ -28807,19 +30708,32 @@ extern void funlockfile (FILE *__stream) throw ();
 
 
 #1 "/usr/include/stdint.h" 1 3 4
-#27 "/usr/include/stdint.h" 3 4
+#26 "/usr/include/stdint.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#27 "/usr/include/stdint.h" 2 3 4
+
+
 #1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
-#28 "/usr/include/stdint.h" 2 3 4
-#48 "/usr/include/stdint.h" 3 4
-typedef unsigned char uint8_t;
-typedef unsigned short int uint16_t;
-
-typedef unsigned int uint32_t;
+#30 "/usr/include/stdint.h" 2 3 4
 
 
 
-typedef unsigned long int uint64_t;
-#65 "/usr/include/stdint.h" 3 4
+
+
+
+
+#1 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 1 3 4
+#24 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 3 4
+typedef __uint8_t uint8_t;
+typedef __uint16_t uint16_t;
+typedef __uint32_t uint32_t;
+typedef __uint64_t uint64_t;
+#38 "/usr/include/stdint.h" 2 3 4
+
+
+
+
+
 typedef signed char int_least8_t;
 typedef short int int_least16_t;
 typedef int int_least32_t;
@@ -28836,23 +30750,23 @@ typedef unsigned short int uint_least16_t;
 typedef unsigned int uint_least32_t;
 
 typedef unsigned long int uint_least64_t;
-#90 "/usr/include/stdint.h" 3 4
+#68 "/usr/include/stdint.h" 3 4
 typedef signed char int_fast8_t;
 
 typedef long int int_fast16_t;
 typedef long int int_fast32_t;
 typedef long int int_fast64_t;
-#103 "/usr/include/stdint.h" 3 4
+#81 "/usr/include/stdint.h" 3 4
 typedef unsigned char uint_fast8_t;
 
 typedef unsigned long int uint_fast16_t;
 typedef unsigned long int uint_fast32_t;
 typedef unsigned long int uint_fast64_t;
-#122 "/usr/include/stdint.h" 3 4
+#100 "/usr/include/stdint.h" 3 4
 typedef unsigned long int uintptr_t;
-#134 "/usr/include/stdint.h" 3 4
-typedef long int intmax_t;
-typedef unsigned long int uintmax_t;
+#111 "/usr/include/stdint.h" 3 4
+typedef __intmax_t intmax_t;
+typedef __uintmax_t uintmax_t;
 #4 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdint.h" 2 3 4
 #115 "/opt/Xilinx/Vivado/2018.1/include/floating_point_v7_0_bitacc_cmodel.h" 2
 typedef int8_t xint8;
@@ -37920,7 +39834,10 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/limits.h" 1 3 4
 #169 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/limits.h" 3 4
 #1 "/usr/include/limits.h" 1 3 4
-#143 "/usr/include/limits.h" 3 4
+#26 "/usr/include/limits.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#27 "/usr/include/limits.h" 2 3 4
+#183 "/usr/include/limits.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 1 3 4
 #160 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 3 4
 #1 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 1 3 4
@@ -37928,20 +39845,20 @@ namespace std __attribute__ ((__visibility__ ("default")))
 #1 "/usr/include/linux/limits.h" 1 3 4
 #39 "/usr/include/x86_64-linux-gnu/bits/local_lim.h" 2 3 4
 #161 "/usr/include/x86_64-linux-gnu/bits/posix1_lim.h" 2 3 4
-#144 "/usr/include/limits.h" 2 3 4
+#184 "/usr/include/limits.h" 2 3 4
 
 
 
 #1 "/usr/include/x86_64-linux-gnu/bits/posix2_lim.h" 1 3 4
-#148 "/usr/include/limits.h" 2 3 4
+#188 "/usr/include/limits.h" 2 3 4
 
 
 
 #1 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 1 3 4
-#33 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 3 4
-#1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
-#34 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 2 3 4
-#152 "/usr/include/limits.h" 2 3 4
+#64 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/uio_lim.h" 1 3 4
+#65 "/usr/include/x86_64-linux-gnu/bits/xopen_lim.h" 2 3 4
+#192 "/usr/include/limits.h" 2 3 4
 #170 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/limits.h" 2 3 4
 #8 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/syslimits.h" 2 3 4
 #35 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/limits.h" 2 3 4
@@ -37955,23 +39872,18 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 #1 "/usr/include/string.h" 1 3 4
-#27 "/usr/include/string.h" 3 4
+#26 "/usr/include/string.h" 3 4
+#1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+#27 "/usr/include/string.h" 2 3 4
+
 extern "C" {
 
 
 
 
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
-#33 "/usr/include/string.h" 2 3 4
-
-
-
-
-
-
-
-
-
+#34 "/usr/include/string.h" 2 3 4
+#42 "/usr/include/string.h" 3 4
 extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
        size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
 
@@ -37983,11 +39895,9 @@ extern void *memmove (void *__dest, const void *__src, size_t __n)
 
 
 
-
 extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
         int __c, size_t __n)
      throw () __attribute__ ((__nonnull__ (1, 2)));
-
 
 
 
@@ -38006,18 +39916,9 @@ extern void *memchr (void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern const void *memchr (const void *__s, int __c, size_t __n)
       throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-#90 "/usr/include/string.h" 3 4
+#88 "/usr/include/string.h" 3 4
 }
-
-
-
-
-
-
-
-
-
-
+#98 "/usr/include/string.h" 3 4
 extern "C++" void *rawmemchr (void *__s, int __c)
      throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern "C++" const void *rawmemchr (const void *__s, int __c)
@@ -38033,15 +39934,7 @@ extern "C++" void *memrchr (void *__s, int __c, size_t __n)
       throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern "C++" const void *memrchr (const void *__s, int __c, size_t __n)
       throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-
-
-
+#121 "/usr/include/string.h" 3 4
 extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
      throw () __attribute__ ((__nonnull__ (1, 2)));
 
@@ -38071,12 +39964,18 @@ extern size_t strxfrm (char *__restrict __dest,
          const char *__restrict __src, size_t __n)
      throw () __attribute__ ((__nonnull__ (2)));
 
-#162 "/usr/include/string.h" 3 4
-extern int strcoll_l (const char *__s1, const char *__s2, __locale_t __l)
+
+
+
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
 
+
 extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
-    __locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
+    locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
+
 
 
 
@@ -38091,17 +39990,14 @@ extern char *strdup (const char *__s)
 
 extern char *strndup (const char *__string, size_t __n)
      throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
-#206 "/usr/include/string.h" 3 4
-
-
-
+#203 "/usr/include/string.h" 3 4
 extern "C++"
 {
 extern char *strchr (char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern const char *strchr (const char *__s, int __c)
      throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-#229 "/usr/include/string.h" 3 4
+#223 "/usr/include/string.h" 3 4
 }
 
 
@@ -38115,31 +40011,14 @@ extern char *strrchr (char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern const char *strrchr (const char *__s, int __c)
      throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-#256 "/usr/include/string.h" 3 4
+#250 "/usr/include/string.h" 3 4
 }
-
-
-
-
-
-
-
-
-
-
+#260 "/usr/include/string.h" 3 4
 extern "C++" char *strchrnul (char *__s, int __c)
      throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern "C++" const char *strchrnul (const char *__s, int __c)
      throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
-
-
-
-
-
-
-
-
+#272 "/usr/include/string.h" 3 4
 extern size_t strcspn (const char *__s, const char *__reject)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
@@ -38154,7 +40033,7 @@ extern char *strpbrk (char *__s, const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 extern const char *strpbrk (const char *__s, const char *__accept)
      throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-#308 "/usr/include/string.h" 3 4
+#300 "/usr/include/string.h" 3 4
 }
 
 
@@ -38168,7 +40047,7 @@ extern char *strstr (char *__haystack, const char *__needle)
      throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 extern const char *strstr (const char *__haystack, const char *__needle)
      throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-#335 "/usr/include/string.h" 3 4
+#327 "/usr/include/string.h" 3 4
 }
 
 
@@ -38179,7 +40058,6 @@ extern const char *strstr (const char *__haystack, const char *__needle)
 
 extern char *strtok (char *__restrict __s, const char *__restrict __delim)
      throw () __attribute__ ((__nonnull__ (2)));
-
 
 
 
@@ -38201,7 +40079,7 @@ extern "C++" char *strcasestr (char *__haystack, const char *__needle)
 extern "C++" const char *strcasestr (const char *__haystack,
          const char *__needle)
      throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-#377 "/usr/include/string.h" 3 4
+#368 "/usr/include/string.h" 3 4
 extern void *memmem (const void *__haystack, size_t __haystacklen,
        const void *__needle, size_t __needlelen)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)));
@@ -38218,10 +40096,8 @@ extern void *mempcpy (void *__restrict __dest,
 
 
 
-
 extern size_t strlen (const char *__s)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-
 
 
 
@@ -38232,10 +40108,8 @@ extern size_t strnlen (const char *__string, size_t __maxlen)
 
 
 
-
 extern char *strerror (int __errnum) throw ();
-
-#433 "/usr/include/string.h" 3 4
+#420 "/usr/include/string.h" 3 4
 extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
      throw () __attribute__ ((__nonnull__ (2))) ;
 
@@ -38243,25 +40117,33 @@ extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
 
 
 
-extern char *strerror_l (int __errnum, __locale_t __l) throw ();
+extern char *strerror_l (int __errnum, locale_t __l) throw ();
+
+
+
+#1 "/usr/include/strings.h" 1 3 4
+#23 "/usr/include/strings.h" 3 4
+#1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4
+#24 "/usr/include/strings.h" 2 3 4
 
 
 
 
 
-extern void __bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
 
+extern "C" {
 
-
-extern void bcopy (const void *__src, void *__dest, size_t __n)
-     throw () __attribute__ ((__nonnull__ (1, 2)));
-
-
-extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
 
 
 extern int bcmp (const void *__s1, const void *__s2, size_t __n)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
 
 
 
@@ -38271,7 +40153,7 @@ extern char *index (char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern const char *index (const char *__s, int __c)
      throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-#482 "/usr/include/string.h" 3 4
+#66 "/usr/include/strings.h" 3 4
 }
 
 
@@ -38286,16 +40168,11 @@ extern char *rindex (char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 extern const char *rindex (const char *__s, int __c)
      throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-#510 "/usr/include/string.h" 3 4
+#94 "/usr/include/strings.h" 3 4
 }
-
-
-
-
-
-
-
+#104 "/usr/include/strings.h" 3 4
 extern int ffs (int __i) throw () __attribute__ ((__const__));
+
 
 
 
@@ -38317,15 +40194,23 @@ extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
 
 
 
-extern int strcasecmp_l (const char *__s1, const char *__s2,
-    __locale_t __loc)
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
 
+
+
 extern int strncasecmp_l (const char *__s1, const char *__s2,
-     size_t __n, __locale_t __loc)
+     size_t __n, locale_t __loc)
      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
 
 
+}
+#432 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
 
 
 
@@ -38375,7 +40260,7 @@ extern "C++" char *basename (char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
 extern "C++" const char *basename (const char *__filename)
      throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
-#658 "/usr/include/string.h" 3 4
+#498 "/usr/include/string.h" 3 4
 }
 #45 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstring" 2 3
 #73 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstring" 3
@@ -41316,7 +43201,7 @@ static inline std::string oct2Bin(char oct) {
         }
     }
 
-    ((0 && "Invalid character in digit string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 307, __PRETTY_FUNCTION__));
+    (static_cast <bool> (0 && "Invalid character in digit string") ? void (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 307, __extension__ __PRETTY_FUNCTION__));
     return "";
 }
 
@@ -41383,7 +43268,7 @@ static inline std::string hex2Bin(char hex) {
             return "1111";
         }
     }
-    ((0 && "Invalid character in digit string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 374, __PRETTY_FUNCTION__));
+    (static_cast <bool> (0 && "Invalid character in digit string") ? void (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 374, __extension__ __PRETTY_FUNCTION__));
     return "";
 }
 
@@ -41393,7 +43278,7 @@ static inline uint32_t decode_digit(char cdigit, int radix) {
 
 
             if (!(((cdigit) >= '0' && (cdigit) <= '9') || ((cdigit) >= 'a' && (cdigit) <= 'f') || ((cdigit) >= 'A' && (cdigit) <= 'F')))
-                ((0 && "Invalid hex digit in string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid hex digit in string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 384, __PRETTY_FUNCTION__));
+                (static_cast <bool> (0 && "Invalid hex digit in string") ? void (0) : __assert_fail ("0 && \"Invalid hex digit in string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 384, __extension__ __PRETTY_FUNCTION__));
             if (((cdigit) >= '0' && (cdigit) <= '9'))
                 digit = cdigit - '0';
             else if (cdigit >= 'a')
@@ -41401,11 +43286,11 @@ static inline uint32_t decode_digit(char cdigit, int radix) {
             else if (cdigit >= 'A')
                 digit = cdigit - 'A' + 10;
             else
-                ((0 && "huh? we shouldn't get here") ? static_cast<void> (0) : __assert_fail ("0 && \"huh? we shouldn't get here\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 392, __PRETTY_FUNCTION__));
+                (static_cast <bool> (0 && "huh? we shouldn't get here") ? void (0) : __assert_fail ("0 && \"huh? we shouldn't get here\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 392, __extension__ __PRETTY_FUNCTION__));
         } else if (((cdigit) >= '0' && (cdigit) <= '9')) {
             digit = cdigit - '0';
         } else {
-            ((0 && "Invalid character in digit string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 396, __PRETTY_FUNCTION__));
+            (static_cast <bool> (0 && "Invalid character in digit string") ? void (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 396, __extension__ __PRETTY_FUNCTION__));
         }
 
 
@@ -41496,7 +43381,7 @@ static inline std::string parseString(const std::string& input, int& radix) {
 
 
 
-        ((startPos <= expPos) ? static_cast<void> (0) : __assert_fail ("startPos <= expPos", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 487, __PRETTY_FUNCTION__));
+        (static_cast <bool> (startPos <= expPos) ? void (0) : __assert_fail ("startPos <= expPos", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 487, __extension__ __PRETTY_FUNCTION__));
 
         for (size_t i=startPos; i<expPos; ++i) {
             if(radix == 16) {
@@ -41692,9 +43577,9 @@ static inline uint64_t mul_1(uint64_t dest[], const uint64_t x[], uint32_t len, 
 
 static inline void mul(uint64_t dest[], const uint64_t x[], uint32_t xlen, const uint64_t y[],
                 uint32_t ylen, uint32_t destlen) {
-    ((xlen > 0) ? static_cast<void> (0) : __assert_fail ("xlen > 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 691, __PRETTY_FUNCTION__));
-    ((ylen > 0) ? static_cast<void> (0) : __assert_fail ("ylen > 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 692, __PRETTY_FUNCTION__));
-    ((destlen >= xlen + ylen) ? static_cast<void> (0) : __assert_fail ("destlen >= xlen + ylen", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 693, __PRETTY_FUNCTION__));
+    (static_cast <bool> (xlen > 0) ? void (0) : __assert_fail ("xlen > 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 691, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (ylen > 0) ? void (0) : __assert_fail ("ylen > 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 692, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (destlen >= xlen + ylen) ? void (0) : __assert_fail ("destlen >= xlen + ylen", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 693, __extension__ __PRETTY_FUNCTION__));
     if(xlen < destlen)
         dest[xlen] = mul_1(dest, x, xlen, y[0]);
     for (uint32_t i = 1; i < ylen; ++i) {
@@ -41731,11 +43616,11 @@ static inline void mul(uint64_t dest[], const uint64_t x[], uint32_t xlen, const
 
 static inline void KnuthDiv(uint32_t *u, uint32_t *v, uint32_t *q, uint32_t* r,
                      uint32_t m, uint32_t n) {
-    ((u && "Must provide dividend") ? static_cast<void> (0) : __assert_fail ("u && \"Must provide dividend\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 730, __PRETTY_FUNCTION__));
-    ((v && "Must provide divisor") ? static_cast<void> (0) : __assert_fail ("v && \"Must provide divisor\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 731, __PRETTY_FUNCTION__));
-    ((q && "Must provide quotient") ? static_cast<void> (0) : __assert_fail ("q && \"Must provide quotient\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 732, __PRETTY_FUNCTION__));
-    ((u != v && u != q && v != q && "Must us different memory") ? static_cast<void> (0) : __assert_fail ("u != v && u != q && v != q && \"Must us different memory\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 733, __PRETTY_FUNCTION__));
-    ((n>1 && "n must be > 1") ? static_cast<void> (0) : __assert_fail ("n>1 && \"n must be > 1\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 734, __PRETTY_FUNCTION__));
+    (static_cast <bool> (u && "Must provide dividend") ? void (0) : __assert_fail ("u && \"Must provide dividend\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 730, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (v && "Must provide divisor") ? void (0) : __assert_fail ("v && \"Must provide divisor\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 731, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (q && "Must provide quotient") ? void (0) : __assert_fail ("q && \"Must provide quotient\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 732, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (u != v && u != q && v != q && "Must us different memory") ? void (0) : __assert_fail ("u != v && u != q && v != q && \"Must us different memory\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 733, __extension__ __PRETTY_FUNCTION__));
+    (static_cast <bool> (n>1 && "n must be > 1") ? void (0) : __assert_fail ("n>1 && \"n must be > 1\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 734, __extension__ __PRETTY_FUNCTION__));
 
 
 
@@ -41870,7 +43755,7 @@ template<int _AP_W, bool _AP_S>
 void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
             const ap_private<_AP_W, _AP_S>& RHS, uint32_t rhsWords,
             ap_private<_AP_W, _AP_S> *Quotient, ap_private<_AP_W, _AP_S> *Remainder) {
-    ((lhsWords >= rhsWords && "Fractional result") ? static_cast<void> (0) : __assert_fail ("lhsWords >= rhsWords && \"Fractional result\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 905, __PRETTY_FUNCTION__));
+    (static_cast <bool> (lhsWords >= rhsWords && "Fractional result") ? void (0) : __assert_fail ("lhsWords >= rhsWords && \"Fractional result\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 905, __extension__ __PRETTY_FUNCTION__));
     enum {APINT_BITS_PER_WORD=64};
 
 
@@ -41943,7 +43828,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
 
 
 
-    ((n != 0 && "Divide by zero?") ? static_cast<void> (0) : __assert_fail ("n != 0 && \"Divide by zero?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 978, __PRETTY_FUNCTION__));
+    (static_cast <bool> (n != 0 && "Divide by zero?") ? void (0) : __assert_fail ("n != 0 && \"Divide by zero?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 978, __extension__ __PRETTY_FUNCTION__));
     if (n == 1) {
         uint32_t divisor = __V[0];
         uint32_t remainder = 0;
@@ -41987,7 +43872,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
                 uint64_t(__Q[0]) | ((uint64_t(__Q[1])) << (APINT_BITS_PER_WORD / 2));
             Quotient->set_VAL(tmp);
         } else {
-            ((!Quotient->isSingleWord() && "Quotient ap_private not large enough") ? static_cast<void> (0) : __assert_fail ("!Quotient->isSingleWord() && \"Quotient ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1022, __PRETTY_FUNCTION__));
+            (static_cast <bool> (!Quotient->isSingleWord() && "Quotient ap_private not large enough") ? void (0) : __assert_fail ("!Quotient->isSingleWord() && \"Quotient ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1022, __extension__ __PRETTY_FUNCTION__));
             for (unsigned i = 0; i < lhsWords; ++i)
                 Quotient->set_pVal(i,
                     uint64_t(__Q[i*2]) | ((uint64_t(__Q[i*2+1])) << (APINT_BITS_PER_WORD / 2)));
@@ -42011,7 +43896,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
                 uint64_t(__R[0]) | ((uint64_t(__R[1])) << (APINT_BITS_PER_WORD / 2));
             Remainder->set_VAL(tmp);
         } else {
-            ((!Remainder->isSingleWord() && "Remainder ap_private not large enough") ? static_cast<void> (0) : __assert_fail ("!Remainder->isSingleWord() && \"Remainder ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1046, __PRETTY_FUNCTION__));
+            (static_cast <bool> (!Remainder->isSingleWord() && "Remainder ap_private not large enough") ? void (0) : __assert_fail ("!Remainder->isSingleWord() && \"Remainder ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1046, __extension__ __PRETTY_FUNCTION__));
             for (unsigned i = 0; i < rhsWords; ++i)
                 Remainder->set_pVal(i,
                     uint64_t(__R[i*2]) | ((uint64_t(__R[i*2+1])) << (APINT_BITS_PER_WORD / 2)));
@@ -42033,7 +43918,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
             uint64_t RHS,
             ap_private<_AP_W, _AP_S> *Quotient, ap_private<_AP_W, _AP_S> *Remainder) {
     uint32_t rhsWords=1;
-    ((lhsWords >= rhsWords && "Fractional result") ? static_cast<void> (0) : __assert_fail ("lhsWords >= rhsWords && \"Fractional result\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1068, __PRETTY_FUNCTION__));
+    (static_cast <bool> (lhsWords >= rhsWords && "Fractional result") ? void (0) : __assert_fail ("lhsWords >= rhsWords && \"Fractional result\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1068, __extension__ __PRETTY_FUNCTION__));
     enum {APINT_BITS_PER_WORD=64};
 
 
@@ -42103,7 +43988,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
 
 
 
-    ((n != 0 && "Divide by zero?") ? static_cast<void> (0) : __assert_fail ("n != 0 && \"Divide by zero?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1138, __PRETTY_FUNCTION__));
+    (static_cast <bool> (n != 0 && "Divide by zero?") ? void (0) : __assert_fail ("n != 0 && \"Divide by zero?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1138, __extension__ __PRETTY_FUNCTION__));
     if (n == 1) {
         uint32_t divisor = __V[0];
         uint32_t remainder = 0;
@@ -42147,7 +44032,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
                 uint64_t(__Q[0]) | ((uint64_t(__Q[1])) << (APINT_BITS_PER_WORD / 2));
             Quotient->set_VAL(tmp);
         } else {
-            ((!Quotient->isSingleWord() && "Quotient ap_private not large enough") ? static_cast<void> (0) : __assert_fail ("!Quotient->isSingleWord() && \"Quotient ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1182, __PRETTY_FUNCTION__));
+            (static_cast <bool> (!Quotient->isSingleWord() && "Quotient ap_private not large enough") ? void (0) : __assert_fail ("!Quotient->isSingleWord() && \"Quotient ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1182, __extension__ __PRETTY_FUNCTION__));
             for (unsigned i = 0; i < lhsWords; ++i)
                 Quotient->set_pVal(i,
                     uint64_t(__Q[i*2]) | ((uint64_t(__Q[i*2+1])) << (APINT_BITS_PER_WORD / 2)));
@@ -42171,7 +44056,7 @@ void divide(const ap_private<_AP_W, _AP_S>& LHS, uint32_t lhsWords,
                 uint64_t(__R[0]) | ((uint64_t(__R[1])) << (APINT_BITS_PER_WORD / 2));
             Remainder->set_VAL(tmp);
         } else {
-            ((!Remainder->isSingleWord() && "Remainder ap_private not large enough") ? static_cast<void> (0) : __assert_fail ("!Remainder->isSingleWord() && \"Remainder ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1206, __PRETTY_FUNCTION__));
+            (static_cast <bool> (!Remainder->isSingleWord() && "Remainder ap_private not large enough") ? void (0) : __assert_fail ("!Remainder->isSingleWord() && \"Remainder ap_private not large enough\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1206, __extension__ __PRETTY_FUNCTION__));
             for (unsigned i = 0; i < rhsWords; ++i)
                 Remainder->set_pVal(i,
                     uint64_t(__R[i*2]) | ((uint64_t(__R[i*2+1])) << (APINT_BITS_PER_WORD / 2)));
@@ -42356,14 +44241,14 @@ public:
         return VAL;
     }
     inline const uint64_t* get_pVal() const{
-        ((0 && "invalid usage") ? static_cast<void> (0) : __assert_fail ("0 && \"invalid usage\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1437, __PRETTY_FUNCTION__));
+        (static_cast <bool> (0 && "invalid usage") ? void (0) : __assert_fail ("0 && \"invalid usage\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1437, __extension__ __PRETTY_FUNCTION__));
         return 0;
     }
     inline ValType get_pVal(int i) const volatile {
         return VAL;
     }
     inline uint64_t* get_pVal() const volatile {
-        ((0 && "invalid usage") ? static_cast<void> (0) : __assert_fail ("0 && \"invalid usage\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1444, __PRETTY_FUNCTION__));
+        (static_cast <bool> (0 && "invalid usage") ? void (0) : __assert_fail ("0 && \"invalid usage\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1444, __extension__ __PRETTY_FUNCTION__));
         return 0;
     }
     inline void set_pVal(int i, uint64_t value) {
@@ -42427,15 +44312,15 @@ private:
     inline void fromString(const char *strStart, uint32_t slen,
                            uint8_t radix) {
 
-        (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? static_cast<void> (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
+        (static_cast <bool> ((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? void (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
 #1508 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
         ,
  1509
 #1508 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
-        , __PRETTY_FUNCTION__))
+        , __extension__ __PRETTY_FUNCTION__))
                                                    ;
-        ((strStart && "String is null?") ? static_cast<void> (0) : __assert_fail ("strStart && \"String is null?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1510, __PRETTY_FUNCTION__));
+        (static_cast <bool> (strStart && "String is null?") ? void (0) : __assert_fail ("strStart && \"String is null?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1510, __extension__ __PRETTY_FUNCTION__));
         uint64_t tmpVAL = VAL;
         bool isNeg = false;
         if (*strStart == '-') {
@@ -42447,7 +44332,7 @@ private:
 
 
                 for (;*strStart; ++strStart) {
-                    (((*strStart=='0'|| *strStart=='1')&&("Wrong binary number")) ? static_cast<void> (0) : __assert_fail ("(*strStart=='0'|| *strStart=='1')&&(\"Wrong binary number\")", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1522, __PRETTY_FUNCTION__));
+                    (static_cast <bool> ((*strStart=='0'|| *strStart=='1')&&("Wrong binary number")) ? void (0) : __assert_fail ("(*strStart=='0'|| *strStart=='1')&&(\"Wrong binary number\")", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1522, __extension__ __PRETTY_FUNCTION__));
                     tmpVAL <<=1;
                     tmpVAL |= (*strStart-'0');
                 }
@@ -42486,7 +44371,7 @@ private:
 
                 break;
             default:
-                ((true && "Unknown radix") ? static_cast<void> (0) : __assert_fail ("true && \"Unknown radix\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1582, __PRETTY_FUNCTION__));
+                (static_cast <bool> (true && "Unknown radix") ? void (0) : __assert_fail ("true && \"Unknown radix\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1582, __extension__ __PRETTY_FUNCTION__));
 
         }
         VAL = isNeg ? (ValType)(-tmpVAL) : (ValType) (tmpVAL);
@@ -42496,7 +44381,7 @@ private:
 
 
     inline ap_private(const std::string& val, uint8_t radix=2): VAL(0) {
-        ((!val.empty() && "String empty?") ? static_cast<void> (0) : __assert_fail ("!val.empty() && \"String empty?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1592, __PRETTY_FUNCTION__));
+        (static_cast <bool> (!val.empty() && "String empty?") ? void (0) : __assert_fail ("!val.empty() && \"String empty?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 1592, __extension__ __PRETTY_FUNCTION__));
         set_canary();
         fromString(val.c_str(), val.size(), radix);
         check_canary();
@@ -43001,7 +44886,7 @@ public:
 
     template<bool _AP_S2>
     inline ap_private urem(const ap_private<_AP_W, _AP_S2>& RHS) const {
-        ((RHS.get_VAL() != 0 && "Divide by 0") ? static_cast<void> (0) : __assert_fail ("RHS.get_VAL() != 0 && \"Divide by 0\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2117, __PRETTY_FUNCTION__));
+        (static_cast <bool> (RHS.get_VAL() != 0 && "Divide by 0") ? void (0) : __assert_fail ("RHS.get_VAL() != 0 && \"Divide by 0\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2117, __extension__ __PRETTY_FUNCTION__));
         return ap_private(((uint64_t)VAL)%((uint64_t)RHS.get_VAL()));
     }
 
@@ -43172,52 +45057,52 @@ public:
 
 
     inline void invert (int i) {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2288, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2289, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2288, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2289, __extension__ __PRETTY_FUNCTION__));
         flip(i);
     }
 
 
     inline bool test (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2295, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2296, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2295, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2296, __extension__ __PRETTY_FUNCTION__));
         return operator[](i);
     }
 
 
 
     inline void lrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? static_cast<void> (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2303, __PRETTY_FUNCTION__));
-        ((n < _AP_W && "Shift value larger than bit width") ? static_cast<void> (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2304, __PRETTY_FUNCTION__));
+        (static_cast <bool> (n >= 0 && "Attempting to shift negative index") ? void (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2303, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (n < _AP_W && "Shift value larger than bit width") ? void (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2304, __extension__ __PRETTY_FUNCTION__));
         operator = (shl(n) | lshr(_AP_W - n));
     }
 
 
 
     inline void rrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? static_cast<void> (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2311, __PRETTY_FUNCTION__));
-        ((n < _AP_W && "Shift value larger than bit width") ? static_cast<void> (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2312, __PRETTY_FUNCTION__));
+        (static_cast <bool> (n >= 0 && "Attempting to shift negative index") ? void (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2311, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (n < _AP_W && "Shift value larger than bit width") ? void (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2312, __extension__ __PRETTY_FUNCTION__));
         operator = (lshr(n) | shl(_AP_W - n));
     }
 
 
     inline void set (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2318, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2319, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to write bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2318, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to write bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2319, __extension__ __PRETTY_FUNCTION__));
         v ? set(i) : clear(i);
     }
 
 
     inline void set_bit (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2325, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2326, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to write bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2325, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to write bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2326, __extension__ __PRETTY_FUNCTION__));
         v ? set(i) : clear(i);
     }
 
 
     inline bool get_bit (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2332, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2333, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2332, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2333, __extension__ __PRETTY_FUNCTION__));
         return (((1ULL << i) & VAL) != 0);
     }
 
@@ -43230,7 +45115,7 @@ public:
 
 
     inline ap_private& flip(uint32_t bitPosition) {
-        ((bitPosition < BitWidth && "Out of the bit-width range!") ? static_cast<void> (0) : __assert_fail ("bitPosition < BitWidth && \"Out of the bit-width range!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2346, __PRETTY_FUNCTION__));
+        (static_cast <bool> (bitPosition < BitWidth && "Out of the bit-width range!") ? void (0) : __assert_fail ("bitPosition < BitWidth && \"Out of the bit-width range!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2346, __extension__ __PRETTY_FUNCTION__));
         set_bit(bitPosition, !get_bit(bitPosition));
         return *this;
     }
@@ -43634,13 +45519,13 @@ public:
 
 template<int _AP_W, bool _AP_S>
 std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSigned) const {
-    (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? static_cast<void> (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
+    (static_cast <bool> ((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? void (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
 #2816 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
     ,
  2817
 #2816 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
-    , __PRETTY_FUNCTION__))
+    , __extension__ __PRETTY_FUNCTION__))
                                                ;
     static const char *digits[] = {
         "0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"
@@ -43659,7 +45544,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
                 case 2: result = "0b0"; break;
                 case 8: result = "0o0"; break;
                 case 16: result = "0x0"; break;
-                default: (("invalid radix" && 0) ? static_cast<void> (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2835, __PRETTY_FUNCTION__));
+                default: (static_cast <bool> ("invalid radix" && 0) ? void (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2835, __extension__ __PRETTY_FUNCTION__));
             }
         } else {
             ap_private<_AP_W, false, true> tmp(*this);
@@ -43679,7 +45564,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
                 case 2: result += "0b"; break;
                 case 8: result += "0o"; break;
                 case 16: result += "0x"; break;
-                default: (("invalid radix" && 0) ? static_cast<void> (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2855, __PRETTY_FUNCTION__));
+                default: (static_cast <bool> ("invalid radix" && 0) ? void (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2855, __extension__ __PRETTY_FUNCTION__));
             }
             insert_at += 2;
 
@@ -43722,7 +45607,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
         ap_private<_AP_W, false, true> APdigit = tmp%divisor;
         ap_private<_AP_W, false, true> tmp2 = tmp/divisor;
         uint32_t digit = (uint32_t)(APdigit.getZExtValue());
-        ((digit < radix && "divide failed") ? static_cast<void> (0) : __assert_fail ("digit < radix && \"divide failed\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2898, __PRETTY_FUNCTION__));
+        (static_cast <bool> (digit < radix && "divide failed") ? void (0) : __assert_fail ("digit < radix && \"divide failed\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2898, __extension__ __PRETTY_FUNCTION__));
         result.insert(insert_at,digits[digit]);
         tmp = tmp2;
     }
@@ -43747,7 +45632,7 @@ private:
 #2929 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
     inline ap_private(uint32_t numWords, const uint64_t bigVal[]) {
         set_canary();
-        ((bigVal && "Null pointer detected!") ? static_cast<void> (0) : __assert_fail ("bigVal && \"Null pointer detected!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2931, __PRETTY_FUNCTION__));
+        (static_cast <bool> (bigVal && "Null pointer detected!") ? void (0) : __assert_fail ("bigVal && \"Null pointer detected!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2931, __extension__ __PRETTY_FUNCTION__));
         {
 
             memset(pVal, 0, _AP_N * sizeof(uint64_t));
@@ -43765,7 +45650,7 @@ private:
 #2956 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
     inline ap_private(const std::string& val, uint8_t radix=2) {
         set_canary();
-        ((!val.empty() && "The input string is empty.") ? static_cast<void> (0) : __assert_fail ("!val.empty() && \"The input string is empty.\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2958, __PRETTY_FUNCTION__));
+        (static_cast <bool> (!val.empty() && "The input string is empty.") ? void (0) : __assert_fail ("!val.empty() && \"The input string is empty.\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 2958, __extension__ __PRETTY_FUNCTION__));
         const char *c_str = val.c_str();
         fromString(c_str, val.size(), radix);
         check_canary();
@@ -43996,8 +45881,8 @@ public:
         check_canary();
     }
 
-    inline ap_private(uint64_t* val, uint32_t bits=_AP_W) {((0) ? static_cast<void> (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3217, __PRETTY_FUNCTION__));}
-    inline ap_private(const uint64_t *const val, uint32_t bits) {((0) ? static_cast<void> (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3218, __PRETTY_FUNCTION__));}
+    inline ap_private(uint64_t* val, uint32_t bits=_AP_W) {(static_cast <bool> (0) ? void (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3217, __extension__ __PRETTY_FUNCTION__));}
+    inline ap_private(const uint64_t *const val, uint32_t bits) {(static_cast <bool> (0) ? void (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3218, __extension__ __PRETTY_FUNCTION__));}
 #3243 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
     inline ap_private(int val, bool isSigned=true) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
     inline ap_private(bool val, bool isSigned=false) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
@@ -44075,25 +45960,25 @@ public:
             uint8_t radix) {
         enum { numbits=_AP_W};
 
-        (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? static_cast<void> (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
+        (static_cast <bool> ((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? void (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
 #3327 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
         ,
  3328
 #3327 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
-        , __PRETTY_FUNCTION__))
+        , __extension__ __PRETTY_FUNCTION__))
                                                    ;
-        ((str && "String is null?") ? static_cast<void> (0) : __assert_fail ("str && \"String is null?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3329, __PRETTY_FUNCTION__));
+        (static_cast <bool> (str && "String is null?") ? void (0) : __assert_fail ("str && \"String is null?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3329, __extension__ __PRETTY_FUNCTION__));
         bool isNeg = str[0] == '-';
         if (isNeg)
             str++, slen--;
 
 
         while(*str == '0' && *(str+1) != '\0') {str++; slen--;}
-        (((slen <= numbits || radix != 2) && "Insufficient bit width") ? static_cast<void> (0) : __assert_fail ("(slen <= numbits || radix != 2) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3336, __PRETTY_FUNCTION__));
-        ((((slen - 1)*3 <= numbits || radix != 8) && "Insufficient bit width") ? static_cast<void> (0) : __assert_fail ("((slen - 1)*3 <= numbits || radix != 8) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3337, __PRETTY_FUNCTION__));
-        ((((slen - 1)*4 <= numbits || radix != 16) && "Insufficient bit width") ? static_cast<void> (0) : __assert_fail ("((slen - 1)*4 <= numbits || radix != 16) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3338, __PRETTY_FUNCTION__));
-        (((((slen -1)*64)/22 <= numbits || radix != 10) && "Insufficient bit width") ? static_cast<void> (0) : __assert_fail ("(((slen -1)*64)/22 <= numbits || radix != 10) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3339, __PRETTY_FUNCTION__));
+        (static_cast <bool> ((slen <= numbits || radix != 2) && "Insufficient bit width") ? void (0) : __assert_fail ("(slen <= numbits || radix != 2) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3336, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (((slen - 1)*3 <= numbits || radix != 8) && "Insufficient bit width") ? void (0) : __assert_fail ("((slen - 1)*3 <= numbits || radix != 8) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3337, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (((slen - 1)*4 <= numbits || radix != 16) && "Insufficient bit width") ? void (0) : __assert_fail ("((slen - 1)*4 <= numbits || radix != 16) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3338, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> ((((slen -1)*64)/22 <= numbits || radix != 10) && "Insufficient bit width") ? void (0) : __assert_fail ("(((slen -1)*64)/22 <= numbits || radix != 10) && \"Insufficient bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3339, __extension__ __PRETTY_FUNCTION__));
 
         memset(pVal, 0, _AP_N * sizeof(uint64_t));
 
@@ -44116,7 +46001,7 @@ public:
 
 
                 if (!(((cdigit) >= '0' && (cdigit) <= '9') || ((cdigit) >= 'a' && (cdigit) <= 'f') || ((cdigit) >= 'A' && (cdigit) <= 'F')))
-                    ((0 && "Invalid hex digit in string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid hex digit in string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3362, __PRETTY_FUNCTION__));
+                    (static_cast <bool> (0 && "Invalid hex digit in string") ? void (0) : __assert_fail ("0 && \"Invalid hex digit in string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3362, __extension__ __PRETTY_FUNCTION__));
                 if (((cdigit) >= '0' && (cdigit) <= '9'))
                     digit = cdigit - '0';
                 else if (cdigit >= 'a')
@@ -44124,11 +46009,11 @@ public:
                 else if (cdigit >= 'A')
                     digit = cdigit - 'A' + 10;
                 else
-                    ((0 && "huh? we shouldn't get here") ? static_cast<void> (0) : __assert_fail ("0 && \"huh? we shouldn't get here\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3370, __PRETTY_FUNCTION__));
+                    (static_cast <bool> (0 && "huh? we shouldn't get here") ? void (0) : __assert_fail ("0 && \"huh? we shouldn't get here\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3370, __extension__ __PRETTY_FUNCTION__));
             } else if (((cdigit) >= '0' && (cdigit) <= '9')) {
                 digit = cdigit - '0';
             } else if (cdigit != '\0'){
-                ((0 && "Invalid character in digit string") ? static_cast<void> (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3374, __PRETTY_FUNCTION__));
+                (static_cast <bool> (0 && "Invalid character in digit string") ? void (0) : __assert_fail ("0 && \"Invalid character in digit string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3374, __extension__ __PRETTY_FUNCTION__));
             }
 
 
@@ -44246,29 +46131,29 @@ public:
 
 
     inline void invert (int i) {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3492, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3493, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3492, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3493, __extension__ __PRETTY_FUNCTION__));
         flip(i);
     }
 
 
     inline bool test (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3499, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3500, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3499, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3500, __extension__ __PRETTY_FUNCTION__));
         return operator[](i);
     }
 
 
     inline void set (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3506, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3507, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to write bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3506, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to write bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3507, __extension__ __PRETTY_FUNCTION__));
         v ? set(i) : clear(i);
     }
 
 
     inline void set_bit (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3513, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3514, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to write bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to write bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3513, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to write bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to write bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3514, __extension__ __PRETTY_FUNCTION__));
         v ? set(i) : clear(i);
     }
 
@@ -44286,31 +46171,31 @@ public:
 
 
     inline bool get (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3532, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3533, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3532, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3533, __extension__ __PRETTY_FUNCTION__));
         return ((maskBit(i) & (pVal[whichWord(i)])) != 0);
     }
 
 
     inline bool get_bit (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? static_cast<void> (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3539, __PRETTY_FUNCTION__));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? static_cast<void> (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3540, __PRETTY_FUNCTION__));
+        (static_cast <bool> (i >= 0 && "Attempting to read bit with negative index") ? void (0) : __assert_fail ("i >= 0 && \"Attempting to read bit with negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3539, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (i < _AP_W && "Attempting to read bit beyond MSB") ? void (0) : __assert_fail ("i < _AP_W && \"Attempting to read bit beyond MSB\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3540, __extension__ __PRETTY_FUNCTION__));
         return ((maskBit(i) & (pVal[whichWord(i)])) != 0);
     }
 
 
 
     inline void lrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? static_cast<void> (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3547, __PRETTY_FUNCTION__));
-        ((n < _AP_W && "Shift value larger than bit width") ? static_cast<void> (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3548, __PRETTY_FUNCTION__));
+        (static_cast <bool> (n >= 0 && "Attempting to shift negative index") ? void (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3547, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (n < _AP_W && "Shift value larger than bit width") ? void (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3548, __extension__ __PRETTY_FUNCTION__));
         operator = (shl(n) | lshr(_AP_W - n));
     }
 
 
 
     inline void rrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? static_cast<void> (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3555, __PRETTY_FUNCTION__));
-        ((n < _AP_W && "Shift value larger than bit width") ? static_cast<void> (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3556, __PRETTY_FUNCTION__));
+        (static_cast <bool> (n >= 0 && "Attempting to shift negative index") ? void (0) : __assert_fail ("n >= 0 && \"Attempting to shift negative index\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3555, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (n < _AP_W && "Shift value larger than bit width") ? void (0) : __assert_fail ("n < _AP_W && \"Shift value larger than bit width\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3556, __extension__ __PRETTY_FUNCTION__));
         operator = (lshr(n) | shl(_AP_W - n));
     }
 
@@ -44339,7 +46224,7 @@ public:
 
 
     inline ap_private& flip(uint32_t bitPosition) {
-        ((bitPosition < BitWidth && "Out of the bit-width range!") ? static_cast<void> (0) : __assert_fail ("bitPosition < BitWidth && \"Out of the bit-width range!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3585, __PRETTY_FUNCTION__));
+        (static_cast <bool> (bitPosition < BitWidth && "Out of the bit-width range!") ? void (0) : __assert_fail ("bitPosition < BitWidth && \"Out of the bit-width range!\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 3585, __extension__ __PRETTY_FUNCTION__));
         set_bit(bitPosition, !get_bit(bitPosition));
         return *this;
     }
@@ -45048,7 +46933,7 @@ public:
             else
                 return x_old + 1;
         } else
-            ((0 && "Error in ap_private<_AP_W, _AP_S>::sqrt computation") ? static_cast<void> (0) : __assert_fail ("0 && \"Error in ap_private<_AP_W, _AP_S>::sqrt computation\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4410, __PRETTY_FUNCTION__));
+            (static_cast <bool> (0 && "Error in ap_private<_AP_W, _AP_S>::sqrt computation") ? void (0) : __assert_fail ("0 && \"Error in ap_private<_AP_W, _AP_S>::sqrt computation\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4410, __extension__ __PRETTY_FUNCTION__));
         return x_old + 1;
     }
 
@@ -45191,7 +47076,7 @@ public:
 
 
     inline ap_private ashr(uint32_t shiftAmt) const {
-        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? static_cast<void> (0) : __assert_fail ("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4586, __PRETTY_FUNCTION__));
+        (static_cast <bool> (shiftAmt <= BitWidth && "Invalid shift amount, too big") ? void (0) : __assert_fail ("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4586, __extension__ __PRETTY_FUNCTION__));
 
         if (shiftAmt == 0)
             return *this;
@@ -45324,7 +47209,7 @@ public:
 
 
     inline ap_private shl(uint32_t shiftAmt) const {
-        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? static_cast<void> (0) : __assert_fail ("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4719, __PRETTY_FUNCTION__));
+        (static_cast <bool> (shiftAmt <= BitWidth && "Invalid shift amount, too big") ? void (0) : __assert_fail ("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4719, __extension__ __PRETTY_FUNCTION__));
 
 
 
@@ -45407,7 +47292,7 @@ public:
 
         uint32_t rhsBits = RHS.getActiveBits();
         uint32_t rhsWords = !rhsBits ? 0 : (whichWord(rhsBits - 1) + 1);
-        ((rhsWords && "Divided by zero???") ? static_cast<void> (0) : __assert_fail ("rhsWords && \"Divided by zero???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4802, __PRETTY_FUNCTION__));
+        (static_cast <bool> (rhsWords && "Divided by zero???") ? void (0) : __assert_fail ("rhsWords && \"Divided by zero???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4802, __extension__ __PRETTY_FUNCTION__));
         uint32_t lhsBits = this->getActiveBits();
         uint32_t lhsWords = !lhsBits ? 0 : (whichWord(lhsBits - 1) + 1);
 
@@ -45453,7 +47338,7 @@ public:
 
         uint32_t rhsBits = RHS.getActiveBits();
         uint32_t rhsWords = !rhsBits ? 0 : (whichWord(rhsBits - 1) + 1);
-        ((rhsWords && "Performing remainder operation by zero ???") ? static_cast<void> (0) : __assert_fail ("rhsWords && \"Performing remainder operation by zero ???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4855, __PRETTY_FUNCTION__));
+        (static_cast <bool> (rhsWords && "Performing remainder operation by zero ???") ? void (0) : __assert_fail ("rhsWords && \"Performing remainder operation by zero ???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4855, __extension__ __PRETTY_FUNCTION__));
 
 
         if (lhsWords == 0) {
@@ -45482,7 +47367,7 @@ public:
         uint32_t lhsWords = !lhsBits ? 0 : (whichWord(lhsBits - 1) + 1);
 
         uint32_t rhsWords = 1;
-        ((rhsWords && "Performing remainder operation by zero ???") ? static_cast<void> (0) : __assert_fail ("rhsWords && \"Performing remainder operation by zero ???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4884, __PRETTY_FUNCTION__));
+        (static_cast <bool> (rhsWords && "Performing remainder operation by zero ???") ? void (0) : __assert_fail ("rhsWords && \"Performing remainder operation by zero ???\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 4884, __extension__ __PRETTY_FUNCTION__));
 
         if (lhsWords == 0) {
 
@@ -45601,7 +47486,7 @@ public:
 
         if (n1 <= APINT_BITS_PER_WORD && n2 <= APINT_BITS_PER_WORD)
             return pVal[0] < RHS;
-        ((0) ? static_cast<void> (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5003, __PRETTY_FUNCTION__));
+        (static_cast <bool> (0) ? void (0) : __assert_fail ("0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5003, __extension__ __PRETTY_FUNCTION__));
     }
 
     template<bool _AP_S1>
@@ -45691,8 +47576,8 @@ public:
 
     template<int _AP_W1, bool _AP_S1>
     inline void cpSext(const ap_private<_AP_W1, _AP_S1>& that) {
-        ((_AP_W1 < BitWidth && "Invalid ap_private SignExtend request") ? static_cast<void> (0) : __assert_fail ("_AP_W1 < BitWidth && \"Invalid ap_private SignExtend request\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5093, __PRETTY_FUNCTION__));
-        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? static_cast<void> (0) : __assert_fail ("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5094, __PRETTY_FUNCTION__));
+        (static_cast <bool> (_AP_W1 < BitWidth && "Invalid ap_private SignExtend request") ? void (0) : __assert_fail ("_AP_W1 < BitWidth && \"Invalid ap_private SignExtend request\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5093, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (_AP_W1 <= MAX_INT_BITS && "Too many bits") ? void (0) : __assert_fail ("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5094, __extension__ __PRETTY_FUNCTION__));
 
         if (!that.isNegative()) {
             cpZext(that);
@@ -45730,8 +47615,8 @@ public:
 
     template <int _AP_W1, bool _AP_S1>
     inline void cpZext(const ap_private<_AP_W1, _AP_S1>& that) {
-        ((_AP_W1 < BitWidth && "Invalid ap_private ZeroExtend request") ? static_cast<void> (0) : __assert_fail ("_AP_W1 < BitWidth && \"Invalid ap_private ZeroExtend request\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5132, __PRETTY_FUNCTION__));
-        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? static_cast<void> (0) : __assert_fail ("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5133, __PRETTY_FUNCTION__));
+        (static_cast <bool> (_AP_W1 < BitWidth && "Invalid ap_private ZeroExtend request") ? void (0) : __assert_fail ("_AP_W1 < BitWidth && \"Invalid ap_private ZeroExtend request\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5132, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (_AP_W1 <= MAX_INT_BITS && "Too many bits") ? void (0) : __assert_fail ("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5133, __extension__ __PRETTY_FUNCTION__));
         const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N;
         int i = 0;
         for (; i < _AP_N1; ++i)
@@ -45794,7 +47679,7 @@ public:
 
 
     inline uint64_t getZExtValue() const {
-        ((getActiveBits() <= 64 && "Too many bits for uint64_t") ? static_cast<void> (0) : __assert_fail ("getActiveBits() <= 64 && \"Too many bits for uint64_t\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5196, __PRETTY_FUNCTION__));
+        (static_cast <bool> (getActiveBits() <= 64 && "Too many bits for uint64_t") ? void (0) : __assert_fail ("getActiveBits() <= 64 && \"Too many bits for uint64_t\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5196, __extension__ __PRETTY_FUNCTION__));
         return *pVal;
     }
 
@@ -45803,7 +47688,7 @@ public:
 
 
     inline int64_t getSExtValue() const {
-        ((getActiveBits() <= 64 && "Too many bits for int64_t") ? static_cast<void> (0) : __assert_fail ("getActiveBits() <= 64 && \"Too many bits for int64_t\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5205, __PRETTY_FUNCTION__));
+        (static_cast <bool> (getActiveBits() <= 64 && "Too many bits for int64_t") ? void (0) : __assert_fail ("getActiveBits() <= 64 && \"Too many bits for int64_t\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5205, __extension__ __PRETTY_FUNCTION__));
         return int64_t(pVal[0]);
     }
 
@@ -45811,8 +47696,8 @@ public:
 
 
     inline static uint32_t getBitsNeeded(const char* str, uint32_t slen, uint8_t radix) {
-        ((str != 0 && "Invalid value string") ? static_cast<void> (0) : __assert_fail ("str != 0 && \"Invalid value string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5213, __PRETTY_FUNCTION__));
-        ((slen > 0 && "Invalid string length") ? static_cast<void> (0) : __assert_fail ("slen > 0 && \"Invalid string length\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5214, __PRETTY_FUNCTION__));
+        (static_cast <bool> (str != 0 && "Invalid value string") ? void (0) : __assert_fail ("str != 0 && \"Invalid value string\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5213, __extension__ __PRETTY_FUNCTION__));
+        (static_cast <bool> (slen > 0 && "Invalid string length") ? void (0) : __assert_fail ("slen > 0 && \"Invalid string length\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5214, __extension__ __PRETTY_FUNCTION__));
 
 
         uint32_t isNegative = str[0] == '-';
@@ -45830,7 +47715,7 @@ public:
             return slen * 4 + isNegative;
 
 
-        ((radix == 10 && "Invalid radix") ? static_cast<void> (0) : __assert_fail ("radix == 10 && \"Invalid radix\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5232, __PRETTY_FUNCTION__));
+        (static_cast <bool> (radix == 10 && "Invalid radix") ? void (0) : __assert_fail ("radix == 10 && \"Invalid radix\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5232, __extension__ __PRETTY_FUNCTION__));
 
 
 
@@ -45984,7 +47869,7 @@ public:
             if (n > 52)
                 (mantissa) >>= (n - 52);
         } else {
-            ((hiWord > 0 && "High word is negative?") ? static_cast<void> (0) : __assert_fail ("hiWord > 0 && \"High word is negative?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5393, __PRETTY_FUNCTION__));
+            (static_cast <bool> (hiWord > 0 && "High word is negative?") ? void (0) : __assert_fail ("hiWord > 0 && \"High word is negative?\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5393, __extension__ __PRETTY_FUNCTION__));
             uint64_t hibits = (Tmp.get_pVal(hiWord)) << (52 - n % APINT_BITS_PER_WORD);
             uint64_t lobits = (Tmp.get_pVal(hiWord-1)) >> (11 + n % APINT_BITS_PER_WORD);
             mantissa = hibits | lobits;
@@ -46196,13 +48081,13 @@ namespace ap_private_ops {
 
 template<int _AP_W, bool _AP_S>
 inline std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool wantSigned) const {
-    (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? static_cast<void> (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
+    (static_cast <bool> ((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? void (0) : __assert_fail ("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
 #5605 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
     ,
  5606
 #5605 "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h"
-    , __PRETTY_FUNCTION__))
+    , __extension__ __PRETTY_FUNCTION__))
                                                ;
     static const char *digits[] = {
         "0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"
@@ -46236,7 +48121,7 @@ inline std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool
                 case 2: result += "0b"; break;
                 case 8: result += "0o"; break;
                 case 16: result += "0x"; break;
-                default: (("invalid radix" && 0) ? static_cast<void> (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5639, __PRETTY_FUNCTION__));
+                default: (static_cast <bool> ("invalid radix" && 0) ? void (0) : __assert_fail ("\"invalid radix\" && 0", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5639, __extension__ __PRETTY_FUNCTION__));
             }
             insert_at += 2;
 
@@ -46279,7 +48164,7 @@ inline std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool
         ap_private_ops::divide(tmp, tmp.getNumWords(), divisor, divisor.getNumWords(), &tmp2,
                 &APdigit);
         uint64_t digit = APdigit.getZExtValue();
-        ((digit < radix && "divide failed") ? static_cast<void> (0) : __assert_fail ("digit < radix && \"divide failed\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5682, __PRETTY_FUNCTION__));
+        (static_cast <bool> (digit < radix && "divide failed") ? void (0) : __assert_fail ("digit < radix && \"divide failed\"", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_private.h", 5682, __extension__ __PRETTY_FUNCTION__));
         result.insert(insert_at,digits[digit]);
         tmp = tmp2;
     }
@@ -48131,7 +50016,7 @@ private:
     }
 
     void fromString(const std::string& val, unsigned char radix) {
-        ((radix == 2 || radix == 8 || radix == 10 || radix == 16) ? static_cast<void> (0) : __assert_fail ("radix == 2 || radix == 8 || radix == 10 || radix == 16", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_fixed_sim.h", 658, __PRETTY_FUNCTION__));
+        (static_cast <bool> (radix == 2 || radix == 8 || radix == 10 || radix == 16) ? void (0) : __assert_fail ("radix == 2 || radix == 8 || radix == 10 || radix == 16", "/opt/Xilinx/Vivado/2018.1/include/etc/ap_fixed_sim.h", 658, __extension__ __PRETTY_FUNCTION__));
         V = 0;
         int startPos = 0;
         int endPos = val.length();
@@ -50531,7 +52416,7 @@ template<int D,int U,int TI,int TD>
     ap_uint<TI> id;
     ap_uint<TD> dest;
   };
-#7 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+#7 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 #1 "/usr/include/inttypes.h" 1 3 4
 #266 "/usr/include/inttypes.h" 3 4
 extern "C" {
@@ -50570,7 +52455,7 @@ extern uintmax_t wcstoumax (const wchar_t *__restrict __nptr,
      throw ();
 #432 "/usr/include/inttypes.h" 3 4
 }
-#8 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+#8 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
 #1 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bitset" 1 3
 #47 "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bitset" 3
 
@@ -51755,8 +53640,8 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-#9 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
-#19 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.h"
+#9 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h" 2
+#19 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.h"
 typedef ap_axis<16,6,5,6> AXI_DATA_16;
 typedef ap_axis<32,6,5,6> AXI_DATA_32;
 typedef ap_axis<64,6,5,6> AXI_DATA_64;
@@ -51771,24 +53656,26 @@ typedef hls::stream<AXI_DATA_256> STREAM_256;
 typedef hls::stream<AXI_DATA_512> STREAM_512;
 
 void scurve_adder36(STREAM_128 &in_stream0,
-  STREAM_512 &out_stream, uint16_t N_ADDS, uint32_t TEST_MODE);
+  STREAM_512 &out_stream, uint16_t N_ADDS, uint32_t TEST_MODE, uint16_t K_TLAST);
 
 
 typedef ap_uint<128> uint128_t;
 
 typedef ap_uint<512> uint512_t;
-#18 "/home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder.cpp" 2
+#18 "/home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder.cpp" 2
 
 void scurve_adder36(STREAM_128 &in_stream0 ,
   STREAM_512 &out_stream ,
   uint16_t N_ADDS ,
-  uint32_t TEST_MODE) {
+  uint32_t TEST_MODE,
+  uint16_t K_TLAST) {
 
 
 #pragma HLS INTERFACE axis port=in_stream0
 #pragma HLS INTERFACE axis port=out_stream
 #pragma HLS INTERFACE s_axilite port=N_ADDS bundle=CTRL_BUS
 #pragma HLS INTERFACE s_axilite port=TEST_MODE bundle=CTRL_BUS
+#pragma HLS INTERFACE s_axilite port=K_TLAST bundle=CTRL_BUS
 #pragma HLS INTERFACE s_axilite port=return bundle=CTRL_BUS
 
  int i, j, k, l;
@@ -51800,6 +53687,8 @@ void scurve_adder36(STREAM_128 &in_stream0 ,
  AXI_DATA_128 dub_pix_ch0[2304/16];
 
  AXI_DATA_512 sum_pix_tot;
+
+ uint16_t k_tlast_cnt = 0;
 
 
  N = 0;
@@ -51850,7 +53739,13 @@ void scurve_adder36(STREAM_128 &in_stream0 ,
   sum_pix_tot.id = 0;
   sum_pix_tot.dest = 0;
   if(i == 2304/16 - 1) {
-   sum_pix_tot.last = 1;
+
+    sum_pix_tot.last = 1;
+
+
+
+
+
   }
   else {
    sum_pix_tot.last = 0;

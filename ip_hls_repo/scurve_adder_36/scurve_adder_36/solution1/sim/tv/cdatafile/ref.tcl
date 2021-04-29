@@ -16,4 +16,4 @@ set depth_list {
 {N_ADDS 1}
 {TEST_MODE 1}
 }
-set trans_num 1
+set trans_num 2

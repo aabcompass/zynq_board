@@ -2,25 +2,25 @@
 log_wave -r /
 set designtopgroup [add_wave_group "Design Top Signals"]
 set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
-set N_ADDS__TEST_MODE__return_group [add_wave_group N_ADDS__TEST_MODE__return(axi_slave) -into $cinoutgroup]
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/interrupt -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BRESP -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BREADY -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BVALID -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RRESP -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RDATA -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RREADY -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RVALID -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARREADY -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARVALID -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARADDR -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WSTRB -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WDATA -into $N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WREADY -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WVALID -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWREADY -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWVALID -into $N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWADDR -into $N_ADDS__TEST_MODE__return_group -radix hex
+set N_ADDS__TEST_MODE__K_TLAST__return_group [add_wave_group N_ADDS__TEST_MODE__K_TLAST__return(axi_slave) -into $cinoutgroup]
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/interrupt -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BRESP -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BREADY -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_BVALID -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RRESP -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RDATA -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RREADY -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_RVALID -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARREADY -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARVALID -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARADDR -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WSTRB -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WDATA -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WREADY -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WVALID -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWREADY -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWVALID -into $N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWADDR -into $N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
 set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
 set out_stream_group [add_wave_group out_stream(axis) -into $coutputgroup]
 add_wave /apatb_scurve_adder36_top/AESL_inst_scurve_adder36/out_stream_TDEST -into $out_stream_group -radix hex
@@ -76,25 +76,25 @@ add_wave /apatb_scurve_adder36_top/LENGTH_out_stream_V_dest_V -into $tb_portdept
 add_wave /apatb_scurve_adder36_top/LENGTH_N_ADDS -into $tb_portdepth_group -radix hex
 add_wave /apatb_scurve_adder36_top/LENGTH_TEST_MODE -into $tb_portdepth_group -radix hex
 set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
-set tb_N_ADDS__TEST_MODE__return_group [add_wave_group N_ADDS__TEST_MODE__return(axi_slave) -into $tbcinoutgroup]
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_INTERRUPT -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_BRESP -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_BREADY -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_BVALID -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_RRESP -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_RDATA -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_RREADY -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_RVALID -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARREADY -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARVALID -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARADDR -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_WSTRB -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_WDATA -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_WREADY -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_WVALID -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWREADY -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWVALID -into $tb_N_ADDS__TEST_MODE__return_group -color #ffff00 -radix hex
-add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWADDR -into $tb_N_ADDS__TEST_MODE__return_group -radix hex
+set tb_N_ADDS__TEST_MODE__K_TLAST__return_group [add_wave_group N_ADDS__TEST_MODE__K_TLAST__return(axi_slave) -into $tbcinoutgroup]
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_INTERRUPT -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_BRESP -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_BREADY -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_BVALID -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_RRESP -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_RDATA -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_RREADY -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_RVALID -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARREADY -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARVALID -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_ARADDR -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_WSTRB -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_WDATA -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_WREADY -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_WVALID -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWREADY -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWVALID -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -color #ffff00 -radix hex
+add_wave /apatb_scurve_adder36_top/CTRL_BUS_AWADDR -into $tb_N_ADDS__TEST_MODE__K_TLAST__return_group -radix hex
 set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
 set tb_out_stream_group [add_wave_group out_stream(axis) -into $tbcoutputgroup]
 add_wave /apatb_scurve_adder36_top/out_stream_TDEST -into $tb_out_stream_group -radix hex

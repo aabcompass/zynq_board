@@ -34,6 +34,7 @@ USE ieee.std_logic_unsigned.ALL;
 --use UNISIM.VComponents.all;
 
 entity SPB2 is
+    generic (SYNTH_BYPASS : std_logic := '1');
     Port ( CLOCK_133 : in STD_LOGIC;
            DATA_SPB2 : in STD_LOGIC_VECTOR (143 downto 0);
            FRAME : in STD_LOGIC;
@@ -1607,6 +1608,8 @@ begin
 end function bitcount;
 
 begin
+
+SYNTH_BYPASS_GEN: if(SYNTH_BYPASS = '0')  generate
 
 --CLOCK Manager
 CLK_MMCM : clk_wiz_0
@@ -8726,5 +8729,6 @@ begin
     end if;
 end process;
                         
+end generate;          
                     
 end Behavioral;

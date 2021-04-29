@@ -59,7 +59,7 @@ set Pointer03 "0"
 set Reference03 "0"
 set Dims03 [list 0]
 set Interface03 "wire"
-set DataType03 "[list ap_uint 6 ]"
+set DataType03 "[list ap_uint 8 ]"
 set Port03 [list $PortName03 $Interface03 $DataType03 $Pointer03 $Dims03 $Const03 $Volatile03 $ArrayOpt03]
 lappend structMem0 $Port03
 set PortName04 "last"
@@ -103,10 +103,10 @@ set DataType0tp1 "int"
 set DataType0tp2 "int"
 set DataType0tp3 "int"
 set structParameter0 [list [list $DataType0tp0 D] [list $DataType0tp1 U] [list $DataType0tp2 TI] [list $DataType0tp3 TD] ]
-set structArgument0 [list 128 6 5 6 ]
+set structArgument0 [list 128 8 5 6 ]
 set NameSpace0 [list ]
 set structIsPacked0 "0"
-set DataType0 [list "ap_axis<128, 6, 5, 6>" "struct ap_axis" $structMem0 1 0 $structParameter0 $structArgument0 $NameSpace0 $structIsPacked0]
+set DataType0 [list "ap_axis<128, 8, 5, 6>" "struct ap_axis" $structMem0 1 0 $structParameter0 $structArgument0 $NameSpace0 $structIsPacked0]
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "out_stream"
@@ -164,7 +164,7 @@ set Pointer13 "0"
 set Reference13 "0"
 set Dims13 [list 0]
 set Interface13 "wire"
-set DataType13 "[list ap_uint 6 ]"
+set DataType13 "[list ap_uint 8 ]"
 set Port13 [list $PortName13 $Interface13 $DataType13 $Pointer13 $Dims13 $Const13 $Volatile13 $ArrayOpt13]
 lappend structMem1 $Port13
 set PortName14 "last"
@@ -208,10 +208,10 @@ set DataType1tp1 "int"
 set DataType1tp2 "int"
 set DataType1tp3 "int"
 set structParameter1 [list [list $DataType1tp0 D] [list $DataType1tp1 U] [list $DataType1tp2 TI] [list $DataType1tp3 TD] ]
-set structArgument1 [list 512 6 5 6 ]
+set structArgument1 [list 512 8 5 6 ]
 set NameSpace1 [list ]
 set structIsPacked1 "0"
-set DataType1 [list "ap_axis<512, 6, 5, 6>" "struct ap_axis" $structMem1 1 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
+set DataType1 [list "ap_axis<512, 8, 5, 6>" "struct ap_axis" $structMem1 1 0 $structParameter1 $structArgument1 $NameSpace1 $structIsPacked1]
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set PortName2 "N_ADDS"
@@ -238,6 +238,18 @@ set Interface3 "wire"
 set DataType3 "unsigned int"
 set Port3 [list $PortName3 $Interface3 $DataType3 $Pointer3 $Dims3 $Const3 $Volatile3 $ArrayOpt3]
 lappend PortList $Port3
+set PortName4 "K_TLAST"
+set BitWidth4 "16"
+set ArrayOpt4 ""
+set Const4 "0"
+set Volatile4 "0"
+set Pointer4 "0"
+set Reference4 "0"
+set Dims4 [list 0]
+set Interface4 "wire"
+set DataType4 "unsigned short"
+set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4]
+lappend PortList $Port4
 set globalAPint "" 
 set returnAPInt "" 
 set hasCPPAPInt 1 

@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity scurve_adder36_CTRL_BUS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 5;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -42,7 +42,8 @@ port (
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
     N_ADDS                :out  STD_LOGIC_VECTOR(15 downto 0);
-    TEST_MODE             :out  STD_LOGIC_VECTOR(31 downto 0)
+    TEST_MODE             :out  STD_LOGIC_VECTOR(31 downto 0);
+    K_TLAST               :out  STD_LOGIC_VECTOR(15 downto 0)
 );
 end entity scurve_adder36_CTRL_BUS_s_axi;
 
@@ -72,6 +73,10 @@ end entity scurve_adder36_CTRL_BUS_s_axi;
 -- 0x18 : Data signal of TEST_MODE
 --        bit 31~0 - TEST_MODE[31:0] (Read/Write)
 -- 0x1c : reserved
+-- 0x20 : Data signal of K_TLAST
+--        bit 15~0 - K_TLAST[15:0] (Read/Write)
+--        others   - reserved
+-- 0x24 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of scurve_adder36_CTRL_BUS_s_axi is
@@ -87,7 +92,9 @@ architecture behave of scurve_adder36_CTRL_BUS_s_axi is
     constant ADDR_N_ADDS_CTRL      : INTEGER := 16#14#;
     constant ADDR_TEST_MODE_DATA_0 : INTEGER := 16#18#;
     constant ADDR_TEST_MODE_CTRL   : INTEGER := 16#1c#;
-    constant ADDR_BITS         : INTEGER := 5;
+    constant ADDR_K_TLAST_DATA_0   : INTEGER := 16#20#;
+    constant ADDR_K_TLAST_CTRL     : INTEGER := 16#24#;
+    constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -111,6 +118,7 @@ architecture behave of scurve_adder36_CTRL_BUS_s_axi is
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_N_ADDS          : UNSIGNED(15 downto 0) := (others => '0');
     signal int_TEST_MODE       : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_K_TLAST         : UNSIGNED(15 downto 0) := (others => '0');
 
 
 begin
@@ -236,6 +244,8 @@ begin
                         rdata_data <= RESIZE(int_N_ADDS(15 downto 0), 32);
                     when ADDR_TEST_MODE_DATA_0 =>
                         rdata_data <= RESIZE(int_TEST_MODE(31 downto 0), 32);
+                    when ADDR_K_TLAST_DATA_0 =>
+                        rdata_data <= RESIZE(int_K_TLAST(15 downto 0), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -249,6 +259,7 @@ begin
     ap_start             <= int_ap_start;
     N_ADDS               <= STD_LOGIC_VECTOR(int_N_ADDS);
     TEST_MODE            <= STD_LOGIC_VECTOR(int_TEST_MODE);
+    K_TLAST              <= STD_LOGIC_VECTOR(int_K_TLAST);
 
     process (ACLK)
     begin
@@ -392,6 +403,17 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_TEST_MODE_DATA_0) then
                     int_TEST_MODE(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_TEST_MODE(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_K_TLAST_DATA_0) then
+                    int_K_TLAST(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_K_TLAST(15 downto 0));
                 end if;
             end if;
         end if;

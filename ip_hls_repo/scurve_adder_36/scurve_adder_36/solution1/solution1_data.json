@@ -18,7 +18,7 @@
     "ClockPeriod": "4",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "296",
+    "Latency": "undef",
     "Uncertainty": "0.5"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.000 [get_ports ap_clk]"]},
@@ -36,11 +36,13 @@
     "CSource": ["..\/..\/scurve_adder.cpp"],
     "Vhdl": [
       "impl\/vhdl\/scurve_adder36_CTRL_BUS_s_axi.vhd",
+      "impl\/vhdl\/scurve_adder36_murcU.vhd",
       "impl\/vhdl\/scurve_adder36_subkb.vhd",
       "impl\/vhdl\/scurve_adder36.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/scurve_adder36_CTRL_BUS_s_axi.v",
+      "impl\/verilog\/scurve_adder36_murcU.v",
       "impl\/verilog\/scurve_adder36_subkb.v",
       "impl\/verilog\/scurve_adder36.v"
     ],
@@ -99,7 +101,7 @@
         },
         "TUSER": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "8"
         },
         "TLAST": {
           "Type": "integer unsigned",
@@ -117,7 +119,7 @@
         "TKEEP": "16",
         "TLAST": "1",
         "TSTRB": "16",
-        "TUSER": "6"
+        "TUSER": "8"
       }
     },
     "interrupt": {
@@ -150,7 +152,7 @@
         },
         "TUSER": {
           "Type": "integer unsigned",
-          "Width": "6"
+          "Width": "8"
         },
         "TLAST": {
           "Type": "integer unsigned",
@@ -168,7 +170,7 @@
         "TKEEP": "64",
         "TLAST": "1",
         "TSTRB": "64",
-        "TUSER": "6"
+        "TUSER": "8"
       }
     },
     "s_axi_CTRL_BUS": {
@@ -177,7 +179,7 @@
       "mode": "slave",
       "port_prefix": "s_axi_CTRL_BUS",
       "param_prefix": "C_S_AXI_CTRL_BUS",
-      "addr_bits": "5",
+      "addr_bits": "6",
       "registers": [
         {
           "offset": "0x00",
@@ -374,6 +376,31 @@
               "reset_value": "0",
               "description": "Bit 31 to 0 Data signal of TEST_MODE"
             }]
+        },
+        {
+          "offset": "0x20",
+          "name": "K_TLAST",
+          "access": "W",
+          "reset_value": "0x0",
+          "description": "Data signal of K_TLAST",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "16",
+              "name": "K_TLAST",
+              "access": "W",
+              "reset_value": "0",
+              "description": "Bit 15 to 0 Data signal of K_TLAST"
+            },
+            {
+              "offset": "16",
+              "width": "16",
+              "name": "RESERVED",
+              "access": "R",
+              "reset_value": "0",
+              "description": "Reserved.  0s on read."
+            }
+          ]
         }
       ],
       "memories": "",
@@ -398,11 +425,11 @@
         },
         "AWADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "6"
         },
         "WDATA": {
           "Type": "integer unsigned",
-          "Width": "32"
+          "Width": "16"
         },
         "WSTRB": {
           "Type": "integer unsigned",
@@ -410,17 +437,17 @@
         },
         "ARADDR": {
           "Type": "integer unsigned",
-          "Width": "5"
+          "Width": "6"
         },
         "RDATA": {
           "Type": "integer unsigned",
-          "Width": "32"
+          "Width": "16"
         }
       },
       "data_width": "32",
       "port_width": {
-        "ARADDR": "5",
-        "AWADDR": "5",
+        "ARADDR": "6",
+        "AWADDR": "6",
         "RDATA": "32",
         "WDATA": "32",
         "WSTRB": "4"
@@ -438,7 +465,7 @@
     },
     "s_axi_CTRL_BUS_AWADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "6"
     },
     "s_axi_CTRL_BUS_WVALID": {
       "dir": "in",
@@ -466,7 +493,7 @@
     },
     "s_axi_CTRL_BUS_ARADDR": {
       "dir": "in",
-      "width": "5"
+      "width": "6"
     },
     "s_axi_CTRL_BUS_RVALID": {
       "dir": "out",
@@ -535,7 +562,7 @@
     },
     "in_stream0_TUSER": {
       "dir": "in",
-      "width": "6"
+      "width": "8"
     },
     "in_stream0_TLAST": {
       "dir": "in",
@@ -572,7 +599,7 @@
     },
     "out_stream_TUSER": {
       "dir": "out",
-      "width": "6"
+      "width": "8"
     },
     "out_stream_TLAST": {
       "dir": "out",
@@ -597,6 +624,14 @@
       "interfaceRef": "s_axi_CTRL_BUS",
       "dir": "in",
       "offset": "24",
+      "statusOffset": "NA",
+      "handshakeRef": "ap_none",
+      "Object": "CTRL_BUS"
+    },
+    "K_TLAST": {
+      "interfaceRef": "s_axi_CTRL_BUS",
+      "dir": "in",
+      "offset": "32",
       "statusOffset": "NA",
       "handshakeRef": "ap_none",
       "Object": "CTRL_BUS"
@@ -637,49 +672,47 @@
     "out_stream_V_data_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_dest_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_keep_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_strb_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_user_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_last_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     },
     "out_stream_V_id_V": {
       "interfaceRef": "out_stream",
       "dir": "out",
-      "firstOutLatency": "7"
+      "firstOutLatency": "11"
     }
   },
   "ModuleInfo": {
     "Hierarchy": {"ModuleName": "scurve_adder36"},
     "Metrics": {"scurve_adder36": {
         "Latency": {
-          "LatencyBest": "296",
+          "LatencyBest": "",
           "LatencyAvg": "",
-          "LatencyWorst": "9437339",
-          "PipelineIIMin": "297",
-          "PipelineIIMax": "9437340",
-          "PipelineII": "297 ~ 9437340",
+          "LatencyWorst": "",
+          "PipelineII": "",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -688,42 +721,51 @@
           "Uncertainty": "0.50",
           "Estimate": "3.43"
         },
-        "Loops": [
-          {
+        "Loops": [{
             "Name": "Loop 1",
-            "TripCount": "144",
-            "Latency": "144",
-            "PipelineII": "1",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 2",
             "TripCount": "",
-            "LatencyMin": "0",
-            "LatencyMax": "9437043",
-            "Latency": "0 ~ 9437043",
-            "PipelineII": "1",
-            "PipelineDepth": "5"
-          },
-          {
-            "Name": "Loop 3",
-            "TripCount": "144",
-            "Latency": "146",
-            "PipelineII": "1",
-            "PipelineDepth": "4"
-          }
-        ],
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepthMin": "369",
+            "PipelineDepthMax": "11796672",
+            "PipelineDepth": "369 ~ 11796672",
+            "Loops": [
+              {
+                "Name": "Loop 1.1",
+                "TripCount": "180",
+                "Latency": "180",
+                "PipelineII": "1",
+                "PipelineDepth": "1"
+              },
+              {
+                "Name": "Loop 1.2",
+                "TripCount": "",
+                "LatencyMin": "0",
+                "LatencyMax": "11796303",
+                "Latency": "0 ~ 11796303",
+                "PipelineII": "1",
+                "PipelineDepth": "5"
+              },
+              {
+                "Name": "Loop 1.3",
+                "TripCount": "180",
+                "Latency": "182",
+                "PipelineII": "1",
+                "PipelineDepth": "4"
+              }
+            ]
+          }],
         "Area": {
           "BRAM_18K": "32",
-          "FF": "4191",
-          "LUT": "3228",
-          "DSP48E": "0"
+          "DSP48E": "1",
+          "FF": "4255",
+          "LUT": "3330"
         }
       }}
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2020-07-16 15:08:12 MSK",
+    "Time": "2021-03-22 19:55:18 MSK",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.1"
   }

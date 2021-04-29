@@ -13,6 +13,9 @@
 #include "string.h"
 #include "xbasic_types.h"
 #include "own_data_types.h"
+#include "common.h"
+#include "xil_printf.h"
+#include "mmg.h"
 
 static u32 ip_addr_client;
 static u16 port_client;
@@ -24,6 +27,7 @@ u8 is_message = 0;
 char spare[10000];
 
 FileRecord files[MAX_FILES];
+extern InstrumentState instrumentState;
 
 static enum  {
 	no_state = 0,
@@ -44,22 +48,53 @@ static enum  {
 
 char file1[] = "The content of the file 1";
 char file2[] = "The content of the file 2";
+char big_file1[8000000];
+char big_file2[8000000];
+char big_file3[8000000];
+char big_file4[8000000];
+char big_file5[8000000];
+char big_file6[8000000];
+char big_file7[8000000];
+char big_file8[8000000];
 
-static int current_record, requested_record, spectrum_nbytes, portion_size;
+static int current_record, requested_record;
+static u32_t spectrum_nbytes, portion_size;
 static char* spectrum_addr;
 
 int dir_list_short;
+
+void CloseFile(int descriptor, u32 file_size) // shows the file on  FTP. Sets file size;
+{
+	if((descriptor >= 0) && (descriptor<MAX_FILES))
+	{
+		files[descriptor].is_closed = 1;
+		files[descriptor].length = file_size;
+	}
+}
 
 int GetFTPstate()
 {
 	return ftp_state;
 }
 
+void CreateTestFiles()
+{
+	CreateFile("file1.bin", file1, sizeof(file1), 0, file_regular);
+	CreateFile("file2.bin", file2, sizeof(file2), 0, file_regular);
+	CreateFile("big_file1.bin", file2, sizeof(big_file1), 0, file_regular);
+	CreateFile("big_file2.bin", file2, sizeof(big_file2), 0, file_regular);
+	CreateFile("big_file3.bin", file2, sizeof(big_file3), 0, file_regular);
+	CreateFile("big_file4.bin", file2, sizeof(big_file4), 0, file_regular);
+	CreateFile("big_file5.bin", file2, sizeof(big_file5), 0, file_regular);
+	CreateFile("big_file6.bin", file2, sizeof(big_file6), 0, file_regular);
+	CreateFile("big_file7.bin", file2, sizeof(big_file7), 0, file_regular);
+	CreateFile("big_file8.bin", file2, sizeof(big_file8), 0, file_regular);
+
+}
+
 void FileSystemInit()
 {
 	memset(files, 0, sizeof(files));
-	CreateFile("file1.bin", file1, sizeof(file1), 0, file_regular);
-	CreateFile("file2.bin", file2, sizeof(file2), 0, file_regular);
 	PrintFS();
 }
 
@@ -82,26 +117,43 @@ int CreateFile(char* filename, char* pData, int size, uint32_t unix_time, File_t
 		if(files[i].is_presented == 0)
 		{
 			strcpy(files[i].filename, filename);
+			files[i].is_closed = 0;
 			files[i].length = size;
 			files[i].file_type = file_type;
 			files[i].unix_time = unix_time;
 			files[i].is_presented = 1;
 			files[i].link = pData;
+			files[i].is_closed = 1;
 			return i;
 		}
 	}
 	return TOO_MANY_FILES;
 }
 
-int DeleteAllFiles()
+int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint32_t mmg_file_descriptor)
 {
-	int i;
-	for(i=0;i<MAX_FILES;i++)
-	{
-		files[i].is_presented = 0;
-		((DATA_TYPE_SCI_ALLTRG_RECORD*)(files[i].link))->is_occupied = 0;
+	char filename_str[20];
+	int ret;
+	if(data_type == DATA_TYPE_L1) {
+		sprintf(filename_str, FILENAME_L1, instrumentState.file_counter_l1++);
 	}
+	else if(data_type == DATA_TYPE_L3) {
+		sprintf(filename_str, FILENAME_L3, instrumentState.file_counter_l3++);
+	}
+	ret = CreateFile(filename_str, pData, size, unix_time, file_scidata);
+	if(ret == TOO_MANY_FILES) {
+		print("CreateSciFile: TOO_MANY_FILES\n\r");
+		return TOO_MANY_FILES;
+	}
+	if( (ret<0) || ret >= MAX_FILES) {
+		xil_printf("CreateFile returns error %d\n\r", ret);
+		return 0;
+	}
+	files[ret].is_closed = 0; //Don't show this file until it will be closed
+	files[ret].mmg_file_descriptor = mmg_file_descriptor;
+	return ret;
 }
+
 
 int DeleteFile(char* filename)
 {
@@ -127,10 +179,10 @@ int DeleteFile(char* filename)
 void SendDir(int is_short)
 {
 	dir_list_short = is_short;
-	if(ftp_state == no_state)
+	//if(ftp_state == no_state)
 		ftp_state = start_send_dir;
-	else
-		print("Send data SM is not in the IDLE state!\r\n");
+	//else
+	//	print("Send data SM is not in the IDLE state!\r\n");
 }
 
 void SendFile()
@@ -141,12 +193,15 @@ void SendFile()
 		spectrum_nbytes = files[requested_record].length;
 		spectrum_addr = files[requested_record].link;
 		//clear flag record exists
-		files[requested_record].is_presented = 0;
-		if(files[requested_record].file_type == file_scidata)
-			((DATA_TYPE_SCI_ALLTRG_RECORD*)(files[requested_record].link))->is_occupied = 0;
+		//files[requested_record].is_presented = 0;//17-03-2021
+//		if(files[requested_record].file_type == file_scidata) {
+//			xil_printf("Rm: mmgid=%d (%s) ", requested_record, files[requested_record].filename);
+//			MmgDeleteSciFile(files[requested_record].mmg_file_descriptor);
+//		}
+			//((DATA_TYPE_SCI_ALLTRG_RECORD*)(files[requested_record].link))->is_occupied = 0; was in Mini
 	}
 	else
-		print("Send data SM is not in the IDLE state!\r\n");
+		print("SendFile: Send data SM is not in the IDLE state!\r\n");
 }
 
 void RestartFile(u32 point)
@@ -158,14 +213,7 @@ void RestartFile(u32 point)
 		spectrum_addr = files[requested_record].link + point;
 	}
 	else
-		print("Send data SM is not in the IDLE state!\r\n");
-}
-
-void SendNotReplyMessage(struct tcp_pcb *tpcb, char* text)
-{
-	ctrl_tpcb = tpcb;
-	strcpy(not_reply_message, text);
-	is_message = 1;
+		print("RestartFile: Send data SM is not in the IDLE state!\r\n");
 }
 
 void ProcessFTPCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
@@ -174,10 +222,9 @@ void ProcessFTPCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	char str3[250];
 	int ip0, ip1, ip2, ip3, port0, port1, i;
 	char filename[MAX_FILENAME_LEN];
-	u32 param;
 	if(sscanf(p->payload, "USER %s", str2) == 1)
 	{
-		sprintf(str3, "331 Please specify the password.\r\n", str2);
+		sprintf(str3, "331 Please specify the password.\r\n");
 		tcp_write(tpcb, str3, strlen(str3), 1);
 	}
 	else if(strncmp(p->payload, "PASS", 4) == 0)
@@ -259,7 +306,7 @@ void ProcessFTPCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		}
 		if(i==MAX_FILES)
 		{
-			char ok_eomess_str[] = "550 Requested action ot taken. File unavailable\r\n";
+			char ok_eomess_str[] = "550 Requested action not taken. File unavailable\r\n";
 			tcp_write(tpcb, ok_eomess_str, strlen(ok_eomess_str), 1);
 		}
 		else
@@ -270,10 +317,15 @@ void ProcessFTPCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 
 		}
 	}
-	else if(sscanf(p->payload, "REST %s",
-			param) == 1)
+	else if(sscanf(p->payload, "REST %s", filename) == 1)
 	{
-		RestartFile(param);
+		for(i=0;i<MAX_FILES;i++)
+		{
+			if(files[i].is_presented == 1)
+				if(strcmp(filename, files[i].filename) == 0)
+					return;
+		}
+		RestartFile(i);
 	}
 	else if(sscanf(p->payload, "DELE %s",
 			filename) == 1)
@@ -288,7 +340,8 @@ void ProcessFTPCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 					files[i].is_presented = 0;
 					if(files[i].file_type == file_scidata)
 					{
-						((DATA_TYPE_SCI_ALLTRG_RECORD*)(files[i].link))->is_occupied = 0;
+						//((DATA_TYPE_SCI_ALLTRG_RECORD*)(files[i].link))->is_occupied = 0; was in Mini
+						MmgDeleteSciFile(files[i].mmg_file_descriptor);
 						//xil_printf("link addr %08X freed\n\r", files[i].link);
 					}
 					char ok_eomess_str[] = "250 File successfully deleted\r\n";
@@ -342,7 +395,7 @@ static err_t ftp_send_data(char * data, u16_t len)
 	err_t err;
 	//print("ftp_send_data()...\r\n");
 	tcp_sent(ftpdata_pcb, ftpdata_sent_callback);
-	err = tcp_write(ftpdata_pcb, data, len, 1);
+	err = tcp_write(ftpdata_pcb, data, len, 1);//TCP_WRITE_FLAG_COPY
 	if (err != ERR_OK)
 	{
 		xil_printf("BIN: ftp_send_data: Error on tcp_write: %d, len=%d, tpcb=0x%08x\r\n", err, len, ftpdata_pcb);
@@ -414,6 +467,7 @@ static err_t sent_callback(void *arg, struct tcp_pcb *tpcb,
 {
 	//print("sent_callback\n\r");
 	ctrl_tpcb = tpcb;
+	return ERR_OK;
 }
 
 static err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
@@ -522,7 +576,7 @@ void send_data_sm()
 	//char dir_sent_str[] = "226 Directory send OK.\r\n";
 	int buf_sz, ret;
 	char file_record[100];
-	char str3[250];
+	//char str3[250];
 	switch(ftp_state)
 	{
 	case no_state:
@@ -547,7 +601,7 @@ void send_data_sm()
 	case look_for_the_next_record:
 		if(current_record >= MAX_FILES)
 			ftp_state = close_ftp_data;
-		else if(files[current_record].is_presented)
+		else if(files[current_record].is_presented && files[current_record].is_closed)
 			ftp_state = send_filename_record;
 		else
 			current_record++;
@@ -556,8 +610,8 @@ void send_data_sm()
 		if(dir_list_short == 0)
 			sprintf(file_record, "-r--r--r-- 1 1001 1001 %d Jan 01 2000 %s\r\n", (int)files[current_record].length, files[current_record].filename);
 		else
-			sprintf(file_record, "%s\r\n", (int)files[current_record].length, files[current_record].filename);
-		//print(file_record);
+			sprintf(file_record, "%s\r\n", /*(int)files[current_record].length,*/ files[current_record].filename);
+		xil_printf("Lst: %s\n\r", file_record);
 		ftp_send_data(file_record, strlen(file_record));
 		current_record++;
 		ftp_state = wait_state;
@@ -608,7 +662,10 @@ void send_data_sm()
 		if(ret == 0)
 		{
 			spectrum_addr += portion_size;
-			spectrum_nbytes -= portion_size;
+			if(spectrum_nbytes >= portion_size)
+				spectrum_nbytes -= portion_size;
+			else
+				spectrum_nbytes = 0;
 			//xil_printf("%d\n\r", spectrum_nbytes);
 			ftp_state = wait_state2;
 		}
@@ -642,32 +699,24 @@ void send_data_sm()
 		{
 //			sprintf(str3, "150 Opening BINARY mode data connection for %s (%d bytes).\r\n", files[requested_record].filename, (int)files[requested_record].length);
 //			tcp_write(ctrl_tpcb, str3, strlen(str3), 1);
+			files[requested_record].is_presented = 0;//17-03-2021
 			char str2[] = "226 Transfer complete.\r\n";
 			err_t err = tcp_write(ctrl_tpcb, str2, strlen(str2), 1);
 			err_t err2 = tcp_output(ctrl_tpcb);
 			//err_t err = tcp_output(ctrl_tpcb);
+			//remove the file both from files[] and mmg sciFiles[]
+			if(files[requested_record].file_type == file_scidata) {
+				xil_printf("Rm: mmgid=%d (%s) ", requested_record, files[requested_record].filename);
+				MmgDeleteSciFile(files[requested_record].mmg_file_descriptor);
+			}
+
 			ftp_state = no_state;
 			//xil_printf("Sent 226. err=%d err2=%d\n\r", err, err2);
 			break;
 		}
 	}
-
-	//if(ftp_state != 0)
-	//	xil_printf(" %d\n\r", ftp_state);
 }
 
-void SendAgain()
-{
-	char str2[] = "226 Transfer complete.\r\n";
-	tcp_write(ctrl_tpcb, str2, strlen(str2), 1);
-}
-
-//send not reply messages
-void TestFunc()//if(is_message)
-{
-	is_message = 0;
-	tcp_write(ctrl_tpcb, not_reply_message, strlen(not_reply_message), 1);
-}
 
 int RemoveAllSciDataFilesFromFTP()
 {

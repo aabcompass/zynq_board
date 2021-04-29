@@ -74,7 +74,8 @@ entity flow_control_d1 is
   		unix_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --22
   		maxis_trans_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --23
   		maxis_accepted_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --24
-  		trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0) --25
+  		trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --25
+  		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0) --26
   );
 end flow_control_d1;  
      
@@ -298,6 +299,7 @@ architecture Behavioral of flow_control_d1 is
 
 	attribute keep : string; 
 	attribute keep of s_axis_tlast_d1: signal is "true";  
+	attribute keep of m_axis_tlast_fc: signal is "true";  
 	attribute keep of m_axis_tvalid_key: signal is "true";  
 	attribute keep of m_axis_tready_key: signal is "true";  
 	attribute keep of axis_fifo_fc_count: signal is "true";  
@@ -321,6 +323,9 @@ architecture Behavioral of flow_control_d1 is
 	attribute keep of release: signal is "true";  
 
 	signal s_axis_ta_event_tdata_d1: std_logic_vector(31 downto 0) := (others => '0');
+	
+	signal n_glob_cycles_i: std_logic_vector(31 downto 0) := (others => '0');
+	signal glob_cycles_gtu_cnt: std_logic_vector(27 downto 0) := X"0000001";
 
 
 begin
@@ -519,15 +524,23 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	latency_process: process(s_axis_aclk)
 	begin
 		if(rising_edge(s_axis_aclk)) then
-			trig_d1 <= trig;
-			trig_d2 <= trig_d1;
-			trig_front <= trig_d1 and (not trig_d2);
-			if(trig = '1') then
-				periodic_trig_latch <= periodic_trig;
-				self_trig_latch <= self_trig;
-				ext_trig_latch <= ext_trig;
-				trig_immediate_latch <= trig_immediate;
-				ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
+			if(is_started = '1') then
+				trig_d1 <= trig;
+				trig_d2 <= trig_d1;
+				trig_front <= trig_d1 and (not trig_d2);
+				if(trig = '1') then
+					periodic_trig_latch <= periodic_trig;
+					self_trig_latch <= self_trig;
+					ext_trig_latch <= ext_trig;
+					trig_immediate_latch <= trig_immediate;
+					ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
+				end if;
+			else
+				trig_front <= '0';
+				periodic_trig_latch <= '0';
+				ext_trig_latch <= '0';
+				trig_immediate_latch <= '0';
+				ta_trig_param_latch <= (others => '0');
 			end if;
 		end if;
 	end process;
@@ -566,7 +579,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 											trig_cnt <= (others => '0');
 											trig_type_i <= (others => '0');
 											trig_latch <= '0';		
-										elsif(trig = '1') then 
+										elsif(trig = '1' and is_started = '1') then 
 											if(trig_cnt < number_of_triggers) then
 												state := state + 1;
 												trig_type_i <= (others => '0');
@@ -682,7 +695,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	--m_axis_tready_key <= m_axis_tready_buf and (pass or m_axis_tready_sink);
 	m_axis_tready_key <= (pass and m_axis_tready_fc) or m_axis_tready_sink;
 	m_axis_tvalid_fc <= m_axis_tvalid_key and pass;
-	--m_axis_tlast <= m_axis_tlast_key and pass;
+	m_axis_tlast_fc <= m_axis_tlast_key and pass;
 
 	dwc : axis_dwidth_converter_0
 	  PORT MAP (
@@ -691,7 +704,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	    s_axis_tvalid => m_axis_tvalid_fc,
 	    s_axis_tready => m_axis_tready_fc,
 	    s_axis_tdata => m_axis_tdata_key,
-	    s_axis_tlast => m_axis_tlast_key,
+	    s_axis_tlast => m_axis_tlast_fc,
 	    m_axis_tvalid => m_axis_tvalid_dwc,
 	    m_axis_tready => m_axis_tready_dwc,
 	    m_axis_tdata => m_axis_tdata_dwc,
@@ -792,10 +805,10 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 				tlast_out_cnt <= X"0000";
 			else
 				if(m_axis_tvalid_dwc = '1') then
-					if(tlast_out_cnt = X"8FFE") then --8FFE was in Mini
+					if(tlast_out_cnt = X"B3FE") then --8FFE was in Mini
 						tlast_out_cnt <= tlast_out_cnt + 1;
 						m_axis_tlast_dwc2 <= '1';
-					elsif(tlast_out_cnt = X"8FFF") then 
+					elsif(tlast_out_cnt = X"B3FF") then 
 						tlast_out_cnt <= X"0000";
 						m_axis_tlast_dwc2 <= '0';
 					else
@@ -874,6 +887,19 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	
 	trig_all_cnt <= trig_all_cnt_i;
 
-
+	n_glob_cycles_proc: process(s_axis_aclk) 
+		begin
+			if(rising_edge(s_axis_aclk)) then
+				if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
+					if(glob_cycles_gtu_cnt = n_gtus_per_cycle) then
+						glob_cycles_gtu_cnt <= X"0000001";
+						n_glob_cycles_i <= n_glob_cycles_i + 1;
+					else
+						glob_cycles_gtu_cnt <= glob_cycles_gtu_cnt + 1;
+					end if;	
+				end if;
+				n_glob_cycles <= n_glob_cycles_i;
+			end if;
+		end process; 
 		
 end Behavioral;

@@ -2,11 +2,11 @@
 # Webtalk v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Thu Jul 16 15:09:12 2020
-# Process ID: 12253
-# Current directory: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog
-# Command line: wbtcv -mode batch -source /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.dir/scurve_adder36/webtalk/xsim_webtalk.tcl -notrace
-# Log file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/webtalk.log
-# Journal file: /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/webtalk.jou
+# Start of session at: Wed Feb 17 15:38:27 2021
+# Process ID: 28239
+# Current directory: /home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog
+# Command line: wbtcv -mode batch -source /home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.dir/scurve_adder36/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/webtalk.log
+# Journal file: /home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/webtalk.jou
 #-----------------------------------------------------------
-source /home/alx/xil_proj/zynq_board/current/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.dir/scurve_adder36/webtalk/xsim_webtalk.tcl -notrace
+source /home/alx/xil_proj/zynq_board/master1/ip_hls_repo/scurve_adder_36/scurve_adder_36/solution1/sim/verilog/xsim.dir/scurve_adder36/webtalk/xsim_webtalk.tcl -notrace

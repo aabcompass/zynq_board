@@ -31,6 +31,10 @@
 // 0x18 : Data signal of TEST_MODE
 //        bit 31~0 - TEST_MODE[31:0] (Read/Write)
 // 0x1c : reserved
+// 0x20 : Data signal of K_TLAST
+//        bit 15~0 - K_TLAST[15:0] (Read/Write)
+//        others   - reserved
+// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XSCURVE_ADDER36_CTRL_BUS_ADDR_AP_CTRL        0x00
@@ -41,4 +45,6 @@
 #define XSCURVE_ADDER36_CTRL_BUS_BITS_N_ADDS_DATA    16
 #define XSCURVE_ADDER36_CTRL_BUS_ADDR_TEST_MODE_DATA 0x18
 #define XSCURVE_ADDER36_CTRL_BUS_BITS_TEST_MODE_DATA 32
+#define XSCURVE_ADDER36_CTRL_BUS_ADDR_K_TLAST_DATA   0x20
+#define XSCURVE_ADDER36_CTRL_BUS_BITS_K_TLAST_DATA   16
 

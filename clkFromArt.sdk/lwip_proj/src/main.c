@@ -57,6 +57,7 @@
 
 #include "own_data_types.h"
 #include "common.h"
+#include "data_provider.h"
 
 
 /* defined by each RAW mode application */
@@ -176,9 +177,6 @@ int LoadArtix(char * filename)
 int main()
 {
 	print("Starting main program...\n\r");
-	print("Memory allocation for big arrays...\n\r");
-	mem_alloc();
-
 
 	#if LWIP_IPV6==0
 	ip_addr_t ipaddr, netmask, gw;
@@ -304,7 +302,7 @@ int main()
 
 	print("Starting Artix clock\n\r");
 	SetGtuFreq1us(1);
-	ArtixClkEn();
+	ArtixClkEn(1);
 
 
 
@@ -327,26 +325,36 @@ int main()
 
 	print("HLS peripherals initialization...\n\r");
 	ResetScurveAdder();
-	InitHLS_peripherals();
+	ResetDataConverter();
+	InitHLS_peripherals(1, N_INTEGRATION);
 
 	print("Starting TCP client Telnet server on port 23 ...\n\r");
 	start_telnet_cmd();
 
+	print("MmgInit ...\n\r");
+	MmgInit();
 	print("Memory file system init ...\n\r");
 	FileSystemInit();
+
 	print("Starting FTP server ...\n\r");
 	start_ftp_server_cmd();
+
+	print("Send default mapping ...\n\r");
+	SendMapping();
 
 	print("Flow control initialization...\n\r");
 	FlowControlInit_D1();
 
 
 	/* start the application (web server, rxtest, txtest, etc..) */
-	start_application();
+	//start_application();
 	print("DMA_init()\n\r");
 	DMA_init();
 
 	StartDataProviderInitial();
+	DataProvEnOutput();
+
+	PrintDataSizes();
 
 	/* receive and process packets */
 	while (1) {
@@ -360,18 +368,18 @@ int main()
 		}
 		xemacif_input(echo_netif);
 		send_data_sm();
-		DataPathSM();
+		scurve_sm();
+		//DataPathSM();
 		L1_trigger_service();
-		StopSM();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))
 		{
-			c_uart[0] = XUartPs_RecvByte (XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/);
+			c_uart[0] = XUartPs_RecvByte(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/);
 			print(c_uart);
 			ProcessUartCommands(echo_netif, c_uart[0]);
 			//print("*");
 		}
-		HVInterruptService();
+		//HVInterruptService(); // leads to FTP server stalls after few seconds
 		//print(".");
 	}
   

@@ -10,7 +10,7 @@ module scurve_adder36_subkb_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q
 
 parameter DWIDTH = 32;
 parameter AWIDTH = 8;
-parameter MEM_SIZE = 144;
+parameter MEM_SIZE = 180;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -78,7 +78,7 @@ module scurve_adder36_subkb(
     q1);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd144;
+parameter AddressRange = 32'd180;
 parameter AddressWidth = 32'd8;
 input reset;
 input clk;

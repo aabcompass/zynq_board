@@ -822,14 +822,18 @@ int HV_setCathodeVoltage(int list[NUM_OF_HV])
 }
 
 
+
+// Setup interrupt system for HVPS
+// This function is called when user calls "hvps turnon" via telnet
+
+#ifdef USE_HVPS_INTR
+
 void Enable_HVHK_Interrupts(XScuGic* pIntc)
 {
 	/* Enable the interrupt for the GPIO device.*/
 	XScuGic_Enable(pIntc, XPAR_FABRIC_HV_HK_V1_0_0_INTR_OUT_INTR);
 }
 
-// Setup interrupt system for HVPS
-// This function is called when user calls "hvps turnon" via telnet
 
 void SetupHVPSIntrSystem(XScuGic* pIntc)
 {
@@ -862,3 +866,4 @@ void SetupHVPSIntrSystem(XScuGic* pIntc)
 		return;
 	}
 }
+#endif /*USE_HVPS_INTR*/

@@ -13,6 +13,10 @@
 #define REGW_DATAPROV_FLAGS		0
 #define REGW_DATACONV_RESET		1
 #define REGW_DATAPROV_N_FRAMES	3
+#define REGW_DATAPROV_TEST_MODE	4
+#define REGW_DATAPROV_INCR_PER	5
+#define REGW_DATAPROV_PATT	6 /*7:0 MAX, 15:8 INIT*/
+
 #define REGW_DATAPROV_FLAGS2	10
 #define REGW_DATAPROV_PMTZERO_01	11
 #define REGW_DATAPROV_PMTZERO_2	12
@@ -21,10 +25,20 @@
 
 //REGW_DATAPROV_FLAGS
 #define BIT_START_SIG			0 /*Start Data Provider*/
-#define BIT_RUN					1 /*Start/stop in case of infinite mode*/
+#define BIT_RUN					1 /*Start/stop in case of infinite mode. Must be asserted  in finite mode*/
+#define BIT_RESET_DOZER			2
+#define BIT_EN_OUTPUT			3
+
 //REGW_DATACONV_RESET
 #define BIT_DATACONV_RESET		0
 #define BIT_SCURVE_ADDER_RESET	1
+
+//REGW_DATAPROV_TEST_MODE
+#define BIT_TEST_GEN_ON			0
+#define BIT_TEST_MODE_ON		1
+//REGW_DATAPROV_PATT
+#define BIT_PATT_MAX			0
+#define BIT_PATT_INIT			8
 //REGW_DATAPROV_FLAGS2
 #define BIT_INFINITE			0 /*Provide data infinitely regardless of REGW_DATAPROV_N_FRAMES*/
 #define BIT_GTU_1US				1 /*GTU clk mode - 1 or 2.5.  Must be setup prior to starts*/
@@ -39,7 +53,15 @@ int IsDataProviderStarted();
 void RunArtix(u32 is_gtu_1us);
 void ArtixClkEn(u32 en);
 void SetGtuFreq1us(u32 is_gtu_1us);
+void StartDataProvider();
 void StartDataProviderForLive();
 void StopDataProviderForLive();
+void StartDataProviderForNFrames(u32 n_frames);
+void StartDataProviderFor1D3frame(u32 n_integration);
+void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max);
+void DataProvEnOutput();
+void ArtixClkEn(u32 en);
+void ResetTriggerService_D1();
+u32 IsDataProviderPass();
 
 #endif /* SRC_DATA_PROVIDER_H_ */

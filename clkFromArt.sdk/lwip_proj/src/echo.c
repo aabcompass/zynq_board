@@ -94,40 +94,40 @@ err_t accept_callback(void *arg, struct tcp_pcb *newpcb, err_t err)
 }
 
 
-int start_application()
-{
-	struct tcp_pcb *pcb;
-	err_t err;
-	unsigned port = 7;
-
-	/* create new TCP PCB structure */
-	pcb = tcp_new_ip_type(IPADDR_TYPE_ANY);
-	if (!pcb) {
-		xil_printf("Error creating PCB. Out of Memory\n\r");
-		return -1;
-	}
-
-	/* bind to specified @port */
-	err = tcp_bind(pcb, IP_ANY_TYPE, port);
-	if (err != ERR_OK) {
-		xil_printf("Unable to bind to port %d: err = %d\n\r", port, err);
-		return -2;
-	}
-
-	/* we do not need any arguments to callback functions */
-	tcp_arg(pcb, NULL);
-
-	/* listen for connections */
-	pcb = tcp_listen(pcb);
-	if (!pcb) {
-		xil_printf("Out of memory while tcp_listen\n\r");
-		return -3;
-	}
-
-	/* specify callback to use for incoming connections */
-	tcp_accept(pcb, accept_callback);
-
-	xil_printf("TCP echo server started @ port %d\n\r", port);
-
-	return 0;
-}
+//int start_application()
+//{
+//	struct tcp_pcb *pcb;
+//	err_t err;
+//	unsigned port = 7;
+//
+//	/* create new TCP PCB structure */
+//	pcb = tcp_new_ip_type(IPADDR_TYPE_ANY);
+//	if (!pcb) {
+//		xil_printf("Error creating PCB. Out of Memory\n\r");
+//		return -1;
+//	}
+//
+//	/* bind to specified @port */
+//	err = tcp_bind(pcb, IP_ANY_TYPE, port);
+//	if (err != ERR_OK) {
+//		xil_printf("Unable to bind to port %d: err = %d\n\r", port, err);
+//		return -2;
+//	}
+//
+//	/* we do not need any arguments to callback functions */
+//	tcp_arg(pcb, NULL);
+//
+//	/* listen for connections */
+//	pcb = tcp_listen(pcb);
+//	if (!pcb) {
+//		xil_printf("Out of memory while tcp_listen\n\r");
+//		return -3;
+//	}
+//
+//	/* specify callback to use for incoming connections */
+//	tcp_accept(pcb, accept_callback);
+//
+//	xil_printf("TCP echo server started @ port %d\n\r", port);
+//
+//	return 0;
+//}

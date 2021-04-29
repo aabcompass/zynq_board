@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master1/ip_repo/SPB2_TRIGGER/SPB2_TRIGGER.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master2/ip_repo/SPB2_TRIGGER/SPB2_TRIGGER.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6e6bdbca143c45cfb98f0d4bc855476b"/>
@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/."/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -97,6 +98,9 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/archive_project_summary.txt"/>
+      <File Path="$PPRDIR/component.xml">
+        <FileInfo SFType="IPXACT"/>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="SPB2"/>
@@ -182,6 +186,7 @@
     <FileSet Name="accum_2_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/accum_2_4">
       <File Path="$PSRCDIR/sources_1/ip/accum_2_4/accum_2_4.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/accum_2_4/accum_2_4.xci"/>
           <Attr Name="ImportTime" Val="1599481222"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -197,6 +202,7 @@
     <FileSet Name="accum_4_5" Type="BlockSrcs" RelSrcDir="$PSRCDIR/accum_4_5">
       <File Path="$PSRCDIR/sources_1/ip/accum_4_5/accum_4_5.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/accum_4_5/accum_4_5.xci"/>
           <Attr Name="ImportTime" Val="1599745983"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -212,6 +218,7 @@
     <FileSet Name="accum_5_9" Type="BlockSrcs" RelSrcDir="$PSRCDIR/accum_5_9">
       <File Path="$PSRCDIR/sources_1/ip/accum_5_9/accum_5_9.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/accum_5_9/accum_5_9.xci"/>
           <Attr Name="ImportTime" Val="1600179272"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -227,6 +234,7 @@
     <FileSet Name="ACCUM_9_14" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ACCUM_9_14">
       <File Path="$PSRCDIR/sources_1/ip/ACCUM_9_14/ACCUM_9_14.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/ACCUM_9_14/ACCUM_9_14.xci"/>
           <Attr Name="ImportTime" Val="1600431448"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -287,6 +295,7 @@
     <FileSet Name="AXI_FIFO" Type="BlockSrcs" RelSrcDir="$PSRCDIR/AXI_FIFO">
       <File Path="$PSRCDIR/sources_1/ip/AXI_FIFO/AXI_FIFO.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/AXI_FIFO/AXI_FIFO.xci"/>
           <Attr Name="ImportTime" Val="1597507115"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -302,6 +311,7 @@
     <FileSet Name="clk_wiz_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0">
       <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci"/>
           <Attr Name="ImportTime" Val="1597507116"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -362,6 +372,7 @@
     <FileSet Name="fifo_sum_576x32" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fifo_sum_576x32">
       <File Path="$PSRCDIR/sources_1/ip/fifo_sum_576x32/fifo_sum_576x32.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/fifo_sum_576x32/fifo_sum_576x32.xci"/>
           <Attr Name="ImportTime" Val="1597507115"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -377,6 +388,7 @@
     <FileSet Name="MACROCELL_BUFFER" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MACROCELL_BUFFER">
       <File Path="$PSRCDIR/sources_1/ip/MACROCELL_BUFFER/MACROCELL_BUFFER.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/MACROCELL_BUFFER/MACROCELL_BUFFER.xci"/>
           <Attr Name="ImportTime" Val="1600085997"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -407,6 +419,7 @@
     <FileSet Name="NLENGHT_BUFFER" Type="BlockSrcs" RelSrcDir="$PSRCDIR/NLENGHT_BUFFER">
       <File Path="$PSRCDIR/sources_1/ip/NLENGHT_BUFFER/NLENGHT_BUFFER.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../vhdl/jemeuso/SPB2_TRIGGER/SPB2_TRIGGER.srcs/sources_1/ip/NLENGHT_BUFFER/NLENGHT_BUFFER.xci"/>
           <Attr Name="ImportTime" Val="1600419568"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -460,169 +473,151 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z035ffg900-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z035ffg900-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="accum_2_4_synth_1" Type="Ft3:Synth" SrcSet="accum_2_4" Part="xc7z035ffg900-2" ConstrsSet="accum_2_4" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/accum_2_4_synth_1" IncludeInArchive="true">
+    <Run Id="accum_2_4_synth_1" Type="Ft3:Synth" SrcSet="accum_2_4" Part="xc7z035ffg900-2" ConstrsSet="accum_2_4" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="accum_4_5_synth_1" Type="Ft3:Synth" SrcSet="accum_4_5" Part="xc7z035ffg900-2" ConstrsSet="accum_4_5" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/accum_4_5_synth_1" IncludeInArchive="true">
+    <Run Id="accum_4_5_synth_1" Type="Ft3:Synth" SrcSet="accum_4_5" Part="xc7z035ffg900-2" ConstrsSet="accum_4_5" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="accum_5_9_synth_1" Type="Ft3:Synth" SrcSet="accum_5_9" Part="xc7z035ffg900-2" ConstrsSet="accum_5_9" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/accum_5_9_synth_1" IncludeInArchive="true">
+    <Run Id="accum_5_9_synth_1" Type="Ft3:Synth" SrcSet="accum_5_9" Part="xc7z035ffg900-2" ConstrsSet="accum_5_9" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ACCUM_9_14_synth_1" Type="Ft3:Synth" SrcSet="ACCUM_9_14" Part="xc7z035ffg900-2" ConstrsSet="ACCUM_9_14" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ACCUM_9_14_synth_1" IncludeInArchive="true">
+    <Run Id="ACCUM_9_14_synth_1" Type="Ft3:Synth" SrcSet="ACCUM_9_14" Part="xc7z035ffg900-2" ConstrsSet="ACCUM_9_14" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="accum_10_24_synth_1" Type="Ft3:Synth" SrcSet="accum_10_24" Part="xc7z035ffg900-2" ConstrsSet="accum_10_24" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/accum_10_24_synth_1" IncludeInArchive="true">
+    <Run Id="accum_10_24_synth_1" Type="Ft3:Synth" SrcSet="accum_10_24" Part="xc7z035ffg900-2" ConstrsSet="accum_10_24" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="adder_8bit_synth_1" Type="Ft3:Synth" SrcSet="adder_8bit" Part="xc7z035ffg900-2" ConstrsSet="adder_8bit" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/adder_8bit_synth_1" IncludeInArchive="true">
+    <Run Id="adder_8bit_synth_1" Type="Ft3:Synth" SrcSet="adder_8bit" Part="xc7z035ffg900-2" ConstrsSet="adder_8bit" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="adder_9bit_synth_1" Type="Ft3:Synth" SrcSet="adder_9bit" Part="xc7z035ffg900-2" ConstrsSet="adder_9bit" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/adder_9bit_synth_1" IncludeInArchive="true">
+    <Run Id="adder_9bit_synth_1" Type="Ft3:Synth" SrcSet="adder_9bit" Part="xc7z035ffg900-2" ConstrsSet="adder_9bit" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="AXI_FIFO_synth_1" Type="Ft3:Synth" SrcSet="AXI_FIFO" Part="xc7z035ffg900-2" ConstrsSet="AXI_FIFO" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/AXI_FIFO_synth_1" IncludeInArchive="true">
+    <Run Id="AXI_FIFO_synth_1" Type="Ft3:Synth" SrcSet="AXI_FIFO" Part="xc7z035ffg900-2" ConstrsSet="AXI_FIFO" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="clk_wiz_0" Part="xc7z035ffg900-2" ConstrsSet="clk_wiz_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/clk_wiz_0_synth_1" IncludeInArchive="true">
+    <Run Id="clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="clk_wiz_0" Part="xc7z035ffg900-2" ConstrsSet="clk_wiz_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="cordic_sqrt24_synth_1" Type="Ft3:Synth" SrcSet="cordic_sqrt24" Part="xc7z035ffg900-2" ConstrsSet="cordic_sqrt24" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/cordic_sqrt24_synth_1" IncludeInArchive="true">
+    <Run Id="cordic_sqrt24_synth_1" Type="Ft3:Synth" SrcSet="cordic_sqrt24" Part="xc7z035ffg900-2" ConstrsSet="cordic_sqrt24" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fifo_pixel_synth_1" Type="Ft3:Synth" SrcSet="fifo_pixel" Part="xc7z035ffg900-2" ConstrsSet="fifo_pixel" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fifo_pixel_synth_1" IncludeInArchive="true">
+    <Run Id="fifo_pixel_synth_1" Type="Ft3:Synth" SrcSet="fifo_pixel" Part="xc7z035ffg900-2" ConstrsSet="fifo_pixel" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fifo_sum_576x16_synth_1" Type="Ft3:Synth" SrcSet="fifo_sum_576x16" Part="xc7z035ffg900-2" ConstrsSet="fifo_sum_576x16" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fifo_sum_576x16_synth_1" IncludeInArchive="true">
+    <Run Id="fifo_sum_576x16_synth_1" Type="Ft3:Synth" SrcSet="fifo_sum_576x16" Part="xc7z035ffg900-2" ConstrsSet="fifo_sum_576x16" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fifo_sum_576x32_synth_1" Type="Ft3:Synth" SrcSet="fifo_sum_576x32" Part="xc7z035ffg900-2" ConstrsSet="fifo_sum_576x32" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fifo_sum_576x32_synth_1" IncludeInArchive="true">
+    <Run Id="fifo_sum_576x32_synth_1" Type="Ft3:Synth" SrcSet="fifo_sum_576x32" Part="xc7z035ffg900-2" ConstrsSet="fifo_sum_576x32" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="MACROCELL_BUFFER_synth_1" Type="Ft3:Synth" SrcSet="MACROCELL_BUFFER" Part="xc7z035ffg900-2" ConstrsSet="MACROCELL_BUFFER" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MACROCELL_BUFFER_synth_1" IncludeInArchive="true">
+    <Run Id="MACROCELL_BUFFER_synth_1" Type="Ft3:Synth" SrcSet="MACROCELL_BUFFER" Part="xc7z035ffg900-2" ConstrsSet="MACROCELL_BUFFER" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="multadd_10a12b24c_synth_1" Type="Ft3:Synth" SrcSet="multadd_10a12b24c" Part="xc7z035ffg900-2" ConstrsSet="multadd_10a12b24c" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/multadd_10a12b24c_synth_1" IncludeInArchive="true">
+    <Run Id="multadd_10a12b24c_synth_1" Type="Ft3:Synth" SrcSet="multadd_10a12b24c" Part="xc7z035ffg900-2" ConstrsSet="multadd_10a12b24c" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="NLENGHT_BUFFER_synth_1" Type="Ft3:Synth" SrcSet="NLENGHT_BUFFER" Part="xc7z035ffg900-2" ConstrsSet="NLENGHT_BUFFER" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/NLENGHT_BUFFER_synth_1" IncludeInArchive="true">
+    <Run Id="NLENGHT_BUFFER_synth_1" Type="Ft3:Synth" SrcSet="NLENGHT_BUFFER" Part="xc7z035ffg900-2" ConstrsSet="NLENGHT_BUFFER" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="STHR_MEMORY_synth_1" Type="Ft3:Synth" SrcSet="STHR_MEMORY" Part="xc7z035ffg900-2" ConstrsSet="STHR_MEMORY" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/STHR_MEMORY_synth_1" IncludeInArchive="true">
+    <Run Id="STHR_MEMORY_synth_1" Type="Ft3:Synth" SrcSet="STHR_MEMORY" Part="xc7z035ffg900-2" ConstrsSet="STHR_MEMORY" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg900-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg900-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
@@ -635,7 +630,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>

@@ -229,13 +229,15 @@ extern void scurve_adder36 (
 hls::stream<ap_axis<128, 6, 5, 6 > > (&in_stream0),
 hls::stream<ap_axis<512, 6, 5, 6 > > (&out_stream),
 unsigned short N_ADDS,
-unsigned int TEST_MODE);
+unsigned int TEST_MODE,
+unsigned short K_TLAST);
 
 void AESL_WRAP_scurve_adder36 (
 hls::stream<ap_axis<128, 6, 5, 6 > > (&in_stream0),
 hls::stream<ap_axis<512, 6, 5, 6 > > (&out_stream),
 unsigned short N_ADDS,
-unsigned int TEST_MODE)
+unsigned int TEST_MODE,
+unsigned short K_TLAST)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -1649,7 +1651,7 @@ unsigned int TEST_MODE)
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		scurve_adder36(in_stream0, out_stream, N_ADDS, TEST_MODE);
+		scurve_adder36(in_stream0, out_stream, N_ADDS, TEST_MODE, K_TLAST);
 
 		CodeState = DUMP_OUTPUTS;
 		// record input size to tv3: "in_stream0"

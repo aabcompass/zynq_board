@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module scurve_adder36_CTRL_BUS_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 5,
+    C_S_AXI_ADDR_WIDTH = 6,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -39,7 +39,8 @@ module scurve_adder36_CTRL_BUS_s_axi
     input  wire                          ap_ready,
     input  wire                          ap_idle,
     output wire [15:0]                   N_ADDS,
-    output wire [31:0]                   TEST_MODE
+    output wire [31:0]                   TEST_MODE,
+    output wire [15:0]                   K_TLAST
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -67,18 +68,24 @@ module scurve_adder36_CTRL_BUS_s_axi
 // 0x18 : Data signal of TEST_MODE
 //        bit 31~0 - TEST_MODE[31:0] (Read/Write)
 // 0x1c : reserved
+// 0x20 : Data signal of K_TLAST
+//        bit 15~0 - K_TLAST[15:0] (Read/Write)
+//        others   - reserved
+// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL          = 5'h00,
-    ADDR_GIE              = 5'h04,
-    ADDR_IER              = 5'h08,
-    ADDR_ISR              = 5'h0c,
-    ADDR_N_ADDS_DATA_0    = 5'h10,
-    ADDR_N_ADDS_CTRL      = 5'h14,
-    ADDR_TEST_MODE_DATA_0 = 5'h18,
-    ADDR_TEST_MODE_CTRL   = 5'h1c,
+    ADDR_AP_CTRL          = 6'h00,
+    ADDR_GIE              = 6'h04,
+    ADDR_IER              = 6'h08,
+    ADDR_ISR              = 6'h0c,
+    ADDR_N_ADDS_DATA_0    = 6'h10,
+    ADDR_N_ADDS_CTRL      = 6'h14,
+    ADDR_TEST_MODE_DATA_0 = 6'h18,
+    ADDR_TEST_MODE_CTRL   = 6'h1c,
+    ADDR_K_TLAST_DATA_0   = 6'h20,
+    ADDR_K_TLAST_CTRL     = 6'h24,
     WRIDLE                = 2'd0,
     WRDATA                = 2'd1,
     WRRESP                = 2'd2,
@@ -86,7 +93,7 @@ localparam
     RDIDLE                = 2'd0,
     RDDATA                = 2'd1,
     RDRESET               = 2'd2,
-    ADDR_BITS         = 5;
+    ADDR_BITS         = 6;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -111,6 +118,7 @@ localparam
     reg  [1:0]                    int_isr = 2'b0;
     reg  [15:0]                   int_N_ADDS = 'b0;
     reg  [31:0]                   int_TEST_MODE = 'b0;
+    reg  [15:0]                   int_K_TLAST = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -224,6 +232,9 @@ always @(posedge ACLK) begin
                 ADDR_TEST_MODE_DATA_0: begin
                     rdata <= int_TEST_MODE[31:0];
                 end
+                ADDR_K_TLAST_DATA_0: begin
+                    rdata <= int_K_TLAST[15:0];
+                end
             endcase
         end
     end
@@ -235,6 +246,7 @@ assign interrupt = int_gie & (|int_isr);
 assign ap_start  = int_ap_start;
 assign N_ADDS    = int_N_ADDS;
 assign TEST_MODE = int_TEST_MODE;
+assign K_TLAST   = int_K_TLAST;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -348,6 +360,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_TEST_MODE_DATA_0)
             int_TEST_MODE[31:0] <= (WDATA[31:0] & wmask) | (int_TEST_MODE[31:0] & ~wmask);
+    end
+end
+
+// int_K_TLAST[15:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_K_TLAST[15:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_K_TLAST_DATA_0)
+            int_K_TLAST[15:0] <= (WDATA[31:0] & wmask) | (int_K_TLAST[15:0] & ~wmask);
     end
 end
 

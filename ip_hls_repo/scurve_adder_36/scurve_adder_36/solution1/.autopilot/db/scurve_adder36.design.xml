@@ -16,47 +16,59 @@
 <EstimatedClockPeriod>3.43</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>296</Best-caseLatency>
+<Best-caseLatency>undef</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>9437339</Worst-caseLatency>
-<PipelineInitiationInterval>297 ~ 9437340</PipelineInitiationInterval>
+<Worst-caseLatency>undef</Worst-caseLatency>
+<PipelineInitiationInterval>undef</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
 <Name>Loop 1</Name>
-<TripCount>144</TripCount>
-<Latency>144</Latency>
+<TripCount>undef</TripCount>
+<Latency>undef</Latency>
+<IterationLatency>
+<range>
+<min>369</min>
+<max>11796672</max>
+</range>
+</IterationLatency>
+<PipelineDepth>369 ~ 11796672</PipelineDepth>
+<Loop1.1>
+<Name>Loop 1.1</Name>
+<TripCount>180</TripCount>
+<Latency>180</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
-</Loop1>
-<Loop2>
-<Name>Loop 2</Name>
+</Loop1.1>
+<Loop1.2>
+<Name>Loop 1.2</Name>
 <TripCount>
 <range>
 <min>0</min>
-<max>9437040</max>
+<max>11796300</max>
 </range>
 </TripCount>
-<Latency>0 ~ 9437043</Latency>
+<Latency>0 ~ 11796303</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>5</PipelineDepth>
-</Loop2>
-<Loop3>
-<Name>Loop 3</Name>
-<TripCount>144</TripCount>
-<Latency>146</Latency>
+</Loop1.2>
+<Loop1.3>
+<Name>Loop 1.3</Name>
+<TripCount>180</TripCount>
+<Latency>182</Latency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>4</PipelineDepth>
-</Loop3>
+</Loop1.3>
+</Loop1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
 <BRAM_18K>32</BRAM_18K>
-<FF>4191</FF>
-<LUT>3228</LUT>
-<DSP48E>0</DSP48E>
+<DSP48E>1</DSP48E>
+<FF>4255</FF>
+<LUT>3330</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>
@@ -70,7 +82,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -83,7 +95,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -94,9 +106,9 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>6</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -109,7 +121,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -122,7 +134,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -135,7 +147,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -148,7 +160,7 @@
 <Dir>in</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -161,7 +173,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -174,7 +186,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -185,9 +197,9 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>6</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -200,7 +212,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -213,7 +225,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -226,7 +238,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -239,7 +251,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -252,7 +264,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -265,7 +277,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -278,7 +290,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>uint</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -394,7 +406,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -502,7 +514,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

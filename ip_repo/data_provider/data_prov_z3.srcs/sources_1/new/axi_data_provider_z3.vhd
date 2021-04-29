@@ -58,23 +58,25 @@ entity axi_data_provider_z3 is
     	run_data_conv: out std_logic;
     	
     	s_axis_tdata: in std_logic_vector(127 downto 0);
-    	s_axis_tuser: in std_logic_vector(5 downto 0);
+    	s_axis_tuser: in std_logic_vector(7 downto 0);
     	s_axis_tvalid: in std_logic;
     	s_axis_tready: out std_logic := '1';
     	s_axis_tlast: in std_logic;
     	
      	m_axis_tdata: out std_logic_vector(127 downto 0);
-    	m_axis_tuser: out std_logic_vector(5 downto 0);
+    	m_axis_tuser: out std_logic_vector(7 downto 0);
     	m_axis_tvalid: out std_logic;
     	m_axis_tready: in std_logic;
     	m_axis_tlast: out std_logic;
 
      	m01_axis_tdata: out std_logic_vector(127 downto 0);
-    	m01_axis_tuser: out std_logic_vector(5 downto 0);
+    	m01_axis_tuser: out std_logic_vector(7 downto 0);
     	m01_axis_tvalid: out std_logic;
     	m01_axis_tready: in std_logic;
     	m01_axis_tlast: out std_logic;
-
+    	
+    	DATA: out std_logic_vector(143 downto 0);
+			FRAME: out std_logic;
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	reset_data_conv: out std_logic;
@@ -256,6 +258,46 @@ architecture Behavioral of axi_data_provider_z3 is
 	
 	signal num_of_frames, cnt: std_logic_vector(31 downto 0) := (0 => '1', others => '0');
 	signal sm_state: std_logic_vector(3 downto 0) := "0000";
+	signal s_axis_tvalid_4trig: std_logic;
+	
+	component data_provider_4trig is
+	    Port ( clk : in STD_LOGIC;
+	           aresetn : in STD_LOGIC;
+	           s_axis_tdata : in STD_LOGIC_VECTOR (127 downto 0);
+	           s_axis_tvalid : in STD_LOGIC;
+	           s_axis_tlast : in STD_LOGIC;
+	           s_axis_tuser : in std_logic_vector(7 downto 0);
+	           DATA : out STD_LOGIC_VECTOR (143 downto 0);
+	           FRAME : out STD_LOGIC);
+	end component;
+
+	component test_data_provider is
+    Port ( 
+    clk : in STD_LOGIC;
+    aresetn: in std_logic;
+    started: in std_logic;
+    status : out std_logic_vector(7 downto 0);
+    incr_period: in std_logic_vector(31 downto 0);
+    patt_init: in std_logic_vector(7 downto 0);
+    patt_max: in std_logic_vector(7 downto 0);
+    s_axis_tvalid: in std_logic;
+    s_axis_tlast: in std_logic;
+    m_axis_tvalid: out std_logic;
+    m_axis_tlast: out std_logic;
+    m_axis_tdata: out std_logic_vector(127 downto 0)
+    );
+	end component;
+	
+	signal m_axis_tdata_test: std_logic_vector(127 downto 0) := (others => '0');
+	signal m_axis_tuser_test: std_logic_vector(7 downto 0) := (others => '0');
+	signal incr_period: std_logic_vector(31 downto 0) := (others => '0');
+	signal patt_max, patt_init: std_logic_vector(7 downto 0) := (others => '0');
+	signal status_test_dp: std_logic_vector(7 downto 0) := (others => '0');
+	signal m_axis_tvalid_test: std_logic := '0';
+	signal m_axis_tlast_test: std_logic := '0'; 
+	signal test_mode: std_logic := '0';
+	signal en_output: std_logic := '0';
+	signal test_data_provider_started: std_logic := '0';
 
 begin
 
@@ -1273,40 +1315,27 @@ begin
 	art_clk <= art_clk_i;
 	run_data_conv <= slv_reg10(2);
 	
---	stop_sig_latcher: process(S_AXI_ACLK)
---		variable state: integer range 0 to 2 := 0;
---	begin
---		if(rising_edge(S_AXI_ACLK)) then
---			if(S_AXI_ARESETN = '0') then
---				stop_sig_latch <= '0';
---			else
---				case state is
---					when 0 => if(stop_sig = '1')
---											state := state + 1;
---											stop_sig_latch <= '1';
---										end if;
---					when 1 => if(stop_sig_clr = '1') then
---											stop_sig_latch <= '0';
---											state := state + 1;
---										end if;
---					when 2 => if(stop_sig = '0')
---											state := 0;
---										end if;
---				end case;
-			
---			end if;
-			
---		end if;
---	end process;
 	start_sig <= slv_reg0(0);
 	run <= slv_reg0(1);
 	prog_reset <= slv_reg0(2);
+	en_output <= slv_reg0(3);
 	reset_data_conv <= slv_reg1(0);
 	reset_scurve_adder <= not slv_reg1(1);
 	num_of_frames <= slv_reg3;
+	
+	test_data_provider_started <= slv_reg4(0);
+	test_mode <= slv_reg4(1); 
+	
+	incr_period <= slv_reg5;
+	patt_init <= slv_reg6(15 downto 8);
+	patt_max <= slv_reg6(7 downto 0);
+	
 	infinite <= slv_reg10(0);
 	slv_reg16(0) <= pass;
 	slv_reg16(7 downto 4) <= sm_state;
+	slv_reg16(15 downto 8) <= status_test_dp;
+	
+	slv_reg31 <=  X"20210317";
 	
 	dozer: process(S_AXI_ACLK)
 		variable state : integer range 0 to 2 := 0;
@@ -1325,7 +1354,7 @@ begin
 										cnt <= (0 => '1', others => '0');
 					when 1 => if(s_axis_tvalid = '1' and s_axis_tlast = '1') then
 											state := state + 1;
-											pass <= '1';
+											pass <= en_output;
 										end if;
 					when 2 => if(s_axis_tvalid = '1' and s_axis_tlast = '0') then		
 											state := state + 1;
@@ -1352,24 +1381,54 @@ begin
 			end if;
 		end if;
 	end process;
+
+	i_test_data_provider : test_data_provider 
+    Port map( 
+    clk => S_AXI_ACLK,--: in STD_LOGIC;
+    aresetn => S_AXI_ARESETN,--: in std_logic;
+    started => test_data_provider_started,--: in std_logic;
+    status => status_test_dp,
+    incr_period => incr_period,--: in std_logic_vector(31 downto 0);
+    patt_init => patt_init,--: in std_logic_vector(7 downto 0);
+    patt_max => patt_max,--: in std_logic_vector(7 downto 0);
+    s_axis_tvalid => s_axis_tvalid,--: in std_logic;
+    s_axis_tlast => s_axis_tlast,--: in std_logic;
+    m_axis_tvalid => m_axis_tvalid_test,--: out std_logic;
+    m_axis_tlast => m_axis_tlast_test,--: out std_logic;
+    m_axis_tdata => m_axis_tdata_test);
 	
---	pass_process: process(S_AXI_ACLK)
---	begin
---		if(rising_edge(S_AXI_ACLK))
---			if(pass <= '1') 
---		end if;
---	end process;
-
-	m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
-	m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
-	m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
-	s_axis_tready <= '1';--: out std_logic := '1';
-	m_axis_tlast <= s_axis_tlast;--: in std_logic;
-
-	m01_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
-	m01_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
-	m01_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
-	m01_axis_tlast <= s_axis_tlast;--: in std_logic;
+	m_axis_tuser_test <= s_axis_tuser when rising_edge(S_AXI_ACLK);
+	
+	
+	selector: process(S_AXI_ACLK)
+	begin
+		if(rising_edge(S_AXI_ACLK)) then
+			if(test_mode = '1') then
+				m_axis_tdata <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
+				m_axis_tuser <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
+				m_axis_tvalid <= m_axis_tvalid_test and pass;--: in std_logic;
+				s_axis_tready <= '1';--: out std_logic := '1';
+				m_axis_tlast <= m_axis_tlast_test and pass;--: in std_logic;
+	
+				m01_axis_tdata <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
+				m01_axis_tuser <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
+				m01_axis_tvalid <= m_axis_tvalid_test and pass;--: in std_logic;
+				m01_axis_tlast <= m_axis_tlast_test and pass;--: in std_logic;
+			else
+				m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
+				m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
+				m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
+				s_axis_tready <= '1';--: out std_logic := '1';
+				m_axis_tlast <= s_axis_tlast and pass;--: in std_logic;
+		
+				m01_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
+				m01_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
+				m01_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
+				m01_axis_tlast <= s_axis_tlast and pass;--: in std_logic;
+			end if;
+		end if;
+	end process;
+	
 
 
 --     	m_axis_tdata: out std_logic_vector(127 downto 0);
@@ -1380,5 +1439,15 @@ begin
 	slv_reg17 <= aux_in;
 	zero_pmts <= slv_reg12(11 downto 0) & slv_reg11(27 downto 16) & slv_reg11(11 downto 0);
 
+	s_axis_tvalid_4trig <= s_axis_tvalid and pass;
+	i_data_provider_4trig : data_provider_4trig 
+	    Port map( clk => S_AXI_ACLK,--: in STD_LOGIC;
+	           aresetn => S_AXI_ARESETN,--: in STD_LOGIC;
+	           s_axis_tdata => s_axis_tdata,--: in STD_LOGIC_VECTOR (127 downto 0);
+	           s_axis_tvalid => s_axis_tvalid_4trig,--: in STD_LOGIC;
+	           s_axis_tlast => s_axis_tlast,--: in STD_LOGIC;
+	           s_axis_tuser => s_axis_tuser,--: in std_logic_vector(7 downto 0);
+	           DATA => DATA,--: out STD_LOGIC_VECTOR (143 downto 0);
+	           FRAME => FRAME);--: out STD_LOGIC);
 	
 end Behavioral;

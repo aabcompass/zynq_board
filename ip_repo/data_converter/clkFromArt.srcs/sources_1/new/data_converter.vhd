@@ -1,22 +1,4 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 12/07/2019 01:19:08 PM
--- Design Name: 
--- Module Name: data_converter - Behavioral
--- Project Name:  
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+
 
 Library xpm;
 use xpm.vcomponents.all;
@@ -27,14 +9,7 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 use IEEE.std_logic_arith.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity data_converter is
     Generic (
@@ -55,10 +30,16 @@ entity data_converter is
     	tdata_art0 : in STD_LOGIC_VECTOR(8*12-1 downto 0);
     	tdata_art1 : in STD_LOGIC_VECTOR(8*12-1 downto 0);
     	tdata_art2 : in STD_LOGIC_VECTOR(8*12-1 downto 0);
+
+			s_axis_map0_tdata : in STD_LOGIC_VECTOR (31 downto 0);
+    	s_axis_map0_tvalid : in STD_LOGIC;
+    	s_axis_map0_tlast : in STD_LOGIC;
+    	s_axis_map0_tready : out STD_LOGIC;
+    	
     	m_axis_aclk: in std_logic;
     	m_axis_aresetn : in STD_LOGIC;
     	m_axis_tdata : out STD_LOGIC_VECTOR(127 downto 0);
-    	m_axis_tuser : out STD_LOGIC_VECTOR(5 downto 0);
+    	m_axis_tuser : out STD_LOGIC_VECTOR(7 downto 0);
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
     	m_axis_tready : in STD_LOGIC;
@@ -243,6 +224,41 @@ architecture Behavioral of data_converter is
 	attribute KEEP of s_axis_tready_sw1: signal is "TRUE";
 	attribute KEEP of last_transfer_sw1: signal is "TRUE";
 
+	signal ki, pc_tlast: std_logic := '0'; 
+	signal m_axis_tlast_i: std_logic := '0'; 
+	
+	COMPONENT axis_pixel_remap is
+		Port ( 
+			aclk : IN STD_LOGIC;
+			aresetn : IN STD_LOGIC;
+			s_axis_tvalid : IN STD_LOGIC;
+			s_axis_tready : OUT STD_LOGIC;
+			s_axis_tdata : IN STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
+			s_axis_tlast : IN STD_LOGIC;
+			s_axis_tuser : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			m_axis_tvalid : OUT STD_LOGIC;
+			m_axis_tready : in STD_LOGIC;
+			m_axis_tdata : OUT STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
+			m_axis_tlast : OUT STD_LOGIC;
+			m_axis_tuser : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			s_axis_map0_tdata : in STD_LOGIC_VECTOR (31 downto 0);
+			s_axis_map0_tvalid : in STD_LOGIC;
+			s_axis_map0_tlast : in STD_LOGIC;
+			s_axis_map0_tready : out STD_LOGIC
+		);
+	end COMPONENT;
+
+	signal m_axis_tdata_ii: std_logic_vector(127 downto 0);
+	signal m_axis_tuser_ii: std_logic_vector(7 downto 0);
+	signal m_axis_tlast_ii: std_logic;
+	signal m_axis_tvalid_ii: std_logic;
+	
+	signal m_axis_tdata_remap: std_logic_vector(127 downto 0);
+	signal m_axis_tuser_remap: std_logic_vector(7 downto 0);
+	signal m_axis_tvalid_remap: std_logic;
+	signal m_axis_tlast_remap: std_logic;
+
+
 
 begin
 
@@ -280,6 +296,9 @@ begin
 		attribute KEEP : string;
 		attribute KEEP of m_axis_tready_slice: signal is "TRUE";
 		attribute KEEP of m_axis_tlast_slice: signal is "TRUE";
+		
+		
+		
 
 		
 	begin
@@ -572,16 +591,73 @@ begin
       zeros => (others => '1')
     );
 
-
-
-	m_axis_tvalid <= m_axis_tvalid_sw1(0);
-	m_axis_tready_sw1(0) <= m_axis_tready;
-	m_axis_tlast <= m_axis_tlast_sw1(0)  -- Generate TLast only with the last PMT data
+	m_axis_tlast_i <= m_axis_tlast_sw1(0)  -- Generate TLast only with the last PMT data
 										and m_axis_tuser_sw1(5) 
 										and (not m_axis_tuser_sw1(4));
-	m_axis_tdata <= m_axis_tdata_sw1;
-	m_axis_tuser <= m_axis_tuser_sw1;
+
+
+	ki_identifier: process(m_axis_aclk)
+		variable state : integer range 0 to 4 := 0;
+	begin
+		if(rising_edge(m_axis_aclk)) then
+			if(m_axis_tvalid_sw1(0) = '1') then
+				if(m_axis_tlast_i = '1') then
+					state := 4;
+				end if;
+				case state is
+					when 0 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+					when 1 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+					when 2 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+					when 3 => pc_tlast <= '1'; ki <= '0'; state := state + 1;
+					when 4 => pc_tlast <= '0'; ki <= '1'; state := 0;
+				end case;
+			end if;
+		end if;
+	end process;
+
+	m_axis_tvalid_ii <= m_axis_tvalid_sw1(0) when rising_edge(m_axis_aclk);
+	m_axis_tlast_ii <= m_axis_tlast_i when rising_edge(m_axis_aclk);
+	m_axis_tdata_ii <= m_axis_tdata_sw1 when rising_edge(m_axis_aclk);
+	m_axis_tuser_ii(5 downto 0) <= m_axis_tuser_sw1 when rising_edge(m_axis_aclk);
+	m_axis_tuser_ii(6) <= ki;
+	m_axis_tuser_ii(7) <= pc_tlast;
 	
 	
+	i_axis_pixel_remap : axis_pixel_remap 
+		Port map ( 
+			aclk => m_axis_aclk,--: IN STD_LOGIC;
+			aresetn => m_axis_aresetn2,--: IN STD_LOGIC;
+			s_axis_tvalid => m_axis_tvalid_ii,--: IN STD_LOGIC;
+			s_axis_tready => open,--: OUT STD_LOGIC;
+			s_axis_tdata => m_axis_tdata_ii,--: IN STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
+			s_axis_tlast => m_axis_tlast_ii,--: IN STD_LOGIC;
+			s_axis_tuser => m_axis_tuser_ii,--: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+			m_axis_tvalid => m_axis_tvalid_remap,--: OUT STD_LOGIC;
+			m_axis_tready => '1',--: in STD_LOGIC;
+			m_axis_tdata => m_axis_tdata_remap,--: OUT STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
+			m_axis_tlast => m_axis_tlast_remap,--: OUT STD_LOGIC;
+			m_axis_tuser => m_axis_tuser_remap,--: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			s_axis_map0_tdata => s_axis_map0_tdata,--: in STD_LOGIC_VECTOR (7 downto 0);
+			s_axis_map0_tvalid => s_axis_map0_tvalid,--: in STD_LOGIC;
+			s_axis_map0_tlast => s_axis_map0_tlast,--: in STD_LOGIC;
+			s_axis_map0_tready => s_axis_map0_tready--: out STD_LOGIC
+		);
+		
+		--do_remap_select: process(m_axis_aclk)
+		--begin
+		--	if(rising_edge(m_axis_aclk)) then
+		--		if(do_remap = '1') then
+			m_axis_tvalid <= m_axis_tvalid_remap;
+			m_axis_tlast <= m_axis_tlast_remap;
+			m_axis_tdata <= m_axis_tdata_remap;
+			m_axis_tuser <= m_axis_tuser_remap;				
+			--	else
+			--		m_axis_tvalid <= m_axis_tvalid_ii;
+			--		m_axis_tlast <= m_axis_tlast_ii;
+			--		m_axis_tdata <= m_axis_tdata_ii;
+			--		m_axis_tuser <= m_axis_tuser_ii;				
+			--	end if;
+			--end if;
+		--end process;
 
 end Behavioral;

@@ -10,11 +10,11 @@
 #ifndef SRC_OWN_DATA_TYPES_H_
 #define SRC_OWN_DATA_TYPES_H_
 
-typedef struct
-{
-	u32 current_thr;
-	u32 current_pixel;
-} DebugSettings;
+//typedef struct
+//{
+//	u32 current_thr;
+//	u32 current_pixel;
+//} DebugSettings;
 
 typedef struct
 {
@@ -45,11 +45,14 @@ typedef struct
 	int is_artix_loaded;
 } InstrumentState;
 
-typedef struct
-{
-	DATA_TYPE_SCI_ALLTRG_V2 sci_data;
-	u32 is_occupied;
-} DATA_TYPE_SCI_ALLTRG_RECORD;
+enum {MODE_NONE, MODE_D1, MODE_D1D3, MODE_D3, MODE_LIVE, MODE_SCURVE};
+enum {STATUS_IDLE, STATUS_BUSY};
+
+//typedef struct
+//{
+//	DATA_TYPE_SCI_ALLTRG_V2 sci_data;
+//	u32 is_occupied;
+//} DATA_TYPE_SCI_ALLTRG_RECORD;
 
 typedef struct
 {

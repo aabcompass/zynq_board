@@ -112,6 +112,6 @@ typedef struct
 } SLOWCTRL_SP3_36CHIPS_REFORMATTED_V1;
 
 
-void RB_inject_bit();
+//void RB_inject_bit();
 
 #endif /* SLOW_CONTROL_H_ */

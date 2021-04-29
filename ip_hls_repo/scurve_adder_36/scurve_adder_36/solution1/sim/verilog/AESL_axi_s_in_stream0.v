@@ -23,7 +23,7 @@
 `define TV_IN_in_stream0_TDEST "../tv/cdatafile/c.scurve_adder36.autotvin_in_stream0_V_dest_V.dat"
 `define INGRESS_STATUS_in_stream0_TDEST "../tv/stream_size/stream_ingress_status_in_stream0_V_dest_V.dat"
 
-`define AUTOTB_TRANSACTION_NUM 1
+`define AUTOTB_TRANSACTION_NUM 2
 
 module AESL_axi_s_in_stream0 (
     input clk,

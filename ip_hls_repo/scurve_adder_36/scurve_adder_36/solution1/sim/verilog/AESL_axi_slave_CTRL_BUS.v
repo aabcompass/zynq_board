@@ -43,7 +43,7 @@ module AESL_axi_slave_CTRL_BUS (
 //------------------------Parameter----------------------
 `define TV_IN_N_ADDS "../tv/cdatafile/c.scurve_adder36.autotvin_N_ADDS.dat"
 `define TV_IN_TEST_MODE "../tv/cdatafile/c.scurve_adder36.autotvin_TEST_MODE.dat"
-parameter ADDR_WIDTH = 5;
+parameter ADDR_WIDTH = 6;
 parameter DATA_WIDTH = 32;
 parameter N_ADDS_DEPTH = 1;
 reg [31 : 0] N_ADDS_OPERATE_DEPTH = 0;
@@ -56,6 +56,7 @@ parameter scurve_adder36_continue_addr = 0;
 parameter scurve_adder36_auto_start_addr = 0;
 parameter N_ADDS_data_in_addr = 16;
 parameter TEST_MODE_data_in_addr = 24;
+parameter K_TLAST_data_in_addr = 32;
 parameter STATUS_ADDR = 0;
 
 output [ADDR_WIDTH - 1 : 0] TRAN_s_axi_CTRL_BUS_AWADDR;
@@ -484,7 +485,7 @@ always @(reset or posedge clk) begin
         write_start_count <= 0;
     end
     else begin
-        if (write_start_count >= 1) begin
+        if (write_start_count >= 2) begin
             write_start_run_flag <= 0; 
         end
         else if (TRAN_CTRL_BUS_write_start_in === 1) begin

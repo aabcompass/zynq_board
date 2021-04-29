@@ -22,7 +22,7 @@
          <obj_property name="label">C InOuts</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <wvobject type="group" fp_name="group3">
-            <obj_property name="label">N_ADDS__TEST_MODE__return(axi_slave)</obj_property>
+            <obj_property name="label">N_ADDS__TEST_MODE__K_TLAST__return(axi_slave)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <wvobject type="logic" fp_name="/apatb_scurve_adder36_top/AESL_inst_scurve_adder36/interrupt">
                <obj_property name="ElementShortName">interrupt</obj_property>
@@ -82,8 +82,8 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_ARADDR">
-               <obj_property name="ElementShortName">s_axi_CTRL_BUS_ARADDR[4:0]</obj_property>
-               <obj_property name="ObjectShortName">s_axi_CTRL_BUS_ARADDR[4:0]</obj_property>
+               <obj_property name="ElementShortName">s_axi_CTRL_BUS_ARADDR[5:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_BUS_ARADDR[5:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_WSTRB">
@@ -121,8 +121,8 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/AESL_inst_scurve_adder36/s_axi_CTRL_BUS_AWADDR">
-               <obj_property name="ElementShortName">s_axi_CTRL_BUS_AWADDR[4:0]</obj_property>
-               <obj_property name="ObjectShortName">s_axi_CTRL_BUS_AWADDR[4:0]</obj_property>
+               <obj_property name="ElementShortName">s_axi_CTRL_BUS_AWADDR[5:0]</obj_property>
+               <obj_property name="ObjectShortName">s_axi_CTRL_BUS_AWADDR[5:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>
@@ -392,7 +392,7 @@
          <obj_property name="label">C InOuts</obj_property>
          <obj_property name="DisplayName">label</obj_property>
          <wvobject type="group" fp_name="group77">
-            <obj_property name="label">N_ADDS__TEST_MODE__return(axi_slave)</obj_property>
+            <obj_property name="label">N_ADDS__TEST_MODE__K_TLAST__return(axi_slave)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <wvobject type="logic" fp_name="/apatb_scurve_adder36_top/CTRL_BUS_INTERRUPT">
                <obj_property name="ElementShortName">CTRL_BUS_INTERRUPT</obj_property>
@@ -452,8 +452,8 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/CTRL_BUS_ARADDR">
-               <obj_property name="ElementShortName">CTRL_BUS_ARADDR[4:0]</obj_property>
-               <obj_property name="ObjectShortName">CTRL_BUS_ARADDR[4:0]</obj_property>
+               <obj_property name="ElementShortName">CTRL_BUS_ARADDR[5:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_BUS_ARADDR[5:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/CTRL_BUS_WSTRB">
@@ -491,8 +491,8 @@
                <obj_property name="UseCustomSignalColor">true</obj_property>
             </wvobject>
             <wvobject type="array" fp_name="/apatb_scurve_adder36_top/CTRL_BUS_AWADDR">
-               <obj_property name="ElementShortName">CTRL_BUS_AWADDR[4:0]</obj_property>
-               <obj_property name="ObjectShortName">CTRL_BUS_AWADDR[4:0]</obj_property>
+               <obj_property name="ElementShortName">CTRL_BUS_AWADDR[5:0]</obj_property>
+               <obj_property name="ObjectShortName">CTRL_BUS_AWADDR[5:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>

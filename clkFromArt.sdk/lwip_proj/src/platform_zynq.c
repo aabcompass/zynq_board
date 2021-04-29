@@ -174,45 +174,11 @@ void platform_setup_timer(void)
 	return;
 }
 
-//void platform_setup_interrupts(void)
-//{
-//	Xil_ExceptionInit();
-//
-//	XScuGic_DeviceInitialize(INTC_DEVICE_ID);
-//
-//	/*
-//	 * Connect the interrupt controller interrupt handler to the hardware
-//	 * interrupt handling logic in the processor.
-//	 */
-//	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
-//			(Xil_ExceptionHandler)XScuGic_DeviceInterruptHandler,
-//			(void *)INTC_DEVICE_ID);
-//	/*
-//	 * Connect the device driver handler that will be called when an
-//	 * interrupt for the device occurs, the handler defined above performs
-//	 * the specific interrupt processing for the device.
-//	 */
-//	XScuGic_RegisterHandler(INTC_BASE_ADDR, TIMER_IRPT_INTR,
-//					(Xil_ExceptionHandler)timer_callback,
-//					(void *)&TimerInstance);
-//	/*
-//	 * Enable the interrupt for scu timer.
-//	 */
-//	XScuGic_EnableIntr(INTC_DIST_BASE_ADDR, TIMER_IRPT_INTR);
-//
-//	return;
-//}
+
 
 void platform_setup_interrupts_AB(void)
 {
-	//Xil_ExceptionInit();
-
-	//XScuGic_DeviceInitialize(INTC_DEVICE_ID);
 	int Result;
-
-	//XScuGic* pIntc;
-	//GlobalIntrMask = IntrMask;
-
 
 	XScuGic_Config *IntcConfig;
 

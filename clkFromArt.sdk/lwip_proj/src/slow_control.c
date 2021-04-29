@@ -8,6 +8,9 @@
 
 #include "slow_control.h"
 #include "xparameters.h"
+#include "common.h"
+#include "dma_handling.h"
+#include "data_provider.h"
 
 SLOWCTRL_SP3_36CHIPS_REFORMATTED_V1 reformatted;
 SLOWCTRL_SP3_ALL_ASIC_V1 sc_sp3_all_asic_test;
@@ -15,6 +18,8 @@ SLOWCTRL_SP3_SAME_ASIC_V1 slowctrl_samedata;
 SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 
 u32 current_line=0, current_asic=0, current_pixel=0;
+u32 current_common_thr = 0;
+u32 scurve_wait_cnt = 0;
 
 void SetDefaultSCParameters()
 {
@@ -246,15 +251,17 @@ void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
 void LoadSameDataToSlowControl2(u32 current_dac_value)
 {
 	u32 s_value=0, i;
-	xil_printf("dac=%d ", current_dac_value);
-	slowctrl_samedata.misc_reg0 = (0x07A20007 | current_dac_value<<7 | s_value<<3);
+	slowctrl_samedata.misc_reg0 = (0x0FF20C87 | current_dac_value<<7 | s_value<<3); //0x07A20007 was in Mini
+	slowctrl_samedata.x4_gain = 0x10101010;
+	slowctrl_samedata.x4_dac_7b_sub = 0x18181818;
+	slowctrl_samedata.misc_reg2 = 0x3B;
 	LoadSameDataToSlowControl(&slowctrl_samedata);
 	for(i=0;i<1000000;i++);
 }
 
 void LoadIndividualDataToSlowControl()
 {
-	TxFIFOSend((char*)&reformatted, sizeof(reformatted)/4);
+	TxFIFOSendSC((char*)&reformatted, sizeof(reformatted)/4);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
@@ -282,9 +289,132 @@ u32 RetSCState()
 	return *(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_STATUS);
 }
 
-void RB_inject_bit()
+//void RB_inject_bit()
+//{
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CMD) |= (1<<BIT_SLOWCTRL_INJECT_BIT);
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CMD) &= ~(1<<BIT_SLOWCTRL_INJECT_BIT);
+//}
+
+static enum  {
+	no_state,
+	start_scurve,
+	change_thr,
+	wait_thr_state,
+	start_dma1,
+	start_dma2,
+	pass_data,
+	wait_pass_state1,
+	wait_pass_state2,
+	condition_state,
+	end_state
+} scurve_sm_state = no_state;
+
+void scurve_sm()
 {
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CMD) |= (1<<BIT_SLOWCTRL_INJECT_BIT);
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CMD) &= ~(1<<BIT_SLOWCTRL_INJECT_BIT);
+	u32 ret;
+	switch(scurve_sm_state)
+	{
+		case no_state:
+			scurve_wait_cnt = 0;
+			break;
+		case start_scurve:
+			current_common_thr = 0;
+			Set_n_d3_per_file(N_D3_PER_FILE);
+			scurve_sm_state = change_thr;
+			break;
+		case change_thr:
+			LoadSameDataToSlowControl2(current_common_thr);
+			xil_printf("\n\rdac=%d ", current_common_thr);
+			scurve_sm_state = wait_thr_state;
+			break;
+		case wait_thr_state:
+			if(scurve_wait_cnt > 100) {/*10 ms*/
+				if(current_common_thr%N_D3_PER_FILE == 0)
+					scurve_sm_state = start_dma1;
+				else
+					scurve_sm_state = pass_data;
+				scurve_wait_cnt = 0;
+			}
+			else {
+				scurve_wait_cnt++;
+				print("*");
+			}
+			break;
+		case start_dma1:
+			if(current_common_thr>0) {
+				ret = Is_D3_received();
+				xil_printf("ret=%d ", ret);
+				if(ret)
+					scurve_sm_state = start_dma2;
+			}
+			else {
+				scurve_sm_state = start_dma2;
+			}
+			break;
+		case start_dma2:
+			if(current_common_thr == 1000) {
+				Set_n_d3_per_file(24);
+				L3Start(FINITE, 24);
+			}
+			else if(current_common_thr%N_D3_PER_FILE == 0) {
+				//xil_printf("Is_D3_received()=%d", Is_D3_received());
+				Set_n_d3_per_file(N_D3_PER_FILE);
+				L3Start(FINITE, N_D3_PER_FILE);
+			}
+			ScurveAdderReInit();
+			scurve_sm_state = pass_data;
+			break;
+		case pass_data:
+			StartDataProviderFor1D3frame(GetIntegration());
+			scurve_sm_state = wait_pass_state1;
+			break;
+		case wait_pass_state1:
+			print("!");
+			if(IsDataProviderPass())
+				scurve_sm_state = wait_pass_state2;
+			break;
+		case wait_pass_state2:
+			print("\0");
+			if(!IsDataProviderPass())
+				scurve_sm_state = condition_state;
+			break;
+		case condition_state:
+			if(current_common_thr == NMAX_OF_THESHOLDS) {
+				scurve_sm_state = end_state;
+			}
+			else {
+				scurve_sm_state = change_thr;
+				current_common_thr++;
+			}
+			break;
+		case end_state:
+			scurve_sm_state = no_state;
+			break;
+	}
 }
 
+u32 StartScurve()
+{
+	if(scurve_sm_state != no_state)
+		return -1;
+	scurve_sm_state = start_scurve;
+	return 0;
+}
+
+u32 IsScurveGathering()
+{
+	if(scurve_sm_state == no_state)
+		return 0;
+	else
+		return 1;
+}
+
+u32 GetCurrentTheshold()
+{
+	return current_common_thr;
+}
+
+u32 GetScurveStatus()
+{
+	return scurve_sm_state;
+}

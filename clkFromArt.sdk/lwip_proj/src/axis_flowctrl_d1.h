@@ -17,7 +17,7 @@
 #define REGW_EDGE_FLAGS				3 /* 2=set_unix_time 1=trig_force 0=release */
 #define REGW_D1_FIFO_THR			4 /* fifo_thr in HDL*/
 #define REGW_INT_TRIG_GTU_TIME		5 /* Time time for the programmable trigger */
-#define REGW_GTUS_PER_CYCLE			6 /* the number of GTUs in one cycles (5.24s in Mini-EUSO)*/
+#define REGW_GTUS_PER_CYCLE			6 /* the number of GTUs in one cycles (5s in SPB-2)*/
 #define REGW_PERIODIC_TRIG_PERIOD	7 /* Period of periodic trigger (in GTUs)*/
 #define REGW_D1_N_GTU_AFTER_TRIG	8 /* num_of_gtus_after_trig in HDL */
 #define REGW_NUM_OF_TRIGS_FLAGS2	9 /* 15:0 = number of triggers per cycle 5,24s*/
@@ -37,6 +37,7 @@
 #define REGR_MAXIS_TRANS_CNT		23
 #define REGR_MAXIS_ACCEPTED_CNT		24
 #define REGR_TRIG_ALL_CNT			25
+#define REGR_N_GLOB_CYCLES			26 /*Number of glob cycles for sw on (Global cycles incremented every REGW_GTUS_PER_CYCLE)*/
 
 #define SM_STATE_IDLE		0
 #define SM_STATE_ARMED		3
@@ -84,6 +85,9 @@ u32 GetUnixTimestamp_L1();
 int Get_N1();
 void D1_release();
 int IsD1Triggered();
+u32 Get_n_glob_cycles();
+void FlowControlStart_D1(u32 start);
+void SetModeD1(u32 mode);
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

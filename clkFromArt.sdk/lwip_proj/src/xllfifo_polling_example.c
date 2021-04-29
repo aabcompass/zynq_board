@@ -67,13 +67,14 @@
 #include "xstatus.h"
 
 #define  SC_FIFO_DEVICE_ID XPAR_AXI_FIFO_MM_S_0_DEVICE_ID
+#define  MAIN_FIFO_DEVICE_ID	XPAR_AXI_FIFO_MM_S_1_DEVICE_ID
 
-XLlFifo FifoInstance;
+XLlFifo FifoInstanceSC;
+XLlFifo FifoInstanceMain;
 
 
 
-
-int XLlFifoPollingInit()
+int XLlFifoPollingInitSC()
 {
 	XLlFifo_Config *Config;
 	int Status;
@@ -92,64 +93,110 @@ int XLlFifoPollingInit()
 	 * This is where the virtual address would be used, this example
 	 * uses physical address.
 	 */
-	Status = XLlFifo_CfgInitialize(&FifoInstance, Config, Config->BaseAddress);
+	Status = XLlFifo_CfgInitialize(&FifoInstanceSC, Config, Config->BaseAddress);
 	if (Status != XST_SUCCESS) {
 		xil_printf("Initialization failed\n\r");
 		return Status;
 	}
 
 	/* Check for the Reset value */
-	Status = XLlFifo_Status(&FifoInstance);
-	XLlFifo_IntClear(&FifoInstance,0xffffffff);
-	Status = XLlFifo_Status(&FifoInstance);
+	Status = XLlFifo_Status(&FifoInstanceSC);
+	XLlFifo_IntClear(&FifoInstanceSC,0xffffffff);
+	Status = XLlFifo_Status(&FifoInstanceSC);
 	if(Status != 0x0) {
 		xil_printf("\n ERROR : Reset value of ISR0 : 0x%x\t"
 			    "Expected : 0x0\n\r",
-			    XLlFifo_Status(&FifoInstance));
+			    XLlFifo_Status(&FifoInstanceSC));
 		return XST_FAILURE;
 	}
 
 	return Status;
 }
 
-/*****************************************************************************/
-/*
-*
-* TxSend routine, It will send the requested amount of data at the
-* specified addr.
-*
-* @param	InstancePtr is a pointer to the instance of the
-*		XLlFifo component.
-*
-* @param	SourceAddr is the address where the FIFO stars writing
-*
-* @return	-XST_SUCCESS to indicate success
-*		-XST_FAILURE to indicate failure
-*
-* @note		None
-*
-******************************************************************************/
-int TxFIFOSend(u32  *data, u32 numOfWords)
+int XLlFifoPollingInitMain()
+{
+	XLlFifo_Config *Config;
+	int Status;
+	int i;
+	int Error;
+	Status = XST_SUCCESS;
+
+	/* Initialize the Device Configuration Interface driver */
+	Config = XLlFfio_LookupConfig(MAIN_FIFO_DEVICE_ID);
+	if (!Config) {
+		xil_printf("No config found for %d\r\n", MAIN_FIFO_DEVICE_ID);
+		return XST_FAILURE;
+	}
+
+	/*
+	 * This is where the virtual address would be used, this example
+	 * uses physical address.
+	 */
+	Status = XLlFifo_CfgInitialize(&FifoInstanceMain, Config, Config->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Initialization failed\n\r");
+		return Status;
+	}
+
+	/* Check for the Reset value */
+	Status = XLlFifo_Status(&FifoInstanceMain);
+	XLlFifo_IntClear(&FifoInstanceMain,0xffffffff);
+	Status = XLlFifo_Status(&FifoInstanceMain);
+	if(Status != 0x0) {
+		xil_printf("\n ERROR : Reset value of ISR0 : 0x%x\t"
+			    "Expected : 0x0\n\r",
+			    XLlFifo_Status(&FifoInstanceMain));
+		return XST_FAILURE;
+	}
+
+	return Status;
+}
+
+
+void XLlFifoPollingInit()
+{
+	XLlFifoPollingInitSC();
+	XLlFifoPollingInitMain();
+}
+
+
+int TxFIFOSendSC(u32 *data, u32 numOfWords)
 {
 
 	int i;
 	xil_printf("numOfWords=%d\r\n", numOfWords);
 
-//	/* Filling the buffer with data */
-//	for (i=0;i<MAX_DATA_BUFFER_SIZE;i++)
-//		*(SourceAddr + i) = 0;
 
-//	for(i=0 ; i < numOfWords ; i++) {
-//
-//	/* Writing into the FIFO Transmit Port Buffer */
-//		if( XLlFifo_iTxVacancy(&FifoInstance) ) {
-//			XLlFifo_TxPutWord(&FifoInstance, data[i]);
-//		}
-//
-//	}
-	XLlFifo_iWrite_Aligned(&FifoInstance, data, numOfWords);
+	XLlFifo_iWrite_Aligned(&FifoInstanceSC, data, numOfWords);
 	/* Start Transmission by writing transmission length into the TLR */
-	XLlFifo_iTxSetLen(&FifoInstance, numOfWords*4);
+	XLlFifo_iTxSetLen(&FifoInstanceSC, numOfWords*4);
+
+//	/* Check for Transmission completion */
+//	while( !(XLlFifo_IsTxDone(&FifoInstance)) )
+//	{
+//		xil_printf("xll_isr_reg=0x%08x\n\r", XLlFifo_ReadReg(FifoInstance.BaseAddress, XLLF_ISR_OFFSET));
+//	}
+
+	/* Transmission Complete */
+	return XST_SUCCESS;
+}
+
+void TxFIFOSetTDR(u32 tdest)
+{
+	XLlFifo_WriteReg(FifoInstanceMain.BaseAddress, XLLF_TDR_OFFSET, tdest);
+}
+
+int TxFIFOSendMain(u32 *data, u32 numOfWords, u32 tdest)
+{
+
+	int i;
+	xil_printf("numOfWords=%d\r\n", numOfWords);
+
+	TxFIFOSetTDR(tdest);
+
+	XLlFifo_iWrite_Aligned(&FifoInstanceMain, data, numOfWords);
+	/* Start Transmission by writing transmission length into the TLR */
+	XLlFifo_iTxSetLen(&FifoInstanceMain, numOfWords*4);
 
 //	/* Check for Transmission completion */
 //	while( !(XLlFifo_IsTxDone(&FifoInstance)) )
@@ -163,7 +210,7 @@ int TxFIFOSend(u32  *data, u32 numOfWords)
 
 u32 GetSC3FifoVacancy()
 {
-	return XLlFifo_iTxVacancy(&FifoInstance);
+	return XLlFifo_iTxVacancy(&FifoInstanceSC);
 }
 
 
@@ -206,16 +253,16 @@ int RxReceive (u32* DestinationAddr, u32* ReceivedWords)
 
 	*ReceivedWords = 0;
 
-	if(XLlFifo_iRxOccupancy(&FifoInstance))
+	if(XLlFifo_iRxOccupancy(&FifoInstanceSC))
 	{
 		xil_printf(" Receiving data ....\n\r");
 		/* Read Recieve Length */
-		ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstance))/WORD_SIZE;
+		ReceiveLength = (XLlFifo_iRxGetLen(&FifoInstanceSC))/WORD_SIZE;
 		xil_printf("ReceiveLength(words)=%d\n\r", ReceiveLength);
 		/* Start Receiving */
 		//for ( i=0; i < ReceiveLength; i++){
 			RxWord = 0;
-			RxWord = XLlFifo_RxGetWord(&FifoInstance);
+			RxWord = XLlFifo_RxGetWord(&FifoInstanceSC);
 
 			//if(XLlFifo_iRxOccupancy(&FifoInstance)){
 			//	print("?");
@@ -227,7 +274,7 @@ int RxReceive (u32* DestinationAddr, u32* ReceivedWords)
 
 		*ReceivedWords = 1;//i;
 
-		Status = XLlFifo_IsRxDone(&FifoInstance);
+		Status = XLlFifo_IsRxDone(&FifoInstanceSC);
 		if(Status != TRUE){
 			xil_printf("Failing in receive complete ... \r\n");
 			return XST_FAILURE;

@@ -10,34 +10,23 @@
 #include "own_data_types.h"
 #include "pdmdata.h"
 #include "unix_date_time.h"
-//#include "xl2_trigger.h"
+#include "dma_handling.h"
+#include "common.h"
+#include "data_provider.h"
+#include "ftp_server.h"
+#include "axis_flowctrl_d1.h"
+#include "mmg.h"
+#include "pdmdata_hw.h"
+#include "dma_handling.h"
 
-//extern XL2_trigger l2trigger;
-
-//u32 frame_buffer[N_OF_PIXEL_PER_PDM/3/4];
-//u32 frame_buffer_all_pdm[N_OF_PIXEL_PER_PDM/4];
 
 
-
-//u32 frame_counter = 0;
 SCurveStruct sCurveStruct;
 InstrumentState instrumentState;
-DebugSettings debugSettings;
+//DebugSettings debugSettings;
 
 u32 live_sent = 0;
-u32* ptr4live;
-
-
-
-void SetInstrumentMode(u32 mode)
-{
-//	instrumentState.mode = mode;
-//	if(mode != 0)
-//	{
-//		ResetGTUCounter_D1();
-//		ResetGTUCounter_D2();
-//	}
-}
+//u32* ptr4live;
 
 char err_str[20];
 
@@ -47,60 +36,95 @@ void SendErrorCommand(struct tcp_pcb *tpcb,  int err_code)
 	tcp_write(tpcb, err_str, strlen(err_str), 1);
 }
 
-//void ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, u32 param, u32 param2)
-//{
-//	if(instrumentState.err_SDcard)
-//	{
-//		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//		SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_SDcard);
-//	}
-//	else if(instrumentState.err_artix_bin)
-//	{
-//		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//		SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_artix_bin);
-//	}
-//	else if(instrumentState.artix_locked == 0)
-//	{
-//		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
-//		SendErrorCommand(tpcb, ERR_ARTIX_NOT_LOCKED);
-//	}
-//	else
-//	{
-//		if(param == 0)
-//			SendLogToFTP();
-//		else
-//			xil_printf("Removing all sci data files from FTP server... Removed %d files\n\r", RemoveAllSciDataFilesFromFTP());
-//		SetInstrumentMode(param);
-//		SetTime(param2);
-//		DateTime dateTime;
-//		convertUnixTimeToDate(param2, &dateTime);
-//		xil_printf("%s\n\r", formatDate(&dateTime, 0));
-//
-//		if(param == 0)
-//			RunStopping();
-//		char ok_eomess_str[] = "Ok\n\r";
-//		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
-//	}
-//
-//}
-
 void sent_callback(void *arg, struct tcp_pcb *tpcb, u16_t len)
 {
-
 	err_t err;
-	if(live_sent == 0)
-	{
-		err = tcp_write(tpcb, ptr4live + (/*4 * */N_OF_PIXEL_PER_PDM / 2), 4 * N_OF_PIXEL_PER_PDM / 2, 1);
+	if(live_sent == 0) {
+		err = tcp_write(tpcb, (DMA_GetP() + (4 * N_OF_PIXELS_TOTAL / 2)), 4 * N_OF_PIXELS_TOTAL / 2, 1);
 		//xil_printf("!err_t=%d\n\r", err);
 		live_sent = 1;
 	}
 }
 
+int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
+{
+	if(strcasecmp(param, "d1") == 0) {
+		instrumentState.mode = MODE_D1;
+		DoFileProcessing(DO_FILE_PROCESSING);
+		Set_n_d3_per_file(N_D3_PER_FILE);
+		ScurveAdderReInit();
+	}
+	else if(strcasecmp(param, "d1d3") == 0) {
+		instrumentState.mode = MODE_D1D3;
+		DoFileProcessing(DO_FILE_PROCESSING);
+		Set_n_d3_per_file(N_D3_PER_FILE);
+		ScurveAdderReInit();
+	}
+	else if(strcasecmp(param, "d3") == 0) {
+		instrumentState.mode = MODE_D3;
+		DoFileProcessing(DO_FILE_PROCESSING);
+		Set_n_d3_per_file(N_D3_PER_FILE);
+		ScurveAdderReInit();
+	}
+	else if(strcasecmp(param, "live") == 0) {
+		instrumentState.mode = MODE_LIVE;
+		DoFileProcessing(NO_FILE_PROCESSING);
+		Set_n_d3_per_file(1);
+		ScurveAdderReInit();
+	}
+	else if(strcasecmp(param, "scurve") == 0) {
+		instrumentState.mode = MODE_SCURVE;
+		DoFileProcessing(DO_FILE_PROCESSING);
+		Set_n_d3_per_file(NMAX_OF_THESHOLDS);
+		ScurveAdderReInit();
+	}
+	else {
+		instrumentState.mode = MODE_NONE;
+		char ok_eomess_str[] = "No such mode\n\r";
+		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
+		return -1;
+	}
+
+	if(instrumentState.err_SDcard)
+	{
+		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
+		SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_SDcard);
+	}
+	else if(instrumentState.err_artix_bin)
+	{
+		print("Problems with loading Artix board\n\r");
+		SendErrorCommand(tpcb, ERR_ARTIX_BOARD + instrumentState.err_artix_bin);
+	}
+	else if(instrumentState.artix_locked == 0)
+	{
+		print("Artix does not give clock\n\r");
+		SendErrorCommand(tpcb, ERR_ARTIX_NOT_LOCKED);
+	}
+	else
+	{
+		//if(param == 0)
+		//	SendHVPSLogToFTP(1);
+		//else
+		if(instrumentState.mode != MODE_LIVE)
+			xil_printf("Removed  all sci data files from FTP server: %d files\n\r", RemoveAllSciDataFilesFromFTP());
+		if(instrumentState.mode == MODE_D1 || instrumentState.mode == MODE_D1D3)
+			SetModeD1(2);
+		SetTime(param2);
+		DateTime dateTime;
+		convertUnixTimeToDate(param2, &dateTime);
+		xil_printf("%s\n\r", formatDate(&dateTime, 0));
+		char ok_eomess_str[] = "Ok\n\r";
+		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
+	}
+	return 0;
+}
+
+
 void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 {
 	u8 str_len=0; char reply[128];
 	u32 get_len, param, i;
-	u32 param0, param1, param2, param3, param4;
+	//u32 param0, param1, param2, param3, param4;
 	u64 long_param;
 	u8 array_param[15];
 	char ans_str[64]; u8 ans_pos;
@@ -153,33 +177,104 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;
-		if(!IsDataProviderStarted())
-		{
-			StopDataProviderForLive();
-			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-			ResetDataConverter();
-			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-			ResetScurveAdder();
-			InitHLS_peripherals();
-			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-			StartDataProviderForLive();
-		}
-		GetPtrForLive(&ptr4live);
+//		if(!IsDataProviderStarted())
+//		{
+//			StopDataProviderForLive();
+//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
+//			ResetDataConverter();
+//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
+//			ResetScurveAdder();
+//			InitHLS_peripherals();
+//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
+//			StartDataProviderForLive();
+//		}
+		//TODO: GetPtrForLive(&ptr4live);
 //		char str[] = "Ok\n\r";
-		err = tcp_write(tpcb, ptr4live, 4 * N_OF_PIXEL_PER_PDM / 2, 1);
+		L3Start(FINITE, 1);
+		StartDataProviderFor1D3frame(GetIntegration());
+		for(i=0;i<GENERAL_TIMEOUT;i++) {
+			print("*");
+			if(Is_D3_received())
+				break;
+		}
+
+
+		err = tcp_write(tpcb, DMA_GetP(), 4 * N_OF_PIXELS_TOTAL/2, 1);
+		xil_printf("@err = %d\n\r", err);
 		//for(i=0;i<63;i++)
 		//	xil_printf("%08x ", *(p+i));
 		tcp_sent(tpcb, sent_callback);
-		//xil_printf("@err = %d\n\r", err);
 		live_sent = 0;
 		//xil_printf("err = %d\n\r", err);
 		//err = tcp_output(tpcb);
 		//xil_printf("err = %d\n\r", err);
 	}
+	else if(sscanf(p->payload, TCP_CMD_INSTR_SET_INTEGR, &param) == 1)
+	{
+		xil_printf("Integration set %d\n\r", param);
+		if((param == 0) || (param > 65535)) {
+			char str[] = "Parameter is out of range. Must be 1..65535\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+		}
+		else {
+			SetIntegration(param);
+			ScurveAdderReInit();
+			char str[] = "Ok\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+		}
+	}
+	else if(sscanf(p->payload, TCP_CMD_INSTR_MODE_1PAR, ans_str) == 1)
+	{
+		ProcessInstrumentModeCommand(tpcb, ans_str, 0);
+	}
+	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_START, strlen(TCP_CMD_INSTR_MODE_START)) == 0)
+	{
+		FlowControlStart_D1(1);
+		if(instrumentState.mode == MODE_D1) {
+			L1Start();
+			StartDataProvider();
+		}
+		else if(instrumentState.mode == MODE_D3) {
+			L3Start(INFINITE, N_FRAMES_DMA_D3);
+			StartDataProvider();
+		}
+		else if(instrumentState.mode == MODE_D1D3) {
+			L1Start();
+			L3Start(INFINITE, N_FRAMES_DMA_D3);
+			StartDataProvider();
+		}
+		else if(instrumentState.mode == MODE_LIVE) {
+			char str[] = "The instrument cannot be started in the current mode.\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+			return;
+		}
+		else if(instrumentState.mode == MODE_SCURVE) {
+			ret = StartScurve();
+			if(ret == -1) {
+				char str[] = "Scurve is being gathered\n\r";
+				tcp_write(tpcb, str, sizeof(str), 1);
+			}
+		}
+		else {
+			char str[] = "Instrument mode is not set\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+			return;
+		}
 
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_STOP, strlen(TCP_CMD_INSTR_MODE_STOP)) == 0)
+	{
+		FlowControlStart_D1(0);
+		L1Stop();
+		L3Stop();
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL, &param) == 1)
 	{
-		debugSettings.current_thr = param;
+		//debugSettings.current_thr = param;
 		LoadSameDataToSlowControl2(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
@@ -277,7 +372,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			}
 		}
 		HV_turnON_list(turn);
-		SetupHVPSIntrSystem(getIntcPtr());
+		//TODO SetupHVPSIntrSystem(getIntcPtr()); This spoil FTP server by unknown reason
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -375,7 +470,7 @@ int start_telnet_cmd()
 	struct tcp_pcb *pcb;
 	err_t err;
 
-	unsigned port = 23; // ���� ��� ������� ����������
+	unsigned port = 23; //
 
 	/* create new TCP PCB structure */
 	pcb = tcp_new();
@@ -418,7 +513,6 @@ void SetDefaultParameters()
 	sCurveStruct.step_dac_value = 5;
 	sCurveStruct.stop_dac_value = 1000;
 	sCurveStruct.accumulation = 10;
-	debugSettings.current_thr = 0;
 	SetDefaultSCParameters();
 	SetDefaultIndSCParameters();
 
@@ -428,6 +522,7 @@ void SetDefaultParameters()
 	instrumentState.file_counter_l2 = 0;
 	instrumentState.file_counter_l3 = 0;
 	instrumentState.is_simple_packets = 0;
-	//memset(sci_data, 0, sizeof(sci_data));
+	instrumentState.mode = MODE_NONE;
+	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 }
 
