@@ -171,7 +171,10 @@ int LoadArtix(char * filename)
 	}
 }
 
-
+void netifSetDown()
+{
+	netif_set_down(echo_netif);
+}
 
 
 int main()
@@ -306,7 +309,7 @@ int main()
 
 
 
-	print("Loading FW to Artixes\n\r");
+	xil_printf("Loading FW to Artixes with FW file %s\n\r", FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);

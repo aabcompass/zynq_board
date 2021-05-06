@@ -16,16 +16,16 @@
 //	u32 current_pixel;
 //} DebugSettings;
 
-typedef struct
-{
-	u32 start_dac_value;
-	u32 stop_dac_value;
-	u32 step_dac_value;
-	u32 accumulation;
-	u32 current_dac_value;
-	u32 is_scurve_being_gathered;
-	u32 scurve_counter;
-} SCurveStruct;
+//typedef struct
+//{
+//	u32 start_dac_value;
+//	u32 stop_dac_value;
+//	u32 step_dac_value;
+//	u32 accumulation;
+//	u32 current_dac_value;
+//	u32 is_scurve_being_gathered;
+//	u32 scurve_counter;
+//} SCurveStruct;
 
 typedef struct
 {
@@ -56,14 +56,15 @@ enum {STATUS_IDLE, STATUS_BUSY};
 
 typedef struct
 {
-	u8 flash_state;
-	u32 corever;
-	u32 toBeReset;
-	u32 access_denied;
-	u8 severity; // 0 - max;  ... then low
-	char device_modelname[12];
-	u8 isPrinting;
-	u8 no_files;
+//	u8 flash_state;
+//	u32 corever;
+//	u32 toBeReset;
+//	u32 access_denied;
+//	u8 severity; // 0 - max;  ... then low
+//	char device_modelname[12];
+//	u8 isPrinting;
+//	u8 no_files;
+	u32 scurve_delay;
 } SystemSettings;
 
 

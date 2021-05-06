@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.03.00"
+#define ZYNQ3_VER_STRING "v3.06.00"
 
 //========================================
 // Constants
@@ -286,6 +286,7 @@ typedef struct
 #define TCP_CMD_TEST_CONNECT 		"test connect" /*Test connect*/
 #define TCP_CMD_INSTR_STATUS		"instrument status" /*for debug*/
 #define TCP_CMD_GET_VER				"instrument ver" /*Ask for version*/
+#define TCP_CMD_REBOOT				"instrument reboot" /*Ask for version*/
 //#define TCP_CMD_INSTR_MODE_2PAR		"instrument mode %d %d" /*Start in specified mode or stop (0)*/
 #define TCP_CMD_INSTR_MODE_1PAR		"instrument mode %s" /*Start in specified mode or stop (0)*/
 #define TCP_CMD_INSTR_MODE_START	"instrument start" /*Start DMA with trigger*/
@@ -302,6 +303,9 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_APPLY 		"slowctrl apply" /*Apply individual DAC10/7*/
 #define TCP_CMD_SLOWCTRL_GET_DAC10	"slowctrl dac10?"/*Get DAC10 for the current ASIC*/
 #define TCP_CMD_SLOWCTRL_GET_DAC7	"slowctrl dac7?"/*Get DAC7 for the current pixel*/
+#define TCP_CMD_SLOWCTRL_SET_PAUSE	"slowctrl scurve pause %d"/*Sets pause between setting thresholds during scurve gathering process*/
+#define TCP_CMD_SLOWCTRL_G_CUR_TRH	"slowctrl scurve thr?" /*Returns current threshold during scurve gathering process*/
+
 #define TCP_CMD_GTU_1US				"gtu 1us" /* Set GTU=1us (default) */
 #define TCP_CMD_GTU_2_5US			"gtu 2.5us"/* Set GTU=2.5us. This must be done before to start acq. */
 #define TCP_CMD_HVPS_STATUS_INTR	"hvps status interrupt"/* for debug */
@@ -310,6 +314,7 @@ typedef struct
 #define TCP_CMD_HVPS_SETDAC			"hvps setdac %d %d %d %d %d %d %d %d %d"/* Set Dynode voltages (code 4095~1100V) */
 #define TCP_CMD_HVPS_CATHODE		"hvps cathode %d %d %d %d %d %d %d %d %d"/* Set cathode voltages */
 #define TCP_CMD_HVPS_STATUS_GPIO	"hvps status gpio"/* Get HVPS Polish status */
+#define TCP_CMD_DBG_ARTCLK_CNT		"dbg art clk"
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
 
 #pragma pack(pop) /* return to normal packing */

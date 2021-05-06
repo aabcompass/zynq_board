@@ -80,6 +80,7 @@ void StartDataProviderInitial()
 	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= ((1<<BIT_START_SIG) | (1<<BIT_INFINITE));
 	//for(i=0;i<100000000;i++);
 	StartDataProviderForLive();
+	SetArtixFrameOn(1);
 	for(i=0;i<100000000;i++);
 	StopDataProviderForLive();
 }
@@ -154,4 +155,11 @@ void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max)
 void DataProvEnOutput()
 {
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |=  (1<<BIT_EN_OUTPUT);
+}
+
+void GetAux2Data(u32* data0, u32* data1, u32* data2)
+{
+	*data0 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX2)) >> 0   & 0x3FF;
+	*data1 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX2)) >> 10  & 0x3FF;
+	*data2 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX2)) >> 20  & 0x3FF;
 }

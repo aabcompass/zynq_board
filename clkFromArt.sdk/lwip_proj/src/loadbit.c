@@ -30,10 +30,13 @@ int bitsize;
 //#define BIT_ART_CONF_TEST		3
 //#define BIT_ART_CONF_TDELAY	4
 //#define BIT_ART_CONF_TEST2	8
+
+/*!!! THESE VALUES ARE SHIFTED BY 1 !!!*/
 #define BIT_ART_CONF_FRACDELAY	1
 #define BIT_ART_CONF_TEST		4
 #define BIT_ART_CONF_TDELAY		5
 #define BIT_ART_CONF_TEST2		9
+#define BIT_ART_CONF_FRAMEON	11
 
 u32 artix_conf_word = 0;
 
@@ -137,4 +140,17 @@ void SetArtixFracDelay(u32 delay) // 0...15
 	LoadArtix_u32(artix_conf_word);
 }
 
+void SetArtixFrameOn(u32 param) // 0|1
+{
+	if(param == 1)
+		artix_conf_word |= (1<<BIT_ART_CONF_FRAMEON);
+	else
+		artix_conf_word &= ~(1<<BIT_ART_CONF_FRAMEON);
 
+	LoadArtix_u32(artix_conf_word);
+}
+
+void SetArtix0101()
+{
+	LoadArtix_u32(0x12345678);
+}

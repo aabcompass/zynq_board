@@ -24,6 +24,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	static int num = 8;
 	static int ec = 0;
 	u32 ReceivedWords;
+	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 
 
 	if(c == 'd')
@@ -75,6 +76,17 @@ void ProcessUartCommands(struct netif *netif, char c)
 		DMAStatus();
 		//SendMapping();
 		ConfTrigger();
+		GetAux2Data(&clk_cnt0, &clk_cnt1, &clk_cnt2);
+		xil_printf("clk_cnt0=%d, clk_cnt1=%d, clk_cnt2=%d\n\r", clk_cnt0, clk_cnt1, clk_cnt2);
+	}
+	else if(c == 'S')
+	{
+		SetArtixFrameOn(1);
+		//SetArtix0101();
+	}
+	else if(c == '&')
+	{
+		RebootZynq();
 	}
 	else if(c == '/')
 	{
@@ -93,14 +105,10 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//StartDataProviderInitial();
 		FlowControlTRG();
 	}
-	else if(c == 's')
-	{
-		//DmaStart1();
-		xil_printf("ART slv_reg=0x%08x\n\r", *(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR));
-	}
 	else if(c == 'r')
 	{
 		//SA_restart();
+		//ResetScurveAdder(); reinit is required!!
 		ResetDataConverter();
 	}
 	else if(c == 'p')

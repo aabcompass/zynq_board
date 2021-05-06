@@ -22,6 +22,8 @@
 #define REGW_DATAPROV_PMTZERO_2	12
 #define REGW_DATAPROV_CLKEN		13
 #define REGR_DATAPROV_STATUS	16
+#define REGR_DATAPROV_AUX1		17
+#define REGR_DATAPROV_AUX2		18
 
 //REGW_DATAPROV_FLAGS
 #define BIT_START_SIG			0 /*Start Data Provider*/
@@ -63,5 +65,6 @@ void DataProvEnOutput();
 void ArtixClkEn(u32 en);
 void ResetTriggerService_D1();
 u32 IsDataProviderPass();
+void GetAux2Data(u32* data0, u32* data1, u32* data2);
 
 #endif /* SRC_DATA_PROVIDER_H_ */

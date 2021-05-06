@@ -21,8 +21,9 @@
 
 
 
-SCurveStruct sCurveStruct;
+//SCurveStruct sCurveStruct;
 InstrumentState instrumentState;
+SystemSettings systemSettings;
 //DebugSettings debugSettings;
 
 u32 live_sent = 0;
@@ -132,6 +133,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	double double_param, double_param2, double_param3;
 	int ret;
 	int turn[NUM_OF_HV];
+	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 
 	u32 pmt_trig1,  pmt_trig2,  ec_trig1,  ec_trig2,  pdm_trig1,  pdm_trig2;
 	// print command
@@ -146,6 +148,13 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(strncmp(p->payload, TCP_CMD_TEST_CONNECT, 12) == 0)
 	{
+		char ok_eomess_str[] = "Ok\n\r";
+		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_REBOOT, strlen(TCP_CMD_REBOOT)) == 0)
+	{
+		//netifSetDown();
+		RebootZynq();
 		char ok_eomess_str[] = "Ok\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
@@ -192,7 +201,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 //		char str[] = "Ok\n\r";
 		L3Start(FINITE, 1);
 		StartDataProviderFor1D3frame(GetIntegration());
-		for(i=0;i<GENERAL_TIMEOUT;i++) {
+		for(i=0;i<GENERAL_LIVE_TIMEOUT;i++) {
 			print("*");
 			if(Is_D3_received())
 				break;
@@ -334,12 +343,18 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		sprintf(reply, "%d\n\r", GetIndSCDac7());
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-//	else if(strncmp(p->payload, "slowctrl mask?", 14) == 0)
-//	{
-//		sprintf(reply, "%d\n\r", GetIndSCPixelMask());
-//		tcp_write(tpcb, reply, strlen(reply), 1);
-//	}
-
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_SET_PAUSE, &param) == 1)
+	{
+		systemSettings.scurve_delay = param;
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_G_CUR_TRH, strlen(TCP_CMD_SLOWCTRL_G_CUR_TRH)) == 0)
+	{
+		param=GetCurrentTheshold();
+		sprintf(reply, "%d\n\r", param);
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_GTU_1US, 7) == 0)
 	{
 		RunArtix(1);
@@ -408,7 +423,14 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	{
 		tcp_close(tpcb);
 	}
-//	else
+	else if(strncmp(p->payload, TCP_CMD_DBG_ARTCLK_CNT, strlen(TCP_CMD_DBG_ARTCLK_CNT)) == 0)
+	{
+		GetAux2Data(&clk_cnt0, &clk_cnt1, &clk_cnt2);
+		sprintf(reply, "%d %d %d\n\r",
+				clk_cnt0, clk_cnt1, clk_cnt2);
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+//
 //	{
 //		static int called = 0;
 //		strcpy(ans_str, "Error 1\n\r");
@@ -509,10 +531,10 @@ void SetDefaultParameters()
 	//FillExperimentalData();
 	//systemSettings.isPrinting = 0;
 
-	sCurveStruct.start_dac_value = 0;
-	sCurveStruct.step_dac_value = 5;
-	sCurveStruct.stop_dac_value = 1000;
-	sCurveStruct.accumulation = 10;
+//	sCurveStruct.start_dac_value = 0;
+//	sCurveStruct.step_dac_value = 5;
+//	sCurveStruct.stop_dac_value = 1000;
+//	sCurveStruct.accumulation = 10;
 	SetDefaultSCParameters();
 	SetDefaultIndSCParameters();
 
@@ -523,6 +545,7 @@ void SetDefaultParameters()
 	instrumentState.file_counter_l3 = 0;
 	instrumentState.is_simple_packets = 0;
 	instrumentState.mode = MODE_NONE;
+	systemSettings.scurve_delay = 10;
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 }
 

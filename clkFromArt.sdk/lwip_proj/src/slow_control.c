@@ -11,6 +11,7 @@
 #include "common.h"
 #include "dma_handling.h"
 #include "data_provider.h"
+#include "own_data_types.h"
 
 SLOWCTRL_SP3_36CHIPS_REFORMATTED_V1 reformatted;
 SLOWCTRL_SP3_ALL_ASIC_V1 sc_sp3_all_asic_test;
@@ -20,6 +21,8 @@ SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 u32 current_line=0, current_asic=0, current_pixel=0;
 u32 current_common_thr = 0;
 u32 scurve_wait_cnt = 0;
+
+extern SystemSettings systemSettings;
 
 void SetDefaultSCParameters()
 {
@@ -328,7 +331,7 @@ void scurve_sm()
 			scurve_sm_state = wait_thr_state;
 			break;
 		case wait_thr_state:
-			if(scurve_wait_cnt > 100) {/*10 ms*/
+			if(scurve_wait_cnt > 10*systemSettings.scurve_delay) {/*10 ms*/
 				if(current_common_thr%N_D3_PER_FILE == 0)
 					scurve_sm_state = start_dma1;
 				else

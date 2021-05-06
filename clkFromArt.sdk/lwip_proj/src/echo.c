@@ -93,7 +93,11 @@ err_t accept_callback(void *arg, struct tcp_pcb *newpcb, err_t err)
 	return ERR_OK;
 }
 
-
+void RebootZynq()
+{
+	*(u32*)(0XF8000008) = 0xDF0D;
+	*(u32*)(0xF8000200) = 1;
+}
 //int start_application()
 //{
 //	struct tcp_pcb *pcb;
