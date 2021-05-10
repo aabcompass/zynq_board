@@ -78,6 +78,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 		ConfTrigger();
 		GetAux2Data(&clk_cnt0, &clk_cnt1, &clk_cnt2);
 		xil_printf("clk_cnt0=%d, clk_cnt1=%d, clk_cnt2=%d\n\r", clk_cnt0, clk_cnt1, clk_cnt2);
+		xil_printf("Is_D3_received()=%d\n\r", Is_D3_received());
+
 	}
 	else if(c == 'S')
 	{

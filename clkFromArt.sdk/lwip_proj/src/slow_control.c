@@ -254,7 +254,7 @@ void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
 void LoadSameDataToSlowControl2(u32 current_dac_value)
 {
 	u32 s_value=0, i;
-	slowctrl_samedata.misc_reg0 = (0x0FF20C87 | current_dac_value<<7 | s_value<<3); //0x07A20007 was in Mini
+	slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
 	slowctrl_samedata.x4_gain = 0x10101010;
 	slowctrl_samedata.x4_dac_7b_sub = 0x18181818;
 	slowctrl_samedata.misc_reg2 = 0x3B;
@@ -315,6 +315,7 @@ static enum  {
 void scurve_sm()
 {
 	u32 ret;
+	static int i=0;
 	switch(scurve_sm_state)
 	{
 		case no_state:
@@ -322,7 +323,7 @@ void scurve_sm()
 			break;
 		case start_scurve:
 			current_common_thr = 0;
-			Set_n_d3_per_file(N_D3_PER_FILE);
+			//Set_n_d3_per_file(N_D3_PER_FILE);
 			scurve_sm_state = change_thr;
 			break;
 		case change_thr:
@@ -346,25 +347,35 @@ void scurve_sm()
 		case start_dma1:
 			if(current_common_thr>0) {
 				ret = Is_D3_received();
-				xil_printf("ret=%d ", ret);
-				if(ret)
+				//xil_printf("i=%d ", i++);
+				if(ret != 0) {
 					scurve_sm_state = start_dma2;
+				}
+				else {
+					i++;
+					if((i%1000000) == 0)
+						print("?");
+				}
 			}
 			else {
 				scurve_sm_state = start_dma2;
 			}
 			break;
 		case start_dma2:
-			if(current_common_thr == 1000) {
-				Set_n_d3_per_file(24);
-				L3Start(FINITE, 24);
-			}
-			else if(current_common_thr%N_D3_PER_FILE == 0) {
+			//if(current_common_thr == 1000) {
+			//	Set_n_d3_per_file(24);
+			//	ScurveAdderReInit();
+			//	L3Start(FINITE, 24);
+			//}
+			//else
+			if(current_common_thr%N_D3_PER_FILE == 0) {
 				//xil_printf("Is_D3_received()=%d", Is_D3_received());
-				Set_n_d3_per_file(N_D3_PER_FILE);
+				if(current_common_thr == 0) {
+					//Set_n_d3_per_file(N_D3_PER_FILE);
+					//ScurveAdderReInit();
+				}
 				L3Start(FINITE, N_D3_PER_FILE);
 			}
-			ScurveAdderReInit();
 			scurve_sm_state = pass_data;
 			break;
 		case pass_data:
@@ -382,7 +393,7 @@ void scurve_sm()
 				scurve_sm_state = condition_state;
 			break;
 		case condition_state:
-			if(current_common_thr == NMAX_OF_THESHOLDS) {
+			if(current_common_thr == NMAX_OF_THESHOLDS-1) {
 				scurve_sm_state = end_state;
 			}
 			else {

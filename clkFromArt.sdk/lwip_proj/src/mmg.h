@@ -12,8 +12,8 @@
 #include "xbasic_types.h"
 #include "xil_types.h"
 
-#define N_D1_IN_MEM	400
-#define N_D3_IN_MEM	12
+#define N_D1_IN_MEM	100
+#define N_D3_IN_MEM	13
 
 #define N_SCI_FILES		(N_D1_IN_MEM+N_D3_IN_MEM)
 

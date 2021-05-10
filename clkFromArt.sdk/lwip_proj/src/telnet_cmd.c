@@ -76,7 +76,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 	else if(strcasecmp(param, "scurve") == 0) {
 		instrumentState.mode = MODE_SCURVE;
 		DoFileProcessing(DO_FILE_PROCESSING);
-		Set_n_d3_per_file(NMAX_OF_THESHOLDS);
+		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
 	else {
