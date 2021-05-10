@@ -258,10 +258,17 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			return;
 		}
 		else if(instrumentState.mode == MODE_SCURVE) {
+			if(Get_n_occupied(DATA_TYPE_L3)==11)
+			{
+				char str[] = "Not enough memory for two scurves. Retrieve previous, then start new one\n\r";
+				tcp_write(tpcb, str, sizeof(str), 1);
+				return;
+			}
 			ret = StartScurve();
 			if(ret == -1) {
 				char str[] = "Scurve is being gathered\n\r";
 				tcp_write(tpcb, str, sizeof(str), 1);
+				return;
 			}
 		}
 		else {

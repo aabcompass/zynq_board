@@ -16,6 +16,7 @@ MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
 
 u32 last_l1_occupied, last_l3_occupied;
+u32 n_l1_occupied=0, n_l3_occupied=0;
 int last_file_descriptor = -1, last_mmg_file_descriptor = -1, last_global_cycle=-1;
 SciFiles sciFiles[N_SCI_FILES];
 
@@ -63,9 +64,11 @@ void MmgDeleteSciFile(u32 file_descriptor)
 		xil_printf("%d,", ref);
 		if(sciFiles[file_descriptor].data_type == DATA_TYPE_L1) {
 			mainBufferDescr.sci_data_l1[ref].is_occupied = 0;
+			n_l1_occupied--;
 		}
 		else if(sciFiles[file_descriptor].data_type == DATA_TYPE_L3) {
 			mainBufferDescr.sci_data_l3[ref].is_occupied = 0;
+			n_l3_occupied--;
 		}
 	}
 	//Delete the file under file_descriptor
@@ -94,6 +97,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 		for(i=0;i<N_D1_IN_MEM;i++) {
 			if(!mainBufferDescr.sci_data_l1[i].is_occupied) {
 				mainBufferDescr.sci_data_l1[i].is_occupied = 1;
+				n_l1_occupied++;
 				mainBufferDescr.sci_data_l1[i].is_finalized = 0;
 				last_l1_occupied = i;
 				p = (char*)&mainBuffer.sci_data_l1[i].payload.frames[0].pmt[0].raw_data[0];
@@ -106,6 +110,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 		for(i=0;i<N_D3_IN_MEM;i++) {
 			if(!mainBufferDescr.sci_data_l3[i].is_occupied) {
 				mainBufferDescr.sci_data_l3[i].is_occupied = 1;
+				n_l3_occupied++;
 				mainBufferDescr.sci_data_l3[i].is_finalized = 0;
 				last_l3_occupied = i;
 				p = (char*)&mainBuffer.sci_data_l3[i].payload.int32_data[0][0];
@@ -209,4 +214,15 @@ void MmgPrintFiles()
 					i, sciFiles[i].p, sciFiles[i].data_type, sciFiles[i].global_cycle, sciFiles[i].n_records);
 	}
 
+}
+
+u32 Get_n_occupied(int data_type)
+{
+	if(data_type == DATA_TYPE_L1)
+		return n_l1_occupied;
+	else if(data_type == DATA_TYPE_L3)
+		return n_l3_occupied;
+	else
+		print("Get_n_occupied: No such data_type\n\r");
+	return 0;
 }

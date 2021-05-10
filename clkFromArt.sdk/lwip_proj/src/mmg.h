@@ -12,7 +12,7 @@
 #include "xbasic_types.h"
 #include "xil_types.h"
 
-#define N_D1_IN_MEM	100
+#define N_D1_IN_MEM	400
 #define N_D3_IN_MEM	13
 
 #define N_SCI_FILES		(N_D1_IN_MEM+N_D3_IN_MEM)
@@ -65,5 +65,6 @@ void MmgDeleteSciFile(u32 file_descriptor);
 void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle);
 void MmgIncr_n_records(u32 file_descriptor, u16 record);
 INTPTR MmgGetP(int data_type);
+u32 Get_n_occupied(int data_type);
 
 #endif /* SRC_MMG_H_ */
