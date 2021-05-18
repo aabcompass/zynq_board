@@ -21,8 +21,14 @@ SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 u32 current_line=0, current_asic=0, current_pixel=0;
 u32 current_common_thr = 0;
 u32 scurve_wait_cnt = 0;
+u32 scurve_step = 1;
 
 extern SystemSettings systemSettings;
+
+void Set_scurve_step(u32 step)
+{
+	scurve_step = step;
+}
 
 void SetDefaultSCParameters()
 {
@@ -254,7 +260,8 @@ void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
 void LoadSameDataToSlowControl2(u32 current_dac_value)
 {
 	u32 s_value=0, i;
-	slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
 	slowctrl_samedata.x4_gain = 0x10101010;
 	slowctrl_samedata.x4_dac_7b_sub = 0x18181818;
 	slowctrl_samedata.misc_reg2 = 0x3B;
@@ -393,12 +400,14 @@ void scurve_sm()
 				scurve_sm_state = condition_state;
 			break;
 		case condition_state:
-			if(current_common_thr == NMAX_OF_THESHOLDS-1) {
+			//if(current_common_thr == NMAX_OF_THESHOLDS-1) {
+			if(current_common_thr == NMAX_OF_THESHOLDS-scurve_step) {
 				scurve_sm_state = end_state;
 			}
 			else {
 				scurve_sm_state = change_thr;
-				current_common_thr++;
+				current_common_thr+=scurve_step;
+				//current_common_thr++;
 			}
 			break;
 		case end_state:

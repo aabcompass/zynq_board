@@ -114,5 +114,6 @@ typedef struct
 
 //void RB_inject_bit();
 u32 StartScurve();
+void Set_scurve_step(u32 step);
 
 #endif /* SLOW_CONTROL_H_ */

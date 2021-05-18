@@ -217,8 +217,6 @@ int main()
 	IP4_ADDR(&gw,      192, 168,   7,  1);
 #endif	
 #endif
-	print_app_header();
-
 	lwip_init();
 
 #if (LWIP_IPV6 == 0)

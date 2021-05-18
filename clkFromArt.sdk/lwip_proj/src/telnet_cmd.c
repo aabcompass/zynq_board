@@ -362,6 +362,20 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		sprintf(reply, "%d\n\r", param);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_SET_STEP, &param) == 1)
+	{
+		if(param == 1 || param == 11)	{
+			Set_scurve_step(param);
+			char str[] = "Ok\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+			return;
+		}
+		else {
+			char str[] = "Step must be either 1 or 11\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+			return;
+		}
+	}
 	else if(strncmp(p->payload, TCP_CMD_GTU_1US, 7) == 0)
 	{
 		RunArtix(1);

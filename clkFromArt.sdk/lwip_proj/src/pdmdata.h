@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.06.01"
+#define ZYNQ3_VER_STRING "v3.07.00"
 
 //========================================
 // Constants
@@ -164,22 +164,22 @@ typedef struct
 typedef struct
 {
 	// Unix timestamp
-	TimeStamp_dual ts;
+	TimeStamp_dual ts; //8
 	// Flags
-	uint32_t trig_type;
+	uint32_t trig_type; //4
 	// HVPS status
-	uint32_t hv_status;
+	uint32_t hv_status; //4
 	// integrated data
-	uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL];
-} DATA_TYPE_SCI_L3_V2;
+	uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL]; //4*100*2880
+} DATA_TYPE_SCI_L3_V2; //1152016
 
 // D3 timestamped packet with header
 typedef struct
 {
-	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L3_V2 payload;
-	char alignment[0x28];
-} Z_DATA_TYPE_SCI_L3_V2;
+	ZynqBoardHeader zbh; //8
+	DATA_TYPE_SCI_L3_V2 payload; //1152016
+	char alignment[0x28]; //40
+} Z_DATA_TYPE_SCI_L3_V2; //1152064
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
 #define MAX_PACKETS_L1 25 /*per lifecycle*/
@@ -305,6 +305,7 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_GET_DAC7	"slowctrl dac7?"/*Get DAC7 for the current pixel*/
 #define TCP_CMD_SLOWCTRL_SET_PAUSE	"slowctrl scurve pause %d"/*Sets pause between setting thresholds during scurve gathering process*/
 #define TCP_CMD_SLOWCTRL_G_CUR_TRH	"slowctrl scurve thr?" /*Returns current threshold during scurve gathering process*/
+#define TCP_CMD_SLOWCTRL_SET_STEP	"slowctrl scurve step %d" /*Set scurve step 1 or 11*/
 
 #define TCP_CMD_GTU_1US				"gtu 1us" /* Set GTU=1us (default) */
 #define TCP_CMD_GTU_2_5US			"gtu 2.5us"/* Set GTU=2.5us. This must be done before to start acq. */
