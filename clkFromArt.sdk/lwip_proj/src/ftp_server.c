@@ -132,13 +132,13 @@ int CreateFile(char* filename, char* pData, int size, uint32_t unix_time, File_t
 
 int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint32_t mmg_file_descriptor)
 {
-	char filename_str[20];
+	char filename_str[50];
 	int ret;
 	if(data_type == DATA_TYPE_L1) {
-		sprintf(filename_str, FILENAME_L1, instrumentState.file_counter_l1++);
+		sprintf(filename_str, FILENAME_D1, instrumentState.ZB_number,  instrumentState.file_counter_l1++);
 	}
 	else if(data_type == DATA_TYPE_L3) {
-		sprintf(filename_str, FILENAME_L3, instrumentState.file_counter_l3++);
+		sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);
 	}
 	ret = CreateFile(filename_str, pData, size, unix_time, file_scidata);
 	if(ret == TOO_MANY_FILES) {

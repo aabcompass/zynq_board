@@ -5,6 +5,7 @@
 #include "xparameters.h"	/* SDK generated parameters */
 #include "xsdps.h"		/* SD device driver */
 #include "xil_printf.h"
+#include "stdio.h"
 #include "ff.h"
 #include "xil_cache.h"
 #include "xplatform_info.h"
@@ -222,6 +223,79 @@ int ReadArtixBitstream(char * data, int* size, char* filename)
 	}
 	return XST_SUCCESS;
 }
+
+#define UENV_TXT_FILE_SIZE	100
+
+int ReadIPaddr(u32* ip)
+{
+	FRESULT Res;
+	FILINFO fno;
+	UINT NumBytesRead;
+	u32 size;
+	char data[UENV_TXT_FILE_SIZE];
+	char* p_ip_addr;
+
+	Res = f_stat(/*FILENAME_ARTIX_BITSTREAM_1_BOARD*/"uEnv.txt", &fno);
+	if(Res != FR_OK)
+	{
+		xil_printf("ReadIPaddr: f_stat returned %d\n\r", Res);
+		return Res;
+	}
+	else
+	{
+		xil_printf("uEnv.txt file size =  %d\n\r", fno.fsize);
+	}
+
+	size =  fno.fsize;
+	if(size > UENV_TXT_FILE_SIZE)
+		print("  !!!!!!!!!! uEnv.txt file size > 100 bytes as allocated !!!!!!!\n\r");
+
+	Res = f_open(&fil, "uEnv.txt", FA_READ);
+	if (Res) {
+		return Res;
+	}
+	/*
+	 * Pointer to beginning of file .
+	 */
+	Res = f_lseek(&fil, 0);
+	if (Res) {
+		return Res;
+	}
+
+	/*
+	 * Read data from file.
+	 */
+	Res = f_read(&fil, (void*)data, fno.fsize,
+			&NumBytesRead);
+	if (Res) {
+		return Res;
+	}
+	else
+	{
+		xil_printf("ReadIPaddr: NumBytesRead=%d\n\r", NumBytesRead);
+	}
+
+	p_ip_addr = strstr(data, "ipaddr=192.168.7.");
+	if(p_ip_addr == NULL) {
+		print("Cannot find IP address in uEnv.txt on the SD-card\n\r");
+	}
+	else {
+		sscanf(p_ip_addr, "ipaddr=192.168.7.%d", ip);
+	}
+
+	xil_printf("ZB IP address is read out from the SD-card: 192.168.7.%d\n\r", *ip);
+	if(*ip == 103) {
+		*ip = 10;
+		xil_printf("Due to compatibility with old FW versions the IP has changed to: 192.168.7.%d\n\r", *ip);
+	}
+
+	Res = f_close(&fil);
+	if (Res) {
+		return Res;
+	}
+	return XST_SUCCESS;
+}
+
 /*****************************************************************************/
 /**
 *

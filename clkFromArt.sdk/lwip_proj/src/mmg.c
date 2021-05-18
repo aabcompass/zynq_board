@@ -130,7 +130,7 @@ u32 MmgGetFileSize(int mmg_file_descriptor)
 		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V3);
 	}
 	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L3) {
-		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V2);
+		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V3);
 	}
 	print("Wrong data type\n\r");
 	return -1;
@@ -192,7 +192,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_l3[last_l3_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L3, 2);
-		mainBuffer.sci_data_l3[last_l3_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L3_V2);
+		mainBuffer.sci_data_l3[last_l3_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L3_V3);
 		mainBufferDescr.sci_data_l3[last_l3_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
 		p=(char*)&mainBuffer.sci_data_l3[last_l3_occupied];//.payload.frames[0];

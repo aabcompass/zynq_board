@@ -184,6 +184,7 @@ int main()
 	#if LWIP_IPV6==0
 	ip_addr_t ipaddr, netmask, gw;
 	char c_uart[] = {0, 0};
+	//u32 ip_addr;
 
 #endif
 	/* the mac address of the board. this should be unique per board */
@@ -211,8 +212,17 @@ int main()
 	gw.addr = 0;
 	netmask.addr = 0;
 #else
+
+	print("SD card file system initialization...\n\r");
+	instrumentState.err_SDcard = FfsSdPolledInit();
+	if(instrumentState.err_SDcard)
+		xil_printf("err_SDcard = %d\n\r", instrumentState.err_SDcard);
+	ReadIPaddr(&instrumentState.ZB_number);
+
+
 	/* initliaze IP addresses to be used */
-	IP4_ADDR(&ipaddr,  192, 168,   7, 10);
+	IP4_ADDR(&ipaddr,  192, 168,   7, instrumentState.ZB_number);
+	instrumentState.ZB_number -= 9;
 	IP4_ADDR(&netmask, 255, 255, 255,  0);
 	IP4_ADDR(&gw,      192, 168,   7,  1);
 #endif	
@@ -290,10 +300,7 @@ int main()
 	else
 		print("Ok\n\r");
 
-	print("SD card file system initialization...\n\r");
-	instrumentState.err_SDcard = FfsSdPolledInit();
-	if(instrumentState.err_SDcard)
-		xil_printf("err_SDcard = %d\n\r", instrumentState.err_SDcard);
+
 
 	//print("ARTIX SPI initialization...\n\r");
 	//init_loadbit_spi();

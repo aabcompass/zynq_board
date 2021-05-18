@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.07.00"
+#define ZYNQ3_VER_STRING "v3.08.00"
 
 //========================================
 // Constants
@@ -165,30 +165,26 @@ typedef struct
 {
 	// Unix timestamp
 	TimeStamp_dual ts; //8
+	// ZB_number
+	//uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
 	uint32_t trig_type; //4
 	// HVPS status
 	uint32_t hv_status; //4
 	// integrated data
 	uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL]; //4*100*2880
-} DATA_TYPE_SCI_L3_V2; //1152016
+} DATA_TYPE_SCI_L3_V3; //1152016
 
 // D3 timestamped packet with header
 typedef struct
 {
 	ZynqBoardHeader zbh; //8
-	DATA_TYPE_SCI_L3_V2 payload; //1152016
+	DATA_TYPE_SCI_L3_V3 payload; //1152016
 	char alignment[0x28]; //40
-} Z_DATA_TYPE_SCI_L3_V2; //1152064
+} Z_DATA_TYPE_SCI_L3_V3; //1152064
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
-#define MAX_PACKETS_L1 25 /*per lifecycle*/
-
-// frm_cc* file structure
-typedef struct
-{
-  Z_DATA_TYPE_SCI_L1_V3 level1_data[MAX_PACKETS_L1];
-} DATA_TYPE_SCI_ALLTRG_V2;
+#define MAX_PACKETS_L1 25 /*per 5 sec lifecycle */
 
 // Single live frame
 typedef struct
@@ -240,10 +236,10 @@ typedef struct
 // Filenames for data on FTP server
 //========================================
 
-#define FILENAME_L1				"frm_l1_%08d.dat"
-#define FILENAME_L3				"frm_l3_%08d.dat"
-#define FILENAME_HVLOG			"hv_%08d.dat"
-#define FILENAME_SCURVE	 		"scurve_%08d.dat"
+#define FILENAME_D1				"frm_z%d_d1_%08d.dat"
+#define FILENAME_D3				"frm_z%d_d3_%08d.dat"
+//#define FILENAME_HVLOG			"hv_%08d.dat"
+//#define FILENAME_SCURVE	 		"scurve_%08d.dat"
 
 
 

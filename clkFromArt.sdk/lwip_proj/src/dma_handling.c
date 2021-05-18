@@ -235,7 +235,7 @@ void L3Stop()
 void PrintDataSizes()
 {
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V3)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V3));
-	xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V2)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V2));
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V3)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V3));
 	xil_printf("sizeof(MainBuffer)=0x%08x\n\r", sizeof(MainBuffer));
 }
 
