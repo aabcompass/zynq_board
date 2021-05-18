@@ -113,7 +113,8 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 				n_l3_occupied++;
 				mainBufferDescr.sci_data_l3[i].is_finalized = 0;
 				last_l3_occupied = i;
-				p = (char*)&mainBuffer.sci_data_l3[i].payload.int32_data[0][0];
+				p = (char*)&mainBuffer.sci_data_l3[i].payload.frames[0].pmt[0].data[0];
+				//p = (char*)&mainBuffer.sci_data_l3[i].payload.int32_data[0][0];
 				xil_printf("Given for L3 0x%08x(%d) \n\r", p, i);
 				return p;
 			}
@@ -141,7 +142,8 @@ INTPTR MmgGetP(int data_type)
 	if(data_type == DATA_TYPE_L1)
 		return (INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0];
 	else if(data_type == DATA_TYPE_L3)
-		return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0];
+		//return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0];
+		return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.frames[0].pmt[0].data[0];
 	else {
 		print("MmgGetP: No such data_type\n\r");
 		return (INTPTR)NULL;
@@ -194,7 +196,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l3[last_l3_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L3, 2);
 		mainBuffer.sci_data_l3[last_l3_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L3_V3);
 		mainBufferDescr.sci_data_l3[last_l3_occupied].is_finalized = 1;
-		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
+		//Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
+		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.frames[0].pmt[0].data[0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
 		p=(char*)&mainBuffer.sci_data_l3[last_l3_occupied];//.payload.frames[0];
 		l3_mmg_sci_file_id = MmgCreateSciFile(data_type, glob_cycle, p, last_l3_occupied);
 		if(l3_mmg_sci_file_id != -1) {

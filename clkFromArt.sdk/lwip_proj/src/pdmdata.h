@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.08.00"
+#define ZYNQ3_VER_STRING "v3.08.01"
 
 //========================================
 // Constants
@@ -160,6 +160,21 @@ typedef struct
 // D3 data format
 //--
 
+typedef struct
+{
+	uint32_t data[N_OF_PIXELS_PER_PMT];
+	uint32_t ki[N_OF_KI_PER_PMT];
+	uint32_t spare[N_OF_SPARE_PER_PMT];
+} PMT_3rd_L3_GEN;
+
+typedef struct
+{
+	//uint8_t raw_data[N_OF_PIXEL_PER_PDM];
+	//uint8_t raw_ki [N_OF_KI_PER_PDM];
+	//uint8_t trig_info[SIZE_TRIG_INFO];
+	PMT_3rd_L3_GEN pmt[N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM];
+} FRAME_SPB_2_L3_V0;
+
 // D3 timestamped packet
 typedef struct
 {
@@ -172,7 +187,8 @@ typedef struct
 	// HVPS status
 	uint32_t hv_status; //4
 	// integrated data
-	uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL]; //4*100*2880
+	FRAME_SPB_2_L3_V0 frames[N_OF_FRAMES_D3_V0];
+	//uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL]; //4*100*2880
 } DATA_TYPE_SCI_L3_V3; //1152016
 
 // D3 timestamped packet with header
