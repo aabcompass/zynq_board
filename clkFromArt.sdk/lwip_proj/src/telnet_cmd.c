@@ -26,7 +26,7 @@ InstrumentState instrumentState;
 SystemSettings systemSettings;
 //DebugSettings debugSettings;
 
-u32 live_sent = 0;
+//u32 live_sent = 0;
 //u32* ptr4live;
 
 char err_str[20];
@@ -37,15 +37,15 @@ void SendErrorCommand(struct tcp_pcb *tpcb,  int err_code)
 	tcp_write(tpcb, err_str, strlen(err_str), 1);
 }
 
-void sent_callback(void *arg, struct tcp_pcb *tpcb, u16_t len)
-{
-	err_t err;
-	if(live_sent == 0) {
-		err = tcp_write(tpcb, (DMA_GetP() + (4 * N_OF_PIXELS_TOTAL / 2)), 4 * N_OF_PIXELS_TOTAL / 2, 1);
-		//xil_printf("!err_t=%d\n\r", err);
-		live_sent = 1;
-	}
-}
+//void sent_callback(void *arg, struct tcp_pcb *tpcb, u16_t len)
+//{
+//	err_t err;
+//	if(live_sent == 0) {
+//		err = tcp_write(tpcb, (DMA_GetP() + (4 * N_OF_PIXELS_TOTAL / 2)), 4 * N_OF_PIXELS_TOTAL / 2, 1);
+//		//xil_printf("!err_t=%d\n\r", err);
+//		live_sent = 1;
+//	}
+//}
 
 int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 {
@@ -124,7 +124,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 {
 	u8 str_len=0; char reply[128];
-	u32 get_len, param, i;
+	u32 get_len, param, param2, i;
 	//u32 param0, param1, param2, param3, param4;
 	u64 long_param;
 	u8 array_param[15];
@@ -186,19 +186,6 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;
-//		if(!IsDataProviderStarted())
-//		{
-//			StopDataProviderForLive();
-//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-//			ResetDataConverter();
-//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-//			ResetScurveAdder();
-//			InitHLS_peripherals();
-//			for(i=0;i<100000000;i++); //Pause ~ 0.1.
-//			StartDataProviderForLive();
-//		}
-		//TODO: GetPtrForLive(&ptr4live);
-//		char str[] = "Ok\n\r";
 		L3Start(FINITE, 1);
 		StartDataProviderFor1D3frame(GetIntegration());
 		for(i=0;i<GENERAL_LIVE_TIMEOUT;i++) {
@@ -206,17 +193,17 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			if(Is_D3_received())
 				break;
 		}
-
-
-		err = tcp_write(tpcb, DMA_GetP(), 4 * N_OF_PIXELS_TOTAL/2, 1);
-		xil_printf("@err = %d\n\r", err);
-		//for(i=0;i<63;i++)
-		//	xil_printf("%08x ", *(p+i));
-		tcp_sent(tpcb, sent_callback);
-		live_sent = 0;
-		//xil_printf("err = %d\n\r", err);
-		//err = tcp_output(tpcb);
-		//xil_printf("err = %d\n\r", err);
+		err = tcp_write(tpcb, DMA_GetP(), 4 * N_OF_PIXELS_TOTAL/8, 1);
+		if(err) xil_printf("tcp_write: err = %d\n\r", err);
+		err = tcp_output(tpcb);
+		if(err) xil_printf("tcp_write: err = %d\n\r", err);
+	}
+	else if(sscanf(p->payload, TCP_CMD_ACQ_NEXT, &param) == 1)
+	{
+		err = tcp_write(tpcb, DMA_GetP() + param*(4 * N_OF_PIXELS_TOTAL/8), 4 * N_OF_PIXELS_TOTAL/8, 1);
+		if(err) xil_printf("tcp_write: err = %d\n\r", err);
+		err = tcp_output(tpcb);
+		if(err) xil_printf("tcp_write: err = %d\n\r", err);
 	}
 	else if(sscanf(p->payload, TCP_CMD_INSTR_SET_INTEGR, &param) == 1)
 	{
@@ -288,10 +275,34 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL, &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_DAC7_10, &param, &param2) == 2)
 	{
 		//debugSettings.current_thr = param;
+		instrumentState.curr_dac7 = param;
+		instrumentState.curr_dac10 = param2;
+		xil_printf("curr_dac7=%d, curr_dac10=%d\n\r", instrumentState.curr_dac7, instrumentState.curr_dac10);
+		LoadSameDataToSlowControl3(param, param2);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_DAC, &param) == 1)
+	{
+		//debugSettings.current_thr = param;
+		instrumentState.curr_dac10 = param;
 		LoadSameDataToSlowControl2(param);
+		xil_printf("curr_dac10=%d\n\r", instrumentState.curr_dac10);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_SC_DAC10, strlen(TCP_CMD_SLOWCTRL_SC_DAC10)) == 0)
+	{
+		instrumentState.scurve_scan = SCURVE_SCAN_DAC10;
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_SC_DAC7, strlen(TCP_CMD_SLOWCTRL_SC_DAC7)) == 0)
+	{
+		instrumentState.scurve_scan = SCURVE_SCAN_DAC7;
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -567,6 +578,7 @@ void SetDefaultParameters()
 	instrumentState.is_simple_packets = 0;
 	instrumentState.mode = MODE_NONE;
 	systemSettings.scurve_delay = 10;
+	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 }
 

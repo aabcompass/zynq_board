@@ -18,10 +18,13 @@ SLOWCTRL_SP3_ALL_ASIC_V1 sc_sp3_all_asic_test;
 SLOWCTRL_SP3_SAME_ASIC_V1 slowctrl_samedata;
 SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 
+extern InstrumentState instrumentState;
+
 u32 current_line=0, current_asic=0, current_pixel=0;
-u32 current_common_thr = 0;
+u32 current_common_thr = 0; /*changed while s-curve is scanned*/
 u32 scurve_wait_cnt = 0;
 u32 scurve_step = 1;
+u32 n_of_thresholds;
 
 extern SystemSettings systemSettings;
 
@@ -269,6 +272,19 @@ void LoadSameDataToSlowControl2(u32 current_dac_value)
 	for(i=0;i<1000000;i++);
 }
 
+void LoadSameDataToSlowControl3(u32 current_dac7_value, u32 current_dac10_value)
+{
+	u32 s_value=0, i;
+	u32 dac7_value = current_dac7_value;
+	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac10_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+	slowctrl_samedata.x4_gain = 0x10101010;
+	slowctrl_samedata.x4_dac_7b_sub = (dac7_value<<24) | (dac7_value<<16) | (dac7_value<<8) | (dac7_value);//0x18181818;
+	slowctrl_samedata.misc_reg2 = 0x3B;
+	LoadSameDataToSlowControl(&slowctrl_samedata);
+	for(i=0;i<1000000;i++);
+}
+
 void LoadIndividualDataToSlowControl()
 {
 	TxFIFOSendSC((char*)&reformatted, sizeof(reformatted)/4);
@@ -332,10 +348,23 @@ void scurve_sm()
 			current_common_thr = 0;
 			//Set_n_d3_per_file(N_D3_PER_FILE);
 			scurve_sm_state = change_thr;
+			if(instrumentState.scurve_scan == SCURVE_SCAN_DAC10) {
+				n_of_thresholds = 1100;
+			}
+			else if(instrumentState.scurve_scan == SCURVE_SCAN_DAC7) {
+				n_of_thresholds = 200;
+			}
+
 			break;
 		case change_thr:
-			LoadSameDataToSlowControl2(current_common_thr);
-			xil_printf("\n\rdac=%d ", current_common_thr);
+			if(instrumentState.scurve_scan == SCURVE_SCAN_DAC10) {
+				LoadSameDataToSlowControl2(current_common_thr);
+				xil_printf("\n\rdac=%d ", current_common_thr);
+			}
+			else {
+				LoadSameDataToSlowControl3(instrumentState.curr_dac10, current_common_thr);
+				xil_printf("\n\rdac=%d ", current_common_thr);
+			}
 			scurve_sm_state = wait_thr_state;
 			break;
 		case wait_thr_state:
@@ -401,7 +430,7 @@ void scurve_sm()
 			break;
 		case condition_state:
 			//if(current_common_thr == NMAX_OF_THESHOLDS-1) {
-			if(current_common_thr == NMAX_OF_THESHOLDS-scurve_step) {
+			if(current_common_thr == n_of_thresholds-scurve_step) {
 				scurve_sm_state = end_state;
 			}
 			else {

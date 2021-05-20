@@ -44,10 +44,14 @@ typedef struct
 	int err_artix_bin; // Error during artix.bin load. 0 - Ok
 	int is_artix_loaded;
 	u32 ZB_number;
+	u32 curr_dac10;
+	u32 curr_dac7;
+	u32 scurve_scan; //7 or 10 (default)
 } InstrumentState;
 
 enum {MODE_NONE, MODE_D1, MODE_D1D3, MODE_D3, MODE_LIVE, MODE_SCURVE};
 enum {STATUS_IDLE, STATUS_BUSY};
+enum {SCURVE_SCAN_DAC7 = 7, SCURVE_SCAN_DAC10 = 10};
 
 //typedef struct
 //{

@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.08.01"
+#define ZYNQ3_VER_STRING "v3.09.00"
 
 //========================================
 // Constants
@@ -179,25 +179,26 @@ typedef struct
 typedef struct
 {
 	// Unix timestamp
-	TimeStamp_dual ts; //8
+	TimeStamp_dual ts;
 	// ZB_number
 	//uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
-	uint32_t trig_type; //4
+	uint32_t trig_type;
 	// HVPS status
-	uint32_t hv_status; //4
+	uint32_t hv_status;
 	// integrated data
 	FRAME_SPB_2_L3_V0 frames[N_OF_FRAMES_D3_V0];
-	//uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL]; //4*100*2880
-} DATA_TYPE_SCI_L3_V3; //1152016
+	//uint16_t dac10[N_OF_FRAMES_D3_V0];
+	//uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL];
+} DATA_TYPE_SCI_L3_V3;
 
 // D3 timestamped packet with header
 typedef struct
 {
-	ZynqBoardHeader zbh; //8
-	DATA_TYPE_SCI_L3_V3 payload; //1152016
-	char alignment[0x28]; //40
-} Z_DATA_TYPE_SCI_L3_V3; //1152064
+	ZynqBoardHeader zbh;
+	DATA_TYPE_SCI_L3_V3 payload;
+	char alignment[0x24];
+} Z_DATA_TYPE_SCI_L3_V3;
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
 #define MAX_PACKETS_L1 25 /*per 5 sec lifecycle */
@@ -306,7 +307,9 @@ typedef struct
 #define TCP_CMD_INSTR_SET_INTEGR	"instrument integration %d" /*set integration*/
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */
-#define TCP_CMD_SLOWCTRL_ALL		"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
+#define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/
+#define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
+#define TCP_CMD_SLOWCTRL_DAC7_10	"slowctrl all dac7 %d dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
 #define TCP_CMD_SLOWCTRL_ASIC		"slowctrl asic %d" /*Set current ASIC in line*/
 #define TCP_CMD_SLOWCTRL_PIX		"slowctrl pixel %d" /*Set current pixel in ASIC*/
@@ -318,7 +321,8 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_SET_PAUSE	"slowctrl scurve pause %d"/*Sets pause between setting thresholds during scurve gathering process*/
 #define TCP_CMD_SLOWCTRL_G_CUR_TRH	"slowctrl scurve thr?" /*Returns current threshold during scurve gathering process*/
 #define TCP_CMD_SLOWCTRL_SET_STEP	"slowctrl scurve step %d" /*Set scurve step 1 or 11*/
-
+#define TCP_CMD_SLOWCTRL_SC_DAC10	"slowctrl scurve scan dac10" /*Set scurve mode with dac10 scan*/
+#define TCP_CMD_SLOWCTRL_SC_DAC7	"slowctrl scurve scan dac7" /*Set scurve mode with dac7 scan*/
 #define TCP_CMD_GTU_1US				"gtu 1us" /* Set GTU=1us (default) */
 #define TCP_CMD_GTU_2_5US			"gtu 2.5us"/* Set GTU=2.5us. This must be done before to start acq. */
 #define TCP_CMD_HVPS_STATUS_INTR	"hvps status interrupt"/* for debug */
