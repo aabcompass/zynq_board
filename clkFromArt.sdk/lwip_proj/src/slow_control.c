@@ -372,7 +372,6 @@ void scurve_sm()
 			if(scurve_wait_cnt > 10*systemSettings.scurve_delay) {/*10 ms*/
 				if(current_common_thr%N_D3_PER_FILE == 0) {
 					scurve_sm_state = start_dma1;
-					//SetScurveAdditionalData(current_common_thr, scurve_step,  current_common_thr+(N_D3_PER_FILE-1)*scurve_step);
 				}
 				else {
 					scurve_sm_state = pass_data;
@@ -415,6 +414,7 @@ void scurve_sm()
 					//ScurveAdderReInit();
 				}
 				L3Start(FINITE, N_D3_PER_FILE);
+				SetScurveAdditionalData(current_common_thr, scurve_step,  current_common_thr+(N_D3_PER_FILE-1)*scurve_step);
 			}
 			scurve_sm_state = pass_data;
 			break;

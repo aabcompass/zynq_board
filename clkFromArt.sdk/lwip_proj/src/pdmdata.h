@@ -148,15 +148,15 @@ typedef struct
 	uint32_t trig_type;
 	// raw data (1 us GTU)
 	FRAME_SPB_2_L1_V0 frames[N_OF_FRAMES_D1_V0];
-} DATA_TYPE_SCI_L1_V3;
+} DATA_TYPE_SCI_L1_V4;
 
 // D1 timestamped packet with header
 typedef struct
 {
 	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L1_V3 payload;
+	DATA_TYPE_SCI_L1_V4 payload;
 	char alignment[0x28];
-} Z_DATA_TYPE_SCI_L1_V3;
+} Z_DATA_TYPE_SCI_L1_V4;
 
 //--
 // D3 data format
@@ -182,20 +182,18 @@ typedef struct
 {
 	// Unix timestamp
 	TimeStamp_dual ts;
-	// ZB_number
-	uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
 	uint32_t trig_type;
 	// HVPS status
 	uint32_t hv_status;
+	// ZB_number
+	uint32_t ZB_number; // 1 or 2 or 3
 	// integrated data
 	FRAME_SPB_2_L3_V0 frames[N_OF_FRAMES_D3_V0];
 	// additional information for s-curves
 	uint16_t dac10_start;
 	uint16_t dac10_step;
 	uint16_t dac10_end;
-	//uint16_t dac10[N_OF_FRAMES_D3_V0];
-	//uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL];
 } DATA_TYPE_SCI_L3_V3;
 
 // D3 timestamped packet with header
