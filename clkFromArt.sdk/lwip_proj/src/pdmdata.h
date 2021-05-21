@@ -155,7 +155,7 @@ typedef struct
 {
 	ZynqBoardHeader zbh;
 	DATA_TYPE_SCI_L1_V3 payload;
-	char alignment[0x2C];
+	char alignment[0x28];
 } Z_DATA_TYPE_SCI_L1_V3;
 
 //--
@@ -203,7 +203,7 @@ typedef struct
 {
 	ZynqBoardHeader zbh;
 	DATA_TYPE_SCI_L3_V3 payload;
-	char alignment[0x24];
+	char alignment[0x1E];
 } Z_DATA_TYPE_SCI_L3_V3;
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
