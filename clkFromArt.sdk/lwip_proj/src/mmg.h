@@ -39,7 +39,6 @@ typedef struct
 	u16 global_cycle;
 } L3_DESCR;
 
-
 typedef struct
 {
 	L1_DESCR sci_data_l1[N_D1_IN_MEM];
@@ -66,5 +65,6 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 void MmgIncr_n_records(u32 file_descriptor, u16 record);
 INTPTR MmgGetP(int data_type);
 u32 Get_n_occupied(int data_type);
+void SetScurveAdditionalData(u16 start, u16 step, u16 end);
 
 #endif /* SRC_MMG_H_ */

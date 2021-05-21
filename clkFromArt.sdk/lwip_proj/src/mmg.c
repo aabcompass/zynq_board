@@ -11,9 +11,11 @@
 #include "xil_printf.h"
 #include "common.h"
 #include "ftp_server.h"
+#include "own_data_types.h"
 
 MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
+extern InstrumentState instrumentState;
 
 u32 last_l1_occupied, last_l3_occupied;
 u32 n_l1_occupied=0, n_l3_occupied=0;
@@ -162,6 +164,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 			print("MmgFinish: bad last_l1_occupied\n\r");
 			return;
 		}
+		mainBuffer.sci_data_l1[last_l1_occupied].payload.ZB_number = instrumentState.ZB_number;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
@@ -190,6 +193,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 			print("MmgFinish: bad last_l3_occupied\n\r");
 			return;
 		}
+		mainBuffer.sci_data_l3[last_l3_occupied].payload.ZB_number = instrumentState.ZB_number;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.unix_time = unix_time;
@@ -228,4 +232,11 @@ u32 Get_n_occupied(int data_type)
 	else
 		print("Get_n_occupied: No such data_type\n\r");
 	return 0;
+}
+
+void SetScurveAdditionalData(u16 start, u16 step, u16 end)
+{
+	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_start = start;
+	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_step = step;
+	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_end = end;
 }

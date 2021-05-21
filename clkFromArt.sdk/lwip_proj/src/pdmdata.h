@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.09.00"
+#define ZYNQ3_VER_STRING "v3.09.01"
 
 //========================================
 // Constants
@@ -142,6 +142,8 @@ typedef struct
 {
 	// Unix timestamp
 	TimeStamp_dual ts;
+	//ZB_number
+	uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
 	uint32_t trig_type;
 	// raw data (1 us GTU)
@@ -181,13 +183,17 @@ typedef struct
 	// Unix timestamp
 	TimeStamp_dual ts;
 	// ZB_number
-	//uint32_t ZB_number; // 1 or 2 or 3
+	uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
 	uint32_t trig_type;
 	// HVPS status
 	uint32_t hv_status;
 	// integrated data
 	FRAME_SPB_2_L3_V0 frames[N_OF_FRAMES_D3_V0];
+	// additional information for s-curves
+	uint16_t dac10_start;
+	uint16_t dac10_step;
+	uint16_t dac10_end;
 	//uint16_t dac10[N_OF_FRAMES_D3_V0];
 	//uint32_t int32_data[N_OF_FRAMES_D3_V0][N_OF_PIXELS_TOTAL];
 } DATA_TYPE_SCI_L3_V3;
@@ -202,6 +208,12 @@ typedef struct
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
 #define MAX_PACKETS_L1 25 /*per 5 sec lifecycle */
+
+
+//--
+// Single D3 frame for live mode
+//--
+
 
 // Single live frame
 typedef struct
