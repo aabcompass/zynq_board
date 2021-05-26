@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.09.01"
+#define ZYNQ3_VER_STRING "v3.10.01"
 
 //========================================
 // Constants
@@ -131,9 +131,6 @@ typedef struct
 
 typedef struct
 {
-	//uint8_t raw_data[N_OF_PIXEL_PER_PDM];
-	//uint8_t raw_ki [N_OF_KI_PER_PDM];
-	//uint8_t trig_info[SIZE_TRIG_INFO];
 	PMT_3rd_GEN pmt[N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM];
 } FRAME_SPB_2_L1_V0;
 
@@ -142,10 +139,10 @@ typedef struct
 {
 	// Unix timestamp
 	TimeStamp_dual ts;
-	//ZB_number
-	uint32_t ZB_number; // 1 or 2 or 3
 	// Flags
 	uint32_t trig_type;
+	//ZB_number
+	uint32_t ZB_number; // 1 or 2 or 3
 	// raw data (1 us GTU)
 	FRAME_SPB_2_L1_V0 frames[N_OF_FRAMES_D1_V0];
 } DATA_TYPE_SCI_L1_V4;
@@ -171,9 +168,6 @@ typedef struct
 
 typedef struct
 {
-	//uint8_t raw_data[N_OF_PIXEL_PER_PDM];
-	//uint8_t raw_ki [N_OF_KI_PER_PDM];
-	//uint8_t trig_info[SIZE_TRIG_INFO];
 	PMT_3rd_L3_GEN pmt[N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM];
 } FRAME_SPB_2_L3_V0;
 
@@ -220,25 +214,25 @@ typedef struct
 } SingleLiveFrameD3;
 
 
-typedef struct
-{
-	// Unix timestamp
-	TimeStamp_dual ts;
-	// Flags
-	uint32_t trig_type;
-	// HVPS status
-	uint32_t hv_status;
-	// integrated data
-	uint32_t int32_data[NMAX_OF_THESHOLDS][N_OF_PIXELS_TOTAL];
-} DATA_TYPE_SCURVE_V2;
-
-
-// D3 timestamped packet with header
-typedef struct
-{
-	ZynqBoardHeader zbh;
-	DATA_TYPE_SCURVE_V2 payload;
-} Z_DATA_TYPE_SCURVE_V2;
+//typedef struct
+//{
+//	// Unix timestamp
+//	TimeStamp_dual ts;
+//	// Flags
+//	uint32_t trig_type;
+//	// HVPS status
+//	uint32_t hv_status;
+//	// integrated data
+//	uint32_t int32_data[NMAX_OF_THESHOLDS][N_OF_PIXELS_TOTAL];
+//} DATA_TYPE_SCURVE_V2;
+//
+//
+//// D3 timestamped packet with header
+//typedef struct
+//{
+//	ZynqBoardHeader zbh;
+//	DATA_TYPE_SCURVE_V2 payload;
+//} Z_DATA_TYPE_SCURVE_V2;
 
 //========================================
 // Trigger types

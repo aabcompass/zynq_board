@@ -281,7 +281,10 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		instrumentState.curr_dac7 = param;
 		instrumentState.curr_dac10 = param2;
 		xil_printf("curr_dac7=%d, curr_dac10=%d\n\r", instrumentState.curr_dac7, instrumentState.curr_dac10);
-		LoadSameDataToSlowControl3(param, param2);
+		//LoadSameDataToSlowControl3(param, param2);
+		PropagateDac7toIndSC(param);
+		PropagateDac10toIndSC(param2);
+		SendUserIndSCSettingsToSp3();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -289,7 +292,9 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	{
 		//debugSettings.current_thr = param;
 		instrumentState.curr_dac10 = param;
-		LoadSameDataToSlowControl2(param);
+		PropagateDac10toIndSC(param);
+		SendUserIndSCSettingsToSp3();
+		//LoadSameDataToSlowControl2(param);
 		xil_printf("curr_dac10=%d\n\r", instrumentState.curr_dac10);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
@@ -567,7 +572,7 @@ void SetDefaultParameters()
 //	sCurveStruct.step_dac_value = 5;
 //	sCurveStruct.stop_dac_value = 1000;
 //	sCurveStruct.accumulation = 10;
-	SetDefaultSCParameters();
+//	SetDefaultSCParameters();
 	SetDefaultIndSCParameters();
 
 	//instrumentState.mode = INSTRUMENT_MODE_NONE;

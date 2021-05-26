@@ -16,7 +16,7 @@
 
 SLOWCTRL_SP3_36CHIPS_REFORMATTED_V1 reformatted;
 SLOWCTRL_SP3_ALL_ASIC_V1 sc_sp3_all_asic_test;
-SLOWCTRL_SP3_SAME_ASIC_V1 slowctrl_samedata;
+//SLOWCTRL_SP3_SAME_ASIC_V1 slowctrl_samedata;
 SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 
 extern InstrumentState instrumentState;
@@ -34,16 +34,16 @@ void Set_scurve_step(u32 step)
 	scurve_step = step;
 }
 
-void SetDefaultSCParameters()
-{
-	slowctrl_samedata.misc_reg0 = 0x0FA20007;
-	slowctrl_samedata.x2_tst_msk_dac = 0x00C000C0;
-	//slowctrl_samedata.x2_tst_msk_dac = 0x00000000;
-	slowctrl_samedata.misc_reg1 = 0x00000000;
-	slowctrl_samedata.x4_gain = 0x00000000;
-	slowctrl_samedata.x4_dac_7b_sub = 0x00000000;
-	slowctrl_samedata.misc_reg2 = 0x00000000;
-}
+//void SetDefaultSCParameters()
+//{
+//	slowctrl_samedata.misc_reg0 = 0x0FA20007;
+//	slowctrl_samedata.x2_tst_msk_dac = 0x00C000C0;
+//	//slowctrl_samedata.x2_tst_msk_dac = 0x00000000;
+//	slowctrl_samedata.misc_reg1 = 0x00000000;
+//	slowctrl_samedata.x4_gain = 0x00000000;
+//	slowctrl_samedata.x4_dac_7b_sub = 0x00000000;
+//	slowctrl_samedata.misc_reg2 = 0x00000000;
+//}
 
 void SetDefaultIndSCParameters()
 {
@@ -150,7 +150,7 @@ void SendUserIndSCSettingsToSp3()
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg0 = 0x0FA20007 | dac10_value<<7 | s_value<<3;
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg1 = 0x00000000;
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg2 = 0x00000000;
-			xil_printf("chip=%d, line=%d, dac10_value=%d\n\r", j, i, dac10_value);
+			//xil_printf("chip=%d, line=%d, dac10_value=%d\n\r", j, i, dac10_value);
 			for(k=0;k<N_OF_PIXELS_PER_PMT;k++)
 			{
 				c_pixel = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].pixel_mask[k];
@@ -248,43 +248,60 @@ void ReformatSlowControlData(SLOWCTRL_SP3_ALL_ASIC_V1* slowctrl_sp3_all_asic_v1)
 	}
 }
 
-void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
+//void LoadSameDataToSlowControl(SLOWCTRL_SP3_SAME_ASIC_V1* data)
+//{
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_0) = data->misc_reg0;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_1) = data->x2_tst_msk_dac;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_2) = data->misc_reg1;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_3) = data->x4_gain;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_4) = data->x4_dac_7b_sub;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_5) = data->misc_reg2;
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_IS_SAME_DATA) | (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
+//	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
+//}
+
+void PropagateDac10toIndSC(u32 dac10_value)
 {
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_0) = data->misc_reg0;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_1) = data->x2_tst_msk_dac;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_2) = data->misc_reg1;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_3) = data->x4_gain;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_4) = data->x4_dac_7b_sub;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_GENERALREG_5) = data->misc_reg2;
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_IS_SAME_DATA) | (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
-	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
+	u32 i,j;
+	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
+		for(j=0;j<N_OF_PMT_PER_ECASIC;j++)
+				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac10bit = dac10_value;
 }
 
-void LoadSameDataToSlowControl2(u32 current_dac_value)
-{
-	u32 s_value=0, i;
-	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
-	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
-	slowctrl_samedata.x4_gain = 0x10101010;
-	slowctrl_samedata.x4_dac_7b_sub = 0x18181818;
-	slowctrl_samedata.misc_reg2 = 0x3B;
-	LoadSameDataToSlowControl(&slowctrl_samedata);
-	for(i=0;i<1000000;i++);
-}
 
-void LoadSameDataToSlowControl3(u32 current_dac7_value, u32 current_dac10_value)
+void PropagateDac7toIndSC(u32 dac7)
 {
-	u32 s_value=0, i;
-	u32 dac7_value = current_dac7_value;
-	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
-	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac10_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
-	slowctrl_samedata.x4_gain = 0x10101010;
-	slowctrl_samedata.x4_dac_7b_sub = (dac7_value<<24) | (dac7_value<<16) | (dac7_value<<8) | (dac7_value);//0x18181818;
-	slowctrl_samedata.misc_reg2 = 0x3B;
-	LoadSameDataToSlowControl(&slowctrl_samedata);
-	for(i=0;i<1000000;i++);
+	u32 i,j,k;
+	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
+		for(j=0;j<N_OF_PMT_PER_ECASIC;j++)
+			for(k=0;k<N_OF_PIXELS_PER_PMT;k++)
+				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac7bit[k] = dac7;
 }
+//void LoadSameDataToSlowControl2(u32 current_dac_value)
+//{
+//	u32 s_value=0, i;
+//	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+//	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+//	slowctrl_samedata.x4_gain = 0x10101010;
+//	slowctrl_samedata.x4_dac_7b_sub = 0x18181818;
+//	slowctrl_samedata.misc_reg2 = 0x3B;
+//	LoadSameDataToSlowControl(&slowctrl_samedata);
+//	for(i=0;i<1000000;i++);
+//}
+
+//void LoadSameDataToSlowControl3(u32 current_dac7_value, u32 current_dac10_value)
+//{
+//	u32 s_value=0, i;
+//	u32 dac7_value = current_dac7_value;
+//	//slowctrl_samedata.misc_reg0 = (0x0FF20C87 | (current_dac_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+//	slowctrl_samedata.misc_reg0 = (0x07A20007 | (current_dac10_value & 0xFFF)<<7 | s_value<<3); //0x07A20007 was in Mini
+//	slowctrl_samedata.x4_gain = 0x10101010;
+//	slowctrl_samedata.x4_dac_7b_sub = (dac7_value<<24) | (dac7_value<<16) | (dac7_value<<8) | (dac7_value);//0x18181818;
+//	slowctrl_samedata.misc_reg2 = 0x3B;
+//	LoadSameDataToSlowControl(&slowctrl_samedata);
+//	for(i=0;i<1000000;i++);
+//}
 
 void LoadIndividualDataToSlowControl()
 {
@@ -359,11 +376,14 @@ void scurve_sm()
 			break;
 		case change_thr:
 			if(instrumentState.scurve_scan == SCURVE_SCAN_DAC10) {
-				LoadSameDataToSlowControl2(current_common_thr);
+				//LoadSameDataToSlowControl2(current_common_thr);
+				PropagateDac10toIndSC(current_common_thr);
+				SendUserIndSCSettingsToSp3();
 				xil_printf("\n\rdac=%d ", current_common_thr);
 			}
 			else {
-				LoadSameDataToSlowControl3(instrumentState.curr_dac10, current_common_thr);
+				PropagateDac7toIndSC(current_common_thr);
+				SendUserIndSCSettingsToSp3();
 				xil_printf("\n\rdac=%d ", current_common_thr);
 			}
 			scurve_sm_state = wait_thr_state;

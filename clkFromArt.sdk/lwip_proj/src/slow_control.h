@@ -85,16 +85,16 @@ typedef struct
 	SLOWCTRL_SP3_SGL_ASIC_V1 slowctrl_sp3_sgl_asic[N_OF_PMT_PER_ECASIC][N_OF_ECASIC_PER_PDM];
 } SLOWCTRL_SP3_ALL_ASIC_V1; //268*36=9648 bytes
 
-// Special structure for a downloading same data to all SPACIROCs
-typedef struct
-{
-	uint32_t misc_reg0;
-	uint32_t x2_tst_msk_dac; /*two  tst_msk_dac uint16_t values*/
-	uint32_t misc_reg1;
-	uint32_t x4_gain;  /*four gain uint8_t values*/
-	uint32_t x4_dac_7b_sub; /*four dac_7b_sub uint8_t values*/
-	uint32_t misc_reg2;
-} SLOWCTRL_SP3_SAME_ASIC_V1;
+//// Special structure for a downloading same data to all SPACIROCs
+//typedef struct
+//{
+//	uint32_t misc_reg0;
+//	uint32_t x2_tst_msk_dac; /*two  tst_msk_dac uint16_t values*/
+//	uint32_t misc_reg1;
+//	uint32_t x4_gain;  /*four gain uint8_t values*/
+//	uint32_t x4_dac_7b_sub; /*four dac_7b_sub uint8_t values*/
+//	uint32_t misc_reg2;
+//} SLOWCTRL_SP3_SAME_ASIC_V1;
 
 typedef struct
 {

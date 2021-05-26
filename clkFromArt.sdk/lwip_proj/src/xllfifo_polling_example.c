@@ -164,7 +164,7 @@ int TxFIFOSendSC(u32 *data, u32 numOfWords)
 {
 
 	int i;
-	xil_printf("numOfWords=%d\r\n", numOfWords);
+	//xil_printf("numOfWords=%d\r\n", numOfWords);
 
 
 	XLlFifo_iWrite_Aligned(&FifoInstanceSC, data, numOfWords);
