@@ -1,0 +1,6 @@
+scurve_adder_sum_bkb
+scurve_adder_dub_dEe
+scurve_adder_dub_eOg
+scurve_adder_dub_fYi
+scurve_adder_CTRL_BUS_s_axi
+scurve_adder
