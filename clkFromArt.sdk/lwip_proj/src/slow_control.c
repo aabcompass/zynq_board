@@ -27,6 +27,8 @@ u32 scurve_wait_cnt = 0;
 u32 scurve_step = 1;
 u32 n_of_thresholds;
 
+u32 misc_reg0, misc_reg2;
+
 extern SystemSettings systemSettings;
 
 void Set_scurve_step(u32 step)
@@ -60,6 +62,28 @@ void SetDefaultIndSCParameters()
 			}
 		}
 	}
+
+	misc_reg0 =
+		(1<<SC_MISC_REG0_BIT_sw_bias_DAC_7b) |
+		(1<<SC_MISC_REG0_BIT_sw_bias_discri) |
+		(1<<SC_MISC_REG0_BIT_sw_bias_pa) |
+		(1<<SC_MISC_REG0_BIT_sw_bias_dac) |
+		(1<<SC_MISC_REG0_BIT_cmd_0025pe) |
+		(1<<SC_MISC_REG0_BIT_sw_bias_bg) |
+		(1<<SC_MISC_REG0_BIT_sw_bias_ramp) |
+		(1<<SC_MISC_REG0_BIT_ramp_slow) |
+		(1<<SC_MISC_REG0_BIT_cmd_val_event) |
+		(1<<SC_MISC_REG0_BIT_cmd_GTU) |
+		(1<<SC_MISC_REG0_BIT_cmd_40M) |
+		(1<<SC_MISC_REG0_BIT_enb_digital_probe);
+
+	misc_reg2 =
+		(1<<SC_MISC_REG2_BIT_capa_10p) |
+		(1<<SC_MISC_REG2_BIT_sw_bias_QDC) |
+		(1<<SC_MISC_REG2_BIT_sw_dac_7bit_subtractor) |
+		(1<<SC_MISC_REG2_BIT_sw_ADC) |
+		(1<<SC_MISC_REG2_BIT_sw_SCA);
+
 }
 
 void PrintReformattedData()
@@ -145,7 +169,7 @@ void SendUserIndSCSettingsToSp3()
 		for(j=0;j<N_OF_PMT_PER_ECASIC;j++)
 		{
 			//dac_value = 512;//100*chip;//(25*(j+i*6));
-			s_value = 0;
+			//s_value = 0;
 			dac10_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac10bit;
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg0 = 0x0FA20007 | dac10_value<<7 | s_value<<3;
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg1 = 0x00000000;
@@ -168,17 +192,19 @@ void SendUserIndSCSettingsToSp3()
 void SendTestSettingsToSp3(u32 dac_value, u32 c_pixel)
 {
 	int chip, line, pixel;
-	u32 s_value;
+	//u32 s_value;
 	memset((char*)&sc_sp3_all_asic_test, 0, sizeof(sc_sp3_all_asic_test));
 	for(chip=0;chip<6;chip++)
 	{
 		for(line=0;line<6;line++)
 		{
 			//dac_value = 512;//100*chip;//(25*(j+i*6));
-			s_value = 0;
-			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg0 = 0x0FA20007 | dac_value<<7 | s_value<<3;
+			//s_value = 0;
+			//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg0 = 0x0FA20007 | dac_value<<7 | s_value<<3;
+			//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg0 = misc_reg0 | (dac_value<<7);
+			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg0 = 0x0FA20007 | (dac_value<<7);
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg1 = 0x00000000;
-			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg2 = 0x00000000;
+			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].misc_reg2 = 0;//misc_reg2;//0x00000000;
 			for(pixel=0;pixel<64;pixel++)
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].tst_msk_dac[pixel] = 0x0040 | ((pixel!=c_pixel)<<7);
 				//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[chip][line].tst_msk_dac[pixel] = 0x0040 | ((1)<<7);

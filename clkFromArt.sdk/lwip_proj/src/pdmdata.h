@@ -312,7 +312,7 @@ typedef struct
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */
 #define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/
-#define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
+#define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_DAC7_10	"slowctrl all dac7 %d dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
 #define TCP_CMD_SLOWCTRL_ASIC		"slowctrl asic %d" /*Set current ASIC in line*/

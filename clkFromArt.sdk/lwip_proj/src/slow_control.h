@@ -20,6 +20,7 @@
 
 //int slow_chip[] = {3, 4}
 
+//Core bits
 
 #define BIT_START			0
 #define BIT_DONE			0
@@ -115,5 +116,35 @@ typedef struct
 //void RB_inject_bit();
 u32 StartScurve();
 void Set_scurve_step(u32 step);
+
+//Slowcontrol bits
+#define SC_MISC_REG0_BIT_sw_bias_DAC_7b 	0  /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_sw_bias_discri		1  /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_sw_bias_pa			2 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_S0					3 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_S1					4 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_S2					5 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_S3					6 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_sw_bias_dac		17 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_cmd_1pe			18 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_cmd_015pe			19 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG0_BIT_cmd_0025pe			20 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_sw_bias_bg			21 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_sw_bias_ramp		22 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_ramp_slow			23 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_cmd_val_event		24 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_cmd_GTU			25 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_cmd_40M			26 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_enb_digital_probe	27 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG0_BIT_enb_OR_outputs		28 /*recomm. by Sylvie: 0 */
+
+#define SC_MISC_REG2_BIT_capa_10p				0 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG2_BIT_sw_bias_QDC			1 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG2_BIT_swb_resistor			2 /*recomm. by Sylvie: 0 */
+#define SC_MISC_REG2_BIT_sw_dac_7bit_subtractor	3 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG2_BIT_sw_ADC					4 /*recomm. by Sylvie: 1 */
+#define SC_MISC_REG2_BIT_sw_SCA					5 /*recomm. by Sylvie: 1 */
+
+
 
 #endif /* SLOW_CONTROL_H_ */
