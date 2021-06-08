@@ -21,7 +21,7 @@ u32 DMAStatus();
 u32 Is_D3_received();
 void start_dma_l3(u32 n_frames);
 void DoFileProcessing(u32 param);
-void* DMA_GetP();
+char* DMA_GetP();
 
 
 

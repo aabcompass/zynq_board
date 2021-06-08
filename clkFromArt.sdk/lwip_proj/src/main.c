@@ -377,7 +377,7 @@ int main()
 		xemacif_input(echo_netif);
 		send_data_sm();
 		scurve_sm();
-		//DataPathSM();
+		pixelscan_sm();
 		L1_trigger_service();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))

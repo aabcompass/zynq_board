@@ -79,13 +79,18 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
+	else if(strcasecmp(param, "pixelscan") == 0) {
+		instrumentState.mode = MODE_PIXELSCAN;
+		DoFileProcessing(DO_FILE_PROCESSING);
+		Set_n_d3_per_file(N_D3_PER_FILE);
+		ScurveAdderReInit();
+	}
 	else {
 		instrumentState.mode = MODE_NONE;
 		char ok_eomess_str[] = "No such mode\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 		return -1;
 	}
-
 	if(instrumentState.err_SDcard)
 	{
 		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
@@ -186,6 +191,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;
+		char * p;
 		L3Start(FINITE, 1);
 		StartDataProviderFor1D3frame(GetIntegration());
 		for(i=0;i<GENERAL_LIVE_TIMEOUT;i++) {
@@ -193,7 +199,9 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			if(Is_D3_received())
 				break;
 		}
-		err = tcp_write(tpcb, DMA_GetP(), 4 * N_OF_PIXELS_TOTAL/8, 1);
+		p=DMA_GetP();
+		xil_printf("p=0x%08x", p);
+		err = tcp_write(tpcb, p, 4 * N_OF_PIXELS_TOTAL/8, 1);
 		if(err) xil_printf("tcp_write: err = %d\n\r", err);
 		err = tcp_output(tpcb);
 		if(err) xil_printf("tcp_write: err = %d\n\r", err);
@@ -257,6 +265,15 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 				tcp_write(tpcb, str, sizeof(str), 1);
 				return;
 			}
+		}
+		else if(instrumentState.mode == MODE_PIXELSCAN) {
+			ret = pixelscan_start();
+			if(ret == -1) {
+				char str[] = "Pixelscan is in progress\n\r";
+				tcp_write(tpcb, str, sizeof(str), 1);
+				return;
+			}
+
 		}
 		else {
 			char str[] = "Instrument mode is not set\n\r";
@@ -391,6 +408,19 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			tcp_write(tpcb, str, sizeof(str), 1);
 			return;
 		}
+	}
+	else if(strncmp(p->payload, TCP_CMD_PIXELSCAN_GET_N, strlen(TCP_CMD_PIXELSCAN_GET_N)) == 0)
+	{
+		param=pixelscan_get_curr_pixel();
+		sprintf(reply, "%d\n\r", param);
+		tcp_write(tpcb, reply, strlen(reply), 1);
+
+	}
+	else if(strncmp(p->payload, TCP_CMD_PIXELSCAN_TRG, strlen(TCP_CMD_PIXELSCAN_TRG)) == 0)
+	{
+		pixelscan_trg();
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
 	}
 	else if(strncmp(p->payload, TCP_CMD_GTU_1US, 7) == 0)
 	{

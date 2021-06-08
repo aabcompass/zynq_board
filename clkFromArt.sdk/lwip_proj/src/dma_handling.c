@@ -24,9 +24,10 @@ XAxiDma_Config* CfgPtr_d1;
 
 SingleLiveFrameD3 singleLiveFrameD3 __attribute__ ((aligned (64)));
 
-void* DMA_GetP()
+char* DMA_GetP()
 {
-	return (void*) &singleLiveFrameD3.data[0];
+	//return (char*)(&singleLiveFrameD3.data[0]);
+	return (char*)(&singleLiveFrameD3);
 }
 
 void DMA_init()
@@ -86,7 +87,8 @@ void start_dma_l3(u32 n_frames)
 	if(is_file_processing == DO_FILE_PROCESSING)
 		p = (char*)MmgAlloc(DATA_TYPE_L3);
 	else
-		p = (char*)&singleLiveFrameD3.data[0];
+		//p = (char*)&singleLiveFrameD3.data[0];
+		p = (char*)&singleLiveFrameD3;
 
 	if(p) {
 		xil_printf("DmaStart: p=0x%08x, n=%d\n\r", p, 4 * N_OF_PIXELS_TOTAL * n_frames);
@@ -109,7 +111,8 @@ void InvalidateRange(u32 data_type)
 	}
 	else {
 		if(data_type == DATA_TYPE_L3) {
-			Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3.data[0], 4*N_OF_PIXELS_TOTAL);
+			//Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3.data[0], 4*N_OF_PIXELS_TOTAL);
+			Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3, 4*N_OF_PIXELS_TOTAL);
 		}
 		else {
 			print("InvalidateRange: can't invalidate D1 for Live mode\n\r");

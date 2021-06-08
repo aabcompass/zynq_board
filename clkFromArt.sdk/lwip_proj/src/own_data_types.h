@@ -49,7 +49,7 @@ typedef struct
 	u32 scurve_scan; //7 or 10 (default)
 } InstrumentState;
 
-enum {MODE_NONE, MODE_D1, MODE_D1D3, MODE_D3, MODE_LIVE, MODE_SCURVE};
+enum {MODE_NONE, MODE_D1, MODE_D1D3, MODE_D3, MODE_LIVE, MODE_SCURVE, MODE_PIXELSCAN};
 enum {STATUS_IDLE, STATUS_BUSY};
 enum {SCURVE_SCAN_DAC7 = 7, SCURVE_SCAN_DAC10 = 10};
 

@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.10.02"
+#define ZYNQ3_VER_STRING "v3.14.00"
 
 //========================================
 // Constants
@@ -327,6 +327,8 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_SET_STEP	"slowctrl scurve step %d" /*Set scurve step 1 or 11*/
 #define TCP_CMD_SLOWCTRL_SC_DAC10	"slowctrl scurve scan dac10" /*Set scurve mode with dac10 scan*/
 #define TCP_CMD_SLOWCTRL_SC_DAC7	"slowctrl scurve scan dac7" /*Set scurve mode with dac7 scan*/
+#define TCP_CMD_PIXELSCAN_GET_N		"pixelscan n?"
+#define TCP_CMD_PIXELSCAN_TRG		"pixelscan trg"
 #define TCP_CMD_GTU_1US				"gtu 1us" /* Set GTU=1us (default) */
 #define TCP_CMD_GTU_2_5US			"gtu 2.5us"/* Set GTU=2.5us. This must be done before to start acq. */
 #define TCP_CMD_HVPS_STATUS_INTR	"hvps status interrupt"/* for debug */
