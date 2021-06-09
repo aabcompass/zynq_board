@@ -43,6 +43,7 @@ typedef struct
 	int err_SDcard; //SD-card error during mount. 0 - OK
 	int err_artix_bin; // Error during artix.bin load. 0 - Ok
 	int is_artix_loaded;
+	int is_artix_frame_started;
 	u32 ZB_number;
 	u32 curr_dac10;
 	u32 curr_dac7;

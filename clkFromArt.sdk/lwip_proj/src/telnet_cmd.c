@@ -229,6 +229,11 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(sscanf(p->payload, TCP_CMD_INSTR_MODE_1PAR, ans_str) == 1)
 	{
+		if(!instrumentState.is_artix_frame_started) {
+			StartDataProviderInitial();
+			DataProvEnOutput();
+			instrumentState.is_artix_frame_started = 1;
+		}
 		ProcessInstrumentModeCommand(tpcb, ans_str, 0);
 	}
 	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_START, strlen(TCP_CMD_INSTR_MODE_START)) == 0)
@@ -615,5 +620,6 @@ void SetDefaultParameters()
 	systemSettings.scurve_delay = 10;
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
+	instrumentState.is_artix_frame_started = 0;
 }
 

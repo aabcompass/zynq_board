@@ -359,8 +359,8 @@ int main()
 	print("DMA_init()\n\r");
 	DMA_init();
 
-	StartDataProviderInitial();
-	DataProvEnOutput();
+	//StartDataProviderInitial();
+	//DataProvEnOutput();
 
 	PrintDataSizes();
 
