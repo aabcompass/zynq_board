@@ -421,6 +421,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		tcp_write(tpcb, reply, strlen(reply), 1);
 
 	}
+	else if(sscanf(p->payload, TCP_CMD_PIXELSCAN_SET_N, &param) == 1)
+	{
+		set_n_of_pixels_scanned(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_PIXELSCAN_TRG, strlen(TCP_CMD_PIXELSCAN_TRG)) == 0)
 	{
 		pixelscan_trg();

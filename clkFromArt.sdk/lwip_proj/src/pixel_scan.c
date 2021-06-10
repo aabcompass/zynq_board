@@ -11,7 +11,7 @@
 #include "pdmdata.h"
 #include "data_provider.h"
 
-u32 n_of_pixels_scanned;
+u32 n_of_pixels_scanned = 100;
 u32 current_pixel_scanned;
 u32 trg_sig = 0;
 
@@ -27,6 +27,11 @@ static enum  {
 	condition_state,
 	end_state
 } pixelscan_sm_state = no_state;
+
+void set_n_of_pixels_scanned(u32 n_scans)
+{
+	n_of_pixels_scanned = n_scans;
+}
 
 int pixelscan_start()
 {
@@ -64,6 +69,12 @@ void pixelscan_sm()
 			if(trg_sig == 1) {
 				trg_sig = 0;
 				pixelscan_sm_state = start_dma1;
+				if(current_pixel_scanned%N_D3_PER_FILE == 0) {
+					pixelscan_sm_state = start_dma1;
+				}
+				else {
+					pixelscan_sm_state = pass_data;
+				}
 			}
 			break;
 		case start_dma1:
