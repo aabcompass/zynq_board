@@ -340,10 +340,10 @@ typedef struct
 #define TCP_CMD_HVPS_STATUS_GPIO	"hvps status gpio"/* Get HVPS Polish status */
 #define TCP_CMD_DBG_ARTCLK_CNT		"dbg art clk"
 //#define TCP_
-#define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test ECs"
+#define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"
-#define TCP_CMD_PIXELMAP_LOAD		"pixelmap load EC %d map %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d"
+#define TCP_CMD_PIXELMAP_LOAD		"pixelmap load %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d"
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
 
 #pragma pack(pop) /* return to normal packing */

@@ -348,7 +348,7 @@ int main()
 	start_ftp_server_cmd();
 
 	print("Send default mapping ...\n\r");
-	SendMapping();
+	SendDefaultMapping();
 
 	print("Flow control initialization...\n\r");
 	FlowControlInit_D1();

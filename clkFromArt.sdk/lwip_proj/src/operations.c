@@ -79,15 +79,25 @@ void SA_restart()
 }
 
 
-void SendMapping()
+void SendDefaultMapping()
 {
 	int i;
 	char def_mapping[N_OF_PIXELS_PER_PMT];
 	for(i=0; i<N_OF_PIXELS_PER_PMT; i++)
 	{
-		def_mapping[i]=i;
+		def_mapping[i]=63-i;
 	}
 	TxFIFOSendMain(def_mapping, N_OF_PIXELS_PER_PMT/4, FIFO_CH_MAPPING);
+}
+
+void SendMapping(char* mapping)
+{
+	int i;
+	for(i=0; i<N_OF_PIXELS_PER_PMT; i++)
+	{
+		xil_printf("%d ", mapping[i]);
+	}
+	TxFIFOSendMain(mapping, N_OF_PIXELS_PER_PMT/4, FIFO_CH_MAPPING);
 }
 
 void ConfTrigger()

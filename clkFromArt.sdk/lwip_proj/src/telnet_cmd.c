@@ -138,6 +138,8 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	double double_param, double_param2, double_param3;
 	int ret;
 	int turn[NUM_OF_HV];
+	char mapping[N_OF_PIXELS_PER_PMT];
+
 	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 
 	u32 pmt_trig1,  pmt_trig2,  ec_trig1,  ec_trig2,  pdm_trig1,  pdm_trig2;
@@ -499,6 +501,36 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(strncmp(p->payload, TCP_CMD_PIXELMAP_TST_ECS, strlen(TCP_CMD_PIXELMAP_TST_ECS)) == 0)
 	{
+		SetArtixTestMode2(1);
+		SetArtixTestMode(0);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_PIXELMAP_TST_PIX, strlen(TCP_CMD_PIXELMAP_TST_PIX)) == 0)
+	{
+		SetArtixTestMode2(0);
+		SetArtixTestMode(1);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_PIXELMAP_TST_off, strlen(TCP_CMD_PIXELMAP_TST_off)) == 0)
+	{
+		SetArtixTestMode2(0);
+		SetArtixTestMode(0);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD,
+			&mapping[0], &mapping[1], &mapping[2], &mapping[3], &mapping[4], &mapping[5], &mapping[6], &mapping[7],
+			&mapping[8], &mapping[9], &mapping[10], &mapping[11], &mapping[12], &mapping[13], &mapping[14], &mapping[15],
+			&mapping[16], &mapping[17], &mapping[18], &mapping[19], &mapping[20], &mapping[21], &mapping[22], &mapping[23],
+			&mapping[24], &mapping[25], &mapping[26], &mapping[27], &mapping[28], &mapping[29], &mapping[30], &mapping[31],
+			&mapping[32], &mapping[33], &mapping[34], &mapping[35], &mapping[36], &mapping[37], &mapping[38], &mapping[39],
+			&mapping[40], &mapping[41], &mapping[42], &mapping[43], &mapping[44], &mapping[45], &mapping[46], &mapping[47],
+			&mapping[48], &mapping[49], &mapping[50], &mapping[51], &mapping[52], &mapping[53], &mapping[54], &mapping[55],
+			&mapping[56], &mapping[57], &mapping[58], &mapping[59], &mapping[60], &mapping[61], &mapping[62], &mapping[63]) == N_OF_PIXELS_PER_PMT)
+	{
+		SendMapping(mapping);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
