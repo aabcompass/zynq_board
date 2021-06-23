@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.18.01"
+#define ZYNQ3_VER_STRING "v3.19.00"
 
 //========================================
 // Constants
@@ -349,6 +349,7 @@ typedef struct
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"
 #define TCP_CMD_PIXELMAP_LOAD		"pixelmap load %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d"
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
+#define TCP_CMD_ARTIX_LOAD			"artix load %s"
 
 #pragma pack(pop) /* return to normal packing */
 

@@ -187,12 +187,15 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'l')
 	{
-		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = num;
-		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 0;
 	}
 	else if(c == 'L')
 	{
-		LoadArtix(FILENAME_ARTIX_PARAMETERS);
+		xil_printf("Loading FW to Artixes with FW file %s\n\r", FILENAME_ARTIX_BITSTREAM_1_BOARD);
+		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
+		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	}
 	else if(c == 'm')
 	{

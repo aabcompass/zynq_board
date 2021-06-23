@@ -520,6 +520,22 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_ARTIX_LOAD, array_param) == 1)
+	{
+		ret = 0;
+		print("Resetting Artixes...\n\r");
+		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 0;
+		xil_printf("Loading FW to Artixes with FW file %s\n\r", array_param);
+		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
+		ret=LoadArtix(array_param);
+		ret+=LoadArtix(array_param);
+		ret+=LoadArtix(array_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Failed\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD,
 			&mapping[0], &mapping[1], &mapping[2], &mapping[3], &mapping[4], &mapping[5], &mapping[6], &mapping[7],
 			&mapping[8], &mapping[9], &mapping[10], &mapping[11], &mapping[12], &mapping[13], &mapping[14], &mapping[15],
