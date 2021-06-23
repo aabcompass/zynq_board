@@ -168,7 +168,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
-		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, 4);
+		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V4);
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
@@ -197,7 +197,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l3[last_l3_occupied].payload.ts.unix_time = unix_time;
-		mainBuffer.sci_data_l3[last_l3_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L3, 3);
+		mainBuffer.sci_data_l3[last_l3_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L3, VER_Z_DATA_TYPE_SCI_L3);
 		mainBuffer.sci_data_l3[last_l3_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L3_V3);
 		mainBufferDescr.sci_data_l3[last_l3_occupied].is_finalized = 1;
 		//Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);

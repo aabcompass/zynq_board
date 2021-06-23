@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.18.00"
+#define ZYNQ3_VER_STRING "v3.18.01"
 
 //========================================
 // Constants
@@ -155,6 +155,8 @@ typedef struct
 	char alignment[0x28];
 } Z_DATA_TYPE_SCI_L1_V4;
 
+#define VER_Z_DATA_TYPE_SCI_L1	4
+
 //--
 // D3 data format
 //--
@@ -197,6 +199,8 @@ typedef struct
 	DATA_TYPE_SCI_L3_V3 payload;
 	char alignment[0x1E];
 } Z_DATA_TYPE_SCI_L3_V3;
+
+#define VER_Z_DATA_TYPE_SCI_L3 3
 
 /* zynqB is capable to send maximum MAX_PACKETS_L1 to CPU every N_FRAMES_PER_LIFECYCLE mus (Lifecycle)*/
 #define MAX_PACKETS_L1 25 /*per 5 sec lifecycle */
