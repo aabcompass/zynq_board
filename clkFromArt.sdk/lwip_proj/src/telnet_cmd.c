@@ -536,6 +536,18 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Failed\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &param) == 1)
+	{
+		SetArtixTransmitDelay(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_DBG_ARTFRDELAY, &param) == 1)
+	{
+		SetArtixFracDelay(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD,
 			&mapping[0], &mapping[1], &mapping[2], &mapping[3], &mapping[4], &mapping[5], &mapping[6], &mapping[7],
 			&mapping[8], &mapping[9], &mapping[10], &mapping[11], &mapping[12], &mapping[13], &mapping[14], &mapping[15],

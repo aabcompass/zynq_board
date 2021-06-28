@@ -140,9 +140,9 @@ void RunArtix(u32 is_gtu_1us)
 	xil_printf("Ok\n\r");
 	xil_printf("SetArtixTransmitDelay...");
 	if(is_gtu_1us)
-		SetArtixTransmitDelay(11);
+		SetArtixTransmitDelay(2);
 	else
-		SetArtixTransmitDelay(10);
+		SetArtixTransmitDelay(2);
 }
 
 void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max)
