@@ -37,6 +37,7 @@ int bitsize;
 #define BIT_ART_CONF_TDELAY		5
 #define BIT_ART_CONF_TEST2		9
 #define BIT_ART_CONF_FRAMEON	11
+#define BIT_ART_CONF_ACQON		12
 
 u32 artix_conf_word = 0;
 
@@ -92,7 +93,7 @@ void ArtixLatch(u32 param)
 
 void LoadArtix_u32(u32 value)
 {
-	print("Loading uint32_t paralelly to the all cross boards\n\r");
+	xil_printf("Loading 0x%08X paralelly to the all cross boards\n\r", value);
 	u32 value_swapped = SWAP_UINT32(value);
 
 	SetBitstreamPtr(&value_swapped, 4);
@@ -147,6 +148,12 @@ void SetArtixFrameOn(u32 param) // 0|1
 	else
 		artix_conf_word &= ~(1<<BIT_ART_CONF_FRAMEON);
 
+	LoadArtix_u32(artix_conf_word);
+}
+
+void SetArtixAcqOn()
+{
+	artix_conf_word |= (1<<BIT_ART_CONF_ACQON);
 	LoadArtix_u32(artix_conf_word);
 }
 

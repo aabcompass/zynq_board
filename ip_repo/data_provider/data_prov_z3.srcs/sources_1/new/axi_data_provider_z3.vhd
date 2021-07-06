@@ -299,6 +299,9 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal test_mode: std_logic := '0';
 	signal en_output: std_logic := '0';
 	signal test_data_provider_started: std_logic := '0';
+	
+	signal s_axis_tvalid_cnt: std_logic_vector(31 downto 0) := (others => '0');
+	signal s_axis_tvalid_d1: std_logic := '0';
 
 begin
 
@@ -1382,6 +1385,18 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	input_frames_cnt_process: process(S_AXI_ACLK)
+	begin
+		if(rising_edge(S_AXI_ACLK)) then
+			s_axis_tvalid_d1 <= s_axis_tvalid;
+			if(s_axis_tvalid = '1' and s_axis_tvalid_d1 = '0') then
+				s_axis_tvalid_cnt <= s_axis_tvalid_cnt + 1;
+			end if;
+		end if;
+	end process;
+	
+	slv_reg19 <= s_axis_tvalid_cnt;
 
 	i_test_data_provider : test_data_provider 
     Port map( 

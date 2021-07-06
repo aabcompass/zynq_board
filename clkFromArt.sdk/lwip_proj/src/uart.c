@@ -90,6 +90,10 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		RebootZynq();
 	}
+	else if(c == '&')
+	{
+		SetArtixAcqOn();
+	}
 	else if(c == '/')
 	{
 		ResetSPACIROC3_fifo_rb();
@@ -167,14 +171,14 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//SA_set_TestMode(0);
 		SetArtixTestMode2(0);
 	}
-	else if(c == 'X') // artix Gen mode
-	{
-		StartDataProviderForLive();
-	}
-	else if(c == 'x')
-	{
-		StopDataProviderForLive();
-	}
+//	else if(c == 'X') // artix Gen mode
+//	{
+//		StartDataProviderForLive();
+//	}
+//	else if(c == 'x')
+//	{
+//		StopDataProviderForLive();
+//	}
 	else if(c == '+')
 	{
 		num++;

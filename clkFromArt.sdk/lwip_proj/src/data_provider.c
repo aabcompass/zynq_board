@@ -143,6 +143,8 @@ void RunArtix(u32 is_gtu_1us)
 		SetArtixTransmitDelay(2);
 	else
 		SetArtixTransmitDelay(2);
+	printf("RunArtixAcq\n\r");
+	SetArtixAcqOn();
 }
 
 void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max)

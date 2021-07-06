@@ -93,6 +93,9 @@ architecture Behavioral of bitslip_sm is
 	
 	signal dataout_last_d0: std_logic := '0';
 	signal run_d1: std_logic := '0';
+	
+	attribute keep : string;
+	attribute keep of frame_data : signal is "true";
 
 begin
 
@@ -149,22 +152,23 @@ begin
 	end generate;
 
 	sm: process(clk)
-		variable state : integer range 0 to 1 := 0;
+	--	variable state : integer range 0 to 1 := 0;
 	begin
 		if(rising_edge(clk)) then
-			case state is
-				when -0 => 
-									if(frame_data = 0) then
-										state := state + 1;
-										end if;
-									bitslip_cmd <= '0';
-				when 1 => if(frame_data /= 0 and  frame_data /= X"FF") then
-										bitslip_cmd <= '1';
-									else
-										bitslip_cmd <= '0';
-									end if;
-									state := 0;	
-			end case;
+			--case state is
+			--	when 0 => 
+			--						if(frame_data = 0) then
+			--							state := state + 1;
+			--							end if;
+			--						bitslip_cmd <= '0';
+			--	when 1 => 
+			if((frame_data = 0) or (frame_data = X"FF")) then
+				bitslip_cmd <= '0';
+			else
+				bitslip_cmd <= '1';
+			end if;
+			--state := 0;	
+			--end case;
 		end if;
 	end process;
 	

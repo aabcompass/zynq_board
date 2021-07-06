@@ -320,7 +320,7 @@ int main()
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 
-	SetArtixTransmitDelay(11);
+	SetArtixTransmitDelay(2);
 
 	//print("SetPMTZero ...\n\r");
 	//SetPMTZero();
