@@ -536,6 +536,10 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Failed\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_GET_ARTIX_FILENAME, strlen(TCP_CMD_GET_ARTIX_FILENAME)) == 0)
+	{
+		tcp_write(tpcb, GetArtixFileName(), strlen(GetArtixFileName()), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &param) == 1)
 	{
 		SetArtixTransmitDelay(param);

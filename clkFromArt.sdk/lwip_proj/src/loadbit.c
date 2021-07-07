@@ -9,12 +9,15 @@
 #include "xparameters.h"
 #include "xspi.h"
 #include "common.h"
+#include "own_data_types.h"
 
 
 
 XSpi spi;
 u8 * bitstream;
 int bitsize;
+
+extern InstrumentState instrumentState;
 
 #define REG_OUTDATA 	0
 #define REG_TRIDATA		1
@@ -41,11 +44,14 @@ int bitsize;
 
 u32 artix_conf_word = 0;
 
+char artix_file_name[20];
+
 //void PrepareArtixConfiguration()
 //{
 //	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = (1<<BIT_PROGRAMB) | (1<<BIT_INITB);
 //	*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_TRIDATA) = (1<<BIT_PROGRAMB) | (1<<BIT_INITB);
 //}
+
 
 void init_loadbit_spi()
 {
@@ -160,4 +166,50 @@ void SetArtixAcqOn()
 void SetArtix0101()
 {
 	LoadArtix_u32(0x12345678);
+}
+
+
+int LoadArtix(char * filename)
+{
+	int err;
+	char artixBitstream[10000000]; // 10 MBytes
+	int artixBitstream_size;
+	instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR)  & 0x7;
+	xil_printf("artix_locked=%d\n\r",  instrumentState.artix_locked);
+	strcpy(artix_file_name, filename);
+//	if(instrumentState.artix_locked == 7)
+//	{
+//		print("Artix already loaded.\n\r");
+//		return 0;
+//	}
+//	else
+	{
+		print("Loading bitstream to the cross board\n\r");
+		//PrepareArtixConfiguration();
+
+		err = ReadArtixBitstream(&artixBitstream, &artixBitstream_size, filename);
+		if(!err) {
+			SetBitstreamPtr(&artixBitstream, artixBitstream_size);
+			init_loadbit_spi();
+			//print("StartArtixConfiguration()\n\r");
+			//StartArtixConfiguration(); //???
+			upload_bit();
+			print("Cross board has been loaded\n\r");
+			instrumentState.artix_locked = *(u32*)(XPAR_AXI_GPIO_0_BASEADDR);
+			instrumentState.is_artix_loaded = GetArtixLoadState();
+			xil_printf("GetArtixLoadState() returns %d\n\r", instrumentState.is_artix_loaded);
+			xil_printf("artix_locked = %x\n\r", instrumentState.artix_locked);
+			return 0;
+		}
+		else
+		{
+			print("Cross board NOT loaded\n\r");
+			return err;
+		}
+	}
+}
+
+char* GetArtixFileName()
+{
+	return artix_file_name;
 }
