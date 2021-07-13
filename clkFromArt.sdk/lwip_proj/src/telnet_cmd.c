@@ -147,7 +147,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	print("TCP: ");
 	//for(i=0; i<p->len; i++)
 	//	xil_printf("%c", *(char*)(p->payload+i));
-	print("\r");
+	print("\r\n");
 	if(strncmp(p->payload, "help", 4) == 0)
 	{
 		char ok_eomess_str[] = "K-EUSO PDM DP console\n\r";

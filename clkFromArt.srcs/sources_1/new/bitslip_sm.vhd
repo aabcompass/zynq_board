@@ -59,6 +59,7 @@ entity bitslip_sm is
            dataout: out STD_LOGIC_VECTOR(8*12-1 downto 0);
            dataout12: out STD_LOGIC_VECTOR(7 downto 0);
            bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0);
+           bitslip_cnt: out STD_LOGIC_VECTOR(23 downto 0);
            dataout_valid: out std_logic;
            dataout_last: out std_logic;
            rst_selectio: out std_logic := '1'
@@ -71,6 +72,7 @@ architecture Behavioral of bitslip_sm is
 
 	signal frame_data: std_logic_vector(7 downto 0) := (others => '0');
 	signal bitslip_cmd: std_logic := '0';
+	signal bitslip_cnt_i: std_logic_vector(23 downto 0) := (others => '0');
 	
 	signal dataout0_i: std_logic_vector(7 downto 0);
 	signal dataout1_i: std_logic_vector(7 downto 0);
@@ -166,11 +168,14 @@ begin
 				bitslip_cmd <= '0';
 			else
 				bitslip_cmd <= '1';
+				bitslip_cnt_i <= bitslip_cnt_i + 1;
 			end if;
 			--state := 0;	
 			--end case;
 		end if;
 	end process;
+	
+	bitslip_cnt <= bitslip_cnt_i when rising_edge(clk);
 	
 	tlast_counter: process(clk)
 	begin

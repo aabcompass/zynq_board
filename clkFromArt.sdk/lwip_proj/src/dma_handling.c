@@ -112,7 +112,7 @@ void InvalidateRange(u32 data_type)
 	else {
 		if(data_type == DATA_TYPE_L3) {
 			//Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3.data[0], 4*N_OF_PIXELS_TOTAL);
-			Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3, 4*N_OF_PIXELS_TOTAL);
+			Xil_DCacheInvalidateRange((INTPTR)&singleLiveFrameD3.data[0], 4*N_OF_PIXELS_TOTAL);
 		}
 		else {
 			print("InvalidateRange: can't invalidate D1 for Live mode\n\r");

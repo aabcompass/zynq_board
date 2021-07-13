@@ -36,6 +36,9 @@ use IEEE.std_logic_arith.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+Library xpm;
+use xpm.vcomponents.all;
+
 entity axi_data_provider_z3 is
 	generic (
 	-- Users to add parameters here
@@ -80,6 +83,9 @@ entity axi_data_provider_z3 is
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	aux_in2: in std_logic_vector(31 downto 0);
+    	bitslip_cnt0: in std_logic_vector(23 downto 0);
+    	bitslip_cnt1: in std_logic_vector(23 downto 0);
+    	bitslip_cnt2: in std_logic_vector(23 downto 0);
     	reset_data_conv: out std_logic;
     	reset_scurve_adder: out std_logic;
     	zero_pmts: out std_logic_vector(35 downto 0);
@@ -1466,5 +1472,51 @@ begin
 	           s_axis_tuser => s_axis_tuser,--: in std_logic_vector(7 downto 0);
 	           DATA => DATA,--: out STD_LOGIC_VECTOR (143 downto 0);
 	           FRAME => FRAME);--: out STD_LOGIC);
+	           
 	
+	   xpm_cdc_array_bitslip0 : xpm_cdc_array_single
+	           generic map (
+	              DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+	              INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+	              SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+	              SRC_INPUT_REG => 0,  -- DECIMAL; 0=do not register input, 1=register input
+	              WIDTH => 24           -- DECIMAL; range: 1-1024
+	           )
+	           port map (
+	              dest_out => slv_reg20(23 downto 0), -- WIDTH-bit output: src_in synchronized to the destination clock domain. This
+	              dest_clk => S_AXI_ACLK, -- 1-bit input: Clock signal for the destination clock domain.
+	              src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+	              src_in => bitslip_cnt0      -- WIDTH-bit input: Input single-bit array to be synchronized to destination clock
+	           );
+
+	   xpm_cdc_array_bitslip1 : xpm_cdc_array_single
+	           generic map (
+	              DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+	              INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+	              SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+	              SRC_INPUT_REG => 0,  -- DECIMAL; 0=do not register input, 1=register input
+	              WIDTH => 24           -- DECIMAL; range: 1-1024
+	           )
+	           port map (
+	              dest_out => slv_reg21(23 downto 0), -- WIDTH-bit output: src_in synchronized to the destination clock domain. This
+	              dest_clk => S_AXI_ACLK, -- 1-bit input: Clock signal for the destination clock domain.
+	              src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+	              src_in => bitslip_cnt1      -- WIDTH-bit input: Input single-bit array to be synchronized to destination clock
+	           );
+	
+	   xpm_cdc_array_bitslip2 : xpm_cdc_array_single
+						 generic map (
+								DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+								INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+								SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+								SRC_INPUT_REG => 0,  -- DECIMAL; 0=do not register input, 1=register input
+								WIDTH => 24          -- DECIMAL; range: 1-1024
+						 )
+						 port map (
+								dest_out => slv_reg22(23 downto 0), -- WIDTH-bit output: src_in synchronized to the destination clock domain. This
+								dest_clk => S_AXI_ACLK, -- 1-bit input: Clock signal for the destination clock domain.
+								src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+								src_in => bitslip_cnt2      -- WIDTH-bit input: Input single-bit array to be synchronized to destination clock
+						 );	 
+
 end Behavioral;

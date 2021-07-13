@@ -123,7 +123,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'P')
 	{
-		//PrintData_scv(num);
+		MmgPrint1stD3();
 	}
 	else if(c == '+') // artix Gen mode
 	{

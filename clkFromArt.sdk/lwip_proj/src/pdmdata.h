@@ -43,6 +43,7 @@
 #define N_OF_PIXELS_PER_PMT			64 /* number of pixel on PMT */
 #define N_OF_KI_PER_PMT				8 /* number of KI on PMT */
 #define N_OF_SPARE_PER_PMT			8 /* number of spares on PMT */
+#define N_OF_COMMON_PIXELS			(N_OF_PIXELS_PER_PMT+N_OF_KI_PER_PMT+N_OF_SPARE_PER_PMT)
 
 #define N_OF_PMT_PER_ECASIC 		6	/* number of PMT on EC ASIC board */
 #define N_OF_ECASIC_PER_PDM			6  /* number of EC ASIC boards in PDM */

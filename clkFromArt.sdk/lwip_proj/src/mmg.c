@@ -12,6 +12,7 @@
 #include "common.h"
 #include "ftp_server.h"
 #include "own_data_types.h"
+#include "dma_handling.h"
 
 MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
@@ -239,4 +240,16 @@ void SetScurveAdditionalData(u16 start, u16 step, u16 end)
 	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_start = start;
 	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_step = step;
 	mainBuffer.sci_data_l3[last_l3_occupied].payload.dac10_end = end;
+}
+
+void MmgPrint1stD3()
+{
+	int i,j;
+	for(i=0;i<N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM;i++) {
+		for(j=0;j<N_OF_COMMON_PIXELS;j++) {
+			xil_printf("%d ", (*(u32*)(DMA_GetP()+4*(i*N_OF_COMMON_PIXELS+j)))/50000);
+		}
+		print("\n\r");
+	}
+	Xil_DCacheInvalidateRange(DMA_GetP(), 2880*4);
 }

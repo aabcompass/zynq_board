@@ -66,5 +66,6 @@ void MmgIncr_n_records(u32 file_descriptor, u16 record);
 INTPTR MmgGetP(int data_type);
 u32 Get_n_occupied(int data_type);
 void SetScurveAdditionalData(u16 start, u16 step, u16 end);
+void MmgPrint1stD3();
 
 #endif /* SRC_MMG_H_ */
