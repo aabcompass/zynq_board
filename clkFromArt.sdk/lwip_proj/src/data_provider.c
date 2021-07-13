@@ -31,6 +31,11 @@ void StartDataProvider()
 	is_dp_started = 1;
 }
 
+void StartSerdes()
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_RUN_SELECTIO);
+}
+
 void StartDataProviderForLive()
 {
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_INFINITE);
@@ -79,8 +84,16 @@ void StartDataProviderInitial()
 	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_N_FRAMES) = 0;
 	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= ((1<<BIT_START_SIG) | (1<<BIT_INFINITE));
 	//for(i=0;i<100000000;i++);
-	StartDataProviderForLive();
 	SetArtixFrameOn(1);
+	print("Artix Frame started\n\r");
+	StartSerdes();
+	print("Serdes started\n\r");
+	for(i=0;i<1000000;i++);
+	xil_printf("Bitslips: %d %d %d\n\r",
+			*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGR_DATAPROV_BITSLIP_CNT_0),
+			*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGR_DATAPROV_BITSLIP_CNT_1),
+			*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGR_DATAPROV_BITSLIP_CNT_2));
+	StartDataProviderForLive();
 	for(i=0;i<100000000;i++);
 	StopDataProviderForLive();
 }

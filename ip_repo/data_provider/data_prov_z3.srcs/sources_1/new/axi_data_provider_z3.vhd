@@ -59,6 +59,7 @@ entity axi_data_provider_z3 is
     	
     	art_clk: out std_logic;
     	run_data_conv: out std_logic;
+    	run_selectio: out std_logic;
     	
     	s_axis_tdata: in std_logic_vector(127 downto 0);
     	s_axis_tuser: in std_logic_vector(7 downto 0);
@@ -1323,7 +1324,7 @@ begin
 	end process;
 	
 	art_clk <= art_clk_i;
-	run_data_conv <= slv_reg10(2);
+	run_selectio <= slv_reg10(3);
 	
 	start_sig <= slv_reg0(0);
 	run <= slv_reg0(1);

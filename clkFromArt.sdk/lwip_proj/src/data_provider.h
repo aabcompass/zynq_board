@@ -49,6 +49,7 @@
 #define BIT_INFINITE			0 /*Provide data infinitely regardless of REGW_DATAPROV_N_FRAMES*/
 #define BIT_GTU_1US				1 /*GTU clk mode - 1 or 2.5.  Must be setup prior to starts*/
 #define BIT_RUN_DATACONV		2 /*Run data converter which is BEFORE the data_provider*/
+#define BIT_RUN_SELECTIO		3 /* Run selectio */
 //REGW_DATAPROV_CLKEN
 #define BIT_ART_CLKEN			0 /*Clock enable for artix clk. Set GTU time before to run artix clock*/
 //REGR_DATAPROV_STATUS

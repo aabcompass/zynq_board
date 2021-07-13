@@ -43,6 +43,7 @@ entity data_converter is
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
     	m_axis_tready : in STD_LOGIC;
+    	inp_en: in std_logic;
     	prog_reset_p: in std_logic;
     	zeros: in std_logic_vector(12*3-1 downto 0);
     	clk_counters: out std_logic_vector(31 downto 0)    	
@@ -216,7 +217,6 @@ architecture Behavioral of data_converter is
 	signal last_transfer_sw1: std_logic_vector(N_ART-1 downto 0) := (others => '0');
 	signal start_sw1: std_logic_vector(N_ART-1 downto 0) := (others => '0');
 	signal start_sw1_ch: std_logic_vector(1 downto 0) := (others => '0');
-	
 	signal m_axis_aresetn2: std_logic;
 
 	attribute KEEP : string;
@@ -293,6 +293,7 @@ begin
 		signal start: std_logic_vector(N_PMT-1 downto 0) := (others => '0');
 		signal start_ch: std_logic_vector(4-1 downto 0) := (others => '0');
 		signal pass_sw1: std_logic := '0';
+		signal inp_en_i: std_logic := '0';
 
 		attribute KEEP : string;
 		attribute KEEP of m_axis_tready_slice: signal is "TRUE";
@@ -320,6 +321,21 @@ begin
 
       dest_clk => clk_art(i),   -- 1-bit input: Destination clock.
       src_arst => areset_art    -- 1-bit input: Source asynchronous reset signal.
+   );
+	
+		   xpm_cdc_single_inst : xpm_cdc_single
+   generic map (
+      DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+      INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+                           -- values
+      SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+      SRC_INPUT_REG => 0   -- DECIMAL; integer; 0=do not register input, 1=register input
+   )
+   port map (
+      dest_out => inp_en_i, -- 1-bit output: src_in synchronized to the destination clock domain. This output
+      dest_clk => clk_art(i), -- 1-bit input: Clock signal for the destination clock domain.
+      src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+      src_in => inp_en      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
    );
 	
 		clk_counter_proc: process(clk_art(i))
@@ -382,21 +398,54 @@ begin
 			
 			signal pass: std_logic := '0';
 
-		attribute KEEP : string;
-		attribute KEEP of pass: signal is "TRUE";
-		attribute KEEP of m_axis_tvalid_slice0: signal is "TRUE";
-
+			attribute KEEP : string;
+			attribute KEEP of pass: signal is "TRUE";
+			attribute KEEP of m_axis_tvalid_slice0: signal is "TRUE";
+			
+			signal tvalid_art_i : std_logic := '0';
+			signal tlast_art_i : std_logic := '0';
+			signal tdata_art_i: std_logic_vector(7 downto 0) := (others => '0');
 			
 		begin
+
+			inp_en_sm_proc: process(clk_art(i))
+				variable state : integer range 0 to 3 := 0;
+			begin
+				if(rising_edge(clk_art(i))) then
+					case state is
+						when 0 => if(inp_en_i = '1') then
+												state := state + 1;
+											end if;
+											tvalid_art_i <= '0';
+						when 1 => if(tvalid_art(i) = '0') then
+												tvalid_art_i <= tvalid_art(i);
+												state := state + 1;
+											end if;
+						when 2 => if(inp_en_i = '0') then
+												state := state + 1;
+											end if;
+											tvalid_art_i <= tvalid_art(i);
+						when 3 => if(tvalid_art(i) = '0') then
+												tvalid_art_i <= '0';
+												state := 0;
+											end if;
+					end case;
+				end if;
+			end process;
+		
+			tlast_art_i <= tlast_art(i) when rising_edge(clk_art(i));
+			tdata_art_i <= tdata_art(12*8*i+8*j+7 downto 12*8*i+8*j) when rising_edge(clk_art(i));
+			
+		
 			i_cc : axis_dataconv_cc
 				PORT MAP (
 					s_axis_aresetn => s_axis_aresetn,
 					m_axis_aresetn => m_axis_aresetn2,
 					s_axis_aclk => clk_art(i),
-					s_axis_tvalid => tvalid_art(i),
+					s_axis_tvalid => tvalid_art_i,
 					s_axis_tready => open,
-					s_axis_tdata => tdata_art(12*8*i+8*j+7 downto 12*8*i+8*j),
-					s_axis_tlast => tlast_art(i),
+					s_axis_tdata => tdata_art_i,
+					s_axis_tlast => tlast_art_i,
 					m_axis_aclk => m_axis_aclk,
 					m_axis_tvalid => m_axis_tvalid_cc,
 					m_axis_tready => m_axis_tready_cc,
