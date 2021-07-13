@@ -71,5 +71,6 @@ void ArtixClkEn(u32 en);
 void ResetTriggerService_D1();
 u32 IsDataProviderPass();
 void GetAux2Data(u32* data0, u32* data1, u32* data2);
+void StopDataConverter();
 
 #endif /* SRC_DATA_PROVIDER_H_ */

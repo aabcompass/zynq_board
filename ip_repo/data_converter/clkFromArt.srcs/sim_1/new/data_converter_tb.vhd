@@ -44,6 +44,7 @@ architecture Behavioral of data_converter_tb is
     	m_axis_tvalid : out STD_LOGIC;
     	m_axis_tlast : out STD_LOGIC;
     	m_axis_tready : in STD_LOGIC;
+    	inp_en: in std_logic;
     	prog_reset_p: in std_logic;
     	zeros: in std_logic_vector(12*3-1 downto 0)    	    	    	
     	);
@@ -80,6 +81,9 @@ architecture Behavioral of data_converter_tb is
   signal s_axis_map0_tvalid :  STD_LOGIC := '0';
   signal s_axis_map0_tlast :  STD_LOGIC := '0';
   signal 	s_axis_map0_tready :  STD_LOGIC;
+  
+  signal 	prog_reset_p :  STD_LOGIC := '0';
+  signal 	inp_en :  STD_LOGIC := '0';
   
   signal cnt_load_remap: STD_LOGIC_VECTOR (5 downto 0) := (others => '0');
 
@@ -242,10 +246,35 @@ begin
     	m_axis_tvalid => m_axis_tvalid_conv,--: : out STD_LOGIC;
     	m_axis_tlast => m_axis_tlast_conv,--: : out STD_LOGIC;
     	m_axis_tready => '1', --: : in STD_LOGIC   
-    	prog_reset_p => '0',
+    	prog_reset_p => prog_reset_p,
+    	inp_en => inp_en,
     	--zeros => (1 to 9 => '1', others => '0')
     	zeros => (others => '0') 	
     	);
+
+		prog_reset_p_former: process(m_axis_aclk)
+		begin
+			if(rising_edge(m_axis_aclk)) then
+				if(m_axis_aclk_cnt = 3000) then
+					prog_reset_p <= '1';
+				elsif	(m_axis_aclk_cnt = 3100) then
+					prog_reset_p <= '0';
+				end if;	
+			end if;
+		end process;
+
+		inp_en_former: process(m_axis_aclk)
+		begin
+			if(rising_edge(m_axis_aclk)) then
+				if(m_axis_aclk_cnt = 1000) then
+					inp_en <= '1';
+				elsif	(m_axis_aclk_cnt = 3050) then
+					inp_en <= '0';
+				elsif	(m_axis_aclk_cnt = 3500) then
+					inp_en <= '1';
+				end if;	
+			end if;
+		end process;
 
 
 	dut2:  data_provider_4trig 

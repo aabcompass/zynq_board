@@ -527,6 +527,7 @@ begin
 			begin
 				if(rising_edge(m_axis_aclk)) then
 					if(m_axis_aresetn2 = '0') then
+						pass <= '0';
 						state := 0;
 					else
 						case state is
@@ -597,7 +598,7 @@ begin
 
 		i_fifo1 : axis_dataconv_fifo_1
 		PORT MAP (
-			s_axis_aresetn => s_axis_aresetn,
+			s_axis_aresetn => m_axis_aresetn2,
 			s_axis_aclk => m_axis_aclk,
 			s_axis_tvalid => m_axis_tvalid_sw0(0),
 			s_axis_tready => m_axis_tready_sw0(0),
@@ -623,6 +624,7 @@ begin
 				if(rising_edge(m_axis_aclk)) then
 					if(m_axis_aresetn2 = '0') then
 						state := 0;
+						pass_sw1 <= '0';
 					else
 						case state is
 							when 0 => if(start_sw1(i) = '1') then
@@ -695,17 +697,21 @@ begin
 		variable state : integer range 0 to 4 := 0;
 	begin
 		if(rising_edge(m_axis_aclk)) then
-			if(m_axis_tvalid_sw1(0) = '1') then
-				if(m_axis_tlast_i = '1') then
-					state := 4;
+			if(m_axis_aresetn2 = '0') then
+				pc_tlast <= '0'; ki <= '0';state := 0;
+			else
+				if(m_axis_tvalid_sw1(0) = '1') then
+					if(m_axis_tlast_i = '1') then
+						state := 4;
+					end if;
+					case state is
+						when 0 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+						when 1 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+						when 2 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
+						when 3 => pc_tlast <= '1'; ki <= '0'; state := state + 1;
+						when 4 => pc_tlast <= '0'; ki <= '1'; state := 0;
+					end case;
 				end if;
-				case state is
-					when 0 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
-					when 1 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
-					when 2 => pc_tlast <= '0'; ki <= '0'; state := state + 1;
-					when 3 => pc_tlast <= '1'; ki <= '0'; state := state + 1;
-					when 4 => pc_tlast <= '0'; ki <= '1'; state := 0;
-				end case;
 			end if;
 		end if;
 	end process;

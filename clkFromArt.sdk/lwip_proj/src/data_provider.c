@@ -57,6 +57,11 @@ void StartDataProviderFor1D3frame(u32 n_integration)
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_RUN_DATACONV);
 }
 
+void StopDataConverter()
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_RUN_DATACONV);
+}
+
 u32 IsDataProviderPass()
 {
 	return *(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGR_DATAPROV_STATUS) & (1<<BIT_DP_PASS);
@@ -102,9 +107,9 @@ void StartDataProviderInitial()
 void ResetDataConverter()
 {
 	//*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) = 0;
-	print("Switching off SERDES\n\r");
-	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATACONV_RESET) = (1<<BIT_DATACONV_RESET);
 	print("Resetting data converter\n\r");
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATACONV_RESET) = (1<<BIT_DATACONV_RESET);
+	print("Resetting data converter DONE\n\r");
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATACONV_RESET) = 0;
 }
 

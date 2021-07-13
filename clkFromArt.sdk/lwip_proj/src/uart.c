@@ -115,6 +115,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		//SA_restart();
 		//ResetScurveAdder(); reinit is required!!
+		StopDataConverter();
+		instrumentState.is_artix_frame_started = 0;
 		ResetDataConverter();
 	}
 	else if(c == 'p')
