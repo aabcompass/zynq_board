@@ -183,3 +183,10 @@ void GetAux2Data(u32* data0, u32* data1, u32* data2)
 	*data1 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX2)) >> 10  & 0x3FF;
 	*data2 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX2)) >> 20  & 0x3FF;
 }
+
+void GetAux3Data(u32* data0, u32* data1, u32* data2)
+{
+	*data0 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX3)) >> 0   & 0x3FF;
+	*data1 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX3)) >> 10  & 0x3FF;
+	*data2 = (*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGR_DATAPROV_AUX3)) >> 20  & 0x3FF;
+}

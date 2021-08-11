@@ -25,6 +25,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	static int ec = 0;
 	u32 ReceivedWords;
 	u32 clk_cnt0, clk_cnt1, clk_cnt2;
+	u32 tvalid_cnt0, tvalid_cnt1, tvalid_cnt2;
 
 
 	if(c == 'd')
@@ -77,14 +78,19 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//SendMapping();
 		ConfTrigger();
 		GetAux2Data(&clk_cnt0, &clk_cnt1, &clk_cnt2);
+		GetAux3Data(&tvalid_cnt0, &tvalid_cnt1, &tvalid_cnt2);
 		xil_printf("clk_cnt0=%d, clk_cnt1=%d, clk_cnt2=%d\n\r", clk_cnt0, clk_cnt1, clk_cnt2);
+		xil_printf("tvalid_cnt0=%d, tvalid_cnt1=%d, tvalid_cnt2=%d\n\r", tvalid_cnt0, tvalid_cnt1, tvalid_cnt2);
 		xil_printf("Is_D3_received()=%d\n\r", Is_D3_received());
 
 	}
-	else if(c == 'S')
+	else if(c == 'f')
 	{
 		SetArtixFrameOn(1);
-		//SetArtix0101();
+	}
+	else if(c == 'F')
+	{
+		SetArtixFrameOn(0);
 	}
 	else if(c == '&')
 	{
@@ -227,9 +233,4 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
 	}
-	else if(c == 'f')
-	{
-		CreateTestFiles();
-	}
-
 }

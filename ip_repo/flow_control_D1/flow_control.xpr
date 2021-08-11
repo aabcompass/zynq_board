@@ -157,6 +157,7 @@
     <FileSet Name="axis_fifo_mp" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_fifo_mp">
       <File Path="$PSRCDIR/sources_1/ip/axis_fifo_mp/axis_fifo_mp.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

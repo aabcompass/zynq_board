@@ -46,7 +46,7 @@ entity data_converter is
     	inp_en: in std_logic;
     	prog_reset_p: in std_logic;
     	zeros: in std_logic_vector(12*3-1 downto 0);
-    	clk_counters: out std_logic_vector(31 downto 0)    	
+    	clk_counters, tvalid_counters: out std_logic_vector(31 downto 0)    	
     	);
 end data_converter;
 
@@ -294,13 +294,17 @@ begin
 		signal start_ch: std_logic_vector(4-1 downto 0) := (others => '0');
 		signal pass_sw1: std_logic := '0';
 		signal inp_en_i: std_logic := '0';
+		
+		signal tvalid_art_d1: std_logic := '0';
 
 		attribute KEEP : string;
 		attribute KEEP of m_axis_tready_slice: signal is "TRUE";
 		attribute KEEP of m_axis_tlast_slice: signal is "TRUE";
 		
 		signal clk_counter_i: std_logic_vector(9 downto 0) := (others => '0');
+		signal tvalid_counter_i: std_logic_vector(9 downto 0) := (others => '0');
 		signal clk_counter_sync: std_logic_vector(9 downto 0) := (others => '0');
+		signal tvalid_counter_sync: std_logic_vector(9 downto 0) := (others => '0');
 		
 
 		
@@ -338,18 +342,24 @@ begin
       src_in => inp_en      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
    );
 	
+		tvalid_art_d1 <= tvalid_art(i) when rising_edge(clk_art(i));
+	
 		clk_counter_proc: process(clk_art(i))
 		begin
 			if(rising_edge(clk_art(i))) then
-				if(areset_art = '0') then
+				if(inp_en_i = '0') then
 					clk_counter_i <= (others => '0');
+					tvalid_counter_i <= (others => '0');
 				else
 					clk_counter_i <= clk_counter_i + 1;
+					if(tvalid_art(i) = '1' and tvalid_art_d1 = '0') then
+						tvalid_counter_i <= tvalid_counter_i + 1;
+					end if;
 				end if;
 			end if;
 		end process;
 		
-		xpm_fifo_async_inst : xpm_fifo_async
+		xpm_fifo_async_clk_counter : xpm_fifo_async
 		generic map (
 		   CDC_SYNC_STAGES => 2,       -- DECIMAL
 		   DOUT_RESET_VALUE => "0",    -- String
@@ -381,7 +391,40 @@ begin
 			injectsbiterr => '0',
 			injectdbiterr => '0');
 			 
+		xpm_fifo_async_tvalid_counter : xpm_fifo_async
+		generic map (
+			 CDC_SYNC_STAGES => 2,       -- DECIMAL
+			 DOUT_RESET_VALUE => "0",    -- String
+			 ECC_MODE => "no_ecc",       -- String
+			 FIFO_MEMORY_TYPE => "distributed", -- String
+			 FIFO_READ_LATENCY => 1,     -- DECIMAL
+			 FIFO_WRITE_DEPTH => 16,   -- DECIMAL
+			 FULL_RESET_VALUE => 0,      -- DECIMAL
+			 PROG_EMPTY_THRESH => 5,     -- DECIMAL
+			 PROG_FULL_THRESH => 5,      -- DECIMAL
+			 RD_DATA_COUNT_WIDTH => 1,   -- DECIMAL
+			 READ_DATA_WIDTH => 10,      -- DECIMAL
+			 READ_MODE => "std",         -- String
+			 RELATED_CLOCKS => 0,        -- DECIMAL
+			 USE_ADV_FEATURES => "0000", -- String
+			 WAKEUP_TIME => 0,           -- DECIMAL
+			 WRITE_DATA_WIDTH => 10,     -- DECIMAL
+			 WR_DATA_COUNT_WIDTH => 1    -- DECIMAL
+		)
+		port map (
+			wr_clk => clk_art(i),
+			rd_clk => m_axis_aclk,
+			rst => prog_reset_p,
+			din => tvalid_counter_i,
+			dout => tvalid_counter_sync,
+			wr_en => '1',
+			rd_en => '1',
+			sleep => '0',
+			injectsbiterr => '0',
+			injectdbiterr => '0');
+		 
 		clk_counters(i*10+9 downto i*10) <= clk_counter_sync;
+		tvalid_counters(i*10+9 downto i*10) <= tvalid_counter_sync;
 
 		pmt_gen: for j in 0 to N_PMT-1 generate
 		

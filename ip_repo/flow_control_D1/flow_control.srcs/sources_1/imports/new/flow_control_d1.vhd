@@ -24,12 +24,6 @@ entity flow_control_d1 is
   		s_axis_tuser : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
   		s_axis_tlast : IN STD_LOGIC;
   		
-  		-- in macropixel sum and trg
-  		s_axis_mp_tvalid: IN STD_LOGIC;
-  		s_axis_mp_tlast: IN STD_LOGIC;
-  		s_axis_mp_tready: out STD_LOGIC;
-  		s_axis_mp_tdata: STD_LOGIC_VECTOR(31 DOWNTO 0);
-  		
   		-- out data
 			m_axis_tvalid : OUT STD_LOGIC;
   		m_axis_tready : IN STD_LOGIC;
@@ -173,22 +167,6 @@ architecture Behavioral of flow_control_d1 is
 			axis_rd_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 		);
 	END COMPONENT;
-	
-	COMPONENT axis_fifo_mp
-			PORT (
-				s_axis_aresetn : IN STD_LOGIC;
-				s_axis_aclk : IN STD_LOGIC;
-				s_axis_tvalid : IN STD_LOGIC;
-				s_axis_tready : OUT STD_LOGIC;
-				s_axis_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-				m_axis_tvalid : OUT STD_LOGIC;
-				m_axis_tready : IN STD_LOGIC;
-				m_axis_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-				axis_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-				axis_wr_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-				axis_rd_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
-			);
-		END COMPONENT;	
 	
 	COMPONENT axis_fifo_fc_32
 		PORT (
@@ -654,6 +632,32 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 	
 	trig_type <= trig_type_i;
+
+
+--  -- this process removes all tlast except every 6th.  // it was in Mini-EUSO
+--  -- By this manner we concat EC-ASICs packet to PDM packets
+--  tlast_remover: process(s_axis_aclk)
+--  begin
+--  	if(rising_edge(s_axis_aclk)) then
+--  		if(clr_tlast_remover = '1') then
+--  			tlast_remover_cnt <= "000";
+--  			pass_tlast <= '0';
+--  		elsif(s_axis_tlast = '1' and s_axis_tvalid = '1') then
+--  			if(tlast_remover_cnt = "101") then
+--  				tlast_remover_cnt <= "000";
+--  			else
+--  				tlast_remover_cnt <= tlast_remover_cnt + 1; 
+--  			end if;
+--  			if(tlast_remover_cnt = tlast_remover_phase) then
+--  				pass_tlast <= '1';
+--  			else
+--  				pass_tlast <= '0';
+--  			end if; 
+--  		end if;	
+--  	end if;
+--  end process;
+
+	--tuser_tlast_d1 <= tuser_tlast when rising_edge(s_axis_aclk);
  
  	tlast_former_process: process(s_axis_aclk)
  	begin
@@ -667,13 +671,6 @@ xpm_cdc_extsync_inst: xpm_cdc_single
  			s_axis_tdata_d1 <= s_axis_tdata; 
  			s_axis_tlast_d1 <= s_axis_tlast and pass_tlast;
 			s_axis_tready <= '1';
-			
-			s_axis_mp_tdata_d1  <= s_axis_mp_tdata;
-			s_axis_mp_tvalid_d1 <= s_axis_mp_tvalid;
-			s_axis_mp_tready <= '1';
-			
-			
-			
  		end if;
  	end process;
  	
@@ -695,21 +692,6 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		axis_rd_data_count => open
 	);
 
-	i_axis_fifo_mp : axis_fifo_mp
-  PORT MAP (
-    s_axis_aresetn => s_axis_aresetn,
-    s_axis_aclk => s_axis_aclk,
-    s_axis_tvalid => s_axis_mp_tvalid_d1,
-    s_axis_tready => open,
-    s_axis_tdata => s_axis_mp_tdata_d1,
-    m_axis_tvalid => m_axis_mp_tvalid_key,
-    m_axis_tready => m_axis_mp_tready_key,
-    m_axis_tdata => m_axis_mp_tdata_key,
-    axis_data_count => axis_fifo_mp_count,
-    axis_wr_data_count => open,
-    axis_rd_data_count => open
-  );
-
 	--m_axis_tready_key <= m_axis_tready_buf and (pass or m_axis_tready_sink);
 	m_axis_tready_key <= (pass and m_axis_tready_fc) or m_axis_tready_sink;
 	m_axis_tvalid_fc <= m_axis_tvalid_key and pass;
@@ -728,8 +710,6 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	    m_axis_tdata => m_axis_tdata_dwc,
 	    m_axis_tlast => m_axis_tlast_dwc
 	  );
-	  
-	m_axis_mp_tready_key <= m_axis_mp_tready_fc or m_axis_mp_tready_sink; 
 
 	comparator: process(s_axis_aclk)
 	begin
@@ -738,11 +718,6 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 				fifo_half <= '1';
 			else
 				fifo_half <= '0';
-			end if;
-			if(axis_fifo_mp_count > "01111111") then
-				fifo_mp_half <= '1';
-			else
-				fifo_mp_half <= '0';
 			end if;
 		end if;
 	end process;
@@ -793,41 +768,6 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 			end if;
 		end if;
 	end process;
-
-	sink_mp_process: process(s_axis_aclk)
-		variable state : integer range 0 to 6 := 0;
-	begin
-		if(rising_edge(s_axis_aclk)) then
-			if(clr_sink_sm = '1') then
-				state := 0;
-				m_axis_mp_tready_sink <= '0';
-			else
-				case state is
-					when 0 =>	if(fifo_mp_half = '1') then
-											m_axis_mp_tready_sink <= '1';
-											if(trig_latch = '1') then
-												state := state + 1;
-											end if;
-										else
-											m_axis_mp_tready_sink <= '0';
-										end if;
-					when 1 => if(pass = '1') then
-											state := state + 1;
-											m_axis_mp_tready_sink <= '0';
-										end if;
-					when 2 => if(pass = '0') then
-											state := state + 1;
-										end if;
-					when 3 => state := state + 1;
-					when 4 => state := state + 1;
-					when 5 => state := state + 1;
-					when 6 => state := 0;
-				end case;
-			end if;
-		end if;
-	end process;					
-
-
 
 	maxis_trans_cnt_process: process(s_axis_aclk)
 		begin

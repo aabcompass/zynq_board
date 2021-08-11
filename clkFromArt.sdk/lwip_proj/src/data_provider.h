@@ -28,6 +28,7 @@
 #define REGR_DATAPROV_BITSLIP_CNT_0		20
 #define REGR_DATAPROV_BITSLIP_CNT_1		21
 #define REGR_DATAPROV_BITSLIP_CNT_2		22
+#define REGR_DATAPROV_AUX3				23
 
 //REGW_DATAPROV_FLAGS
 #define BIT_START_SIG			0 /*Start Data Provider*/
@@ -71,6 +72,7 @@ void ArtixClkEn(u32 en);
 void ResetTriggerService_D1();
 u32 IsDataProviderPass();
 void GetAux2Data(u32* data0, u32* data1, u32* data2);
+void GetAux3Data(u32* data0, u32* data1, u32* data2);
 void StopDataConverter();
 
 #endif /* SRC_DATA_PROVIDER_H_ */

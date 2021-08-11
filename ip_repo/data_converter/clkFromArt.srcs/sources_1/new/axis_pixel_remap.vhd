@@ -54,6 +54,9 @@ end axis_pixel_remap;
 
 architecture Behavioral of axis_pixel_remap is
 
+	attribute keep_hierarchy : string;
+	attribute keep_hierarchy of Behavioral : architecture is "yes";
+
 COMPONENT axis_remap_dwc_1_64
   PORT (
     aclk : IN STD_LOGIC;

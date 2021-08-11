@@ -84,6 +84,7 @@ entity axi_data_provider_z3 is
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	aux_in2: in std_logic_vector(31 downto 0);
+    	aux_in3: in std_logic_vector(31 downto 0);
     	bitslip_cnt0: in std_logic_vector(23 downto 0);
     	bitslip_cnt1: in std_logic_vector(23 downto 0);
     	bitslip_cnt2: in std_logic_vector(23 downto 0);
@@ -1461,6 +1462,8 @@ begin
 --    	m_axis_tlast: out std_logic;
 	slv_reg17 <= aux_in;
 	slv_reg18 <= aux_in2;
+	slv_reg23 <= aux_in3;
+	
 	zero_pmts <= slv_reg12(11 downto 0) & slv_reg11(27 downto 16) & slv_reg11(11 downto 0);
 
 	s_axis_tvalid_4trig <= s_axis_tvalid and pass;

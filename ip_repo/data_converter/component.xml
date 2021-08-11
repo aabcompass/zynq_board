@@ -171,7 +171,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>730c1c5a</spirit:value>
+            <spirit:value>7dfe5d12</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -202,7 +202,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>799839de</spirit:value>
+            <spirit:value>c0208b5a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -217,7 +217,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e28f7c67</spirit:value>
+            <spirit:value>fa9e3bcb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -642,6 +642,23 @@
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
+      <spirit:port>
+        <spirit:name>tvalid_counters</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
     </spirit:ports>
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
@@ -725,7 +742,7 @@
       <spirit:file>
         <spirit:name>clkFromArt.srcs/sources_1/new/data_converter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_957b1d3e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_87292991</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -955,8 +972,8 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-07-13T14:14:08Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-08-11T10:35:32Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="user.org:user:data_converter:1.0_ARCHIVE_LOCATION">/home/alx/xil_proj/zynq_board/master2/ip_repo/data_converter</xilinx:tag>
       </xilinx:tags>
@@ -964,8 +981,8 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="85adc909"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2c2e9232"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="c7ff438a"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f9ba83ca"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="4bae9b4f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3d09420b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e7254f26"/>
     </xilinx:packagingInfo>
