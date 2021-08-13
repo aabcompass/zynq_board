@@ -16,6 +16,7 @@
 #define REGW_DATAPROV_TEST_MODE	4
 #define REGW_DATAPROV_INCR_PER	5
 #define REGW_DATAPROV_PATT	6 /*7:0 MAX, 15:8 INIT*/
+#define REGW_DATAPROV_GTU_PERIOD	7
 
 #define REGW_DATAPROV_FLAGS2			10
 #define REGW_DATAPROV_PMTZERO_01		11
@@ -53,6 +54,7 @@
 #define BIT_RUN_SELECTIO		3 /* Run selectio */
 //REGW_DATAPROV_CLKEN
 #define BIT_ART_CLKEN			0 /*Clock enable for artix clk. Set GTU time before to run artix clock*/
+#define BIT_ART_GTUEN			1  /*GTU enable for  GTU signal to Artix.*/
 //REGR_DATAPROV_STATUS
 #define BIT_DP_PASS				0
 

@@ -58,6 +58,7 @@ entity axi_data_provider_z3 is
     	-- Users to add ports here
     	
     	art_clk: out std_logic;
+    	art_gtu: out std_logic;
     	run_data_conv: out std_logic;
     	run_selectio: out std_logic;
     	
@@ -310,6 +311,9 @@ architecture Behavioral of axi_data_provider_z3 is
 	
 	signal s_axis_tvalid_cnt: std_logic_vector(31 downto 0) := (others => '0');
 	signal s_axis_tvalid_d1: std_logic := '0';
+	
+	signal gtu_period: std_logic_vector(7 downto 0) := (others => '0');
+	signal art_gtu_en: std_logic := '0';
 
 begin
 
@@ -1301,6 +1305,8 @@ begin
 ----------------------------------------------------------------------------
 	gtu_1us <= slv_reg10(1);
 	art_clk_en <= slv_reg13(0);
+	art_gtu_en <= slv_reg13(1);
+	gtu_period <= slv_reg7(7 downto 0);
 
 	artix_clk_gen: process(S_AXI_ACLK) -- S_AXI_ACLK = 200 MHz
 		variable cnt : integer;
@@ -1323,6 +1329,23 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	gtu_gen: process(S_AXI_ACLK) -- S_AXI_ACLK = 200 MHz
+		--variable cnt : integer range 0 to 255 := 0;
+		variable cnt : integer;-- range 0 to 255 := 0;
+	begin
+		if(rising_edge(S_AXI_ACLK)) then
+			if(art_clk_i = '1') then
+				if(cnt = conv_integer(gtu_period)) then
+					cnt := 1;
+					art_gtu <= art_gtu_en;
+				else
+					cnt := cnt + 1;
+					art_gtu <= '0';
+				end if;
+			end if;
+		end if;
+	end process;	
 	
 	art_clk <= art_clk_i;
 	run_selectio <= slv_reg10(3);

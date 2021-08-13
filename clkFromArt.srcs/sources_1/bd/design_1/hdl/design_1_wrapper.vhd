@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Wed Aug 11 14:44:51 2021
+--Date        : Wed Aug 11 18:49:04 2021
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -46,6 +46,9 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
+    art_gtu_0 : out STD_LOGIC;
+    art_gtu_1 : out STD_LOGIC;
+    art_gtu_2 : out STD_LOGIC;
     artx_done_0 : in STD_LOGIC;
     artx_initb : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_latch_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -176,7 +179,10 @@ architecture STRUCTURE of design_1_wrapper is
     artx_latch_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_programb : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_initb : out STD_LOGIC_VECTOR ( 0 to 0 );
-    sr_out_pc_0 : in STD_LOGIC_VECTOR ( 5 downto 0 )
+    sr_out_pc_0 : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    art_gtu_0 : out STD_LOGIC;
+    art_gtu_1 : out STD_LOGIC;
+    art_gtu_2 : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -215,6 +221,9 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       GTU_HV_n_0 => GTU_HV_n_0,
       GTU_HV_p_0 => GTU_HV_p_0,
+      art_gtu_0 => art_gtu_0,
+      art_gtu_1 => art_gtu_1,
+      art_gtu_2 => art_gtu_2,
       artx_done_0 => artx_done_0,
       artx_initb(0) => artx_initb(0),
       artx_latch_0(0) => artx_latch_0(0),

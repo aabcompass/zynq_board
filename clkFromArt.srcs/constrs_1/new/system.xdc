@@ -253,3 +253,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sr_out_pc_0[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sr_out_pc_0[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sr_out_pc_0[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {sr_out_pc_0[0]}]
+
+set_property PACKAGE_PIN AA25 [get_ports art_gtu_0]
+set_property PACKAGE_PIN AA20 [get_ports art_gtu_1]
+set_property PACKAGE_PIN AD18 [get_ports art_gtu_2]
+set_property IOSTANDARD LVCMOS33 [get_ports art_gtu_0]
+set_property IOSTANDARD LVCMOS33 [get_ports art_gtu_1]
+set_property IOSTANDARD LVCMOS33 [get_ports art_gtu_2]
+
