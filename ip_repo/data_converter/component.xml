@@ -171,7 +171,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7dfe5d12</spirit:value>
+            <spirit:value>ced23f39</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -202,7 +202,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0208b5a</spirit:value>
+            <spirit:value>fee89b4e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -210,14 +210,14 @@
         <spirit:name>xilinx_testbench</spirit:name>
         <spirit:displayName>Test Bench</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
-        <spirit:modelName>data_converter_tb</spirit:modelName>
+        <spirit:modelName>pixel_remap_tb</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fa9e3bcb</spirit:value>
+            <spirit:value>894cedfb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -720,10 +720,6 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>clkFromArt.srcs/sources_1/ip/axis_remap_dwc_1_64/axis_remap_dwc_1_64.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>clkFromArt.srcs/sources_1/new/axis_pixel_remap.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
@@ -743,6 +739,10 @@
         <spirit:name>clkFromArt.srcs/sources_1/new/data_converter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_87292991</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>clkFromArt.srcs/sources_1/ip/axis_DWC_4_256/axis_DWC_4_256.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -830,10 +830,6 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>clkFromArt.srcs/sources_1/ip/axis_remap_dwc_1_64/axis_remap_dwc_1_64.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>clkFromArt.srcs/sources_1/new/axis_pixel_remap.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
@@ -852,6 +848,10 @@
       <spirit:file>
         <spirit:name>clkFromArt.srcs/sources_1/new/data_converter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>clkFromArt.srcs/sources_1/ip/axis_DWC_4_256/axis_DWC_4_256.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -907,27 +907,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_testbench_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>clkFromArt.srcs/sim_1/imports/new/byte_serializer.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>clkFromArt.srcs/sim_1/imports/new/data_provider_4trig.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>clkFromArt.srcs/sim_1/new/data_converter_tb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>data_converter_tb_behav.wcfg</spirit:name>
         <spirit:fileType>unknown</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>clkFromArt.srcs/sim_1/new/pixel_remap_tb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -972,8 +960,8 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>6</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-08-11T10:35:32Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-08-16T14:46:44Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="user.org:user:data_converter:1.0_ARCHIVE_LOCATION">/home/alx/xil_proj/zynq_board/master2/ip_repo/data_converter</xilinx:tag>
       </xilinx:tags>
@@ -981,8 +969,8 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="85adc909"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f9ba83ca"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="4bae9b4f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="35886ded"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="b0be03cd"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3d09420b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e7254f26"/>
     </xilinx:packagingInfo>

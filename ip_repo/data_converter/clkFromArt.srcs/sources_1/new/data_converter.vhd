@@ -258,14 +258,43 @@ architecture Behavioral of data_converter is
 	signal m_axis_tuser_remap: std_logic_vector(7 downto 0);
 	signal m_axis_tvalid_remap: std_logic;
 	signal m_axis_tlast_remap: std_logic;
-
-
+	
+	signal tdata_art2_remap, tdata_art1_remap, tdata_art0_remap: std_logic_vector(95 downto 0) := (others => '0');
 
 begin
 
 	m_axis_aresetn2 <= m_axis_aresetn and (not prog_reset_p);
 	
-	tdata_art <= tdata_art2 & tdata_art1 & tdata_art0;
+	--tdata_art <= tdata_art2 & tdata_art1 & tdata_art0;
+	
+	-- PMT remap
+	tdata_art2_remap <= tdata_art2(55 downto 48) & 
+											tdata_art2(63 downto 56) & 
+											tdata_art2(71 downto 64) & 
+											tdata_art2(79 downto 72) & 
+											tdata_art2(87 downto 80) & 
+											tdata_art2(95 downto 88) & 
+											tdata_art2(47 downto 0);
+
+	tdata_art1_remap <= tdata_art1(55 downto 48) & 
+											tdata_art1(63 downto 56) & 
+											tdata_art1(71 downto 64) & 
+											tdata_art1(79 downto 72) & 
+											tdata_art1(87 downto 80) & 
+											tdata_art1(95 downto 88) & 
+											tdata_art1(47 downto 0);
+
+	tdata_art0_remap <= tdata_art0(55 downto 48) & 
+											tdata_art0(63 downto 56) & 
+											tdata_art0(71 downto 64) & 
+											tdata_art0(79 downto 72) & 
+											tdata_art0(87 downto 80) & 
+											tdata_art0(95 downto 88) & 
+											tdata_art0(47 downto 0);
+
+	
+	tdata_art <= tdata_art2_remap & tdata_art1_remap & tdata_art0_remap; 
+	--tdata_art <= tdata_art2 & tdata_art1 & tdata_art0;
 	clk_art <= clk_art2 & clk_art1 & clk_art0;
 	tvalid_art <= tvalid_art2 & tvalid_art1 & tvalid_art0;
 	tlast_art <= tlast_art2 & tlast_art1 & tlast_art0;

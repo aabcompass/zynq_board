@@ -82,22 +82,23 @@ void SA_restart()
 void SendDefaultMapping()
 {
 	int i;
-	char def_mapping[N_OF_PIXELS_PER_PMT];
-	for(i=0; i<N_OF_PIXELS_PER_PMT; i++)
+	char def_mapping[N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC];
+	for(i=0; i<N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC; i++)
 	{
-		def_mapping[i]=63-i;
+		//def_mapping[i]=(N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC-1-i)%64;
+		def_mapping[i]=(63-i)%64;
 	}
-	TxFIFOSendMain(def_mapping, N_OF_PIXELS_PER_PMT/4, FIFO_CH_MAPPING);
+	TxFIFOSendMain(def_mapping, N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC/4, FIFO_CH_MAPPING);
 }
 
 void SendMapping(char* mapping)
 {
 	int i;
-	for(i=0; i<N_OF_PIXELS_PER_PMT; i++)
+	for(i=0; i<N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC; i++)
 	{
 		xil_printf("%d ", mapping[i]);
 	}
-	TxFIFOSendMain(mapping, N_OF_PIXELS_PER_PMT/4, FIFO_CH_MAPPING);
+	TxFIFOSendMain(mapping, N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC/4, FIFO_CH_MAPPING);
 }
 
 void ConfTrigger()

@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.20.07"
+#define ZYNQ3_VER_STRING "v3.22.00"
 
 //========================================
 // Constants
@@ -47,6 +47,8 @@
 
 #define N_OF_PMT_PER_ECASIC 		6	/* number of PMT on EC ASIC board */
 #define N_OF_ECASIC_PER_PDM			6  /* number of EC ASIC boards in PDM */
+
+#define N_OF_PMTS_PER_EC			4 /* number of PMTs in one EC unit */
 
 
 #define N_OF_PIXEL_PER_PDM			(N_OF_PIXELS_PER_PMT * N_OF_PMT_PER_ECASIC * N_OF_ECASIC_PER_PDM) /*Number of pixels per PDM*/
@@ -351,7 +353,7 @@ typedef struct
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"
-#define TCP_CMD_PIXELMAP_LOAD		"pixelmap load %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d"
+#define TCP_CMD_PIXELMAP_LOAD		"pixelmap load ec=%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d"
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
 #define TCP_CMD_ARTIX_LOAD			"artix load %s"
 #define TCP_CMD_GET_ARTIX_FILENAME	"artix filename?"

@@ -44,6 +44,10 @@ end pixel_remap_v2;
 
 architecture Behavioral of pixel_remap_v2 is
 
+	attribute keep_hierarchy : string;
+	attribute keep_hierarchy of Behavioral : architecture is "yes";
+
+
 component pixel_remap_sw is
     Port ( clk : in STD_LOGIC;
            datain : in STD_LOGIC_VECTOR (8*64-1 downto 0);
@@ -58,7 +62,7 @@ begin
 		port map(clk => clk,
 			datain => s_axis_tdata,
 			dataout => m_axis_tdata(i*8+7 downto i*8),
-			addr => map0(i*8+7 downto i*8));
+			addr => map0((63-i)*8+7 downto (63-i)*8));
 	end generate; 
 
 end Behavioral;

@@ -31,6 +31,9 @@ SystemSettings systemSettings;
 
 char err_str[20];
 
+u32 mapping_1EC[N_OF_PIXELS_PER_PMT];
+char mapping_4EC[N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC];
+
 void SendErrorCommand(struct tcp_pcb *tpcb,  int err_code)
 {
 	sprintf(err_str, "Error %d\n\r", err_code);
@@ -138,7 +141,8 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	double double_param, double_param2, double_param3;
 	int ret;
 	int turn[NUM_OF_HV];
-	char mapping[N_OF_PIXELS_PER_PMT];
+
+	char current_ec = 0;
 
 	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 
@@ -552,19 +556,38 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD,
-			&mapping[0], &mapping[1], &mapping[2], &mapping[3], &mapping[4], &mapping[5], &mapping[6], &mapping[7],
-			&mapping[8], &mapping[9], &mapping[10], &mapping[11], &mapping[12], &mapping[13], &mapping[14], &mapping[15],
-			&mapping[16], &mapping[17], &mapping[18], &mapping[19], &mapping[20], &mapping[21], &mapping[22], &mapping[23],
-			&mapping[24], &mapping[25], &mapping[26], &mapping[27], &mapping[28], &mapping[29], &mapping[30], &mapping[31],
-			&mapping[32], &mapping[33], &mapping[34], &mapping[35], &mapping[36], &mapping[37], &mapping[38], &mapping[39],
-			&mapping[40], &mapping[41], &mapping[42], &mapping[43], &mapping[44], &mapping[45], &mapping[46], &mapping[47],
-			&mapping[48], &mapping[49], &mapping[50], &mapping[51], &mapping[52], &mapping[53], &mapping[54], &mapping[55],
-			&mapping[56], &mapping[57], &mapping[58], &mapping[59], &mapping[60], &mapping[61], &mapping[62], &mapping[63]) == N_OF_PIXELS_PER_PMT)
+	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD, &current_ec,
+			&mapping_1EC[0], &mapping_1EC[1], &mapping_1EC[2], &mapping_1EC[3],
+			&mapping_1EC[4], &mapping_1EC[5], &mapping_1EC[6], &mapping_1EC[7],
+			&mapping_1EC[8], &mapping_1EC[9], &mapping_1EC[10], &mapping_1EC[11],
+			&mapping_1EC[12], &mapping_1EC[13], &mapping_1EC[14], &mapping_1EC[15],
+			&mapping_1EC[16], &mapping_1EC[17], &mapping_1EC[18], &mapping_1EC[19],
+			&mapping_1EC[20], &mapping_1EC[21], &mapping_1EC[22], &mapping_1EC[23],
+			&mapping_1EC[24], &mapping_1EC[25], &mapping_1EC[26], &mapping_1EC[27],
+			&mapping_1EC[28], &mapping_1EC[29], &mapping_1EC[30], &mapping_1EC[31],
+			&mapping_1EC[32], &mapping_1EC[33], &mapping_1EC[34], &mapping_1EC[35],
+			&mapping_1EC[36], &mapping_1EC[37], &mapping_1EC[38], &mapping_1EC[39],
+			&mapping_1EC[40], &mapping_1EC[41], &mapping_1EC[42], &mapping_1EC[43],
+			&mapping_1EC[44], &mapping_1EC[45], &mapping_1EC[46], &mapping_1EC[47],
+			&mapping_1EC[48], &mapping_1EC[49], &mapping_1EC[50], &mapping_1EC[51],
+			&mapping_1EC[52], &mapping_1EC[53], &mapping_1EC[54], &mapping_1EC[55],
+			&mapping_1EC[56], &mapping_1EC[57], &mapping_1EC[58], &mapping_1EC[59],
+			&mapping_1EC[60], &mapping_1EC[61], &mapping_1EC[62], &mapping_1EC[63]) == N_OF_PIXELS_PER_PMT+1)
 	{
-		SendMapping(mapping);
-		char str[] = "Ok\n\r";
-		tcp_write(tpcb, str, sizeof(str), 1);
+		if(current_ec < 0 || current_ec>3) {
+			char str[] = "ec number must be {0..3}\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+
+		}
+		else {
+			//memcpy(&mapping_4EC[N_OF_PIXELS_PER_PMT*(3-current_ec)], mapping_1EC, N_OF_PIXELS_PER_PMT);
+			for(i=0;i<N_OF_PIXELS_PER_PMT;i++) {
+				mapping_4EC[N_OF_PIXELS_PER_PMT*(3-current_ec) + i] = (char)mapping_1EC[i];
+			}
+			SendMapping(mapping_4EC);
+			char str[] = "Ok\n\r";
+			tcp_write(tpcb, str, sizeof(str), 1);
+		}
 	}
 	else if(strncmp(p->payload, TCP_CMD_HVPS_EXIT, 4) == 0 || strncmp(p->payload, "quit", 4) == 0)
 	{
