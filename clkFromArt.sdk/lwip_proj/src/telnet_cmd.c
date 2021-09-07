@@ -198,6 +198,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	{
 		err_t err;
 		char * p;
+		//RunArtix(1); //!!!
 		L3Start(FINITE, 1);
 		StartDataProviderFor1D3frame(GetIntegration());
 		for(i=0;i<GENERAL_LIVE_TIMEOUT;i++) {
@@ -583,6 +584,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			//memcpy(&mapping_4EC[N_OF_PIXELS_PER_PMT*(3-current_ec)], mapping_1EC, N_OF_PIXELS_PER_PMT);
 			for(i=0;i<N_OF_PIXELS_PER_PMT;i++) {
 				mapping_4EC[N_OF_PIXELS_PER_PMT*(3-current_ec) + i] = (char)mapping_1EC[i];
+				SetSCMapping((char)current_ec,  (char)i, (char)mapping_1EC[i]);
 			}
 			SendMapping(mapping_4EC);
 			char str[] = "Ok\n\r";

@@ -19,6 +19,10 @@ SLOWCTRL_SP3_ALL_ASIC_V1 sc_sp3_all_asic_test;
 //SLOWCTRL_SP3_SAME_ASIC_V1 slowctrl_samedata;
 SLOWCTRL_SP3_ALL_ASIC_USER_V0 ind_slowctrl_userdata;
 
+u8 pmt_ec_map[] = {0, 1, 0, 1, 0, 1, 2, 3, 2, 3, 2, 3,
+					0, 1, 0, 1, 0, 1, 2, 3, 2, 3, 2, 3,
+					0, 1, 0, 1, 0, 1, 2, 3, 2, 3, 2, 3};
+
 extern InstrumentState instrumentState;
 
 u32 current_line=0, current_asic=0, current_pixel=0;
@@ -26,6 +30,8 @@ u32 current_common_thr = 0; /*changed while s-curve is scanned*/
 u32 scurve_wait_cnt = 0;
 u32 scurve_step = 1;
 u32 n_of_thresholds;
+
+u8 pixelmap_array[N_OF_PMTS_PER_EC][N_OF_PIXELS_PER_PMT];
 
 extern SystemSettings systemSettings;
 
@@ -44,6 +50,11 @@ void Set_scurve_step(u32 step)
 //	slowctrl_samedata.x4_dac_7b_sub = 0x00000000;
 //	slowctrl_samedata.misc_reg2 = 0x00000000;
 //}
+
+void SetSCMapping(u8 n_pmt_in_ec, u8 pixelnum, u8 pixelmap)
+{
+	pixelmap_array[n_pmt_in_ec][pixelnum] = 63-pixelmap;
+}
 
 void SetDefaultIndSCParameters()
 {
@@ -97,7 +108,12 @@ u32 GetIndSCCurrentAsic()
 
 void SetIndSCCurrentPixel(u32 pixel)
 {
-	current_pixel = pixel;
+	u8 pmt = current_line*N_OF_PMT_PER_ECASIC + current_asic;
+	current_pixel = pixelmap_array[pmt_ec_map[pmt]][pixel];
+	xil_printf("pixel=%d\n\r", pixel);
+	xil_printf("pmt=%d\n\r", pmt);
+	xil_printf("pmt_ec_map[current_asic]=%d\n\r", pmt_ec_map[pmt]);
+	xil_printf("pixelmap_array[pmt_ec_map[current_asic]][pixel]=%d\n\r", current_pixel);
 }
 
 u32 GetIndSCCurrentPixel()
@@ -194,56 +210,89 @@ void SendTestSettingsToSp3(u32 dac_value, u32 c_pixel)
 
 void ReformatSlowControlData(SLOWCTRL_SP3_ALL_ASIC_V1* slowctrl_sp3_all_asic_v1)
 {
-	int i, i_remap, j, k;
+	int i, i_remap_even, i_remap_odd, j, k;
 	int chips_remap_table[] = {4, 2, 0, 1, 3, 5};
 	for(i=0;i<N_OF_PMT_PER_ECASIC;i++)
 	{
-		i_remap = chips_remap_table[i];
+		i_remap_even = chips_remap_table[i];
+		i_remap_odd = 5-chips_remap_table[i];
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
-			reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg0[j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].misc_reg0;
+			if(j%2 == 0)
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg0[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].misc_reg0;
+			else
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg0[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].misc_reg0;
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
 			for(k=0;k<N_OF_PIXELS_PER_PMT/2;k++)
 			{
-				reformatted.slowctrl_sp3_6chips_reformatted[i].x2_tst_msk_dac[k][j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].tst_msk_dac[63 - (2*k+0)] << 16 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].tst_msk_dac[63 - (2*k+1)];
+				if(j%2 == 0)
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x2_tst_msk_dac[k][j] =
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].tst_msk_dac[63 - (2*k+0)] << 16 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].tst_msk_dac[63 - (2*k+1)];
+				else
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x2_tst_msk_dac[k][j] =
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].tst_msk_dac[63 - (2*k+0)] << 16 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].tst_msk_dac[63 - (2*k+1)];
 			}
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
-			reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg1[j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].misc_reg1;
+			if(j%2 == 0)
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg1[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].misc_reg1;
+			else
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg1[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].misc_reg1;
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
 			for(k=0;k<N_OF_PIXELS_PER_PMT/4;k++)
 			{
-				reformatted.slowctrl_sp3_6chips_reformatted[i].x4_gain[k][j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].gain[63 - (4*k+0)] << 24 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].gain[63 - (4*k+1)] << 16 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].gain[63 - (4*k+2)] << 8 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].gain[63 - (4*k+3)];
+				if(j%2 == 0)
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_gain[k][j] =
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].gain[63 - (4*k+0)] << 24 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].gain[63 - (4*k+1)] << 16 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].gain[63 - (4*k+2)] << 8 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].gain[63 - (4*k+3)];
+				else
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_gain[k][j] =
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].gain[63 - (4*k+0)] << 24 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].gain[63 - (4*k+1)] << 16 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].gain[63 - (4*k+2)] << 8 |
+						slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].gain[63 - (4*k+3)];
 			}
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
 			for(k=0;k<N_OF_PIXELS_PER_PMT/4/8;k++)
 			{
-				reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].dac_7b_sub[8 - (4*k+0)] << 24 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].dac_7b_sub[8 - (4*k+1)] << 16 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].dac_7b_sub[8 - (4*k+2)] << 8 |
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].dac_7b_sub[8 - (4*k+3)];
+				if(j%2 == 0)
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j] =
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+0)] << 24 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+1)] << 16 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+2)] << 8 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+3)];
+				else
+					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j] =
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+0)] << 24 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+1)] << 16 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+2)] << 8 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+3)];
+
 			}
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)
 		{
-			reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg2[j] =
-					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap][j].misc_reg2;
+			if(j%2 == 0)
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg2[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].misc_reg2;
+			else
+				reformatted.slowctrl_sp3_6chips_reformatted[i].misc_reg2[j] =
+					slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].misc_reg2;
 		}
 	}
 }

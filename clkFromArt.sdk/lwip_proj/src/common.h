@@ -11,7 +11,7 @@
 #define SWAP_UINT32(x) (((x) >> 24) | (((x) & 0x00FF0000) >> 8) | (((x) & 0x0000FF00) << 8) | ((x) << 24))
 
 //#define FILENAME_ARTIX_BITSTREAM "artix.bin"
-#define FILENAME_ARTIX_BITSTREAM_1_BOARD "top_a~38.bit"
+#define FILENAME_ARTIX_BITSTREAM_1_BOARD "top_a~40.bit"
 #define FILENAME_ARTIX_PARAMETERS "artfw.cfg"
 
 enum {DATA_TYPE_L1=1, DATA_TYPE_L3=3};
