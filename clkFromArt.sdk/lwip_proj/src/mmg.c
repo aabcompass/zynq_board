@@ -253,3 +253,13 @@ void MmgPrint1stD3()
 	}
 	Xil_DCacheInvalidateRange(DMA_GetP(), 2880*4);
 }
+
+void CalcCRCTest()
+{
+	int i, a=0;
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=%d\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V4));
+	for(i=0;i<10000;i++) {
+		a += crc_32(mainBuffer.sci_data_l1[0], sizeof(Z_DATA_TYPE_SCI_L1_V4), 0xFFFFFFFF);
+	}
+	xil_printf("CRC=%d\n\r", a);
+}

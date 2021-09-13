@@ -62,6 +62,19 @@ COMPONENT axis_dwidth_converter_0
   );
 END COMPONENT;
 
+COMPONENT byte_reformr_4trig is
+    Port ( 
+			aclk : IN STD_LOGIC;
+			aresetn : IN STD_LOGIC;
+			s_axis_tvalid : IN STD_LOGIC;
+			s_axis_tdata : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+			s_axis_tlast : IN STD_LOGIC;
+			m_axis_tvalid : OUT STD_LOGIC;
+			m_axis_tdata : OUT STD_LOGIC_VECTOR(1151 DOWNTO 0);
+			m_axis_tlast : OUT STD_LOGIC
+    );
+end COMPONENT;
+
 COMPONENT axis_data_fifo_0
   PORT (
     s_axis_aresetn : IN STD_LOGIC;
@@ -108,20 +121,33 @@ begin
 	s_axis_tlast_pc <= '1' when s_axis_tuser = "10101011" else '0';
 	s_axis_tvalid_pc <= s_axis_tvalid and (not s_axis_tuser(6));
 	
-i_dwc : axis_dwidth_converter_0
-  PORT MAP (
-    aclk => clk,
-    aresetn => aresetn,
-    s_axis_tvalid => s_axis_tvalid_pc,
-    s_axis_tready => open,
-    s_axis_tdata => s_axis_tdata,
-    s_axis_tlast => s_axis_tlast_pc,
-    m_axis_tvalid => m_axis_tvalid_dwc,
-    m_axis_tready => m_axis_tready_dwc,
-    m_axis_tdata => m_axis_tdata_dwc,
-    m_axis_tkeep => open,
-    m_axis_tlast => open
-  );
+--i_dwc : axis_dwidth_converter_0
+--  PORT MAP (
+--    aclk => clk,
+--    aresetn => aresetn,
+--    s_axis_tvalid => s_axis_tvalid_pc,
+--    s_axis_tready => open,
+--    s_axis_tdata => s_axis_tdata,
+--    s_axis_tlast => s_axis_tlast_pc,
+--    m_axis_tvalid => m_axis_tvalid_dwc,
+--    m_axis_tready => m_axis_tready_dwc,
+--    m_axis_tdata => m_axis_tdata_dwc,
+--    m_axis_tkeep => open,
+--    m_axis_tlast => open
+--  );
+  
+  
+  i_byte_reformr_4trig : byte_reformr_4trig 
+      Port map( 
+  			aclk => clk,--: IN STD_LOGIC;
+  			aresetn => aresetn,--: IN STD_LOGIC;
+  			s_axis_tvalid => s_axis_tvalid_pc,--: IN STD_LOGIC;
+  			s_axis_tdata => s_axis_tdata,--: IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+  			s_axis_tlast => s_axis_tlast_pc,--: IN STD_LOGIC;
+  			m_axis_tvalid => m_axis_tvalid_dwc,--: OUT STD_LOGIC;
+  			m_axis_tdata => m_axis_tdata_dwc,--: OUT STD_LOGIC_VECTOR(1151 DOWNTO 0);
+  			m_axis_tlast => open--: OUT STD_LOGIC
+      );
 
 i_fifo : axis_data_fifo_0
   PORT MAP (
@@ -130,7 +156,7 @@ i_fifo : axis_data_fifo_0
     s_axis_tvalid => m_axis_tvalid_dwc,
     s_axis_tready => m_axis_tready_dwc,
     s_axis_tdata => m_axis_tdata_dwc,
-    s_axis_tlast => s_axis_tlast,
+    s_axis_tlast => '0',
     m_axis_tvalid => m_axis_tvalid_fifo,
     m_axis_tready => m_axis_tready_fifo,
     m_axis_tdata => m_axis_tdata_fifo,

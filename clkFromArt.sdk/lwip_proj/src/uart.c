@@ -38,6 +38,10 @@ void ProcessUartCommands(struct netif *netif, char c)
 		ScurveAdderReInit();
 		L3Start(FINITE, N_D3_PER_FILE);
 	}
+	else if(c == '~')
+	{
+		CalcCRCTest();
+	}
 	else if(c == 'A')
 	{
 		StartDataProviderFor1D3frame(GetIntegration()*N_D3_PER_FILE);

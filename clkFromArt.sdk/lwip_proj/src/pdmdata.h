@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.22.01"
+#define ZYNQ3_VER_STRING "v3.23.00"
 
 //========================================
 // Constants
@@ -100,6 +100,7 @@ typedef struct
 #define DATA_TYPE_SCI_L1		10	/* Scientific data attached with L1 event*/
 #define DATA_TYPE_SCI_L3		12	/* Scientific data attached with L3 event*/
 #define DATA_TYPE_SCURVE		20  /* S-curve data */
+#define DATA_TYPE_SCI_MPS		30  /* Scientific data attached with macropixel sums */
 #define DATA_TYPE_HVPS_LOG		60  /* HVPS log file */
 
 
@@ -158,7 +159,33 @@ typedef struct
 	char alignment[0x28];
 } Z_DATA_TYPE_SCI_L1_V4;
 
-#define VER_Z_DATA_TYPE_SCI_L1	4
+
+
+#define VER_Z_DATA_TYPE_SCI_L1	5
+
+//--
+// MPS data format (MacroPixel SUMs)
+//--
+
+typedef struct
+{
+	// Unix timestamp
+	TimeStamp_dual ts;
+	//ZB_number
+	uint32_t ZB_number; // 1 or 2 or 3
+	// MPS data
+	uint32_t data[N_OF_PIXELS_PER_PMT/4];  //24x24 macro pixels
+} DATA_TYPE_SCI_MPS_V1;
+
+typedef struct
+{
+	ZynqBoardHeader zbh;
+	DATA_TYPE_SCI_MPS_V1 payload;
+	uint32_t crc32;
+	char spare[10];
+} Z_DATA_TYPE_SCI_MPS_V1;
+
+#define VER_Z_DATA_TYPE_SCI_MPS_V1 		1
 
 //--
 // D3 data format
@@ -221,25 +248,7 @@ typedef struct
 } SingleLiveFrameD3;
 
 
-//typedef struct
-//{
-//	// Unix timestamp
-//	TimeStamp_dual ts;
-//	// Flags
-//	uint32_t trig_type;
-//	// HVPS status
-//	uint32_t hv_status;
-//	// integrated data
-//	uint32_t int32_data[NMAX_OF_THESHOLDS][N_OF_PIXELS_TOTAL];
-//} DATA_TYPE_SCURVE_V2;
-//
-//
-//// D3 timestamped packet with header
-//typedef struct
-//{
-//	ZynqBoardHeader zbh;
-//	DATA_TYPE_SCURVE_V2 payload;
-//} Z_DATA_TYPE_SCURVE_V2;
+
 
 //========================================
 // Trigger types
