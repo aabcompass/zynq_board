@@ -18,6 +18,7 @@
 #include "mmg.h"
 #include "pdmdata_hw.h"
 #include "dma_handling.h"
+#include "l1_trigger_block.h"
 
 
 
@@ -139,6 +140,8 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	char ans_str[64]; u8 ans_pos;
 	char buf[10];
 	double double_param, double_param2, double_param3;
+	float float_param;
+	int int_param;
 	int ret;
 	int turn[NUM_OF_HV];
 
@@ -545,17 +548,62 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	{
 		tcp_write(tpcb, GetArtixFileName(), strlen(GetArtixFileName()), 1);
 	}
-	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &int_param) == 1)
 	{
-		SetArtixTransmitDelay(param);
+		SetArtixTransmitDelay(int_param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-	else if(sscanf(p->payload, TCP_CMD_DBG_ARTFRDELAY, &param) == 1)
+	else if(sscanf(p->payload, TCP_CMD_DBG_ARTFRDELAY, &int_param) == 1)
 	{
-		SetArtixFracDelay(param);
+		SetArtixFracDelay(int_param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_PARAM_MPSTHR, &int_param) == 1)
+	{
+		ret = Set_L1_MPSthr(int_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_PARAM_NSIGMA, &float_param) == 1)
+	{
+		ret = Set_L1_nSigma(float_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_PARAM_NHOT, &int_param) == 1)
+	{
+		ret = Set_L1_nHot(int_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_PARAM_NLEN, &int_param) == 1)
+	{
+		ret = Set_L1_nLength(int_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_PARAM_NACTIVE, &int_param) == 1)
+	{
+		ret = Set_L1_nActive(int_param);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
 	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD, &current_ec,
 			&mapping_1EC[0], &mapping_1EC[1], &mapping_1EC[2], &mapping_1EC[3],

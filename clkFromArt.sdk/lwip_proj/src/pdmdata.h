@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.23.00"
+#define ZYNQ3_VER_STRING "v3.23.02"
 
 //========================================
 // Constants
@@ -357,8 +357,11 @@ typedef struct
 #define TCP_CMD_DBG_ARTCLK_CNT		"dbg art clk"
 #define TCP_CMD_DBG_ARTTRDELAY		"dbg arttrdelay %d"
 #define TCP_CMD_DBG_ARTFRDELAY		"dbg artfrdelay %d"
-
-//#define TCP_
+#define TCP_CMD_L1_PARAM_MPSTHR		"trg L1 param MPSthr %d"
+#define TCP_CMD_L1_PARAM_NSIGMA		"trg L1 param nSigma %f"
+#define TCP_CMD_L1_PARAM_NHOT		"trg L1 param nHot %d"
+#define TCP_CMD_L1_PARAM_NLEN		"trg L1 param nLength %d"
+#define TCP_CMD_L1_PARAM_NACTIVE	"trg L1 param nActive %d"
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"

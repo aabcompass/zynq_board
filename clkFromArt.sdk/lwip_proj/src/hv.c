@@ -808,7 +808,7 @@ int HV_setCathodeVoltage(int list[NUM_OF_HV])
 		if(list[i]>3)
 		{
 			print("Out of range\n\r");
-			return ERR_PDM_OUT_OF_RANGE;
+			return ERR_VALUE_OUT_OF_RANGE;
 		}
 		reg += list[i]<<(2*i);
 	}
