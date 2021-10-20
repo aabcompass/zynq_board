@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v3.23.02"
+#define ZYNQ3_VER_STRING "v4.00.00"
 
 //========================================
 // Constants
@@ -143,21 +143,24 @@ typedef struct
 {
 	// Unix timestamp
 	TimeStamp_dual ts;
-	// Flags
-	uint32_t trig_type;
 	//ZB_number
 	uint32_t ZB_number; // 1 or 2 or 3
+	// The number of trigger events from the last reset
+	uint32_t event_counter;
+	// Flags
+	uint32_t trig_type;
 	// raw data (1 us GTU)
 	FRAME_SPB_2_L1_V0 frames[N_OF_FRAMES_D1_V0];
-} DATA_TYPE_SCI_L1_V4;
+} DATA_TYPE_SCI_L1_V5;
 
 // D1 timestamped packet with header
 typedef struct
 {
 	ZynqBoardHeader zbh;
-	DATA_TYPE_SCI_L1_V4 payload;
-	char alignment[0x28];
-} Z_DATA_TYPE_SCI_L1_V4;
+	DATA_TYPE_SCI_L1_V5 payload;
+	char alignment[0x20];
+	uint32_t crc32;
+} Z_DATA_TYPE_SCI_L1_V5;
 
 
 

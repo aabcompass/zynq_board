@@ -131,7 +131,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 u32 MmgGetFileSize(int mmg_file_descriptor)
 {
 	if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L1) {
-		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V4);
+		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V5);
 	}
 	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L3) {
 		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V3);
@@ -170,7 +170,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
-		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V4);
+		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
@@ -257,9 +257,9 @@ void MmgPrint1stD3()
 void CalcCRCTest()
 {
 	int i, a=0;
-	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=%d\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V4));
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=%d\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V5));
 	for(i=0;i<10000;i++) {
-		a += crc_32(mainBuffer.sci_data_l1[0], sizeof(Z_DATA_TYPE_SCI_L1_V4), 0xFFFFFFFF);
+		a += crc_32(mainBuffer.sci_data_l1[0], sizeof(Z_DATA_TYPE_SCI_L1_V5), 0xFFFFFFFF);
 	}
 	xil_printf("CRC=%d\n\r", a);
 }
