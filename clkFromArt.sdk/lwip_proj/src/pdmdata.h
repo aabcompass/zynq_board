@@ -177,15 +177,15 @@ typedef struct
 	//ZB_number
 	uint32_t ZB_number; // 1 or 2 or 3
 	// MPS data
-	uint32_t data[N_OF_PIXELS_PER_PMT/4];  //24x24 macro pixels
+	uint32_t data[N_OF_PIXEL_PER_PDM/4];  //24x24 macro pixels
 } DATA_TYPE_SCI_MPS_V1;
 
 typedef struct
 {
 	ZynqBoardHeader zbh;
 	DATA_TYPE_SCI_MPS_V1 payload;
+	char spare[40];
 	uint32_t crc32;
-	char spare[10];
 } Z_DATA_TYPE_SCI_MPS_V1;
 
 #define VER_Z_DATA_TYPE_SCI_MPS_V1 		1

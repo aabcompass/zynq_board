@@ -142,6 +142,8 @@ void netifSetDown()
 
 int main()
 {
+	u32 tmp;
+
 	print("Starting main program...\n\r");
 
 	#if LWIP_IPV6==0
@@ -254,6 +256,8 @@ int main()
 
 #endif
 
+	//scanf("%s", &tmp);
+
 	SetDefaultParameters();
 
 	print("HVPS expander initialization...");
@@ -315,6 +319,9 @@ int main()
 
 	print("Flow control initialization...\n\r");
 	FlowControlInit_D1();
+
+	print("Trigger initial configuration...\n\r");
+	L1_send_Marco_params();
 
 
 	/* start the application (web server, rxtest, txtest, etc..) */

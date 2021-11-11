@@ -86,7 +86,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 		xil_printf("clk_cnt0=%d, clk_cnt1=%d, clk_cnt2=%d\n\r", clk_cnt0, clk_cnt1, clk_cnt2);
 		xil_printf("tvalid_cnt0=%d, tvalid_cnt1=%d, tvalid_cnt2=%d\n\r", tvalid_cnt0, tvalid_cnt1, tvalid_cnt2);
 		xil_printf("Is_D3_received()=%d\n\r", Is_D3_received());
-
+		xil_printf("MPS FIFO occupancy=%d\n\r",  *(u32*)(XPAR_AXI_GPIO_0_BASEADDR+8));
 	}
 	else if(c == 'f')
 	{
@@ -132,6 +132,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'p')
 	{
 		//PrintData_raw();
+		L1_send_Marco_params();
 	}
 	else if(c == 'P')
 	{

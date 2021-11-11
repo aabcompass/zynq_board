@@ -101,7 +101,7 @@
 --    SIGNAL  sthr_ready_debug_ec2ec5ec8 :    STD_LOGIC := '0';
    --------------------------------------------------------------------------------------------------------
     
-	CONSTANT period			: 	time := 7.5188 ns;
+	CONSTANT period			: 	time := 5 ns; --7.5188 ns;
 	CONSTANT period_axi		: 	time := 7.5188 ns;
 	CONSTANT delay			:	time := 0 ns;
 	CONSTANT delay_data	    :	time := period/2;
@@ -187,168 +187,169 @@
     '0' after 10*period_axi,
     '1' after 20*period_axi;
 
-MACROPIXEL_SUM : process--Read AXI FIFO SUM
-        variable    mpsum_value :    integer;
-        variable    line_out    :    line;
-        FILE        file_out    :    text;
-    begin
-        FILE_OPEN(file_out,"Data_MP_SUM.txt",WRITE_MODE);
-        loop
-            wait for period_axi;
-            if (m_axis_tvalid_sum = '1') then
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line0
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line1
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line2
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line3
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line4
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line5
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line6
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line7
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line8
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line9
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line10
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line11
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line12
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line13
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line14
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line15
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line16
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line17
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line18
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line19
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line20
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line21
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line22
-                write(line_out,mpsum_value,right,9);
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
-                wait for period_axi;
-                mpsum_value:= conv_integer(m_axis_tdata_sum);--line23
-                write(line_out,mpsum_value,right,9);
-                writeline(file_out,line_out);
-                
-                if (m_axis_tlast_sum = '1') then
-                    writeline(file_out,line_out);
-                end if;
-                m_axis_tready_sum    <=    '1';
-                wait for period_axi;
-                m_axis_tready_sum    <=    '0';
+--MACROPIXEL_SUM : process--Read AXI FIFO SUM
+--        variable    mpsum_value :    integer;
+--        variable    line_out    :    line;
+--        FILE        file_out    :    text;
+--    begin
+--        FILE_OPEN(file_out,"Data_MP_SUM.txt",WRITE_MODE);
+--        loop
+--            wait for period_axi;
+--            if (m_axis_tvalid_sum = '1') then
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line0
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
 --                wait for period_axi;
-            end if;
-        end loop;
-        FILE_CLOSE(file_out);
-    end process;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line1
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line2
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line3
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line4
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line5
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line6
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line7
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line8
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line9
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line10
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line11
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line12
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line13
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line14
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line15
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line16
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line17
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line18
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line19
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line20
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line21
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line22
+--                write(line_out,mpsum_value,right,9);
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+--                wait for period_axi;
+--                mpsum_value:= conv_integer(m_axis_tdata_sum);--line23
+--                write(line_out,mpsum_value,right,9);
+--                writeline(file_out,line_out);
+                
+--                if (m_axis_tlast_sum = '1') then
+--                    writeline(file_out,line_out);
+--                end if;
+--                m_axis_tready_sum    <=    '1';
+--                wait for period_axi;
+--                m_axis_tready_sum    <=    '0';
+----                wait for period_axi;
+--            end if;
+--        end loop;
+--        FILE_CLOSE(file_out);
+--    end process;
+m_axis_tready_sum    <=    '1';
     
 TRIGGER_DATA : process--Read AXI FIFO TRIGGER DATA
     variable    mc_active   :   integer;

@@ -18,8 +18,8 @@ MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
 extern InstrumentState instrumentState;
 
-u32 last_l1_occupied, last_l3_occupied;
-u32 n_l1_occupied=0, n_l3_occupied=0;
+u32 last_l1_occupied, last_l3_occupied, last_mps_occupied;
+u32 n_l1_occupied=0, n_l3_occupied=0, n_mps_occupied=0;
 int last_file_descriptor = -1, last_mmg_file_descriptor = -1, last_global_cycle=-1;
 SciFiles sciFiles[N_SCI_FILES];
 
@@ -73,6 +73,10 @@ void MmgDeleteSciFile(u32 file_descriptor)
 			mainBufferDescr.sci_data_l3[ref].is_occupied = 0;
 			n_l3_occupied--;
 		}
+		else if(sciFiles[file_descriptor].data_type == DATA_TYPE_MPS) {
+			mainBufferDescr.sci_data_mps[ref].is_occupied = 0;
+			n_mps_occupied--;
+		}
 	}
 	//Delete the file under file_descriptor
 	sciFiles[file_descriptor].is_occupied = 0;
@@ -123,6 +127,19 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 			}
 		}
 	}
+	else if(data_type == DATA_TYPE_MPS) {
+		for(i=0;i<N_MPS_IN_MEM;i++) {
+			if(!mainBufferDescr.sci_data_mps[i].is_occupied) {
+				mainBufferDescr.sci_data_mps[i].is_occupied = 1;
+				n_mps_occupied++;
+				mainBufferDescr.sci_data_mps[i].is_finalized = 0;
+				last_mps_occupied = i;
+				p = (char*)&mainBuffer.sci_data_mps[i].payload.data[0];
+				xil_printf("Given for MPS 0x%08x(%d) \n\r", p, i);
+				return p;
+			}
+		}
+	}
 	//}
 	print("Wrong data type\n\r");
 	return NULL;
@@ -136,6 +153,9 @@ u32 MmgGetFileSize(int mmg_file_descriptor)
 	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L3) {
 		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V3);
 	}
+	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_MPS) {
+		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_MPS_V1);
+	}
 	print("Wrong data type\n\r");
 	return -1;
 }
@@ -147,6 +167,9 @@ INTPTR MmgGetP(int data_type)
 	else if(data_type == DATA_TYPE_L3)
 		//return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0];
 		return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.frames[0].pmt[0].data[0];
+	else if(data_type == DATA_TYPE_MPS)
+		//return (INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0];
+		return (INTPTR)&mainBuffer.sci_data_mps[last_mps_occupied].payload.data[0];
 	else {
 		print("MmgGetP: No such data_type\n\r");
 		return (INTPTR)NULL;
@@ -210,6 +233,35 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 			CloseFile(l3_sci_file_id, MmgGetFileSize(l3_mmg_sci_file_id));
 		}
 	}
+	if(data_type == DATA_TYPE_MPS) {
+		if((last_mps_occupied < 0) | (last_mps_occupied >= N_MPS_IN_MEM)) {
+			print("MmgFinish: bad last_mps_occupied\n\r");
+			return;
+		}
+		mainBuffer.sci_data_mps[last_mps_occupied].payload.ZB_number = instrumentState.ZB_number;
+		mainBuffer.sci_data_mps[last_mps_occupied].payload.ts.n_gtu = n_gtu;
+		mainBuffer.sci_data_mps[last_mps_occupied].payload.ts.unix_time = unix_time;
+		mainBuffer.sci_data_mps[last_mps_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_MPS, VER_Z_DATA_TYPE_SCI_MPS_V1);
+		mainBuffer.sci_data_mps[last_mps_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
+		mainBufferDescr.sci_data_l1[last_mps_occupied].is_finalized = 1;
+		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_mps[last_mps_occupied].payload.data[0], 4*N_OF_PIXEL_PER_PDM/4);
+		p = (char*)&mainBuffer.sci_data_mps[last_mps_occupied];
+		if(glob_cycle != last_global_cycle) {
+			file_size=MmgGetFileSize(last_mmg_file_descriptor);
+			CloseFile(last_file_descriptor, file_size);
+			xil_printf("File closed (size=%d)\n\r", file_size);
+			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_mps_occupied);
+			if(last_mmg_file_descriptor != -1) {
+				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
+				print("New file created\n\r");
+			}
+		}
+		else {
+			MmgIncr_n_records(last_mmg_file_descriptor, last_mps_occupied);
+		}
+		last_global_cycle = glob_cycle;
+	}
+
 }
 
 void MmgPrintFiles()
@@ -230,6 +282,8 @@ u32 Get_n_occupied(int data_type)
 		return n_l1_occupied;
 	else if(data_type == DATA_TYPE_L3)
 		return n_l3_occupied;
+	else if(data_type == DATA_TYPE_MPS)
+		return n_mps_occupied;
 	else
 		print("Get_n_occupied: No such data_type\n\r");
 	return 0;

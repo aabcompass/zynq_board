@@ -70,3 +70,10 @@ void L1_send_default_params()
 	Set_L1_MPSthr(32768);
 	L1_send_rest_params();
 }
+
+void L1_send_Marco_params()
+{
+	u32 param1=0x022A0A80, param2=0x822A8000;
+	TxFIFOSendMain(&param1, 1, FIFO_CH_TRIG);
+	TxFIFOSendMain(&param2, 1, FIFO_CH_TRIG);
+}

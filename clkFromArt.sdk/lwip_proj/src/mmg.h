@@ -14,8 +14,9 @@
 
 #define N_D1_IN_MEM	400
 #define N_D3_IN_MEM	13
+#define N_MPS_IN_MEM	120
 
-#define N_SCI_FILES		(N_D1_IN_MEM+N_D3_IN_MEM)
+#define N_SCI_FILES		(N_D1_IN_MEM + N_D3_IN_MEM + N_MPS_IN_MEM)
 
 typedef struct
 {
@@ -23,6 +24,8 @@ typedef struct
 	Z_DATA_TYPE_SCI_L1_V5 sci_data_l1[N_D1_IN_MEM];
 	char alignment2[64];
 	Z_DATA_TYPE_SCI_L3_V3 sci_data_l3[N_D3_IN_MEM];
+	char alignment3[64];
+	Z_DATA_TYPE_SCI_MPS_V1 sci_data_mps[N_MPS_IN_MEM];
 } MainBuffer;
 
 typedef struct
@@ -41,8 +44,16 @@ typedef struct
 
 typedef struct
 {
+	u8 is_occupied;
+	u8 is_finalized;
+	u16 global_cycle;
+} MPS_DESCR;
+
+typedef struct
+{
 	L1_DESCR sci_data_l1[N_D1_IN_MEM];
 	L3_DESCR sci_data_l3[N_D3_IN_MEM];
+	MPS_DESCR sci_data_mps[N_MPS_IN_MEM];
 } MainBufferDescr;
 
 #define N_MAX_RECORDS_PER_FILE	25

@@ -8,7 +8,6 @@
 #include "xscugic.h"
 
 #include "common.h"
-#include "pdmdata_hw.h"
 #include "axis_flowctrl_d1.h"
 #include "mmg.h"
 
@@ -19,7 +18,7 @@ u32 is_D3_received=0;
 
 u32 is_file_processing = DO_FILE_PROCESSING;
 
-XAxiDma dma_d1, dma_d3;
+XAxiDma dma_d1, dma_d3, dma_mps;
 XAxiDma_Config* CfgPtr_d1;
 
 SingleLiveFrameD3 singleLiveFrameD3 __attribute__ ((aligned (64)));
@@ -43,6 +42,10 @@ void DMA_init()
 	CfgPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_SC36_DEVICE_ID);
 	status = XAxiDma_CfgInitialize(&dma_d3, CfgPtr);
 	if(status)	print("Error in XAxiDma_CfgInitialize dma_l2!\n\r");
+
+	CfgPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_MPS_BASEADDR);
+	status = XAxiDma_CfgInitialize(&dma_mps, CfgPtr);
+	if(status)	print("Error in XAxiDma_CfgInitialize dma_mps!\n\r");
 }
 
 void DmaReset(XAxiDma* pdma)
@@ -203,6 +206,7 @@ void L1_trigger_service()
 		RxIntrHandler_L1(&dma_d1);
 }
 
+
 void L1Start()
 {
 	start_dma_l1();
@@ -239,6 +243,7 @@ void PrintDataSizes()
 {
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V5));
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V3)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V3));
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_MPS_V1)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_MPS_V1));
 	xil_printf("sizeof(MainBuffer)=0x%08x\n\r", sizeof(MainBuffer));
 }
 
@@ -246,6 +251,7 @@ void IsDMAsBusy()
 {
 	xil_printf("XAxiDma_Busy(&dma_d1)=0x%08x\n\r", XAxiDma_Busy(&dma_d1, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("XAxiDma_Busy(&dma_d3)=0x%08x\n\r", XAxiDma_Busy(&dma_d3, XAXIDMA_DEVICE_TO_DMA));
+	xil_printf("XAxiDma_Busy(&dma_mps)=0x%08x\n\r", XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA));
 }
 
 u32 GetDMAStatus(XAxiDma *InstancePtr, int Direction)
@@ -259,4 +265,5 @@ void DMAStatus()
 {
 	xil_printf("GetDMAStatus(&dma_d1)=0x%08x\n\r", GetDMAStatus(&dma_d1, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("GetDMAStatus(&dma_d3)=0x%08x\n\r", GetDMAStatus(&dma_d3, XAXIDMA_DEVICE_TO_DMA));
+	xil_printf("GetDMAStatus(&dma_mps)=0x%08x\n\r", GetDMAStatus(&dma_mps, XAXIDMA_DEVICE_TO_DMA));
 }

@@ -107,3 +107,9 @@ void ConfTrigger()
 	TxFIFOSendMain(&trg_conf_tst_word, 1, FIFO_CH_TRIG);
 
 }
+
+void RebootZynq()
+{
+	*(u32*)(0XF8000008) = 0xDF0D;
+	*(u32*)(0xF8000200) = 1;
+}

@@ -153,11 +153,11 @@ BEGIN
 	begin
 	    case (file_name) is
             when 0 =>
-                FILE_OPEN(file_in_ec,"Data_IN_EC0EC3EC6.txt",READ_MODE);
+                FILE_OPEN(file_in_ec,"/home/alx/xil_proj/zynq_board/master2/Data_IN_EC0EC3EC6.txt",READ_MODE);
             when 1 =>
-                FILE_OPEN(file_in_ec,"Data_IN_EC1EC4EC7.txt",READ_MODE);
+                FILE_OPEN(file_in_ec,"/home/alx/xil_proj/zynq_board/master2/Data_IN_EC1EC4EC7.txt",READ_MODE);
             when 2 =>
-                FILE_OPEN(file_in_ec,"Data_IN_EC2EC5EC8.txt",READ_MODE);    
+                FILE_OPEN(file_in_ec,"/home/alx/xil_proj/zynq_board/master2/Data_IN_EC2EC5EC8.txt",READ_MODE);    
            when others =>
                null;
         end case;
@@ -8409,6 +8409,7 @@ BEGIN
              ------------------------------------------------------------
              wait for 4.5*period;   --Standard FRAME IDLE TIME
              ------------------------------------------------------------
+              wait for 77*period;   --Additional FRAME IDLE TIME
 		
 		end loop;
 				
