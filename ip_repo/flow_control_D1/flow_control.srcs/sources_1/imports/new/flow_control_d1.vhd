@@ -23,6 +23,16 @@ entity flow_control_d1 is
   		s_axis_tdata : IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
   		s_axis_tuser : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
   		s_axis_tlast : IN STD_LOGIC;
+
+  		s_axis_trg_tvalid : IN STD_LOGIC;
+  		s_axis_trg_tready : OUT STD_LOGIC := '1';
+  		s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+  		s_axis_trg_tlast : IN STD_LOGIC;
+  		
+  		s_axis_mps_tvalid: IN STD_LOGIC; 
+			s_axis_mps_tready: OUT STD_LOGIC := '1'; 
+			s_axis_mps_tdata: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			s_axis_mps_tlast: in std_logic;	
   		
   		-- out data
 			m_axis_tvalid : OUT STD_LOGIC;
@@ -36,14 +46,9 @@ entity flow_control_d1 is
   		m_axis_events_tready : IN STD_LOGIC;
   		m_axis_events_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
   		 		
-  		trig0 : in std_logic;
-  		trig_4led: out std_logic;
-  		trig_button: in std_logic;
-  		
-  		trig_led: out std_logic := '0';
-  		
   		trig_ext_in: in std_logic;
-  		trig_out: out std_logic;
+  		
+  		mps_tvalid, mps_tready, mps_tlast: in std_logic;
   		
   		--gtu_sig: in std_logic; was in Mini
   		--regs
@@ -63,6 +68,7 @@ entity flow_control_d1 is
   		
   		tuser_tlast: in std_logic_vector(5 downto 0) := "000000";--13
 
+
   		
   		status: OUT STD_LOGIC_VECTOR(31 downto 0);  --14
   		gtu_sig_counter: OUT STD_LOGIC_VECTOR(31 downto 0);  --15
@@ -75,7 +81,9 @@ entity flow_control_d1 is
   		maxis_trans_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --23
   		maxis_accepted_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --24
   		trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --25
-  		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0) --26
+  		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
+  		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
+  		unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
   );
 end flow_control_d1;  
      
@@ -115,6 +123,8 @@ architecture Behavioral of flow_control_d1 is
 	signal trig_event: std_logic := '0';
 	signal trig_events_log_en: std_logic := '0';
 	signal dma_error: std_logic := '0';
+	
+	signal s_axis_trg_tdata_d1: std_logic_vector(31 downto 0) := (others => '0');
 	
 
 	component debounce IS
@@ -296,6 +306,8 @@ architecture Behavioral of flow_control_d1 is
 	signal m_axis_tdata_key: std_logic_vector(127 downto 0) := (others => '0');
 	signal m_axis_tvalid_dwc, m_axis_tready_dwc, m_axis_tlast_dwc: std_logic := '0';
 	signal m_axis_tlast_dwc2: std_logic := '0';
+	
+	signal mps_sig: std_logic := '0';
 
 	attribute keep : string; 
 	attribute keep of s_axis_tlast_d1: signal is "true";  
@@ -390,6 +402,8 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	status(16) <= trig_latch;
 	status(17) <= trig_ext_in_sync;
 	status(18) <= dma_error; -- asserted if fifo overflowed. Cleared by release signal
+	
+	mps_sig <= mps_tvalid and mps_tready and mps_tlast;
 	
 	transation_counter: process(s_axis_aclk)
 	begin
@@ -513,10 +527,8 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		end if;
 	end process;
 	
-	self_trig <= ((trig0) and en_algo_trig);
-	trig_4led <= trig0;
+	self_trig <= (s_axis_trg_tlast and en_algo_trig);
 	ext_trig <= (trig_ext_in_sync and en_ext_trig);
-
 	
 
 	trig <= self_trig or int_trig or periodic_trig or trig_force or trig_button_debounced or ext_trig or trig_immediate;
@@ -545,23 +557,8 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		end if;
 	end process;
 	
-	trig_led_indicator: process(s_axis_aclk)
-		variable state : integer range 0 to 1 := 0;
-	begin
-		if(rising_edge(s_axis_aclk)) then
-			case state is
-				when 0 => if(trig = '1') then
-										trig_led <= en_trig_led;
-										state := state + 1;
-									end if;
-				when 1 => if(led_cnt = X"FFFFFF") then
-										trig_led <= '0';
-										state := 0; 
-									end if;
-									led_cnt <= led_cnt + 1;
-			end case;
-		end if;
-	end process; 
+	s_axis_trg_tdata_d1 <= s_axis_trg_tdata when rising_edge(s_axis_aclk);
+	
 	 
 	trig_service: process(s_axis_aclk)
 		variable state : integer range 0 to 7 := 0;
@@ -586,19 +583,20 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 											end if;
 										end if;
 					when 1 => if(periodic_trig_latch = '1') then
-											trig_type_i(3 downto 0) <= X"1";
+											trig_type_i(31 downto 28) <= "1000";
 										elsif(self_trig_latch = '1') then
-											trig_type_i(3 downto 0) <= X"2";
-										elsif(trig_immediate_latch = '1') then
-											trig_type_i(3 downto 0) <= X"3"; 
+											trig_type_i(31 downto 28) <= "0100";
+										--elsif(trig_immediate_latch = '1') then
+										--	trig_type_i(3 downto 0) <= X"3"; 
 										elsif(ext_trig_latch = '1') then
-											trig_type_i(3 downto 0) <= X"4";
+											trig_type_i(31 downto 28) <= "0010";
 										--elsif(ta_trig_latch = '1') then
 											--trig_type_i(3 downto 0) <= X"5";
 											--trig_type_i(31 downto 11) <= ta_trig_param_latch(20 downto 0);
-										else
-											trig_type_i(3 downto 0) <= X"8";
+										--else
+										--	trig_type_i(3 downto 0) <= X"8";
 										end if;
+										trig_type_i(27 downto 0) <= s_axis_trg_tdata_d1(27 downto 0);
 										trig_cnt <= trig_cnt + 1;							
 										trig_latch <= '1';		
 										gtu_timestamp <= gtu_sig_counter_i;
@@ -632,33 +630,27 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 	
 	trig_type <= trig_type_i;
+	
+	mps_sig_timestamp_latcher: process(s_axis_aclk)
+		variable state : integer range 0 to 1 := 0;
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			case state is
+				when 0 =>
+					if(s_axis_mps_tlast = '1') then
+						gtu_mps_timestamp <= gtu_sig_counter_i;
+						unix_mps_timestamp <= unix_time_i;	
+						state := state + 1;		
+					end if;	
+				when 1 => 
+					if(s_axis_mps_tlast = '0') then
+						state := 0;
+					end if;
+			end case;
+		end if;
+	end process;
+	
 
-
---  -- this process removes all tlast except every 6th.  // it was in Mini-EUSO
---  -- By this manner we concat EC-ASICs packet to PDM packets
---  tlast_remover: process(s_axis_aclk)
---  begin
---  	if(rising_edge(s_axis_aclk)) then
---  		if(clr_tlast_remover = '1') then
---  			tlast_remover_cnt <= "000";
---  			pass_tlast <= '0';
---  		elsif(s_axis_tlast = '1' and s_axis_tvalid = '1') then
---  			if(tlast_remover_cnt = "101") then
---  				tlast_remover_cnt <= "000";
---  			else
---  				tlast_remover_cnt <= tlast_remover_cnt + 1; 
---  			end if;
---  			if(tlast_remover_cnt = tlast_remover_phase) then
---  				pass_tlast <= '1';
---  			else
---  				pass_tlast <= '0';
---  			end if; 
---  		end if;	
---  	end if;
---  end process;
-
-	--tuser_tlast_d1 <= tuser_tlast when rising_edge(s_axis_aclk);
- 
  	tlast_former_process: process(s_axis_aclk)
  	begin
  		if(rising_edge(s_axis_aclk)) then

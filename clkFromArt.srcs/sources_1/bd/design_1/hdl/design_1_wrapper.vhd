@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Mon Nov  8 13:21:56 2021
+--Date        : Mon Nov 15 14:40:49 2021
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -129,6 +129,7 @@ architecture STRUCTURE of design_1_wrapper is
     diff_clk_in_0_clk_p : in STD_LOGIC;
     diff_clk_in_1_clk_n : in STD_LOGIC;
     diff_clk_in_1_clk_p : in STD_LOGIC;
+    m_axis_tlast_trg : out STD_LOGIC;
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -181,7 +182,6 @@ architecture STRUCTURE of design_1_wrapper is
     artx_programb : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_initb : out STD_LOGIC_VECTOR ( 0 to 0 );
     sr_out_pc_0 : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    m_axis_tlast_trg : out STD_LOGIC;
     art_gtu_0 : out STD_LOGIC;
     art_gtu_1 : out STD_LOGIC;
     art_gtu_2 : out STD_LOGIC

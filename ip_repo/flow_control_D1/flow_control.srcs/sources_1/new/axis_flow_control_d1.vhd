@@ -28,6 +28,17 @@ entity axis_flow_control_d1 is
   		s_axis_tready : OUT STD_LOGIC;
   		s_axis_tdata : IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
   		s_axis_tlast : IN STD_LOGIC;
+
+  		s_axis_trg_tvalid : IN STD_LOGIC;
+  		s_axis_trg_tready : OUT STD_LOGIC := '1';
+  		s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+  		s_axis_trg_tlast : IN STD_LOGIC;
+
+  		s_axis_mps_tvalid: IN STD_LOGIC; 
+  		s_axis_mps_tready: OUT STD_LOGIC := '1'; 
+  		s_axis_mps_tdata: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+  		s_axis_mps_tlast: in std_logic;
+
   		
   		-- out
 			m_axis_tvalid : OUT STD_LOGIC;
@@ -40,21 +51,12 @@ entity axis_flow_control_d1 is
   		m_axis_events_tvalid : OUT STD_LOGIC;
   		m_axis_events_tready : IN STD_LOGIC;
   		m_axis_events_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
- 
 
-  		trig0 : in std_logic;
-  		trig_4led: out std_logic;
-  		trig_button: in std_logic;
-  		
-  		trig_led: out std_logic := '0';
-  		
   		trig_ext_in: in std_logic;
   		trig_out: out std_logic;
   		
   		--gtu_sig: in std_logic; 	
   		unix_time_ngtu: out std_logic_vector(63 downto 0);
-  		
-  		
   		
 		-- Global Clock Signal
   		S_AXI_ACLK	: in std_logic;
@@ -198,6 +200,16 @@ architecture Behavioral of axis_flow_control_d1 is
 				s_axis_tdata : IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
 				s_axis_tlast : IN STD_LOGIC;
 				
+  			s_axis_trg_tvalid : IN STD_LOGIC;
+				s_axis_trg_tready : OUT STD_LOGIC := '1';
+				s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_trg_tlast : IN STD_LOGIC;
+				
+  			s_axis_mps_tvalid: IN STD_LOGIC; 
+				s_axis_mps_tready: OUT STD_LOGIC := '1'; 
+				s_axis_mps_tdata: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_mps_tlast: in std_logic;
+				
 				-- out data
 				m_axis_tvalid : OUT STD_LOGIC;
 				m_axis_tready : IN STD_LOGIC;
@@ -210,16 +222,8 @@ architecture Behavioral of axis_flow_control_d1 is
 				m_axis_events_tready : IN STD_LOGIC;
 				m_axis_events_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
 				
-  		-- in TA trigger events
-
-				trig0 : in std_logic;
-				trig_4led: out std_logic;
-				trig_button: in std_logic;
-				
-				trig_led: out std_logic := '0';
-				
 				trig_ext_in: in std_logic;
-				trig_out: out std_logic;
+				
 				
 				--gtu_sig: in std_logic;
 				--regs
@@ -250,7 +254,10 @@ architecture Behavioral of axis_flow_control_d1 is
 				maxis_trans_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --23
 				maxis_accepted_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --24
 				trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --25
-				n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0) --26
+				n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
+	  		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
+				unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
+				
 		);
 	end component;  
 	
@@ -259,6 +266,8 @@ architecture Behavioral of axis_flow_control_d1 is
 
 begin
 
+
+	trig_out <= s_axis_trg_tlast;
 
 	-- I/O Connections assignments
 
@@ -873,6 +882,11 @@ begin
 				s_axis_tdata  => s_axis_tdata,--: IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
 				s_axis_tlast  => s_axis_tlast,--: IN STD_LOGIC;
 				
+				s_axis_trg_tvalid => s_axis_trg_tvalid,--: IN STD_LOGIC;
+				s_axis_trg_tready => s_axis_trg_tready,-- : OUT STD_LOGIC := '1';
+				s_axis_trg_tdata => s_axis_trg_tdata,-- : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_trg_tlast => s_axis_trg_tlast,-- : IN STD_LOGIC;
+				
 				-- out
 				m_axis_tvalid  => m_axis_tvalid,--: OUT STD_LOGIC;
 				m_axis_tready  => m_axis_tready,--: IN STD_LOGIC;
@@ -885,17 +899,12 @@ begin
 				m_axis_events_tready   => m_axis_events_tready,--: IN STD_LOGIC;
 				m_axis_events_tdata   => m_axis_events_tdata,--: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 				
-  		-- in TA trigger events
-
-
-				trig0  => trig0,--: in std_logic;
-				trig_4led => trig_4led,--: out std_logic;
-				trig_button => trig_button,--: in std_logic;
-				
-				trig_led => trig_led,--: out std_logic := '0';
-				
 				trig_ext_in => trig_ext_in,--: in std_logic;
-				trig_out => trig_out,--: out std_logic;
+
+  			s_axis_mps_tvalid => s_axis_mps_tvalid,--: IN STD_LOGIC; 
+				s_axis_mps_tready => s_axis_mps_tready,--: OUT STD_LOGIC := '1'; 
+				s_axis_mps_tdata => s_axis_mps_tdata,--: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_mps_tlast => s_axis_mps_tlast,--: in std_logic;
 				
 				--gtu_sig => gtu_sig,--: in std_logic;
 				--regs
@@ -926,7 +935,9 @@ begin
 				maxis_trans_cnt => slv_reg23,--: OUT STD_LOGIC_VECTOR(31 downto 0) --23
 				maxis_accepted_cnt => slv_reg24, 
 				trig_all_cnt => slv_reg25,
-				n_glob_cycles => slv_reg26
+				n_glob_cycles => slv_reg26,
+	  		gtu_mps_timestamp => slv_reg27,--: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
+				unix_mps_timestamp => slv_reg28--: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
 		);
 		
 			slv_reg15 <= gtu_sig_counter_i;

@@ -38,6 +38,9 @@
 #define REGR_MAXIS_ACCEPTED_CNT		24
 #define REGR_TRIG_ALL_CNT			25
 #define REGR_N_GLOB_CYCLES			26 /*Number of glob cycles for sw on (Global cycles incremented every REGW_GTUS_PER_CYCLE)*/
+#define REGR_GTU_MPS_TIMESTAMP		27
+#define REGR_UNIX_MPS_TIMESTAMP		28
+
 
 #define SM_STATE_IDLE		0
 #define SM_STATE_ARMED		3
