@@ -11,6 +11,7 @@
 #include "ftp_server.h"
 #include "own_data_types.h"
 #include "dma_handling.h"
+#include "unix_date_time.h"
 
 char tmp_array[10000000];
 
@@ -69,6 +70,11 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 's')
 	{
+		u32 unixtime=1637150895;
+		char datetimestr[100];
+		convertUnixTimeToDateStr(unixtime, datetimestr);
+		xil_printf("datetimestr=%s\n\r", datetimestr);
+
 		xil_printf("GetFTPstate()=%d\n\r", GetFTPstate());
 		//xil_printf("GetDataPathSM_state()=%d\n\r", GetDataPathSM_state());
 		xil_printf("IsDataProviderPass()=%d\n\r", IsDataProviderPass());
@@ -87,6 +93,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 		xil_printf("tvalid_cnt0=%d, tvalid_cnt1=%d, tvalid_cnt2=%d\n\r", tvalid_cnt0, tvalid_cnt1, tvalid_cnt2);
 		xil_printf("Is_D3_received()=%d\n\r", Is_D3_received());
 		xil_printf("MPS FIFO occupancy=%d\n\r",  *(u32*)(XPAR_AXI_GPIO_0_BASEADDR+8));
+
 	}
 	else if(c == 'f')
 	{

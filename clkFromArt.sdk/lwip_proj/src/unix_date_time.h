@@ -49,5 +49,6 @@ typedef  char char_t;
 
  uint8_t computeDayOfWeek(uint16_t y, uint8_t m, uint8_t d);
 
+ void convertUnixTimeToDateStr(time_t t, char * datetimestr);
 
 #endif /* SRC_UNIX_DATE_TIME_H_ */

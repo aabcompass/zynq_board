@@ -31,6 +31,7 @@ int Set_L1_nSigma(float param)
 {
 	if(param>=8.0 || param<2.0) return ERR_VALUE_OUT_OF_RANGE;
 	nSigma_u32 = 128*param;
+	//xil_printf("nSigma_u32=%d\n\r", nSigma_u32);
 	L1_send_rest_params();
 	return 0;
 }

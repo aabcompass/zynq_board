@@ -7,6 +7,7 @@
 
 #include "unix_date_time.h"
 #include "sys/types.h"
+#include "stdio.h"
 /**
   * @brief Convert Unix timestamp to date
   * @param[in] t Unix timestamp
@@ -307,4 +308,11 @@
 //      //Return a pointer to the formatted string
 //      return str;
 //   }
+
+  void convertUnixTimeToDateStr(time_t t, char *datetimestr)
+  {
+	  DateTime dateTime;
+	  convertUnixTimeToDate(t, &dateTime);
+	  sprintf(datetimestr, "%04d%02d%02d%02d%02d%02d", dateTime.year, dateTime.month, dateTime.day, dateTime.hours, dateTime.minutes, dateTime.seconds);
+  }
 
