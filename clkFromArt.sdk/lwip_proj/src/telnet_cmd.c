@@ -55,18 +55,23 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 	if(strcasecmp(param, "d1") == 0) {
 		instrumentState.mode = MODE_D1;
 		DoFileProcessing(DO_FILE_PROCESSING);
+		DoD3Files(NO_D3_FILES);
+		SetFilenamesStyle(FILENAMES_FLIGHT);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "d1d3") == 0) {
 		instrumentState.mode = MODE_D1D3;
 		DoFileProcessing(DO_FILE_PROCESSING);
+		DoD3Files(WITH_D3_FILES);
+		SetFilenamesStyle(FILENAMES_LAB);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "d3") == 0) {
 		instrumentState.mode = MODE_D3;
 		DoFileProcessing(DO_FILE_PROCESSING);
+		DoD3Files(WITH_D3_FILES);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
@@ -79,12 +84,14 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 	else if(strcasecmp(param, "scurve") == 0) {
 		instrumentState.mode = MODE_SCURVE;
 		DoFileProcessing(DO_FILE_PROCESSING);
+		DoD3Files(WITH_D3_FILES);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "pixelscan") == 0) {
 		instrumentState.mode = MODE_PIXELSCAN;
 		DoFileProcessing(DO_FILE_PROCESSING);
+		DoD3Files(WITH_D3_FILES);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
@@ -118,10 +125,6 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 			xil_printf("Removed  all sci data files from FTP server: %d files\n\r", RemoveAllSciDataFilesFromFTP());
 		if(instrumentState.mode == MODE_D1 || instrumentState.mode == MODE_D1D3)
 			SetModeD1(2);
-		SetTime(param2);
-		DateTime dateTime;
-		convertUnixTimeToDate(param2, &dateTime);
-		xil_printf("%s\n\r", formatDate(&dateTime, 0));
 		char ok_eomess_str[] = "Ok\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
@@ -250,6 +253,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		FlowControlStart_D1(1);
 		if(instrumentState.mode == MODE_D1) {
 			L1Start();
+			L3Start(INFINITE, N_FRAMES_DMA_D3);
 			StartDataProvider();
 		}
 		else if(instrumentState.mode == MODE_D3) {
@@ -649,13 +653,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 				clk_cnt0, clk_cnt1, clk_cnt2);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-//
-//	{
-//		static int called = 0;
-//		strcpy(ans_str, "Error 1\n\r");
-//		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
-//		called = 1;
-//	}
+	else if(sscanf(p->payload, TCP_CMD_SET_UNIX_TIME, &int_param) == 1)
+	{
+		SetTime(int_param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 }
 
 static err_t recv_callback(void *arg, struct tcp_pcb *tpcb,

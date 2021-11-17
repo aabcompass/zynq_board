@@ -91,6 +91,7 @@ int IsD1Triggered();
 u32 Get_n_glob_cycles();
 void FlowControlStart_D1(u32 start);
 void SetModeD1(u32 mode);
+u32 GetUnixTime();
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

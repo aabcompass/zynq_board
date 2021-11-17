@@ -16,6 +16,8 @@
 #include "common.h"
 #include "xil_printf.h"
 #include "mmg.h"
+#include "unix_date_time.h"
+#include "axis_flowctrl_d1.h"
 
 static u32 ip_addr_client;
 static u16 port_client;
@@ -28,6 +30,8 @@ char spare[10000];
 
 FileRecord files[MAX_FILES];
 extern InstrumentState instrumentState;
+
+u32 filenames_style = FILENAMES_LAB;
 
 static enum  {
 	no_state = 0,
@@ -62,6 +66,11 @@ static u32_t spectrum_nbytes, portion_size;
 static char* spectrum_addr;
 
 int dir_list_short;
+
+void SetFilenamesStyle(u32 param)
+{
+	filenames_style = param;
+}
 
 void CloseFile(int descriptor, u32 file_size) // shows the file on  FTP. Sets file size;
 {
@@ -132,10 +141,17 @@ int CreateFile(char* filename, char* pData, int size, uint32_t unix_time, File_t
 
 int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint32_t mmg_file_descriptor)
 {
-	char filename_str[50];
+	char filename_str[50], datetimestr[50];
 	int ret;
 	if(data_type == DATA_TYPE_L1) {
-		sprintf(filename_str, FILENAME_D1, instrumentState.ZB_number,  instrumentState.file_counter_l1++);
+		if(filenames_style == FILENAMES_LAB) {
+			sprintf(filename_str, FILENAME_D1, instrumentState.ZB_number,  instrumentState.file_counter_l1++);
+		}
+		else if(filenames_style == FILENAMES_FLIGHT) {
+			convertUnixTimeToDateStr(GetUnixTime(), datetimestr);
+			sprintf(filename_str, FILENAME_D1_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_l1);
+			instrumentState.file_counter_l1 += 25;
+		}
 	}
 	else if(data_type == DATA_TYPE_L3) {
 		sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);

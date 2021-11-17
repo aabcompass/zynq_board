@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.00.01"
+#define ZYNQ3_VER_STRING "v4.01.00"
 
 //========================================
 // Constants
@@ -277,6 +277,7 @@ typedef struct
 //========================================
 
 #define FILENAME_D1				"frm_z%d_d1_%08d.dat"
+#define FILENAME_D1_FLIGHT		"frm_z%d_d1_%s-%04d.dat"
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
 //#define FILENAME_HVLOG			"hv_%08d.dat"
 //#define FILENAME_SCURVE	 		"scurve_%08d.dat"
@@ -372,6 +373,7 @@ typedef struct
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
 #define TCP_CMD_ARTIX_LOAD			"artix load %s"
 #define TCP_CMD_GET_ARTIX_FILENAME	"artix filename?"
+#define TCP_CMD_SET_UNIX_TIME		"setunixtime %d"
 
 #pragma pack(pop) /* return to normal packing */
 

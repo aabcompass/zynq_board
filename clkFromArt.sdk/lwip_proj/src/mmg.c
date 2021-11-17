@@ -23,6 +23,13 @@ u32 n_l1_occupied=0, n_l3_occupied=0, n_mps_occupied=0;
 int last_file_descriptor = -1, last_mmg_file_descriptor = -1, last_global_cycle=-1;
 SciFiles sciFiles[N_SCI_FILES];
 
+u32 is_d3_files = WITH_D3_FILES;
+
+void DoD3Files(u32 param)
+{
+	is_d3_files = param;
+}
+
 u32 Mmg_Get_last_global_cycle()
 {
 	return last_global_cycle;
@@ -227,10 +234,13 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		//Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.int32_data[0][0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l3[last_l3_occupied].payload.frames[0].pmt[0].data[0], 4*N_OF_PIXELS_TOTAL*N_D3_PER_FILE);
 		p=(char*)&mainBuffer.sci_data_l3[last_l3_occupied];//.payload.frames[0];
-		l3_mmg_sci_file_id = MmgCreateSciFile(data_type, glob_cycle, p, last_l3_occupied);
-		if(l3_mmg_sci_file_id != -1) {
-			l3_sci_file_id=CreateSciFile(p, MmgGetFileSize(l3_mmg_sci_file_id), unix_time, data_type, l3_mmg_sci_file_id);
-			CloseFile(l3_sci_file_id, MmgGetFileSize(l3_mmg_sci_file_id));
+		if(is_d3_files == WITH_D3_FILES)
+		{
+			l3_mmg_sci_file_id = MmgCreateSciFile(data_type, glob_cycle, p, last_l3_occupied);
+			if(l3_mmg_sci_file_id != -1) {
+				l3_sci_file_id=CreateSciFile(p, MmgGetFileSize(l3_mmg_sci_file_id), unix_time, data_type, l3_mmg_sci_file_id);
+				CloseFile(l3_sci_file_id, MmgGetFileSize(l3_mmg_sci_file_id));
+			}
 		}
 	}
 	if(data_type == DATA_TYPE_MPS) {
