@@ -38,8 +38,7 @@ entity axis_flow_control_d1 is
   		s_axis_mps_tready: OUT STD_LOGIC := '1'; 
   		s_axis_mps_tdata: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
   		s_axis_mps_tlast: in std_logic;
-
-  		
+ 		
   		-- out
 			m_axis_tvalid : OUT STD_LOGIC;
   		m_axis_tready : IN STD_LOGIC;
@@ -256,8 +255,8 @@ architecture Behavioral of axis_flow_control_d1 is
 				trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --25
 				n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
 	  		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
-				unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
-				
+				unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --28 <= unix_time_i;		
+				trig_cnt_glob: out std_logic_vector(15 downto 0)	--29			
 		);
 	end component;  
 	
@@ -927,7 +926,7 @@ begin
 				status => slv_reg14,--: OUT STD_LOGIC_VECTOR(31 downto 0);  --14
 				gtu_sig_counter => gtu_sig_counter_i,--slv_reg15,--: OUT STD_LOGIC_VECTOR(31 downto 0);  --15
 				unix_time => unix_time_i,--slv_reg17,--: OUT STD_LOGIC_VECTOR(31 downto 0);  --17
-				trans_counter => slv_reg18(C_CNT_DWIDTH-1 downto 0),--: OUT STD_LOGIC_VECTOR(C_CNT_DWIDTH-1 downto 0); --18
+				trans_counter => slv_reg18(C_CNT_DWIDTH-1 downto 0), --: OUT STD_LOGIC_VECTOR(C_CNT_DWIDTH-1 downto 0); --18
 				m_axis_fifo_error => slv_reg19,--: OUT STD_LOGIC_VECTOR(31 downto 0); --19
 				gtu_timestamp => slv_reg20,--: OUT STD_LOGIC_VECTOR(31 downto 0); --20
 				trig_type => slv_reg21,--: OUT STD_LOGIC_VECTOR(3 downto 0); --21
@@ -937,7 +936,8 @@ begin
 				trig_all_cnt => slv_reg25,
 				n_glob_cycles => slv_reg26,
 	  		gtu_mps_timestamp => slv_reg27,--: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
-				unix_mps_timestamp => slv_reg28--: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
+				unix_mps_timestamp => slv_reg28,--: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
+				trig_cnt_glob => slv_reg29(15 downto 0)
 		);
 		
 			slv_reg15 <= gtu_sig_counter_i;

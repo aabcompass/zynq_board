@@ -101,6 +101,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 		return -1;
 	}
+	//Error handling
 	if(instrumentState.err_SDcard)
 	{
 		print("Artix board is absent or bad or artix.bin on SD-card was generated for another Artix type\n\r");
@@ -123,8 +124,9 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		//else
 		if(instrumentState.mode != MODE_LIVE)
 			xil_printf("Removed  all sci data files from FTP server: %d files\n\r", RemoveAllSciDataFilesFromFTP());
-		if(instrumentState.mode == MODE_D1 || instrumentState.mode == MODE_D1D3)
-			SetModeD1(2);
+		ResetGTUCounter_D1();
+		//if(instrumentState.mode == MODE_D1 || instrumentState.mode == MODE_D1D3)
+		//	SetModeD1(2);
 		char ok_eomess_str[] = "Ok\n\r";
 		tcp_write(tpcb, ok_eomess_str, sizeof(ok_eomess_str), 1);
 	}
@@ -140,7 +142,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	u64 long_param;
 	u8 array_param[15];
 	char ans_str[64]; u8 ans_pos;
-	char buf[10];
+	//char buf[10];
 	double double_param, double_param2, double_param3;
 	float float_param;
 	int int_param;
@@ -246,6 +248,8 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			DataProvEnOutput();
 			instrumentState.is_artix_frame_started = 1;
 		}
+		StopDataConverter(); //against mosaic 22-11-2021
+		ResetDataConverter(); //against mosaic 22-11-2021
 		ProcessInstrumentModeCommand(tpcb, ans_str, 0);
 	}
 	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_START, strlen(TCP_CMD_INSTR_MODE_START)) == 0)
@@ -606,6 +610,26 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Ok\n\r");
 		else
 			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_L1_SETMODE, ans_str) == 1)
+	{
+		if(strcasecmp(ans_str, "periodic") == 0) {
+			SetModeD1(BIT_FC_EN_PERIODIC_TRIG);
+			strcpy(ans_str, "Ok\n\r");
+		}
+		else if(strcasecmp(ans_str, "self") == 0) {
+			SetModeD1(BIT_FC_EN_SELF_TRIG);
+			strcpy(ans_str, "Ok\n\r");
+		}
+		else if(strcasecmp(ans_str, "ext_lab") == 0) {
+			SetModeD1(BIT_FC_EN_EXT_TRIG);
+			strcpy(ans_str, "Ok\n\r");
+		}
+		else {
+			strcpy(ans_str, "No such trg mode\n\r");
+		}
+
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
 	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD, &current_ec,

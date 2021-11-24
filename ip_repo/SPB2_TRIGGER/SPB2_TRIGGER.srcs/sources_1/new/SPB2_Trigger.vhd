@@ -71,6 +71,9 @@ end SPB2;
 
 architecture Behavioral of SPB2 is
 
+	attribute KEEP_HIERARCHY : string;
+	attribute KEEP_HIERARCHY of Behavioral: architecture is "TRUE";
+
 CONSTANT    last_frame      : std_logic_vector (18 downto 0) := "1111010000100011111";--499999 Last GTU (500ms) 5000000 GTU Block
 --------------------------#TEST#--------------------------------------------------------------------------------------------------
 --CONSTANT    last_frame      : std_logic_vector (18 downto 0) := "0000000000000011101";--TEST 29 Last GTU,30 GTU Block
@@ -1606,6 +1609,13 @@ begin
     end loop;
     return sum_vector;
 end function bitcount;
+
+	attribute keep : string; 
+	attribute keep of nSigma128: signal is "true";  
+	attribute keep of nHot: signal is "true";  
+	attribute keep of nLenght: signal is "true";  
+	attribute keep of nActive: signal is "true";  
+	attribute keep of MPSthr: signal is "true";  
 
 begin
 

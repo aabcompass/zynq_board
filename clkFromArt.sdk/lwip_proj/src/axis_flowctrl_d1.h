@@ -40,6 +40,7 @@
 #define REGR_N_GLOB_CYCLES			26 /*Number of glob cycles for sw on (Global cycles incremented every REGW_GTUS_PER_CYCLE)*/
 #define REGR_GTU_MPS_TIMESTAMP		27
 #define REGR_UNIX_MPS_TIMESTAMP		28
+#define REGR_TRG_GLOB_CNT			29
 
 
 #define SM_STATE_IDLE		0
@@ -64,6 +65,7 @@
 #define BIT_FC_CLR_INTR					(1<<3) /* Int must be cleared after every interrupt*/
 #define BIT_FC_CLR_GTU_CNT				(1<<4) /* GTU cnt must be reset at the beginning of every measurement */
 #define BIT_FC_CLR_TRIG_SERVICE			(1<<5) /* trig service must be reset at the beginning of every cycle */
+#define BIT_FC_CLR_GLOB_TRG_CNT			(1<<8) /* trigger counter clear bit*/
 
 #define BIT_FC_TRIG_IMMEDIATE			(1<<16)
 #define BIT_FC_INJECT_16_EVENTS_4DMA	(1<<17)

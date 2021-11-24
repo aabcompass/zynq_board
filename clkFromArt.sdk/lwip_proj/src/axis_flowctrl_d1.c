@@ -165,8 +165,8 @@ void SetModeD1(u32 mode)
 {
 	if(mode != 0)
 	{
-		ResetGTUCounter_D1();
+		//ResetGTUCounter_D1();
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = mode;// | BIT_FC_IS_STARTED; Was in Mini
-		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_INT_TRIG_GTU_TIME*4) = 2048*1000+20;
+		//*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_INT_TRIG_GTU_TIME*4) = 2048*1000+20;
 	}
 }

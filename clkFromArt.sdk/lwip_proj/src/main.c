@@ -274,12 +274,9 @@ int main()
 	print("ARTIX loading...\n\r");
 	//PrepareArtixConfiguration();
 
-
 	print("Starting Artix clock\n\r");
 	SetGtuFreq1us(1);
 	ArtixClkEn(1);
-
-
 
 	xil_printf("Loading FW to Artixes with FW file %s\n\r", FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
@@ -323,17 +320,15 @@ int main()
 	print("Trigger initial configuration...\n\r");
 	L1_send_Marco_params();
 
+	print("Set periodic trigger by default...\n\r");
+	SetModeD1(BIT_FC_EN_PERIODIC_TRIG);
 
 	/* start the application (web server, rxtest, txtest, etc..) */
 	//start_application();
 	print("DMA_init()\n\r");
 	DMA_init();
 
-	//StartDataProviderInitial();
-	//DataProvEnOutput();
-
 	PrintDataSizes();
-
 	/* receive and process packets */
 	while (1) {
 		if (TcpFastTmrFlag) {

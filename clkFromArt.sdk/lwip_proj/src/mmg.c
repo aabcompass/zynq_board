@@ -13,6 +13,7 @@
 #include "ftp_server.h"
 #include "own_data_types.h"
 #include "dma_handling.h"
+#include "crc32.h"
 
 MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
@@ -201,6 +202,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
+		mainBuffer.sci_data_l1[last_l1_occupied].crc32 = crc_32((unsigned char*)&mainBuffer.sci_data_l1[last_l1_occupied].zbh.header, sizeof(DATA_TYPE_SCI_L1_V5)-4, 0xFFFFFFFF);
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
@@ -318,12 +320,4 @@ void MmgPrint1stD3()
 	Xil_DCacheInvalidateRange(DMA_GetP(), 2880*4);
 }
 
-void CalcCRCTest()
-{
-	int i, a=0;
-	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=%d\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V5));
-	for(i=0;i<10000;i++) {
-		a += crc_32(mainBuffer.sci_data_l1[0], sizeof(Z_DATA_TYPE_SCI_L1_V5), 0xFFFFFFFF);
-	}
-	xil_printf("CRC=%d\n\r", a);
-}
+

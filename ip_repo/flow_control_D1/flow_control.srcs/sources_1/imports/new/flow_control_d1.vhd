@@ -83,7 +83,8 @@ entity flow_control_d1 is
   		trig_all_cnt: OUT STD_LOGIC_VECTOR(31 downto 0); --25
   		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
   		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
-  		unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
+  		unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --28 <= unix_time_i;		
+  		trig_cnt_glob: out std_logic_vector(15 downto 0)	--29
   );
 end flow_control_d1;  
      
@@ -261,6 +262,7 @@ architecture Behavioral of flow_control_d1 is
 	signal set_unix_time: std_logic := '0';
 	signal trig_latch: std_logic := '0';
 	signal trig_latch_clr: std_logic := '0';
+	signal trig_cnt_glob_clr: std_logic := '0';
 	
 	signal number_of_triggers: std_logic_vector(15 downto 0) := (others => '0');
 	signal trig_cnt: std_logic_vector(15 downto 0) := (others => '0');
@@ -338,14 +340,12 @@ architecture Behavioral of flow_control_d1 is
 	
 	signal n_glob_cycles_i: std_logic_vector(31 downto 0) := (others => '0');
 	signal glob_cycles_gtu_cnt: std_logic_vector(27 downto 0) := X"0000001";
+	signal trig_cnt_glob_i: std_logic_vector(15 downto 0) := X"0000";
 
 
 begin
 
-
-
 ----------------------- 
-
 	
 xpm_cdc_extsync_inst: xpm_cdc_single
   generic map (
@@ -375,6 +375,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	clr_trig_service <= clr_flags(5);
 	clr_tlast_remover <= clr_flags(6);
 	clr_sink_sm <= clr_flags(7); 
+	trig_cnt_glob_clr <= clr_flags(8); 
 	 
 	trig_immediate <= clr_flags(16);
 	
@@ -628,6 +629,30 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 			end if;
 		end if;
 	end process;
+	
+	glob_trig_cnt: process(s_axis_aclk)
+		variable state : integer range 0 to 1 := 0;
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			if(trig_cnt_glob_clr = '1') then
+				trig_cnt_glob_i <= (others => '0');
+			else
+				case state is
+					when 0 =>
+						if(trig_latch = '1') then
+							trig_cnt_glob_i <= trig_cnt_glob_i + 1;
+							state := state + 1;
+						end if;
+					when 1 =>
+						if(trig_latch = '0') then
+							state := 0;
+						end if;
+				end case;
+			end if;
+		end if;
+	end process;
+	
+	trig_cnt_glob <= trig_cnt_glob_i;
 	
 	trig_type <= trig_type_i;
 	

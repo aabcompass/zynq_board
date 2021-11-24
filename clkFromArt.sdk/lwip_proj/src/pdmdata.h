@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.01.00"
+#define ZYNQ3_VER_STRING "v4.02.00"
 
 //========================================
 // Constants
@@ -366,6 +366,7 @@ typedef struct
 #define TCP_CMD_L1_PARAM_NHOT		"trg L1 param nHot %d"
 #define TCP_CMD_L1_PARAM_NLEN		"trg L1 param nLength %d"
 #define TCP_CMD_L1_PARAM_NACTIVE	"trg L1 param nActive %d"
+#define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, clkb}*/
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"
