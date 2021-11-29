@@ -40,6 +40,11 @@ void Set_scurve_step(u32 step)
 	scurve_step = step;
 }
 
+void SetSC_speed(u32 speed) //max 65535 1=2 AXI clk
+{
+	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_SPEED) = speed;
+}
+
 //void SetDefaultSCParameters()
 //{
 //	slowctrl_samedata.misc_reg0 = 0x0FA20007;
@@ -545,3 +550,5 @@ u32 GetScurveStatus()
 {
 	return scurve_sm_state;
 }
+
+

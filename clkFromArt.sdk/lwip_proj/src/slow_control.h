@@ -37,12 +37,15 @@
 #define REGW_SLOWCTRL_CONFIG		3
 #define REGW_SLOWCTRL_CMD			4
 #define REGW_SLOWCTRL_FIFO_CNT		5
+#define REGW_SLOWCTRL_SPEED			6
 #define REGW_SLOWCTRL_GENERALREG_0	8
 #define REGW_SLOWCTRL_GENERALREG_1	9
 #define REGW_SLOWCTRL_GENERALREG_2	10
 #define REGW_SLOWCTRL_GENERALREG_3	11
 #define REGW_SLOWCTRL_GENERALREG_4	12
 #define REGW_SLOWCTRL_GENERALREG_5	13
+
+#define REGR_SLOWCTRL_STATUS		16
 
 
 //REGW_SLOWCTRL_RESETREG
@@ -116,5 +119,6 @@ typedef struct
 u32 StartScurve();
 void Set_scurve_step(u32 step);
 void SetSCMapping(u8 n_pmt_in_ec, u8 pixelnum, u8 pixelmap);
+void SetSC_speed(u32 speed);
 
 #endif /* SLOW_CONTROL_H_ */

@@ -260,6 +260,8 @@ int main()
 
 	SetDefaultParameters();
 
+
+
 	print("HVPS expander initialization...");
 	instrumentState.is_HVPS_OK = expIni(); //init hv
 	if(!instrumentState.is_HVPS_OK)
@@ -294,6 +296,10 @@ int main()
 
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
+
+	print("Setting slow control speed...\n\r");
+	SetSC_speed(512);
+
 
 	print("HLS peripherals initialization...\n\r");
 	ResetScurveAdder();

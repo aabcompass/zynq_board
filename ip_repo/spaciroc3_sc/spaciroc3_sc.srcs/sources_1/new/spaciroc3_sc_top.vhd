@@ -6,7 +6,7 @@ use ieee.std_logic_arith.all;
 
 entity spaciroc3_sc_top is
 		generic (
-					 C_LOAD_SPAC_PERIOD : integer := 5;--2^5 - semiperiod of SC
+					 C_LOAD_SPAC_PERIOD : integer := 16;--2^5 - semiperiod of SC
 					 SIM : std_logic := '1'; -- is simulation
 					 N_SC_BITS: integer := 992; -- number of sc bits in each ASIC
 					 N_PROBE_BITS: integer := 264; -- number of probe bits in each ASIC
@@ -17,7 +17,9 @@ entity spaciroc3_sc_top is
            reset : in STD_LOGIC;
            reset_rb_fifo:  in STD_LOGIC;
            cmd_reg: in std_logic_vector(31 downto 0);
+           sr_ck_pc_hperiod: in std_logic_vector(15 downto 0);
            readback_fifo_cnt: out std_logic_vector(13 downto 0);
+           status_word: out std_logic_vector(31 downto 0);
            --EXTERNAL PINS
            sr_in_pc : out  STD_LOGIC_vector(N_LINES-1 downto 0) := (others => '0'); -- sc data
            sr_ck_pc : out  STD_LOGIC := '0'; -- sc clk
@@ -67,7 +69,7 @@ architecture Behavioral of spaciroc3_sc_top is
 	signal rst_i: std_logic := '0';
 	signal s00_axis_tready_i: std_logic := '0';
 	signal reset_counter: std_logic_vector(20 downto 0) := (others => '0');
-	signal load_sc_cnt : std_logic_vector(C_LOAD_SPAC_PERIOD downto 0) := (0 => '1', others => '0');
+	signal load_sc_cnt : std_logic_vector(C_LOAD_SPAC_PERIOD-1 downto 0) := (0 => '1', others => '0');
 	signal load_sc_bits_cnt : std_logic_vector(9 downto 0) := (others => '0');
 	signal load_sc_chips_cnt : std_logic_vector(2 downto 0) := (others => '0');
 	signal sr_ck_pc_pre: std_logic := '0';
@@ -186,6 +188,7 @@ begin
 	end generate reset_former_gen2;
 	
 	resetb_pc <= rst_i;
+	status_word(3 downto 0) <= status;
 
 	ctrl_former_sm: process(clk)
 		variable state : integer range 0 to 8 := 0;
@@ -202,13 +205,14 @@ begin
 											end if;
 											sr_ck_pc_cnt <= (others => '0');
 										end if;
+										load_sc_cnt <= sr_ck_pc_hperiod;
 				-- deassert reset in some time
 				when 1 => 	if(load_sc_cnt = 0) then
 											sr_rstb_pc <= '1';
-											load_sc_cnt <= (0 => '1', others => '0');
+											load_sc_cnt <= sr_ck_pc_hperiod;--(0 => '1', others => '0');
 											state := state + 1;
 										else
-											load_sc_cnt <= load_sc_cnt + 1;
+											load_sc_cnt <= load_sc_cnt - 1;
 										end if;
 				-- assert internal sc clock signal
 				when 2 => 	sr_ck_pc_pre <= '1';
@@ -217,19 +221,19 @@ begin
 				when 3 => 	sr_ck_pc_pre <= '0';
 										if(load_sc_cnt = 0) then
 											state := state + 1;
-											load_sc_cnt <= (0 => '1', others => '0');
+											load_sc_cnt <= sr_ck_pc_hperiod;--(0 => '1', others => '0');
 											sr_ck_pc <= '1';
 											sr_ck_pc_cnt <= sr_ck_pc_cnt + 1;
 										else
-											load_sc_cnt <= load_sc_cnt + 1;
+											load_sc_cnt <= load_sc_cnt - 1;
 										end if;
 				when 4 => 	if(load_sc_cnt = 0) then
 											state := state + 1;
-											load_sc_cnt <= (0 => '1', others => '0');
+											load_sc_cnt <= sr_ck_pc_hperiod;--(0 => '1', others => '0');
 											sr_ck_pc <= '0';
 											sr_ck_pc_f <= '1';
 										else
-											load_sc_cnt <= load_sc_cnt + 1;
+											load_sc_cnt <= load_sc_cnt - 1;
 										end if;
 				when 5 =>   sr_ck_pc_f <= '0';
 										if(load_sc_bits_cnt = N_SC_BITS-1) then
@@ -248,17 +252,17 @@ begin
 										end if;
 				when 7 => 	if(load_sc_cnt = 0) then
 											loadb_sc_pc <= '0';
-											load_sc_cnt <= (0 => '1', others => '0');
+											load_sc_cnt <= sr_ck_pc_hperiod;--(0 => '1', others => '0');
 											state := state + 1;
 										else
-											load_sc_cnt <= load_sc_cnt + 1;
+											load_sc_cnt <= load_sc_cnt - 1;
 										end if;
 				when 8 => 	if(load_sc_cnt = 0) then
 											loadb_sc_pc <= '1';
-											load_sc_cnt <= (0 => '1', others => '0');
+											load_sc_cnt <= sr_ck_pc_hperiod;--(0 => '1', others => '0');
 											state := 0;
 										else
-											load_sc_cnt <= load_sc_cnt + 1;
+											load_sc_cnt <= load_sc_cnt - 1;
 										end if;
 			end case;
 		end if;

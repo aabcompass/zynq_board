@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.02.00"
+#define ZYNQ3_VER_STRING "v4.05.00"
 
 //========================================
 // Constants
@@ -332,6 +332,7 @@ typedef struct
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */
 #define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/
+#define TCP_CMD_ACQ_ZEROPMT			"acq zeropmt %d %d %d" /* Set PMTs to be zeroed (for setups with not fill PDM*/
 #define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_DAC7_10	"slowctrl all dac7 %d dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
@@ -343,6 +344,7 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_GET_DAC10	"slowctrl dac10?"/*Get DAC10 for the current ASIC*/
 #define TCP_CMD_SLOWCTRL_GET_DAC7	"slowctrl dac7?"/*Get DAC7 for the current pixel*/
 #define TCP_CMD_SLOWCTRL_SET_PAUSE	"slowctrl scurve pause %d"/*Sets pause between setting thresholds during scurve gathering process*/
+#define TCP_CMD_SLOWCTRL_SPEED		"slowctrl speed %d" /*Set slowcontrol speed (default 128)*/
 #define TCP_CMD_SLOWCTRL_G_CUR_TRH	"slowctrl scurve thr?" /*Returns current threshold during scurve gathering process*/
 #define TCP_CMD_SLOWCTRL_SET_STEP	"slowctrl scurve step %d" /*Set scurve step 1 or 11*/
 #define TCP_CMD_SLOWCTRL_SC_DAC10	"slowctrl scurve scan dac10" /*Set scurve mode with dac10 scan*/

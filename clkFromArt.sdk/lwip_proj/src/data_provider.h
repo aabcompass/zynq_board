@@ -76,5 +76,6 @@ u32 IsDataProviderPass();
 void GetAux2Data(u32* data0, u32* data1, u32* data2);
 void GetAux3Data(u32* data0, u32* data1, u32* data2);
 void StopDataConverter();
+void SetPMTsZero(u32 artix0_bits, u32 artix1_bits, u32 artix2_bits);
 
 #endif /* SRC_DATA_PROVIDER_H_ */

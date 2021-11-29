@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity spaciroc3_sc_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-		C_LOAD_SPAC_PERIOD : integer := 5;
+		C_LOAD_SPAC_PERIOD : integer := 16;
 		SIM : std_logic := '1';
 		N_SC_BITS: integer := 992;
 		N_PROBE_BITS: integer := 264;
@@ -213,7 +213,7 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
 
 	component spaciroc3_sc_top
 		generic (
-					 C_LOAD_SPAC_PERIOD : integer := 5;
+					 C_LOAD_SPAC_PERIOD : integer := 16;
 					 SIM : std_logic := '1';
 					 N_SC_BITS: integer := 992;
 					 N_PROBE_BITS: integer := 264;
@@ -223,7 +223,9 @@ architecture arch_imp of spaciroc3_sc_v1_0_S00_AXI is
            reset : in STD_LOGIC;
            reset_rb_fifo:  in STD_LOGIC;
            cmd_reg: in std_logic_vector(31 downto 0);
+           sr_ck_pc_hperiod: in std_logic_vector(15 downto 0);
            readback_fifo_cnt: out std_logic_vector(13 downto 0);
+           status_word: out std_logic_vector(31 downto 0);
            --EXTERNAL PINS
            sr_in_pc : out  STD_LOGIC_vector(N_LINES-1 downto 0) := (others => '0');
            sr_ck_pc : out  STD_LOGIC := '0';
@@ -365,7 +367,7 @@ begin
 	      slv_reg13 <= (others => '0');
 	      slv_reg14 <= (others => '0');
 	      slv_reg15 <= (others => '0');
-	      slv_reg16 <= (others => '0');
+	      --slv_reg16 <= (others => '0');
 	      slv_reg17 <= (others => '0');
 	      slv_reg18 <= (others => '0');
 	      slv_reg19 <= (others => '0');
@@ -545,14 +547,14 @@ begin
 	                slv_reg15(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"010000" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 16
-	                slv_reg16(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
+--	          when b"010000" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 16
+--	                slv_reg16(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
 	          when b"010001" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
@@ -946,7 +948,7 @@ begin
 	            slv_reg13 <= slv_reg13;
 	            slv_reg14 <= slv_reg14;
 	            slv_reg15 <= slv_reg15;
-	            slv_reg16 <= slv_reg16;
+	            --slv_reg16 <= slv_reg16;
 	            slv_reg17 <= slv_reg17;
 	            slv_reg18 <= slv_reg18;
 	            slv_reg19 <= slv_reg19;
@@ -1251,7 +1253,9 @@ begin
            reset => slv_reg1(0),--: in STD_LOGIC;
            reset_rb_fifo => slv_reg1(1),
            cmd_reg => slv_reg4,
+           sr_ck_pc_hperiod => slv_reg6(15 downto 0),
            readback_fifo_cnt => readback_fifo_cnt,--slv_reg5(13 dowto 0),
+           status_word => slv_reg16,
            --EXTERNAL PINS
            sr_in_pc => sr_in_pc, --: out  STD_LOGIC := '1';
            sr_ck_pc => sr_ck_pc, --: out  STD_LOGIC := '0';

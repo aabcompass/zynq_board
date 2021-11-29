@@ -137,7 +137,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 {
 	u8 str_len=0; char reply[128];
-	u32 get_len, param, param2, i;
+	u32 get_len, param, param2, param3, i;
 	//u32 param0, param1, param2, param3, param4;
 	u64 long_param;
 	u8 array_param[15];
@@ -226,6 +226,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		if(err) xil_printf("tcp_write: err = %d\n\r", err);
 		err = tcp_output(tpcb);
 		if(err) xil_printf("tcp_write: err = %d\n\r", err);
+	}
+	else if(sscanf(p->payload, TCP_CMD_ACQ_ZEROPMT, &param, &param2, &param3) == 3)
+	{
+		SetPMTsZero(param, param2, param3);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
 	}
 	else if(sscanf(p->payload, TCP_CMD_INSTR_SET_INTEGR, &param) == 1)
 	{
@@ -392,6 +398,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_APPLY, 14) == 0)
 	{
 		SendUserIndSCSettingsToSp3();
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_SPEED, &param) == 1)
+	{
+		SetSC_speed(param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -791,7 +803,7 @@ void SetDefaultParameters()
 	instrumentState.file_counter_l3 = 0;
 	instrumentState.is_simple_packets = 0;
 	instrumentState.mode = MODE_NONE;
-	systemSettings.scurve_delay = 10;
+	systemSettings.scurve_delay = 50;
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 	instrumentState.is_artix_frame_started = 0;
