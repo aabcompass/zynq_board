@@ -17,6 +17,7 @@
 #define REGW_DATAPROV_INCR_PER	5
 #define REGW_DATAPROV_PATT	6 /*7:0 MAX, 15:8 INIT*/
 #define REGW_DATAPROV_GTU_PERIOD	7
+#define REGW_DATAPROV_USE_ALT_FRAME	8
 
 #define REGW_DATAPROV_FLAGS2			10
 #define REGW_DATAPROV_PMTZERO_01		11
@@ -76,6 +77,5 @@ u32 IsDataProviderPass();
 void GetAux2Data(u32* data0, u32* data1, u32* data2);
 void GetAux3Data(u32* data0, u32* data1, u32* data2);
 void StopDataConverter();
-void SetPMTsZero(u32 artix0_bits, u32 artix1_bits, u32 artix2_bits);
 
 #endif /* SRC_DATA_PROVIDER_H_ */

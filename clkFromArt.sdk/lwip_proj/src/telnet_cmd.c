@@ -567,6 +567,13 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	{
 		tcp_write(tpcb, GetArtixFileName(), strlen(GetArtixFileName()), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_ARTIX_ALT_CLK, strlen(TCP_CMD_ARTIX_ALT_CLK)) == 0)
+	{
+		print("Configure Data provider for working with alt... (MSU setup)");
+		SelectAltFrame();
+		strcpy(ans_str, "Ok\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &int_param) == 1)
 	{
 		SetArtixTransmitDelay(int_param);

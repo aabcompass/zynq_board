@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.05.00"
+#define ZYNQ3_VER_STRING "v4.07.00"
 
 //========================================
 // Constants
@@ -376,6 +376,7 @@ typedef struct
 #define TCP_CMD_HVPS_EXIT			"exit"/* Close TCP control port */
 #define TCP_CMD_ARTIX_LOAD			"artix load %s"
 #define TCP_CMD_GET_ARTIX_FILENAME	"artix filename?"
+#define TCP_CMD_ARTIX_ALT_CLK		"artix altclk" /*for the MCU setup in Moscow*/
 #define TCP_CMD_SET_UNIX_TIME		"setunixtime %d"
 
 #pragma pack(pop) /* return to normal packing */

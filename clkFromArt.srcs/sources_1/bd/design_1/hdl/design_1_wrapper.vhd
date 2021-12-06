@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Wed Nov 24 13:40:26 2021
+--Date        : Mon Nov 29 18:06:42 2021
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -59,12 +59,12 @@ entity design_1_wrapper is
     cs_dac_p_0 : out STD_LOGIC;
     cs_exp_n_0 : out STD_LOGIC;
     cs_exp_p_0 : out STD_LOGIC;
-    data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     diff_clk_in_0_clk_n : in STD_LOGIC;
     diff_clk_in_0_clk_p : in STD_LOGIC;
     diff_clk_in_1_clk_n : in STD_LOGIC;
@@ -132,8 +132,8 @@ architecture STRUCTURE of design_1_wrapper is
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     sck_p_0 : out STD_LOGIC;
     sck_n_0 : out STD_LOGIC;
     mosi_p_0 : out STD_LOGIC;
@@ -170,10 +170,10 @@ architecture STRUCTURE of design_1_wrapper is
     sck_o_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     sck_o_3 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_done_0 : in STD_LOGIC;
-    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     Dout_4 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_latch_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_latch_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -236,12 +236,12 @@ design_1_i: component design_1
       cs_dac_p_0 => cs_dac_p_0,
       cs_exp_n_0 => cs_exp_n_0,
       cs_exp_p_0 => cs_exp_p_0,
-      data_in_from_pins_n_0(12 downto 0) => data_in_from_pins_n_0(12 downto 0),
-      data_in_from_pins_n_1(12 downto 0) => data_in_from_pins_n_1(12 downto 0),
-      data_in_from_pins_n_2(12 downto 0) => data_in_from_pins_n_2(12 downto 0),
-      data_in_from_pins_p_0(12 downto 0) => data_in_from_pins_p_0(12 downto 0),
-      data_in_from_pins_p_1(12 downto 0) => data_in_from_pins_p_1(12 downto 0),
-      data_in_from_pins_p_2(12 downto 0) => data_in_from_pins_p_2(12 downto 0),
+      data_in_from_pins_n_0(13 downto 0) => data_in_from_pins_n_0(13 downto 0),
+      data_in_from_pins_n_1(13 downto 0) => data_in_from_pins_n_1(13 downto 0),
+      data_in_from_pins_n_2(13 downto 0) => data_in_from_pins_n_2(13 downto 0),
+      data_in_from_pins_p_0(13 downto 0) => data_in_from_pins_p_0(13 downto 0),
+      data_in_from_pins_p_1(13 downto 0) => data_in_from_pins_p_1(13 downto 0),
+      data_in_from_pins_p_2(13 downto 0) => data_in_from_pins_p_2(13 downto 0),
       diff_clk_in_0_clk_n => diff_clk_in_0_clk_n,
       diff_clk_in_0_clk_p => diff_clk_in_0_clk_p,
       diff_clk_in_1_clk_n => diff_clk_in_1_clk_n,

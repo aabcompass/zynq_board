@@ -92,6 +92,7 @@ entity axi_data_provider_z3 is
     	reset_data_conv: out std_logic;
     	reset_scurve_adder: out std_logic;
     	zero_pmts: out std_logic_vector(35 downto 0);
+    	use_alt_frame: out std_logic;
    	
     	
     	
@@ -1364,6 +1365,7 @@ begin
 	incr_period <= slv_reg5;
 	patt_init <= slv_reg6(15 downto 8);
 	patt_max <= slv_reg6(7 downto 0);
+	use_alt_frame <= slv_reg8(0);
 	
 	infinite <= slv_reg10(0);
 	slv_reg16(0) <= pass;

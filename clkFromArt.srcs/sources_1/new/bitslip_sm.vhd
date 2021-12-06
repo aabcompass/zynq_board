@@ -27,6 +27,7 @@ use IEEE.std_logic_unsigned.all;
 
 Library xpm;
 use xpm.vcomponents.all;
+
 			
 
 -- Uncomment the following library declaration if using
@@ -43,7 +44,7 @@ entity bitslip_sm is
     				C_DATA_WIDTH: integer:= 8);
     Port ( clk : in STD_LOGIC;
     				run : in STD_LOGIC;
-           data_in : in STD_LOGIC_VECTOR (103 downto 0);
+           data_in : in STD_LOGIC_VECTOR (111 downto 0);
            dataout0: out STD_LOGIC_VECTOR(7 downto 0);
            dataout1: out STD_LOGIC_VECTOR(7 downto 0);
            dataout2: out STD_LOGIC_VECTOR(7 downto 0);
@@ -58,11 +59,12 @@ entity bitslip_sm is
            dataout11: out STD_LOGIC_VECTOR(7 downto 0);
            dataout: out STD_LOGIC_VECTOR(8*12-1 downto 0);
            dataout12: out STD_LOGIC_VECTOR(7 downto 0);
-           bitlslip_vector: out STD_LOGIC_VECTOR(12 downto 0);
+           bitlslip_vector: out STD_LOGIC_VECTOR(13 downto 0);
            bitslip_cnt: out STD_LOGIC_VECTOR(23 downto 0);
            dataout_valid: out std_logic;
            dataout_last: out std_logic;
-           rst_selectio: out std_logic := '1'
+           rst_selectio: out std_logic := '1';
+           use_alt_frame: in std_logic := '0'
            );
 end bitslip_sm;
 
@@ -89,6 +91,7 @@ architecture Behavioral of bitslip_sm is
 	signal dataout12_i: std_logic_vector(7 downto 0);
 	
 	signal valid_i: std_logic := '0';
+	signal use_alt_frame_d1: std_logic := '0';
 	
 	signal tlast_cnt: std_logic_vector(6 downto 0)  := (others => '0');
 	signal tlast_allowed: std_logic := '0';
@@ -131,24 +134,47 @@ begin
 		end if;
 	end process;
 
+   cdc_2nd_frame : xpm_cdc_single
+   generic map (
+      DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+      INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+                           -- values
+      SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+      SRC_INPUT_REG => 0   -- DECIMAL; integer; 0=do not register input, 1=register input
+   )
+   port map (
+      dest_out => use_alt_frame_d1, -- 1-bit output: src_in synchronized to the destination clock domain. This output
+                            -- is registered.
+
+      dest_clk => clk, -- 1-bit input: Clock signal for the destination clock domain.
+      src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+      src_in => use_alt_frame      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
+   );
+	
+
 	remix_gen: for i in 0 to C_DATA_WIDTH-1 generate
 		remix: process(clk)
 		begin
 			if(rising_edge(clk)) then
-				dataout0_i(i) <= data_in(0+13*i); 
-				dataout1_i(i) <= data_in(1+13*i); 
-				dataout2_i(i) <= data_in(2+13*i); 
-				dataout3_i(i) <= data_in(3+13*i); 
-				dataout4_i(i) <= data_in(4+13*i); 
-				dataout5_i(i) <= data_in(5+13*i); 
-				dataout6_i(i) <= data_in(6+13*i); 
-				dataout7_i(i) <= data_in(7+13*i); 
-				dataout8_i(i) <= data_in(8+13*i); 
-				dataout9_i(i) <= data_in(9+13*i); 
-				dataout10_i(i) <= data_in(10+13*i); 
-				dataout11_i(i) <= data_in(11+13*i); 
-				dataout12_i(i) <= data_in(12+13*i); 
-				frame_data(i) <= data_in(12+13*i);
+				dataout0_i(i) <= data_in(0+14*i); 
+				dataout1_i(i) <= data_in(1+14*i); 
+				dataout2_i(i) <= data_in(2+14*i); 
+				dataout3_i(i) <= data_in(3+14*i); 
+				dataout4_i(i) <= data_in(4+14*i); 
+				dataout5_i(i) <= data_in(5+14*i); 
+				dataout6_i(i) <= data_in(6+14*i); 
+				dataout7_i(i) <= data_in(7+14*i); 
+				dataout8_i(i) <= data_in(8+14*i); 
+				dataout9_i(i) <= data_in(9+14*i); 
+				dataout10_i(i) <= data_in(10+14*i); 
+				dataout11_i(i) <= data_in(11+14*i); 
+				dataout12_i(i) <= data_in(12+14*i); 
+				if(use_alt_frame_d1 = '0') then
+					frame_data(i) <= data_in(12+14*i);
+				else
+					frame_data(i) <= data_in(13+14*i);
+				end if;
+				
 			end if;
 		end process;
 	end generate;
@@ -157,21 +183,12 @@ begin
 	--	variable state : integer range 0 to 1 := 0;
 	begin
 		if(rising_edge(clk)) then
-			--case state is
-			--	when 0 => 
-			--						if(frame_data = 0) then
-			--							state := state + 1;
-			--							end if;
-			--						bitslip_cmd <= '0';
-			--	when 1 => 
 			if((frame_data = 0) or (frame_data = X"FF")) then
 				bitslip_cmd <= '0';
 			else
 				bitslip_cmd <= '1';
 				bitslip_cnt_i <= bitslip_cnt_i + 1;
 			end if;
-			--state := 0;	
-			--end case;
 		end if;
 	end process;
 	
@@ -180,7 +197,7 @@ begin
 	tlast_counter: process(clk)
 	begin
 		if(rising_edge(clk)) then
-			if(valid_i = '1' and dataout12_i(0) = '0') then
+			if(valid_i = '1' and frame_data(0) = '0') then
 				tlast_cnt <= tlast_cnt + 1;
 				if(tlast_cnt = "1111111") then
 					tlast_allowed <= '1';
@@ -221,9 +238,9 @@ begin
 						
 	dataout <= dataout_d0 when rising_edge(clk); 
 						
-	valid_i <= dataout12_i(0) when rising_edge(clk);
+	valid_i <= frame_data(0) when rising_edge(clk);
 	
-	dataout_last_d0 <= valid_i and not dataout12_i(0);-- and tlast_allowed;
+	dataout_last_d0 <= valid_i and not frame_data(0);-- and tlast_allowed;
 	
 	data_en_process: process(clk)
 		variable state : integer range 0 to 1  := 0;

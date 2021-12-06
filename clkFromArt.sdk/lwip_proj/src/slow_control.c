@@ -178,7 +178,7 @@ void SendUserIndSCSettingsToSp3()
 				c_pixel = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].pixel_mask[k];
 				dac7_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac7bit[k];
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].tst_msk_dac[k] = dac7_value | (c_pixel<<7);
-				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = 8;
+				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = 16; //was 8
 				//xil_printf("\t pixel=%d, dac7_value=%d\n\r", k, dac7_value);
 			}
 		}

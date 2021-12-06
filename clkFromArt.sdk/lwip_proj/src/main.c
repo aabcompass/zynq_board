@@ -261,7 +261,6 @@ int main()
 	SetDefaultParameters();
 
 
-
 	print("HVPS expander initialization...");
 	instrumentState.is_HVPS_OK = expIni(); //init hv
 	if(!instrumentState.is_HVPS_OK)
