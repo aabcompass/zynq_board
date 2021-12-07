@@ -166,7 +166,7 @@ static void RxIntrHandler_dma_d3(void *Callback)
 	{
 		InvalidateRange(DATA_TYPE_L3);
 		if(is_file_processing == DO_FILE_PROCESSING)
-			MmgFinish(DATA_TYPE_L3, GetNGTU(),  GetUnixTime(), TRIG_PERIODIC, Get_n_glob_cycles());
+			MmgFinish(DATA_TYPE_L3, GetNGTU(),  GetUnixTime(), (1<<31), Get_n_glob_cycles());
 		if(is_l3_started) { // Restart DMA D3
 			start_dma_l3(N_FRAMES_DMA_D3);
 		}
