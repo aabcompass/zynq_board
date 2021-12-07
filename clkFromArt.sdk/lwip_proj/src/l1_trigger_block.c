@@ -68,7 +68,7 @@ void L1_send_rest_params()
 
 void L1_send_default_params()
 {
-	Set_L1_MPSthr(32768);
+	//Set_L1_MPSthr(32768);
 	L1_send_rest_params();
 }
 
