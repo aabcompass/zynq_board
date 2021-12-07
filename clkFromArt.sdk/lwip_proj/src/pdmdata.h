@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.07.01"
+#define ZYNQ3_VER_STRING "v4.07.02"
 
 //========================================
 // Constants
@@ -334,6 +334,7 @@ typedef struct
 #define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/
 #define TCP_CMD_ACQ_ZEROPMT			"acq zeropmt %d %d %d" /* Set PMTs to be zeroed (for setups with not fill PDM*/
 #define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
+#define TCP_CMD_SLOWCTRL_ALL_GAIN	"slowctrl all gain %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_DAC7_10	"slowctrl all dac7 %d dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
 #define TCP_CMD_SLOWCTRL_ASIC		"slowctrl asic %d" /*Set current ASIC in line*/

@@ -160,6 +160,7 @@ void SendUserIndSCSettingsToSp3()
 {
 	int i, j, k;
 	u32 s_value, dac10_value, dac7_value, c_pixel;
+	u8 gain_value;
 	memset((char*)&sc_sp3_all_asic_test, 0, sizeof(sc_sp3_all_asic_test));
 	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
 	{
@@ -178,8 +179,10 @@ void SendUserIndSCSettingsToSp3()
 				c_pixel = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].pixel_mask[k];
 				dac7_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac7bit[k];
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].tst_msk_dac[k] = dac7_value | (c_pixel<<7);
-				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = 16; //was 8
+				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = instrumentState.curr_gain; //was 8
 				//xil_printf("\t pixel=%d, dac7_value=%d\n\r", k, dac7_value);
+				//gain_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].gain5bit[k];
+				//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = gain_value;
 			}
 		}
 	}
@@ -316,6 +319,15 @@ void ReformatSlowControlData(SLOWCTRL_SP3_ALL_ASIC_V1* slowctrl_sp3_all_asic_v1)
 //	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
 //	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
 //}
+
+void PropagateGaintoIndSC(u8 gain_value)
+{
+	u32 i,j,k;
+	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
+		for(j=0;j<N_OF_PMT_PER_ECASIC;j++)
+			for(k=0;k<N_OF_PIXELS_PER_PMT;k++)
+				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].gain5bit[k] = gain_value;
+}
 
 void PropagateDac10toIndSC(u32 dac10_value)
 {

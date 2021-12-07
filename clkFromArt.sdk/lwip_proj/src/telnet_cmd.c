@@ -344,6 +344,17 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_GAIN, &param) == 1)
+	{
+		//debugSettings.current_thr = param;
+		instrumentState.curr_gain = param;
+		//PropagateGaintoIndSC(param);
+		SendUserIndSCSettingsToSp3();
+		//LoadSameDataToSlowControl2(param);
+		xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_SLOWCTRL_SC_DAC10, strlen(TCP_CMD_SLOWCTRL_SC_DAC10)) == 0)
 	{
 		instrumentState.scurve_scan = SCURVE_SCAN_DAC10;
@@ -814,5 +825,6 @@ void SetDefaultParameters()
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 	instrumentState.is_artix_frame_started = 0;
+	instrumentState.curr_gain = 16;
 }
 

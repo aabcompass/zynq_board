@@ -61,6 +61,7 @@ typedef struct
 	uint32_t dac10bit;// bits [31:0]
 	uint8_t pixel_mask[N_OF_PIXELS_PER_PMT]; //bits [607:32]
 	uint8_t dac7bit[N_OF_PIXELS_PER_PMT]; //bits [607:32]
+	uint8_t gain5bit[N_OF_KI_PER_PMT];
 } SLOWCTRL_SP3_SGL_ASIC_USER_V0; //
 
 typedef struct
