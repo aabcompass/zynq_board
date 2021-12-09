@@ -528,7 +528,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		end if;
 	end process;
 	
-	self_trig <= (s_axis_trg_tlast and en_algo_trig);
+	self_trig <= (s_axis_trg_tlast and s_axis_trg_tvalid and en_algo_trig);
 	ext_trig <= (trig_ext_in_sync and en_ext_trig);
 	
 
