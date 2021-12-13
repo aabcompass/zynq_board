@@ -84,7 +84,8 @@ entity flow_control_d1 is
   		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
   		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
   		unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --28 <= unix_time_i;		
-  		trig_cnt_glob: out std_logic_vector(15 downto 0)	--29
+  		trig_cnt_glob: out std_logic_vector(15 downto 0);	--29
+  		s_axis_trg_tdata_d1_latch: out std_logic_vector(31 downto 0) --30
   );
 end flow_control_d1;  
      
@@ -310,6 +311,7 @@ architecture Behavioral of flow_control_d1 is
 	signal m_axis_tlast_dwc2: std_logic := '0';
 	
 	signal mps_sig: std_logic := '0';
+	signal s_axis_trg_tlast_d1: std_logic := '0';
 
 	attribute keep : string; 
 	attribute keep of s_axis_tlast_d1: signal is "true";  
@@ -559,6 +561,16 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 	
 	s_axis_trg_tdata_d1 <= s_axis_trg_tdata when rising_edge(s_axis_aclk);
+	s_axis_trg_tlast_d1 <= s_axis_trg_tlast when rising_edge(s_axis_aclk);
+	
+	L1_data_latcher: process(s_axis_aclk)
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			if(s_axis_trg_tvalid = '1') then
+				s_axis_trg_tdata_d1_latch <= s_axis_trg_tlast_d1 & s_axis_trg_tdata_d1(30 downto 0);				
+			end if;
+		end if;
+	end process;
 	
 	 
 	trig_service: process(s_axis_aclk)

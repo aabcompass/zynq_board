@@ -370,6 +370,7 @@ typedef struct
 #define TCP_CMD_L1_PARAM_NHOT		"trg L1 param nHot %d"
 #define TCP_CMD_L1_PARAM_NLEN		"trg L1 param nLength %d"
 #define TCP_CMD_L1_PARAM_NACTIVE	"trg L1 param nActive %d"
+#define TCP_CMD_L1_OUTPUT			"trg L1 output" /*Gives the information from the L1 trg AXIS bus*/
 #define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, clkb}*/
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"

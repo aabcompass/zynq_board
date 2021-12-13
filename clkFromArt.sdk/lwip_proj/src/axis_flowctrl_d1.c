@@ -170,3 +170,18 @@ void SetModeD1(u32 mode)
 		//*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_INT_TRIG_GTU_TIME*4) = 2048*1000+20;
 	}
 }
+
+u32 L1_getNAPM() // Returns the number of active macropixels from the AXIS L1 output
+{
+	return (*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_OUT*4)) & 0x1FF;
+}
+
+u32 L1_getGTUnumber() //  Returns the GTU number from the AXIS L1 output
+{
+	return ((*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_OUT*4))>>9) & ((2<<18)-1);
+}
+
+u32 L1_getSatisfied() //  Returns the trigger satisfaction status from the AXIS L1 output
+{
+	return ((*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_OUT*4))>>31) & 1;
+}

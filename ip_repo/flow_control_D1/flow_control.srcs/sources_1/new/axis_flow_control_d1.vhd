@@ -256,7 +256,8 @@ architecture Behavioral of axis_flow_control_d1 is
 				n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
 	  		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
 				unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --28 <= unix_time_i;		
-				trig_cnt_glob: out std_logic_vector(15 downto 0)	--29			
+				trig_cnt_glob: out std_logic_vector(15 downto 0);	--29
+				s_axis_trg_tdata_d1_latch: out std_logic_vector(31 downto 0)			
 		);
 	end component;  
 	
@@ -937,7 +938,8 @@ begin
 				n_glob_cycles => slv_reg26,
 	  		gtu_mps_timestamp => slv_reg27,--: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
 				unix_mps_timestamp => slv_reg28,--: OUT STD_LOGIC_VECTOR(31 downto 0) --28 <= unix_time_i;			
-				trig_cnt_glob => slv_reg29(15 downto 0)
+				trig_cnt_glob => slv_reg29(15 downto 0),
+				s_axis_trg_tdata_d1_latch => slv_reg30 
 		);
 		
 			slv_reg15 <= gtu_sig_counter_i;

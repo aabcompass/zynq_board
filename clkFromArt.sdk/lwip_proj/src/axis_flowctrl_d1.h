@@ -41,6 +41,7 @@
 #define REGR_GTU_MPS_TIMESTAMP		27
 #define REGR_UNIX_MPS_TIMESTAMP		28
 #define REGR_TRG_GLOB_CNT			29
+#define REGR_TRG_OUT				30 /*The last returned by L1 32-bit word*/
 
 
 #define SM_STATE_IDLE		0
@@ -94,6 +95,9 @@ u32 Get_n_glob_cycles();
 void FlowControlStart_D1(u32 start);
 void SetModeD1(u32 mode);
 u32 GetUnixTime();
+u32 L1_getNAPM();
+u32 L1_getGTUnumber();
+u32 L1_getSatisfied();
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

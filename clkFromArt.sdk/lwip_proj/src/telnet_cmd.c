@@ -672,6 +672,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_L1_OUTPUT, strlen(TCP_CMD_L1_OUTPUT)) == 0)
+	{
+		sprintf(reply, "%d %d %d\n\r",
+				L1_getNAPM(), L1_getGTUnumber(), L1_getSatisfied());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_PIXELMAP_LOAD, &current_ec,
 			&mapping_1EC[0], &mapping_1EC[1], &mapping_1EC[2], &mapping_1EC[3],
 			&mapping_1EC[4], &mapping_1EC[5], &mapping_1EC[6], &mapping_1EC[7],
