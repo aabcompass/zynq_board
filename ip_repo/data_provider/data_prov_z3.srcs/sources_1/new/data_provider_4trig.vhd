@@ -106,15 +106,40 @@ COMPONENT byte_serializer is
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
            tvalid : in STD_LOGIC;
+           tlast : in STD_LOGIC;
            tdata : in STD_LOGIC_VECTOR (8*N_CH-1 downto 0);
            tready : out STD_LOGIC;
            data_out : out STD_LOGIC_VECTOR(N_CH-1 downto 0);
-           frame : out STD_LOGIC);
+           frame : out STD_LOGIC;
+           tlast_out: out STD_LOGIC);
 end COMPONENT;
 
 signal reset: std_logic := '0';
 signal m_axis_tvalid_fifo: std_logic := '0';
 signal m_axis_tready_fifo: std_logic := '0';
+signal m_axis_tlast_dwc: std_logic := '0';
+signal m_axis_tlast_fifo: std_logic := '0';
+
+signal DATA_cutted: STD_LOGIC_VECTOR(143 downto 0);
+signal FRAME_cutted, TLAST_cutted: std_logic := '0';
+
+COMPONENT axis_data_fifo_4combine
+  PORT (
+    s_axis_aresetn : IN STD_LOGIC;
+    s_axis_aclk : IN STD_LOGIC;
+    s_axis_tvalid : IN STD_LOGIC;
+    s_axis_tready : OUT STD_LOGIC;
+    s_axis_tdata : IN STD_LOGIC_VECTOR(143 DOWNTO 0);
+    s_axis_tlast : IN STD_LOGIC;
+    m_axis_tvalid : OUT STD_LOGIC;
+    m_axis_tready : IN STD_LOGIC;
+    m_axis_tdata : OUT STD_LOGIC_VECTOR(143 DOWNTO 0);
+    m_axis_tlast : OUT STD_LOGIC;
+    axis_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    axis_wr_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    axis_rd_data_count : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+  );
+END COMPONENT;
 
 begin
 	
@@ -146,7 +171,7 @@ begin
   			s_axis_tlast => s_axis_tlast_pc,--: IN STD_LOGIC;
   			m_axis_tvalid => m_axis_tvalid_dwc,--: OUT STD_LOGIC;
   			m_axis_tdata => m_axis_tdata_dwc,--: OUT STD_LOGIC_VECTOR(1151 DOWNTO 0);
-  			m_axis_tlast => open--: OUT STD_LOGIC
+  			m_axis_tlast => m_axis_tlast_dwc--: OUT STD_LOGIC
       );
 
 i_fifo : axis_data_fifo_0
@@ -156,11 +181,11 @@ i_fifo : axis_data_fifo_0
     s_axis_tvalid => m_axis_tvalid_dwc,
     s_axis_tready => m_axis_tready_dwc,
     s_axis_tdata => m_axis_tdata_dwc,
-    s_axis_tlast => '0',
+    s_axis_tlast => m_axis_tlast_dwc,
     m_axis_tvalid => m_axis_tvalid_fifo,
     m_axis_tready => m_axis_tready_fifo,
     m_axis_tdata => m_axis_tdata_fifo,
-    m_axis_tlast => open,
+    m_axis_tlast => m_axis_tlast_fifo,
     axis_data_count => open,
     axis_wr_data_count => open,
     axis_rd_data_count => open
@@ -172,9 +197,28 @@ i_fifo : axis_data_fifo_0
     Port map ( clk => clk,--: in STD_LOGIC;
            reset => reset,--: in STD_LOGIC;
            tvalid => m_axis_tvalid_fifo,--: in STD_LOGIC;
+           tlast => m_axis_tlast_fifo,
            tdata => m_axis_tdata_fifo,--: in STD_LOGIC_VECTOR (8*N_CH-1 downto 0);
            tready => m_axis_tready_fifo,--: out STD_LOGIC;
-           data_out => DATA,--: out STD_LOGIC_VECTOR(N_CH-1 downto 0);
-           frame => FRAME);--: out STD_LOGIC);
+           data_out => DATA_cutted,--: out STD_LOGIC_VECTOR(N_CH-1 downto 0);
+           frame => FRAME_cutted,
+           tlast_out => TLAST_cutted);--: out STD_LOGIC);
+           
+	i_axis_data_fifo_4combine : axis_data_fifo_4combine
+				 PORT MAP (
+					 s_axis_aresetn => aresetn,
+					 s_axis_aclk => clk,
+					 s_axis_tvalid => FRAME_cutted,
+					 s_axis_tready => open,
+					 s_axis_tdata => DATA_cutted,
+					 s_axis_tlast => TLAST_cutted,
+					 m_axis_tvalid => FRAME,
+					 m_axis_tready => '1',
+					 m_axis_tdata => DATA,
+					 m_axis_tlast => open,
+					 axis_data_count => open,
+					 axis_wr_data_count => open,
+					 axis_rd_data_count => open
+             );           
 
 end Behavioral;

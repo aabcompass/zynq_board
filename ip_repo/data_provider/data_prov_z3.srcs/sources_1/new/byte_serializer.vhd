@@ -36,15 +36,18 @@ entity byte_serializer is
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
            tvalid : in STD_LOGIC;
+           tlast : in STD_LOGIC;
            tdata : in STD_LOGIC_VECTOR (8*N_CH-1 downto 0);
            tready : out STD_LOGIC := '1';
            data_out : out STD_LOGIC_VECTOR(N_CH-1 downto 0);
-           frame : out STD_LOGIC);
+           frame : out STD_LOGIC;
+           tlast_out: out std_logic := '0');
 end byte_serializer;
 
 architecture Behavioral of byte_serializer is
 
 	signal load: std_logic := '0';
+	signal last_portion: std_logic := '0';
 
 begin
 
@@ -56,6 +59,8 @@ begin
 				when 0 => if(tvalid = '1') then
 											tready <= '0';
 											frame <= '1';
+											tlast_out <= '0';
+											last_portion <= tlast;
 											load <= '1';
 											state := state + 1;	
 									else
@@ -68,7 +73,9 @@ begin
 				when 4 => state := state + 1;						
 				when 5 => state := state + 1;						
 				when 6 => state := state + 1;						
-				when 7 => tready <= '1'; state := 0;					
+				when 7 => tlast_out <= last_portion; 
+									tready <= '1'; 
+									state := 0;					
 			end case;
 		end if;
 	end process;
