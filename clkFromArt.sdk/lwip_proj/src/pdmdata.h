@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.07.05"
+#define ZYNQ3_VER_STRING "v4.07.06"
 
 //========================================
 // Constants
@@ -327,7 +327,8 @@ typedef struct
 //#define TCP_CMD_INSTR_MODE_2PAR		"instrument mode %d %d" /*Start in specified mode or stop (0)*/
 #define TCP_CMD_INSTR_MODE_1PAR		"instrument mode %s" /*Start in specified mode or stop (0)*/
 #define TCP_CMD_INSTR_MODE_START	"instrument start" /*Start DMA with trigger*/
-#define TCP_CMD_INSTR_MODE_STOP		"instrument stop" /*Stop DMA with trigger*/
+#define TCP_CMD_INSTR_MODE_RESUME	"instrument resume" /*Stop DMA with trigger*/
+#define TCP_CMD_INSTR_MODE_STOP		"instrument stop" /*Stop data provider with trigger*/
 #define TCP_CMD_INSTR_SET_INTEGR	"instrument integration %d" /*set integration*/
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */

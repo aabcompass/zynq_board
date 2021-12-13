@@ -312,11 +312,21 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_RESUME, strlen(TCP_CMD_INSTR_MODE_RESUME)) == 0)
+	{
+		//FlowControlStart_D1(0);
+		//L1Stop();
+		//L3Stop();
+		StartDataProvider();
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_STOP, strlen(TCP_CMD_INSTR_MODE_STOP)) == 0)
 	{
-		FlowControlStart_D1(0);
-		L1Stop();
-		L3Stop();
+		//FlowControlStart_D1(0);
+		//L1Stop();
+		//L3Stop();
+		StopDataProvider();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
