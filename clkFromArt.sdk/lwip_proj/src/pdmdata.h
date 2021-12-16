@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.07.06"
+#define ZYNQ3_VER_STRING "v4.08.00"
 
 //========================================
 // Constants
@@ -380,6 +380,8 @@ typedef struct
 #define TCP_CMD_ARTIX_LOAD			"artix load %s"
 #define TCP_CMD_GET_ARTIX_FILENAME	"artix filename?"
 #define TCP_CMD_ARTIX_ALT_CLK		"artix altclk" /*for the MCU setup in Moscow*/
+#define TCP_CMD_ARTIX_IDELAY		"artix idelay %d %d" /*delay, n_PMT*/
+#define TCP_CMD_ARTIX_IDELAYLD		"artix idelayld %d %d %d" /*delay, n_PMT, artix*/
 #define TCP_CMD_SET_UNIX_TIME		"setunixtime %d"
 
 #pragma pack(pop) /* return to normal packing */

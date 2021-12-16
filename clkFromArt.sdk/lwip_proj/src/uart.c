@@ -223,7 +223,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'M')
 	{
-		ArtixLatch(1);
+		ArtixLatch(7);
 	}
 	else if(c == 'Y')
 	{

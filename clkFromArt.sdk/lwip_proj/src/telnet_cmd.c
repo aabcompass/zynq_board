@@ -595,6 +595,18 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		strcpy(ans_str, "Ok\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_ARTIX_IDELAY, &param, &param2) == 2)
+	{
+		SetIDelay_individual(param, param2%12, param2/12);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_ARTIX_IDELAYLD, &param, &param2, &param3) == 3)
+	{
+		SetIDelayLD(param, param2, param3);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_DBG_ARTTRDELAY, &int_param) == 1)
 	{
 		SetArtixTransmitDelay(int_param);

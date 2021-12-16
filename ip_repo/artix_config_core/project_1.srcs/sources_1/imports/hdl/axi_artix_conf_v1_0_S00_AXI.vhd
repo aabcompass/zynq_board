@@ -23,7 +23,7 @@ entity axi_artix_conf_v1_0_S00_AXI is
 		artx_initb_i: in std_logic;
 		artx_initb_t: out std_logic;
 		artx_done: in std_logic;
-		artx_latch: out std_logic;
+		artx_latch: out std_logic_vector(2 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -390,7 +390,7 @@ begin
     -- outs
 	artx_programb_o <= '1';--slv_reg0(0);
 	artx_initb_o <= '1';--slv_reg0(1);
-	artx_latch <= slv_reg0(2);
+	artx_latch <= slv_reg0(4 downto 2);
     -- tristates
 	artx_programb_t <= not '1';--slv_reg1(0);
 	artx_initb_t <= not '1';--slv_reg1(1);

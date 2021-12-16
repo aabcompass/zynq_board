@@ -11,7 +11,7 @@
 #include "common.h"
 #include "own_data_types.h"
 
-
+#define N_OF_ARTIXES	3
 
 XSpi spi;
 u8 * bitstream;
@@ -41,8 +41,13 @@ extern InstrumentState instrumentState;
 #define BIT_ART_CONF_TEST2		9
 #define BIT_ART_CONF_FRAMEON	11
 #define BIT_ART_CONF_ACQON		12
+#define BIT_ART_DATA_IDELAY		13 /* to 17, 5 bits */
+#define BIT_ART_DATA_LD			18 /* to 29*/
 
-u32 artix_conf_word = 0;
+//REG_OUTDATA
+#define BIT_ART_LATCH		2
+
+u32 artix_conf_word[N_OF_ARTIXES] = {0, 0, 0};
 
 char artix_file_name[20];
 
@@ -92,81 +97,130 @@ u32 GetArtixLoadState()
 void ArtixLatch(u32 param)
 {
 	if(param)
-		*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = 0xFFFFFFFF;//param*(1<<BIT_DONE);
+		*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = (param<<BIT_ART_LATCH);
 	else
 		*(u32*)(XPAR_AXI_ARTIX_CONF_V1_0_0_BASEADDR + 4*REG_OUTDATA) = 0;
 }
 
-void LoadArtix_u32(u32 value)
+
+void LoadAnArtix_u32(u32 value, u32 artix_num) //artix_num=0|1|2
 {
-	xil_printf("Loading 0x%08X paralelly to the all cross boards\n\r", value);
+	xil_printf("Loading 0x%08X to the cross boards %d\n\r", value, artix_num);
 	u32 value_swapped = SWAP_UINT32(value);
 
 	SetBitstreamPtr(&value_swapped, 4);
 	init_loadbit_spi();
 	upload_bit();
-	ArtixLatch(1);
+	ArtixLatch(1<<artix_num);
 	ArtixLatch(0);
 
 	print("Value has been sent\n\r");
 }
 
+void LoadAllArtixes_u32(u32 value)
+{
+	xil_printf("Loading 0x%08X paralelly to all cross boards\n\r", value);
+	u32 value_swapped = SWAP_UINT32(value);
+
+	SetBitstreamPtr(&value_swapped, 4);
+	init_loadbit_spi();
+	upload_bit();
+	ArtixLatch(7);
+	ArtixLatch(0);
+
+	print("Values have been sent\n\r");
+}
 
 void SetArtixTestMode(u32 mode)
 {
-	if(mode == 1)
-		artix_conf_word |= (1<<BIT_ART_CONF_TEST);
-	else
-		artix_conf_word &= ~(1<<BIT_ART_CONF_TEST);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		if(mode == 1)
+			artix_conf_word[i] |= (1<<BIT_ART_CONF_TEST);
+		else
+			artix_conf_word[i] &= ~(1<<BIT_ART_CONF_TEST);
 
-	LoadArtix_u32(artix_conf_word);
+		LoadAnArtix_u32(artix_conf_word[i], i);
+	}
 }
 
 void SetArtixTestMode2(u32 mode)
 {
-	if(mode == 1)
-		artix_conf_word |= (1<<BIT_ART_CONF_TEST2);
-	else
-		artix_conf_word &= ~(1<<BIT_ART_CONF_TEST2);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		if(mode == 1)
+			artix_conf_word[i] |= (1<<BIT_ART_CONF_TEST2);
+		else
+			artix_conf_word[i] &= ~(1<<BIT_ART_CONF_TEST2);
 
-	LoadArtix_u32(artix_conf_word);
+		LoadAnArtix_u32(artix_conf_word[i], i);
+	}
 }
 
 
 void SetArtixTransmitDelay(u32 delay) // 0...15
 {
-	artix_conf_word &= ~(0xF<<BIT_ART_CONF_TDELAY);
-	artix_conf_word |= (delay<<BIT_ART_CONF_TDELAY);
-	LoadArtix_u32(artix_conf_word);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		artix_conf_word[i] &= ~(0xF<<BIT_ART_CONF_TDELAY);
+		artix_conf_word[i] |= (delay<<BIT_ART_CONF_TDELAY);
+		LoadAnArtix_u32(artix_conf_word[i], i);
+	}
 }
 
 void SetArtixFracDelay(u32 delay) // 0...15
 {
-	artix_conf_word &= ~(0xF<<BIT_ART_CONF_FRACDELAY);
-	artix_conf_word |= (delay<<BIT_ART_CONF_FRACDELAY);
-	LoadArtix_u32(artix_conf_word);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		artix_conf_word[i] &= ~(0xF<<BIT_ART_CONF_FRACDELAY);
+		artix_conf_word[i] |= (delay<<BIT_ART_CONF_FRACDELAY);
+		LoadAnArtix_u32(artix_conf_word[i], i);
+	}
 }
 
 void SetArtixFrameOn(u32 param) // 0|1
 {
-	if(param == 1)
-		artix_conf_word |= (1<<BIT_ART_CONF_FRAMEON);
-	else
-		artix_conf_word &= ~(1<<BIT_ART_CONF_FRAMEON);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		if(param == 1)
+			artix_conf_word[i] |= (1<<BIT_ART_CONF_FRAMEON);
+		else
+			artix_conf_word[i] &= ~(1<<BIT_ART_CONF_FRAMEON);
+	}
 
-	LoadArtix_u32(artix_conf_word);
+	LoadAllArtixes_u32(artix_conf_word[0]);
 }
 
 void SetArtixAcqOn()
 {
-	artix_conf_word |= (1<<BIT_ART_CONF_ACQON);
-	LoadArtix_u32(artix_conf_word);
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		artix_conf_word[i] |= (1<<BIT_ART_CONF_ACQON);
+	}
+	LoadAllArtixes_u32(artix_conf_word[0]);
 }
 
-void SetArtix0101()
+void SetIDelayLD(u32 idelay, u32 ld, u32 art)
 {
-	LoadArtix_u32(0x12345678);
+	artix_conf_word[art] &= ~(((1<<17)-1)<<BIT_ART_DATA_IDELAY);
+	artix_conf_word[art] |= (idelay<<BIT_ART_DATA_IDELAY) | (ld<<BIT_ART_DATA_LD);
+
+	//LoadAllArtixes_u32(artix_conf_word[0]);
+	LoadAnArtix_u32(artix_conf_word[art], art);
 }
+
+void SetIDelay_individual(u32 idelay, u32 PMT_in_artix, u32 n_artix)
+{
+	artix_conf_word[n_artix] &= ~(((1<<17)-1)<<BIT_ART_DATA_IDELAY);
+	artix_conf_word[n_artix] |= (idelay<<BIT_ART_DATA_IDELAY) | (1<<(PMT_in_artix+BIT_ART_DATA_LD));
+	LoadAnArtix_u32(artix_conf_word[n_artix], n_artix);
+}
+
+
+//void SetArtix0101()
+//{
+//	LoadArtix_u32(0x12345678);
+//}
 
 
 int LoadArtix(char * filename)

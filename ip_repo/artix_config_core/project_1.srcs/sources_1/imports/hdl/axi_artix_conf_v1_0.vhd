@@ -23,7 +23,7 @@ entity axi_artix_conf_v1_0 is
     artx_initb_i: in std_logic;
     artx_initb_t: out std_logic;
     artx_done: in std_logic;
-    artx_latch: out std_logic;
+    artx_latch: out std_logic_vector(2 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -70,7 +70,7 @@ architecture arch_imp of axi_artix_conf_v1_0 is
         artx_initb_i: in std_logic;
         artx_initb_t: out std_logic;
         artx_done: in std_logic;
-        artx_latch: out std_logic;
+        artx_latch: out std_logic_vector(2 downto 0);
 
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;

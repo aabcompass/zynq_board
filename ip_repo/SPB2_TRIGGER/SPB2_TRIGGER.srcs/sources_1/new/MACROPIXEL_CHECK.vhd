@@ -348,6 +348,12 @@ COMPONENT multadd_10a12b24c
   );
 END COMPONENT;
 
+	attribute keep : string; 
+	attribute keep of mem_in: signal is "true";  
+	attribute keep of mem_addr: signal is "true";  
+	attribute keep of mem_we: signal is "true";  
+
+
 begin
 
 STHR_MATRIX : STHR_MEMORY
