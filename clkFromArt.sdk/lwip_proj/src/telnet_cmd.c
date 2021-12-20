@@ -597,7 +597,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(sscanf(p->payload, TCP_CMD_ARTIX_IDELAY, &param, &param2) == 2)
 	{
-		SetIDelay_individual(param, param2%12, param2/12);
+		SetIDelay_individual(param, param2%12, 2-(param2/12));
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -662,6 +662,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Ok\n\r");
 		else
 			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_PERIODIC_PER, &param) == 1)
+	{
+		SetPeriodOfPeriodicTrigger(param);
+		strcpy(ans_str, "Ok\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
 	else if(sscanf(p->payload, TCP_CMD_L1_SETMODE, ans_str) == 1)

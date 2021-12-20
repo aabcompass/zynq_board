@@ -98,6 +98,7 @@ u32 GetUnixTime();
 u32 L1_getNAPM();
 u32 L1_getGTUnumber();
 u32 L1_getSatisfied();
+void SetPeriodOfPeriodicTrigger(u32 clks);
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

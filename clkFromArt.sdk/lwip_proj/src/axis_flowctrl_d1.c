@@ -98,7 +98,7 @@ void FlowControlInit_D1()
 
 	//*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = BIT_FC_IS_STARTED;// | BIT_FC_EN_PERIODIC_TRIG; was in Mini.
 
-	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_TRIGGER_RELAX_TIME*4) = 0;//500/*clkper gtu*/*128;
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_TRIGGER_RELAX_TIME*4) = 500*512;;//500/*clkper gtu*/*128;
 
 
 	Set_N1(MAX_PACKETS_L1);
@@ -108,6 +108,12 @@ void FlowControlInit_D1()
 	// reset time to zero
 	SetTime(0);
 }
+
+void SetPeriodOfPeriodicTrigger(u32 clks)
+{
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_PERIODIC_TRIG_PERIOD*4) = clks;//
+}
+
 
 void FlowControlStart_D1(u32 start)
 {
