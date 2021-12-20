@@ -24,6 +24,8 @@ enum {FILENAMES_LAB, FILENAMES_FLIGHT};
 
 #define GENERAL_LIVE_TIMEOUT 30000
 
+#define CLK_FREQ	200 /*MHz*/
+
 void ScurveAdderReInit();
 void SetIntegration(u32 param);
 u32 GetIntegration();

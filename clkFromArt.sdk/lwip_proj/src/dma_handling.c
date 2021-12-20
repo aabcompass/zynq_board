@@ -133,10 +133,12 @@ void DoFileProcessing(u32 param)
 
 void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 {
-	u32 n_glob_cycles = Get_n_glob_cycles();
+	u32 n_glob_cycles = Get_n_glob_cycles(), tt;
 	InvalidateRange(DATA_TYPE_L1);
+	tt = GetTrigType_L1();
 	if(is_file_processing == DO_FILE_PROCESSING)
-		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), GetTrigType_L1(), n_glob_cycles);
+		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), tt, n_glob_cycles);
+	xil_printf("tt=0x%08x\n\r", tt);
 	if(is_l1_started == 1) {
 		start_dma_l1();
 	}

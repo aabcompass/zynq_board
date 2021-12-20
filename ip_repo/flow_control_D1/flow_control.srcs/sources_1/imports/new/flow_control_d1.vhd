@@ -95,13 +95,13 @@ architecture Behavioral of flow_control_d1 is
 	attribute KEEP_HIERARCHY of Behavioral: architecture is "TRUE";
 
 
-	signal sm_state, sm_state_sink: std_logic_vector(3 downto 0) := "0000";
+	signal sm_state, sm_state_sink, sm_state_latch: std_logic_vector(3 downto 0) := "0000";
 
 	signal is_started: std_logic := '0';
 	signal en_int_trig, en_algo_trig, periodic_trig_en, en_ext_trig, en_ta_trig, ext_trig_latch: std_logic := '0';
 	signal release, release_always: std_logic := '0';
 	signal ext_trig: std_logic := '0';
-	signal trig, trig_d1, trig_d2, trig_front: std_logic := '0';
+	signal trig, trig_comb: std_logic := '0';
 	signal trig_immediate, trig_immediate_latch: std_logic := '0';
 	signal periodic_trig, periodic_trig_latch: std_logic := '0'; 
 	signal ta_trig_param_latch: std_logic_vector(31 downto 0) := (others => '0');
@@ -344,7 +344,7 @@ architecture Behavioral of flow_control_d1 is
 	signal n_glob_cycles_i: std_logic_vector(31 downto 0) := (others => '0');
 	signal glob_cycles_gtu_cnt: std_logic_vector(27 downto 0) := X"0000001";
 	signal trig_cnt_glob_i: std_logic_vector(15 downto 0) := X"0000";
-
+	
 
 begin
 
@@ -402,10 +402,11 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 
 	status(3 downto 0) <= sm_state;
 	status(7 downto 4) <= sm_state_sink;
-	status(8) <= pass;
+	status(11 downto 8) <= sm_state_latch;
 	status(16) <= trig_latch;
 	status(17) <= trig_ext_in_sync;
 	status(18) <= dma_error; -- asserted if fifo overflowed. Cleared by release signal
+	status(19) <= pass;
 	
 	mps_sig <= mps_tvalid and mps_tready and mps_tlast;
 	
@@ -477,28 +478,54 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 	unix_time <= unix_time_i;
 	
-	periodic_trig_gen: process(s_axis_aclk) 
+--	periodic_trig_gen: process(s_axis_aclk) 
+--	begin
+--		if(rising_edge(s_axis_aclk)) then
+--			if(clr_all = '1' or clr_trig_service = '1') then
+--				periodic_trig_gen_cnt <= (others => '0');
+--				periodic_trig_gen_cnt2 <= (others => '0');
+--			else
+--				if(periodic_trig_gen_cnt2 < n_gtus_per_cycle) then
+--					if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
+--						if(periodic_trig_gen_cnt >= periodic_trig_gtu_period-1) then
+--							periodic_trig <= periodic_trig_en;
+--							periodic_trig_gen_cnt <= (others => '0');
+--						else
+--							periodic_trig <= '0';
+--							periodic_trig_gen_cnt <= periodic_trig_gen_cnt + 1;
+--						end if;
+--					else
+--						periodic_trig <= '0';
+--					end if;
+--				else
+--					periodic_trig <= '0';
+--				end if;
+--			end if;
+--		end if;
+--	end process;
+
+	periodic_trig_gen_v2: process(s_axis_aclk) 
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clr_all = '1' or clr_trig_service = '1') then
 				periodic_trig_gen_cnt <= (others => '0');
 				periodic_trig_gen_cnt2 <= (others => '0');
 			else
-				if(periodic_trig_gen_cnt2 < n_gtus_per_cycle) then
-					if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
-						if(periodic_trig_gen_cnt >= periodic_trig_gtu_period-1) then
+				--if(periodic_trig_gen_cnt2 < n_gtus_per_cycle) then
+					--if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
+						if(periodic_trig_gen_cnt >= periodic_trig_gtu_period) then
 							periodic_trig <= periodic_trig_en;
 							periodic_trig_gen_cnt <= (others => '0');
 						else
 							periodic_trig <= '0';
 							periodic_trig_gen_cnt <= periodic_trig_gen_cnt + 1;
 						end if;
-					else
-						periodic_trig <= '0';
-					end if;
-				else
-					periodic_trig <= '0';
-				end if;
+					--else
+					--	periodic_trig <= '0';
+					--end if;
+				--else
+				--	periodic_trig <= '0';
+				--end if;
 			end if;
 		end if;
 	end process;
@@ -535,31 +562,85 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	ext_trig <= (trig_ext_in_sync and en_ext_trig);
 	
 
-	trig <= self_trig or int_trig or periodic_trig or trig_force or trig_button_debounced or ext_trig or trig_immediate;
 	
+--	latency_process: process(s_axis_aclk)
+--	begin
+--		if(rising_edge(s_axis_aclk)) then
+--			if(is_started = '1') then
+--				trig_d1 <= trig;
+--				trig_d2 <= trig_d1;
+--				trig_front <= trig_d1 and (not trig_d2);
+--				if(trig = '1') then
+--					periodic_trig_latch <= periodic_trig;
+--					self_trig_latch <= self_trig;
+--					ext_trig_latch <= ext_trig;
+--					trig_immediate_latch <= trig_immediate;
+--					ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
+--				end if;
+--			else
+--				trig_front <= '0';
+--				periodic_trig_latch <= '0';
+--				ext_trig_latch <= '0';
+--				trig_immediate_latch <= '0';
+--				ta_trig_param_latch <= (others => '0');
+--			end if;
+--		end if;
+--	end process;
+
+	trig_comb <= self_trig or int_trig or periodic_trig or trig_force or trig_button_debounced or ext_trig or trig_immediate;
+
 	latency_process: process(s_axis_aclk)
+		variable state : integer range 0 to 3 := 0;
 	begin
 		if(rising_edge(s_axis_aclk)) then
-			if(is_started = '1') then
-				trig_d1 <= trig;
-				trig_d2 <= trig_d1;
-				trig_front <= trig_d1 and (not trig_d2);
-				if(trig = '1') then
-					periodic_trig_latch <= periodic_trig;
-					self_trig_latch <= self_trig;
-					ext_trig_latch <= ext_trig;
-					trig_immediate_latch <= trig_immediate;
-					ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
-				end if;
-			else
-				trig_front <= '0';
+			if(is_started = '0' or clr_all = '1' or clr_trig_service = '1') then
 				periodic_trig_latch <= '0';
 				ext_trig_latch <= '0';
 				trig_immediate_latch <= '0';
 				ta_trig_param_latch <= (others => '0');
+				trig <= '0';
+				state := 0;
+			else
+				sm_state_latch <= conv_std_logic_vector(state, 4);
+				case state is
+					when 0 => 
+						if(trig_comb = '1') then
+							periodic_trig_latch <= periodic_trig;
+							self_trig_latch <= self_trig;
+							ext_trig_latch <= ext_trig;
+							trig_immediate_latch <= trig_immediate;
+							ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
+							state := state + 1;							
+						end if;	
+					when 1 => 
+						if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
+							trig <= '1';
+							state := state + 1;	
+						end if;
+					when 2 =>
+							trig <= '0';
+							state := state + 1;
+							if(trig_events_log_en = '0') then
+								trig_all_cnt_i <= (others => '0');
+							else
+								trig_all_cnt_i <= trig_all_cnt_i + 1;
+							end if;							 	
+					when 3 =>
+						if(release = '1' or release_always = '1') then
+							state := 0;
+						end if;	
+				end case;
 			end if;
 		end if;
 	end process;
+	
+		trig_all_cnt_process:  process(s_axis_aclk) 
+	begin
+		if(rising_edge(s_axis_aclk)) then
+		end if;
+	end process; 
+	
+	trig_all_cnt <= trig_all_cnt_i;
 	
 	s_axis_trg_tdata_d1 <= s_axis_trg_tdata when rising_edge(s_axis_aclk);
 	s_axis_trg_tlast_d1 <= s_axis_trg_tlast when rising_edge(s_axis_aclk);
@@ -872,50 +953,39 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 -- Trigger GTU event logging to M-AXIS --
 -----------------------------------------
 
-	inject_16_events_process: process(s_axis_aclk)
-	begin
-		if(rising_edge(s_axis_aclk)) then
-			if(cmd_inject_16_events = '1') then 
-				inject_16_events_cnt <= "0000"; 
-				inject_16_events <= '1'; 
-			elsif(inject_16_events_cnt = "1111") then 
-				inject_16_events <= '0'; 
-			else
-				inject_16_events_cnt <= inject_16_events_cnt + 1;
-			end if; 
-		end if;
-	end process;
+--	inject_16_events_process: process(s_axis_aclk)
+--	begin
+--		if(rising_edge(s_axis_aclk)) then
+--			if(cmd_inject_16_events = '1') then 
+--				inject_16_events_cnt <= "0000"; 
+--				inject_16_events <= '1'; 
+--			elsif(inject_16_events_cnt = "1111") then 
+--				inject_16_events <= '0'; 
+--			else
+--				inject_16_events_cnt <= inject_16_events_cnt + 1;
+--			end if; 
+--		end if;
+--	end process;
 
-	trig_event <= (trig_front and trig_events_log_en) or inject_16_events;
-	s_axis_events_tdata <= gtu_sig_counter_i & X"0001000" & trig_type_i(3 downto 0);
+--	trig_event <= (trig_front and trig_events_log_en) or inject_16_events;
+--	s_axis_events_tdata <= gtu_sig_counter_i & X"0001000" & trig_type_i(3 downto 0);
 
-	i_fifo4gtu_events : fifo4gtu_events
-		PORT MAP (
-			s_axis_aresetn => s_axis_aresetn,
-			s_axis_aclk => s_axis_aclk,
-			s_axis_tvalid => trig_event,
-			s_axis_tready => open,
-			s_axis_tdata => s_axis_events_tdata,--gtu_sig_counter_i,
-			m_axis_tvalid => m_axis_events_tvalid,
-			m_axis_tready => m_axis_events_tready,
-			m_axis_tdata => m_axis_events_tdata,
-			axis_data_count => open,
-			axis_wr_data_count => open,
-			axis_rd_data_count => open
-		);
+--	i_fifo4gtu_events : fifo4gtu_events
+--		PORT MAP (
+--			s_axis_aresetn => s_axis_aresetn,
+--			s_axis_aclk => s_axis_aclk,
+--			s_axis_tvalid => trig_event,
+--			s_axis_tready => open,
+--			s_axis_tdata => s_axis_events_tdata,--gtu_sig_counter_i,
+--			m_axis_tvalid => m_axis_events_tvalid,
+--			m_axis_tready => m_axis_events_tready,
+--			m_axis_tdata => m_axis_events_tdata,
+--			axis_data_count => open,
+--			axis_wr_data_count => open,
+--			axis_rd_data_count => open
+--		);
 
-	trig_all_cnt_process:  process(s_axis_aclk) 
-	begin
-		if(rising_edge(s_axis_aclk)) then
-			if(trig_events_log_en = '0') then
-				trig_all_cnt_i <= (others => '0');
-			elsif(trig_front = '1') then
-				trig_all_cnt_i <= trig_all_cnt_i + 1;
-			end if;
-		end if;
-	end process; 
-	
-	trig_all_cnt <= trig_all_cnt_i;
+
 
 	n_glob_cycles_proc: process(s_axis_aclk) 
 		begin
