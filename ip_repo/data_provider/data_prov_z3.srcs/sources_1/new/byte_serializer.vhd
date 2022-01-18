@@ -47,6 +47,7 @@ end byte_serializer;
 architecture Behavioral of byte_serializer is
 
 	signal load: std_logic := '0';
+	signal frame_d0: std_logic := '0';
 	signal last_portion: std_logic := '0';
 
 begin
@@ -58,13 +59,13 @@ begin
 			case state is
 				when 0 => if(tvalid = '1') then
 											tready <= '0';
-											frame <= '1';
+											frame_d0 <= '1';
 											tlast_out <= '0';
 											last_portion <= tlast;
 											load <= '1';
 											state := state + 1;	
 									else
-											frame <= '0';		
+											frame_d0 <= '0';		
 											load <= '0';
 									end if;
 				when 1 => load <= '0'; state := state + 1;						
@@ -79,6 +80,8 @@ begin
 			end case;
 		end if;
 	end process;
+	
+	frame <= frame_d0 when rising_edge(clk);
 	
 	channel_gen: for i in 0 to N_CH-1 generate
 	

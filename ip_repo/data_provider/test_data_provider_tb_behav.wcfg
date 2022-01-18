@@ -3,83 +3,341 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="test_data_provider_tb_behav.wdb" id="1">
+      <db_ref path="data_provider_4trig_tb_behav.wdb" id="1">
          <top_modules>
+            <top_module name="data_provider_4trig_tb" />
             <top_module name="glbl" />
-            <top_module name="test_data_provider_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1144800000000fs"></ZoomStartTime>
-      <ZoomEndTime time="1198800000001fs"></ZoomEndTime>
-      <Cursor1Time time="1176435000000fs"></Cursor1Time>
+      <ZoomStartTime time="4631666667fs"></ZoomStartTime>
+      <ZoomEndTime time="34531666668fs"></ZoomEndTime>
+      <Cursor1Time time="9615000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="223"></NameColumnWidth>
       <ValueColumnWidth column_width="170"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
-   <wvobject type="logic" fp_name="/test_data_provider_tb/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/test_data_provider_tb/clk_counter">
+   <WVObjectSize size="71" />
+   <wvobject type="other" fp_name="/data_provider_4trig_tb/clk_counter">
       <obj_property name="ElementShortName">clk_counter</obj_property>
       <obj_property name="ObjectShortName">clk_counter</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/test_data_provider_tb/cnt_gen">
-      <obj_property name="ElementShortName">cnt_gen</obj_property>
-      <obj_property name="ObjectShortName">cnt_gen</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/resetn">
-      <obj_property name="ElementShortName">resetn</obj_property>
-      <obj_property name="ObjectShortName">resetn</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/started">
-      <obj_property name="ElementShortName">started</obj_property>
-      <obj_property name="ObjectShortName">started</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/valid_d1">
+      <obj_property name="ElementShortName">valid_d1</obj_property>
+      <obj_property name="ObjectShortName">valid_d1</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/s_axis_tvalid">
-      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/last">
+      <obj_property name="ElementShortName">last</obj_property>
+      <obj_property name="ObjectShortName">last</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/s_axis_tlast">
-      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/tdata">
+      <obj_property name="ElementShortName">tdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata[127:0]</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/test_data_provider_tb/PERIOD">
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/tuser">
+      <obj_property name="ElementShortName">tuser[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tuser[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/data_provider_4trig_tb/PERIOD">
       <obj_property name="ElementShortName">PERIOD</obj_property>
       <obj_property name="ObjectShortName">PERIOD</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/test_data_provider_tb/cnt_gen">
-      <obj_property name="ElementShortName">cnt_gen</obj_property>
-      <obj_property name="ObjectShortName">cnt_gen</obj_property>
+   <wvobject fp_name="divider41" type="divider">
+      <obj_property name="label">reform</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="divider10" type="divider">
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/dut/m_axis_tvalid">
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/s_axis_tvalid">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/s_axis_tdata">
+      <obj_property name="ElementShortName">s_axis_tdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/s_axis_tuser">
+      <obj_property name="ElementShortName">s_axis_tuser[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tuser[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/s_axis_tlast">
+      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/pmt_pare_num">
+      <obj_property name="ElementShortName">pmt_pare_num[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pmt_pare_num[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider99" type="divider">
+      <obj_property name="label">fifo4reform</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_aresetn">
+      <obj_property name="ElementShortName">s_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_aclk">
+      <obj_property name="ElementShortName">s_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_tvalid">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_tready">
+      <obj_property name="ElementShortName">s_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_tdata">
+      <obj_property name="ElementShortName">s_axis_tdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/s_axis_tlast">
+      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/m_axis_tvalid">
       <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
       <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/dut/m_axis_tlast">
-      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/m_axis_tready">
+      <obj_property name="ElementShortName">m_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test_data_provider_tb/dut/m_axis_tdata">
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/m_axis_tdata">
       <obj_property name="ElementShortName">m_axis_tdata[127:0]</obj_property>
       <obj_property name="ObjectShortName">m_axis_tdata[127:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/started">
-      <obj_property name="ElementShortName">started</obj_property>
-      <obj_property name="ObjectShortName">started</obj_property>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/m_axis_tlast">
+      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test_data_provider_tb/dut/status">
-      <obj_property name="ElementShortName">status[7:0]</obj_property>
-      <obj_property name="ObjectShortName">status[7:0]</obj_property>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_fifo4reform4trig/axis_data_count">
+      <obj_property name="ElementShortName">axis_data_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">axis_data_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test_data_provider_tb/dut/aresetn">
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/pass">
+      <obj_property name="ElementShortName">pass</obj_property>
+      <obj_property name="ObjectShortName">pass</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/m_axis_tvalid_dwc">
+      <obj_property name="ElementShortName">m_axis_tvalid_dwc[17:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid_dwc[17:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/m_axis_tlast_dwc">
+      <obj_property name="ElementShortName">m_axis_tlast_dwc[17:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast_dwc[17:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="divider99" type="divider">
+      <obj_property name="label">dwc</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/aresetn">
       <obj_property name="ElementShortName">aresetn</obj_property>
       <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/s_axis_tvalid">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/s_axis_tready">
+      <obj_property name="ElementShortName">s_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/s_axis_tdata">
+      <obj_property name="ElementShortName">s_axis_tdata[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/s_axis_tlast">
+      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/m_axis_tvalid">
+      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/m_axis_tready">
+      <obj_property name="ElementShortName">m_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/m_axis_tdata">
+      <obj_property name="ElementShortName">m_axis_tdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/i_dwc_b_reform4trig/m_axis_tlast">
+      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider99" type="divider">
+      <obj_property name="label">out</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/m_axis_tvalid">
+      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/m_axis_tdata">
+      <obj_property name="ElementShortName">m_axis_tdata[1151:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata[1151:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_reformr_4trig/m_axis_tlast">
+      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider189" type="divider">
+      <obj_property name="label">byte_serializer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/load">
+      <obj_property name="ElementShortName">load</obj_property>
+      <obj_property name="ObjectShortName">load</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tvalid">
+      <obj_property name="ElementShortName">tvalid</obj_property>
+      <obj_property name="ObjectShortName">tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tlast">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject type="vbus" fp_name="vbus1678">
+      <obj_property name="label">data_ser_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1151]">
+         <obj_property name="ElementShortName">[1151]</obj_property>
+         <obj_property name="ObjectShortName">[1151]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1150]">
+         <obj_property name="ElementShortName">[1150]</obj_property>
+         <obj_property name="ObjectShortName">[1150]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1149]">
+         <obj_property name="ElementShortName">[1149]</obj_property>
+         <obj_property name="ObjectShortName">[1149]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1148]">
+         <obj_property name="ElementShortName">[1148]</obj_property>
+         <obj_property name="ObjectShortName">[1148]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1147]">
+         <obj_property name="ElementShortName">[1147]</obj_property>
+         <obj_property name="ObjectShortName">[1147]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1146]">
+         <obj_property name="ElementShortName">[1146]</obj_property>
+         <obj_property name="ObjectShortName">[1146]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1145]">
+         <obj_property name="ElementShortName">[1145]</obj_property>
+         <obj_property name="ObjectShortName">[1145]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata[1144]">
+         <obj_property name="ElementShortName">[1144]</obj_property>
+         <obj_property name="ObjectShortName">[1144]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/data_out[143]">
+      <obj_property name="ElementShortName">[143]</obj_property>
+      <obj_property name="ObjectShortName">[143]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tready">
+      <obj_property name="ElementShortName">tready</obj_property>
+      <obj_property name="ObjectShortName">tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/frame">
+      <obj_property name="ElementShortName">frame</obj_property>
+      <obj_property name="ObjectShortName">frame</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tlast_out">
+      <obj_property name="ElementShortName">tlast_out</obj_property>
+      <obj_property name="ObjectShortName">tlast_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider189" type="divider">
+      <obj_property name="label">serializer_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tvalid">
+      <obj_property name="ElementShortName">tvalid</obj_property>
+      <obj_property name="ObjectShortName">tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tlast">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tdata">
+      <obj_property name="ElementShortName">tdata[1151:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata[1151:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tready">
+      <obj_property name="ElementShortName">tready</obj_property>
+      <obj_property name="ObjectShortName">tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/data_out">
+      <obj_property name="ElementShortName">data_out[143:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[143:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/frame">
+      <obj_property name="ElementShortName">frame</obj_property>
+      <obj_property name="ObjectShortName">frame</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tlast_out">
+      <obj_property name="ElementShortName">tlast_out</obj_property>
+      <obj_property name="ObjectShortName">tlast_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider189" type="divider">
+      <obj_property name="label">FRAME</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/DATA">
+      <obj_property name="ElementShortName">DATA[143:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[143:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/FRAME">
+      <obj_property name="ElementShortName">FRAME</obj_property>
+      <obj_property name="ObjectShortName">FRAME</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/data_provider_4trig_tb/clk_counter">
+      <obj_property name="ElementShortName">clk_counter</obj_property>
+      <obj_property name="ObjectShortName">clk_counter</obj_property>
    </wvobject>
 </wave_config>

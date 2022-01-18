@@ -44,8 +44,7 @@ begin
 		clk <= '0';
 		wait for PERIOD/2;
 		clk <= '1';
-		wait for PERIOD/2;
-		 
+		wait for PERIOD/2; 
 	end process;
 	
 	dut_proc: process(clk)

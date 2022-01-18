@@ -44,7 +44,8 @@ end data_provider_4trig;
 
 architecture Behavioral of data_provider_4trig is
 
-
+	attribute KEEP_HIERARCHY : string;
+	attribute KEEP_HIERARCHY of Behavioral: architecture is "TRUE";
 
 COMPONENT axis_dwidth_converter_0
   PORT (
@@ -62,14 +63,16 @@ COMPONENT axis_dwidth_converter_0
   );
 END COMPONENT;
 
-COMPONENT byte_reformr_4trig is
+COMPONENT byte_reformr_4trig_v2 is
     Port ( 
 			aclk : IN STD_LOGIC;
 			aresetn : IN STD_LOGIC;
 			s_axis_tvalid : IN STD_LOGIC;
 			s_axis_tdata : IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+			s_axis_tuser : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 			s_axis_tlast : IN STD_LOGIC;
 			m_axis_tvalid : OUT STD_LOGIC;
+			m_axis_tready : in STD_LOGIC;
 			m_axis_tdata : OUT STD_LOGIC_VECTOR(1151 DOWNTO 0);
 			m_axis_tlast : OUT STD_LOGIC
     );
@@ -162,34 +165,41 @@ begin
 --  );
   
   
-  i_byte_reformr_4trig : byte_reformr_4trig 
+  i_byte_reformr_4trig : byte_reformr_4trig_v2 
       Port map( 
   			aclk => clk,--: IN STD_LOGIC;
   			aresetn => aresetn,--: IN STD_LOGIC;
   			s_axis_tvalid => s_axis_tvalid_pc,--: IN STD_LOGIC;
   			s_axis_tdata => s_axis_tdata,--: IN STD_LOGIC_VECTOR(127 DOWNTO 0);
+  			s_axis_tuser => s_axis_tuser,--: IN STD_LOGIC_VECTOR(127 DOWNTO 0);
   			s_axis_tlast => s_axis_tlast_pc,--: IN STD_LOGIC;
   			m_axis_tvalid => m_axis_tvalid_dwc,--: OUT STD_LOGIC;
+  			m_axis_tready => m_axis_tready_dwc,--: OUT STD_LOGIC;
   			m_axis_tdata => m_axis_tdata_dwc,--: OUT STD_LOGIC_VECTOR(1151 DOWNTO 0);
   			m_axis_tlast => m_axis_tlast_dwc--: OUT STD_LOGIC
       );
 
-i_fifo : axis_data_fifo_0
-  PORT MAP (
-    s_axis_aresetn => aresetn,
-    s_axis_aclk => clk,
-    s_axis_tvalid => m_axis_tvalid_dwc,
-    s_axis_tready => m_axis_tready_dwc,
-    s_axis_tdata => m_axis_tdata_dwc,
-    s_axis_tlast => m_axis_tlast_dwc,
-    m_axis_tvalid => m_axis_tvalid_fifo,
-    m_axis_tready => m_axis_tready_fifo,
-    m_axis_tdata => m_axis_tdata_fifo,
-    m_axis_tlast => m_axis_tlast_fifo,
-    axis_data_count => open,
-    axis_wr_data_count => open,
-    axis_rd_data_count => open
-  );
+--i_fifo : axis_data_fifo_0
+--  PORT MAP (
+--    s_axis_aresetn => aresetn,
+--    s_axis_aclk => clk,
+--    s_axis_tvalid => m_axis_tvalid_dwc,
+--    s_axis_tready => m_axis_tready_dwc,
+--    s_axis_tdata => m_axis_tdata_dwc,
+--    s_axis_tlast => m_axis_tlast_dwc,
+--    m_axis_tvalid => m_axis_tvalid_fifo,
+--    m_axis_tready => m_axis_tready_fifo,
+--    m_axis_tdata => m_axis_tdata_fifo,
+--    m_axis_tlast => m_axis_tlast_fifo,
+--    axis_data_count => open,
+--    axis_wr_data_count => open,
+--    axis_rd_data_count => open
+--  );
+
+	m_axis_tvalid_fifo <= m_axis_tvalid_dwc;
+	m_axis_tlast_fifo <= m_axis_tlast_dwc;
+	m_axis_tdata_fifo <= m_axis_tdata_dwc;
+	m_axis_tready_dwc <= m_axis_tready_fifo;
 
 	reset <= not aresetn;
 
@@ -204,21 +214,24 @@ i_fifo : axis_data_fifo_0
            frame => FRAME_cutted,
            tlast_out => TLAST_cutted);--: out STD_LOGIC);
            
-	i_axis_data_fifo_4combine : axis_data_fifo_4combine
-				 PORT MAP (
-					 s_axis_aresetn => aresetn,
-					 s_axis_aclk => clk,
-					 s_axis_tvalid => FRAME_cutted,
-					 s_axis_tready => open,
-					 s_axis_tdata => DATA_cutted,
-					 s_axis_tlast => TLAST_cutted,
-					 m_axis_tvalid => FRAME,
-					 m_axis_tready => '1',
-					 m_axis_tdata => DATA,
-					 m_axis_tlast => open,
-					 axis_data_count => open,
-					 axis_wr_data_count => open,
-					 axis_rd_data_count => open
-             );           
+--	i_axis_data_fifo_4combine : axis_data_fifo_4combine
+--				 PORT MAP (
+--					 s_axis_aresetn => aresetn,
+--					 s_axis_aclk => clk,
+--					 s_axis_tvalid => FRAME_cutted,
+--					 s_axis_tready => open,
+--					 s_axis_tdata => DATA_cutted,
+--					 s_axis_tlast => TLAST_cutted,
+--					 m_axis_tvalid => FRAME,
+--					 m_axis_tready => '1',
+--					 m_axis_tdata => DATA,
+--					 m_axis_tlast => open,
+--					 axis_data_count => open,
+--					 axis_wr_data_count => open,
+--					 axis_rd_data_count => open
+--             );         
+
+		FRAME <= FRAME_cutted;
+		DATA <= DATA_cutted;
 
 end Behavioral;

@@ -22,6 +22,9 @@ entity test_data_provider is
 end test_data_provider;
 
 architecture Behavioral of test_data_provider is
+
+	attribute KEEP_HIERARCHY : string;
+	attribute KEEP_HIERARCHY of Behavioral: architecture is "TRUE";
 	
 	signal patt : std_logic_vector(7 downto 0) := (others => '0');
 	signal trans_cnt : std_logic_vector(31 downto 0) := (others => '0');
