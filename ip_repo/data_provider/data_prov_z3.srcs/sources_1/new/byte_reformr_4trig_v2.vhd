@@ -292,18 +292,23 @@ begin
 			variable state : integer range 0 to 1 := 0;
 		begin
 			if(rising_edge(aclk)) then
-				case state is
-					when 0 =>
-						if(m_axis_tvalid_dwc_and = '1') then
-							pass <= '1';
-							state := state + 1;
-						end if;
-					when 1 =>
-						if(m_axis_tlast_dwc_or = '1' and m_axis_tready = '1' and m_axis_tvalid_dwc_or = '1') then
-							pass <= '0';
-							state := 0;
-						end if;
-				end case;
+				if(aresetn = '0') then
+					state := 0;
+					pass <= '0';
+				else
+					case state is
+						when 0 =>
+							if(m_axis_tvalid_dwc_and = '1') then
+								pass <= '1';
+								state := state + 1;
+							end if;
+						when 1 =>
+							if(m_axis_tlast_dwc_or = '1' and m_axis_tready = '1' and m_axis_tvalid_dwc_or = '1') then
+								pass <= '0';
+								state := 0;
+							end if;
+					end case;
+				end if;
 			end if;
 		end process;
 	

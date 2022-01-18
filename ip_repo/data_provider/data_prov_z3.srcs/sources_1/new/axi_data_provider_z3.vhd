@@ -265,6 +265,8 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal pass: std_logic := '0';
 	signal start_sig: std_logic := '0';
 	signal prog_reset: std_logic := '0';
+	signal reset_dataprov4trig: std_logic := '0';
+	signal data_provider_4trig_aresetn: std_logic := '0';
 	signal infinite: std_logic := '0';
 	
 	signal num_of_frames, cnt: std_logic_vector(31 downto 0) := (0 => '1', others => '0');
@@ -1357,6 +1359,7 @@ begin
 	en_output <= slv_reg0(3);
 	reset_data_conv <= slv_reg1(0);
 	reset_scurve_adder <= not slv_reg1(1);
+	reset_dataprov4trig <= not slv_reg1(2);
 	num_of_frames <= slv_reg3;
 	
 	test_data_provider_started <= slv_reg4(0);
@@ -1491,10 +1494,12 @@ begin
 	
 	zero_pmts <= slv_reg12(11 downto 0) & slv_reg11(27 downto 16) & slv_reg11(11 downto 0);
 
+	data_provider_4trig_aresetn <= S_AXI_ARESETN and reset_dataprov4trig;
+
 	s_axis_tvalid_4trig <= s_axis_tvalid and pass;
 	i_data_provider_4trig : data_provider_4trig 
 	    Port map( clk => S_AXI_ACLK,--: in STD_LOGIC;
-	           aresetn => S_AXI_ARESETN,--: in STD_LOGIC;
+	           aresetn => data_provider_4trig_aresetn,--S_AXI_ARESETN,--: in STD_LOGIC;
 	           s_axis_tdata => s_axis_tdata,--: in STD_LOGIC_VECTOR (127 downto 0);
 	           s_axis_tvalid => s_axis_tvalid_4trig,--: in STD_LOGIC;
 	           s_axis_tlast => s_axis_tlast,--: in STD_LOGIC;

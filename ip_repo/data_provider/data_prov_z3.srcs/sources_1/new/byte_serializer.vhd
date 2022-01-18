@@ -47,37 +47,58 @@ end byte_serializer;
 architecture Behavioral of byte_serializer is
 
 	signal load: std_logic := '0';
+	signal tready_i: std_logic := '0';
 	signal frame_d0: std_logic := '0';
 	signal last_portion: std_logic := '0';
+	signal tdata_latched : STD_LOGIC_VECTOR (8*N_CH-1 downto 0);
 
 begin
+
+	tready <= tready_i;
 
 	sm: process(clk)
 		variable state : integer range 0 to 7 := 0;
 	begin
 		if(rising_edge(clk)) then
-			case state is
-				when 0 => if(tvalid = '1') then
-											tready <= '0';
-											frame_d0 <= '1';
-											tlast_out <= '0';
-											last_portion <= tlast;
-											load <= '1';
-											state := state + 1;	
-									else
-											frame_d0 <= '0';		
-											load <= '0';
-									end if;
-				when 1 => load <= '0'; state := state + 1;						
-				when 2 => state := state + 1;						
-				when 3 => state := state + 1;						
-				when 4 => state := state + 1;						
-				when 5 => state := state + 1;						
-				when 6 => state := state + 1;						
-				when 7 => tlast_out <= last_portion; 
-									tready <= '1'; 
-									state := 0;					
-			end case;
+			if(reset = '1') then
+				state := 0;
+				load <= '0';
+				frame_d0 <= '0';
+				tlast_out <= '0';
+				tready_i <= '1';
+			else
+				case state is
+					when 0 => if(tvalid = '1') then
+												tready_i <= '0';
+												frame_d0 <= '1';
+												tlast_out <= '0';
+												last_portion <= tlast;
+												load <= '1';
+												state := state + 1;	
+										else
+												frame_d0 <= '0';		
+												load <= '0';
+										end if;
+					when 1 => load <= '0'; state := state + 1;						
+					when 2 => state := state + 1;						
+					when 3 => state := state + 1;						
+					when 4 => state := state + 1;						
+					when 5 => state := state + 1;						
+					when 6 => state := state + 1;						
+					when 7 => tlast_out <= last_portion; 
+										tready_i <= '1'; 
+										state := 0;					
+				end case;
+			end if;
+		end if;
+	end process;
+	
+	latcher: process(clk)
+	begin
+		if(rising_edge(clk)) then
+			if(tvalid = '1' and tready_i = '1') then
+				tdata_latched <= tdata;
+			end if;
 		end if;
 	end process;
 	
@@ -93,7 +114,7 @@ begin
 		begin
 			if(rising_edge(clk)) then
 				if(load = '1') then
-					tdata_sr <= tdata(8*i+7 downto 8*i);
+					tdata_sr <= tdata_latched(8*i+7 downto 8*i);
 				else
 					tdata_sr <= '0' & tdata_sr(7 downto 1);
 				end if;
