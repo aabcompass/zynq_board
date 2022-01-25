@@ -32,6 +32,7 @@ entity data_converter is
     	tdata_art2 : in STD_LOGIC_VECTOR(8*12-1 downto 0);
 
 			s_axis_map0_tdata : in STD_LOGIC_VECTOR (31 downto 0);
+			s_axis_map0_tdest : in STD_LOGIC_VECTOR (3 downto 0);
     	s_axis_map0_tvalid : in STD_LOGIC;
     	s_axis_map0_tlast : in STD_LOGIC;
     	s_axis_map0_tready : out STD_LOGIC;
@@ -219,11 +220,6 @@ architecture Behavioral of data_converter is
 	signal start_sw1_ch: std_logic_vector(1 downto 0) := (others => '0');
 	signal m_axis_aresetn2: std_logic;
 
-	attribute KEEP : string;
-	attribute KEEP of start_sw1: signal is "TRUE";
-	attribute KEEP of s_axis_tvalid_sw1: signal is "TRUE";
-	attribute KEEP of s_axis_tready_sw1: signal is "TRUE";
-	attribute KEEP of last_transfer_sw1: signal is "TRUE";
 
 	signal ki, pc_tlast: std_logic := '0'; 
 	signal m_axis_tlast_i: std_logic := '0'; 
@@ -260,6 +256,17 @@ architecture Behavioral of data_converter is
 	signal m_axis_tlast_remap: std_logic;
 	
 	signal tdata_art2_remap, tdata_art1_remap, tdata_art0_remap: std_logic_vector(95 downto 0) := (others => '0');
+	
+	signal dataconv_zero_pmt: std_logic_vector(35 downto 0) := (others => '0');
+	
+	signal m_axis_tvalid_remap_d0: std_logic := '0';
+	
+	attribute KEEP : string;
+	attribute KEEP of start_sw1: signal is "TRUE";
+	attribute KEEP of s_axis_tvalid_sw1: signal is "TRUE";
+	attribute KEEP of s_axis_tready_sw1: signal is "TRUE";
+	attribute KEEP of last_transfer_sw1: signal is "TRUE";
+	attribute keep of dataconv_zero_pmt: signal is "true";  
 
 begin
 
@@ -540,6 +547,21 @@ begin
 					m_axis_tdata => m_axis_tdata_fifo0b,
 					m_axis_tlast => m_axis_tlast_fifo0b
 				);		
+				
+				dataconv_zero_pmt_proc: process(m_axis_aclk)
+				begin
+					if(rising_edge(m_axis_aclk)) then
+						if(m_axis_tvalid_fifo0b = '1' and m_axis_tready_fifo0b = '1') then
+						 if(m_axis_tdata_fifo0b /= X"00") then
+								dataconv_zero_pmt(i*12+j) <= '1';
+							else
+								dataconv_zero_pmt(i*12+j) <= '0';
+							end if;	
+						else
+							dataconv_zero_pmt(i*12+j) <= '0';
+						end if;
+					end if;
+				end process;
 			
 	 			m_axis_tdata_fifo0b_zero <= m_axis_tdata_fifo0b and not (7 downto 0 => zeros(i*N_PMT+j)); 
 	 
@@ -796,6 +818,8 @@ begin
 	m_axis_tuser_ii(7) <= pc_tlast;
 	
 	
+	m_axis_tvalid_remap_d0 <= m_axis_tvalid_remap;-- when s_axis_map0_tdest = 1;
+	
 	i_axis_pixel_remap : axis_pixel_remap 
 		Port map ( 
 			aclk => m_axis_aclk,--: IN STD_LOGIC;
@@ -805,7 +829,7 @@ begin
 			s_axis_tdata => m_axis_tdata_ii,--: IN STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
 			s_axis_tlast => m_axis_tlast_ii,--: IN STD_LOGIC;
 			s_axis_tuser => m_axis_tuser_ii,--: IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-			m_axis_tvalid => m_axis_tvalid_remap,--: OUT STD_LOGIC;
+			m_axis_tvalid => m_axis_tvalid_remap_d0,--: OUT STD_LOGIC;
 			m_axis_tready => '1',--: in STD_LOGIC;
 			m_axis_tdata => m_axis_tdata_remap,--: OUT STD_LOGIC_VECTOR(4*4*8-1 DOWNTO 0);
 			m_axis_tlast => m_axis_tlast_remap,--: OUT STD_LOGIC;

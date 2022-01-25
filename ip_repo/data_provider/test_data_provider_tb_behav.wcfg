@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4631666667fs"></ZoomStartTime>
-      <ZoomEndTime time="34531666668fs"></ZoomEndTime>
-      <Cursor1Time time="9615000000fs"></Cursor1Time>
+      <ZoomStartTime time="3115000000fs"></ZoomStartTime>
+      <ZoomEndTime time="15155000001fs"></ZoomEndTime>
+      <Cursor1Time time="5175000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="223"></NameColumnWidth>
-      <ValueColumnWidth column_width="170"></ValueColumnWidth>
+      <ValueColumnWidth column_width="166"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="71" />
+   <WVObjectSize size="72" />
    <wvobject type="other" fp_name="/data_provider_4trig_tb/clk_counter">
       <obj_property name="ElementShortName">clk_counter</obj_property>
       <obj_property name="ObjectShortName">clk_counter</obj_property>
@@ -224,6 +224,10 @@
       <obj_property name="ElementShortName">load</obj_property>
       <obj_property name="ObjectShortName">load</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/\channel_gen(143)\/tdata_sr">
+      <obj_property name="ElementShortName">tdata_sr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata_sr[7:0]</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/tvalid">
       <obj_property name="ElementShortName">tvalid</obj_property>
       <obj_property name="ObjectShortName">tvalid</obj_property>
@@ -315,6 +319,7 @@
    <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/data_out">
       <obj_property name="ElementShortName">data_out[143:0]</obj_property>
       <obj_property name="ObjectShortName">data_out[143:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/i_byte_serializer/frame">
       <obj_property name="ElementShortName">frame</obj_property>
@@ -331,6 +336,7 @@
    <wvobject type="array" fp_name="/data_provider_4trig_tb/dut/DATA">
       <obj_property name="ElementShortName">DATA[143:0]</obj_property>
       <obj_property name="ObjectShortName">DATA[143:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/data_provider_4trig_tb/dut/FRAME">
       <obj_property name="ElementShortName">FRAME</obj_property>

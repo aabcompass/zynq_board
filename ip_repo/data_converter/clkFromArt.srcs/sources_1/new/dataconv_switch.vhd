@@ -55,6 +55,14 @@ entity dataconv_switch is
       s_decode_err : OUT STD_LOGIC_VECTOR(n_lines-1 DOWNTO 0);
       zeros: in std_logic_vector(n_lines-1 DOWNTO 0)
     );
+    
+    attribute keep : string;
+    attribute keep of m_axis_tvalid : signal is "TRUE";
+    attribute keep of m_axis_tready : signal is "TRUE";
+    attribute keep of m_axis_tdata : signal is "TRUE";
+    attribute keep of m_axis_tlast : signal is "TRUE";
+    attribute keep of m_axis_tuser : signal is "TRUE";
+    
 end dataconv_switch;
 
 architecture Behavioral of dataconv_switch is

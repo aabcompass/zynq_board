@@ -94,10 +94,17 @@ void SendDefaultMapping()
 void SendMapping(char* mapping)
 {
 	int i;
+//	u32 temmp_32bit_array[N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC/4];
 	for(i=0; i<N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC; i++)
 	{
 		xil_printf("%d ", mapping[i]);
 	}
+//	memcpy(temmp_32bit_array, mapping, N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC);
+//	for(i=0; i<N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC/4; i++)
+//	{
+//		xil_printf("%08x\n\r", temmp_32bit_array[i]);
+//	}
+
 	TxFIFOSendMain(mapping, N_OF_PIXELS_PER_PMT*N_OF_PMTS_PER_EC/4, FIFO_CH_MAPPING);
 }
 

@@ -104,9 +104,12 @@ architecture Behavioral of byte_reformr_4trig_v2 is
 	signal m_axis_tvalid_dwc: std_logic_vector(17 downto 0);
 	signal m_axis_tlast_dwc: std_logic_vector(17 downto 0);
 	
+	signal is_nonzero_value: std_logic_vector(17 downto 0) := (others => '0');
+	
 	attribute keep : string; 
 	attribute keep of m_axis_tvalid_dwc: signal is "true";  
 	attribute keep of m_axis_tlast_dwc: signal is "true";  
+	attribute keep of is_nonzero_value: signal is "true";  
 
 begin
 
@@ -172,8 +175,15 @@ g_fifo4reform4trig: for i in 0 to 17 generate
 	signal m_axis_tlast_fifo: std_logic := '0';
 	signal m_axis_tready_fifo: std_logic := '0';
 
+	
+	--attribute keep : string; 
+	--attribute keep of is_nonzero_value: signal is "true";  
+	--attribute DONT_TOUCH : string; 
+	--attribute DONT_TOUCH of is_nonzero_value: signal is "true";  
+
 begin
 
+	
 	select_process: process(aclk)
 	begin
 		if(rising_edge(aclk)) then
@@ -187,6 +197,13 @@ begin
 			if(pmt_pare_num = conv_std_logic_vector(i,8)) then
 				s_axis_tvalid_fifo <= s_axis_tvalid_d1;
 				s_axis_tlast_fifo <= s_axis_tlast_d1;
+				if(s_axis_tvalid_d1 = '1') then
+					if(s_axis_tdata_d1 = X"00000000000000000000000000000000") then
+						is_nonzero_value(i) <= '0';
+					else
+						is_nonzero_value(i) <= '1';
+					end if;
+				end if;
 			end if;
 			
 		end if;

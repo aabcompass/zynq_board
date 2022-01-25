@@ -153,7 +153,7 @@ END COMPONENT;
 	signal m_axis_tready_slc: std_logic;
 	signal m_axis_tlast_slc: std_logic;
 	signal m_axis_tdata_slc: std_logic_vector(639 DOWNTO 0);
-	signal m_axis_tdata_dwc1: std_logic_vector(639 DOWNTO 0);
+	signal m_axis_tdata_dwc1, m_axis_tdata_dwc1_d1: std_logic_vector(639 DOWNTO 0);
 	signal m_axis_tuser_slc: std_logic_vector(79 DOWNTO 0);
 	signal m_axis_tuser_dwc1: std_logic_vector(79 DOWNTO 0);
 	signal m_axis_tuser_i: std_logic_vector(15 DOWNTO 0);
@@ -178,6 +178,7 @@ END COMPONENT;
 	signal map_curr_n: STD_LOGIC_VECTOR(3 downto 0);
 	
 	signal s_axis_tvalid_remap: std_logic;
+	signal axis_DWC_4_256_tvalid: std_logic;
 
 	attribute KEEP : string;
 	attribute KEEP of map_curr_n: signal is "TRUE";
@@ -185,10 +186,7 @@ END COMPONENT;
 
 begin
 
-	map0 <= map_all(8*64*4-1 downto 8*64*3);
-	map1 <= map_all(8*64*3-1 downto 8*64*2);
-	map2 <= map_all(8*64*2-1 downto 8*64*1);
-	map3 <= map_all(8*64*1-1 downto 0);
+
 
 	i_axis_DWC_4_256 : axis_DWC_4_256
 		PORT MAP (
@@ -198,13 +196,24 @@ begin
 			s_axis_tready => s_axis_map0_tready,
 			s_axis_tdata => s_axis_map0_tdata,
 			s_axis_tlast => s_axis_map0_tlast,
-			m_axis_tvalid => open,
+			m_axis_tvalid => axis_DWC_4_256_tvalid,
 			m_axis_tready => '1',
 			m_axis_tdata => map_all,
 			m_axis_tkeep => open,
 			m_axis_tlast => open
 		);
 
+	map_apply_process: process(aclk)
+	begin
+		if(rising_edge(aclk)) then
+			if(axis_DWC_4_256_tvalid = '1') then
+				map0 <= map_all(8*64*4-1 downto 8*64*3);
+				map1 <= map_all(8*64*3-1 downto 8*64*2);
+				map2 <= map_all(8*64*2-1 downto 8*64*1);
+				map3 <= map_all(8*64*1-1 downto 0);
+			end if;
+		end if;
+	end process;
 
 	s_axis_tuser_i <= "00000000" & s_axis_tuser;
 
@@ -258,6 +267,7 @@ i_pixel_remap_v2 : pixel_remap_v2
            m_axis_tlast => open,--: out STD_LOGIC;
            map0 => map_curr);--: in STD_LOGIC_VECTOR (6*64-1 downto 0));
 
+m_axis_tdata_dwc1_d1 <= m_axis_tdata_dwc1 when rising_edge(aclk);
 
 i_axis_remap_slice : axis_remap_slice
   PORT MAP (
@@ -275,7 +285,7 @@ i_axis_remap_slice : axis_remap_slice
     m_axis_tuser => m_axis_tuser_slc
   );
  
-	m_axis_tdata_slc_remap <= m_axis_tdata_slc(8*80-1 downto 8*64) & m_axis_tdata_remap; 
+	m_axis_tdata_slc_remap <= m_axis_tdata_dwc1_d1(8*80-1 downto 8*64) & m_axis_tdata_remap; 
  
   
 i_axis_remap_dwc64_16 : axis_remap_dwc64_16

@@ -58,6 +58,7 @@ entity SPB2 is
            s_axis_tvalid_cmd    :   in  std_logic;
            s_axis_tready_cmd    :   out std_logic;
            s_axis_tdata_cmd     :   in  std_logic_vector(31 downto 0);
+           s_axis_tdest_cmd     :   in  std_logic_vector(3 downto 0);
            s_axis_tlast_cmd     :   in  std_logic;
            --AXI FIFO TRIGGER OUT
            m_aclk_trg           :   in  std_logic;
@@ -1610,6 +1611,8 @@ begin
     return sum_vector;
 end function bitcount;
 
+	signal s_axis_tvalid_cmd_d0: std_logic := '0';
+
 	attribute keep : string; 
 	attribute keep of nSigma128: signal is "true";  
 	attribute keep of nHot: signal is "true";  
@@ -1958,6 +1961,8 @@ AXI_FIFO_SUM : AXI_FIFO
       m_axis_tlast => m_axis_tlast_sum-->PROC.
     );
     
+ s_axis_tvalid_cmd_d0 <= s_axis_tvalid_cmd;-- when s_axis_tdest_cmd = 0;
+ 
  AXI_FIFO_CMD : AXI_FIFO
     PORT MAP (
       wr_rst_busy => open,
@@ -1965,7 +1970,7 @@ AXI_FIFO_SUM : AXI_FIFO
       m_aclk => CLOCK,
       s_aclk => s_aclk_cmd,-->PROC.
       s_aresetn => s_aresetn_cmd,-->PROC.
-      s_axis_tvalid => s_axis_tvalid_cmd,-->PROC.
+      s_axis_tvalid => s_axis_tvalid_cmd_d0,-->PROC.
       s_axis_tready => s_axis_tready_cmd,-->PROC.
       s_axis_tdata => s_axis_tdata_cmd,-->PROC.
       s_axis_tlast => s_axis_tlast_cmd,-->PROC.
