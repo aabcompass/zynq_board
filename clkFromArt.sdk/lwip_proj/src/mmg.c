@@ -31,6 +31,11 @@ void DoD3Files(u32 param)
 	is_d3_files = param;
 }
 
+int isD3Files()
+{
+	return is_d3_files;
+}
+
 u32 Mmg_Get_last_global_cycle()
 {
 	return last_global_cycle;

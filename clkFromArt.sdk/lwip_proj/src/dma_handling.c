@@ -88,7 +88,7 @@ static void start_dma_l1()
 void start_dma_l3(u32 n_frames)
 {
 	char* p;
-	if(is_file_processing == DO_FILE_PROCESSING)
+	if(is_file_processing == DO_FILE_PROCESSING && isD3Files())
 		p = (char*)MmgAlloc(DATA_TYPE_L3);
 	else
 		//p = (char*)&singleLiveFrameD3.data[0];
