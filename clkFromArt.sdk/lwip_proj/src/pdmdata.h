@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.10.02"
+#define ZYNQ3_VER_STRING "v4.10.03"
 
 //========================================
 // Constants

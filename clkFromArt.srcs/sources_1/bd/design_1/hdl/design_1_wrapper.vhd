@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Mon Jan 24 19:37:30 2022
+--Date        : Tue Feb  1 16:58:54 2022
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -37,7 +37,6 @@ entity design_1_wrapper is
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Dout_4 : out STD_LOGIC_VECTOR ( 0 to 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -46,6 +45,14 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
+    SPB_Busy_N_0 : in STD_LOGIC;
+    SPB_Busy_P_0 : in STD_LOGIC;
+    SPB_CLK_40_n_0 : in STD_LOGIC;
+    SPB_CLK_40_p_0 : in STD_LOGIC;
+    SPB_Ext_trig_IN_N_0 : in STD_LOGIC;
+    SPB_Ext_trig_IN_P_0 : in STD_LOGIC;
+    SPB_Trig_L1_out_N_0 : out STD_LOGIC;
+    SPB_Trig_L1_out_P_0 : out STD_LOGIC;
     art_gtu_0 : out STD_LOGIC;
     art_gtu_1 : out STD_LOGIC;
     art_gtu_2 : out STD_LOGIC;
@@ -88,6 +95,10 @@ entity design_1_wrapper is
     sck_p_0 : out STD_LOGIC;
     select_din_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
+    spb_1pps_n_0 : in STD_LOGIC;
+    spb_1pps_p_0 : in STD_LOGIC;
+    spb_gtu_clk_n_0 : in STD_LOGIC;
+    spb_gtu_clk_p_0 : in STD_LOGIC;
     sr_ck_pc_0 : out STD_LOGIC;
     sr_ck_pc_1 : out STD_LOGIC;
     sr_ck_pc_2 : out STD_LOGIC;
@@ -172,7 +183,6 @@ architecture STRUCTURE of design_1_wrapper is
     data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     data_in_from_pins_p_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     data_in_from_pins_n_2 : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    Dout_4 : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_programb : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_initb : out STD_LOGIC_VECTOR ( 0 to 0 );
     sr_out_pc_0 : in STD_LOGIC_VECTOR ( 5 downto 0 );
@@ -180,7 +190,19 @@ architecture STRUCTURE of design_1_wrapper is
     art_gtu_1 : out STD_LOGIC;
     art_gtu_0 : out STD_LOGIC;
     m_axis_tlast_trg : out STD_LOGIC;
-    artx_latch_3 : out STD_LOGIC_VECTOR ( 2 downto 0 )
+    artx_latch_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    spb_gtu_clk_p_0 : in STD_LOGIC;
+    spb_gtu_clk_n_0 : in STD_LOGIC;
+    spb_1pps_p_0 : in STD_LOGIC;
+    spb_1pps_n_0 : in STD_LOGIC;
+    SPB_Busy_P_0 : in STD_LOGIC;
+    SPB_Busy_N_0 : in STD_LOGIC;
+    SPB_Ext_trig_IN_P_0 : in STD_LOGIC;
+    SPB_Ext_trig_IN_N_0 : in STD_LOGIC;
+    SPB_CLK_40_p_0 : in STD_LOGIC;
+    SPB_CLK_40_n_0 : in STD_LOGIC;
+    SPB_Trig_L1_out_P_0 : out STD_LOGIC;
+    SPB_Trig_L1_out_N_0 : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -210,7 +232,6 @@ design_1_i: component design_1
       Dout_0(0) => Dout_0(0),
       Dout_1(0) => Dout_1(0),
       Dout_2(0) => Dout_2(0),
-      Dout_4(0) => Dout_4(0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
@@ -219,6 +240,14 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       GTU_HV_n_0 => GTU_HV_n_0,
       GTU_HV_p_0 => GTU_HV_p_0,
+      SPB_Busy_N_0 => SPB_Busy_N_0,
+      SPB_Busy_P_0 => SPB_Busy_P_0,
+      SPB_CLK_40_n_0 => SPB_CLK_40_n_0,
+      SPB_CLK_40_p_0 => SPB_CLK_40_p_0,
+      SPB_Ext_trig_IN_N_0 => SPB_Ext_trig_IN_N_0,
+      SPB_Ext_trig_IN_P_0 => SPB_Ext_trig_IN_P_0,
+      SPB_Trig_L1_out_N_0 => SPB_Trig_L1_out_N_0,
+      SPB_Trig_L1_out_P_0 => SPB_Trig_L1_out_P_0,
       art_gtu_0 => art_gtu_0,
       art_gtu_1 => art_gtu_1,
       art_gtu_2 => art_gtu_2,
@@ -261,6 +290,10 @@ design_1_i: component design_1
       sck_p_0 => sck_p_0,
       select_din_pc_0 => select_din_pc_0,
       select_sc_probe_pc_0 => select_sc_probe_pc_0,
+      spb_1pps_n_0 => spb_1pps_n_0,
+      spb_1pps_p_0 => spb_1pps_p_0,
+      spb_gtu_clk_n_0 => spb_gtu_clk_n_0,
+      spb_gtu_clk_p_0 => spb_gtu_clk_p_0,
       sr_ck_pc_0 => sr_ck_pc_0,
       sr_ck_pc_1 => sr_ck_pc_1,
       sr_ck_pc_2 => sr_ck_pc_2,
