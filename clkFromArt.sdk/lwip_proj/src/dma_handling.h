@@ -14,6 +14,7 @@ void L1Start();
 void L1Stop();
 void L3Start(u32 is_infinite, u32 n_frames);
 void L3Stop();
+void MPSStart();
 void SetupDMAIntrSystem(XScuGic* pIntc);
 void DMA_init();
 void IsDMAsBusy();

@@ -13,6 +13,7 @@
 
 int is_l1_started = 0;
 int is_l3_started = 0;
+int is_mps_started = 0;
 
 u32 is_D3_received=0;
 
@@ -44,7 +45,7 @@ void DMA_init()
 	status = XAxiDma_CfgInitialize(&dma_d3, CfgPtr);
 	if(status)	print("Error in XAxiDma_CfgInitialize dma_l2!\n\r");
 
-	CfgPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_MPS_BASEADDR);
+	CfgPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_MPS_DEVICE_ID);
 	status = XAxiDma_CfgInitialize(&dma_mps, CfgPtr);
 	if(status)	print("Error in XAxiDma_CfgInitialize dma_mps!\n\r");
 }
@@ -100,6 +101,18 @@ void start_dma_l3(u32 n_frames)
 	}
 	else {
 		print("Not enough space for the next D3 DMA buffer\n\r");
+	}
+}
+
+static void start_dma_mps()
+{
+	char* p;
+	p = (char*)MmgAlloc(DATA_TYPE_MPS);
+	if(p) {
+		DmaStart(&dma_mps, (UINTPTR)p, sizeof(uint32_t) * N_OF_MACRO_PIXELS, 0);
+	}
+	else {
+		print("Not enough space for the next MPS DMA buffer\n\r");
 	}
 }
 
@@ -211,6 +224,10 @@ void L1_trigger_service()
 		RxIntrHandler_L1(&dma_d1);
 }
 
+void MPS_service()
+{
+
+}
 
 void L1Start()
 {
@@ -223,6 +240,12 @@ void L1Stop()
 	is_l1_started = 0;
 	XAxiDma_Reset(&dma_d1);
 	//TODO// Abandon current transfer. What if it is in progress?
+}
+
+void MPSStart()
+{
+	start_dma_mps();
+	is_mps_started = 1;
 }
 
 void L3Start(u32 is_infinite, u32 n_frames) //N_FRAMES_DMA_D3
@@ -257,6 +280,14 @@ void IsDMAsBusy()
 	xil_printf("XAxiDma_Busy(&dma_d1)=0x%08x\n\r", XAxiDma_Busy(&dma_d1, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("XAxiDma_Busy(&dma_d3)=0x%08x\n\r", XAxiDma_Busy(&dma_d3, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("XAxiDma_Busy(&dma_mps)=0x%08x\n\r", XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA));
+}
+
+void IsDMAMPSHalted()
+{
+	return XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA)
+			return XAxiDma_ReadReg(InstancePtr->RegBase +
+								(XAXIDMA_RX_OFFSET * Direction),
+								XAXIDMA_SR_OFFSET);
 }
 
 u32 GetDMAStatus(XAxiDma *InstancePtr, int Direction)

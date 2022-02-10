@@ -250,7 +250,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 			}
 		}
 	}
-	if(data_type == DATA_TYPE_MPS) {
+	else if(data_type == DATA_TYPE_MPS) {
 		if((last_mps_occupied < 0) | (last_mps_occupied >= N_MPS_IN_MEM)) {
 			print("MmgFinish: bad last_mps_occupied\n\r");
 			return;

@@ -264,6 +264,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		if(instrumentState.mode == MODE_D1) {
 			L1Start();
 			L3Start(INFINITE, N_FRAMES_DMA_D3);
+			MPSStart();
 			StartDataProvider();
 		}
 		else if(instrumentState.mode == MODE_D3) {
