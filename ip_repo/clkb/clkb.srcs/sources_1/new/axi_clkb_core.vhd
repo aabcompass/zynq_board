@@ -252,6 +252,7 @@ architecture Behavioral of axi_clkb_core is
 	    freq_gtu_clk: out std_logic_vector(31 downto 0);
 	    cnt_1pps: out std_logic_vector(31 downto 0);
 	    cnt_Ext_trig: out std_logic_vector(31 downto 0);
+	    cnt_gtu_clk: out std_logic_vector(31 downto 0);
 	    status: out std_logic_vector(31 downto 0);
 	    reset_cnt: in std_logic
 	    );
@@ -1110,8 +1111,8 @@ begin
 	        reg_data_out <= slv_reg7;
 	      when b"001000" =>
 	        reg_data_out <= slv_reg8;
---	      when b"001001" =>
---	        reg_data_out <= slv_reg9;
+	      when b"001001" =>
+	        reg_data_out <= slv_reg9;
 --	      when b"001010" =>
 --	        reg_data_out <= slv_reg10;
 --	      when b"001011" =>
@@ -1280,6 +1281,7 @@ begin
 	    cnt_1pps => slv_reg6,--: out std_logic_vector(31 downto 0);
 	    cnt_Ext_trig => slv_reg7,--: out std_logic_vector(31 downto 0);
 	    status => slv_reg8,
+	    cnt_gtu_clk => slv_reg9,
 	    reset_cnt => slv_reg1(0)--: in std_logic
 	    );
 

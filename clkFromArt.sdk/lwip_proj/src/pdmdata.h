@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.11.01"
+#define ZYNQ3_VER_STRING "v4.12.00"
 
 //========================================
 // Constants
@@ -375,6 +375,8 @@ typedef struct
 #define TCP_CMD_L1_OUTPUT			"trg L1 output" /*Gives the information from the L1 trg AXIS bus*/
 #define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, clkb}*/
 #define TCP_CMD_PERIODIC_PER		"trg periodic period %d" /*Set period for the periodic mode (in GTUs)*/
+#define TCP_CMD_L1_CLKB_CNT			"trg clkb cnt?"  /*Returns the number of trigger events came from CLKB.*/
+#define TCP_CMD_L1_CLKB_GTU_CNT		"trg clkb gtu cnt?" /*Returns the number of GTU signals came from CLKB.*/
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"
@@ -386,6 +388,18 @@ typedef struct
 #define TCP_CMD_ARTIX_IDELAY		"artix idelay %d %d" /*delay, n_PMT*/
 #define TCP_CMD_ARTIX_IDELAYLD		"artix idelayld %d %d %d" /*delay, n_PMT, artix*/
 #define TCP_CMD_SET_UNIX_TIME		"setunixtime %d"
+
+#define TCP_CMD_CLKB_GET_STATUS		"clkb status gpio"
+#define TCP_CMD_CLKB_GET_FREQ_40MHz "clkb freq 40MHz?"
+#define TCP_CMD_CLKB_GET_FREQ_GTU   "clkb freq gtu?"
+#define TCP_CMD_CLKB_GET_1PPS_CNT	"clkb 1pps cnt?"
+#define TCP_CMD_CLKB_GET_GTU_CNT	"trg clkb gtu cnt?"
+#define TCP_CMD_CLKB_SET_TRG_LINE	"trg clkb line %d"
+#define TCP_CMD_CLKB_RESET_CNTS		"trg reset cnt"
+
+
+
+
 
 #pragma pack(pop) /* return to normal packing */
 

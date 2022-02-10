@@ -18,6 +18,7 @@
 #include "mmg.h"
 #include "dma_handling.h"
 #include "l1_trigger_block.h"
+#include "clkb.h"
 
 
 
@@ -748,6 +749,45 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_STATUS, strlen(TCP_CMD_CLKB_GET_STATUS)) == 0)
+	{
+		sprintf(reply, "LOCKED=%d GTULINE=%d 1PPSLINE=%d BUSYLINE=%d EXTTRGLINE=%d\n\r",
+				ClkbIsLocked(), ClkbLineGTU(), ClkbLine1PPS(), ClkbLineBUSY(), ClkbLineExtTrig());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_FREQ_40MHz, strlen(TCP_CMD_CLKB_GET_FREQ_40MHz)) == 0)
+	{
+		sprintf(reply, "%d\n\r", ClkbGetFreq40MHz());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_FREQ_GTU, strlen(TCP_CMD_CLKB_GET_FREQ_GTU)) == 0)
+	{
+		sprintf(reply, "%d\n\r", ClkbGetFreqGTUClk());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_1PPS_CNT, strlen(TCP_CMD_CLKB_GET_1PPS_CNT)) == 0)
+	{
+		sprintf(reply, "%d\n\r", ClkbGetCnt1PPS());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_GTU_CNT, strlen(TCP_CMD_CLKB_GET_GTU_CNT)) == 0)
+	{
+		sprintf(reply, "%d\n\r", ClkbGetCntGTU());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_L1_CLKB_CNT, strlen(TCP_CMD_L1_CLKB_CNT)) == 0)
+	{
+		sprintf(reply, "%d\n\r", ClkbGetCntExtTrig());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_CLKB_RESET_CNTS, strlen(TCP_CMD_CLKB_RESET_CNTS)) == 0)
+	{
+		ClkbResetCounters();
+		strcpy(ans_str, "Ok\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+
+
 }
 
 static err_t recv_callback(void *arg, struct tcp_pcb *tpcb,

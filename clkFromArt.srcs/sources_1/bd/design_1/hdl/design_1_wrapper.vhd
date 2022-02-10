@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Thu Feb 10 17:01:07 2022
+--Date        : Thu Feb 10 18:41:01 2022
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -81,7 +81,6 @@ entity design_1_wrapper is
     io0_o_2 : out STD_LOGIC;
     io0_o_3 : out STD_LOGIC;
     loadb_sc_pc_0 : out STD_LOGIC;
-    m_axis_tlast_trg : out STD_LOGIC;
     miso_n_0 : in STD_LOGIC;
     miso_p_0 : in STD_LOGIC;
     mosi_n_0 : out STD_LOGIC;
@@ -189,7 +188,6 @@ architecture STRUCTURE of design_1_wrapper is
     art_gtu_0 : out STD_LOGIC;
     art_gtu_1 : out STD_LOGIC;
     art_gtu_2 : out STD_LOGIC;
-    m_axis_tlast_trg : out STD_LOGIC;
     artx_latch_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
     spb_gtu_clk_p_0 : in STD_LOGIC;
     spb_gtu_clk_n_0 : in STD_LOGIC;
@@ -276,7 +274,6 @@ design_1_i: component design_1
       io0_o_2 => io0_o_2,
       io0_o_3 => io0_o_3,
       loadb_sc_pc_0 => loadb_sc_pc_0,
-      m_axis_tlast_trg => m_axis_tlast_trg,
       miso_n_0 => miso_n_0,
       miso_p_0 => miso_p_0,
       mosi_n_0 => mosi_n_0,

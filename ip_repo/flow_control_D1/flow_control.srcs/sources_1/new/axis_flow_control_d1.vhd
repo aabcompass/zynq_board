@@ -222,6 +222,7 @@ architecture Behavioral of axis_flow_control_d1 is
 				m_axis_events_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
 				
 				trig_ext_in: in std_logic;
+				trig_out: out std_logic;
 				
 				
 				--gtu_sig: in std_logic;
@@ -267,7 +268,6 @@ architecture Behavioral of axis_flow_control_d1 is
 begin
 
 
-	trig_out <= s_axis_trg_tlast;
 
 	-- I/O Connections assignments
 
@@ -900,6 +900,7 @@ begin
 				m_axis_events_tdata   => m_axis_events_tdata,--: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 				
 				trig_ext_in => trig_ext_in,--: in std_logic;
+				trig_out => trig_out,--: out std_logic;
 
   			s_axis_mps_tvalid => s_axis_mps_tvalid,--: IN STD_LOGIC; 
 				s_axis_mps_tready => s_axis_mps_tready,--: OUT STD_LOGIC := '1'; 

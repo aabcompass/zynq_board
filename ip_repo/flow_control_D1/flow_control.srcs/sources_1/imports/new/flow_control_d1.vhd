@@ -47,6 +47,7 @@ entity flow_control_d1 is
   		m_axis_events_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
   		 		
   		trig_ext_in: in std_logic;
+  		trig_out: out std_logic;
   		
   		mps_tvalid, mps_tready, mps_tlast: in std_logic;
   		
@@ -634,7 +635,9 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 		end if;
 	end process;
 	
-		trig_all_cnt_process:  process(s_axis_aclk) 
+	trig_out <= trig when rising_edge(s_axis_aclk);
+	
+	trig_all_cnt_process:  process(s_axis_aclk) 
 	begin
 		if(rising_edge(s_axis_aclk)) then
 		end if;

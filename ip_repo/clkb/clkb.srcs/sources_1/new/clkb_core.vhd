@@ -71,6 +71,7 @@ entity clkb_core is
     freq_gtu_clk: out std_logic_vector(31 downto 0);
     cnt_1pps: out std_logic_vector(31 downto 0);
     cnt_Ext_trig: out std_logic_vector(31 downto 0);
+    cnt_gtu_clk: out std_logic_vector(31 downto 0);
     status: out std_logic_vector(31 downto 0);
     reset_cnt: in std_logic
     );
@@ -104,6 +105,7 @@ architecture Behavioral of clkb_core is
 	signal SPB_CLK_200_cnt: std_logic_vector(31 downto 0) := (others => '0');
 	signal freq_40MHz_i: std_logic_vector(31 downto 0) := (others => '0');
 	signal freq_gtu_clk_cnt: std_logic_vector(31 downto 0) := (others => '0');
+	signal cnt_gtu_clk_i: std_logic_vector(31 downto 0) := (others => '0');
 	signal cnt_1pps_i: std_logic_vector(31 downto 0) := (others => '0');
 	signal cnt_Ext_trig_i: std_logic_vector(31 downto 0) := (others => '0');
 	
@@ -403,6 +405,19 @@ begin
 			end if;
 		end if;
 	end process; 
+
+	cnt_gtu_clk_meter: process(axi_clk)
+	begin
+		if(rising_edge(axi_clk)) then
+			if(reset_cnt = '1') then
+				cnt_gtu_clk_i <= (others => '0');
+			elsif(gtu_clk_i = '1') then
+				cnt_gtu_clk_i <= cnt_gtu_clk_i + 1;
+			end if;
+		end if;
+	end process; 
+	
+	cnt_gtu_clk <= cnt_gtu_clk_i;
 
 	cnt_1pps_meter: process(axi_clk)
 		variable state : integer range 0 to 1 := 0;
