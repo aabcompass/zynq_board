@@ -282,13 +282,13 @@ void IsDMAsBusy()
 	xil_printf("XAxiDma_Busy(&dma_mps)=0x%08x\n\r", XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA));
 }
 
-void IsDMAMPSHalted()
-{
-	return XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA)
-			return XAxiDma_ReadReg(InstancePtr->RegBase +
-								(XAXIDMA_RX_OFFSET * Direction),
-								XAXIDMA_SR_OFFSET);
-}
+//void IsDMAMPSHalted()
+//{
+//	return XAxiDma_Busy(&dma_mps, XAXIDMA_DEVICE_TO_DMA)
+//			return XAxiDma_ReadReg(InstancePtr->RegBase +
+//								(XAXIDMA_RX_OFFSET * Direction),
+//								XAXIDMA_SR_OFFSET);
+//}
 
 u32 GetDMAStatus(XAxiDma *InstancePtr, int Direction)
 {
