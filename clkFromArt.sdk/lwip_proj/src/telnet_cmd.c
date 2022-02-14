@@ -898,6 +898,6 @@ void SetDefaultParameters()
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 	instrumentState.is_artix_frame_started = 0;
-	instrumentState.curr_gain = 16;
+	instrumentState.curr_gain = 8;
 }
 

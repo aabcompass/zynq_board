@@ -191,10 +191,14 @@ void ProcessUartCommands(struct netif *netif, char c)
 //	{
 //		StartDataProviderForLive();
 //	}
-//	else if(c == 'x')
-//	{
-//		StopDataProviderForLive();
-//	}
+	else if(c == 'x')
+	{
+//		u32 temp =  ((*(u32*)(XPAR_XADC_WIZ_0_BASEADDR+XSM_TEMP_OFFSET))>>4)*503.975/4096-273;
+//		u32 v_int = ((*(u32*)(XPAR_XADC_WIZ_0_BASEADDR+XSM_VCCINT_OFFSET))>>4)*3000/4096;
+//		u32 v_aux = ((*(u32*)(XPAR_XADC_WIZ_0_BASEADDR+XSM_VCCAUX_OFFSET))>>4)*3000/4096;
+//		u32 v_bram = ((*(u32*)(XPAR_XADC_WIZ_0_BASEADDR+XSM_VBRAM_OFFSET))>>4)*3000/4096;
+//		xil_printf("temp=%d, v_int=%d, v_aux=%d, v_bram=%d\n\r", temp, v_int, v_aux, v_bram);
+	}
 	else if(c == '+')
 	{
 		num++;
