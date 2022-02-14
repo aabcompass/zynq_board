@@ -177,7 +177,8 @@ int main()
 	gw.addr = 0;
 	netmask.addr = 0;
 #else
-
+	print("XADC initialization...\n\r");
+	XAdcPolledInit(XPAR_XADCPS_0_DEVICE_ID);
 	print("SD card file system initialization...\n\r");
 	instrumentState.err_SDcard = FfsSdPolledInit();
 	if(instrumentState.err_SDcard)

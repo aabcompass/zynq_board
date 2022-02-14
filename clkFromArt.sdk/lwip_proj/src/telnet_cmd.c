@@ -25,6 +25,7 @@
 //SCurveStruct sCurveStruct;
 InstrumentState instrumentState;
 SystemSettings systemSettings;
+DATA_TYPE_HK hk;
 //DebugSettings debugSettings;
 
 //u32 live_sent = 0;
@@ -785,6 +786,13 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		ClkbResetCounters();
 		strcpy(ans_str, "Ok\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_HK_GET_TEMPERATURE, strlen(TCP_CMD_HK_GET_TEMPERATURE)) == 0)
+	{
+		XAdcPoll(&hk);
+		sprintf(reply, "CUR_TEMP=%.2f TEMP_MAX=%.2f TEMP_MIN=%.2f\n\r",
+				hk.currTemperature, hk.maxTemperature, hk.minTemperature);
+		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
 }
 

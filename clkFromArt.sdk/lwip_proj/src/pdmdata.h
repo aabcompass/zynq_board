@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v4.12.02"
+#define ZYNQ3_VER_STRING "v4.13.00"
 
 //========================================
 // Constants
@@ -317,6 +317,33 @@ typedef struct
 	uint32_t timestamp_gtu;
 } DATA_TYPE_EVENTS_LOG;
 
+
+//==========================================
+// HouseKeeping structure
+// draft
+//==========================================
+
+typedef struct
+{
+	float currTemperature;
+	float maxTemperature;
+	float minTemperature;
+	float currVccPint;
+	float maxVccPint;
+	float minVccPint;
+	float currVccPaux;
+	float maxVccPaux;
+	float minVccPaux;
+	float currVccInt;
+	float maxVccInt;
+	float minVccInt;
+	float currVccAux;
+	float maxVccAux;
+	float minVccAux;
+}  DATA_TYPE_HK;
+
+
+
 //==========================================
 // TCP Text commands
 // Used for ZynqB control from CPU
@@ -396,6 +423,8 @@ typedef struct
 #define TCP_CMD_CLKB_GET_GTU_CNT	"trg clkb gtu cnt?"
 #define TCP_CMD_CLKB_SET_TRG_LINE	"trg clkb line %d"
 #define TCP_CMD_CLKB_RESET_CNTS		"trg reset cnt"
+
+#define TCP_CMD_HK_GET_TEMPERATURE	"hk get temperature"
 
 
 
