@@ -425,7 +425,7 @@ typedef struct
 #define TCP_CMD_CLKB_RESET_CNTS		"trg reset cnt"
 
 #define TCP_CMD_HK_GET_TEMPERATURE	"hk get temperature"
-
+#define TCP_CMD_HK_GET_ALL			"hk get all"
 
 
 

@@ -138,7 +138,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 
 void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 {
-	u8 str_len=0; char reply[128];
+	u8 str_len=0; char reply[512];
 	u32 get_len, param, param2, param3, i;
 	//u32 param0, param1, param2, param3, param4;
 	u64 long_param;
@@ -794,6 +794,23 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 				hk.currTemperature, hk.maxTemperature, hk.minTemperature);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_HK_GET_ALL, strlen(TCP_CMD_HK_GET_ALL)) == 0)
+	{
+		XAdcPoll(&hk);
+		sprintf(reply, "CUR_TEMP=%.2f MAX_TEMP=%.2f MIN_TEMP=%.2f \
+				\n\rCUR_VCCPINT=%.3f MAX_VCCPINT=%.3f MIN_VCCPINT=%.3f \
+				\n\rCUR_VCCPAUX=%.3f MAX_VCCPAUX=%.3f MIN_VCCPAUX=%.3f \
+				\n\rCUR_VCCINT=%.3f MAX_VCCINT=%.3f MIN_VCCINT=%.3f \
+				\n\rCUR_VCCAUX=%.3f MAX_VCCAUX=%.3f MIN_VCCAUX=%.3f\n\r",
+				hk.currTemperature, hk.maxTemperature, hk.minTemperature,
+				hk.currVccPint, hk.maxVccPint, hk.minVccPint,
+				hk.currVccPaux, hk.maxVccPaux, hk.minVccPaux,
+				hk.currVccInt, hk.maxVccInt, hk.minVccInt,
+				hk.currVccAux, hk.maxVccAux, hk.minVccAux
+				);
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+
 }
 
 static err_t recv_callback(void *arg, struct tcp_pcb *tpcb,

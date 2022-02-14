@@ -217,20 +217,14 @@ int XAdcPoll(DATA_TYPE_HK* data)
 	 */
 	TempRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_TEMP);
 	TempData = XAdcPs_RawToTemperature(TempRawData);
-	printf("\r\nThe Current Temperature is %0d.%03d Centigrades.\r\n",
-				(int)(TempData), XAdcFractionToInt(TempData));
 	data->currTemperature = (TempData);
 
 	TempRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr, XADCPS_MAX_TEMP);
 	MaxData = XAdcPs_RawToTemperature(TempRawData);
-	printf("The Maximum Temperature is %0d.%03d Centigrades. \r\n",
-				(int)(MaxData), XAdcFractionToInt(MaxData));
 	data->maxTemperature = (MaxData);
 
 	TempRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr, XADCPS_MIN_TEMP);
 	MinData = XAdcPs_RawToTemperature(TempRawData & 0xFFF0);
-	printf("The Minimum Temperature is %0d.%03d Centigrades. \r\n",
-				(int)(MinData), XAdcFractionToInt(MinData));
 	data->minTemperature = (MinData);
 
 	/*
@@ -239,22 +233,16 @@ int XAdcPoll(DATA_TYPE_HK* data)
 	 */
 	VccPintRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_VCCPINT);
 	VccPintData = XAdcPs_RawToVoltage(VccPintRawData);
-	printf("\r\nThe Current VCCPINT is %0d.%03d Volts. \r\n",
-			(int)(VccPintData), XAdcFractionToInt(VccPintData));
 	data->currVccPint = (VccPintData);
 
 	VccPintRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
 							XADCPS_MAX_VCCPINT);
 	MaxData = XAdcPs_RawToVoltage(VccPintRawData);
-	printf("The Maximum VCCPINT is %0d.%03d Volts. \r\n",
-			(int)(MaxData), XAdcFractionToInt(MaxData));
 	data->maxVccPint = (MaxData);
 
 	VccPintRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
 							XADCPS_MIN_VCCPINT);
 	MinData = XAdcPs_RawToVoltage(VccPintRawData);
-	printf("The Minimum VCCPINT is %0d.%03d Volts. \r\n",
-			(int)(MinData), XAdcFractionToInt(MinData));
 	data->minVccPint = (MinData);
 
 	/*
@@ -263,27 +251,56 @@ int XAdcPoll(DATA_TYPE_HK* data)
 	 */
 	VccPauxRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_VCCPAUX);
 	VccPauxData = XAdcPs_RawToVoltage(VccPauxRawData);
-	printf("\r\nThe Current VCCPAUX is %0d.%03d Volts. \r\n",
-			(int)(VccPauxData), XAdcFractionToInt(VccPauxData));
 	data->currVccPaux = (VccPauxData);
 
 	VccPauxRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
 								XADCPS_MAX_VCCPAUX);
 	MaxData = XAdcPs_RawToVoltage(VccPauxRawData);
-	printf("The Maximum VCCPAUX is %0d.%03d Volts. \r\n",
-				(int)(MaxData), XAdcFractionToInt(MaxData));
 	data->maxVccPaux = (MaxData);
 
 
 	VccPauxRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
 								XADCPS_MIN_VCCPAUX);
 	MinData = XAdcPs_RawToVoltage(VccPauxRawData);
-	printf("The Minimum VCCPAUX is %0d.%03d Volts. \r\n\r\n",
-				(int)(MinData), XAdcFractionToInt(MinData));
 	data->minVccPaux = (MinData);
 
 
+	/*
+	 * Read the VccInt Votage Data (Current/Maximum/Minimum) from the
+	 * ADC data registers.
+	 */
+	VccPintRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_VCCINT);
+	VccPintData = XAdcPs_RawToVoltage(VccPintRawData);
+	data->currVccInt = (VccPintData);
 
+	VccPintRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
+							XADCPS_MAX_VCCINT);
+	MaxData = XAdcPs_RawToVoltage(VccPintRawData);
+	data->maxVccInt = (MaxData);
+
+	VccPintRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
+							XADCPS_MIN_VCCINT);
+	MinData = XAdcPs_RawToVoltage(VccPintRawData);
+	data->minVccInt = (MinData);
+
+	/*
+	 * Read the VccAux Votage Data (Current/Maximum/Minimum) from the
+	 * ADC data registers.
+	 */
+	VccPauxRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_VCCAUX);
+	VccPauxData = XAdcPs_RawToVoltage(VccPauxRawData);
+	data->currVccAux = (VccPauxData);
+
+	VccPauxRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
+								XADCPS_MAX_VCCAUX);
+	MaxData = XAdcPs_RawToVoltage(VccPauxRawData);
+	data->maxVccAux = (MaxData);
+
+
+	VccPauxRawData = XAdcPs_GetMinMaxMeasurement(XAdcInstPtr,
+								XADCPS_MIN_VCCAUX);
+	MinData = XAdcPs_RawToVoltage(VccPauxRawData);
+	data->minVccAux = (MinData);
 
 	return XST_SUCCESS;
 }
