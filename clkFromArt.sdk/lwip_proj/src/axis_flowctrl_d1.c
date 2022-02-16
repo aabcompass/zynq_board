@@ -14,6 +14,7 @@
 
 
 int N1=MAX_PACKETS_L1;
+int is_started = 0;
 
 void FlowControlTRG()
 {
@@ -118,10 +119,14 @@ void SetPeriodOfPeriodicTrigger(u32 clks)
 
 void FlowControlStart_D1(u32 start)
 {
-	if(start == 1)
+	if(start == 1) {
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |= BIT_FC_IS_STARTED;
-	else
+		is_started = 1;
+	}
+	else {
+		is_started = 0;
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &= ~BIT_FC_IS_STARTED;
+	}
 }
 
 void StartEventsLog_L1()
@@ -173,7 +178,7 @@ void SetModeD1(u32 mode)
 	if(mode != 0)
 	{
 		//ResetGTUCounter_D1();
-		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = mode;// | BIT_FC_IS_STARTED; Was in Mini
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = mode | (is_started*BIT_FC_IS_STARTED);// | BIT_FC_IS_STARTED; Was in Mini
 		//*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_INT_TRIG_GTU_TIME*4) = 2048*1000+20;
 	}
 }
