@@ -186,7 +186,7 @@ void SendUserIndSCSettingsToSp3()
 			}
 			for(k=0;k<N_OF_PIXELS_PER_PMT/8;k++)
 			{
-				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k] = 24;
+				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k] = instrumentState.curr_qdcsub;
 			}
 		}
 	}

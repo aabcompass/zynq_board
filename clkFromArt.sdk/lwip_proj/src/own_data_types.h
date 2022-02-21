@@ -48,6 +48,7 @@ typedef struct
 	u32 curr_dac10;
 	u32 curr_dac7;
 	u8 curr_gain; //5 bits value
+	u8 curr_qdcsub; //7 bits value
 	u32 scurve_scan; //7 or 10 (default)
 } InstrumentState;
 
