@@ -1375,7 +1375,7 @@ begin
 	slv_reg16(7 downto 4) <= sm_state;
 	slv_reg16(15 downto 8) <= status_test_dp;
 	
-	slv_reg31 <=  X"20210317";
+	slv_reg31 <=  X"20220222";
 	
 	dozer: process(S_AXI_ACLK)
 		variable state : integer range 0 to 2 := 0;

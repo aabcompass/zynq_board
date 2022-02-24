@@ -187,6 +187,7 @@ void SendUserIndSCSettingsToSp3()
 			for(k=0;k<N_OF_PIXELS_PER_PMT/8;k++)
 			{
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k] = instrumentState.curr_qdcsub;
+				//xil_printf("i=%d, j=%d, k=%d, sub=0x%08x\n\r", i, j, k, sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k]);
 			}
 		}
 	}
@@ -286,17 +287,18 @@ void ReformatSlowControlData(SLOWCTRL_SP3_ALL_ASIC_V1* slowctrl_sp3_all_asic_v1)
 			{
 				if(j%2 == 0)
 					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j] =
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+0)] << 24 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+1)] << 16 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+2)] << 8 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[8 - (4*k+3)];
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[7 - (4*k+0)] << 24 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[7 - (4*k+1)] << 16 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[7 - (4*k+2)] << 8 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_even][j].dac_7b_sub[7 - (4*k+3)];
 				else
 					reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j] =
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+0)] << 24 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+1)] << 16 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+2)] << 8 |
-							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[8 - (4*k+3)];
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[7 - (4*k+0)] << 24 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[7 - (4*k+1)] << 16 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[7 - (4*k+2)] << 8 |
+							slowctrl_sp3_all_asic_v1->slowctrl_sp3_sgl_asic[i_remap_odd][j].dac_7b_sub[7 - (4*k+3)];
 
+				//xil_printf("i=%d, j=%d, k=%d, dac_7b_sub=0x%08x\n\r", i, j, k, reformatted.slowctrl_sp3_6chips_reformatted[i].x4_dac_7b_sub[k][j]);
 			}
 		}
 		for(j=0;j<N_OF_ECASIC_PER_PDM;j++)

@@ -205,6 +205,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
+		xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
 		mainBuffer.sci_data_l1[last_l1_occupied].crc32 = crc_32((unsigned char*)&mainBuffer.sci_data_l1[last_l1_occupied].zbh.header, sizeof(DATA_TYPE_SCI_L1_V5)-4, 0xFFFFFFFF);
