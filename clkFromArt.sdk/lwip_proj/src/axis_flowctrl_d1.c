@@ -197,3 +197,11 @@ u32 L1_getSatisfied() //  Returns the trigger satisfaction status from the AXIS 
 {
 	return ((*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_OUT*4))>>31) & 1;
 }
+
+void FC_use_CLKB(int param)
+{
+	if(param == 1)
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |=  BIT_FC_FLAGS_CLKB_MODE;
+	else
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &=  ~BIT_FC_FLAGS_CLKB_MODE;
+}

@@ -405,6 +405,7 @@ typedef struct
 #define TCP_CMD_PERIODIC_PER		"trg periodic period %d" /*Set period for the periodic mode (in GTUs)*/
 #define TCP_CMD_L1_CLKB_CNT			"trg clkb cnt?"  /*Returns the number of trigger events came from CLKB.*/
 #define TCP_CMD_L1_CLKB_GTU_CNT		"trg clkb gtu cnt?" /*Returns the number of GTU signals came from CLKB.*/
+#define TCP_CMD_L1_CLKB_INS			"trg clkb ins %d"
 #define TCP_CMD_PIXELMAP_TST_ECS	"pixelmap test PMTs"
 #define TCP_CMD_PIXELMAP_TST_PIX	"pixelmap test pixels"
 #define TCP_CMD_PIXELMAP_TST_off	"pixelmap test off"

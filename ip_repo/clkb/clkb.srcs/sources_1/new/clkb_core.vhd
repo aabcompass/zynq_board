@@ -47,8 +47,8 @@ entity clkb_core is
     spb_1pps_n : in STD_LOGIC; 
     SPB_Trig_L1_out_P : out STD_LOGIC; --ac13
     SPB_Trig_L1_out_N : out STD_LOGIC; 
-    SPB_Busy_P : in STD_LOGIC; --ac12
-    SPB_Busy_N : in STD_LOGIC; 
+    SPB_Busy_P : out STD_LOGIC; --ac12
+    SPB_Busy_N : out STD_LOGIC; 
     SPB_Ext_trig_IN_P : in STD_LOGIC;  --ae12
     SPB_Ext_trig_IN_N : in STD_LOGIC; 
     SPB_CLK_40_p : in STD_LOGIC;  --ae13
@@ -59,7 +59,7 @@ entity clkb_core is
     gtu_clk: out std_logic;
     spb_1pps: out std_logic;
     SPB_Trig_L1_out: in std_logic;
-    SPB_Busy: out std_logic;
+    SPB_Busy: in std_logic;
     SPB_Ext_trig_IN: out std_logic;
     SPB_CLK_200_out: out std_logic;
     --regs
@@ -67,6 +67,8 @@ entity clkb_core is
     axi_aresetn: in std_logic;
     force_trg_0: in std_logic;
     force_trg_1: in std_logic;
+    force_busy_0: in std_logic;
+    force_busy_1: in std_logic;
     freq_40MHz: out std_logic_vector(31 downto 0);
     freq_gtu_clk: out std_logic_vector(31 downto 0);
     cnt_1pps: out std_logic_vector(31 downto 0);
@@ -188,32 +190,15 @@ begin
 	   I => SPB_Trig_L1_out_i      -- Buffer input 
 	);
 
-	IBUFDS_SPB_Busy : IBUFDS
+	OBUFDS_SPB_Busy : OBUFDS
 	generic map (
-		DIFF_TERM => TRUE, -- Differential Termination 
-		IBUF_LOW_PWR => TRUE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
+		SLEW => "SLOW", -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
 		IOSTANDARD => "DEFAULT")
 	port map (
-		O => SPB_Busy_i,  -- Buffer output
-		I => SPB_Busy_P,  -- Diff_p buffer input (connect directly to top-level port)
-		IB => SPB_Busy_N -- Diff_n buffer input (connect directly to top-level port)
+		I => SPB_Busy_i,  -- Buffer output
+		O => SPB_Busy_P,  -- Diff_p buffer input (connect directly to top-level port)
+		OB => SPB_Busy_N -- Diff_n buffer input (connect directly to top-level port)
 	);
-	
-	xpm_cdc_SPB_Busy : xpm_cdc_single
-	generic map (
-		DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
-		INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
-		SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
-		SRC_INPUT_REG => 0   -- DECIMAL; integer; 0=do not register input, 1=register input
-	)
-	port map (
-		dest_out => SPB_Busy_sync, -- 1-bit output: src_in synchronized to the destination clock domain. This output
-		dest_clk => axi_clk, -- 1-bit input: Clock signal for the destination clock domain.
-		src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
-		src_in => SPB_Busy_i      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
-	);
-	
-	SPB_Busy <= SPB_Busy_sync;
 	
 	IBUFDS_Ext_trig_IN : IBUFDS
 	generic map (
@@ -303,12 +288,25 @@ begin
 	SPB_Trig_L1_out_proc: process(axi_clk)
 	begin
 		if(rising_edge(axi_clk)) then
-			if(force_trg_1 = '0') then
+			if(force_trg_0 = '1') then
 				SPB_Trig_L1_out_i <= '0';
 			elsif(force_trg_1 = '1') then
 				SPB_Trig_L1_out_i <= '1';
 			else
 				SPB_Trig_L1_out_i <= SPB_Trig_L1_out;
+			end if;
+		end if;
+	end process;
+
+	Busy_proc: process(axi_clk)
+	begin
+		if(rising_edge(axi_clk)) then
+			if(force_busy_0 = '1') then
+				SPB_Busy_i <= '0';
+			elsif(force_busy_1 = '1') then
+				SPB_Busy_i <= '1';
+			else
+				SPB_Busy_i <= SPB_Busy;
 			end if;
 		end if;
 	end process;

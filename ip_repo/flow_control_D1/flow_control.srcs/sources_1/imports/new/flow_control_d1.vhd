@@ -48,6 +48,7 @@ entity flow_control_d1 is
   		 		
   		trig_ext_in: in std_logic;
   		trig_out: out std_logic;
+  		busy: out std_logic;
   		
   		mps_tvalid, mps_tready, mps_tlast: in std_logic;
   		
@@ -313,6 +314,8 @@ architecture Behavioral of flow_control_d1 is
 	
 	signal mps_sig: std_logic := '0';
 	signal s_axis_trg_tlast_d1: std_logic := '0';
+	
+	signal clkb_mode: std_logic := '0';
 
 	attribute keep : string; 
 	attribute keep of s_axis_tlast_d1: signal is "true";  
@@ -351,25 +354,25 @@ begin
 
 ----------------------- 
 	
-xpm_cdc_extsync_inst: xpm_cdc_single
-  generic map (
-     DEST_SYNC_FF   => 4, -- integer; range: 2-10
-     SIM_ASSERT_CHK => 0, -- integer; 0=disable simulation messages, 1=enable simulation messages
-     SRC_INPUT_REG  => 0  -- integer; 0=do not register input, 1=register input
-  )
-  port map (
-     src_clk  => '0',  -- optional; required when SRC_INPUT_REG = 1
-     src_in   => trig_ext_in,
-     dest_clk => s_axis_aclk,
-     dest_out => trig_ext_in_sync
-  );
+--xpm_cdc_extsync_inst: xpm_cdc_single
+--  generic map (
+--     DEST_SYNC_FF   => 4, -- integer; range: 2-10
+--     SIM_ASSERT_CHK => 0, -- integer; 0=disable simulation messages, 1=enable simulation messages
+--     SRC_INPUT_REG  => 0  -- integer; 0=do not register input, 1=register input
+--  )
+--  port map (
+--     src_clk  => '0',  -- optional; required when SRC_INPUT_REG = 1
+--     src_in   => trig_ext_in,
+--     dest_clk => s_axis_aclk,
+--     dest_out => trig_ext_in_sync
+--  );
 
 	is_started <= flags(0);
 	periodic_trig_en <= flags(1);
 	en_algo_trig <= flags(2);
 	en_int_trig <= flags(3);
-	en_ext_trig <= flags(4);
-	en_ta_trig <= flags(5);
+	--en_ext_trig <= flags(4);
+	--en_ta_trig <= flags(5);
 	release_always <= flags(6); 
 	
 	clr_trans_counter <= clr_flags(0);
@@ -382,6 +385,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	trig_cnt_glob_clr <= clr_flags(8); 
 	 
 	trig_immediate <= clr_flags(16);
+	clkb_mode <= clr_flags(17);
 	
 	cmd_inject_16_events_d0 <= clr_flags(17) when rising_edge(s_axis_aclk);
 	cmd_inject_16_events_d1 <= cmd_inject_16_events_d0 when rising_edge(s_axis_aclk);
@@ -560,7 +564,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 	end process;
 	
 	self_trig <= (s_axis_trg_tlast and s_axis_trg_tvalid and en_algo_trig);
-	ext_trig <= (trig_ext_in_sync and en_ext_trig);
+	--ext_trig <= (trig_ext_in_sync and en_ext_trig);
 	
 
 	
@@ -588,15 +592,24 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 --		end if;
 --	end process;
 
-	trig_comb <= self_trig or int_trig or periodic_trig or trig_force or trig_button_debounced or ext_trig or trig_immediate;
-
+	clkb_select: process(s_axis_aclk)
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			if(clkb_mode = '0') then
+				trig_comb <= self_trig or int_trig or periodic_trig;
+			else
+				trig_comb <= trig_ext_in;
+			end if;
+		end if;
+	end process;
+	
 	latency_process: process(s_axis_aclk)
 		variable state : integer range 0 to 3 := 0;
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(is_started = '0' or clr_all = '1' or clr_trig_service = '1') then
 				periodic_trig_latch <= '0';
-				ext_trig_latch <= '0';
+				--ext_trig_latch <= '0';
 				trig_immediate_latch <= '0';
 				ta_trig_param_latch <= (others => '0');
 				trig <= '0';
@@ -608,7 +621,7 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 						if(trig_comb = '1') then
 							periodic_trig_latch <= periodic_trig;
 							self_trig_latch <= self_trig;
-							ext_trig_latch <= ext_trig;
+							--ext_trig_latch <= ext_trig;
 							trig_immediate_latch <= trig_immediate;
 							ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
 							state := state + 1;							
@@ -665,7 +678,8 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 			if(clr_all = '1' or clr_trig_service = '1') then
 				trig_cnt <= (others => '0');
 				trig_type_i <= (others => '0');
-				trig_latch <= '0';		
+				trig_latch <= '0';
+				busy <= '1';		
 				state := 0;
 			else
 				sm_state <= conv_std_logic_vector(state, 4);
@@ -673,11 +687,15 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 					when 0 => if(clr_trig_service = '1') then
 											trig_cnt <= (others => '0');
 											trig_type_i <= (others => '0');
-											trig_latch <= '0';		
+											trig_latch <= '0';
+											busy <= '0';		
 										elsif(trig = '1' and is_started = '1') then 
 											if(trig_cnt < number_of_triggers) then
 												state := state + 1;
+												busy <= '1';
 												trig_type_i <= (others => '0');
+											else
+												busy <= '0';	
 											end if;
 										end if;
 					when 1 => if(periodic_trig_latch = '1') then
@@ -686,9 +704,9 @@ xpm_cdc_extsync_inst: xpm_cdc_single
 											trig_type_i(31 downto 28) <= "0100";
 										--elsif(trig_immediate_latch = '1') then
 										--	trig_type_i(3 downto 0) <= X"3"; 
-										elsif(ext_trig_latch = '1') then
-											trig_type_i(31 downto 28) <= "0010";
-										--elsif(ta_trig_latch = '1') then
+										--elsif(ext_trig_latch = '1') then
+										--	trig_type_i(31 downto 28) <= "0010";
+										----elsif(ta_trig_latch = '1') then
 											--trig_type_i(3 downto 0) <= X"5";
 											--trig_type_i(31 downto 11) <= ta_trig_param_latch(20 downto 0);
 										--else

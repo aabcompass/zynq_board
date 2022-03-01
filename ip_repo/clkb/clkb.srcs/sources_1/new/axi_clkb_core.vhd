@@ -43,8 +43,8 @@ entity axi_clkb_core is
 			spb_1pps_n : in STD_LOGIC; 
 			SPB_Trig_L1_out_P : out STD_LOGIC; --ac13
 			SPB_Trig_L1_out_N : out STD_LOGIC; 
-			SPB_Busy_P : in STD_LOGIC; --ac12
-			SPB_Busy_N : in STD_LOGIC; 
+			SPB_Busy_P : out STD_LOGIC; --ac12
+			SPB_Busy_N : out STD_LOGIC; 
 			SPB_Ext_trig_IN_P : in STD_LOGIC;  --ae12
 			SPB_Ext_trig_IN_N : in STD_LOGIC; 
 			SPB_CLK_40_p : in STD_LOGIC;  --ae13
@@ -55,7 +55,7 @@ entity axi_clkb_core is
 			gtu_clk: out std_logic;
 			spb_1pps: out std_logic;
 			SPB_Trig_L1_out: in std_logic;
-			SPB_Busy: out std_logic;
+			SPB_Busy: in std_logic;
 			SPB_Ext_trig_IN: out std_logic;
 			SPB_CLK_200_out: out std_logic;
 			--AXI lite
@@ -228,8 +228,8 @@ architecture Behavioral of axi_clkb_core is
 	    spb_1pps_n : in STD_LOGIC; 
 	    SPB_Trig_L1_out_P : out STD_LOGIC; --ac13
 	    SPB_Trig_L1_out_N : out STD_LOGIC; 
-	    SPB_Busy_P : in STD_LOGIC; --ac12
-	    SPB_Busy_N : in STD_LOGIC; 
+	    SPB_Busy_P : out STD_LOGIC; --ac12
+	    SPB_Busy_N : out STD_LOGIC; 
 	    SPB_Ext_trig_IN_P : in STD_LOGIC;  --ae12
 	    SPB_Ext_trig_IN_N : in STD_LOGIC; 
 	    SPB_CLK_40_p : in STD_LOGIC;  --ae13
@@ -240,7 +240,7 @@ architecture Behavioral of axi_clkb_core is
 	    gtu_clk: out std_logic;
 	    spb_1pps: out std_logic;
 	    SPB_Trig_L1_out: in std_logic;
-	    SPB_Busy: out std_logic;
+	    SPB_Busy: in std_logic;
 	    SPB_Ext_trig_IN: out std_logic;
 	    SPB_CLK_200_out: out std_logic;
 	    --regs
@@ -248,6 +248,8 @@ architecture Behavioral of axi_clkb_core is
 	    axi_aresetn: in std_logic;
 	    force_trg_0: in std_logic;
 	    force_trg_1: in std_logic;
+	    force_busy_0: in std_logic;
+	    force_busy_1: in std_logic;
 	    freq_40MHz: out std_logic_vector(31 downto 0);
 	    freq_gtu_clk: out std_logic_vector(31 downto 0);
 	    cnt_1pps: out std_logic_vector(31 downto 0);
@@ -1276,6 +1278,8 @@ begin
 	    axi_aresetn => S_AXI_ARESETN,--: in std_logic;
 	    force_trg_0 => slv_reg0(0),--: in std_logic;
 	    force_trg_1 => slv_reg0(1),--: in std_logic;
+	    force_busy_0 => slv_reg0(2),
+	    force_busy_1 => slv_reg0(3),
 	    freq_40MHz => slv_reg4,--: out std_logic_vector(31 downto 0);
 	    freq_gtu_clk => slv_reg5,--: out std_logic_vector(31 downto 0);
 	    cnt_1pps => slv_reg6,--: out std_logic_vector(31 downto 0);

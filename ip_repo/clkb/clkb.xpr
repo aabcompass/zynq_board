@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master4/ip_repo/clkb/clkb.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master7/ip_repo/clkb/clkb.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="83cf76177b7746a0b0aae54a2f4bb2c9"/>

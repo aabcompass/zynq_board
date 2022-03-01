@@ -84,6 +84,8 @@
 
 #define BIT_FC_STATUS_DMA_ERROR			(1<<18)
 
+#define BIT_FC_FLAGS_CLKB_MODE			(1<<17)
+
 int IsD1DMA_error();
 u32 GetTrigNGTU_L1();
 u32 GetTrigType_L1();
@@ -99,6 +101,7 @@ u32 L1_getNAPM();
 u32 L1_getGTUnumber();
 u32 L1_getSatisfied();
 void SetPeriodOfPeriodicTrigger(u32 clks);
+void FC_use_CLKB(int param);
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

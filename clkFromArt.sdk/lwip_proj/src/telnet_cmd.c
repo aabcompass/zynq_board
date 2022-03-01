@@ -678,6 +678,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Param out or range\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_L1_CLKB_INS, &int_param) == 1)
+	{
+		FC_use_CLKB(int_param);
+		strcpy(ans_str, "Ok\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_PERIODIC_PER, &param) == 1)
 	{
 		SetPeriodOfPeriodicTrigger(param);
