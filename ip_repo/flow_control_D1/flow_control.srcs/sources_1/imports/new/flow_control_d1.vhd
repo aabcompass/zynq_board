@@ -374,6 +374,7 @@ begin
 	--en_ext_trig <= flags(4);
 	--en_ta_trig <= flags(5);
 	release_always <= flags(6); 
+	clkb_mode <= flags(17);
 	
 	clr_trans_counter <= clr_flags(0);
 	clear_error <= clr_flags(1);
@@ -385,7 +386,7 @@ begin
 	trig_cnt_glob_clr <= clr_flags(8); 
 	 
 	trig_immediate <= clr_flags(16);
-	clkb_mode <= clr_flags(17);
+	
 	
 	cmd_inject_16_events_d0 <= clr_flags(17) when rising_edge(s_axis_aclk);
 	cmd_inject_16_events_d1 <= cmd_inject_16_events_d0 when rising_edge(s_axis_aclk);
