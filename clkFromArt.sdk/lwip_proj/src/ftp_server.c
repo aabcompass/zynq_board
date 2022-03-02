@@ -74,10 +74,12 @@ void SetFilenamesStyle(u32 param)
 
 void CloseFile(int descriptor, u32 file_size) // shows the file on  FTP. Sets file size;
 {
-	if((descriptor >= 0) && (descriptor<MAX_FILES))
-	{
+	if((descriptor >= 0) && (descriptor<MAX_FILES)) {
 		files[descriptor].is_closed = 1;
 		files[descriptor].length = file_size;
+	}
+	else {
+		xil_printf("File %d NOT closed\n\r", descriptor);
 	}
 }
 
@@ -627,7 +629,7 @@ void send_data_sm()
 			sprintf(file_record, "-r--r--r-- 1 1001 1001 %d Jan 01 2000 %s\r\n", (int)files[current_record].length, files[current_record].filename);
 		else
 			sprintf(file_record, "%s\r\n", /*(int)files[current_record].length,*/ files[current_record].filename);
-		xil_printf("Lst: %s\n\r", file_record);
+		//xil_printf("Lst: %s\n\r", file_record);
 		ftp_send_data(file_record, strlen(file_record));
 		current_record++;
 		ftp_state = wait_state;

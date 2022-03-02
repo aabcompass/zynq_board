@@ -231,7 +231,8 @@ void MPS_service()
 
 void L1Start()
 {
-	start_dma_l1();
+	if(!is_l1_started)
+		start_dma_l1();
 	is_l1_started = 1;
 }
 
@@ -250,9 +251,11 @@ void MPSStart()
 
 void L3Start(u32 is_infinite, u32 n_frames) //N_FRAMES_DMA_D3
 {
-	start_dma_l3(n_frames);
-	is_D3_received = 0;
-	is_l3_started = is_infinite;
+	if(!is_l3_started) {
+		start_dma_l3(n_frames);
+		is_D3_received = 0;
+		is_l3_started = is_infinite;
+	}
 }
 
 u32 Is_D3_received()

@@ -97,15 +97,17 @@ void MmgDeleteSciFile(u32 file_descriptor)
 	print("\n\r");
 }
 
-void MmgIncr_n_records(u32 file_descriptor, u16 record)
+u16 MmgIncr_n_records(u32 file_descriptor, u16 record)
 {
 	if(file_descriptor < 0 || file_descriptor >= N_SCI_FILES) {
 		print("MmgIncr_n_records: bad file_descriptor\n\r");
-		return;
+		return 0;
+		//TODO:
 	}
 
 	sciFiles[file_descriptor].records[sciFiles[file_descriptor].n_records] = record;
 	sciFiles[file_descriptor].n_records++;
+	return sciFiles[file_descriptor].n_records;
 }
 
 char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
@@ -193,6 +195,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 {
 	//u32 run_cycle = n_gtu / N_FRAMES_PER_LIFECYCLE;
 	//static last_run_cycle = 0;
+	static int is_file_opened = 0;
+	u16 n_records;
 	print("=");
 	char* p;
 	u32 l3_mmg_sci_file_id, l3_sci_file_id, file_size;
@@ -212,19 +216,37 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
-		if(glob_cycle != last_global_cycle) {
-			file_size=MmgGetFileSize(last_mmg_file_descriptor);
-			CloseFile(last_file_descriptor, file_size);
-			xil_printf("File closed (size=%d)\n\r", file_size);
+
+		if(is_file_opened) {
+			if(glob_cycle != last_global_cycle) { //new global cycle
+				file_size = MmgGetFileSize(last_mmg_file_descriptor);
+				CloseFile(last_file_descriptor, file_size);
+				xil_printf("New global cycle. File closed (size=%d)\n\r", file_size);
+				last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
+				if(last_mmg_file_descriptor != -1) {
+					last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
+					print("New file created (\n\r");
+				}
+			}
+			else {
+				n_records = MmgIncr_n_records(last_mmg_file_descriptor, last_l1_occupied);
+				if(n_records == N_MAX_RECORDS_PER_FILE) {
+					file_size = MmgGetFileSize(last_mmg_file_descriptor);
+					CloseFile(last_file_descriptor, file_size);
+					xil_printf("Maximum ev. per file. File closed (size=%d)\n\r", file_size);
+					is_file_opened = 0;
+				}
+			}
+		}
+		else {
 			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
 			if(last_mmg_file_descriptor != -1) {
 				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
 				print("New file created\n\r");
+				is_file_opened = 1;
 			}
 		}
-		else {
-			MmgIncr_n_records(last_mmg_file_descriptor, last_l1_occupied);
-		}
+
 		last_global_cycle = glob_cycle;
 	}
 	else if(data_type == DATA_TYPE_L3) {
@@ -279,7 +301,6 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		}
 		last_global_cycle = glob_cycle;
 	}
-
 }
 
 void MmgPrintFiles()

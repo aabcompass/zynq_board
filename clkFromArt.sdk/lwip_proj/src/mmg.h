@@ -12,8 +12,8 @@
 #include "xbasic_types.h"
 #include "xil_types.h"
 
-#define N_D1_IN_MEM	400
-#define N_D3_IN_MEM	13
+#define N_D1_IN_MEM	250
+#define N_D3_IN_MEM	15
 #define N_MPS_IN_MEM	120
 
 #define N_SCI_FILES		(N_D1_IN_MEM + N_D3_IN_MEM + N_MPS_IN_MEM)
@@ -61,7 +61,7 @@ typedef struct
 typedef struct
 {
 	u8 is_occupied;
-	u8 data_type; /*1 or 3*/
+	u8 data_type; /*1 or 3 or 4*/
 	u32 global_cycle;
 	//u16 first_record;
 	u16 records[N_MAX_RECORDS_PER_FILE];
@@ -73,7 +73,7 @@ char* MmgAlloc(int data_type /*1 or 3*/); // return NULL if not allocated
 u32 MmgCreateSciFile(int data_type, u32 global_cycle, void* p, u16 first_record);
 void MmgDeleteSciFile(u32 file_descriptor);
 void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle);
-void MmgIncr_n_records(u32 file_descriptor, u16 record);
+u16 MmgIncr_n_records(u32 file_descriptor, u16 record);
 INTPTR MmgGetP(int data_type);
 u32 Get_n_occupied(int data_type);
 void SetScurveAdditionalData(u16 start, u16 step, u16 end);
