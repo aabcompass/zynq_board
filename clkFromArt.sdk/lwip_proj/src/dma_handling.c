@@ -150,7 +150,7 @@ void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 	InvalidateRange(DATA_TYPE_L1);
 	tt = GetTrigType_L1();
 	if(is_file_processing == DO_FILE_PROCESSING)
-		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), tt, n_glob_cycles);
+		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), tt, n_glob_cycles, GetTrigN_of_internal_L1());
 	xil_printf("tt=0x%08x\n\r", tt);
 	if(is_l1_started == 1) {
 		start_dma_l1();
@@ -181,7 +181,7 @@ static void RxIntrHandler_dma_d3(void *Callback)
 	{
 		InvalidateRange(DATA_TYPE_L3);
 		if(is_file_processing == DO_FILE_PROCESSING)
-			MmgFinish(DATA_TYPE_L3, GetNGTU(),  GetUnixTime(), (1<<31), Get_n_glob_cycles());
+			MmgFinish(DATA_TYPE_L3, GetNGTU(),  GetUnixTime(), (1<<31), Get_n_glob_cycles(), 0);
 		if(is_l3_started) { // Restart DMA D3
 			start_dma_l3(N_FRAMES_DMA_D3);
 		}
@@ -272,7 +272,7 @@ void L3Stop()
 
 void PrintDataSizes()
 {
-	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V5));
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V6));
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V3)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V3));
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_MPS_V1)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_MPS_V1));
 	xil_printf("sizeof(MainBuffer)=0x%08x\n\r", sizeof(MainBuffer));

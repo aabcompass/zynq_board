@@ -14,6 +14,7 @@
 #include "own_data_types.h"
 #include "dma_handling.h"
 #include "crc32.h"
+#include "clkb.h"
 
 MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
@@ -166,7 +167,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 u32 MmgGetFileSize(int mmg_file_descriptor)
 {
 	if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L1) {
-		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V5);
+		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V6);
 	}
 	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L3) {
 		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V3);
@@ -194,7 +195,7 @@ INTPTR MmgGetP(int data_type)
 	}
 }
 
-void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle)
+void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle, u32 n_internal_l1)
 {
 	//u32 run_cycle = n_gtu / N_FRAMES_PER_LIFECYCLE;
 	//static last_run_cycle = 0;
@@ -212,10 +213,13 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.trig_type = trig_type;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
+		mainBuffer.sci_data_l1[last_l1_occupied].payload.internal_event_counter = n_internal_l1;
+		mainBuffer.sci_data_l1[last_l1_occupied].payload.event_counter = ClkbGetCntExtTrig();
+
 		xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
-		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
-		mainBuffer.sci_data_l1[last_l1_occupied].crc32 = crc_32((unsigned char*)&mainBuffer.sci_data_l1[last_l1_occupied].zbh.header, sizeof(DATA_TYPE_SCI_L1_V5)-4, 0xFFFFFFFF);
+		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V6);
+		mainBuffer.sci_data_l1[last_l1_occupied].crc32 = crc_32((unsigned char*)&mainBuffer.sci_data_l1[last_l1_occupied].zbh.header, sizeof(DATA_TYPE_SCI_L1_V6)-4, 0xFFFFFFFF);
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
@@ -304,7 +308,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_mps[last_mps_occupied].payload.ts.n_gtu = n_gtu;
 		mainBuffer.sci_data_mps[last_mps_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_mps[last_mps_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_MPS, VER_Z_DATA_TYPE_SCI_MPS_V1);
-		mainBuffer.sci_data_mps[last_mps_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V5);
+		mainBuffer.sci_data_mps[last_mps_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V6);
 		mainBufferDescr.sci_data_l1[last_mps_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_mps[last_mps_occupied].payload.data[0], 4*N_OF_PIXEL_PER_PDM/4);
 		p = (char*)&mainBuffer.sci_data_mps[last_mps_occupied];

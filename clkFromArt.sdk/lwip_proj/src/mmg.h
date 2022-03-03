@@ -20,9 +20,9 @@
 
 typedef struct
 {
-	char alignment[0x40-sizeof(ZynqBoardHeader)-sizeof(TimeStamp_dual)-3*sizeof(uint32_t)];
-	Z_DATA_TYPE_SCI_L1_V5 sci_data_l1[N_D1_IN_MEM];
-	char alignment2[64];
+	char alignment[0x40-sizeof(ZynqBoardHeader)-sizeof(TimeStamp_dual)-4*sizeof(uint32_t)];
+	Z_DATA_TYPE_SCI_L1_V6 sci_data_l1[N_D1_IN_MEM];
+	char alignment2[68];
 	Z_DATA_TYPE_SCI_L3_V3 sci_data_l3[N_D3_IN_MEM];
 	char alignment3[64];
 	Z_DATA_TYPE_SCI_MPS_V1 sci_data_mps[N_MPS_IN_MEM];
@@ -72,7 +72,7 @@ typedef struct
 char* MmgAlloc(int data_type /*1 or 3*/); // return NULL if not allocated
 u32 MmgCreateSciFile(int data_type, u32 global_cycle, void* p, u16 first_record);
 void MmgDeleteSciFile(u32 file_descriptor);
-void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle);
+void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_cycle, u32 n_internal_l1);
 u16 MmgIncr_n_records(u32 file_descriptor, u16 record);
 INTPTR MmgGetP(int data_type);
 u32 Get_n_occupied(int data_type);

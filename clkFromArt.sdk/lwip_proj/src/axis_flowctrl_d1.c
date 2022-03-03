@@ -53,6 +53,11 @@ u32 GetTrigNGTU_L1()
 	return *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_GTU_TIMESTAMP*4);
 }
 
+u32 GetTrigN_of_internal_L1()
+{
+	return *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRIG_INTERNAL_CNT*4);
+}
+
 u32 GetTrigType_L1()
 {
 	return *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRIG_TYPE*4);
@@ -109,6 +114,8 @@ void FlowControlInit_D1()
 	FlowControlsClr_D1();
 	// reset time to zero
 	SetTime(0);
+	//Enable counter for internal events
+	FC_Enable_Reset_Internal_TRG_counter();
 }
 
 void SetPeriodOfPeriodicTrigger(u32 clks)
@@ -129,17 +136,24 @@ void FlowControlStart_D1(u32 start)
 	}
 }
 
-void StartEventsLog_L1()
+void FC_Enable_Reset_Internal_TRG_counter()
 {
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_NUM_OF_TRIGS_FLAGS2*4) &= ~BIT_FC_TRIG_EVENTS_LOG_EN;
+	print("FC_Enable_Reset_Internal_TRG_counter\n\r");
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_NUM_OF_TRIGS_FLAGS2*4) |= BIT_FC_TRIG_EVENTS_LOG_EN;
 }
 
-int StopEventsLog_L1() // returns the number of collected events
-{
-	u32 num = *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRIG_ALL_CNT*4);
-	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_NUM_OF_TRIGS_FLAGS2*4) &= ~BIT_FC_TRIG_EVENTS_LOG_EN;
-	return num;
-}
+//void StartEventsLog_L1()
+//{
+//	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_NUM_OF_TRIGS_FLAGS2*4) |= BIT_FC_TRIG_EVENTS_LOG_EN;
+//}
+
+//int StopEventsLog_L1() // returns the number of collected events
+//{
+//	u32 num = *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRIG_ALL_CNT*4);
+//	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_NUM_OF_TRIGS_FLAGS2*4) &= ~BIT_FC_TRIG_EVENTS_LOG_EN;
+//	return num;
+//}
 
 int IsD1Triggered()
 {
