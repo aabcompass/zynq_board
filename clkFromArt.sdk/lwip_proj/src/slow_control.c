@@ -170,11 +170,11 @@ void SendUserIndSCSettingsToSp3()
 			s_value = 0;
 			dac10_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac10bit;
 			//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg0 = 0x0FA20007 | dac10_value<<7 | s_value<<3;
-			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg0 = 0x0FF20007 | dac10_value<<7 | s_value<<3;
+			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg0 = 0x0EF20007 | (dac10_value<<7) | (s_value<<3) | (instrumentState.curr_ramp<<23);
 			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg1 = 0x00000000;
-			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg2 = 0x0000003B;
+			sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].misc_reg2 = 0x0000003A | (instrumentState.curr_capa<<0);
 			//xil_printf("chip=%d, line=%d, dac10_value=%d\n\r", j, i, dac10_value);
-			for(k=0;k<N_OF_PIXELS_PER_PMT;k++)
+			for (k=0;k<N_OF_PIXELS_PER_PMT;k++)
 			{
 				c_pixel = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].pixel_mask[k];
 				dac7_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac7bit[k];
@@ -184,7 +184,7 @@ void SendUserIndSCSettingsToSp3()
 				//gain_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].gain5bit[k];
 				//sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].gain[k] = gain_value;
 			}
-			for(k=0;k<N_OF_PIXELS_PER_PMT/8;k++)
+			for (k=0; k<N_OF_PIXELS_PER_PMT/8; k++)
 			{
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k] = instrumentState.curr_qdcsub;
 				//xil_printf("i=%d, j=%d, k=%d, sub=0x%08x\n\r", i, j, k, sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k]);
