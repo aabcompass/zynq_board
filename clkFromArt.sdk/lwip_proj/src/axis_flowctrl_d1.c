@@ -85,7 +85,7 @@ int Get_N3()
 	return 1;
 }
 
-void SetTime(u32 param0)
+void SetUnixTime(u32 param0)
 {
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_UNIX_TIME*4) = param0;
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = BIT_FC_SET_UNIX_TIME;
@@ -113,7 +113,7 @@ void FlowControlInit_D1()
 	//reset flow control cores
 	FlowControlsClr_D1();
 	// reset time to zero
-	SetTime(0);
+	SetUnixTime(0);
 	//Enable counter for internal events
 	FC_Enable_Reset_Internal_TRG_counter();
 }

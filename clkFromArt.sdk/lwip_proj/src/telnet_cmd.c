@@ -781,7 +781,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(sscanf(p->payload, TCP_CMD_SET_UNIX_TIME, &int_param) == 1)
 	{
-		SetTime(int_param);
+		SetUnixTime(int_param);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
