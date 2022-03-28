@@ -349,6 +349,10 @@ architecture Behavioral of flow_control_d1 is
 	signal glob_cycles_gtu_cnt: std_logic_vector(27 downto 0) := X"0000001";
 	signal trig_cnt_glob_i: std_logic_vector(15 downto 0) := X"0000";
 	
+	signal trig_ext_in_d1: std_logic := '0';
+	signal trig_ext_in_f: std_logic := '0';
+	
+	
 
 begin
 
@@ -593,13 +597,18 @@ begin
 --		end if;
 --	end process;
 
+	trig_out <= (self_trig or periodic_trig) when rising_edge(s_axis_aclk);
+	
+	trig_ext_in_d1 <= trig_ext_in when rising_edge(s_axis_aclk);
+	trig_ext_in_f <= trig_ext_in and (not trig_ext_in_d1) when rising_edge(s_axis_aclk);
+	
 	clkb_select: process(s_axis_aclk)
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clkb_mode = '0') then
 				trig_comb <= self_trig or int_trig or periodic_trig;
 			else
-				trig_comb <= trig_ext_in;
+				trig_comb <= trig_ext_in_f;
 			end if;
 		end if;
 	end process;
@@ -649,7 +658,7 @@ begin
 		end if;
 	end process;
 	
-	trig_out <= trig when rising_edge(s_axis_aclk);
+
 	
 	trig_all_cnt_process:  process(s_axis_aclk) 
 	begin
@@ -685,19 +694,18 @@ begin
 			else
 				sm_state <= conv_std_logic_vector(state, 4);
 				case state is
-					when 0 => if(clr_trig_service = '1') then
-											trig_cnt <= (others => '0');
-											trig_type_i <= (others => '0');
-											trig_latch <= '0';
-											busy <= '0';		
-										elsif(trig = '1' and is_started = '1') then 
-											if(trig_cnt < number_of_triggers) then
-												state := state + 1;
-												busy <= '1';
-												trig_type_i <= (others => '0');
+					when 0 => if(is_started = '1') then
+											if(trig = '1') then 
+												if(trig_cnt < number_of_triggers) then
+													state := state + 1;
+													busy <= '1';
+													trig_type_i <= (others => '0');
+												end if;
 											else
 												busy <= '0';	
 											end if;
+										else
+											busy <= '1';
 										end if;
 					when 1 => if(periodic_trig_latch = '1') then
 											trig_type_i(31 downto 28) <= "1000";

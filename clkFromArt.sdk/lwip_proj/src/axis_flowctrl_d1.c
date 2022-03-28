@@ -131,8 +131,8 @@ void FlowControlStart_D1(u32 start)
 		is_started = 1;
 	}
 	else {
-		is_started = 0;
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &= ~BIT_FC_IS_STARTED;
+		is_started = 0;
 	}
 }
 

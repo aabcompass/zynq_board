@@ -326,7 +326,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_STOP, strlen(TCP_CMD_INSTR_MODE_STOP)) == 0)
 	{
-		//FlowControlStart_D1(0);
+		FlowControlStart_D1(0);
 		//L1Stop();
 		//L3Stop();
 		StopDataProvider();
