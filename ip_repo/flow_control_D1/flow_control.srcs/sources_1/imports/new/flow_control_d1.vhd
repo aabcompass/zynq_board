@@ -49,6 +49,8 @@ entity flow_control_d1 is
   		trig_ext_in: in std_logic;
   		trig_out: out std_logic;
   		busy: out std_logic;
+
+  		trig_ext_in_lab: in std_logic;
   		
   		mps_tvalid, mps_tready, mps_tlast: in std_logic;
   		
@@ -352,6 +354,11 @@ architecture Behavioral of flow_control_d1 is
 	signal trig_ext_in_d1: std_logic := '0';
 	signal trig_ext_in_f: std_logic := '0';
 	
+	signal trig_ext_in_lab_d1: std_logic := '0';
+	signal trig_ext_in_lab_f: std_logic := '0';
+	signal en_trig_ext_lab: std_logic := '0';
+	signal trig_ext_in_lab_sync: std_logic := '0';
+	
 	
 
 begin
@@ -375,7 +382,7 @@ begin
 	periodic_trig_en <= flags(1);
 	en_algo_trig <= flags(2);
 	en_int_trig <= flags(3);
-	--en_ext_trig <= flags(4);
+	en_trig_ext_lab <= flags(4);
 	--en_ta_trig <= flags(5);
 	release_always <= flags(6); 
 	clkb_mode <= flags(17);
@@ -597,16 +604,38 @@ begin
 --		end if;
 --	end process;
 
+   xpm_cdc_single_inst : xpm_cdc_single
+   generic map (
+      DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
+      INIT_SYNC_FF => 0,   -- DECIMAL; integer; 0=disable simulation init values, 1=enable simulation init
+                           -- values
+      SIM_ASSERT_CHK => 0, -- DECIMAL; integer; 0=disable simulation messages, 1=enable simulation messages
+      SRC_INPUT_REG => 0   -- DECIMAL; integer; 0=do not register input, 1=register input
+   )
+   port map (
+      dest_out => trig_ext_in_lab_sync, -- 1-bit output: src_in synchronized to the destination clock domain. This output
+                            -- is registered.
+
+      dest_clk => s_axis_aclk, -- 1-bit input: Clock signal for the destination clock domain.
+      src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+      src_in => trig_ext_in_lab      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
+   );
+
 	trig_out <= (self_trig or periodic_trig) when rising_edge(s_axis_aclk);
 	
 	trig_ext_in_d1 <= trig_ext_in when rising_edge(s_axis_aclk);
 	trig_ext_in_f <= trig_ext_in and (not trig_ext_in_d1) when rising_edge(s_axis_aclk);
 	
+	trig_ext_in_lab_d1 <= trig_ext_in_lab_sync when rising_edge(s_axis_aclk);
+	trig_ext_in_lab_f <= (trig_ext_in_lab and (not trig_ext_in_lab_d1)) and en_trig_ext_lab when rising_edge(s_axis_aclk);
+	
+	
+	
 	clkb_select: process(s_axis_aclk)
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clkb_mode = '0') then
-				trig_comb <= self_trig or int_trig or periodic_trig;
+				trig_comb <= periodic_trig or self_trig or int_trig  or trig_ext_in_lab_f;
 			else
 				trig_comb <= trig_ext_in_f;
 			end if;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xADEAC01910099C0" bd:device="xc7z035ffg676-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="design_1" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xA1983641554C4E8B" bd:device="xc7z035ffg676-2" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.1" bd:top="design_1" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -329,7 +329,7 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>Dout_2</spirit:name>
+          <spirit:name>Dout_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -349,7 +349,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>Dout_0</spirit:name>
+          <spirit:name>Dout_2</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -491,7 +491,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_1</spirit:name>
+          <spirit:name>sr_ck_pc_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -503,7 +503,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sr_ck_pc_0</spirit:name>
+          <spirit:name>sr_ck_pc_1</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -545,13 +545,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>io0_o_0</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>io0_o_1</spirit:name>
+          <spirit:name>io0_o_3</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -563,19 +557,19 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>io0_o_3</spirit:name>
+          <spirit:name>io0_o_1</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sck_o_0</spirit:name>
+          <spirit:name>io0_o_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sck_o_1</spirit:name>
+          <spirit:name>sck_o_3</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
@@ -595,13 +589,19 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>sck_o_3</spirit:name>
+          <spirit:name>sck_o_1</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
             <spirit:vector>
               <spirit:left>0</spirit:left>
               <spirit:right>0</spirit:right>
             </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>sck_o_0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
@@ -681,7 +681,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>art_gtu_0</spirit:name>
+          <spirit:name>art_gtu_2</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -693,7 +693,7 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>art_gtu_2</spirit:name>
+          <spirit:name>art_gtu_0</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -776,6 +776,12 @@
         </spirit:port>
         <spirit:port>
           <spirit:name>spb_1pps_n_0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>trig_ext_in_lab_0</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
@@ -1821,9 +1827,9 @@
       <spirit:adHocConnection>
         <spirit:name>xlslice_Zynq_Dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="art_clk"/>
-        <spirit:externalPortReference spirit:portRef="Dout_0"/>
-        <spirit:externalPortReference spirit:portRef="Dout_1"/>
         <spirit:externalPortReference spirit:portRef="Dout_2"/>
+        <spirit:externalPortReference spirit:portRef="Dout_1"/>
+        <spirit:externalPortReference spirit:portRef="Dout_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>data_in_from_pins_p_0_1</spirit:name>
@@ -2065,9 +2071,9 @@
       <spirit:adHocConnection>
         <spirit:name>spaciroc3_sc_0_sr_ck_pc</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spaciroc3_sc_0" spirit:portRef="sr_ck_pc"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
-        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
         <spirit:externalPortReference spirit:portRef="sr_ck_pc_1"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_2"/>
+        <spirit:externalPortReference spirit:portRef="sr_ck_pc_0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>HV_AERA_IP_0_GTU_HV_p</spirit:name>
@@ -2102,18 +2108,18 @@
       <spirit:adHocConnection>
         <spirit:name>axi_quad_spi_0_io0_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="io0_o"/>
-        <spirit:externalPortReference spirit:portRef="io0_o_3"/>
-        <spirit:externalPortReference spirit:portRef="io0_o_2"/>
-        <spirit:externalPortReference spirit:portRef="io0_o_1"/>
         <spirit:externalPortReference spirit:portRef="io0_o_0"/>
+        <spirit:externalPortReference spirit:portRef="io0_o_1"/>
+        <spirit:externalPortReference spirit:portRef="io0_o_2"/>
+        <spirit:externalPortReference spirit:portRef="io0_o_3"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_quad_spi_0_sck_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="sck_o"/>
-        <spirit:externalPortReference spirit:portRef="sck_o_3"/>
-        <spirit:externalPortReference spirit:portRef="sck_o_2"/>
-        <spirit:externalPortReference spirit:portRef="sck_o_1"/>
         <spirit:externalPortReference spirit:portRef="sck_o_0"/>
+        <spirit:externalPortReference spirit:portRef="sck_o_1"/>
+        <spirit:externalPortReference spirit:portRef="sck_o_2"/>
+        <spirit:externalPortReference spirit:portRef="sck_o_3"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>artx_done_0_1</spirit:name>
@@ -2371,9 +2377,9 @@
       <spirit:adHocConnection>
         <spirit:name>axi_data_provider_z3_0_art_gtu</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="art_gtu"/>
-        <spirit:externalPortReference spirit:portRef="art_gtu_2"/>
-        <spirit:externalPortReference spirit:portRef="art_gtu_1"/>
         <spirit:externalPortReference spirit:portRef="art_gtu_0"/>
+        <spirit:externalPortReference spirit:portRef="art_gtu_1"/>
+        <spirit:externalPortReference spirit:portRef="art_gtu_2"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axis_data_fifo_mps_axis_data_count</spirit:name>
@@ -2464,6 +2470,11 @@
         <spirit:name>axis_flow_control_d1_0_trig_out</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="trig_out"/>
         <spirit:internalPortReference spirit:componentRef="axi_clkb_core_0" spirit:portRef="SPB_Trig_L1_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>trig_ext_in_lab_0_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="trig_ext_in_lab_0"/>
+        <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="trig_ext_in_lab"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
