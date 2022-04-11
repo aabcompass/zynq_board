@@ -954,7 +954,7 @@ void SetDefaultParameters()
 	instrumentState.file_counter_l3 = 0;
 	instrumentState.is_simple_packets = 0;
 	instrumentState.mode = MODE_NONE;
-	systemSettings.scurve_delay = 50;
+	systemSettings.scurve_delay = 75;
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 	instrumentState.is_artix_frame_started = 0;

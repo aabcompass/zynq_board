@@ -423,6 +423,7 @@ static enum  {
 	pass_data,
 	wait_pass_state1,
 	wait_pass_state2,
+	wait_pass_state3,
 	condition_state,
 	end_state
 } scurve_sm_state = no_state;
@@ -451,6 +452,7 @@ void scurve_sm()
 		case change_thr:
 			if(instrumentState.scurve_scan == SCURVE_SCAN_DAC10) {
 				//LoadSameDataToSlowControl2(current_common_thr);
+				SetArtixGTUOn(0);
 				PropagateDac10toIndSC(current_common_thr);
 				SendUserIndSCSettingsToSp3();
 				xil_printf("\n\rdac=%d ", current_common_thr);
@@ -464,6 +466,7 @@ void scurve_sm()
 			break;
 		case wait_thr_state:
 			if(scurve_wait_cnt > 10*systemSettings.scurve_delay) {/*10 ms*/
+				SetArtixGTUOn(1);
 				if(current_common_thr%N_D3_PER_FILE == 0) {
 					scurve_sm_state = start_dma1;
 				}
@@ -513,7 +516,10 @@ void scurve_sm()
 			scurve_sm_state = pass_data;
 			break;
 		case pass_data:
+			//if(current_common_thr == 0)
 			StartDataProviderFor1D3frame(GetIntegration());
+			//else
+			//	ContinueDataProviderFor1D3frame();
 			scurve_sm_state = wait_pass_state1;
 			break;
 		case wait_pass_state1:
@@ -524,8 +530,19 @@ void scurve_sm()
 		case wait_pass_state2:
 			print("\0");
 			if(!IsDataProviderPass())
-				scurve_sm_state = condition_state;
+				scurve_sm_state = wait_pass_state3;
 			break;
+		case wait_pass_state3:
+//			if(scurve_wait_cnt > 10*systemSettings.scurve_delay) {/*10 ms*/
+//				scurve_sm_state = condition_state;
+//				scurve_wait_cnt = 0;
+//			}
+//			else {
+//				scurve_wait_cnt++;
+//				print("#");
+//			}
+//			break;
+			scurve_sm_state = condition_state;
 		case condition_state:
 			//if(current_common_thr == NMAX_OF_THESHOLDS-1) {
 			if(current_common_thr == n_of_thresholds-scurve_step) {

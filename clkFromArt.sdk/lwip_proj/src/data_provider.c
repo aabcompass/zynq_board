@@ -57,6 +57,12 @@ void StartDataProviderFor1D3frame(u32 n_integration)
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_RUN_DATACONV);
 }
 
+void ContinueDataProviderFor1D3frame()
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) |= (1<<BIT_START_SIG);
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS) &= ~(1<<BIT_START_SIG);
+}
+
 void StopDataConverter()
 {
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_RUN_DATACONV);
@@ -151,6 +157,16 @@ void ArtixClkEn(u32 en)
 	}
 }
 
+void PauseArtixClk()
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_CLKEN) &= ~(1<<BIT_ART_CLKEN);
+}
+
+void ResumeArtixClk()
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_CLKEN) |= (1<<BIT_ART_CLKEN);
+}
+
 void SetGtuFreq1us(u32 is_gtu_1us)
 {
 	if(is_gtu_1us)
@@ -173,6 +189,7 @@ void RunArtix(u32 is_gtu_1us)
 	else
 		SetArtixTransmitDelay(2);
 	printf("RunArtixAcq\n\r");
+	SetArtixGTUOn(1);
 	SetArtixAcqOn();
 }
 

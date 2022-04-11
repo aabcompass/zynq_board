@@ -176,11 +176,11 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'c')
 	{
-		ArtixClkEn(1);
+		SetArtixGTUOn(1);
 	}
 	else if(c == 'C') // artix Gen mode
 	{
-		ArtixClkEn(0);
+		SetArtixGTUOn(0);
 	}
 	else if(c == 'q')
 	{

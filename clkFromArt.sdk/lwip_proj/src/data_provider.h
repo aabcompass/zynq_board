@@ -64,12 +64,15 @@
 int IsDataProviderStarted();
 void RunArtix(u32 is_gtu_1us);
 void ArtixClkEn(u32 en);
+void PauseArtixClk();
+void ResumeArtixClk();
 void SetGtuFreq1us(u32 is_gtu_1us);
 void StartDataProvider();
 void StartDataProviderForLive();
 void StopDataProviderForLive();
 void StartDataProviderForNFrames(u32 n_frames);
 void StartDataProviderFor1D3frame(u32 n_integration);
+void ContinueDataProviderFor1D3frame();
 void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max);
 void DataProvEnOutput();
 void ArtixClkEn(u32 en);

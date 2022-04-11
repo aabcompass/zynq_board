@@ -43,6 +43,7 @@ extern InstrumentState instrumentState;
 #define BIT_ART_CONF_ACQON		12
 #define BIT_ART_DATA_IDELAY		13 /* to 17, 5 bits */
 #define BIT_ART_DATA_LD			18 /* to 29*/
+#define BIT_ART_GTU_ON			30
 
 //REG_OUTDATA
 #define BIT_ART_LATCH		2
@@ -186,6 +187,19 @@ void SetArtixFrameOn(u32 param) // 0|1
 			artix_conf_word[i] |= (1<<BIT_ART_CONF_FRAMEON);
 		else
 			artix_conf_word[i] &= ~(1<<BIT_ART_CONF_FRAMEON);
+	}
+
+	LoadAllArtixes_u32(artix_conf_word[0]);
+}
+
+void SetArtixGTUOn(u32 param) // 0|1
+{
+	int i;
+	for(i=0;i<N_OF_ARTIXES; i++) {
+		if(param == 1)
+			artix_conf_word[i] |= (1<<BIT_ART_GTU_ON);
+		else
+			artix_conf_word[i] &= ~(1<<BIT_ART_GTU_ON);
 	}
 
 	LoadAllArtixes_u32(artix_conf_word[0]);
