@@ -45,6 +45,7 @@ static enum  {
 	start_send_file = 100,
 	wait_connect2 = 125,
 	send_portion = 150,
+	//wait_state1_5 = 160,
 	wait_state2 = 175,
 	close_ftp_data2 = 200,
 	send_control_message2 = 220
@@ -402,6 +403,7 @@ static err_t
 ftpdata_sent_callback(void *arg, struct tcp_pcb *tpcb, u16_t len)
 {
 	ftp_frame_acknowledged = 1;
+	//ftpdata_pcb = tpcb; ????
 	//print("\n\r->\n\r");
 	//tcp_packets_counter--;
 	return ERR_OK;
@@ -594,6 +596,7 @@ void send_data_sm()
 	//char dir_sent_str[] = "226 Directory send OK.\r\n";
 	int buf_sz, ret;
 	char file_record[100];
+	static int cnt=0;
 	//char str3[250];
 	switch(ftp_state)
 	{
@@ -674,6 +677,15 @@ void send_data_sm()
 //			tcp_write(ctrl_tpcb, str3, strlen(str3), 1);
 		}
 		break;
+//	case wait_state1_5: // slow down
+//		if(cnt == 1000) {
+//			ftp_state = send_portion;
+//			cnt = 0;
+//		}
+//		else {
+//			cnt++;
+//			print(".");
+//		}
 	case send_portion:
 		portion_size = spectrum_nbytes > MAX_SIZE_TCP_PACKET ? MAX_SIZE_TCP_PACKET : spectrum_nbytes;
 		ret = ftp_send_data(spectrum_addr, portion_size);
@@ -694,7 +706,7 @@ void send_data_sm()
 			ftp_frame_acknowledged = 0;
 			if(spectrum_nbytes)
 			{
-				//print(".");
+				//
 				ftp_state = send_portion;
 			}
 			else
