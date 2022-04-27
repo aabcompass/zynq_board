@@ -186,6 +186,7 @@ int main()
 	ReadIPaddr(&instrumentState.ZB_number);
 
 
+	mac_ethernet_address[5] = instrumentState.ZB_number;
 	/* initliaze IP addresses to be used */
 	IP4_ADDR(&ipaddr,  192, 168,   7, instrumentState.ZB_number);
 	instrumentState.ZB_number -= 9;
