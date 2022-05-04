@@ -36,7 +36,7 @@
 #define REGR_UNIX_TIMESTAMP			22 /*unix_timestamp*/
 #define REGR_MAXIS_TRANS_CNT		23
 #define REGR_MAXIS_ACCEPTED_CNT		24
-#define REGR_TRIG_INTERNAL_CNT		25
+#define REGR_TRIG_INTERNAL_CNT		25 /*Number of all processed triggers*/
 #define REGR_N_GLOB_CYCLES			26 /*Number of glob cycles for sw on (Global cycles incremented every REGW_GTUS_PER_CYCLE)*/
 #define REGR_GTU_MPS_TIMESTAMP		27
 #define REGR_UNIX_MPS_TIMESTAMP		28
@@ -67,6 +67,7 @@
 #define BIT_FC_CLR_GTU_CNT				(1<<4) /* GTU cnt must be reset at the beginning of every measurement */
 #define BIT_FC_CLR_TRIG_SERVICE			(1<<5) /* trig service must be reset at the beginning of every cycle */
 #define BIT_FC_CLR_GLOB_TRG_CNT			(1<<8) /* trigger counter clear bit*/
+#define BIT_FC_CLR_SELF_TRG_CNT			(1<<9) /* self trigger counter clear bit*/
 #define BIT_FC_TRIG_IMMEDIATE			(1<<16)
 #define BIT_FC_INJECT_16_EVENTS_4DMA	(1<<17)
 
@@ -103,6 +104,7 @@ u32 L1_getSatisfied();
 void SetPeriodOfPeriodicTrigger(u32 clks);
 void FC_use_CLKB(int param);
 u32 GetTrigN_of_internal_L1();
+u32 FC_getSelfTrgCnt();
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

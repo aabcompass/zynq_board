@@ -806,6 +806,11 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		sprintf(reply, "%d\n\r", ClkbGetCnt1PPS());
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_L1_SELF_TRG_CNT, strlen(TCP_CMD_L1_SELF_TRG_CNT)) == 0)
+	{
+		sprintf(reply, "%d\n\r", FC_getSelfTrgCnt());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_GTU_CNT, strlen(TCP_CMD_CLKB_GET_GTU_CNT)) == 0)
 	{
 		sprintf(reply, "%d\n\r", ClkbGetCntGTU());
@@ -819,6 +824,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_CLKB_RESET_CNTS, strlen(TCP_CMD_CLKB_RESET_CNTS)) == 0)
 	{
 		ClkbResetCounters();
+		FC_ResetSelfTrgCounter();
 		strcpy(ans_str, "Ok\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}

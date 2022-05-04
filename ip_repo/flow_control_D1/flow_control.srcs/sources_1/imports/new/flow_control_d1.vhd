@@ -88,7 +88,8 @@ entity flow_control_d1 is
   		n_glob_cycles: OUT STD_LOGIC_VECTOR(31 downto 0); --26
   		gtu_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --27 <= gtu_sig_counter_i;
   		unix_mps_timestamp: OUT STD_LOGIC_VECTOR(31 downto 0); --28 <= unix_time_i;		
-  		trig_cnt_glob: out std_logic_vector(15 downto 0);	--29
+  		trig_cnt_glob: out std_logic_vector(15 downto 0);	--29 (15 downto 0)
+  		self_trig_cnt: out std_logic_vector(15 downto 0);	--29 (31 downto 16)
   		s_axis_trg_tdata_d1_latch: out std_logic_vector(31 downto 0) --30
   );
 end flow_control_d1;  
@@ -262,7 +263,7 @@ architecture Behavioral of flow_control_d1 is
 	signal m_axis_tvalid_key, m_axis_tready_key: std_logic := '0';
 	signal pass: std_logic := '0';
 	signal pass_tlast: std_logic := '0';
-	signal self_trig, self_trig_latch: std_logic := '0';
+	signal self_trig, self_trig_d1,  self_trig_latch: std_logic := '0';
 	signal one_second_pulse: std_logic := '0';
 	signal set_unix_time: std_logic := '0';
 	signal trig_latch: std_logic := '0';
@@ -359,6 +360,10 @@ architecture Behavioral of flow_control_d1 is
 	signal en_trig_ext_lab: std_logic := '0';
 	signal trig_ext_in_lab_sync: std_logic := '0';
 	
+	signal self_trig_cnt_clr: std_logic := '0';
+	
+	signal self_trig_cnt_i: std_logic_vector(15 downto 0) := (others => '0');
+	
 	
 
 begin
@@ -395,6 +400,8 @@ begin
 	clr_tlast_remover <= clr_flags(6);
 	clr_sink_sm <= clr_flags(7); 
 	trig_cnt_glob_clr <= clr_flags(8); 
+	self_trig_cnt_clr <= clr_flags(9);
+	
 	 
 	trig_immediate <= clr_flags(16);
 	
@@ -576,6 +583,20 @@ begin
 	end process;
 	
 	self_trig <= (s_axis_trg_tlast and s_axis_trg_tvalid and en_algo_trig);
+	self_trig_d1 <= self_trig when rising_edge(s_axis_aclk);
+	
+	self_trig_cnt_process: process(s_axis_aclk)
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			if(self_trig_cnt_clr = '1') then
+				self_trig_cnt_i <= (others => '0');
+			elsif(self_trig = '1' and self_trig_d1 = '0') then
+				self_trig_cnt_i <= self_trig_cnt_i + 1;
+			end if;
+		end if;
+	end process;
+	
+	self_trig_cnt <= self_trig_cnt_i;
 	--ext_trig <= (trig_ext_in_sync and en_ext_trig);
 	
 
