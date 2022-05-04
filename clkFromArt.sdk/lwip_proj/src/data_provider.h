@@ -37,6 +37,8 @@
 #define BIT_RUN					1 /*Start/stop in case of infinite mode. Must be asserted  in finite mode*/
 #define BIT_RESET_DOZER			2
 #define BIT_EN_OUTPUT			3
+#define BIT_EN_DATA_TO_D1		4
+#define BIT_EN_DATA_TO_L1		5
 
 //REGW_DATACONV_RESET
 #define BIT_DATACONV_RESET		0
@@ -75,6 +77,7 @@ void StartDataProviderFor1D3frame(u32 n_integration);
 void ContinueDataProviderFor1D3frame();
 void DataProvTestMode(int on, u32 period_gtu, u32 patt_init, u32 patt_max);
 void DataProvEnOutput();
+void DataProvEnD1L1(u32 en);
 void ArtixClkEn(u32 en);
 void ResetTriggerService_D1();
 u32 IsDataProviderPass();

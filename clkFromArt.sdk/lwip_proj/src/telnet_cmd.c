@@ -56,6 +56,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 {
 	if(strcasecmp(param, "d1") == 0) {
 		instrumentState.mode = MODE_D1;
+		DataProvEnD1L1(1);
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(NO_D3_FILES);
 		SetFilenamesStyle(FILENAMES_FLIGHT);
@@ -64,6 +65,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 	}
 	else if(strcasecmp(param, "d1d3") == 0) {
 		instrumentState.mode = MODE_D1D3;
+		DataProvEnD1L1(1);
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);
 		SetFilenamesStyle(FILENAMES_LAB);
@@ -72,18 +74,21 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 	}
 	else if(strcasecmp(param, "d3") == 0) {
 		instrumentState.mode = MODE_D3;
+		DataProvEnD1L1(0);
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "live") == 0) {
+		DataProvEnD1L1(0);
 		instrumentState.mode = MODE_LIVE;
 		DoFileProcessing(NO_FILE_PROCESSING);
 		Set_n_d3_per_file(1);
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "scurve") == 0) {
+		DataProvEnD1L1(0);
 		instrumentState.mode = MODE_SCURVE;
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);
@@ -91,6 +96,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		ScurveAdderReInit();
 	}
 	else if(strcasecmp(param, "pixelscan") == 0) {
+		DataProvEnD1L1(0);
 		instrumentState.mode = MODE_PIXELSCAN;
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);

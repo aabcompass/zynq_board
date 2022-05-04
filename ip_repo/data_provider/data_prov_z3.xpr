@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master3/ip_repo/data_provider/data_prov_z3.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master7/ip_repo/data_provider/data_prov_z3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="345788918f074bdfbb4efec694fe52b6"/>

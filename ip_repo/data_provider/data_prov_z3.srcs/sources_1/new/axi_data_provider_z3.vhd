@@ -310,6 +310,7 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal m_axis_tlast_test: std_logic := '0'; 
 	signal test_mode: std_logic := '0';
 	signal en_output: std_logic := '0';
+	signal en_data_to_d1, en_data_to_l1: std_logic := '0';
 	signal test_data_provider_started: std_logic := '0';
 	
 	signal s_axis_tvalid_cnt: std_logic_vector(31 downto 0) := (others => '0');
@@ -317,6 +318,8 @@ architecture Behavioral of axi_data_provider_z3 is
 	
 	signal gtu_period: std_logic_vector(7 downto 0) := (others => '0');
 	signal art_gtu_en: std_logic := '0';
+	
+	signal FRAME_i: std_logic := '0';
 
 begin
 
@@ -1357,6 +1360,8 @@ begin
 	run <= slv_reg0(1);
 	prog_reset <= slv_reg0(2);
 	en_output <= slv_reg0(3);
+	en_data_to_d1 <= slv_reg0(4);
+	en_data_to_l1 <= slv_reg0(5);
 	reset_data_conv <= slv_reg1(0);
 	reset_scurve_adder <= not slv_reg1(1);
 	reset_dataprov4trig <= not slv_reg1(2);
@@ -1464,8 +1469,8 @@ begin
 	
 				m01_axis_tdata <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
 				m01_axis_tuser <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
-				m01_axis_tvalid <= m_axis_tvalid_test and pass;--: in std_logic;
-				m01_axis_tlast <= m_axis_tlast_test and pass;--: in std_logic;
+				m01_axis_tvalid <= m_axis_tvalid_test and pass and en_data_to_d1;--: in std_logic;
+				m01_axis_tlast <= m_axis_tlast_test and pass and en_data_to_d1;--: in std_logic;
 			else
 				m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
 				m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
@@ -1475,8 +1480,8 @@ begin
 		
 				m01_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
 				m01_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
-				m01_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
-				m01_axis_tlast <= s_axis_tlast and pass;--: in std_logic;
+				m01_axis_tvalid <= s_axis_tvalid and pass and en_data_to_d1;--: in std_logic;
+				m01_axis_tlast <= s_axis_tlast and pass and en_data_to_d1;--: in std_logic;
 			end if;
 		end if;
 	end process;
@@ -1505,9 +1510,10 @@ begin
 	           s_axis_tlast => s_axis_tlast,--: in STD_LOGIC;
 	           s_axis_tuser => s_axis_tuser,--: in std_logic_vector(7 downto 0);
 	           DATA => DATA,--: out STD_LOGIC_VECTOR (143 downto 0);
-	           FRAME => FRAME);--: out STD_LOGIC);
+	           FRAME => FRAME_i);--: out STD_LOGIC);
 	           
-	
+	   FRAME <= FRAME_i and en_data_to_d1;     
+	           
 	   xpm_cdc_array_bitslip0 : xpm_cdc_array_single
 	           generic map (
 	              DEST_SYNC_FF => 4,   -- DECIMAL; range: 2-10
