@@ -9,6 +9,7 @@
 #define SRC_DMA_HANDLING_H_
 
 #include "xscugic.h"
+#include "xaxidma.h"
 
 void L1Start();
 void L1Stop();
@@ -23,7 +24,7 @@ u32 Is_D3_received();
 void start_dma_l3(u32 n_frames);
 void DoFileProcessing(u32 param);
 char* DMA_GetP();
-
+u32 GetDMAStatus(XAxiDma *InstancePtr, int Direction);
 
 
 #endif /* SRC_DMA_HANDLING_H_ */

@@ -10,6 +10,7 @@
 #include "common.h"
 #include "axis_flowctrl_d1.h"
 #include "mmg.h"
+#include "xaxidma.h"
 
 int is_l1_started = 0;
 int is_l3_started = 0;
@@ -224,11 +225,6 @@ void L1_trigger_service()
 		RxIntrHandler_L1(&dma_d1);
 }
 
-void MPS_service()
-{
-
-}
-
 void L1Start()
 {
 	if(!is_l1_started)
@@ -305,4 +301,16 @@ void DMAStatus()
 	xil_printf("GetDMAStatus(&dma_d1)=0x%08x\n\r", GetDMAStatus(&dma_d1, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("GetDMAStatus(&dma_d3)=0x%08x\n\r", GetDMAStatus(&dma_d3, XAXIDMA_DEVICE_TO_DMA));
 	xil_printf("GetDMAStatus(&dma_mps)=0x%08x\n\r", GetDMAStatus(&dma_mps, XAXIDMA_DEVICE_TO_DMA));
+}
+
+void MPS_service()
+{
+//	u32 dma_mps_status = GetDMAStatus(&dma_mps, XAXIDMA_DEVICE_TO_DMA);
+//	xil_printf("dma_mps_status = 0x%08x ", dma_mps_status);
+//	xil_printf("dma_mps_status & XAXIDMA_IDLE_MASK =0x%08x\n\r", dma_mps_status & XAXIDMA_IDLE_MASK);
+//	if(dma_mps_status & XAXIDMA_IDLE_MASK)
+//	{
+//		print("M");
+//		MPSStart();
+//	}
 }
