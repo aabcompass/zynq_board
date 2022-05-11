@@ -91,6 +91,12 @@ void ProcessUartCommands(struct netif *netif, char c)
 		xil_printf("MPS FIFO occupancy=%d\n\r",  *(u32*)(XPAR_AXI_GPIO_0_BASEADDR+8));
 
 	}
+	else if(c == 'S')
+	{
+		print("DMA reset\n\r");
+		L1Reset();
+		L3Reset();
+	}
 	else if(c == 'f')
 	{
 		SetArtixFrameOn(1);

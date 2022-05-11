@@ -268,6 +268,9 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(strncmp(p->payload, TCP_CMD_INSTR_MODE_START, strlen(TCP_CMD_INSTR_MODE_START)) == 0)
 	{
+		L1Reset();
+		L3Reset();
+		print("DMAs are reset\n\r");
 		ClkbResetCounters();
 		FC_ResetSelfTrgCounter();
 		FlowControlStart_D1(1);

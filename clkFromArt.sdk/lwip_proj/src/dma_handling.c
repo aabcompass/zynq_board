@@ -232,7 +232,7 @@ void L1Start()
 	is_l1_started = 1;
 }
 
-void L1Stop()
+void L1Reset()
 {
 	is_l1_started = 0;
 	XAxiDma_Reset(&dma_d1);
@@ -259,7 +259,7 @@ u32 Is_D3_received()
 	return is_D3_received;
 }
 
-void L3Stop()
+void L3Reset()
 {
 	is_l3_started = 0;
 	XAxiDma_Reset(&dma_d3);

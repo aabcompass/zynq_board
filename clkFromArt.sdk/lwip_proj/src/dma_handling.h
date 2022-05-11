@@ -12,9 +12,9 @@
 #include "xaxidma.h"
 
 void L1Start();
-void L1Stop();
+void L1Reset();
 void L3Start(u32 is_infinite, u32 n_frames);
-void L3Stop();
+void L3Reset();
 void MPSStart();
 void SetupDMAIntrSystem(XScuGic* pIntc);
 void DMA_init();
