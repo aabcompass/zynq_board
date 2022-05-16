@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.03.03"
+#define ZYNQ3_VER_STRING "v5.04.00"
 
 //========================================
 // Constants
@@ -373,6 +373,7 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_ALL_CAPA	"slowctrl all capa %d" /*bias QDC: '0' capa_1p, '1' capa_10p*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
 #define TCP_CMD_SLOWCTRL_ASIC		"slowctrl asic %d" /*Set current ASIC in line*/
+#define TCP_CMD_SLOWCTRL_ALL_ASIC	"slowctrl all_asic line %d asic %d dac10 %d dac7 %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d" /*Set DAC7 values for a specified ASIC in a specified line*/
 #define TCP_CMD_SLOWCTRL_PIX		"slowctrl pixel %d" /*Set current pixel in ASIC*/
 #define TCP_CMD_SLOWCTRL_DAC10		"slowctrl dac10 %d" /*Set DAC10 for the current ASIC*/
 #define TCP_CMD_SLOWCTRL_DAC7		"slowctrl dac7 %d" /*Set DAC7 for the current pixel*/
