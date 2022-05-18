@@ -115,10 +115,10 @@ void SetIndSCCurrentPixel(u32 pixel)
 {
 	u8 pmt = current_line*N_OF_PMT_PER_ECASIC + current_asic;
 	current_pixel = pixelmap_array[pmt_ec_map[pmt]][pixel];
-	xil_printf("pixel=%d\n\r", pixel);
-	xil_printf("pmt=%d\n\r", pmt);
-	xil_printf("pmt_ec_map[current_asic]=%d\n\r", pmt_ec_map[pmt]);
-	xil_printf("pixelmap_array[pmt_ec_map[current_asic]][pixel]=%d\n\r", current_pixel);
+	//xil_printf("pixel=%d\n\r", pixel);
+	//xil_printf("pmt=%d\n\r", pmt);
+	//xil_printf("pmt_ec_map[current_asic]=%d\n\r", pmt_ec_map[pmt]);
+	//xil_printf("pixelmap_array[pmt_ec_map[current_asic]][pixel]=%d\n\r", current_pixel);
 }
 
 u32 GetIndSCCurrentPixel()
