@@ -341,6 +341,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//L1Stop();
 		//L3Stop();
 		StopDataProvider();
+		MmgCloseLastD1File();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}

@@ -237,42 +237,6 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		else {
 			MmgIncr_n_records(last_mmg_file_descriptor, last_l1_occupied);
 		}
-
-//		if(is_file_opened) {
-//			if(glob_cycle != last_global_cycle) { //new global cycle
-//				file_size = MmgGetFileSize(last_mmg_file_descriptor);
-//				CloseFile(last_file_descriptor, file_size);
-//				xil_printf("New global cycle. File closed (size=%d)\n\r", file_size);
-//				last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
-//				if(last_mmg_file_descriptor != -1) {
-//					last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
-//					print("New file created\n\r");
-//				}
-//				else {
-//					print("New file NOT created\n\r");
-//				}
-//			}
-//			else {
-//				n_records = MmgIncr_n_records(last_mmg_file_descriptor, last_l1_occupied);
-//				if(n_records == N_MAX_RECORDS_PER_FILE) {
-//					file_size = MmgGetFileSize(last_mmg_file_descriptor);
-//					CloseFile(last_file_descriptor, file_size);
-//					xil_printf("Maximum ev. per file. File closed (size=%d)\n\r", file_size);
-//					is_file_opened = 0;
-//				}
-//			}
-//		}
-//		else {
-//			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
-//			if(last_mmg_file_descriptor != -1) {
-//				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
-//				print("New file created\n\r");
-//				is_file_opened = 1;
-//			}
-//			else {
-//				print("New file NOT created\n\r");
-//			}
-//		}
 		last_global_cycle = glob_cycle;
 	}
 	else if(data_type == DATA_TYPE_L3) {
@@ -327,6 +291,21 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		}
 		last_global_cycle = glob_cycle;
 	}
+}
+
+void MmgCloseLastD1File()
+{
+	u32 file_size;
+	if(sciFiles[last_mmg_file_descriptor].n_records > 0) {
+		file_size=MmgGetFileSize(last_mmg_file_descriptor);
+		CloseFile(last_file_descriptor, file_size);
+		xil_printf("File closed (size=%d)\n\r", file_size);
+	}
+	else {
+		print("No records in the opened file. Nothing to close.\n\r");
+	}
+	mainBufferDescr.sci_data_l1[last_l1_occupied].is_occupied = 0;
+	last_l1_occupied--;
 }
 
 void MmgPrintFiles()
