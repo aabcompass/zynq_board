@@ -21,6 +21,7 @@ MainBufferDescr mainBufferDescr;
 extern InstrumentState instrumentState;
 
 u32 last_l1_occupied=0xFFFFFFFF, last_l3_occupied, last_mps_occupied;
+int last_file_closed = 0;
 u32 n_l1_occupied=0, n_l3_occupied=0, n_mps_occupied=0;
 int last_file_descriptor = -1, last_mmg_file_descriptor = -1, last_global_cycle=-1;
 SciFiles sciFiles[N_SCI_FILES];
@@ -224,7 +225,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
 
-		if((glob_cycle != last_global_cycle) ||  (last_l1_occupied == 0)) {
+		if((glob_cycle != last_global_cycle) ||  (last_l1_occupied == 0) || (last_file_closed == 1)) {
+			last_file_closed = 0;
 			file_size=MmgGetFileSize(last_mmg_file_descriptor);
 			CloseFile(last_file_descriptor, file_size);
 			xil_printf("File closed (size=%d)\n\r", file_size);
@@ -306,6 +308,7 @@ void MmgCloseLastD1File()
 	}
 	mainBufferDescr.sci_data_l1[last_l1_occupied].is_occupied = 0;
 	last_l1_occupied--;
+	last_file_closed = 1;
 }
 
 void MmgPrintFiles()

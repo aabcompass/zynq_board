@@ -132,7 +132,6 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		//else
 		if(instrumentState.mode != MODE_LIVE)
 			xil_printf("Removed  all sci data files from FTP server: %d files\n\r", RemoveAllSciDataFilesFromFTP());
-		ResetGTUCounter_D1();
 		//if(instrumentState.mode == MODE_D1 || instrumentState.mode == MODE_D1D3)
 		//	SetModeD1(2);
 		char ok_eomess_str[] = "Ok\n\r";
@@ -272,6 +271,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		L3Reset();
 		print("DMAs are reset\n\r");
 		ClkbResetCounters();
+		ResetGTUCounter_D1();
 		FC_ResetSelfTrgCounter();
 		FlowControlStart_D1(1);
 		if(instrumentState.mode == MODE_D1) {

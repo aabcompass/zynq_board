@@ -34,6 +34,7 @@ void FlowControlsClr_D1()
 void ResetGTUCounter_D1()
 {
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_CLR_FLAGS*4) |= BIT_FC_CLR_GTU_CNT;
+	print("Reset GTU\n\r");
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_CLR_FLAGS*4) &= ~BIT_FC_CLR_GTU_CNT;
 }
 
