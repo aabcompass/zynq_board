@@ -748,11 +748,13 @@ begin
 											if(trig = '1') then 
 												if(trig_cnt < number_of_triggers) then
 													state := state + 1;
-													busy <= '1';
+													busy <= '0';
 													trig_type_i <= (others => '0');
+												else
+													busy <= '1';
 												end if;
 											else
-												busy <= '0';	
+												busy <= '1';	
 											end if;
 										else
 											busy <= '1';
