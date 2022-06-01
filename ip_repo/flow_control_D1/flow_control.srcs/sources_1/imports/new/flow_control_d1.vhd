@@ -361,6 +361,7 @@ architecture Behavioral of flow_control_d1 is
 	signal trig_ext_in_lab_sync: std_logic := '0';
 	
 	signal self_trig_cnt_clr: std_logic := '0';
+	signal pause4ftp: std_logic := '0';
 	
 	signal self_trig_cnt_i: std_logic_vector(15 downto 0) := (others => '0');
 	
@@ -391,6 +392,7 @@ begin
 	--en_ta_trig <= flags(5);
 	release_always <= flags(6); 
 	clkb_mode <= flags(17);
+	pause4ftp <= flags(18);
 	
 	clr_trans_counter <= clr_flags(0);
 	clear_error <= clr_flags(1);
@@ -678,13 +680,15 @@ begin
 				sm_state_latch <= conv_std_logic_vector(state, 4);
 				case state is
 					when 0 => 
-						if(trig_comb = '1') then
-							periodic_trig_latch <= periodic_trig;
-							self_trig_latch <= self_trig;
-							--ext_trig_latch <= ext_trig;
-							trig_immediate_latch <= trig_immediate;
-							ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
-							state := state + 1;							
+						if(is_started = '1' and pause4ftp = '0') then
+							if(trig_comb = '1') then
+								periodic_trig_latch <= periodic_trig;
+								self_trig_latch <= self_trig;
+								--ext_trig_latch <= ext_trig;
+								trig_immediate_latch <= trig_immediate;
+								ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
+								state := state + 1;							
+							end if;
 						end if;	
 					when 1 => 
 						if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
@@ -744,17 +748,13 @@ begin
 			else
 				sm_state <= conv_std_logic_vector(state, 4);
 				case state is
-					when 0 => if(is_started = '1') then
+					when 0 => if(is_started = '1' and pause4ftp = '0') then
 											if(trig = '1') then 
-												if(trig_cnt < number_of_triggers) then
-													state := state + 1;
-													busy <= '0';
-													trig_type_i <= (others => '0');
-												else
-													busy <= '1';
-												end if;
+												state := state + 1;
+												busy <= '1';
+												trig_type_i <= (others => '0');
 											else
-												busy <= '1';	
+												busy <= '0';
 											end if;
 										else
 											busy <= '1';

@@ -156,6 +156,11 @@ void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 	if(is_l1_started == 1) {
 		start_dma_l1();
 	}
+	if(Get_n_occupied(DATA_TYPE_L1) > N_D1_IN_MEM - 50) {
+		xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
+		SetPauseForFTP(1);
+		xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
+	}
 	D1_release();
 	xil_printf("y(%d)", n_glob_cycles);
 	return;
@@ -186,7 +191,7 @@ static void RxIntrHandler_dma_d3(void *Callback)
 		if(is_l3_started) { // Restart DMA D3
 			start_dma_l3(N_FRAMES_DMA_D3);
 		}
-		ResetTriggerService_D1(); //?
+		//ResetTriggerService_D1(); //?
 		print("z");
 		return;
 	}

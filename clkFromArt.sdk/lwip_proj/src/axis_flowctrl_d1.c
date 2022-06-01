@@ -163,6 +163,11 @@ void FC_Enable_Reset_Internal_TRG_counter()
 //	return num;
 //}
 
+u32 FC_GetStatus()
+{
+	return *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_FC_SM_STATE*4);
+}
+
 int IsD1Triggered()
 {
 	//xil_printf("%d %d\n\r", *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_FC_SM_STATE*4), (*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_FC_SM_STATE*4)) & 0xF == 5);
@@ -178,6 +183,15 @@ void D1_release()
 {
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = BIT_FC_RELEASE;
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = 0;
+}
+
+void SetPauseForFTP(u32 is_pause)
+{
+	if(is_pause)
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |= BIT_FC_FLAGS_PAUSE4FTP;
+	else
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &= ~BIT_FC_FLAGS_PAUSE4FTP;
+	//xil_printf("SetPauseForFTP(%d)", is_pause);
 }
 
 u32 Get_n_glob_cycles()

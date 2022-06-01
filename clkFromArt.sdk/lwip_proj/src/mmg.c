@@ -85,6 +85,8 @@ void MmgDeleteSciFile(u32 file_descriptor)
 		if(sciFiles[file_descriptor].data_type == DATA_TYPE_L1) {
 			mainBufferDescr.sci_data_l1[ref].is_occupied = 0;
 			n_l1_occupied--;
+			if(n_l1_occupied < (N_D1_IN_MEM - 100))
+				SetPauseForFTP(0);
 		}
 		else if(sciFiles[file_descriptor].data_type == DATA_TYPE_L3) {
 			mainBufferDescr.sci_data_l3[ref].is_occupied = 0;
@@ -98,6 +100,7 @@ void MmgDeleteSciFile(u32 file_descriptor)
 	//Delete the file under file_descriptor
 	sciFiles[file_descriptor].is_occupied = 0;
 	sciFiles[file_descriptor].n_records = 0;
+
 	print("\n\r");
 }
 
@@ -225,7 +228,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
 
-		if((glob_cycle != last_global_cycle) ||  (last_l1_occupied == 0) || (last_file_closed == 1)) {
+		//if(/*(glob_cycle != last_global_cycle) ||  */(last_l1_occupied == 0) || (last_file_closed == 1)) {
+		if((last_l1_occupied % MAX_PACKETS_L1 == 0) ||  (last_l1_occupied == 0) || (last_file_closed == 1)) {
 			last_file_closed = 0;
 			file_size=MmgGetFileSize(last_mmg_file_descriptor);
 			CloseFile(last_file_descriptor, file_size);
