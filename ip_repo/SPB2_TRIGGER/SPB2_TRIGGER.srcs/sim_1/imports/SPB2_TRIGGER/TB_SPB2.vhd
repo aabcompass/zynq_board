@@ -41,6 +41,7 @@
        s_axis_tvalid_cmd    :   in  std_logic;
        s_axis_tready_cmd    :   out std_logic;
        s_axis_tdata_cmd     :   in  std_logic_vector(31 downto 0);
+       s_axis_tdest_cmd     :   in  std_logic_vector(3 downto 0);
        s_axis_tlast_cmd     :   in  std_logic;
        --AXI FIFO TRIGGER OUT
        m_aclk_trg           :   in  std_logic;
@@ -102,7 +103,7 @@
    --------------------------------------------------------------------------------------------------------
     
 	CONSTANT period			: 	time := 5 ns; --7.5188 ns;
-	CONSTANT period_axi		: 	time := 7.5188 ns;
+	CONSTANT period_axi		: 	time := 5 ns;
 	CONSTANT delay			:	time := 0 ns;
 	CONSTANT delay_data	    :	time := period/2;
 	
@@ -135,6 +136,7 @@
         s_axis_tvalid_cmd       => s_axis_tvalid_cmd,
         s_axis_tready_cmd       => s_axis_tready_cmd,
         s_axis_tdata_cmd        => s_axis_tdata_cmd,
+        s_axis_tdest_cmd => (others => '0'),
         s_axis_tlast_cmd        => s_axis_tlast_cmd,
         --AXI FIFO MACROPIXEL TRIGGER
         m_aclk_trg              => clock_axi,

@@ -110,7 +110,7 @@ static void start_dma_mps()
 	char* p;
 	p = (char*)MmgAlloc(DATA_TYPE_MPS);
 	if(p) {
-		DmaStart(&dma_mps, (UINTPTR)p, sizeof(uint32_t) * N_OF_MACRO_PIXELS, 0);
+		DmaStart(&dma_mps, (UINTPTR)p, sizeof(uint32_t) * N_OF_MACRO_FRAMES_PER_FILE * N_OF_MACRO_PIXELS * 2, 0);
 	}
 	else {
 		print("Not enough space for the next MPS DMA buffer\n\r");
@@ -310,12 +310,15 @@ void DMAStatus()
 
 void MPS_service()
 {
-//	u32 dma_mps_status = GetDMAStatus(&dma_mps, XAXIDMA_DEVICE_TO_DMA);
-//	xil_printf("dma_mps_status = 0x%08x ", dma_mps_status);
-//	xil_printf("dma_mps_status & XAXIDMA_IDLE_MASK =0x%08x\n\r", dma_mps_status & XAXIDMA_IDLE_MASK);
-//	if(dma_mps_status & XAXIDMA_IDLE_MASK)
-//	{
-//		print("M");
-//		MPSStart();
-//	}
+	u32 dma_mps_status = GetDMAStatus(&dma_mps, XAXIDMA_DEVICE_TO_DMA);
+	//xil_printf("dma_mps_status = 0x%08x ", dma_mps_status);
+	//xil_printf("dma_mps_status & XAXIDMA_IDLE_MASK =0x%08x\n\r", dma_mps_status & XAXIDMA_IDLE_MASK);
+	if(dma_mps_status & XAXIDMA_IDLE_MASK)
+	{
+		print("M");
+		if(is_file_processing == DO_FILE_PROCESSING) {
+			MmgFinish(DATA_TYPE_MPS, GetNGTU(),  GetUnixTime(), 1, Get_n_glob_cycles(), 0);
+			MPSStart();
+		}
+	}
 }

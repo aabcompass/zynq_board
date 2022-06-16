@@ -35,6 +35,7 @@ typedef struct
 	int file_counter_l1;
 	int file_counter_l2;
 	int file_counter_l3;
+	int file_counter_mps;
 	int file_counter_cc;
 	int file_counter_hv;
 	u32 artix_locked;

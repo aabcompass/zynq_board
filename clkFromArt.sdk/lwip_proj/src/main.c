@@ -351,7 +351,7 @@ int main()
 		scurve_sm();
 		pixelscan_sm();
 		L1_trigger_service();
-		MPS_service();
+		//MPS_service();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))
 		{

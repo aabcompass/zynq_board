@@ -1311,7 +1311,7 @@ port
  (-- Clock in ports
   -- Clock out ports
   clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
+  --clk_out2          : out    std_logic;
   clk_in1           : in     std_logic
  );
 end component;
@@ -1620,6 +1620,8 @@ end function bitcount;
 	attribute keep of nActive: signal is "true";  
 	attribute keep of MPSthr: signal is "true";  
 
+	signal s_axis_tlast_sum_cnt: std_logic_vector(7 downto 0) := (others => '0');
+
 begin
 
 SYNTH_BYPASS_GEN: if(SYNTH_BYPASS = '0')  generate
@@ -1629,10 +1631,12 @@ CLK_MMCM : clk_wiz_0
    port map ( 
   -- Clock out ports  
    clk_out1 => CLOCK,
-   clk_out2 => CLOCK_133B,--CLOCK_133B=CLOCK_133
+   --clk_out2 => CLOCK_133B,--CLOCK_133B=CLOCK_133
    -- Clock in ports
    clk_in1 => CLOCK_133
  );
+ 
+ CLOCK_133B <= CLOCK_133;
  
 --INPUT Pixel to MacroPixel
 IN_EC0EC3EC6 : IN3EC
@@ -5570,7 +5574,13 @@ begin
                 s_axis_tdata_sum <= "00000000" & dout_fifo_sum_ec2ec5ec8(575 downto 552);
                 if (empty_fifo_sum_ec2ec5ec8 = '1') then--Last Column in FIFO_SUM
                     state_axi_fifo_sum <= s0;
-                    s_axis_tlast_sum <= '1';
+                    if(s_axis_tlast_sum_cnt = 59) then
+                    	s_axis_tlast_sum <= '1';
+                    	s_axis_tlast_sum_cnt <= (others => '0');
+                    else
+                    	s_axis_tlast_sum <= '0';
+                    	s_axis_tlast_sum_cnt <= s_axis_tlast_sum_cnt + 1;
+                    end if;
                 else
                     state_axi_fifo_sum <= s51;
                     rd_en_fifo_sum_ec2ec5ec8 <= '1';
