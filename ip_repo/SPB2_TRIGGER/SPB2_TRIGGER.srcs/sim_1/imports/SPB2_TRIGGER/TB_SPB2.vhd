@@ -102,8 +102,8 @@
 --    SIGNAL  sthr_ready_debug_ec2ec5ec8 :    STD_LOGIC := '0';
    --------------------------------------------------------------------------------------------------------
     
-	CONSTANT period			: 	time := 5 ns; --7.5188 ns;
-	CONSTANT period_axi		: 	time := 5 ns;
+	CONSTANT period			: 	time := 7.5188 ns; --7.5188 ns;
+	CONSTANT period_axi		: 	time := 7.5188 ns;
 	CONSTANT delay			:	time := 0 ns;
 	CONSTANT delay_data	    :	time := period/2;
 	

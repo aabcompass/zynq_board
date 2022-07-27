@@ -8409,7 +8409,7 @@ BEGIN
              ------------------------------------------------------------
              wait for 4.5*period;   --Standard FRAME IDLE TIME
              ------------------------------------------------------------
-              wait for 77*period;   --Additional FRAME IDLE TIME
+              --wait for 77*period;   --Additional FRAME IDLE TIME
 		
 		end loop;
 				

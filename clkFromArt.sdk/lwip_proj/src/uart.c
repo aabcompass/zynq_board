@@ -77,6 +77,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 		//xil_printf("GetInstrumentMode()=%d\n\r", GetInstrumentMode());
 		xil_printf("instrumentState.file_counter_cc=%d\n\r", instrumentState.file_counter_cc);
 		xil_printf("GetIntegration()=%d\n\r", GetIntegration());
+		xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V3)=%d\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V3));
 
 		MmgPrintFiles();
 		PrintFS();

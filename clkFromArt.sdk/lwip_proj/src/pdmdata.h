@@ -129,12 +129,14 @@ typedef struct
 
 //One frame to be send to CPU
 
+
 typedef struct
 {
 	uint8_t raw_data[N_OF_PIXELS_PER_PMT];
 	uint8_t raw_ki[N_OF_KI_PER_PMT];
 	uint8_t spare[N_OF_SPARE_PER_PMT];
 } PMT_3rd_GEN;
+
 
 typedef struct
 {
