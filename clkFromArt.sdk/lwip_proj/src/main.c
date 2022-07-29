@@ -58,6 +58,7 @@
 #include "own_data_types.h"
 #include "common.h"
 #include "data_provider.h"
+#include "sntp.h"
 
 
 /* defined by each RAW mode application */
@@ -148,6 +149,7 @@ int main()
 
 	#if LWIP_IPV6==0
 	ip_addr_t ipaddr, netmask, gw;
+	ip_addr_t ipaddr_ntp_server;
 	char c_uart[] = {0, 0};
 	//u32 ip_addr;
 
@@ -334,6 +336,12 @@ int main()
 	//start_application();
 	print("DMA_init()\n\r");
 	DMA_init();
+
+	print("Starting SNTP client...\n\r");
+	IP4_ADDR(&ipaddr_ntp_server, 192, 168, 7, 2);
+	sntp_setserver(0, &ipaddr_ntp_server);
+	sntp_setoperatingmode(SNTP_OPMODE_POLL);
+	sntp_init();
 
 	PrintDataSizes();
 	/* receive and process packets */
