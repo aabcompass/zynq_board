@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Wed Jun  1 19:26:58 2022
---Host        : alx-laptop running 64-bit Ubuntu 18.04.5 LTS
+--Date        : Fri Jul 29 14:54:53 2022
+--Host        : alx-laptop running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -138,9 +138,9 @@ architecture STRUCTURE of design_1_wrapper is
     diff_clk_in_0_clk_p : in STD_LOGIC;
     diff_clk_in_1_clk_n : in STD_LOGIC;
     diff_clk_in_1_clk_p : in STD_LOGIC;
-    Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dout_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    Dout_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
     data_in_from_pins_p_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     data_in_from_pins_n_0 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     sck_p_0 : out STD_LOGIC;
@@ -161,23 +161,23 @@ architecture STRUCTURE of design_1_wrapper is
     resetb_pc_0 : out STD_LOGIC;
     select_sc_probe_pc_0 : out STD_LOGIC;
     sr_rstb_pc_0 : out STD_LOGIC;
-    sr_ck_pc_1 : out STD_LOGIC;
-    sr_ck_pc_2 : out STD_LOGIC;
     sr_ck_pc_0 : out STD_LOGIC;
+    sr_ck_pc_2 : out STD_LOGIC;
+    sr_ck_pc_1 : out STD_LOGIC;
     GTU_HV_p_0 : out STD_LOGIC;
     GTU_HV_n_0 : out STD_LOGIC;
     CLK_HV_p_0 : out STD_LOGIC;
     CLK_HV_n_0 : out STD_LOGIC;
     DATA_HV_p_0 : out STD_LOGIC;
     DATA_HV_n_0 : out STD_LOGIC;
-    io0_o_0 : out STD_LOGIC;
-    io0_o_1 : out STD_LOGIC;
-    io0_o_2 : out STD_LOGIC;
     io0_o_3 : out STD_LOGIC;
-    sck_o_0 : out STD_LOGIC;
-    sck_o_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
-    sck_o_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    io0_o_2 : out STD_LOGIC;
+    io0_o_1 : out STD_LOGIC;
+    io0_o_0 : out STD_LOGIC;
     sck_o_3 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_2 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    sck_o_0 : out STD_LOGIC;
     artx_done_0 : in STD_LOGIC;
     data_in_from_pins_p_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
     data_in_from_pins_n_1 : in STD_LOGIC_VECTOR ( 13 downto 0 );
@@ -186,9 +186,9 @@ architecture STRUCTURE of design_1_wrapper is
     artx_programb : out STD_LOGIC_VECTOR ( 0 to 0 );
     artx_initb : out STD_LOGIC_VECTOR ( 0 to 0 );
     sr_out_pc_0 : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    art_gtu_0 : out STD_LOGIC;
-    art_gtu_1 : out STD_LOGIC;
     art_gtu_2 : out STD_LOGIC;
+    art_gtu_1 : out STD_LOGIC;
+    art_gtu_0 : out STD_LOGIC;
     artx_latch_3 : out STD_LOGIC_VECTOR ( 2 downto 0 );
     SPB_Ext_trig_IN_P_0 : in STD_LOGIC;
     SPB_Ext_trig_IN_N_0 : in STD_LOGIC;
