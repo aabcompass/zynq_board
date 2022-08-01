@@ -862,7 +862,7 @@ begin
  			end if;
  			s_axis_tvalid_d1 <= s_axis_tvalid;
  			s_axis_tdata_d1 <= s_axis_tdata; 
- 			s_axis_tlast_d1 <= s_axis_tlast and pass_tlast;
+ 			s_axis_tlast_d1 <= s_axis_tlast and s_axis_tvalid and pass_tlast;
 			s_axis_tready <= '1';
  		end if;
  	end process;
