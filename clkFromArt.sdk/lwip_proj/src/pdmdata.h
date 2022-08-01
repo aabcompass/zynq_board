@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.06.00"
+#define ZYNQ3_VER_STRING "v5.06.02"
 
 //========================================
 // Constants
@@ -434,6 +434,9 @@ typedef struct
 
 #define TCP_CMD_HK_GET_TEMPERATURE	"hk get temperature"
 #define TCP_CMD_HK_GET_ALL			"hk get all"
+
+#define TCP_CMD_SNTP_REQ			"sntp req"
+#define TCP_CMD_SNTP_LAST_TIME		"sntp last time"
 
 
 

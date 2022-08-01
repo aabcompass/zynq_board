@@ -8,6 +8,8 @@
 #ifndef SRC_COMMON_H_
 #define SRC_COMMON_H_
 
+#include "xil_types.h"
+
 #define SWAP_UINT32(x) (((x) >> 24) | (((x) & 0x00FF0000) >> 8) | (((x) & 0x0000FF00) << 8) | ((x) << 24))
 
 //#define FILENAME_ARTIX_BITSTREAM "artix.bin"
@@ -33,5 +35,12 @@ void Set_n_d3_per_file(u32 param);
 
 #define N_FRAMES_DMA_D1			 N_OF_FRAMES_D1_V0
 #define N_FRAMES_DMA_D3			(N_OF_FRAMES_D3_V0*1)
+
+typedef struct
+{
+	u32 time_sec ;
+	u32 time_usec;
+	u32 is_valid;
+} TimeSntp;
 
 #endif /* SRC_COMMON_H_ */

@@ -59,6 +59,8 @@
 #include <string.h>
 #include <time.h>
 
+#include "common.h"
+
 #if LWIP_UDP
 
 /* Handle support for more than one server via SNTP_MAX_SERVERS */
@@ -199,6 +201,8 @@ static ip_addr_t sntp_last_server_address;
 static u32_t sntp_last_timestamp_sent[2];
 #endif /* SNTP_CHECK_RESPONSE >= 2 */
 
+
+TimeSntp time_sntp_tast;
 /**
  * SNTP processing of received timestamp
  */
@@ -214,11 +218,14 @@ sntp_process(u32_t *receive_timestamp)
   time_t tim = t;
 
 //#if SNTP_CALC_TIME_US
-  u32_t us = ntohl(receive_timestamp[1]) / 4295;
+  time_sntp_tast.is_valid = 1;
+  time_sntp_tast.time_sec = t;
+  time_sntp_tast.time_usec = ntohl(receive_timestamp[1]) / 4295;
   //SNTP_SET_SYSTEM_TIME_US(t, us);
   /* display local time from GMT time */
   //LWIP_DEBUGF(SNTP_DEBUG_TRACE, ("sntp_process: %s, %"U32_F" us", ctime(&tim), us));
-  xil_printf("sntp_process: time: %s, %d us\n\r", ctime(&tim), us);
+  //ab//xil_printf("sntp_process: time: %s, %d us\n\r", ctime(&tim), us);
+
 //#else /* SNTP_CALC_TIME_US */
 
   /* change system time and/or the update the RTC clock */
@@ -227,6 +234,11 @@ sntp_process(u32_t *receive_timestamp)
   //LWIP_DEBUGF(SNTP_DEBUG_TRACE, ("sntp_process: %s", ctime(&tim)));
 //#endif /* SNTP_CALC_TIME_US */
 //  LWIP_UNUSED_ARG(tim);
+}
+
+TimeSntp GetLastAcceptedTimeFromServer()
+{
+	return time_sntp_tast;
 }
 
 /**
@@ -535,6 +547,8 @@ sntp_init(void)
 #error SNTP_SERVER_ADDRESS string not supported SNTP_SERVER_DNS==0
 #endif
 #endif /* SNTP_SERVER_ADDRESS */
+
+  time_sntp_tast.is_valid = 0;
 
   if (sntp_pcb == NULL) {
     sntp_pcb = udp_new();

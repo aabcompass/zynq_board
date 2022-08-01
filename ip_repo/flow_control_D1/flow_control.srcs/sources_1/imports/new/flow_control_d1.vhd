@@ -11,7 +11,7 @@ entity flow_control_d1 is
 	generic (
 		C_AXIS_DWIDTH : integer := 64;
 		C_CNT_DWIDTH : integer := 32;
-		C_FREQ : integer := 100000000
+		C_FREQ : integer := 200000000
 	);
   Port ( 
   		-- in

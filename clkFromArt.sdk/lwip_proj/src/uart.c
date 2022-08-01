@@ -160,7 +160,8 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 'T') // artix Gen mode
 	{
 		//SA_set_TestMode(1);
-		SetArtixTestMode(1);
+		//SetArtixTestMode(1);
+		sntp_request();
 	}
 	else if(c == 't')
 	{

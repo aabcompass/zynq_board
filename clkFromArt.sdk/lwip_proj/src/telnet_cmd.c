@@ -19,6 +19,7 @@
 #include "dma_handling.h"
 #include "l1_trigger_block.h"
 #include "clkb.h"
+#include "sntp.h"
 
 
 
@@ -890,7 +891,23 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 				);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
-
+	else if(strncmp(p->payload, TCP_CMD_SNTP_REQ, strlen(TCP_CMD_SNTP_REQ)) == 0)
+	{
+		sntp_request();
+		strcpy(ans_str, "Ok\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_SNTP_LAST_TIME, strlen(TCP_CMD_SNTP_LAST_TIME)) == 0)
+	{
+		TimeSntp t = GetLastAcceptedTimeFromServer();
+		if(t.is_valid == 0) {
+			sprintf(reply, "No time received from NTP server");
+		}
+		else {
+			sprintf(reply, "%s %d us\n\r", ctime(&t.time_sec), t.time_usec);
+		}
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
 }
 
 static err_t recv_callback(void *arg, struct tcp_pcb *tpcb,

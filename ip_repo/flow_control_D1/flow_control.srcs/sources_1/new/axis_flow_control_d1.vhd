@@ -17,7 +17,7 @@ entity axis_flow_control_d1 is
 		C_S_AXI_ADDR_WIDTH	: integer	:= 7;
 		C_AXIS_DWIDTH : integer := 128;
 		C_CNT_DWIDTH : integer := 32;
-		C_FREQ : integer := 100000000
+		C_FREQ : integer := 200000000
 	);
   Port ( 
   		-- in
@@ -27,7 +27,7 @@ entity axis_flow_control_d1 is
   		s_axis_tvalid : IN STD_LOGIC;
   		s_axis_tready : OUT STD_LOGIC;
   		s_axis_tdata : IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
-  		s_axis_tlast : IN STD_LOGIC;
+  		s_axis_tlast : IN STD_LOGIC;file:///opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/vivado
 
   		s_axis_trg_tvalid : IN STD_LOGIC;
   		s_axis_trg_tready : OUT STD_LOGIC := '1';
@@ -190,7 +190,7 @@ architecture Behavioral of axis_flow_control_d1 is
 		generic (
 			C_AXIS_DWIDTH : integer := 64;
 			C_CNT_DWIDTH : integer := 32;
-			C_FREQ : integer := 100000000
+			C_FREQ : integer := 200000000
 		);
 		Port ( 
 				-- in

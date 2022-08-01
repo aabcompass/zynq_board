@@ -34,6 +34,7 @@
 
 #include "sntp_opts.h"
 #include "lwip/ip_addr.h"
+#include "common.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -47,6 +48,7 @@ void sntp_setoperatingmode(u8_t operating_mode);
 
 void sntp_init(void);
 void sntp_stop(void);
+TimeSntp GetLastAcceptedTimeFromServer();
 
 void sntp_setserver(u8_t idx, const ip_addr_t *addr);
 ip_addr_t sntp_getserver(u8_t idx);
