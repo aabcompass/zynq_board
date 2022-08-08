@@ -60,6 +60,7 @@
 #include <time.h>
 
 #include "common.h"
+#include "axis_flowctrl_d1.h"
 
 #if LWIP_UDP
 
@@ -203,6 +204,7 @@ static u32_t sntp_last_timestamp_sent[2];
 
 
 TimeSntp time_sntp_tast;
+u32 n_of_req=0, n_of_ans = 0;
 /**
  * SNTP processing of received timestamp
  */
@@ -215,12 +217,14 @@ sntp_process(u32_t *receive_timestamp)
   u32_t rx_secs = ntohl(receive_timestamp[0]);
   int is_1900_based = ((rx_secs & 0x80000000) != 0);
   u32_t t = is_1900_based ? (rx_secs - DIFF_SEC_1900_1970) : (rx_secs + DIFF_SEC_1970_2036);
-  time_t tim = t;
+  //time_t tim = t;
 
 //#if SNTP_CALC_TIME_US
   time_sntp_tast.is_valid = 1;
   time_sntp_tast.time_sec = t;
   time_sntp_tast.time_usec = ntohl(receive_timestamp[1]) / 4295;
+  SetUnixTimeUs(time_sntp_tast.time_sec, time_sntp_tast.time_usec);
+  n_of_ans++;
   //SNTP_SET_SYSTEM_TIME_US(t, us);
   /* display local time from GMT time */
   //LWIP_DEBUGF(SNTP_DEBUG_TRACE, ("sntp_process: %s, %"U32_F" us", ctime(&tim), us));
@@ -349,7 +353,7 @@ sntp_recv(void *arg, struct udp_pcb* pcb, struct pbuf *p, const ip_addr_t *addr,
 
   LWIP_UNUSED_ARG(arg);
   LWIP_UNUSED_ARG(pcb);
-  print("Reply received\n\r");
+  //print("Reply received\n\r");
 
   /* packet received: stop retry timeout  */
   //ab//sys_untimeout(sntp_try_next_server, NULL);
@@ -376,7 +380,7 @@ sntp_recv(void *arg, struct udp_pcb* pcb, struct pbuf *p, const ip_addr_t *addr,
         if (stratum == SNTP_STRATUM_KOD) {
           /* Kiss-of-death packet. Use another server or increase UPDATE_DELAY. */
           err = SNTP_ERR_KOD;
-          print("sntp_recv: Received Kiss-of-Death\n");
+          //print("sntp_recv: Received Kiss-of-Death\n");
         } else {
 #if SNTP_CHECK_RESPONSE >= 2
           /* check originate_timetamp against sntp_last_timestamp_sent */
@@ -453,7 +457,7 @@ sntp_send_request(ip_addr_t *server_addr)
     sntp_initialize_request(sntpmsg);
     /* send request */
     udp_sendto(sntp_pcb, p, server_addr, SNTP_PORT);
-    print("UDP sent\n\r");
+    //print("UDP sent\n\r");
     /* free the pbuf after sending it */
     pbuf_free(p);
     /* set up receive timeout: try next server or retry on timeout */
@@ -500,8 +504,8 @@ sntp_dns_found(const char* hostname, ip_addr_t *ipaddr, void *arg)
 void sntp_request()
 {
   ip_addr_t sntp_server_address;
-  err_t err;
-  print("Send SNTP request\n\r");
+  //err_t err;
+  //print("Send SNTP request\n\r");
   //LWIP_UNUSED_ARG(arg);
 
   /* initialize SNTP server address */
@@ -526,7 +530,8 @@ void sntp_request()
     LWIP_DEBUGF(SNTP_DEBUG_TRACE, ("sntp_request: current server address is %s\n",
     ipaddr_ntoa(&sntp_server_address)));
     sntp_send_request(&sntp_server_address);
-    print("Ok\n\r");
+    n_of_req++;
+    //print("Ok\n\r");
     /* address conversion failed, try another server */
   //ab//LWIP_DEBUGF(SNTP_DEBUG_WARN_STATE, ("sntp_request: Invalid server address, trying next server.\n"));
   //ab//sys_timeout((u32_t)SNTP_RETRY_TIMEOUT, sntp_try_next_server, NULL);
@@ -648,6 +653,16 @@ sntp_setservername(u8_t idx, char *server)
     sntp_servers[idx].name = server;
   }
 }*/
+
+u32 GetNofReq()
+{
+	return n_of_req;
+}
+
+u32 GetNofAns()
+{
+	return n_of_ans;
+}
 
 
 #endif /* LWIP_UDP */

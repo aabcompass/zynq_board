@@ -61,7 +61,7 @@ entity flow_control_d1 is
   		trig_delay: IN STD_LOGIC_VECTOR(C_CNT_DWIDTH-1 downto 0); --2 UNUSED
   		flags2: IN STD_LOGIC_VECTOR(31 downto 0);	     --3
   		fifo_thr: IN STD_LOGIC_VECTOR(15 downto 0); --4
-  		int_trig_gtu_time: IN STD_LOGIC_VECTOR(31 downto 0);  --5
+  		set_gtu_counter_value: IN STD_LOGIC_VECTOR(31 downto 0);  --5
   		n_gtus_per_cycle: IN STD_LOGIC_VECTOR(31 downto 0);  --6 
   		periodic_trig_gtu_period: IN STD_LOGIC_VECTOR(31 downto 0);  --7 
   		num_of_gtus_after_trig: IN STD_LOGIC_VECTOR(15 downto 0);  --8
@@ -387,7 +387,7 @@ begin
 	is_started <= flags(0);
 	periodic_trig_en <= flags(1);
 	en_algo_trig <= flags(2);
-	en_int_trig <= flags(3);
+	--en_int_trig <= flags(3);
 	en_trig_ext_lab <= flags(4);
 	--en_ta_trig <= flags(5);
 	release_always <= flags(6); 
@@ -467,8 +467,10 @@ begin
 	gtu_sig_counter_process: process(s_axis_aclk)
 	begin
 		if(rising_edge(s_axis_aclk)) then
-			if(clr_all = '1' or clr_gtu_cnt = '1') then
+			if(clr_all = '1' or clr_gtu_cnt = '1' or one_second_pulse = '1') then
 				gtu_sig_counter_i <= (others => '0');
+			elsif(set_unix_time = '1') then
+				gtu_sig_counter_i <= set_gtu_counter_value;
 			else
 				gtu_sig_d1 <= gtu_sig_d0;
 				if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
@@ -556,33 +558,33 @@ begin
 		end if;
 	end process;
 	
-	int_trig_gen: process(s_axis_aclk) 
-		variable state : integer range 0 to 1 := 0;
-	begin
-		if(rising_edge(s_axis_aclk)) then
-			if(clr_all = '1' or clr_trig_service = '1') then
-				int_trig_gen_cnt <= (others => '0');
-				state := 0;
-			else
-				case state is
-					when 0 => 
-						if(periodic_trig_gen_cnt2 < n_gtus_per_cycle) then
-							if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
-								if(int_trig_gen_cnt = int_trig_gtu_time-1) then
-									int_trig <= en_int_trig;
-									state := state + 1;
-								else 
-									int_trig <= '0';
-									int_trig_gen_cnt <= int_trig_gen_cnt + 1;
-								end if;
-							end if;
-						end if;
-					when 1 =>
-						int_trig <= '0';
-				end case;
-			end if;
-		end if;
-	end process;
+--	int_trig_gen: process(s_axis_aclk) 
+--		variable state : integer range 0 to 1 := 0;
+--	begin
+--		if(rising_edge(s_axis_aclk)) then
+--			if(clr_all = '1' or clr_trig_service = '1') then
+--				int_trig_gen_cnt <= (others => '0');
+--				state := 0;
+--			else
+--				case state is
+--					when 0 => 
+--						if(periodic_trig_gen_cnt2 < n_gtus_per_cycle) then
+--							if(gtu_sig_d0 = '1' and gtu_sig_d1 = '0') then
+--								if(int_trig_gen_cnt = int_trig_gtu_time-1) then
+--									int_trig <= en_int_trig;
+--									state := state + 1;
+--								else 
+--									int_trig <= '0';
+--									int_trig_gen_cnt <= int_trig_gen_cnt + 1;
+--								end if;
+--							end if;
+--						end if;
+--					when 1 =>
+--						int_trig <= '0';
+--				end case;
+--			end if;
+--		end if;
+--	end process;
 	
 	self_trig <= (s_axis_trg_tlast and s_axis_trg_tvalid and en_algo_trig);
 	self_trig_d1 <= self_trig when rising_edge(s_axis_aclk);
@@ -658,7 +660,7 @@ begin
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clkb_mode = '0') then
-				trig_comb <= periodic_trig or self_trig or int_trig  or trig_ext_in_lab_f;
+				trig_comb <= periodic_trig or self_trig or trig_ext_in_lab_f;
 			else
 				trig_comb <= trig_ext_in_f;
 			end if;

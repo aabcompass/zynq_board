@@ -41,6 +41,8 @@ typedef struct
 	u32 time_sec ;
 	u32 time_usec;
 	u32 is_valid;
+	u32 n_of_req;
+	u32 n_of_ans;
 } TimeSntp;
 
 #endif /* SRC_COMMON_H_ */

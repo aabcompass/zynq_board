@@ -272,7 +272,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		L3Reset();
 		print("DMAs are reset\n\r");
 		ClkbResetCounters();
-		ResetGTUCounter_D1();
+		//ResetGTUCounter_D1();
 		FC_ResetSelfTrgCounter();
 		FlowControlStart_D1(1);
 		if(instrumentState.mode == MODE_D1) {
@@ -323,7 +323,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			tcp_write(tpcb, str, sizeof(str), 1);
 			return;
 		}
-
+		sntp_request();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -558,6 +558,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_GTU_1US, 7) == 0)
 	{
 		RunArtix(1);
+		sntp_request();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -904,8 +905,14 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			sprintf(reply, "No time received from NTP server");
 		}
 		else {
-			sprintf(reply, "%s %d us\n\r", ctime(&t.time_sec), t.time_usec);
+			sprintf(reply, "%s(%d) %d us\n\r", ctime(&t.time_sec), t.time_sec, t.time_usec);
 		}
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(strncmp(p->payload, TCP_CMD_GET_UNIX_TIME, strlen(TCP_CMD_GET_UNIX_TIME)) == 0)
+	{
+		TimeSntp t = GetUnixTimeUs();
+		sprintf(reply, "%d.%d req=%d ans=%d\n\r", t.time_sec, t.time_usec, t.n_of_req, t.n_of_ans);
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
 }

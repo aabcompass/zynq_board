@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.06.02"
+#define ZYNQ3_VER_STRING "v5.06.09"
 
 //========================================
 // Constants
@@ -423,6 +423,7 @@ typedef struct
 #define TCP_CMD_ARTIX_IDELAY		"artix idelay %d %d" /*delay, n_PMT*/
 #define TCP_CMD_ARTIX_IDELAYLD		"artix idelayld %d %d %d" /*delay, n_PMT, artix*/
 #define TCP_CMD_SET_UNIX_TIME		"setunixtime %d"
+#define TCP_CMD_GET_UNIX_TIME		"getunixtime"
 
 #define TCP_CMD_CLKB_GET_STATUS		"clkb status gpio"
 #define TCP_CMD_CLKB_GET_FREQ_40MHz "clkb freq 40MHz?"

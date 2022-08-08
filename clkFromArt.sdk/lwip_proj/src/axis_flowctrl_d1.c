@@ -98,7 +98,24 @@ void SetUnixTime(u32 param0)
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_UNIX_TIME*4) = param0;
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = BIT_FC_SET_UNIX_TIME;
 	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = 0;
+}
 
+void SetUnixTimeUs(u32 param0, u32 us)
+{
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_UNIX_TIME*4) = param0;
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_UNIX_TIME_US*4) = us;
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = BIT_FC_SET_UNIX_TIME;
+	*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_EDGE_FLAGS*4) = 0;
+}
+
+TimeSntp GetUnixTimeUs()
+{
+	TimeSntp time;
+	time.time_sec = *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_UNIX_TIME*4);
+	time.time_usec = *(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_GTU_CNT*4);
+	time.n_of_req = GetNofReq();
+	time.n_of_ans = GetNofAns();
+	return time;
 }
 
 void FlowControlInit_D1()

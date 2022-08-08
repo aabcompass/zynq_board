@@ -8,6 +8,7 @@
 #define SRC_AXIS_FLOWCTRL_H_
 
 #include "xbasic_types.h"
+#include "common.h"
 
 #define  	XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR XPAR_AXIS_FLOW_CONTROL_D1_0_BASEADDR
 
@@ -16,7 +17,7 @@
 #define REGW_TRIG_DELAY				2 /* the delay betweenf trigger event and message about it*/ //trig_delay UNUSED
 #define REGW_EDGE_FLAGS				3 /* 2=set_unix_time 1=trig_force 0=release */
 #define REGW_D1_FIFO_THR			4 /* fifo_thr in HDL*/
-#define REGW_INT_TRIG_GTU_TIME		5 /* Time time for the programmable trigger */
+#define REGW_UNIX_TIME_US			5 /* Time time for the programmable trigger */
 #define REGW_GTUS_PER_CYCLE			6 /* the number of GTUs in one cycles (5s in SPB-2)*/
 #define REGW_PERIODIC_TRIG_PERIOD	7 /* Period of periodic trigger (in GTUs)*/
 #define REGW_D1_N_GTU_AFTER_TRIG	8 /* num_of_gtus_after_trig in HDL */
@@ -109,6 +110,8 @@ void FC_use_CLKB(int param);
 u32 GetTrigN_of_internal_L1();
 u32 FC_getSelfTrgCnt();
 u32 FC_GetStatus();
+void SetUnixTimeUs(u32 param0, u32 us);
+TimeSntp GetUnixTimeUs();
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

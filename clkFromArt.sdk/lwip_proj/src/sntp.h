@@ -52,6 +52,8 @@ TimeSntp GetLastAcceptedTimeFromServer();
 
 void sntp_setserver(u8_t idx, const ip_addr_t *addr);
 ip_addr_t sntp_getserver(u8_t idx);
+u32 GetNofReq();
+u32 GetNofAns();
 
 #if SNTP_SERVER_DNS
 void sntp_setservername(u8_t idx, char *server);

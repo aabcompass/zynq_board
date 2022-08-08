@@ -27,7 +27,7 @@ entity axis_flow_control_d1 is
   		s_axis_tvalid : IN STD_LOGIC;
   		s_axis_tready : OUT STD_LOGIC;
   		s_axis_tdata : IN STD_LOGIC_VECTOR(C_AXIS_DWIDTH-1 DOWNTO 0);
-  		s_axis_tlast : IN STD_LOGIC;file:///opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/vivado
+  		s_axis_tlast : IN STD_LOGIC;
 
   		s_axis_trg_tvalid : IN STD_LOGIC;
   		s_axis_trg_tready : OUT STD_LOGIC := '1';
@@ -237,7 +237,7 @@ architecture Behavioral of axis_flow_control_d1 is
 				trig_delay: IN STD_LOGIC_VECTOR(C_CNT_DWIDTH-1 downto 0); --2
 				flags2: IN STD_LOGIC_VECTOR(31 downto 0);	     --3
 				fifo_thr: IN STD_LOGIC_VECTOR(15 downto 0); --4
-				int_trig_gtu_time: IN STD_LOGIC_VECTOR(31 downto 0);  --5
+				set_gtu_counter_value: IN STD_LOGIC_VECTOR(31 downto 0);  --5
 				n_gtus_per_cycle: IN STD_LOGIC_VECTOR(31 downto 0);  --6 
 				periodic_trig_gtu_period: IN STD_LOGIC_VECTOR(31 downto 0);  --7 
 				num_of_gtus_after_trig: IN STD_LOGIC_VECTOR(15 downto 0);  --8
@@ -923,7 +923,7 @@ begin
 				trig_delay => slv_reg2(C_CNT_DWIDTH-1 downto 0),--: IN STD_LOGIC_VECTOR(C_CNT_DWIDTH-1 downto 0); --2
 				flags2 => slv_reg3,--: IN STD_LOGIC_VECTOR(31 downto 0);	     --3
 				fifo_thr => slv_reg4(15 downto 0),--: IN STD_LOGIC_VECTOR(15 downto 0); --4
-				int_trig_gtu_time => slv_reg5,--: IN STD_LOGIC_VECTOR(31 downto 0);  --5
+				set_gtu_counter_value => slv_reg5,--: IN STD_LOGIC_VECTOR(31 downto 0);  --5
 				n_gtus_per_cycle => slv_reg6,--: IN STD_LOGIC_VECTOR(31 downto 0);  --6 
 				periodic_trig_gtu_period => slv_reg7,--: IN STD_LOGIC_VECTOR(31 downto 0);  --7 
 				num_of_gtus_after_trig => slv_reg8(15 downto 0),--: IN STD_LOGIC_VECTOR(15 downto 0);  --8
