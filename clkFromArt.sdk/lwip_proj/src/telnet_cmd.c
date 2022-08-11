@@ -276,6 +276,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		FC_ResetSelfTrgCounter();
 		FlowControlStart_D1(1);
 		if(instrumentState.mode == MODE_D1) {
+			instrumentState.file_counter_l1 = 0;
 			L1Start();
 			L3Start(INFINITE, N_FRAMES_DMA_D3);
 			MPSStart();
