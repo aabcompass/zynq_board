@@ -597,6 +597,9 @@ void send_data_sm()
 	int buf_sz, ret;
 	char file_record[100];
 	static int cnt=0;
+	time_t cur_time;
+	char buffer[80];
+	struct tm *time_info;
 	//char str3[250];
 	switch(ftp_state)
 	{
@@ -628,8 +631,14 @@ void send_data_sm()
 			current_record++;
 		break;
 	case send_filename_record:
-		if(dir_list_short == 0)
-			sprintf(file_record, "-r--r--r-- 1 1001 1001 %d Jan 01 2000 %s\r\n", (int)files[current_record].length, files[current_record].filename);
+
+		if(dir_list_short == 0) {
+			//sprintf(file_record, "-r--r--r-- 1 1001 1001 %d Jan 01 2000 %s\r\n", (int)files[current_record].length, files[current_record].filename);
+			cur_time = files[current_record].unix_time;
+			time_info = localtime(&cur_time);
+			strftime(buffer, 80, "%b %d %Y ", time_info);
+			sprintf(file_record, "-r--r--r-- 1 1001 1001 %d %s %s\r\n", (int)files[current_record].length, buffer, files[current_record].filename);
+		}
 		else
 			sprintf(file_record, "%s\r\n", /*(int)files[current_record].length,*/ files[current_record].filename);
 		//xil_printf("Lst: %s\n\r", file_record);
