@@ -262,7 +262,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>CLK_DOMAIN</spirit:name>
-            <spirit:value>design_1_spb_gtu_clk_p_1</spirit:value>
+            <spirit:value>design_1_spb_gtu_clk_p_0</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -309,7 +309,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>CLK_DOMAIN</spirit:name>
-            <spirit:value>design_1_spb_gtu_clk_n_1</spirit:value>
+            <spirit:value>design_1_spb_gtu_clk_n_0</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -1638,17 +1638,17 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_data_provider_z3_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="axi_data_provider_z3" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_data_provider_z3_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>SPB2_1</spirit:instanceName>
         <spirit:componentRef spirit:library="user" spirit:name="SPB2" spirit:vendor="user.org" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_SPB2_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axi_data_provider_z3_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="axi_data_provider_z3" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_data_provider_z3_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -1911,7 +1911,6 @@
         <spirit:internalPortReference spirit:componentRef="data_converter_1" spirit:portRef="m_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_clkb_core_0" spirit:portRef="S_AXI_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="clk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="SPB2_1" spirit:portRef="CLOCK_133"/>
         <spirit:internalPortReference spirit:componentRef="SPB2_1" spirit:portRef="m_aclk_sum"/>
         <spirit:internalPortReference spirit:componentRef="SPB2_1" spirit:portRef="s_aclk_cmd"/>
@@ -1937,6 +1936,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M14_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M15_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="s_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="S_AXI_ACLK"/>
       </spirit:adHocConnection>
@@ -1977,7 +1977,6 @@
         <spirit:internalPortReference spirit:componentRef="data_converter_1" spirit:portRef="m_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_clkb_core_0" spirit:portRef="S_AXI_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="resetn"/>
-        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="SPB2_1" spirit:portRef="s_aresetn_cmd"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ARESETN"/>
@@ -1998,6 +1997,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M14_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="M15_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="axi_data_provider_z3_0" spirit:portRef="S_AXI_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="s_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axis_flow_control_d1_0" spirit:portRef="S_AXI_ARESETN"/>
       </spirit:adHocConnection>

@@ -677,6 +677,7 @@ begin
 				trig_immediate_latch <= '0';
 				ta_trig_param_latch <= (others => '0');
 				trig <= '0';
+				trig_all_cnt_i <= (others => '0');
 				state := 0;
 			else
 				sm_state_latch <= conv_std_logic_vector(state, 4);

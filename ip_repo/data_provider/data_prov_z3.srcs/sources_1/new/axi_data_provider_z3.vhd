@@ -1499,7 +1499,7 @@ begin
 	
 	zero_pmts <= slv_reg12(11 downto 0) & slv_reg11(27 downto 16) & slv_reg11(11 downto 0);
 
-	data_provider_4trig_aresetn <= S_AXI_ARESETN and reset_dataprov4trig;
+	data_provider_4trig_aresetn <= S_AXI_ARESETN and reset_dataprov4trig when rising_edge(S_AXI_ACLK);
 
 	s_axis_tvalid_4trig <= s_axis_tvalid and pass;
 	i_data_provider_4trig : data_provider_4trig 

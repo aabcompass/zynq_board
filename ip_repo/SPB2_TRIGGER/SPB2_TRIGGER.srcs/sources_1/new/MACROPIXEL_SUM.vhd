@@ -92,8 +92,9 @@ end MACROPIXEL_SUM;
 architecture arch_MACROPIXEL_SUM of MACROPIXEL_SUM is
 
 --------------------------#TEST#--------------------------------------------------------------------------------------
-CONSTANT    last_frame_sum      : std_logic_vector (18 downto 0) := "0000011111111111111";--16383,SUM over 16384 GTU
---CONSTANT    last_frame_sum      : std_logic_vector (18 downto 0) := "0000000000000001001";--TEST 9,SUM over 10 GTU
+--CONSTANT    last_frame_sum      : std_logic_vector (18 downto 0) := "0000011111111111111";--16383,SUM over 16384 GTU
+CONSTANT    last_frame_sum      : std_logic_vector (18 downto 0) := "0000100000000000000";--16384,SUM over 16384 GTU --07/2022
+--CONSTANT    last_frame_sum      : std_logic_vector (18 downto 0) := "0000000000000001010";--TEST 10,SUM over 10 GTU
 ----------------------------------------------------------------------------------------------------------------------
 
 SIGNAL  CE_0    :   std_logic := '0';--Clock ENABLE Colum0
@@ -2072,7 +2073,7 @@ begin
                         SCLR <= '1';--Clear the accumulators
                     end if;
                 else
-                    if (frame_count <= last_frame_sum) then
+                    if (frame_count < last_frame_sum) then     --07/2022 IDLE 5 cycles "<=", IDLE 82 cycles "<" 
                         state_sum <= s1;
                     end if;
                 end if;
@@ -2141,7 +2142,8 @@ begin
     if (CLOCK'event and CLOCK = '1') then
         case (state_col_out) is
             when s0 =>
-                if (frame_count = last_frame_sum) then
+                --if (frame_count = last_frame_sum) then
+                if (frame_count = last_frame_sum and state_sum = s1) then --07/2022
                    state_col_out <= s1;
                 end if;
                 mpsum_ready <= '0';
