@@ -443,7 +443,7 @@ typedef struct
 #define TCP_CMD_SNTP_REQ			"sntp req"
 #define TCP_CMD_SNTP_LAST_TIME		"sntp last time"
 
-
+#define OPT_PRODUCE_MPS_DATA		0
 
 
 #pragma pack(pop) /* return to normal packing */
