@@ -284,7 +284,9 @@ typedef struct
 #define FILENAME_D1				"frm_z%d_d1_%08d.dat"
 #define FILENAME_D1_FLIGHT		"frm_z%d_d1_%s-%04d.dat"
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
-#define FILENAME_MPS			"frm_z%d_mps_%08d.dat"
+#define FILENAME_MPS			"mps_z%d_mps_%08d.dat"
+#define FILENAME_MPS_FLIGHT		"mps_z%d_mps_%s-%04d.dat"
+
 //#define FILENAME_HVLOG			"hv_%08d.dat"
 //#define FILENAME_SCURVE	 		"scurve_%08d.dat"
 
