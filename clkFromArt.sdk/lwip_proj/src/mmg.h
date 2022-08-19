@@ -14,7 +14,7 @@
 
 #define N_D1_IN_MEM	250
 #define N_D3_IN_MEM	15
-#define N_MPS_IN_MEM	120
+#define N_MPS_IN_MEM	2
 
 #define N_SCI_FILES		(N_D1_IN_MEM + N_D3_IN_MEM + N_MPS_IN_MEM)
 
@@ -24,7 +24,7 @@ typedef struct
 	Z_DATA_TYPE_SCI_L1_V6 sci_data_l1[N_D1_IN_MEM];
 	char alignment2[68];
 	Z_DATA_TYPE_SCI_L3_V3 sci_data_l3[N_D3_IN_MEM];
-	char alignment3[64];
+	char alignment3[8];
 	Z_DATA_TYPE_SCI_MPS_V1 sci_data_mps[N_MPS_IN_MEM];
 } MainBuffer;
 

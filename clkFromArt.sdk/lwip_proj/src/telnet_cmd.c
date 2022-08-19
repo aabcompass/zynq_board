@@ -289,6 +289,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		else if(instrumentState.mode == MODE_D1D3) {
 			L1Start();
 			L3Start(INFINITE, N_FRAMES_DMA_D3);
+			MPSStart();
 			StartDataProvider();
 		}
 		else if(instrumentState.mode == MODE_LIVE) {
@@ -1022,6 +1023,7 @@ void SetDefaultParameters()
 	instrumentState.file_counter_l1 = 0;
 	instrumentState.file_counter_l2 = 0;
 	instrumentState.file_counter_l3 = 0;
+	instrumentState.file_counter_mps = 0;
 	instrumentState.is_simple_packets = 0;
 	instrumentState.mode = MODE_NONE;
 	systemSettings.scurve_delay = 75;
