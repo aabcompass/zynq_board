@@ -440,6 +440,7 @@ begin
 	end process; 	
 	
 	cnt_1pps <= cnt_1pps_i;
+	spb_1pps <= spb_1pps_sync;
 	
 	cnt_Ext_trig_meter: process(axi_clk)
 		variable state : integer range 0 to 1 := 0;

@@ -54,6 +54,7 @@ entity axis_flow_control_d1 is
   		trig_ext_in: in std_logic;
   		trig_out: out std_logic;
   		busy: out std_logic;
+  		pps: in std_logic;
   		
   		trig_ext_in_lab: in std_logic;
   		
@@ -227,6 +228,7 @@ architecture Behavioral of axis_flow_control_d1 is
 				trig_ext_in: in std_logic;
 				trig_out: out std_logic;
 				busy: out std_logic;
+				pps: in std_logic;
 				
 				trig_ext_in_lab: in std_logic;
 				
@@ -908,6 +910,7 @@ begin
 				trig_ext_in => trig_ext_in,--: in std_logic;
 				trig_out => trig_out,--: out std_logic;
 				busy => busy,
+				pps => pps,--: in std_logic;
 				
 				trig_ext_in_lab => trig_ext_in_lab,
 

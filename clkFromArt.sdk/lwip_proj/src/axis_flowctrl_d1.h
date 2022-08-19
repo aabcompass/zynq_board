@@ -61,6 +61,7 @@
 #define BIT_FC_IS_STARTED				(1<<0)
 #define BIT_FC_FLAGS_CLKB_MODE			(1<<17)
 #define BIT_FC_FLAGS_PAUSE4FTP			(1<<18)
+#define BIT_FC_USE_1PPS					(1<<19)
 
 
 //REGW_CLR_FLAGS
@@ -112,6 +113,7 @@ u32 FC_getSelfTrgCnt();
 u32 FC_GetStatus();
 void SetUnixTimeUs(u32 param0, u32 us);
 TimeSntp GetUnixTimeUs();
+void FC_use_1PPS(int param);
 
 
 #endif /* SRC_AXIS_FLOWCTRL_H_ */

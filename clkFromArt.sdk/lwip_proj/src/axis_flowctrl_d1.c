@@ -15,6 +15,10 @@
 
 int N1=MAX_PACKETS_L1;
 int is_started = 0;
+u32 use_CLKB = 0;
+u32 use_1PPS = 0;
+u32 pause4ftp = 0;
+
 
 void FlowControlTRG()
 {
@@ -141,6 +145,7 @@ void FlowControlInit_D1()
 	SetUnixTime(0);
 	//Enable counter for internal events
 	FC_Enable_Reset_Internal_TRG_counter();
+	FC_use_1PPS(1);
 }
 
 void SetPeriodOfPeriodicTrigger(u32 clks)
@@ -204,10 +209,14 @@ void D1_release()
 
 void SetPauseForFTP(u32 is_pause)
 {
-	if(is_pause)
+	if(is_pause) {
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |= BIT_FC_FLAGS_PAUSE4FTP;
-	else
+		pause4ftp = 1;
+	}
+	else {
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &= ~BIT_FC_FLAGS_PAUSE4FTP;
+		pause4ftp = 0;
+	}
 	//xil_printf("SetPauseForFTP(%d)", is_pause);
 }
 
@@ -230,9 +239,7 @@ void SetModeD1(u32 mode)
 {
 	if(mode != 0)
 	{
-		//ResetGTUCounter_D1();
-		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = mode | (is_started*BIT_FC_IS_STARTED);// | BIT_FC_IS_STARTED; Was in Mini
-		//*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_INT_TRIG_GTU_TIME*4) = 2048*1000+20;
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) = mode | (is_started*BIT_FC_IS_STARTED) | (use_CLKB*BIT_FC_FLAGS_CLKB_MODE) | (use_1PPS*BIT_FC_USE_1PPS) | (pause4ftp*BIT_FC_FLAGS_PAUSE4FTP);
 	}
 }
 
@@ -253,10 +260,27 @@ u32 L1_getSatisfied() //  Returns the trigger satisfaction status from the AXIS 
 
 void FC_use_CLKB(int param)
 {
-	if(param == 1)
+	if(param == 1) {
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |=  BIT_FC_FLAGS_CLKB_MODE;
-	else
+		use_CLKB = 1;
+	}
+	else {
 		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &=  ~BIT_FC_FLAGS_CLKB_MODE;
+		use_CLKB = 0;
+	}
+}
+
+
+void FC_use_1PPS(int param)
+{
+	if(param == 1) {
+		use_1PPS = 1;
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) |=  BIT_FC_USE_1PPS;
+	}
+	else {
+		use_1PPS = 0;
+		*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGW_FLAGS*4) &=  ~BIT_FC_USE_1PPS;
+	}
 }
 
 u32 FC_getSelfTrgCnt()
