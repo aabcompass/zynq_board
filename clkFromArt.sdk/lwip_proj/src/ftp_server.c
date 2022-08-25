@@ -157,7 +157,12 @@ int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint
 		}
 	}
 	else if(data_type == DATA_TYPE_L3) {
-		sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);
+		if(filenames_style == FILENAMES_LAB) {
+			sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);
+		}
+		else if(filenames_style == FILENAMES_FLIGHT) {
+			sprintf(filename_str, FILENAME_D3_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_l3);
+		}
 	}
 	else if(data_type == DATA_TYPE_MPS) {
 		if(filenames_style == FILENAMES_LAB) {

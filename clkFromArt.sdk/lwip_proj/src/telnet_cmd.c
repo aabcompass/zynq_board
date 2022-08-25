@@ -69,7 +69,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		DataProvEnD1L1(1);
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);
-		SetFilenamesStyle(FILENAMES_LAB);
+		SetFilenamesStyle(FILENAMES_FLIGHT);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}

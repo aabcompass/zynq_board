@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.06.14"
+#define ZYNQ3_VER_STRING "v5.07.00"
 
 //========================================
 // Constants
@@ -284,6 +284,7 @@ typedef struct
 #define FILENAME_D1				"frm_z%d_d1_%08d.dat"
 #define FILENAME_D1_FLIGHT		"frm_z%d_d1_%s-%04d.dat"
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
+#define FILENAME_D3_FLIGHT		"frm_z%d_d3_%s-%04d.dat"
 #define FILENAME_MPS			"mps_z%d_mps_%08d.dat"
 #define FILENAME_MPS_FLIGHT		"mps_z%d_mps_%s-%04d.dat"
 
