@@ -68,6 +68,8 @@ static char* spectrum_addr;
 
 int dir_list_short;
 
+char filename_str[50], datetimestr[50];
+
 void SetFilenamesStyle(u32 param)
 {
 	filenames_style = param;
@@ -144,7 +146,7 @@ int CreateFile(char* filename, char* pData, int size, uint32_t unix_time, File_t
 
 int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint32_t mmg_file_descriptor)
 {
-	char filename_str[50], datetimestr[50];
+
 	int ret;
 	if(data_type == DATA_TYPE_L1) {
 		if(filenames_style == FILENAMES_LAB) {
@@ -157,8 +159,15 @@ int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint
 		}
 	}
 	else if(data_type == DATA_TYPE_L3) {
-		sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);
+		if(filenames_style == FILENAMES_LAB) {
+			sprintf(filename_str, FILENAME_D3, instrumentState.ZB_number,  instrumentState.file_counter_l3++);
+		}
+		else if(filenames_style == FILENAMES_FLIGHT) {
+			convertUnixTimeToDateStr(GetUnixTime(), datetimestr);
+			sprintf(filename_str, FILENAME_D3_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_l3++);
+		}
 	}
+	xil_printf("filename_str=%s\n\r", filename_str);
 	ret = CreateFile(filename_str, pData, size, unix_time, file_scidata);
 	if(ret == TOO_MANY_FILES) {
 		print("CreateSciFile: TOO_MANY_FILES\n\r");

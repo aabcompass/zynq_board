@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.06.14"
+#define ZYNQ3_VER_STRING "v5.07.01"
 
 //========================================
 // Constants
@@ -283,6 +283,7 @@ typedef struct
 #define FILENAME_D1				"frm_z%d_d1_%08d.dat"
 #define FILENAME_D1_FLIGHT		"frm_z%d_d1_%s-%04d.dat"
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
+#define FILENAME_D3_FLIGHT		"frm_z%d_d3_%s-%04d.dat"
 //#define FILENAME_HVLOG			"hv_%08d.dat"
 //#define FILENAME_SCURVE	 		"scurve_%08d.dat"
 
@@ -361,6 +362,7 @@ typedef struct
 #define TCP_CMD_INSTR_MODE_RESUME	"instrument resume" /*Stop DMA with trigger*/
 #define TCP_CMD_INSTR_MODE_STOP		"instrument stop" /*Stop data provider with trigger*/
 #define TCP_CMD_INSTR_SET_INTEGR	"instrument integration %d" /*set integration*/
+#define TCP_CMD_INSTR_FN_LAB		"instrument filenames lab" /*Run this command if you want to switch FTP server to filenames with ascending order. The command must be run after "instrument mode"*/
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */
 #define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/

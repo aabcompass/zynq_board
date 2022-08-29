@@ -69,7 +69,7 @@ int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 		DataProvEnD1L1(1);
 		DoFileProcessing(DO_FILE_PROCESSING);
 		DoD3Files(WITH_D3_FILES);
-		SetFilenamesStyle(FILENAMES_LAB);
+		SetFilenamesStyle(FILENAMES_FLIGHT);
 		Set_n_d3_per_file(N_D3_PER_FILE);
 		ScurveAdderReInit();
 	}
@@ -203,12 +203,16 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(strncmp(p->payload, TCP_CMD_ACQ_STOP, 8) == 0)
 	{
 		StopDataProviderForLive();
-		//ResetDataConverter();
-		//ResetScurveAdder();
-		//InitHLS_peripherals();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_INSTR_FN_LAB, strlen(TCP_CMD_INSTR_FN_LAB)) == 0)
+	{
+		SetFilenamesStyle(FILENAMES_LAB);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+
 	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;
