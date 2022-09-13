@@ -167,7 +167,7 @@ int CreateSciFile(char* pData, int size, uint32_t unix_time, int data_type, uint
 			sprintf(filename_str, FILENAME_D3_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_l3++);
 		}
 	}
-	xil_printf("filename_str=%s\n\r", filename_str);
+	//xil_printf("filename_str=%s\n\r", filename_str);
 	ret = CreateFile(filename_str, pData, size, unix_time, file_scidata);
 	if(ret == TOO_MANY_FILES) {
 		print("CreateSciFile: TOO_MANY_FILES\n\r");
@@ -427,7 +427,7 @@ static err_t ftp_send_data(char * data, u16_t len)
 	err = tcp_write(ftpdata_pcb, data, len, 1);//TCP_WRITE_FLAG_COPY
 	if (err != ERR_OK)
 	{
-		xil_printf("BIN: ftp_send_data: Error on tcp_write: %d, len=%d, tpcb=0x%08x\r\n", err, len, ftpdata_pcb);
+		//xil_printf("BIN: ftp_send_data: Error on tcp_write: %d, len=%d, tpcb=0x%08x\r\n", err, len, ftpdata_pcb);
 		return err;
 	}
 	err = tcp_output(ftpdata_pcb);
@@ -682,7 +682,7 @@ void send_data_sm()
 			break;
 		}
 	case start_send_file:
-		print("+");
+		//print("+");
 		start_ftpserver_data();
 		ftp_state = wait_connect2;
 		break;
@@ -754,7 +754,7 @@ void send_data_sm()
 			//err_t err = tcp_output(ctrl_tpcb);
 			//remove the file both from files[] and mmg sciFiles[]
 			if(files[requested_record].file_type == file_scidata) {
-				xil_printf("Rm: mmgid=%d (%s) ", requested_record, files[requested_record].filename);
+				//xil_printf("Rm: mmgid=%d (%s) ", requested_record, files[requested_record].filename);
 				MmgDeleteSciFile(files[requested_record].mmg_file_descriptor);
 			}
 

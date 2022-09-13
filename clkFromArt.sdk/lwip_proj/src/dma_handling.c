@@ -97,7 +97,7 @@ void start_dma_l3(u32 n_frames)
 		p = (char*)&singleLiveFrameD3;
 
 	if(p) {
-		xil_printf("DmaStart: p=0x%08x, n=%d\n\r", p, 4 * N_OF_PIXELS_TOTAL * n_frames);
+		//xil_printf("DmaStart: p=0x%08x, n=%d\n\r", p, 4 * N_OF_PIXELS_TOTAL * n_frames);
 		DmaStart(&dma_d3, (UINTPTR)p, 4 * N_OF_PIXELS_TOTAL * n_frames, 1); //was N_FRAMES_DMA_D3
 	}
 	else {
@@ -152,17 +152,18 @@ void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 	tt = GetTrigType_L1();
 	if(is_file_processing == DO_FILE_PROCESSING)
 		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), tt, n_glob_cycles, GetTrigN_of_internal_L1());
-	xil_printf("tt=0x%08x\n\r", tt);
+	//xil_printf("tt=0x%08x\n\r", tt);
 	if(is_l1_started == 1) {
 		start_dma_l1();
 	}
 	if(Get_n_occupied(DATA_TYPE_L1) > N_D1_IN_MEM - 50) {
-		xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
+		//xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
 		SetPauseForFTP(1);
-		xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
+		//xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
 	}
 	D1_release();
-	xil_printf("y(%d)", n_glob_cycles);
+	//xil_printf("y(%d)", n_glob_cycles);
+	//print("y");
 	return;
 }
 
@@ -181,7 +182,7 @@ static void RxIntrHandler_dma_d3(void *Callback)
 	/* Acknowledge pending interrupts */
 	XAxiDma_IntrAckIrq(AxiDmaInst, IrqStatus, XAXIDMA_DEVICE_TO_DMA);
 
-	print("Z");
+	//print("Z");
 
 	if ((IrqStatus & XAXIDMA_IRQ_ERROR_MASK) || (IrqStatus & XAXIDMA_IRQ_IOC_MASK)) //error because DMA is ended in advance (?)
 	{
@@ -192,7 +193,7 @@ static void RxIntrHandler_dma_d3(void *Callback)
 			start_dma_l3(N_FRAMES_DMA_D3);
 		}
 		//ResetTriggerService_D1(); //?
-		print("z");
+		//print("z");
 		return;
 	}
 }

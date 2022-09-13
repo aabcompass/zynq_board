@@ -81,7 +81,7 @@ void MmgDeleteSciFile(u32 file_descriptor)
 	//Free DMA buffers behind the file
 	for(i=0;i<sciFiles[file_descriptor].n_records;i++) {
 		ref = sciFiles[file_descriptor].records[i];
-		xil_printf("%d,", ref);
+		//xil_printf("%d,", ref);
 		if(sciFiles[file_descriptor].data_type == DATA_TYPE_L1) {
 			mainBufferDescr.sci_data_l1[ref].is_occupied = 0;
 			n_l1_occupied--;
@@ -101,7 +101,7 @@ void MmgDeleteSciFile(u32 file_descriptor)
 	sciFiles[file_descriptor].is_occupied = 0;
 	sciFiles[file_descriptor].n_records = 0;
 
-	print("\n\r");
+	//print("\n\r");
 }
 
 u16 MmgIncr_n_records(u32 file_descriptor, u16 record)
@@ -131,7 +131,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 				mainBufferDescr.sci_data_l1[i].is_finalized = 0;
 				last_l1_occupied = i;
 				p = (char*)&mainBuffer.sci_data_l1[i].payload.frames[0].pmt[0].raw_data[0];
-				xil_printf("Given for L1 0x%08x(%d) \n\r", p, i);
+				//xil_printf("Given for L1 0x%08x(%d) \n\r", p, i);
 				return p;
 			//}
 		//}
@@ -145,7 +145,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 				last_l3_occupied = i;
 				p = (char*)&mainBuffer.sci_data_l3[i].payload.frames[0].pmt[0].data[0];
 				//p = (char*)&mainBuffer.sci_data_l3[i].payload.int32_data[0][0];
-				xil_printf("Given for L3 0x%08x(%d) \n\r", p, i);
+				//xil_printf("Given for L3 0x%08x(%d) \n\r", p, i);
 				return p;
 			}
 		}
@@ -158,7 +158,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 				mainBufferDescr.sci_data_mps[i].is_finalized = 0;
 				last_mps_occupied = i;
 				p = (char*)&mainBuffer.sci_data_mps[i].payload.data[0];
-				xil_printf("Given for MPS 0x%08x(%d) \n\r", p, i);
+				//xil_printf("Given for MPS 0x%08x(%d) \n\r", p, i);
 				return p;
 			}
 		}
@@ -204,7 +204,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 	//u32 run_cycle = n_gtu / N_FRAMES_PER_LIFECYCLE;
 	//static last_run_cycle = 0;
 	u16 n_records;
-	print("=");
+	//print("=");
 	char* p;
 	u32 l3_mmg_sci_file_id, l3_sci_file_id, file_size;
 	if(data_type == DATA_TYPE_L1) {
@@ -220,7 +220,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.internal_event_counter = n_internal_l1;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.event_counter = ClkbGetCntExtTrig();
 
-		xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
+		//xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.payload_size = sizeof(DATA_TYPE_SCI_L1_V6);
 		mainBuffer.sci_data_l1[last_l1_occupied].crc32 = crc_32((unsigned char*)&mainBuffer.sci_data_l1[last_l1_occupied].zbh.header, sizeof(DATA_TYPE_SCI_L1_V6)-4, 0xFFFFFFFF);
@@ -233,11 +233,11 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 			last_file_closed = 0;
 			file_size=MmgGetFileSize(last_mmg_file_descriptor);
 			CloseFile(last_file_descriptor, file_size);
-			xil_printf("File closed (size=%d)\n\r", file_size);
+			//xil_printf("File closed (size=%d)\n\r", file_size);
 			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
 			if(last_mmg_file_descriptor != -1) {
 				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
-				print("New file created\n\r");
+				//print("New file created\n\r");
 			}
 		}
 		else {
@@ -285,11 +285,11 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		if(glob_cycle != last_global_cycle) {
 			file_size=MmgGetFileSize(last_mmg_file_descriptor);
 			CloseFile(last_file_descriptor, file_size);
-			xil_printf("File closed (size=%d)\n\r", file_size);
+			//xil_printf("File closed (size=%d)\n\r", file_size);
 			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_mps_occupied);
 			if(last_mmg_file_descriptor != -1) {
 				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
-				print("New file created\n\r");
+				//print("New file created\n\r");
 			}
 		}
 		else {
@@ -305,7 +305,7 @@ void MmgCloseLastD1File()
 	if(sciFiles[last_mmg_file_descriptor].n_records > 0) {
 		file_size=MmgGetFileSize(last_mmg_file_descriptor);
 		CloseFile(last_file_descriptor, file_size);
-		xil_printf("File closed (size=%d)\n\r", file_size);
+		//xil_printf("File closed (size=%d)\n\r", file_size);
 	}
 	else {
 		print("No records in the opened file. Nothing to close.\n\r");
@@ -354,7 +354,7 @@ void MmgPrint1stD3()
 		for(j=0;j<N_OF_COMMON_PIXELS;j++) {
 			xil_printf("%d ", (*(u32*)(DMA_GetP()+4*(i*N_OF_COMMON_PIXELS+j)))/50000);
 		}
-		print("\n\r");
+		//print("\n\r");
 	}
 	Xil_DCacheInvalidateRange(DMA_GetP(), 2880*4);
 }
