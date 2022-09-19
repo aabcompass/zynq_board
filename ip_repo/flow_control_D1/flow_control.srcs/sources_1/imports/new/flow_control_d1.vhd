@@ -348,6 +348,7 @@ architecture Behavioral of flow_control_d1 is
 	attribute keep of trig_cnt: signal is "true";  
 	attribute keep of release: signal is "true";  
 	attribute keep of trig_type_i: signal is "true";  
+	attribute keep of gtu_sig_counter_i: signal is "true";  
 
 	signal s_axis_ta_event_tdata_d1: std_logic_vector(31 downto 0) := (others => '0');
 	

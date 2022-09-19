@@ -1,4 +1,5 @@
 ./send2zb.sh "instrument ver?"
+./send2zb.sh "instrument internal 1pps"
 ./zb6.sh
 ./general_init.sh
 ./conf_l1.sh

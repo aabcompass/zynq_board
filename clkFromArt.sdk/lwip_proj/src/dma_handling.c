@@ -25,6 +25,7 @@ XAxiDma dma_d1, dma_d3, dma_mps;
 XAxiDma_Config* CfgPtr_d1;
 
 SingleLiveFrameD3 singleLiveFrameD3 __attribute__ ((aligned (64)));
+u32 program_cnt = 0;
 
 char* DMA_GetP()
 {
@@ -147,11 +148,13 @@ void DoFileProcessing(u32 param)
 
 void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 {
+
 	u32 n_glob_cycles = Get_n_glob_cycles(), tt;
 	InvalidateRange(DATA_TYPE_L1);
 	tt = GetTrigType_L1();
 	if(is_file_processing == DO_FILE_PROCESSING)
 		MmgFinish(DATA_TYPE_L1, GetTrigNGTU_L1(), GetUnixTimestamp_L1(), tt, n_glob_cycles, GetTrigN_of_internal_L1());
+
 	//xil_printf("tt=0x%08x\n\r", tt);
 	if(is_l1_started == 1) {
 		start_dma_l1();
@@ -161,9 +164,9 @@ void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 		SetPauseForFTP(1);
 		//xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
 	}
+
 	D1_release();
 	//xil_printf("y(%d)", n_glob_cycles);
-	//print("y");
 	return;
 }
 
@@ -229,6 +232,12 @@ void L1_trigger_service()
 {
 	if(IsD1Triggered())
 		RxIntrHandler_L1(&dma_d1);
+	program_cnt++;
+}
+
+u32 GetProgramCnt()
+{
+	return program_cnt;
 }
 
 void L1Start()

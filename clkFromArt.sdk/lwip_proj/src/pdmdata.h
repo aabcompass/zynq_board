@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.07.02"
+#define ZYNQ3_VER_STRING "v5.07.04"
 
 //========================================
 // Constants
@@ -363,6 +363,7 @@ typedef struct
 #define TCP_CMD_INSTR_MODE_STOP		"instrument stop" /*Stop data provider with trigger*/
 #define TCP_CMD_INSTR_SET_INTEGR	"instrument integration %d" /*set integration*/
 #define TCP_CMD_INSTR_FN_LAB		"instrument filenames lab" /*Run this command if you want to switch FTP server to filenames with ascending order. The command must be run after "instrument mode"*/
+#define TCP_CMD_INSTR_NO_1PPS		"instrument internal 1pps" /*Use internal 1pps generator instead of external one*/
 #define TCP_CMD_ACQ_STOP			"acq stop" /*Stop live mode*/
 #define TCP_CMD_ACQ_LIVE			"acq live" /*Get a live frame */
 #define TCP_CMD_ACQ_NEXT			"acq next %d" /*Get next live frame (1 - 3)*/

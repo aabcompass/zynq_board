@@ -212,7 +212,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
-
+	else if(strncmp(p->payload, TCP_CMD_INSTR_NO_1PPS, strlen(TCP_CMD_INSTR_NO_1PPS)) == 0)
+	{
+		FC_use_1PPS(0);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_ACQ_LIVE, 8) == 0)
 	{
 		err_t err;

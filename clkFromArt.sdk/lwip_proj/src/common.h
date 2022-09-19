@@ -45,4 +45,6 @@ typedef struct
 	u32 n_of_ans;
 } TimeSntp;
 
+void DelayZynq7000Ns(u32 delay);
+void SuperSmallDelay();
 #endif /* SRC_COMMON_H_ */
