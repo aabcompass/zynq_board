@@ -12,6 +12,7 @@
 #include "xbasic_types.h"
 
 int Set_L1_MPSthr(u32 param);
+int Get_L1_MPSthr();
 int Set_L1_nSigma(float param);
 int Set_L1_nHot(u32 param);
 int Set_L1_nLength(u32 param);

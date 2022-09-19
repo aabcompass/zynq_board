@@ -15,6 +15,7 @@
 #include "dma_handling.h"
 #include "crc32.h"
 #include "clkb.h"
+#include "l1_trigger_block.h"
 
 MainBuffer mainBuffer __attribute__ ((aligned (64)));
 MainBufferDescr mainBufferDescr;
@@ -29,6 +30,8 @@ SciFiles sciFiles[N_SCI_FILES];
 int is_file_opened = 0;
 
 u32 is_d3_files = WITH_D3_FILES;
+
+u32 fw_version_int;
 
 void DoD3Files(u32 param)
 {
@@ -47,9 +50,18 @@ u32 Mmg_Get_last_global_cycle()
 
 void MmgInit()
 {
+	u32 v1,v2,v3;
 	memset((char*)&mainBuffer, 0, sizeof(MainBuffer));
 	memset((char*)&mainBufferDescr, 0, sizeof(MainBufferDescr));
 	memset((char*)&sciFiles, 0, sizeof(SciFiles));
+	sscanf(ZYNQ3_VER_STRING, "v%d.%d.%d", &v1, &v2, &v3);
+	xil_printf("MmgInit: fw_version_int: v%d.%d.%d\n\r", v1, v2, v3);
+	fw_version_int = v1<<16 | v2<<8 | v3;
+}
+
+u32 GetFW_version_int()
+{
+	return fw_version_int;
 }
 
 u32 MmgCreateSciFile(int data_type, u32 global_cycle, void* p, u16 first_record) //returns file descriptor
@@ -171,7 +183,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 u32 MmgGetFileSize(int mmg_file_descriptor)
 {
 	if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L1) {
-		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V6);
+		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L1_V7);
 	}
 	else if(sciFiles[mmg_file_descriptor].data_type == DATA_TYPE_L3) {
 		return sciFiles[mmg_file_descriptor].n_records * sizeof(Z_DATA_TYPE_SCI_L3_V3);
@@ -219,6 +231,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.internal_event_counter = n_internal_l1;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.event_counter = ClkbGetCntExtTrig();
+		mainBuffer.sci_data_l1[last_l1_occupied].mps_threshold = Get_L1_MPSthr();
+		mainBuffer.sci_data_l1[last_l1_occupied].fw_version_int = GetFW_version_int();
 
 		//xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
 		mainBuffer.sci_data_l1[last_l1_occupied].zbh.header = BuildHeader(DATA_TYPE_SCI_L1, VER_Z_DATA_TYPE_SCI_L1);

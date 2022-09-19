@@ -12,6 +12,7 @@
 #include "pdmdp_err.h"
 
 u32 MPSthr;
+u32 MPSthr_glob;
 u32 nSigma_u32 = 704;
 u32 nHot = 2;
 u32 nLength = 20;
@@ -21,10 +22,16 @@ u32 nActive = 34;
 
 int Set_L1_MPSthr(u32 param)
 {
+	MPSthr_glob = param;
 	if(param>=65536) return ERR_VALUE_OUT_OF_RANGE;
 	MPSthr = param | (1<<BIT_L1_SW);
 	TxFIFOSendMain(&MPSthr, 1, FIFO_CH_TRIG);
 	return 0;
+}
+
+int Get_L1_MPSthr()
+{
+	return MPSthr_glob;
 }
 
 int Set_L1_nSigma(float param)

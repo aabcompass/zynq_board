@@ -283,7 +283,7 @@ void L3Reset()
 
 void PrintDataSizes()
 {
-	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V6));
+	xil_printf("sizeof(Z_DATA_TYPE_SCI_L1_V4)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L1_V7));
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_L3_V3)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_L3_V3));
 	xil_printf("sizeof(Z_DATA_TYPE_SCI_MPS_V1)=0x%08x\n\r", sizeof(Z_DATA_TYPE_SCI_MPS_V1));
 	xil_printf("sizeof(MainBuffer)=0x%08x\n\r", sizeof(MainBuffer));

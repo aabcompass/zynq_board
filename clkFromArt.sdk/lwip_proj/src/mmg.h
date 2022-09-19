@@ -21,7 +21,7 @@
 typedef struct
 {
 	char alignment[0x40-sizeof(ZynqBoardHeader)-sizeof(TimeStamp_dual)-4*sizeof(uint32_t)];
-	Z_DATA_TYPE_SCI_L1_V6 sci_data_l1[N_D1_IN_MEM];
+	Z_DATA_TYPE_SCI_L1_V7 sci_data_l1[N_D1_IN_MEM];
 	char alignment2[68];
 	Z_DATA_TYPE_SCI_L3_V3 sci_data_l3[N_D3_IN_MEM];
 	char alignment3[64];
