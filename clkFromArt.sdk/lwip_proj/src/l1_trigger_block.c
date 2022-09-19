@@ -67,6 +67,11 @@ int Set_L1_nActive(u32 param)
 	return 0;
 }
 
+u32 Get_L1_nActive()
+{
+	return nActive;
+}
+
 void L1_send_rest_params()
 {
 	u32 word_rest = nSigma_u32 | (nHot<<BIT_L1_NHOT) | (nLength<<BIT_L1_NLEN) | (nActive<<BIT_L1_NACTIVE);

@@ -19,6 +19,7 @@ int Set_L1_nLength(u32 param);
 int Set_L1_nActive(u32 param);
 void L1_send_rest_params();
 void L1_send_default_params();
+u32 Get_L1_nActive();
 
 #define BIT_L1_MPSTHR	0
 #define BIT_L1_NSIGMA	0

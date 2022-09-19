@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.07.05"
+#define ZYNQ3_VER_STRING "v5.07.06"
 
 //========================================
 // Constants
@@ -162,7 +162,7 @@ typedef struct
 {
 	ZynqBoardHeader zbh;
 	DATA_TYPE_SCI_L1_V6 payload;
-	uint16_t mps_threshold;
+	uint16_t nActive;
 	uint32_t fw_version_int;
 	char alignment[0x16];
 	uint32_t crc32;

@@ -231,7 +231,7 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ts.unix_time = unix_time;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.internal_event_counter = n_internal_l1;
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.event_counter = ClkbGetCntExtTrig();
-		mainBuffer.sci_data_l1[last_l1_occupied].mps_threshold = Get_L1_MPSthr();
+		mainBuffer.sci_data_l1[last_l1_occupied].nActive = (u16)(Get_L1_nActive());
 		mainBuffer.sci_data_l1[last_l1_occupied].fw_version_int = GetFW_version_int();
 
 		//xil_printf("last_l1_occupied=%d unix_time=%d\n\r", last_l1_occupied, unix_time);
