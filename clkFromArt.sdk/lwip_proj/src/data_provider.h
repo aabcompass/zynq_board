@@ -11,13 +11,15 @@
 #include "xbasic_types.h"
 
 #define REGW_DATAPROV_FLAGS		0
-#define REGW_DATACONV_RESET		1
+#define REGW_DATACONV_RESET		1  /* CONV ????????? */
+#define REGW_DATAPROV_ADCV_MAX_PIXEL_NUM	2
 #define REGW_DATAPROV_N_FRAMES	3
 #define REGW_DATAPROV_TEST_MODE	4
 #define REGW_DATAPROV_INCR_PER	5
 #define REGW_DATAPROV_PATT	6 /*7:0 MAX, 15:8 INIT*/
 #define REGW_DATAPROV_GTU_PERIOD	7
 #define REGW_DATAPROV_USE_ALT_FRAME	8
+#define REGW_DATAPROV_ADCV_ASIC_CNT	9
 
 #define REGW_DATAPROV_FLAGS2			10
 #define REGW_DATAPROV_PMTZERO_01		11
@@ -84,5 +86,6 @@ u32 IsDataProviderPass();
 void GetAux2Data(u32* data0, u32* data1, u32* data2);
 void GetAux3Data(u32* data0, u32* data1, u32* data2);
 void StopDataConverter();
+void SetADCV_dataprov_params(u32 max_pixel_num, u32  asic_cnt);
 
 #endif /* SRC_DATA_PROVIDER_H_ */

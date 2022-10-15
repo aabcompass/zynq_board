@@ -41,7 +41,9 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'A')
 	{
-		StartDataProviderFor1D3frame(GetIntegration()*N_D3_PER_FILE);
+		//StartDataProviderFor1D3frame(GetIntegration()*N_D3_PER_FILE);
+		TestEC_sig();
+		print("TestEC_sig()...\n\r");
 	}
 	else if(c == '*')
 	{

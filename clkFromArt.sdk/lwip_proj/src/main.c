@@ -344,7 +344,13 @@ int main()
 	sntp_setoperatingmode(SNTP_OPMODE_POLL);
 	sntp_init();
 
-
+	print("Setting default EC mapping for ADCV\n\r");
+	SetDefaultECMapping();
+	print("Configuring ADCV (Automatic Drop Cathode Voltage) timing parameters\n\r");
+	ConfADCV(3,1,5);
+	SetADCV_dataprov_params(3, 6);
+	//print("Turning cathode switching ON\n\r");
+	//CathodeSetAutoMode(1);
 	PrintDataSizes();
 	/* receive and process packets */
 	while (1) {

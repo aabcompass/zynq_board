@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master3/ip_repo/data_provider/data_prov_z3.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/HV_cath/ip_repo/data_provider/data_prov_z3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="345788918f074bdfbb4efec694fe52b6"/>
@@ -88,6 +88,14 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/byte_reformr_4trig_v2.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/adcv_pmt_sum.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../data_converter/clkFromArt.srcs/sources_1/new/adcv_pmt_sum.vhd"/>
+          <Attr Name="ImportTime" Val="1665693784"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

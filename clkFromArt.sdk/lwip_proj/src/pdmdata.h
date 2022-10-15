@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.07.06"
+#define ZYNQ3_VER_STRING "v5.09.00"
 
 //========================================
 // Constants
@@ -402,6 +402,10 @@ typedef struct
 #define TCP_CMD_HVPS_SETDAC			"hvps setdac %d %d %d %d %d %d %d %d %d"/* Set Dynode voltages (code 4095~1100V) */
 #define TCP_CMD_HVPS_CATHODE		"hvps cathode %d %d %d %d %d %d %d %d %d"/* Set cathode voltages */
 #define TCP_CMD_HVPS_STATUS_GPIO	"hvps status gpio"/* Get HVPS Polish status */
+#define TCP_CMD_HVPS_MAPPING		"hvps mapping %d %d %d %d %d %d %d %d %d"
+#define TCP_CMD_HVPS_SW_ON			"hvps switching on %d"
+#define TCP_CMD_HVPS_RELEASE_TIME	"hvps release_time %d"
+#define TCP_CMD_HVPS_SW32_PARAMS	"hvps max_pixel_num %d asic_cnt %d"
 #define TCP_CMD_DBG_ARTCLK_CNT		"dbg art clk"
 #define TCP_CMD_DBG_ARTTRDELAY		"dbg arttrdelay %d"
 #define TCP_CMD_DBG_ARTFRDELAY		"dbg artfrdelay %d"

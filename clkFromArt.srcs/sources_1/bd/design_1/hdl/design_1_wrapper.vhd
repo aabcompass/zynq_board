@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
---Date        : Fri Sep 16 14:28:19 2022
+--Date        : Sat Oct 15 19:19:49 2022
 --Host        : alx-laptop running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -164,12 +164,6 @@ architecture STRUCTURE of design_1_wrapper is
     sr_ck_pc_1 : out STD_LOGIC;
     sr_ck_pc_2 : out STD_LOGIC;
     sr_ck_pc_0 : out STD_LOGIC;
-    GTU_HV_p_0 : out STD_LOGIC;
-    GTU_HV_n_0 : out STD_LOGIC;
-    CLK_HV_p_0 : out STD_LOGIC;
-    CLK_HV_n_0 : out STD_LOGIC;
-    DATA_HV_p_0 : out STD_LOGIC;
-    DATA_HV_n_0 : out STD_LOGIC;
     io0_o_0 : out STD_LOGIC;
     io0_o_1 : out STD_LOGIC;
     io0_o_2 : out STD_LOGIC;
@@ -202,7 +196,13 @@ architecture STRUCTURE of design_1_wrapper is
     spb_gtu_clk_n_0 : in STD_LOGIC;
     spb_1pps_p_0 : in STD_LOGIC;
     spb_1pps_n_0 : in STD_LOGIC;
-    trig_ext_in_lab_0 : in STD_LOGIC
+    trig_ext_in_lab_0 : in STD_LOGIC;
+    GTU_HV_p_0 : out STD_LOGIC;
+    GTU_HV_n_0 : out STD_LOGIC;
+    CLK_HV_p_0 : out STD_LOGIC;
+    CLK_HV_n_0 : out STD_LOGIC;
+    DATA_HV_p_0 : out STD_LOGIC;
+    DATA_HV_n_0 : out STD_LOGIC
   );
   end component design_1;
 begin

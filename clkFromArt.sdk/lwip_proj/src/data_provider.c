@@ -231,3 +231,9 @@ void SelectAltFrame()
 {
 	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGW_DATAPROV_USE_ALT_FRAME) = 1;
 }
+
+void SetADCV_dataprov_params(u32 max_pixel_num, u32  asic_cnt)
+{
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGW_DATAPROV_ADCV_MAX_PIXEL_NUM) = max_pixel_num;
+	*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR + 4*REGW_DATAPROV_ADCV_ASIC_CNT) = asic_cnt;
+}

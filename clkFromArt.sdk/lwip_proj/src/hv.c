@@ -11,6 +11,8 @@
 #include "pdmdp_err.h"
 #include "xscugic.h"
 #include "pdmdata.h"
+#include "hv_cathode.h"
+#include "log_records.h"
 
 // hv_turned_on_user - represents for each HV channel is it switched on by user or not.
 // LSB bit represents channel0, etc...
@@ -40,21 +42,9 @@ volatile int is_interrupt_pending = 0;
 Z_DATA_TYPE_HVPS_LOG_V1 hvps_log;//[HVPS_LOG_SIZE_NRECORDS];
 volatile u32 hvps_log_current_record = 0;
 
+int hvps_protection_started = 0; // to do not do protection before hvps start
 
-//enum hvps_log_records {
-#define		HVPS_TURN_ON		0  		/* turn on */
-#define		HVPS_TURN_OFF		1		/* turn off */
-#define		HVPS_DACS_LOADED	2		/* DAC loaded by user */
-#define		HVPS_SR_LOADED		3		/* Shift register loaded by user */
-#define		HVPS_INTR			4			/* Interrupt */
-#define		HVPS_BLOCK_ECUNIT	5	/* HVPS channel has been turned as its HVOK line was deasserted at least on 1 second */
-#define		HVPS_BLOCK_INTR		6		/* HVPS channel (EC) has been turned off because of too many interrupts from its lines */
-#define		HVPS_AGC_UP_3_to_1	7	/* Automatic gain control: HVPS automatically switched from "3" to "1". Shift register reloaded. */
-#define		HVPS_AGC_UP_1_to_0	8	/* Automatic gain control: HVPS automatically switched from "1" to "0". Shift register reloaded. */
-#define		HVPS_AGC_UP_0_to_1	9	/* Automatic gain control: HVPS automatically switched from "0" to "1". Shift register reloaded. */
-#define		HVPS_AGC_UP_1_to_3	10	/* Automatic gain control: HVPS automatically switched from "1" to "3". Shift register reloaded. */
-#define		HVPS_STATUS         11 /* POLISH STATUS */
-//};
+
 
 const char* hvps_log_records_txt[] = {
 		"TURN_ON",
@@ -68,7 +58,11 @@ const char* hvps_log_records_txt[] = {
 		"AGC_1->0",
 		"AGC_0->1",
 		"AGC_1->3",
-		"STATUS"};
+		"STATUS",
+		"OVERBRIGHT",
+		"UNKNOWN1,"
+		"UNKNOWN2",
+		"UNKNOWN3"};
 
 
 static void delay(int time)
@@ -445,6 +439,7 @@ void HV_addLog(u32 record_type, u32 channels)
 		hvps_log.payload[hvps_log_current_record].ts.n_gtu = *(u64*)(XPAR_HV_HK_V1_0_0_BASEADDR + 4*REGR_HVHK_GTU_CNT_L);
 		hvps_log.payload[hvps_log_current_record].record_type = record_type;
 		hvps_log.payload[hvps_log_current_record].channels = channels;
+		hvps_log.payload[hvps_log_current_record].ts.unix_time = GetUnixTime();
 //		xil_printf("HVPS rec%04d GTU%08x \t%s\t(0x%08x)\n\r",
 //				hvps_log_current_record,
 //				hvps_log.payload[hvps_log_current_record].ts.n_gtu, message, channels);
@@ -452,9 +447,28 @@ void HV_addLog(u32 record_type, u32 channels)
 	}
 }
 
+void HV_addLog2(u32 * data)
+{
+	if(hvps_log_current_record < HVPS_LOG_SIZE_NRECORDS)
+	{
+		//memcpy(&hvps_log.payload[hvps_log_current_record].ts.n_gtu, data, sizeof(DATA_TYPE_HVPS_LOG_V1));
+		hvps_log.payload[hvps_log_current_record].ts.n_gtu = data[0];
+		hvps_log.payload[hvps_log_current_record].ts.unix_time = data[1];
+		hvps_log.payload[hvps_log_current_record].record_type = data[2];
+		hvps_log.payload[hvps_log_current_record].channels = data[3];
+		hvps_log_current_record++;
+	}
+}
+
+
 int HV_getLogSize()
 {
 	return hvps_log_current_record;
+}
+
+int HV_isLogFileEmpty()
+{
+	return !hvps_log_current_record;
 }
 
 int HV_getLogFileSize()
@@ -532,7 +546,8 @@ void HVInterruptService()
 						setRegister(expAddressW, GPINTEN, datGPINTEN | hvonok);
 						is_interrupt_pending &= ~(1<<i);
 						hv_n_tries_to_release[i] = 0;
-						print("Interrupt has been released\n\r");
+						//print("Interrupt has been released\n\r");
+						print("v");
 					}
 					else
 					{
@@ -545,7 +560,8 @@ void HVInterruptService()
 							hv_working_successful &= ~(1<<i/2);
 							is_interrupt_pending &= ~(1<<i);
 							HV_addLog(HVPS_BLOCK_ECUNIT, (1<<i));
-							print("HV channel has been blocked\n\r");
+							print("V");
+							//print("HV channel has been blocked\n\r");
 						}
 					}
 				}
@@ -565,14 +581,14 @@ void HVInterruptService()
 				hv_working_successful &= ~(1<<i/2);
 				HV_addLog(HVPS_BLOCK_INTR, 1<<i);
 				HV_turnOFF(i/2);
-				print("HV channel turned off because of a big number if interrupts\n\r");
+				print("HV channel turned off because of a big number of interrupts\n\r");
 			}
 		}
 	}
 }
 
-// Interrupt Hundler which  is automatically called where interrupt line from expanders is rising up.
-void HVInterruptHundler(void *Callback)
+// Interrupt Handler which  is automatically called where interrupt line from expanders is rising up.
+void HVInterruptHandler(void *Callback)
 {
 	print("H");
 	u32 exp1_intf, exp2_intf, exp3_intf;
@@ -595,13 +611,13 @@ void HVInterruptHundler(void *Callback)
 
 	// turn off corresponding interrupt lines
 	if(exp1_intf)
-		setRegister(EXP2, GPINTEN, (~exp1_intf) & exp1_gpinten);
+		setRegister(EXP1, GPINTEN, (~exp1_intf) & exp1_gpinten);
 	if(exp2_intf)
 		setRegister(EXP2, GPINTEN, (~exp2_intf) & exp2_gpinten);
 	if(exp3_intf)
-		setRegister(EXP2, GPINTEN, (~exp3_intf) & exp3_gpinten);
+		setRegister(EXP3, GPINTEN, (~exp3_intf) & exp3_gpinten);
 
-	is_interrupt_pending |= (exp3_intf<<12 | exp2_intf<<6 | exp3_intf);
+	is_interrupt_pending |= (exp3_intf<<12 | exp2_intf<<6 | exp1_intf);
 	// Add log
 	HV_addLog(HVPS_INTR, is_interrupt_pending);
 	// Start timer0
@@ -610,9 +626,13 @@ void HVInterruptHundler(void *Callback)
 	//adding an interrupt event control array hv_n_interrupts[]
 	// determine which line interrupt is occured on
 	for(i=0;i<NUM_OF_HV*2;i++)
+	{
 		if(is_interrupt_pending & (1<<i))
+		{
+			hv_n_interrupts[i]++;
 			break;
-	hv_n_interrupts[i]++;
+		}
+	}
 }
 
 
@@ -659,13 +679,13 @@ void print_expander_regs()
 }
 
 
-void InitHV()
+int InitHV()
 {
 	memset(&hvps_log.payload[0], 0, sizeof(hvps_log.payload));
 	hvps_log.zbh.header = BuildHeader(DATA_TYPE_HVPS_LOG, 1);
 	hvps_log.zbh.payload_size = sizeof(DATA_TYPE_HVPS_LOG_V1);
 	initDac();
-	expIni();
+	return expIni();
 }
 
 void HV_turnON_all()
@@ -714,6 +734,7 @@ void HV_turnON_list(int list[NUM_OF_HV])
 
 	int tmp_array[NUM_OF_HV];
 	HV_getStatus(tmp_array);
+	hvps_protection_started = 0;
 }
 
 // Turn off HVs by list
@@ -813,20 +834,15 @@ int HV_setCathodeVoltage(int list[NUM_OF_HV])
 		reg += list[i]<<(2*i);
 	}
 	xil_printf("Cathode reg = 0x%08x\n\r", reg);
-	*(u32*)(XPAR_HV_AERA_IP_0_BASEADDR + 4*REGW_HVCATH_SW) = reg;
-	*(u32*)(XPAR_HV_AERA_IP_0_BASEADDR + 4*REGW_HVCATH_CTRL) = (1<<BIT_TRANSMIT);
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_SW) = reg;
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_CTRL) = (1<<BIT_TRANSMIT);
 	print("t");
-	*(u32*)(XPAR_HV_AERA_IP_0_BASEADDR + 4*REGW_HVCATH_CTRL) = 0;
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_CTRL) = 0;
 	HV_addLog(HVPS_SR_LOADED, reg);
+	UpdateCathodeLevels(reg);
 	return 0;
 }
 
-
-
-// Setup interrupt system for HVPS
-// This function is called when user calls "hvps turnon" via telnet
-
-#ifdef USE_HVPS_INTR
 
 void Enable_HVHK_Interrupts(XScuGic* pIntc)
 {
@@ -834,6 +850,8 @@ void Enable_HVHK_Interrupts(XScuGic* pIntc)
 	XScuGic_Enable(pIntc, XPAR_FABRIC_HV_HK_V1_0_0_INTR_OUT_INTR);
 }
 
+// Setup interrupt system for HVPS
+// This function is called when user calls "hvps turnon" via telnet
 
 void SetupHVPSIntrSystem(XScuGic* pIntc)
 {
@@ -852,7 +870,7 @@ void SetupHVPSIntrSystem(XScuGic* pIntc)
 		 * interrupt occurs for the device.
 		 */
 		Result = XScuGic_Connect(pIntc, XPAR_FABRIC_HV_HK_V1_0_0_INTR_OUT_INTR,
-					 (Xil_ExceptionHandler)HVInterruptHundler, NULL);
+					 (Xil_ExceptionHandler)HVInterruptHandler, NULL);
 		if (Result != XST_SUCCESS) {
 			print("Error XScuGic_Connect\n\r");
 		}
@@ -866,4 +884,17 @@ void SetupHVPSIntrSystem(XScuGic* pIntc)
 		return;
 	}
 }
-#endif /*USE_HVPS_INTR*/
+
+//void HVprotectionService()
+//{
+//	u32 status = GetOverbrightStatus();
+//	if(status && (hvps_protection_started == 0))
+//	{
+//		int list[] = {0,0,0, 0,0,0, 0,0,0};
+//		//HV_setCathodeVoltage(list);
+//		HV_turnOFF_all();
+//		HV_addLog(HVPS_OVERBRIGHT, status);
+//		print("Overbright!\n\r");
+//		hvps_protection_started = 1;
+//	}
+//}

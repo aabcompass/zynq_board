@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Aug 19 11:43:51 2022
+# Process ID: 28502
+# Current directory: /home/alx/xil_proj/zynq_board/master10/ip_repo
+# Command line: vivado
+# Log file: /home/alx/xil_proj/zynq_board/master10/ip_repo/vivado.log
+# Journal file: /home/alx/xil_proj/zynq_board/master10/ip_repo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alx/xil_proj/zynq_board/MPS/ip_repo/SPB2_TRIGGER/SPB2_TRIGGER.xpr
+update_compile_order -fileset sources_1

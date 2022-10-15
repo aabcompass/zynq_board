@@ -156,14 +156,14 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	int int_param;
 	int ret;
 	int turn[NUM_OF_HV];
-
+	u8 ec_mapping[NUM_OF_HV];
 	char current_ec = 0;
 
 	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 
 	u32 pmt_trig1,  pmt_trig2,  ec_trig1,  ec_trig2,  pdm_trig1,  pdm_trig2;
 	// print command
-	print("TCP: ");
+	//print("TCP: ");
 	//for(i=0; i<p->len; i++)
 	//	xil_printf("%c", *(char*)(p->payload+i));
 	print("\r\n");
@@ -629,6 +629,39 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		sprintf(reply, "%x %x %x %x %x %x %x %x %x\n\r",
 				turn[0], turn[1], turn[2], turn[3], turn[4], turn[5], turn[6], turn[7], turn[8]);
 		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_HVPS_MAPPING,
+			&ec_mapping[0],
+			&ec_mapping[1],
+			&ec_mapping[2],
+			&ec_mapping[3],
+			&ec_mapping[4],
+			&ec_mapping[5],
+			&ec_mapping[6],
+			&ec_mapping[7],
+			&ec_mapping[8]) == 9)
+	{
+		SetECMapping(ec_mapping);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_HVPS_SW_ON, &param) == 1)
+	{
+		CathodeSetAutoMode(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_HVPS_RELEASE_TIME, &param) == 1)
+	{
+		SetReleaseTime(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_HVPS_SW32_PARAMS, &param, &param2) == 2)
+	{
+		SetADCV_dataprov_params(param, param2);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
 	}
 	else if(strncmp(p->payload, TCP_CMD_PIXELMAP_TST_ECS, strlen(TCP_CMD_PIXELMAP_TST_ECS)) == 0)
 	{

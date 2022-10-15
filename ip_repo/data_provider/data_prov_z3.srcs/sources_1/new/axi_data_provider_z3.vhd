@@ -93,6 +93,8 @@ entity axi_data_provider_z3 is
     	reset_scurve_adder: out std_logic;
     	zero_pmts: out std_logic_vector(35 downto 0);
     	use_alt_frame: out std_logic;
+    	
+    	ec_sig_out: out std_logic_vector(8 downto 0);
    	
     	
     	
@@ -300,6 +302,25 @@ architecture Behavioral of axi_data_provider_z3 is
     m_axis_tdata: out std_logic_vector(127 downto 0)
     );
 	end component;
+
+	component adcv_pmt_sum is
+    Generic(
+    	N_VIRT_PMT: integer := 48;
+    	N_LANES: integer := 16;
+    	N_EC: integer := 9);
+    Port ( 
+    	clk : in STD_LOGIC;
+    	s_axis_tdata: in std_logic_vector(127 downto 0);
+    	s_axis_tuser: in std_logic_vector(7 downto 0);
+    	s_axis_tvalid: in std_logic;
+    	s_axis_tlast: in std_logic;
+    	
+			adcv_max_asic_cnts: in std_logic_vector(7 downto 0);
+    	adcv_max_pixel_num: in std_logic_vector(7 downto 0); 
+    	
+    	ec_sig_out: out std_logic_vector(8 downto 0)    	
+    	);
+	end component;
 	
 	signal m_axis_tdata_test: std_logic_vector(127 downto 0) := (others => '0');
 	signal m_axis_tuser_test: std_logic_vector(7 downto 0) := (others => '0');
@@ -320,6 +341,15 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal art_gtu_en: std_logic := '0';
 	
 	signal FRAME_i: std_logic := '0';
+	
+	signal m_axis_tdata_i: std_logic_vector(127 downto 0) := (others => '0');
+	signal m_axis_tvalid_i: std_logic := '0';
+	signal m_axis_tlast_i: std_logic := '0';
+	signal m_axis_tuser_i: std_logic_vector(7 downto 0) := (others => '0');
+	
+	signal adcv_max_asic_cnts: std_logic_vector(7 downto 0) := (others => '0');
+  signal adcv_max_pixel_num: std_logic_vector(7 downto 0) := (others => '0'); 
+
 
 begin
 
@@ -1381,6 +1411,23 @@ begin
 	slv_reg16(15 downto 8) <= status_test_dp;
 	
 	slv_reg31 <=  X"20220222";
+
+		adcv_max_asic_cnts <= slv_reg9(7 downto 0); 
+		adcv_max_pixel_num <= slv_reg2(7 downto 0); 
+
+		i_adcv_pmt_sum : adcv_pmt_sum 
+			Port map ( 
+				clk => S_AXI_ACLK,--: in STD_LOGIC;
+				s_axis_tdata => s_axis_tdata,--: in std_logic_vector(127 downto 0);
+				s_axis_tuser => s_axis_tuser,--: in std_logic_vector(7 downto 0);
+				s_axis_tvalid => s_axis_tvalid,--: in std_logic;
+				s_axis_tlast => s_axis_tlast,--: in std_logic;
+				
+				adcv_max_asic_cnts => adcv_max_asic_cnts,--: in std_logic_vector(7 downto 0);
+				adcv_max_pixel_num => adcv_max_pixel_num,--: in std_logic_vector(15 downto 0); 
+				
+				ec_sig_out => ec_sig_out--: out std_logic_vector(8 downto 0)    	
+				);
 	
 	dozer: process(S_AXI_ACLK)
 		variable state : integer range 0 to 2 := 0;
@@ -1461,22 +1508,22 @@ begin
 	begin
 		if(rising_edge(S_AXI_ACLK)) then
 			if(test_mode = '1') then
-				m_axis_tdata <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
-				m_axis_tuser <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
-				m_axis_tvalid <= m_axis_tvalid_test and pass;--: in std_logic;
+				m_axis_tdata_i <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
+				m_axis_tuser_i <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
+				m_axis_tvalid_i <= m_axis_tvalid_test and pass;--: in std_logic;
 				s_axis_tready <= '1';--: out std_logic := '1';
-				m_axis_tlast <= m_axis_tlast_test and pass;--: in std_logic;
+				m_axis_tlast_i <= m_axis_tlast_test and pass;--: in std_logic;
 	
 				m01_axis_tdata <= m_axis_tdata_test;--: in std_logic_vector(127 downto 0);
 				m01_axis_tuser <= m_axis_tuser_test;--: in std_logic_vector(5 downto 0);
 				m01_axis_tvalid <= m_axis_tvalid_test and pass and en_data_to_d1;--: in std_logic;
 				m01_axis_tlast <= m_axis_tlast_test and pass and en_data_to_d1;--: in std_logic;
 			else
-				m_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
-				m_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
-				m_axis_tvalid <= s_axis_tvalid and pass;--: in std_logic;
+				m_axis_tdata_i <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
+				m_axis_tuser_i <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
+				m_axis_tvalid_i <= s_axis_tvalid and pass;--: in std_logic;
 				s_axis_tready <= '1';--: out std_logic := '1';
-				m_axis_tlast <= s_axis_tlast and pass;--: in std_logic;
+				m_axis_tlast_i <= s_axis_tlast and pass;--: in std_logic;
 		
 				m01_axis_tdata <= s_axis_tdata;--: in std_logic_vector(127 downto 0);
 				m01_axis_tuser <= s_axis_tuser;--: in std_logic_vector(5 downto 0);
@@ -1486,8 +1533,10 @@ begin
 		end if;
 	end process;
 	
-
-
+	m_axis_tdata <= m_axis_tdata_i;
+	m_axis_tuser <= m_axis_tuser_i;
+	m_axis_tvalid <= m_axis_tvalid_i;
+	m_axis_tlast <= m_axis_tlast_i;
 --     	m_axis_tdata: out std_logic_vector(127 downto 0);
 --    	m_axis_tuser: out std_logic_vector(5 downto 0); 
 --    	m_axis_tvalid: out std_logic;
@@ -1558,5 +1607,7 @@ begin
 								src_clk => '0',   -- 1-bit input: optional; required when SRC_INPUT_REG = 1
 								src_in => bitslip_cnt2      -- WIDTH-bit input: Input single-bit array to be synchronized to destination clock
 						 );	 
+
+
 
 end Behavioral;

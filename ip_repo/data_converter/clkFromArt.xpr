@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/master3/ip_repo/data_converter/clkFromArt.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/HV_cath/ip_repo/data_converter/clkFromArt.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="81dc52bea3b64c91a038faa54d50b392"/>
@@ -59,32 +59,43 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/new/adcv_pmt_sum.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/axis_pixel_remap.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/dataconv_switch.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/pixel_remap_sw.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/pixel_remap_v2.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/data_converter.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -128,7 +139,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="data_converter"/>
+        <Option Name="TopModule" Val="adcv_pmt_sum"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -193,6 +204,7 @@
     <FileSet Name="axis_dataconv_cc" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dataconv_cc">
       <File Path="$PSRCDIR/sources_1/ip/axis_dataconv_cc/axis_dataconv_cc.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -206,6 +218,7 @@
     <FileSet Name="axis_dataconv_dwc" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dataconv_dwc">
       <File Path="$PSRCDIR/sources_1/ip/axis_dataconv_dwc/axis_dataconv_dwc.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -219,6 +232,7 @@
     <FileSet Name="axis_dataconv_fifo_0b" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dataconv_fifo_0b">
       <File Path="$PSRCDIR/sources_1/ip/axis_dataconv_fifo_0b/axis_dataconv_fifo_0b.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -232,6 +246,7 @@
     <FileSet Name="axis_dataconv_fifo_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dataconv_fifo_1">
       <File Path="$PSRCDIR/sources_1/ip/axis_dataconv_fifo_1/axis_dataconv_fifo_1.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -245,6 +260,7 @@
     <FileSet Name="axis_dataconv_slice_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dataconv_slice_0">
       <File Path="$PSRCDIR/sources_1/ip/axis_dataconv_slice_0/axis_dataconv_slice_0.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -314,6 +330,7 @@
     <FileSet Name="axis_remap_dwc16_64" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_remap_dwc16_64">
       <File Path="$PSRCDIR/sources_1/ip/axis_remap_dwc16_64/axis_remap_dwc16_64.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -327,6 +344,7 @@
     <FileSet Name="axis_remap_dwc64_16" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_remap_dwc64_16">
       <File Path="$PSRCDIR/sources_1/ip/axis_remap_dwc64_16/axis_remap_dwc64_16.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -340,6 +358,7 @@
     <FileSet Name="axis_remap_slice" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_remap_slice">
       <File Path="$PSRCDIR/sources_1/ip/axis_remap_slice/axis_remap_slice.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -367,6 +386,7 @@
     <FileSet Name="axis_DWC_4_256" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_DWC_4_256">
       <File Path="$PSRCDIR/sources_1/ip/axis_DWC_4_256/axis_DWC_4_256.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -538,7 +558,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
@@ -551,6 +571,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
