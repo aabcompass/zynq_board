@@ -34,7 +34,7 @@ USE ieee.std_logic_unsigned.ALL;
 --use UNISIM.VComponents.all;
 
 entity SPB2 is
-    generic (SYNTH_BYPASS : std_logic := '1');
+    generic (SYNTH_BYPASS : std_logic := '0');
     Port ( CLOCK_133 : in STD_LOGIC;
            DATA_SPB2 : in STD_LOGIC_VECTOR (143 downto 0);
            FRAME : in STD_LOGIC;
