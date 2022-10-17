@@ -348,7 +348,7 @@ int main()
 	SetDefaultECMapping();
 	print("Configuring ADCV (Automatic Drop Cathode Voltage) timing parameters\n\r");
 	ConfADCV(3,1,5);
-	SetADCV_dataprov_params(3, 6);
+	SetADCV_dataprov_params(3, 50);
 	//print("Turning cathode switching ON\n\r");
 	//CathodeSetAutoMode(1);
 	PrintDataSizes();
