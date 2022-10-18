@@ -344,7 +344,6 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//L1Stop();
 		//L3Stop();
 		StartDataProvider();
-		SendHVPSLogToFTP(0);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -355,6 +354,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//L3Stop();
 		StopDataProvider();
 		MmgCloseLastD1File();
+		SendHVPSLogToFTP(0);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -599,7 +599,9 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 				return;
 			}
 		}
+		HV_setCathodeVoltageAll3();
 		HV_turnON_list(turn);
+		CathodeSetAutoMode(1);
 		SetupHVPSIntrSystem(getIntcPtr()); //This spoil FTP server by unknown reason?
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);

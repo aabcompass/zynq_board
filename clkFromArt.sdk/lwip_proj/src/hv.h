@@ -127,6 +127,8 @@ unsigned char HV_ON_test(char kHV); // 0 - kHV is not working, related_GPIO - kH
 unsigned char HV_turnON(char kHV);  // turns ON kHV HVPS_CW (10 attempts max)
 unsigned char HV_setINT(char kHV);  // sets INTerruption when HVPS no kHV is ON (also for
                                     //  Polish_Status when it is==1)
+void HV_setCathodeVoltageAll3();
+
 void setRegister(u32 opcode, u32 reg_addr, u32 reg_data);
 u32 getRegister(u32 opcode, u32 reg_addr/*, u32* reg_data*/);
 void HV_addLog(u32 record_type, u32 channels);

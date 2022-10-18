@@ -302,6 +302,10 @@ int main()
 	XLlFifoEventsInit();
 	InitHVlog();
 
+	print("Set default EC mapping...\n\r");
+	u8 ec_mapping[] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+	SetECMapping(ec_mapping);
+
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
 

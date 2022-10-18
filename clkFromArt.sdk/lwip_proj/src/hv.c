@@ -823,6 +823,8 @@ void HV_getStatus(int list[NUM_OF_HV])
 			list[0] << 0);
 }
 
+
+
 // Set Cathode voltage by list
 // Each value can be 0 or 1 or 3.
 // All value are serialized to shift registers
@@ -851,6 +853,11 @@ int HV_setCathodeVoltage(int list[NUM_OF_HV])
 	return 0;
 }
 
+void HV_setCathodeVoltageAll3()
+{
+	int list[] = {3, 3, 3, 3, 3, 3, 3, 3, 3};
+	HV_setCathodeVoltage(list);
+}
 
 void Enable_HVHK_Interrupts(XScuGic* pIntc)
 {
