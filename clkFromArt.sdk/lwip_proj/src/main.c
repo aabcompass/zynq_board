@@ -298,6 +298,10 @@ int main()
 	print("SPACIROC FIFO initialization...\n\r");
 	XLlFifoPollingInit();
 
+	print("Log FIFO initialization...\n\r");
+	XLlFifoEventsInit();
+	InitHVlog();
+
 	print("Reset SPACIROCs...\n\r");
 	ResetSPACIROC3();
 
@@ -367,7 +371,9 @@ int main()
 		scurve_sm();
 		pixelscan_sm();
 		L1_trigger_service();
-		MPS_service();
+		//MPS_service();
+		HVInterruptService();
+		HVLogService();
 
 		if(XUartPs_IsReceiveData(XPAR_PS7_UART_0_BASEADDR/*STDOUT_BASEADDRESS*/))
 		{

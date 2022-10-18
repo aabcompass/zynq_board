@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.09.00"
+#define ZYNQ3_VER_STRING "v5.10.00"
 
 //========================================
 // Constants
@@ -286,7 +286,7 @@ typedef struct
 #define FILENAME_D1_FLIGHT		"frm_z%d_d1_%s-%04d.dat"
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
 #define FILENAME_D3_FLIGHT		"frm_z%d_d3_%s-%04d.dat"
-//#define FILENAME_HVLOG			"hv_%08d.dat"
+#define FILENAME_HVLOG			"hv_%08d.dat"
 //#define FILENAME_SCURVE	 		"scurve_%08d.dat"
 
 

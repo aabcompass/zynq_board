@@ -444,6 +444,7 @@ void HV_addLog(u32 record_type, u32 channels)
 //				hvps_log_current_record,
 //				hvps_log.payload[hvps_log_current_record].ts.n_gtu, message, channels);
 		hvps_log_current_record++;
+		hvps_log.zbh.payload_size = hvps_log_current_record*sizeof(DATA_TYPE_HVPS_LOG_V1);
 	}
 }
 
@@ -484,6 +485,7 @@ void* HV_getLogPtr()
 void HV_clean_log()
 {
 	hvps_log_current_record = 0;
+	hvps_log.zbh.payload_size = 0;
 }
 
 void HV_prnLog()
@@ -678,6 +680,12 @@ void print_expander_regs()
 	xil_printf("OLAT=0x%02x\n\r", getRegister(EXP3, OLAT));
 }
 
+void InitHVlog()
+{
+	memset(&hvps_log.payload[0], 0, sizeof(hvps_log.payload));
+	hvps_log.zbh.header = BuildHeader(DATA_TYPE_HVPS_LOG, 1);
+	hvps_log.zbh.payload_size = 0;
+}
 
 int InitHV()
 {

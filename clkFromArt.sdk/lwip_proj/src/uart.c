@@ -27,6 +27,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	u32 ReceivedWords;
 	u32 clk_cnt0, clk_cnt1, clk_cnt2;
 	u32 tvalid_cnt0, tvalid_cnt1, tvalid_cnt2;
+	u32 log_data[4];
 
 
 	if(c == 'd')
@@ -96,17 +97,25 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'S')
 	{
-		print("DMA reset\n\r");
-		L1Reset();
-		L3Reset();
+//		print("DMA reset\n\r");
+//		L1Reset();
+//		L3Reset();
+	}
+	else if(c == 'h')
+	{
+		HV_prnLog();
+	}
+	else if(c == 'H')
+	{
+		SendHVPSLogToFTP(0);
 	}
 	else if(c == 'f')
 	{
-		SetArtixFrameOn(1);
+//		SetArtixFrameOn(1);
 	}
 	else if(c == 'F')
 	{
-		SetArtixFrameOn(0);
+//		SetArtixFrameOn(0);
 	}
 	else if(c == '&')
 	{
@@ -114,7 +123,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == '&')
 	{
-		SetArtixAcqOn();
+//		SetArtixAcqOn();
 	}
 	else if(c == '/')
 	{
@@ -131,24 +140,24 @@ void ProcessUartCommands(struct netif *netif, char c)
 	{
 		//RB_inject_bit();
 		//StartDataProviderInitial();
-		FlowControlTRG();
+//		FlowControlTRG();
 	}
 	else if(c == 'r')
 	{
 		//SA_restart();
 		//ResetScurveAdder(); reinit is required!!
-		StopDataConverter();
-		instrumentState.is_artix_frame_started = 0;
-		ResetDataConverter();
+//		StopDataConverter();
+//		instrumentState.is_artix_frame_started = 0;
+//		ResetDataConverter();
 	}
 	else if(c == 'p')
 	{
 		//PrintData_raw();
-		L1_send_Marco_params();
+//		L1_send_Marco_params();
 	}
 	else if(c == 'P')
 	{
-		MmgPrint1stD3();
+//		MmgPrint1stD3();
 	}
 	else if(c == '+') // artix Gen mode
 	{
@@ -169,33 +178,33 @@ void ProcessUartCommands(struct netif *netif, char c)
 	else if(c == 't')
 	{
 		//SA_set_TestMode(0);
-		SetArtixTestMode(0);
+//		SetArtixTestMode(0);
 	}
 	else if(c == 'W') // artix Gen mode
 	{
-		DataProvTestMode(1,  1, 0, 99);
+//		DataProvTestMode(1,  1, 0, 99);
 	}
 	else if(c == 'w')
 	{
-		DataProvTestMode(0, 1, 0, 99);
+//		DataProvTestMode(0, 1, 0, 99);
 	}
 	else if(c == 'Q') // artix Gen mode
 	{
 		//SA_set_TestMode(1);
-		SetArtixTestMode2(1);
+//		SetArtixTestMode2(1);
 	}
 	else if(c == 'c')
 	{
-		SetArtixGTUOn(1);
+//		SetArtixGTUOn(1);
 	}
 	else if(c == 'C') // artix Gen mode
 	{
-		SetArtixGTUOn(0);
+//		SetArtixGTUOn(0);
 	}
 	else if(c == 'q')
 	{
 		//SA_set_TestMode(0);
-		SetArtixTestMode2(0);
+//		SetArtixTestMode2(0);
 	}
 //	else if(c == 'X') // artix Gen mode
 //	{
@@ -221,38 +230,39 @@ void ProcessUartCommands(struct netif *netif, char c)
 	}
 	else if(c == 'l')
 	{
-		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 0;
+		GetNextRecordFromFifoLog(log_data);
+		xil_printf("0x%08x 0x%08x 0x%08x 0x%08x\n\r", log_data[0], log_data[1], log_data[2], log_data[3]);
 	}
 	else if(c == 'L')
 	{
-		xil_printf("Loading FW to Artixes with FW file %s\n\r", FILENAME_ARTIX_BITSTREAM_1_BOARD);
-		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
-		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
-		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
-		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+//		xil_printf("Loading FW to Artixes with FW file %s\n\r", FILENAME_ARTIX_BITSTREAM_1_BOARD);
+//		*(u32*)(XPAR_AXI_GPIO_0_BASEADDR) = 3;
+//		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+//		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
+//		LoadArtix(FILENAME_ARTIX_BITSTREAM_1_BOARD);
 	}
 	else if(c == 'm')
 	{
-		ArtixLatch(0);
+//		ArtixLatch(0);
 	}
 	else if(c == 'M')
 	{
-		ArtixLatch(7);
+//		ArtixLatch(7);
 	}
 	else if(c == 'Y')
 	{
-		SetArtixTransmitDelay(num);
+//		SetArtixTransmitDelay(num);
 	}
 	else if(c == 'y')
 	{
-		SetArtixFracDelay(num);
+//		SetArtixFracDelay(num);
 	}
 	else if(c == 'g')
 	{
-		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_GTU_1US);
+//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) |= (1<<BIT_GTU_1US);
 	}
 	else if(c == 'G')
 	{
-		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
+//		*(u32*)(XPAR_AXI_DATA_PROVIDER_Z3_0_BASEADDR+4*REGW_DATAPROV_FLAGS2) &= ~(1<<BIT_GTU_1US);
 	}
 }

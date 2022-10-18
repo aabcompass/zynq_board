@@ -55,6 +55,7 @@ void SendErrorCommand(struct tcp_pcb *tpcb,  int err_code)
 
 int ProcessInstrumentModeCommand(struct tcp_pcb *tpcb, char* param, u32 param2)
 {
+	SendHVPSLogToFTP(0);
 	if(strcasecmp(param, "d1") == 0) {
 		instrumentState.mode = MODE_D1;
 		DataProvEnD1L1(1);
@@ -343,6 +344,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		//L1Stop();
 		//L3Stop();
 		StartDataProvider();
+		SendHVPSLogToFTP(0);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
@@ -598,7 +600,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			}
 		}
 		HV_turnON_list(turn);
-		//TODO SetupHVPSIntrSystem(getIntcPtr()); This spoil FTP server by unknown reason
+		SetupHVPSIntrSystem(getIntcPtr()); //This spoil FTP server by unknown reason?
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
