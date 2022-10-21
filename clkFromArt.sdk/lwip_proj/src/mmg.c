@@ -97,7 +97,9 @@ void MmgDeleteSciFile(u32 file_descriptor)
 		if(sciFiles[file_descriptor].data_type == DATA_TYPE_L1) {
 			mainBufferDescr.sci_data_l1[ref].is_occupied = 0;
 			n_l1_occupied--;
-			if(n_l1_occupied < (N_D1_IN_MEM - 100))
+			//if(n_l1_occupied < (N_D1_IN_MEM - 100))
+			//xil_printf("rm: %d\n\r", n_l1_occupied);
+			if(n_l1_occupied <= 2)
 				SetPauseForFTP(0);
 		}
 		else if(sciFiles[file_descriptor].data_type == DATA_TYPE_L3) {
@@ -140,6 +142,7 @@ char* MmgAlloc(int data_type /*1 or 3*/) // return NULL if not allocated
 				i = (last_l1_occupied + 1) % N_D1_IN_MEM;
 				mainBufferDescr.sci_data_l1[i].is_occupied = 1;
 				n_l1_occupied++;
+				//xil_printf("Alloc: %d\n\r", n_l1_occupied);
 				mainBufferDescr.sci_data_l1[i].is_finalized = 0;
 				last_l1_occupied = i;
 				p = (char*)&mainBuffer.sci_data_l1[i].payload.frames[0].pmt[0].raw_data[0];
@@ -220,9 +223,8 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 	char* p;
 	u32 l3_mmg_sci_file_id, l3_sci_file_id, file_size;
 	if(data_type == DATA_TYPE_L1) {
-
 		if((last_l1_occupied < 0) | (last_l1_occupied >= N_D1_IN_MEM)) {
-			print("MmgFinish: bad last_l1_occupied\n\r");
+			//print("MmgFinish: bad last_l1_occupied\n\r");
 			return;
 		}
 		mainBuffer.sci_data_l1[last_l1_occupied].payload.ZB_number = instrumentState.ZB_number;
@@ -241,13 +243,13 @@ void MmgFinish(int data_type, u32 n_gtu, u32 unix_time, u32 trig_type, u32 glob_
 		mainBufferDescr.sci_data_l1[last_l1_occupied].is_finalized = 1;
 		Xil_DCacheInvalidateRange((INTPTR)&mainBuffer.sci_data_l1[last_l1_occupied].payload.frames[0].pmt[0].raw_data[0], N_OF_PIXELS_TOTAL*N_OF_FRAMES_D1_V0);
 		p = (char*)&mainBuffer.sci_data_l1[last_l1_occupied];
-
+		//xil_printf("  Finish: last_l1_occupied=%d\n\r", last_l1_occupied);
 		//if(/*(glob_cycle != last_global_cycle) ||  */(last_l1_occupied == 0) || (last_file_closed == 1)) {
-		if((last_l1_occupied % MAX_PACKETS_L1 == 0) ||  (last_l1_occupied == 0) || (last_file_closed == 1)) {
+		if((last_l1_occupied % MAX_PACKETS_L1 == (0)) ||  (last_l1_occupied == 0) || (last_file_closed == 1)) {
 			last_file_closed = 0;
 			file_size=MmgGetFileSize(last_mmg_file_descriptor);
 			CloseFile(last_file_descriptor, file_size);
-			//xil_printf("File closed (size=%d)\n\r", file_size);
+			//xil_printf("File closed (last_mmg_file_descriptor=%d)\n\r", last_mmg_file_descriptor);
 			last_mmg_file_descriptor = MmgCreateSciFile(data_type, glob_cycle, p, last_l1_occupied);
 			if(last_mmg_file_descriptor != -1) {
 				last_file_descriptor = CreateSciFile(p, 0, unix_time, data_type, last_mmg_file_descriptor);
@@ -331,12 +333,26 @@ void MmgCloseLastD1File()
 
 void MmgPrintFiles()
 {
-	int i;
+	int i,j, ref;
 	print("sciFiles:\n\r");
 	for(i=0;i<N_SCI_FILES;i++) {
-		if(sciFiles[i].is_occupied)
+		if(sciFiles[i].is_occupied) {
 			xil_printf("%d. p=0x%x, type=%d, global_cycle=%d, n_record=%d\n\r",
-					i, sciFiles[i].p, sciFiles[i].data_type, sciFiles[i].global_cycle, sciFiles[i].n_records);
+					i,
+					sciFiles[i].p,
+					sciFiles[i].data_type,
+					sciFiles[i].global_cycle,
+					sciFiles[i].n_records);
+			for(j=0;j<N_MAX_RECORDS_PER_FILE;j++) {
+				ref = sciFiles[i].records[j];
+				xil_printf("  .records[%d]: mainBufferDescr.sci_data_l1[%d], global_cycle=%d, is_finalized=%d, is_occupied=%d\n\r",
+						j,
+						ref,
+						mainBufferDescr.sci_data_l1[ref].global_cycle,
+						mainBufferDescr.sci_data_l1[ref].is_finalized,
+						mainBufferDescr.sci_data_l1[ref].is_occupied);
+			}
+		}
 	}
 
 }

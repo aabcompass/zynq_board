@@ -93,7 +93,7 @@ void ProcessUartCommands(struct netif *netif, char c)
 		xil_printf("Is_D3_received()=%d\n\r", Is_D3_received());
 		xil_printf("MPS FIFO occupancy=%d\n\r",  *(u32*)(XPAR_AXI_GPIO_0_BASEADDR+8));
 		xil_printf("GetProgramCnt()=%d", GetProgramCnt());
-
+		xil_printf("Get_n_occupied(1)=%d", Get_n_occupied(DATA_TYPE_L1));
 	}
 	else if(c == 'S')
 	{

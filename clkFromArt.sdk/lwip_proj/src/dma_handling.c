@@ -159,7 +159,7 @@ void RxIntrHandler_L1(XAxiDma *AxiDmaInst)
 	if(is_l1_started == 1) {
 		start_dma_l1();
 	}
-	if(Get_n_occupied(DATA_TYPE_L1) > N_D1_IN_MEM - 50) {
+	if(Get_n_occupied(DATA_TYPE_L1) > N_D1_IN_MEM - 50 + 1) {
 		//xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
 		SetPauseForFTP(1);
 		//xil_printf(" FCstatus=0x%08x ", FC_GetStatus());
