@@ -122,4 +122,9 @@ void Set_scurve_step(u32 step);
 void SetSCMapping(u8 n_pmt_in_ec, u8 pixelnum, u8 pixelmap);
 void SetSC_speed(u32 speed);
 
+u32 GetSCCoreStatus();
+
+#define SC_TIMEOUT_WAIT_FOR_IDLE	1000
+u32 SC_WaitForCoreIdle();
+
 #endif /* SLOW_CONTROL_H_ */

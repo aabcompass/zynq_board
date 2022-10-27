@@ -383,6 +383,7 @@ void LoadIndividualDataToSlowControl()
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONFIG) = (1<<BIT_USER_LED) | (1<<BIT_SELECT_DIN);// | (1<<BIT_EN_SR_RSTB_PC);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = (1<<BIT_START);
 	*(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGW_SLOWCTRL_CONTROLREG) = 0;
+	SC_WaitForCoreIdle();
 }
 
 void ResetSPACIROC3()
@@ -586,4 +587,19 @@ u32 GetScurveStatus()
 	return scurve_sm_state;
 }
 
+u32 GetSCCoreStatus()
+{
+	return *(u32*)(XPAR_SPACIROC3_SC_0_BASEADDR + 4*REGR_SLOWCTRL_STATUS);
+}
 
+u32 SC_WaitForCoreIdle()
+{
+	int i,j;
+	for (i=0;i<SC_TIMEOUT_WAIT_FOR_IDLE;i++)
+	{
+		print("Waiting for SC core IDLE\n\r");
+		if(GetSCCoreStatus() == 0)
+			return 0;
+	}
+	return 1;
+}

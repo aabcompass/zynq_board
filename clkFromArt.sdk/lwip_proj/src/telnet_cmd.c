@@ -20,6 +20,7 @@
 #include "l1_trigger_block.h"
 #include "clkb.h"
 #include "sntp.h"
+#include "slow_control.h"
 
 
 
@@ -403,6 +404,11 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
+//		while(1)
+//		{
+//			for(i=0;i<10000;i++);
+//			xil_printf("GetSCCoreStatus()=%d\n\r", GetSCCoreStatus());
+//		}
 	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_RAMP, &param) == 1)
 	{
