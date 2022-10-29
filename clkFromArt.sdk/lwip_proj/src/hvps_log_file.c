@@ -11,6 +11,7 @@
 
 char hvps_log_file_ftp[sizeof(Z_DATA_TYPE_HVPS_LOG_V1)];
 extern InstrumentState instrumentState;
+char filename_str[50], datetimestr[50];
 
 
 void SendHVPSLogToFTP(int mode) //0 - numerical,  1 - HVPS.log
@@ -21,7 +22,10 @@ void SendHVPSLogToFTP(int mode) //0 - numerical,  1 - HVPS.log
 	memset(hvps_log_file_ftp, 0, sizeof(Z_DATA_TYPE_HVPS_LOG_V1));
 	memcpy(hvps_log_file_ftp, HV_getLogPtr(), size);
 	//DeleteFile("HVPS.log");
-	sprintf(filename_str, FILENAME_HVLOG, instrumentState.file_counter_hv++);
+
+	convertUnixTimeToDateStr(GetUnixTime(), datetimestr);
+	sprintf(filename_str, FILENAME_HVLOG_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_hv++);
+
 	if(mode == 0)
 		ret = CreateFile(/*"HVPS.log"*/filename_str, hvps_log_file_ftp, size, 0, file_regular);
 	else

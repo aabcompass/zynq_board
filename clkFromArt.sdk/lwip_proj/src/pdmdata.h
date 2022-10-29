@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.10.02"
+#define ZYNQ3_VER_STRING "v5.10.03"
 
 //========================================
 // Constants
@@ -287,10 +287,7 @@ typedef struct
 #define FILENAME_D3				"frm_z%d_d3_%08d.dat"
 #define FILENAME_D3_FLIGHT		"frm_z%d_d3_%s-%04d.dat"
 #define FILENAME_HVLOG			"hv_%08d.dat" /*hv_00000000.dat,hv_00000001.dat, ... */
-//#define FILENAME_SCURVE	 		"scurve_%08d.dat"
-
-
-
+#define FILENAME_HVLOG_FLIGHT	"hv_z%d_%s_%04d.dat"
 
 //========================================
 //  HVPS log structure
