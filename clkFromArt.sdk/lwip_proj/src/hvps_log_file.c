@@ -14,10 +14,10 @@ extern InstrumentState instrumentState;
 char filename_str[50], datetimestr[50];
 
 
-void SendHVPSLogToFTP(int mode) //0 - numerical,  1 - HVPS.log
+void SendHVPSLogToFTP(int mode)
 {
 	u32 size = HV_getLogFileSize();
-	char filename_str[20];
+	char filename_str[50];
 	int ret;
 	memset(hvps_log_file_ftp, 0, sizeof(Z_DATA_TYPE_HVPS_LOG_V1));
 	memcpy(hvps_log_file_ftp, HV_getLogPtr(), size);
@@ -25,6 +25,8 @@ void SendHVPSLogToFTP(int mode) //0 - numerical,  1 - HVPS.log
 
 	convertUnixTimeToDateStr(GetUnixTime(), datetimestr);
 	sprintf(filename_str, FILENAME_HVLOG_FLIGHT, instrumentState.ZB_number,  datetimestr, instrumentState.file_counter_hv++);
+
+	//xil_printf("HVPS filename: %s\n\r", filename_str);
 
 	if(mode == 0)
 		ret = CreateFile(/*"HVPS.log"*/filename_str, hvps_log_file_ftp, size, 0, file_regular);
