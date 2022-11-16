@@ -38,7 +38,10 @@
 void CathodeSetAutoMode(int mode);
 void TestEC_sig();
 void SetSwitchingPulsesParams(int len0, int len1, int num);
-void ConfADCV(int len0, int len1, int num);
+void ConfADCV();
+void ADCV_set_len0(int data);
+void ADCV_set_len1(int data);
+void ADCV_set_num(int data);
 
 void UpdateCathodeLevels(uint32_t data);
 uint32_t GetCathodeData();

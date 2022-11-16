@@ -10,6 +10,10 @@
 
 uint32_t cathode_data;
 
+int 	len0 = 3,   //transformer_boost = '1'
+		len1 = 1,   //transformer_boost = '0'
+		num = 5;  // the number of pulses while transformer is boosting
+
 
 void TestEC_sig()
 {
@@ -28,16 +32,36 @@ void ResetADCV()
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_CTRL) = 0;
 }
 
-void ConfADCV(int len0, int len1, int num)
+
+
+void ConfADCV()
 {
 	ResetADCV();
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_EN_EC) = 0x1FF;
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_RELEASE_TIME) = 1000000000;
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_EC_MAPPING_H) = 0x00000000;
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_EC_MAPPING_L) = 0x00000340;
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_GTU_LEN0) = len0;
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_GTU_LEN1) = len1;
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_BIG_PULSES_NUM) = num;
-	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_EC_MAPPING_H) = 0x00000000;
-	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_EC_MAPPING_L) = 0x00000340;
+}
+
+void ADCV_set_len0(int data)
+{
+	len0 = data;
+	ConfADCV();
+}
+
+void ADCV_set_len1(int data)
+{
+	len1 = data;
+	ConfADCV();
+}
+
+void ADCV_set_num(int data)
+{
+	num = data;
+	ConfADCV();
 }
 
 void SetReleaseTime(u32 time_ms)

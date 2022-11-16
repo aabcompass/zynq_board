@@ -274,7 +274,7 @@ int main()
 		print("Ok\n\r");
 
 	print("Setting HVPS GTU frequency...\n\r");
-	HVPSSetGTUPeriod(16);
+	HVPSSetGTUPeriod(9);
 
 
 	//print("ARTIX SPI initialization...\n\r");
@@ -357,7 +357,7 @@ int main()
 	print("Setting default EC mapping for ADCV\n\r");
 	SetDefaultECMapping();
 	print("Configuring ADCV (Automatic Drop Cathode Voltage) timing parameters\n\r");
-	ConfADCV(3,1,5);
+	ConfADCV();
 	SetADCV_dataprov_params(3, 50);
 	//print("Turning cathode switching ON\n\r");
 	//CathodeSetAutoMode(1);
