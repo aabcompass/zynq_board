@@ -673,6 +673,12 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_HVPS_SET_GTU_PERIOD, &param) == 1)
+	{
+		HVPSSetGTUPeriod(param);
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_PIXELMAP_TST_ECS, strlen(TCP_CMD_PIXELMAP_TST_ECS)) == 0)
 	{
 		SetArtixTestMode2(1);

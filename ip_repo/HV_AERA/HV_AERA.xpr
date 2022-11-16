@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/PPS_stable/ip_repo/HV_AERA/HV_AERA.xpr">
+<Project Version="7" Minor="36" Path="/home/alx/xil_proj/zynq_board/HV_cath/ip_repo/HV_AERA/HV_AERA.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="702098e4d106480b83aee91a9c79988c"/>

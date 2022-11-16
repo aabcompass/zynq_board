@@ -98,3 +98,9 @@ uint32_t GetCathodeLevels()
 {
 	return cathode_data;
 }
+
+void HVPSSetGTUPeriod(u32 freq)
+{
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_AERA_PER)  = 0;
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_AERA_PER)  = freq;
+}

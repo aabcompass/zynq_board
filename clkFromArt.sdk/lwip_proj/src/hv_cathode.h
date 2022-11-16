@@ -23,6 +23,7 @@
 #define REGW_HVCATH_EC_MAPPING_H	9 /*ec_mapping <= slv_reg9(3 downto 0) & slv_reg10;*/
 #define REGW_HVCATH_EC_MAPPING_L	10 /*ec_mapping <= slv_reg9(3 downto 0) & slv_reg10;*/
 #define REGW_HVCATH_STIM_EC_SIG		11 /*ec_sig2 <= ec_sig or slv_reg11(8 downto 0);*/
+#define REGW_HVCATH_AERA_PER		12  /**/
 
 #define REGR_HVCATH_GET_EC0_TIMER	20 /*31:0*/
 
@@ -43,5 +44,6 @@ void UpdateCathodeLevels(uint32_t data);
 uint32_t GetCathodeData();
 void CathodeSetAutoMode(int mode);
 void SetReleaseTime(u32 time_ms);
+void HVPSSetGTUPeriod(u32 freq);
 
 #endif /* SRC_HV_CATHODE_H_ */

@@ -168,6 +168,7 @@ architecture arch_imp of axi_cathode_ctrl is
 					DATA_HV                     : out std_logic;
 					COMMAND							 : in std_logic_vector(31 downto 0);
 					TRANSMIT 						 : in std_logic;			
+					aera_freq							 : in std_logic_vector(15 downto 0);
 					TEST                        : out std_logic_vector(31 downto 0)
 	    );
 	end component;
@@ -863,6 +864,7 @@ begin
 						gtu_width => gtu_width,		
 						COMMAND		=>		COMMAND,			 --: in std_logic_vector(31 downto 0);
 						TRANSMIT 	=>	TRANSMIT,			 --: in std_logic;
+						aera_freq => slv_reg12(15 downto 0),
 						TEST     =>  open--slv_reg3               -- : out std_logic_vector(31 downto 0)
 					);
 

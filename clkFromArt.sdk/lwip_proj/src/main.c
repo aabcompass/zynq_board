@@ -273,6 +273,8 @@ int main()
 	else
 		print("Ok\n\r");
 
+	print("Setting HVPS GTU frequency...\n\r");
+	HVPSSetGTUPeriod(16);
 
 
 	//print("ARTIX SPI initialization...\n\r");

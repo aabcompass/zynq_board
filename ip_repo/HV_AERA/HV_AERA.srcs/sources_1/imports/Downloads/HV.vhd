@@ -42,6 +42,7 @@ entity HV is
 					CLK_HV                    	 : out std_logic;
 					DATA_HV                     : out std_logic;
 					COMMAND							 : in std_logic_vector(31 downto 0);
+					aera_freq							 : in std_logic_vector(15 downto 0);
 					TRANSMIT 						 : in std_logic;			
 					TEST                        : out std_logic_vector(31 downto 0)
         );
@@ -50,6 +51,7 @@ end HV;
 architecture Behavioral of HV is
 
 signal clk_cnt										 : std_logic_vector(3 downto 0):=(others=>'0');
+signal clk_cnt2										 : std_logic_vector(15 downto 0):=(others=>'0');
 signal command_in_1								 : std_logic_vector(17 downto 0):=(others=>'0');
 signal command_in_2								 : std_logic_vector(17 downto 0):=(others=>'0');
 signal command_in_3								 : std_logic_vector(17 downto 0):=(others=>'0');
@@ -73,7 +75,20 @@ begin
 --		I => clk_cnt(1) -- 1-bit Clock buffer input
 --	);
 	
-	Aera_clk <= clk_cnt(3);
+	--Aera_clk <= clk_cnt(3);
+	aera_clk_process: process(PDM_CLK)
+	begin
+		if(rising_edge(PDM_CLK)) then
+			if(clk_cnt2 = aera_freq) then 
+				Aera_clk <= '1';
+				clk_cnt2 <= (others => '0');
+			else
+				Aera_clk <= '0';
+				clk_cnt2 <= clk_cnt2 + 1;
+			end if;
+		end if;
+	end process;
+	
 	clk_bufg <= Aera_clk;
 	Aera_clk_d1 <= Aera_clk when rising_edge(PDM_CLK);
 	

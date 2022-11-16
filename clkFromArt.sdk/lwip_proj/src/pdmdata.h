@@ -403,6 +403,7 @@ typedef struct
 #define TCP_CMD_HVPS_SW_ON			"hvps switching on %d"
 #define TCP_CMD_HVPS_RELEASE_TIME	"hvps release_time %d"
 #define TCP_CMD_HVPS_SW32_PARAMS	"hvps max_pixel_num %d asic_cnt %d"
+#define TCP_CMD_HVPS_SET_GTU_PERIOD	"hvps gtu period %d"
 #define TCP_CMD_DBG_ARTCLK_CNT		"dbg art clk"
 #define TCP_CMD_DBG_ARTTRDELAY		"dbg arttrdelay %d"
 #define TCP_CMD_DBG_ARTFRDELAY		"dbg artfrdelay %d"
