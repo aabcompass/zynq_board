@@ -282,6 +282,9 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		L1Reset();
 		L3Reset();
 		print("DMAs are reset\n\r");
+		MmgRefresh();
+		FileSystemInit();
+		SetPauseForFTP(0);
 		ClkbResetCounters();
 		//ResetGTUCounter_D1();
 		FC_ResetSelfTrgCounter();
@@ -814,6 +817,15 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 			strcpy(ans_str, "Param out or range\n\r");
 		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_KITRG_PARAMS, &param, &param2, &param3) == 3)
+	{
+		ret = Set_KITRG_params(param, param2, param3);
+		if(ret == 0)
+			strcpy(ans_str, "Ok\n\r");
+		else
+			strcpy(ans_str, "Param out or range\n\r");
+		tcp_write(tpcb, ans_str, strlen(ans_str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_L1_CLKB_INS, &int_param) == 1)
 	{
 		FC_use_CLKB(int_param);
@@ -834,6 +846,14 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		}
 		else if(strcasecmp(ans_str, "self") == 0) {
 			SetModeD1(BIT_FC_EN_SELF_TRIG);
+			strcpy(ans_str, "Ok\n\r");
+		}
+		else if(strcasecmp(ans_str, "self_ki") == 0) {
+			SetModeD1(BIT_FC_EN_SELF_AND_KI_TRIG);
+			strcpy(ans_str, "Ok\n\r");
+		}
+		else if(strcasecmp(ans_str, "only_ki") == 0) {
+			SetModeD1(BIT_FC_EN_ONLY_KI_TRIG);
 			strcpy(ans_str, "Ok\n\r");
 		}
 		else if(strcasecmp(ans_str, "ext_lab") == 0) {

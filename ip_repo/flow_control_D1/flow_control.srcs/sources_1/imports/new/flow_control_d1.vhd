@@ -28,6 +28,11 @@ entity flow_control_d1 is
   		s_axis_trg_tready : OUT STD_LOGIC := '1';
   		s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
   		s_axis_trg_tlast : IN STD_LOGIC;
+
+  		s_axis_kitrg_tvalid : IN STD_LOGIC;
+  		s_axis_kitrg_tready : OUT STD_LOGIC := '1';
+  		s_axis_kitrg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+  		s_axis_kitrg_tlast : IN STD_LOGIC;
   		
   		s_axis_mps_tvalid: IN STD_LOGIC; 
 			s_axis_mps_tready: OUT STD_LOGIC := '1'; 
@@ -105,6 +110,7 @@ architecture Behavioral of flow_control_d1 is
 
 	signal is_started: std_logic := '0';
 	signal en_int_trig, en_algo_trig, periodic_trig_en, en_ext_trig, en_ta_trig, ext_trig_latch: std_logic := '0';
+	signal en_ki_trig: std_logic:= '0';
 	signal release, release_always: std_logic := '0';
 	signal ext_trig: std_logic := '0';
 	signal use_pps: std_logic := '0';
@@ -267,6 +273,7 @@ architecture Behavioral of flow_control_d1 is
 	signal pass: std_logic := '0';
 	signal pass_tlast: std_logic := '0';
 	signal self_trig, self_trig_d1,  self_trig_latch: std_logic := '0';
+	signal ki_trig, ki_trig_d1,  ki_trig_latch: std_logic := '0';
 	signal one_second_pulse: std_logic := '0';
 	signal set_unix_time: std_logic := '0';
 	signal trig_latch: std_logic := '0';
@@ -398,6 +405,7 @@ begin
 	clkb_mode <= flags(17);
 	pause4ftp <= flags(18);
 	use_pps <= flags(19);
+	en_ki_trig <= flags(20);
 	
 	clr_trans_counter <= clr_flags(0);
 	clear_error <= clr_flags(1);
@@ -547,6 +555,9 @@ begin
 	self_trig <= (s_axis_trg_tlast and s_axis_trg_tvalid and en_algo_trig);
 	self_trig_d1 <= self_trig when rising_edge(s_axis_aclk);
 	
+	ki_trig <= (s_axis_kitrg_tlast and s_axis_kitrg_tvalid and en_ki_trig);
+	ki_trig_d1 <= ki_trig when rising_edge(s_axis_aclk);
+	
 	self_trig_cnt_process: process(s_axis_aclk)
 	begin
 		if(rising_edge(s_axis_aclk)) then
@@ -580,7 +591,7 @@ begin
       src_in => trig_ext_in_lab      -- 1-bit input: Input signal to be synchronized to dest_clk domain.
    );
 
-	trig_out <= (self_trig or periodic_trig) when rising_edge(s_axis_aclk);
+	trig_out <= (self_trig or ki_trig or periodic_trig) when rising_edge(s_axis_aclk);
 	
 	trig_ext_in_d1 <= trig_ext_in when rising_edge(s_axis_aclk);
 	trig_ext_in_f <= trig_ext_in and (not trig_ext_in_d1) when rising_edge(s_axis_aclk);
@@ -594,7 +605,7 @@ begin
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(clkb_mode = '0') then
-				trig_comb <= periodic_trig or self_trig or trig_ext_in_lab_f;
+				trig_comb <= periodic_trig or self_trig or ki_trig or trig_ext_in_lab_f;
 			else
 				trig_comb <= trig_ext_in_f;
 			end if;
@@ -648,9 +659,7 @@ begin
 			end if;
 		end if;
 	end process;
-	
 
-	
 	trig_all_cnt_process:  process(s_axis_aclk) 
 	begin
 		if(rising_edge(s_axis_aclk)) then
@@ -668,6 +677,9 @@ begin
 			if(s_axis_trg_tvalid = '1') then
 				s_axis_trg_tdata_d1_latch <= s_axis_trg_tlast_d1 & s_axis_trg_tdata_d1(30 downto 0);				
 			end if;
+			--if(s_axis_kitrg_tlast = '1') then
+			--	s_axis_kitrg_tdata_d1_latch <= s_axis_kitrg_tlast_d1 & s_axis_kitrg_tdata_d1(30 downto 0);				
+			--end if;
 		end if;
 	end process;
 	

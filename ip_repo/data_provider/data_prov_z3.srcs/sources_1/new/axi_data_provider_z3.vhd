@@ -82,6 +82,8 @@ entity axi_data_provider_z3 is
     	
     	DATA: out std_logic_vector(143 downto 0);
 			FRAME: out std_logic;
+    	DATA_KI: out std_logic_vector(17 downto 0);
+			FRAME_KI: out std_logic;
     	
     	aux_in: in std_logic_vector(31 downto 0);
     	aux_in2: in std_logic_vector(31 downto 0);
@@ -286,6 +288,17 @@ architecture Behavioral of axi_data_provider_z3 is
 	           FRAME : out STD_LOGIC);
 	end component;
 
+	component data_provider_4ki is
+    Port ( clk : in STD_LOGIC;
+           aresetn : in STD_LOGIC;
+           s_axis_tdata : in STD_LOGIC_VECTOR (127 downto 0);
+           s_axis_tvalid : in STD_LOGIC;
+           s_axis_tlast : in STD_LOGIC;
+           s_axis_tuser : in std_logic_vector(7 downto 0);
+           DATA : out STD_LOGIC_VECTOR (17 downto 0);
+           FRAME : out STD_LOGIC);
+	end component;
+
 	component test_data_provider is
     Port ( 
     clk : in STD_LOGIC;
@@ -340,7 +353,7 @@ architecture Behavioral of axi_data_provider_z3 is
 	signal gtu_period: std_logic_vector(7 downto 0) := (others => '0');
 	signal art_gtu_en: std_logic := '0';
 	
-	signal FRAME_i: std_logic := '0';
+	signal FRAME_i, FRAME_KI_i: std_logic := '0';
 	
 	signal m_axis_tdata_i: std_logic_vector(127 downto 0) := (others => '0');
 	signal m_axis_tvalid_i: std_logic := '0';
@@ -1551,6 +1564,7 @@ begin
 	data_provider_4trig_aresetn <= S_AXI_ARESETN and reset_dataprov4trig when rising_edge(S_AXI_ACLK);
 
 	s_axis_tvalid_4trig <= s_axis_tvalid and pass;
+	
 	i_data_provider_4trig : data_provider_4trig 
 	    Port map( clk => S_AXI_ACLK,--: in STD_LOGIC;
 	           aresetn => data_provider_4trig_aresetn,--S_AXI_ARESETN,--: in STD_LOGIC;
@@ -1562,6 +1576,19 @@ begin
 	           FRAME => FRAME_i);--: out STD_LOGIC);
 	           
 	   FRAME <= FRAME_i and en_data_to_l1;     
+
+	i_data_provider_4ki : data_provider_4ki 
+	    Port map( clk => S_AXI_ACLK,--: in STD_LOGIC;
+	           aresetn => data_provider_4trig_aresetn,--S_AXI_ARESETN,--: in STD_LOGIC;
+	           s_axis_tdata => s_axis_tdata,--: in STD_LOGIC_VECTOR (127 downto 0);
+	           s_axis_tvalid => s_axis_tvalid_4trig,--: in STD_LOGIC;
+	           s_axis_tlast => s_axis_tlast,--: in STD_LOGIC;
+	           s_axis_tuser => s_axis_tuser,--: in std_logic_vector(7 downto 0);
+	           DATA => DATA_KI,--: out STD_LOGIC_VECTOR (143 downto 0);
+	           FRAME => FRAME_KI_i);--: out STD_LOGIC);
+
+	   FRAME_KI <= FRAME_KI_i and en_data_to_l1;     
+
 	           
 	   xpm_cdc_array_bitslip0 : xpm_cdc_array_single
 	           generic map (

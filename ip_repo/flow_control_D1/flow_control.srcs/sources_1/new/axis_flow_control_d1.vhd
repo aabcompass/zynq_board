@@ -34,6 +34,11 @@ entity axis_flow_control_d1 is
   		s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
   		s_axis_trg_tlast : IN STD_LOGIC;
 
+  		s_axis_kitrg_tvalid : IN STD_LOGIC;
+  		s_axis_kitrg_tready : OUT STD_LOGIC := '1';
+  		s_axis_kitrg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+  		s_axis_kitrg_tlast : IN STD_LOGIC;
+
   		s_axis_mps_tvalid: IN STD_LOGIC; 
   		s_axis_mps_tready: OUT STD_LOGIC := '1'; 
   		s_axis_mps_tdata: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -207,6 +212,11 @@ architecture Behavioral of axis_flow_control_d1 is
 				s_axis_trg_tready : OUT STD_LOGIC := '1';
 				s_axis_trg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 				s_axis_trg_tlast : IN STD_LOGIC;
+
+				s_axis_kitrg_tvalid : IN STD_LOGIC;
+				s_axis_kitrg_tready : OUT STD_LOGIC := '1';
+				s_axis_kitrg_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_kitrg_tlast : IN STD_LOGIC;
 				
   			s_axis_mps_tvalid: IN STD_LOGIC; 
 				s_axis_mps_tready: OUT STD_LOGIC := '1'; 
@@ -894,6 +904,11 @@ begin
 				s_axis_trg_tready => s_axis_trg_tready,-- : OUT STD_LOGIC := '1';
 				s_axis_trg_tdata => s_axis_trg_tdata,-- : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 				s_axis_trg_tlast => s_axis_trg_tlast,-- : IN STD_LOGIC;
+
+  			s_axis_kitrg_tvalid => s_axis_kitrg_tvalid,--: IN STD_LOGIC;
+				s_axis_kitrg_tready => s_axis_kitrg_tready,--: OUT STD_LOGIC := '1';
+				s_axis_kitrg_tdata => s_axis_kitrg_tdata,--: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+				s_axis_kitrg_tlast => s_axis_kitrg_tlast,--: IN STD_LOGIC;
 				
 				-- out
 				m_axis_tvalid  => m_axis_tvalid,--: OUT STD_LOGIC;

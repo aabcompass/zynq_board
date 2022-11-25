@@ -35,7 +35,8 @@ USE ieee.std_logic_unsigned.ALL;
 
 entity SPB2 is
     generic (SYNTH_BYPASS : std_logic := '0');
-    Port ( CLOCK_133 : in STD_LOGIC;
+    Port ( --CLOCK_133 : in STD_LOGIC;
+           clk_100, clk_200: in std_logic;
            DATA_SPB2 : in STD_LOGIC_VECTOR (143 downto 0);
            FRAME : in STD_LOGIC;
            ----------------------STHR DEBUG------------------------------------------------------------------------
@@ -1624,15 +1625,18 @@ begin
 
 SYNTH_BYPASS_GEN: if(SYNTH_BYPASS = '0')  generate
 
---CLOCK Manager
-CLK_MMCM : clk_wiz_0
-   port map ( 
-  -- Clock out ports  
-   clk_out1 => CLOCK,
-   clk_out2 => CLOCK_133B,--CLOCK_133B=CLOCK_133
-   -- Clock in ports
-   clk_in1 => CLOCK_133
- );
+----CLOCK Manager
+--CLK_MMCM : clk_wiz_0
+--   port map ( 
+--  -- Clock out ports  
+--   clk_out1 => CLOCK,
+--   clk_out2 => CLOCK_133B,--CLOCK_133B=CLOCK_133
+--   -- Clock in ports
+--   clk_in1 => CLOCK_133
+-- );
+ 
+ CLOCK <= clk_100;
+ CLOCK_133B <= clk_200;
  
 --INPUT Pixel to MacroPixel
 IN_EC0EC3EC6 : IN3EC

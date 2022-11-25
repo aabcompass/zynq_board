@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_SPB2_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench_SPB2" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="49794940000fs"></ZoomStartTime>
+      <ZoomEndTime time="61594940001fs"></ZoomEndTime>
+      <Cursor1Time time="52527500000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="227"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="67" />
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/CLOCK_133B">
+      <obj_property name="ElementShortName">CLOCK_133B</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_133B</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/CLOCK">
+      <obj_property name="ElementShortName">CLOCK</obj_property>
+      <obj_property name="ObjectShortName">CLOCK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/clock_axi">
+      <obj_property name="ElementShortName">clock_axi</obj_property>
+      <obj_property name="ObjectShortName">clock_axi</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/DATA_SPB2_KI">
+      <obj_property name="ElementShortName">DATA_SPB2_KI[17:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_SPB2_KI[17:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FRAME_KI">
+      <obj_property name="ElementShortName">FRAME_KI</obj_property>
+      <obj_property name="ObjectShortName">FRAME_KI</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/s_aclk_cmd_ki">
+      <obj_property name="ElementShortName">s_aclk_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">s_aclk_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/s_aresetn_cmd_ki">
+      <obj_property name="ElementShortName">s_aresetn_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">s_aresetn_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/s_axis_tvalid_cmd_ki">
+      <obj_property name="ElementShortName">s_axis_tvalid_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/s_axis_tready_cmd_ki">
+      <obj_property name="ElementShortName">s_axis_tready_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/s_axis_tdata_cmd_ki">
+      <obj_property name="ElementShortName">s_axis_tdata_cmd_ki[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata_cmd_ki[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/s_axis_tlast_cmd_ki">
+      <obj_property name="ElementShortName">s_axis_tlast_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tvalid_cmd_ki">
+      <obj_property name="ElementShortName">m_axis_tvalid_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tready_cmd_ki">
+      <obj_property name="ElementShortName">m_axis_tready_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tdata_cmd_ki">
+      <obj_property name="ElementShortName">m_axis_tdata_cmd_ki[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata_cmd_ki[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tlast_cmd_ki">
+      <obj_property name="ElementShortName">m_axis_tlast_cmd_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast_cmd_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_aclk_trg_ki">
+      <obj_property name="ElementShortName">m_aclk_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_aclk_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tvalid_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tvalid_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tready_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tready_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tdata_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tdata_trg_ki[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata_trg_ki[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/m_axis_tlast_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tlast_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/frame_cnt">
+      <obj_property name="ElementShortName">frame_cnt[6:0]</obj_property>
+      <obj_property name="ObjectShortName">frame_cnt[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC0">
+      <obj_property name="ElementShortName">pixel_thr_EC0[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC0[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC0">
+      <obj_property name="ElementShortName">ncounter_thr_EC0[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC0[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC1">
+      <obj_property name="ElementShortName">pixel_thr_EC1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC1[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC1">
+      <obj_property name="ElementShortName">ncounter_thr_EC1[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC1[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC2">
+      <obj_property name="ElementShortName">pixel_thr_EC2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC2[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC2">
+      <obj_property name="ElementShortName">ncounter_thr_EC2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC2[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC3">
+      <obj_property name="ElementShortName">pixel_thr_EC3[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC3[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC3">
+      <obj_property name="ElementShortName">ncounter_thr_EC3[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC3[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC4">
+      <obj_property name="ElementShortName">pixel_thr_EC4[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC4[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC4">
+      <obj_property name="ElementShortName">ncounter_thr_EC4[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC4[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC5">
+      <obj_property name="ElementShortName">pixel_thr_EC5[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC5[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC5">
+      <obj_property name="ElementShortName">ncounter_thr_EC5[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC5[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC6">
+      <obj_property name="ElementShortName">pixel_thr_EC6[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC6[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC6">
+      <obj_property name="ElementShortName">ncounter_thr_EC6[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC6[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC7">
+      <obj_property name="ElementShortName">pixel_thr_EC7[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC7[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC7">
+      <obj_property name="ElementShortName">ncounter_thr_EC7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC7[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_thr_EC8">
+      <obj_property name="ElementShortName">pixel_thr_EC8[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC8[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/ncounter_thr_EC8">
+      <obj_property name="ElementShortName">ncounter_thr_EC8[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC8[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_rdy">
+      <obj_property name="ElementShortName">pixel_rdy</obj_property>
+      <obj_property name="ObjectShortName">pixel_rdy</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value0">
+      <obj_property name="ElementShortName">pixel_value0[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value0[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value1">
+      <obj_property name="ElementShortName">pixel_value1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value1[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value2">
+      <obj_property name="ElementShortName">pixel_value2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value2[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value3">
+      <obj_property name="ElementShortName">pixel_value3[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value3[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value4">
+      <obj_property name="ElementShortName">pixel_value4[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value4[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value5">
+      <obj_property name="ElementShortName">pixel_value5[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value5[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value6">
+      <obj_property name="ElementShortName">pixel_value6[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value6[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value7">
+      <obj_property name="ElementShortName">pixel_value7[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value7[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value8">
+      <obj_property name="ElementShortName">pixel_value8[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value8[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value9">
+      <obj_property name="ElementShortName">pixel_value9[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value9[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value10">
+      <obj_property name="ElementShortName">pixel_value10[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value10[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value11">
+      <obj_property name="ElementShortName">pixel_value11[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value11[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value12">
+      <obj_property name="ElementShortName">pixel_value12[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value12[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value13">
+      <obj_property name="ElementShortName">pixel_value13[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value13[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value14">
+      <obj_property name="ElementShortName">pixel_value14[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value14[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value15">
+      <obj_property name="ElementShortName">pixel_value15[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value15[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value16">
+      <obj_property name="ElementShortName">pixel_value16[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value16[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/pixel_value17">
+      <obj_property name="ElementShortName">pixel_value17[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_value17[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC0">
+      <obj_property name="ElementShortName">Ncounter_EC0[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC0[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC1">
+      <obj_property name="ElementShortName">Ncounter_EC1[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC1[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC2">
+      <obj_property name="ElementShortName">Ncounter_EC2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC2[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC3">
+      <obj_property name="ElementShortName">Ncounter_EC3[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC3[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC4">
+      <obj_property name="ElementShortName">Ncounter_EC4[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC4[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC5">
+      <obj_property name="ElementShortName">Ncounter_EC5[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC5[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC6">
+      <obj_property name="ElementShortName">Ncounter_EC6[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC6[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC7">
+      <obj_property name="ElementShortName">Ncounter_EC7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC7[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/SPB2_KI_TRIGGER/Ncounter_EC8">
+      <obj_property name="ElementShortName">Ncounter_EC8[6:0]</obj_property>
+      <obj_property name="ObjectShortName">Ncounter_EC8[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

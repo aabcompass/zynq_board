@@ -7,6 +7,7 @@
 
 
 #include "l1_trigger_block.h"
+#include "ki_trg.h"
 #include "xbasic_types.h"
 #include "common.h"
 #include "pdmdp_err.h"
@@ -64,6 +65,13 @@ int Set_L1_nActive(u32 param)
 	if(param>=2048) return ERR_VALUE_OUT_OF_RANGE;
 	nActive = param;
 	L1_send_rest_params();
+	return 0;
+}
+
+int Set_KITRG_params(u32 pixel_thr, u32 ncnt_thr, u32 ec_num)
+{
+	u32 word_rest = (pixel_thr<<KITRG_BIT_PIXEL_THR) | (ncnt_thr<<KITRG_BIT_NCNT_THR) | (ec_num<<KITRG_BIT_EC_NUM);
+	TxFIFOSendMain(&word_rest, 1, FIFO_CH_TRIG_KI);
 	return 0;
 }
 

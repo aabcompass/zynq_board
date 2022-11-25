@@ -62,6 +62,7 @@
 #define BIT_FC_FLAGS_CLKB_MODE			(1<<17)
 #define BIT_FC_FLAGS_PAUSE4FTP			(1<<18)
 #define BIT_FC_USE_1PPS					(1<<19)
+#define BIT_FC_EN_KI_TRIG				(1<<20)
 
 
 //REGW_CLR_FLAGS

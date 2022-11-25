@@ -48,6 +48,16 @@ u32 Mmg_Get_last_global_cycle()
 	return last_global_cycle;
 }
 
+void MmgRefresh()
+{
+	memset((char*)&mainBufferDescr, 0, sizeof(MainBufferDescr));
+	last_l1_occupied=0xFFFFFFFF;
+	last_file_closed = 0;
+	n_l1_occupied=0; n_l3_occupied=0; n_mps_occupied=0;
+	last_file_descriptor = -1; last_mmg_file_descriptor = -1; last_global_cycle=-1;
+	memset((char*)&sciFiles, 0, sizeof(SciFiles));
+}
+
 void MmgInit()
 {
 	u32 v1,v2,v3;

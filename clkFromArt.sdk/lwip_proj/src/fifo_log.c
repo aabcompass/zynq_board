@@ -87,7 +87,7 @@ void HVLogService()
 	{
 		XLlFifo_RxGetLen(&fifo4log);
 		XLlFifo_Read(&fifo4log, data, 16);
-		xil_printf("%08x %08x %08x %08x\n\r", data[0], data[1], data[2], data[3]);
+		//xil_printf("%08x %08x %08x %08x\n\r", data[0], data[1], data[2], data[3]);
 		HV_addLog2(data);
 		UpdateCathodeLevels(data[3]);
 	}

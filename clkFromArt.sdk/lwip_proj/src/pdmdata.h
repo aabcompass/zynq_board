@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.10.04"
+#define ZYNQ3_VER_STRING "v5.11.00"
 
 //========================================
 // Constants
@@ -270,13 +270,17 @@ typedef struct
 #define TRIG_SELF		2 /* Data triggered on trigger algorithm. For operation without CLKB*/
 #define TRIG_IMMEDIATE	3 /* Data triggered on UART or TCP command. For debugging*/
 #define TRIG_EXT		4 /* Data triggered on external signal. Standard operation */
-#define TRIG_OTHERS		8 /* Other trigger types (for future)*/
+#define TRIG_KI			20 /* KI trigger from Marco Mignone*/
+
+
 
 //Enables trigger types in the FlowControl block
-#define BIT_FC_EN_PERIODIC_TRIG	(1<<TRIG_PERIODIC)
-#define BIT_FC_EN_SELF_TRIG		(1<<TRIG_SELF)
-#define BIT_FC_EN_IMM_TRIG		(1<<TRIG_IMMEDIATE)
-#define BIT_FC_EN_EXT_TRIG		(1<<TRIG_EXT)
+#define BIT_FC_EN_PERIODIC_TRIG			(1<<TRIG_PERIODIC)
+#define BIT_FC_EN_SELF_TRIG				(1<<TRIG_SELF)
+#define BIT_FC_EN_IMM_TRIG				(1<<TRIG_IMMEDIATE)
+#define BIT_FC_EN_EXT_TRIG				(1<<TRIG_EXT)
+#define BIT_FC_EN_SELF_AND_KI_TRIG		((1<<TRIG_SELF) |  (1<<TRIG_KI))
+#define BIT_FC_EN_ONLY_KI_TRIG			(1<<TRIG_KI)
 
 //========================================
 // Filenames for data on FTP server
@@ -415,6 +419,7 @@ typedef struct
 #define TCP_CMD_L1_PARAM_NHOT		"trg L1 param nHot %d"
 #define TCP_CMD_L1_PARAM_NLEN		"trg L1 param nLength %d"
 #define TCP_CMD_L1_PARAM_NACTIVE	"trg L1 param nActive %d"
+#define TCP_CMD_KITRG_PARAMS		"trg KI pixel_thr %d ncnt_thr %d ec_num %d" /*pixel_thr 0..63  ncnt_thr 0..127 ec_num 0..8*/
 #define TCP_CMD_L1_OUTPUT			"trg L1 output" /*Gives the information from the L1 trg AXIS bus*/
 #define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, clkb}*/
 #define TCP_CMD_PERIODIC_PER		"trg periodic period %d" /*Set period for the periodic mode (in GTUs)*/
