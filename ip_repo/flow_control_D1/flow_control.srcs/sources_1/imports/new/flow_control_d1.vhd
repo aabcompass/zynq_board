@@ -116,9 +116,7 @@ architecture Behavioral of flow_control_d1 is
 	signal use_pps: std_logic := '0';
 	signal pps_d1, pps_f: std_logic := '0';
 	signal trig, trig_comb: std_logic := '0';
-	signal trig_immediate, trig_immediate_latch: std_logic := '0';
 	signal periodic_trig, periodic_trig_latch: std_logic := '0'; 
-	signal ta_trig_param_latch: std_logic_vector(31 downto 0) := (others => '0');
 
 	signal clear_error: std_logic := '0';
 	
@@ -374,7 +372,9 @@ architecture Behavioral of flow_control_d1 is
 	signal self_trig_cnt_clr: std_logic := '0';
 	signal pause4ftp: std_logic := '0';
 	
-	signal self_trig_cnt_i: std_logic_vector(15 downto 0) := (others => '0');
+	signal self_trig_cnt_i: std_logic_vector(15 downto 0) := (others => '0'); 
+	
+	signal s_axis_trg_tdata_latch, s_axis_kitrg_tdata_latch: std_logic_vector(31 downto 0) := (others => '0');
 	
 	
 
@@ -418,7 +418,6 @@ begin
 	self_trig_cnt_clr <= clr_flags(9);
 	
 	 
-	trig_immediate <= clr_flags(16);
 	
 	
 	cmd_inject_16_events_d0 <= clr_flags(17) when rising_edge(s_axis_aclk);
@@ -612,15 +611,28 @@ begin
 		end if;
 	end process;
 	
+	trig_latcher: process(s_axis_aclk)
+	begin
+		if(rising_edge(s_axis_aclk)) then
+			if(periodic_trig = '1' or self_trig = '1' or ki_trig = '1' or trig_ext_in_lab_f = '1') then
+				periodic_trig_latch <= periodic_trig;
+				self_trig_latch <= self_trig;
+				ki_trig_latch <= ki_trig;
+			end if;
+			if(self_trig = '1') then
+				s_axis_trg_tdata_latch <= s_axis_trg_tdata; 
+			end if;
+			if(ki_trig = '1') then
+				s_axis_kitrg_tdata_latch <= s_axis_kitrg_tdata;
+			end if;
+		end if;
+	end process;
+	
 	latency_process: process(s_axis_aclk)
 		variable state : integer range 0 to 3 := 0;
 	begin
 		if(rising_edge(s_axis_aclk)) then
 			if(is_started = '0' or clr_all = '1' or clr_trig_service = '1') then
-				periodic_trig_latch <= '0';
-				--ext_trig_latch <= '0';
-				trig_immediate_latch <= '0';
-				ta_trig_param_latch <= (others => '0');
 				trig <= '0';
 				trig_all_cnt_i <= (others => '0');
 				state := 0;
@@ -630,11 +642,6 @@ begin
 					when 0 => 
 						if(is_started = '1' and pause4ftp = '0') then
 							if(trig_comb = '1') then
-								periodic_trig_latch <= periodic_trig;
-								self_trig_latch <= self_trig;
-								--ext_trig_latch <= ext_trig;
-								trig_immediate_latch <= trig_immediate;
-								ta_trig_param_latch <= s_axis_ta_event_tdata_d1;
 								state := state + 1;							
 							end if;
 						end if;	
@@ -677,9 +684,6 @@ begin
 			if(s_axis_trg_tvalid = '1') then
 				s_axis_trg_tdata_d1_latch <= s_axis_trg_tlast_d1 & s_axis_trg_tdata_d1(30 downto 0);				
 			end if;
-			--if(s_axis_kitrg_tlast = '1') then
-			--	s_axis_kitrg_tdata_d1_latch <= s_axis_kitrg_tlast_d1 & s_axis_kitrg_tdata_d1(30 downto 0);				
-			--end if;
 		end if;
 	end process;
 	
@@ -708,21 +712,16 @@ begin
 										else
 											busy <= '1';
 										end if;
-					when 1 => if(periodic_trig_latch = '1') then
-											trig_type_i(31 downto 28) <= "1000";
-										elsif(self_trig_latch = '1') then
-											trig_type_i(31 downto 28) <= "0100";
-										--elsif(trig_immediate_latch = '1') then
-										--	trig_type_i(3 downto 0) <= X"3"; 
-										--elsif(ext_trig_latch = '1') then
-										--	trig_type_i(31 downto 28) <= "0010";
-										----elsif(ta_trig_latch = '1') then
-											--trig_type_i(3 downto 0) <= X"5";
-											--trig_type_i(31 downto 11) <= ta_trig_param_latch(20 downto 0);
-										--else
-										--	trig_type_i(3 downto 0) <= X"8";
+					when 1 => 
+										trig_type_i(31) <= periodic_trig_latch;
+										if(self_trig_latch = '1') then
+											trig_type_i(30) <= self_trig_latch;
+											trig_type_i(27 downto 0) <= s_axis_trg_tdata_latch(27 downto 0);
+										elsif(ki_trig_latch = '1') then
+											trig_type_i(29) <= ki_trig_latch;
+											trig_type_i(15 downto 0) <= s_axis_kitrg_tdata_latch(15 downto 0);
 										end if;
-										trig_type_i(27 downto 0) <= s_axis_trg_tdata_d1(27 downto 0);
+																			
 										trig_cnt <= trig_cnt + 1;							
 										trig_latch <= '1';		
 										gtu_timestamp <= gtu_sig_counter_i;

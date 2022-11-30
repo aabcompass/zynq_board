@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.11.00"
+#define ZYNQ3_VER_STRING "v5.11.01"
 
 //========================================
 // Constants
@@ -421,7 +421,7 @@ typedef struct
 #define TCP_CMD_L1_PARAM_NACTIVE	"trg L1 param nActive %d"
 #define TCP_CMD_KITRG_PARAMS		"trg KI pixel_thr %d ncnt_thr %d ec_num %d" /*pixel_thr 0..63  ncnt_thr 0..127 ec_num 0..8*/
 #define TCP_CMD_L1_OUTPUT			"trg L1 output" /*Gives the information from the L1 trg AXIS bus*/
-#define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, clkb}*/
+#define TCP_CMD_L1_SETMODE			"trg mode %s" /*set trig mode {periodic(def), self, self_ki, only_ki}*/
 #define TCP_CMD_PERIODIC_PER		"trg periodic period %d" /*Set period for the periodic mode (in GTUs)*/
 #define TCP_CMD_L1_CLKB_CNT			"trg clkb cnt?"  /*Returns the number of trigger events came from CLKB.*/
 #define TCP_CMD_L1_CLKB_GTU_CNT		"trg clkb gtu cnt?" /*Returns the number of GTU signals came from CLKB.*/
