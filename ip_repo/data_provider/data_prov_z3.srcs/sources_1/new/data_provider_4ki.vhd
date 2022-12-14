@@ -56,6 +56,19 @@ architecture Behavioral of data_provider_4ki is
            tlast_out: out STD_LOGIC);
 	end COMPONENT;
 
+	COMPONENT byte_serializer_6bits is
+    generic(N_CH: integer := 18);
+    Port ( clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           tvalid : in STD_LOGIC;
+           tlast : in STD_LOGIC;
+           tdata : in STD_LOGIC_VECTOR (8*N_CH-1 downto 0);
+           tready : out STD_LOGIC := '1';
+           data_out : out STD_LOGIC_VECTOR(N_CH-1 downto 0);
+           frame : out STD_LOGIC;
+           tlast_out: out std_logic := '0');
+	end COMPONENT;
+
 	signal reset: std_logic := '0';
 	signal m_axis_tvalid_fifo: std_logic := '0';
 	signal m_axis_tready_fifo: std_logic := '0';
@@ -110,7 +123,7 @@ begin
 
 	reset <= not aresetn;
 
-	i_byte_serializer : byte_serializer 
+	i_byte_serializer : byte_serializer_6bits 
     Port map ( clk => clk,--: in STD_LOGIC;
            reset => reset,--: in STD_LOGIC;
            tvalid => m_axis_tvalid_fifo,--: in STD_LOGIC;

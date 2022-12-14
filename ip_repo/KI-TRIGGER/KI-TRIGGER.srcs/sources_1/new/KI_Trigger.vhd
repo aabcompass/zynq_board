@@ -55,6 +55,9 @@ end KI_Trigger;
 
 architecture arch_KI_Trigger of KI_Trigger is
 
+	attribute KEEP_HIERARCHY : string;
+	attribute KEEP_HIERARCHY of arch_KI_Trigger: architecture is "TRUE";
+
 CONSTANT last_frame      : std_logic_vector (6 downto 0) := "1111111";--127 Last GTU 
 
 SIGNAL  m_axis_tvalid_cmd_ki           :   std_logic := '0';
@@ -185,6 +188,12 @@ COMPONENT fifo_pixel_ki
 END COMPONENT;
 
 	signal clock, clk_133: std_logic;
+
+	attribute keep : string; 
+	attribute keep of Ncounter_EC4: signal is "true";  
+	attribute keep of reg_EC4: signal is "true";  
+	attribute keep of pixel_thr_EC4: signal is "true";  
+	attribute keep of ncounter_thr_EC4: signal is "true";  
 
 begin
 

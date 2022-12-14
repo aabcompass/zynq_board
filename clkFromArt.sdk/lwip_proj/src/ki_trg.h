@@ -10,6 +10,6 @@
 
 #define KITRG_BIT_PIXEL_THR		0
 #define KITRG_BIT_NCNT_THR		6
-#define KITRG_BIT_EC_NUM		12
+#define KITRG_BIT_EC_NUM		13
 
 #endif /* SRC_KI_TRG_H_ */

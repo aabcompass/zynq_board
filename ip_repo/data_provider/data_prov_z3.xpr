@@ -83,9 +83,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/component.xml">
-        <FileInfo SFType="IPXACT"/>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/byte_reformr_4trig_v2.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -111,6 +108,15 @@
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/byte_serializer_6bits.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/component.xml">
+        <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -303,9 +309,7 @@
     </Run>
     <Run Id="dwc_b_reform4ki_synth_1" Type="Ft3:Synth" SrcSet="dwc_b_reform4ki" Part="xc7z035ffg676-2" ConstrsSet="dwc_b_reform4ki" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dwc_b_reform4ki_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -314,9 +318,7 @@
     </Run>
     <Run Id="fifo4reform4ki_synth_1" Type="Ft3:Synth" SrcSet="fifo4reform4ki" Part="xc7z035ffg676-2" ConstrsSet="fifo4reform4ki" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fifo4reform4ki_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -405,9 +407,7 @@
     </Run>
     <Run Id="dwc_b_reform4ki_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="dwc_b_reform4ki" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="dwc_b_reform4ki_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -423,9 +423,7 @@
     </Run>
     <Run Id="fifo4reform4ki_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="fifo4reform4ki" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="fifo4reform4ki_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

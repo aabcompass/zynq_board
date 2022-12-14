@@ -15,26 +15,24 @@
   ARCHITECTURE behavior OF testbench_SPB2 IS 
 
   -- Component Declaration
-    COMPONENT SPB2
-    PORT(
-        CLOCK_133               :	in	    std_logic;
---    --------------------------SPB2-KI-DATA-----------------
-        DATA_SPB2_KI : in STD_LOGIC_VECTOR (17 downto 0);
-        FRAME_KI     : in STD_LOGIC;
-       --AXI FIFO KI COMMAND
-       s_aclk_cmd_ki        :   in  std_logic;
-       s_aresetn_cmd_ki     :   in  std_logic;
-       s_axis_tvalid_cmd_ki :   in  std_logic;
-       s_axis_tready_cmd_ki :   out std_logic;
-       s_axis_tdata_cmd_ki  :   in  std_logic_vector(31 downto 0);
-       s_axis_tlast_cmd_ki  :   in  std_logic;
-       --AXI FIFO KI TRIGGER OUT
-       m_aclk_trg_ki        :   in  std_logic;
-       m_axis_tvalid_trg_ki :   out std_logic;
-       m_axis_tready_trg_ki :   in  std_logic;
-       m_axis_tdata_trg_ki  :   out std_logic_vector(31 downto 0);
-       m_axis_tlast_trg_ki  :   out std_logic
-		);
+    COMPONENT KI_Trigger
+    Port ( clk_200 : in STD_LOGIC;
+           clk_100 : in STD_LOGIC;
+           data_spb2_ki : in STD_LOGIC_VECTOR (17 downto 0);
+           frame_ki : in STD_LOGIC;
+           --AXI FIFO KI COMMAND
+           s_aclk_cmd_ki        :   in  std_logic;
+           s_aresetn_cmd_ki     :   in  std_logic;
+           s_axis_tvalid_cmd_ki :   in  std_logic;
+           s_axis_tready_cmd_ki :   out std_logic;
+           s_axis_tdata_cmd_ki  :   in  std_logic_vector(31 downto 0);
+           s_axis_tlast_cmd_ki  :   in  std_logic;
+           --AXI FIFO KI TRIGGER OUT
+           m_aclk_trg_ki        :   in  std_logic;
+           m_axis_tvalid_trg_ki :   out std_logic;
+           m_axis_tready_trg_ki :   in  std_logic;
+           m_axis_tdata_trg_ki  :   out std_logic_vector(31 downto 0);
+           m_axis_tlast_trg_ki  :   out std_logic);
     END COMPONENT;
     
     COMPONENT DATAGENERATOR_KI
@@ -48,10 +46,11 @@
         --------------------------SPB2-KI-------------------
         DATA_KI                :   out        std_logic_vector(5 downto 0);
         FRAME_KI               :   out        std_logic
-            );
+    );
     END COMPONENT;
 	
 	SIGNAL	clock            	:	std_logic :='0';
+	SIGNAL	clock_100            	:	std_logic :='0';
 	SIGNAL	clock_axi       	:	std_logic :='1';
 
 	SIGNAL  data_spb2_ki        :   std_logic_vector(17 downto 0) := ( others => '0');
@@ -84,9 +83,10 @@
   BEGIN
 
     -- Component Instantiation
-    uut:SPB2
+    uut:KI_Trigger
     PORT MAP(
-        CLOCK_133				=>	clock,
+        clk_200				=>	clock,
+        clk_100				=>	clock_100,
         DATA_SPB2_KI       	    => data_spb2_ki,
         FRAME_KI                => frame_ki_ec0ec3ec6,
         --AXI FIFO KI COMMAND
@@ -141,6 +141,7 @@
     );
     
     clock	<=	not clock after period/2;
+    clock_100	<=	not clock_100 after period;
     clock_axi <= not clock_axi after period_axi/2;
     
 write_cmd_ki:process--KI TRIGGER THRESHOLDS

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="975522544fs"></ZoomStartTime>
-      <ZoomEndTime time="1004895492fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="2625000000fs"></ZoomStartTime>
+      <ZoomEndTime time="35475000001fs"></ZoomEndTime>
+      <Cursor1Time time="8225000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="106"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="314" />
+   <WVObjectSize size="57" />
    <wvobject type="logic" fp_name="/testbench_SPB2/clock_axi">
       <obj_property name="ElementShortName">clock_axi</obj_property>
       <obj_property name="ObjectShortName">clock_axi</obj_property>
@@ -40,989 +40,36 @@
       <obj_property name="ElementShortName">delay_data</obj_property>
       <obj_property name="ObjectShortName">delay_data</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/DATA_SPB2">
-      <obj_property name="ElementShortName">DATA_SPB2[143:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_SPB2[143:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FRAME">
-      <obj_property name="ElementShortName">FRAME</obj_property>
-      <obj_property name="ObjectShortName">FRAME</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/DATA_SPB2_KI">
-      <obj_property name="ElementShortName">DATA_SPB2_KI[17:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_SPB2_KI[17:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FRAME_KI">
-      <obj_property name="ElementShortName">FRAME_KI</obj_property>
-      <obj_property name="ObjectShortName">FRAME_KI</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/CLOCK_133B">
-      <obj_property name="ElementShortName">CLOCK_133B</obj_property>
-      <obj_property name="ObjectShortName">CLOCK_133B</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/CLOCK">
-      <obj_property name="ElementShortName">CLOCK</obj_property>
-      <obj_property name="ObjectShortName">CLOCK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/m_aclk_sum">
-      <obj_property name="ElementShortName">m_aclk_sum</obj_property>
-      <obj_property name="ObjectShortName">m_aclk_sum</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/m_axis_tvalid_sum">
-      <obj_property name="ElementShortName">m_axis_tvalid_sum</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tvalid_sum</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/m_axis_tready_sum">
-      <obj_property name="ElementShortName">m_axis_tready_sum</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tready_sum</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/m_axis_tdata_sum">
-      <obj_property name="ElementShortName">m_axis_tdata_sum[31:0]</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tdata_sum[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/m_axis_tlast_sum">
-      <obj_property name="ElementShortName">m_axis_tlast_sum</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tlast_sum</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/frame_count">
-      <obj_property name="ElementShortName">frame_count[18:0]</obj_property>
-      <obj_property name="ObjectShortName">frame_count[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum_ready">
-      <obj_property name="ElementShortName">mpsum_ready</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/state_sum">
-      <obj_property name="ElementShortName">state_sum</obj_property>
-      <obj_property name="ObjectShortName">state_sum</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/state_col_out">
-      <obj_property name="ElementShortName">state_col_out</obj_property>
-      <obj_property name="ObjectShortName">state_col_out</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/last_frame_sum">
-      <obj_property name="ElementShortName">last_frame_sum[18:0]</obj_property>
-      <obj_property name="ObjectShortName">last_frame_sum[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mpsum_ready_ec0ec3ec6">
-      <obj_property name="ElementShortName">mpsum_ready_ec0ec3ec6</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready_ec0ec3ec6</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mpsum_ready_ec1ec4ec7">
-      <obj_property name="ElementShortName">mpsum_ready_ec1ec4ec7</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready_ec1ec4ec7</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mpsum_ready_ec2ec5ec8">
-      <obj_property name="ElementShortName">mpsum_ready_ec2ec5ec8</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready_ec2ec5ec8</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/wr_en_fifo_sum_ec0ec3ec6">
-      <obj_property name="ElementShortName">wr_en_fifo_sum_ec0ec3ec6</obj_property>
-      <obj_property name="ObjectShortName">wr_en_fifo_sum_ec0ec3ec6</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/rd_en_fifo_sum_ec0ec3ec6">
-      <obj_property name="ElementShortName">rd_en_fifo_sum_ec0ec3ec6</obj_property>
-      <obj_property name="ObjectShortName">rd_en_fifo_sum_ec0ec3ec6</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/empty_fifo_sum_ec0ec3ec6">
-      <obj_property name="ElementShortName">empty_fifo_sum_ec0ec3ec6</obj_property>
-      <obj_property name="ObjectShortName">empty_fifo_sum_ec0ec3ec6</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value0">
-      <obj_property name="ElementShortName">pixel_value0[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value0[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value1">
-      <obj_property name="ElementShortName">pixel_value1[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value1[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value2">
-      <obj_property name="ElementShortName">pixel_value2[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value2[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value3">
-      <obj_property name="ElementShortName">pixel_value3[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value3[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value4">
-      <obj_property name="ElementShortName">pixel_value4[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value4[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value5">
-      <obj_property name="ElementShortName">pixel_value5[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value5[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value6">
-      <obj_property name="ElementShortName">pixel_value6[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value6[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value7">
-      <obj_property name="ElementShortName">pixel_value7[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value7[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value8">
-      <obj_property name="ElementShortName">pixel_value8[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value8[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value9">
-      <obj_property name="ElementShortName">pixel_value9[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value9[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value10">
-      <obj_property name="ElementShortName">pixel_value10[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value10[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value11">
-      <obj_property name="ElementShortName">pixel_value11[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value11[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value12">
-      <obj_property name="ElementShortName">pixel_value12[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value12[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value13">
-      <obj_property name="ElementShortName">pixel_value13[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value13[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value14">
-      <obj_property name="ElementShortName">pixel_value14[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value14[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value15">
-      <obj_property name="ElementShortName">pixel_value15[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value15[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value16">
-      <obj_property name="ElementShortName">pixel_value16[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value16[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value17">
-      <obj_property name="ElementShortName">pixel_value17[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value17[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value18">
-      <obj_property name="ElementShortName">pixel_value18[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value18[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value19">
-      <obj_property name="ElementShortName">pixel_value19[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value19[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value20">
-      <obj_property name="ElementShortName">pixel_value20[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value20[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value21">
-      <obj_property name="ElementShortName">pixel_value21[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value21[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value22">
-      <obj_property name="ElementShortName">pixel_value22[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value22[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value23">
-      <obj_property name="ElementShortName">pixel_value23[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value23[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value24">
-      <obj_property name="ElementShortName">pixel_value24[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value24[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value25">
-      <obj_property name="ElementShortName">pixel_value25[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value25[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value26">
-      <obj_property name="ElementShortName">pixel_value26[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value26[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value27">
-      <obj_property name="ElementShortName">pixel_value27[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value27[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value28">
-      <obj_property name="ElementShortName">pixel_value28[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value28[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value29">
-      <obj_property name="ElementShortName">pixel_value29[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value29[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value30">
-      <obj_property name="ElementShortName">pixel_value30[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value30[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value31">
-      <obj_property name="ElementShortName">pixel_value31[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value31[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value32">
-      <obj_property name="ElementShortName">pixel_value32[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value32[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value33">
-      <obj_property name="ElementShortName">pixel_value33[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value33[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value34">
-      <obj_property name="ElementShortName">pixel_value34[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value34[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value35">
-      <obj_property name="ElementShortName">pixel_value35[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value35[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value36">
-      <obj_property name="ElementShortName">pixel_value36[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value36[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value37">
-      <obj_property name="ElementShortName">pixel_value37[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value37[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value38">
-      <obj_property name="ElementShortName">pixel_value38[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value38[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value39">
-      <obj_property name="ElementShortName">pixel_value39[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value39[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value40">
-      <obj_property name="ElementShortName">pixel_value40[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value40[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value41">
-      <obj_property name="ElementShortName">pixel_value41[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value41[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value42">
-      <obj_property name="ElementShortName">pixel_value42[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value42[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value43">
-      <obj_property name="ElementShortName">pixel_value43[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value43[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value44">
-      <obj_property name="ElementShortName">pixel_value44[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value44[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value45">
-      <obj_property name="ElementShortName">pixel_value45[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value45[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value46">
-      <obj_property name="ElementShortName">pixel_value46[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value46[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_value47">
-      <obj_property name="ElementShortName">pixel_value47[7:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_value47[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/pixel_rdy">
-      <obj_property name="ElementShortName">pixel_rdy</obj_property>
-      <obj_property name="ObjectShortName">pixel_rdy</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/wr_clk">
-      <obj_property name="ElementShortName">wr_clk</obj_property>
-      <obj_property name="ObjectShortName">wr_clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/rd_clk">
-      <obj_property name="ElementShortName">rd_clk</obj_property>
-      <obj_property name="ObjectShortName">rd_clk</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/din">
-      <obj_property name="ElementShortName">din[767:0]</obj_property>
-      <obj_property name="ObjectShortName">din[767:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/wr_en">
-      <obj_property name="ElementShortName">wr_en</obj_property>
-      <obj_property name="ObjectShortName">wr_en</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/rd_en">
-      <obj_property name="ElementShortName">rd_en</obj_property>
-      <obj_property name="ObjectShortName">rd_en</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/dout">
-      <obj_property name="ElementShortName">dout[767:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[767:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/full">
-      <obj_property name="ElementShortName">full</obj_property>
-      <obj_property name="ObjectShortName">full</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/FIFO_3EC/empty">
-      <obj_property name="ElementShortName">empty</obj_property>
-      <obj_property name="ObjectShortName">empty</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/add_p0p1_0_p0p1_1/B">
-      <obj_property name="ElementShortName">B[8:0]</obj_property>
-      <obj_property name="ObjectShortName">B[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/add_p0p1_0_p0p1_1/CLK">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/add_p0p1_0_p0p1_1/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/add_p0p1_0_p0p1_1/S">
-      <obj_property name="ElementShortName">S[9:0]</obj_property>
-      <obj_property name="ObjectShortName">S[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/state_col_out">
-      <obj_property name="ElementShortName">state_col_out</obj_property>
-      <obj_property name="ObjectShortName">state_col_out</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_0">
-      <obj_property name="ElementShortName">CE_0</obj_property>
-      <obj_property name="ObjectShortName">CE_0</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_1">
-      <obj_property name="ElementShortName">CE_1</obj_property>
-      <obj_property name="ObjectShortName">CE_1</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_2">
-      <obj_property name="ElementShortName">CE_2</obj_property>
-      <obj_property name="ObjectShortName">CE_2</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_3">
-      <obj_property name="ElementShortName">CE_3</obj_property>
-      <obj_property name="ObjectShortName">CE_3</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_4">
-      <obj_property name="ElementShortName">CE_4</obj_property>
-      <obj_property name="ObjectShortName">CE_4</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_5">
-      <obj_property name="ElementShortName">CE_5</obj_property>
-      <obj_property name="ObjectShortName">CE_5</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_6">
-      <obj_property name="ElementShortName">CE_6</obj_property>
-      <obj_property name="ObjectShortName">CE_6</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/CE_7">
-      <obj_property name="ElementShortName">CE_7</obj_property>
-      <obj_property name="ObjectShortName">CE_7</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/state_axi_fifo_sum">
-      <obj_property name="ElementShortName">state_axi_fifo_sum</obj_property>
-      <obj_property name="ObjectShortName">state_axi_fifo_sum</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/srst">
-      <obj_property name="ElementShortName">srst</obj_property>
-      <obj_property name="ObjectShortName">srst</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/din">
-      <obj_property name="ElementShortName">din[575:0]</obj_property>
-      <obj_property name="ObjectShortName">din[575:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/wr_en">
-      <obj_property name="ElementShortName">wr_en</obj_property>
-      <obj_property name="ObjectShortName">wr_en</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/rd_en">
-      <obj_property name="ElementShortName">rd_en</obj_property>
-      <obj_property name="ObjectShortName">rd_en</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/dout">
-      <obj_property name="ElementShortName">dout[575:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[575:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/full">
-      <obj_property name="ElementShortName">full</obj_property>
-      <obj_property name="ObjectShortName">full</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/FIFO_SUM_EC0EC3EC6/empty">
-      <obj_property name="ElementShortName">empty</obj_property>
-      <obj_property name="ObjectShortName">empty</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/wr_rst_busy">
-      <obj_property name="ElementShortName">wr_rst_busy</obj_property>
-      <obj_property name="ObjectShortName">wr_rst_busy</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/rd_rst_busy">
-      <obj_property name="ElementShortName">rd_rst_busy</obj_property>
-      <obj_property name="ObjectShortName">rd_rst_busy</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/m_aclk">
-      <obj_property name="ElementShortName">m_aclk</obj_property>
-      <obj_property name="ObjectShortName">m_aclk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_aclk">
-      <obj_property name="ElementShortName">s_aclk</obj_property>
-      <obj_property name="ObjectShortName">s_aclk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_aresetn">
-      <obj_property name="ElementShortName">s_aresetn</obj_property>
-      <obj_property name="ObjectShortName">s_aresetn</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_axis_tvalid">
-      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_axis_tready">
-      <obj_property name="ElementShortName">s_axis_tready</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_axis_tdata">
-      <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/s_axis_tlast">
-      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/m_axis_tvalid">
-      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/m_axis_tready">
-      <obj_property name="ElementShortName">m_axis_tready</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/m_axis_tdata">
-      <obj_property name="ElementShortName">m_axis_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tdata[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_SUM/m_axis_tlast">
-      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum0">
-      <obj_property name="ElementShortName">mpsum0[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum0[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum1">
-      <obj_property name="ElementShortName">mpsum1[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum1[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum2">
-      <obj_property name="ElementShortName">mpsum2[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum2[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum3">
-      <obj_property name="ElementShortName">mpsum3[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum3[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum4">
-      <obj_property name="ElementShortName">mpsum4[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum4[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum5">
-      <obj_property name="ElementShortName">mpsum5[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum5[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum6">
-      <obj_property name="ElementShortName">mpsum6[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum6[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum7">
-      <obj_property name="ElementShortName">mpsum7[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum7[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum8">
-      <obj_property name="ElementShortName">mpsum8[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum8[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum9">
-      <obj_property name="ElementShortName">mpsum9[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum9[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum10">
-      <obj_property name="ElementShortName">mpsum10[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum10[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum11">
-      <obj_property name="ElementShortName">mpsum11[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum11[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum12">
-      <obj_property name="ElementShortName">mpsum12[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum12[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum13">
-      <obj_property name="ElementShortName">mpsum13[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum13[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum14">
-      <obj_property name="ElementShortName">mpsum14[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum14[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum15">
-      <obj_property name="ElementShortName">mpsum15[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum15[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum16">
-      <obj_property name="ElementShortName">mpsum16[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum16[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum17">
-      <obj_property name="ElementShortName">mpsum17[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum17[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum18">
-      <obj_property name="ElementShortName">mpsum18[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum18[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum19">
-      <obj_property name="ElementShortName">mpsum19[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum19[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum20">
-      <obj_property name="ElementShortName">mpsum20[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum20[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum21">
-      <obj_property name="ElementShortName">mpsum21[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum21[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum22">
-      <obj_property name="ElementShortName">mpsum22[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum22[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum23">
-      <obj_property name="ElementShortName">mpsum23[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum23[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/mpsum_ready">
-      <obj_property name="ElementShortName">mpsum_ready</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SCLR">
-      <obj_property name="ElementShortName">SCLR</obj_property>
-      <obj_property name="ObjectShortName">SCLR</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SUM_MP0_0/B">
-      <obj_property name="ElementShortName">B[9:0]</obj_property>
-      <obj_property name="ObjectShortName">B[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SUM_MP0_0/CLK">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SUM_MP0_0/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SUM_MP0_0/SCLR">
-      <obj_property name="ElementShortName">SCLR</obj_property>
-      <obj_property name="ObjectShortName">SCLR</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/SUM_MP0_0/Q">
-      <obj_property name="ElementShortName">Q[23:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/sum0_0">
-      <obj_property name="ElementShortName">sum0_0[23:0]</obj_property>
-      <obj_property name="ObjectShortName">sum0_0[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/state_col_out">
-      <obj_property name="ElementShortName">state_col_out</obj_property>
-      <obj_property name="ObjectShortName">state_col_out</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/MACROPIXEL_SUM_EC0EC3EC6/state_sum">
-      <obj_property name="ElementShortName">state_sum</obj_property>
-      <obj_property name="ObjectShortName">state_sum</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/IN_EC0EC3EC6/mp_ready">
-      <obj_property name="ElementShortName">mp_ready</obj_property>
-      <obj_property name="ObjectShortName">mp_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/STHR_MATRIX/a">
-      <obj_property name="ElementShortName">a[3:0]</obj_property>
-      <obj_property name="ObjectShortName">a[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/STHR_MATRIX/d">
-      <obj_property name="ElementShortName">d[263:0]</obj_property>
-      <obj_property name="ObjectShortName">d[263:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/STHR_MATRIX/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/STHR_MATRIX/we">
-      <obj_property name="ElementShortName">we</obj_property>
-      <obj_property name="ObjectShortName">we</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/STHR_MATRIX/spo">
-      <obj_property name="ElementShortName">spo[263:0]</obj_property>
-      <obj_property name="ObjectShortName">spo[263:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/bmp_c">
-      <obj_property name="ElementShortName">bmp_c[23:0]</obj_property>
-      <obj_property name="ObjectShortName">bmp_c[23:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/bmp_ready">
-      <obj_property name="ElementShortName">bmp_ready</obj_property>
-      <obj_property name="ObjectShortName">bmp_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/multadd0/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/multadd0/A">
-      <obj_property name="ElementShortName">A[9:0]</obj_property>
-      <obj_property name="ObjectShortName">A[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/multadd0/B">
-      <obj_property name="ElementShortName">B[11:0]</obj_property>
-      <obj_property name="ObjectShortName">B[11:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/multadd0/C">
-      <obj_property name="ElementShortName">C[23:0]</obj_property>
-      <obj_property name="ObjectShortName">C[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC0EC3EC6/multadd0/P">
-      <obj_property name="ElementShortName">P[24:0]</obj_property>
-      <obj_property name="ObjectShortName">P[24:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mc_ready">
-      <obj_property name="ElementShortName">mc_ready</obj_property>
-      <obj_property name="ObjectShortName">mc_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/ACCUM_B0_0_EC0EC3EC6/B">
-      <obj_property name="ElementShortName">B[1:0]</obj_property>
-      <obj_property name="ObjectShortName">B[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM_B0_0_EC0EC3EC6/CLK">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM_B0_0_EC0EC3EC6/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM_B0_0_EC0EC3EC6/SCLR">
-      <obj_property name="ElementShortName">SCLR</obj_property>
-      <obj_property name="ObjectShortName">SCLR</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/ACCUM_B0_0_EC0EC3EC6/Q">
-      <obj_property name="ElementShortName">Q[3:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/data_spb2_ki">
+      <obj_property name="ElementShortName">data_spb2_ki[17:0]</obj_property>
+      <obj_property name="ObjectShortName">data_spb2_ki[17:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/frame_ki">
+      <obj_property name="ElementShortName">frame_ki</obj_property>
+      <obj_property name="ObjectShortName">frame_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/clock">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus542">
       <obj_property name="label">mc0_acquisito</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[3]">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">[3]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[2]">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">[2]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[1]">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">[1]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[0]">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">[0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/d_mc_mem">
-      <obj_property name="ElementShortName">d_mc_mem[263:0]</obj_property>
-      <obj_property name="ObjectShortName">d_mc_mem[263:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/a">
-      <obj_property name="ElementShortName">a[4:0]</obj_property>
-      <obj_property name="ObjectShortName">a[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/d">
-      <obj_property name="ElementShortName">d[263:0]</obj_property>
-      <obj_property name="ObjectShortName">d[263:0]</obj_property>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus977">
       <obj_property name="label">mc0_buffer_in</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/d[3]">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">[3]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/d[2]">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">[2]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/d[1]">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">[1]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/d[0]">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">[0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/we">
-      <obj_property name="ElementShortName">we</obj_property>
-      <obj_property name="ObjectShortName">we</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/spo">
-      <obj_property name="ElementShortName">spo[263:0]</obj_property>
-      <obj_property name="ObjectShortName">spo[263:0]</obj_property>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus1246">
       <obj_property name="label">mc0_buffer_out</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/spo[3]">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">[3]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/spo[2]">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">[2]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/spo[1]">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">[1]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_BUFFER_3GTU/spo[0]">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">[0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mcmem_rden">
-      <obj_property name="ElementShortName">mcmem_rden</obj_property>
-      <obj_property name="ObjectShortName">mcmem_rden</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/ACCUM3GTU_MC0_0/B">
-      <obj_property name="ElementShortName">B[3:0]</obj_property>
-      <obj_property name="ObjectShortName">B[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM3GTU_MC0_0/CLK">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM3GTU_MC0_0/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/ACCUM3GTU_MC0_0/SCLR">
-      <obj_property name="ElementShortName">SCLR</obj_property>
-      <obj_property name="ObjectShortName">SCLR</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/ACCUM3GTU_MC0_0/Q">
-      <obj_property name="ElementShortName">Q[4:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/bufsum_ready">
-      <obj_property name="ElementShortName">bufsum_ready</obj_property>
-      <obj_property name="ObjectShortName">bufsum_ready</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench_SPB2/uut/frame_cnt">
-      <obj_property name="ElementShortName">frame_cnt[18:0]</obj_property>
-      <obj_property name="ObjectShortName">frame_cnt[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/frame_cnt_l0">
-      <obj_property name="ElementShortName">frame_cnt_l0[18:0]</obj_property>
-      <obj_property name="ObjectShortName">frame_cnt_l0[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/frame_cnt_l1">
-      <obj_property name="ElementShortName">frame_cnt_l1[18:0]</obj_property>
-      <obj_property name="ObjectShortName">frame_cnt_l1[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/ACCUM_MC_ACTIVE/Q">
-      <obj_property name="ElementShortName">Q[8:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mc_active_sum_ready">
-      <obj_property name="ElementShortName">mc_active_sum_ready</obj_property>
-      <obj_property name="ObjectShortName">mc_active_sum_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/NLENGHT_MEMORY_BUFFER/a">
-      <obj_property name="ElementShortName">a[4:0]</obj_property>
-      <obj_property name="ObjectShortName">a[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/NLENGHT_MEMORY_BUFFER/d">
-      <obj_property name="ElementShortName">d[8:0]</obj_property>
-      <obj_property name="ObjectShortName">d[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/NLENGHT_MEMORY_BUFFER/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/NLENGHT_MEMORY_BUFFER/we">
-      <obj_property name="ElementShortName">we</obj_property>
-      <obj_property name="ObjectShortName">we</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/NLENGHT_MEMORY_BUFFER/spo">
-      <obj_property name="ElementShortName">spo[8:0]</obj_property>
-      <obj_property name="ObjectShortName">spo[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mc_active_ready">
-      <obj_property name="ElementShortName">mc_active_ready</obj_property>
-      <obj_property name="ObjectShortName">mc_active_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/nLenght_l0">
-      <obj_property name="ElementShortName">nLenght_l0[4:0]</obj_property>
-      <obj_property name="ObjectShortName">nLenght_l0[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/nl_buffer_ready">
-      <obj_property name="ElementShortName">nl_buffer_ready</obj_property>
-      <obj_property name="ObjectShortName">nl_buffer_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/NLENGHT_BUFFER_SUM/B">
-      <obj_property name="ElementShortName">B[8:0]</obj_property>
-      <obj_property name="ObjectShortName">B[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/NLENGHT_BUFFER_SUM/CLK">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/NLENGHT_BUFFER_SUM/CE">
-      <obj_property name="ElementShortName">CE</obj_property>
-      <obj_property name="ObjectShortName">CE</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/NLENGHT_BUFFER_SUM/SCLR">
-      <obj_property name="ElementShortName">SCLR</obj_property>
-      <obj_property name="ObjectShortName">SCLR</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/NLENGHT_BUFFER_SUM/Q">
-      <obj_property name="ElementShortName">Q[13:0]</obj_property>
-      <obj_property name="ObjectShortName">Q[13:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/counter_nlpos">
-      <obj_property name="ElementShortName">counter_nlpos[4:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_nlpos[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/nl_buffer_sum_ready">
-      <obj_property name="ElementShortName">nl_buffer_sum_ready</obj_property>
-      <obj_property name="ObjectShortName">nl_buffer_sum_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/nActive">
-      <obj_property name="ElementShortName">nActive[10:0]</obj_property>
-      <obj_property name="ObjectShortName">nActive[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/nActive_l0">
-      <obj_property name="ElementShortName">nActive_l0[10:0]</obj_property>
-      <obj_property name="ObjectShortName">nActive_l0[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/nActive_l1">
-      <obj_property name="ElementShortName">nActive_l1[10:0]</obj_property>
-      <obj_property name="ObjectShortName">nActive_l1[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/nActive_l2">
-      <obj_property name="ElementShortName">nActive_l2[10:0]</obj_property>
-      <obj_property name="ObjectShortName">nActive_l2[10:0]</obj_property>
+      <obj_property name="ElementShortName">frame_cnt[6:0]</obj_property>
+      <obj_property name="ObjectShortName">frame_cnt[6:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/testbench_SPB2/uut/AXI_FIFO_TRIG/m_aclk">
@@ -1069,592 +116,148 @@
       <obj_property name="ElementShortName">m_axis_tlast</obj_property>
       <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp0">
-      <obj_property name="ElementShortName">mp0[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp0[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp1">
-      <obj_property name="ElementShortName">mp1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp1[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp2">
-      <obj_property name="ElementShortName">mp2[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp2[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp3">
-      <obj_property name="ElementShortName">mp3[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp3[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp4">
-      <obj_property name="ElementShortName">mp4[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp4[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp5">
-      <obj_property name="ElementShortName">mp5[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp5[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp6">
-      <obj_property name="ElementShortName">mp6[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp6[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp7">
-      <obj_property name="ElementShortName">mp7[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp7[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp8">
-      <obj_property name="ElementShortName">mp8[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp8[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp9">
-      <obj_property name="ElementShortName">mp9[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp9[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp10">
-      <obj_property name="ElementShortName">mp10[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp10[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp11">
-      <obj_property name="ElementShortName">mp11[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp11[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp12">
-      <obj_property name="ElementShortName">mp12[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp12[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp13">
-      <obj_property name="ElementShortName">mp13[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp13[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp14">
-      <obj_property name="ElementShortName">mp14[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp14[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp15">
-      <obj_property name="ElementShortName">mp15[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp15[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp16">
-      <obj_property name="ElementShortName">mp16[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp16[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp17">
-      <obj_property name="ElementShortName">mp17[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp17[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp18">
-      <obj_property name="ElementShortName">mp18[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp18[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp19">
-      <obj_property name="ElementShortName">mp19[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp19[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp20">
-      <obj_property name="ElementShortName">mp20[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp20[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp21">
-      <obj_property name="ElementShortName">mp21[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp21[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp22">
-      <obj_property name="ElementShortName">mp22[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp22[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp23">
-      <obj_property name="ElementShortName">mp23[9:0]</obj_property>
-      <obj_property name="ObjectShortName">mp23[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mp_ready">
-      <obj_property name="ElementShortName">mp_ready</obj_property>
-      <obj_property name="ObjectShortName">mp_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum0">
-      <obj_property name="ElementShortName">mpsum0[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum0[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum1">
-      <obj_property name="ElementShortName">mpsum1[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum1[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum2">
-      <obj_property name="ElementShortName">mpsum2[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum2[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum3">
-      <obj_property name="ElementShortName">mpsum3[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum3[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum4">
-      <obj_property name="ElementShortName">mpsum4[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum4[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum5">
-      <obj_property name="ElementShortName">mpsum5[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum5[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum6">
-      <obj_property name="ElementShortName">mpsum6[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum6[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum7">
-      <obj_property name="ElementShortName">mpsum7[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum7[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum8">
-      <obj_property name="ElementShortName">mpsum8[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum8[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum9">
-      <obj_property name="ElementShortName">mpsum9[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum9[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum10">
-      <obj_property name="ElementShortName">mpsum10[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum10[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum11">
-      <obj_property name="ElementShortName">mpsum11[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum11[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum12">
-      <obj_property name="ElementShortName">mpsum12[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum12[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum13">
-      <obj_property name="ElementShortName">mpsum13[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum13[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum14">
-      <obj_property name="ElementShortName">mpsum14[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum14[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum15">
-      <obj_property name="ElementShortName">mpsum15[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum15[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum16">
-      <obj_property name="ElementShortName">mpsum16[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum16[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum17">
-      <obj_property name="ElementShortName">mpsum17[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum17[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum18">
-      <obj_property name="ElementShortName">mpsum18[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum18[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum19">
-      <obj_property name="ElementShortName">mpsum19[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum19[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum20">
-      <obj_property name="ElementShortName">mpsum20[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum20[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum21">
-      <obj_property name="ElementShortName">mpsum21[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum21[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum22">
-      <obj_property name="ElementShortName">mpsum22[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum22[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum23">
-      <obj_property name="ElementShortName">mpsum23[23:0]</obj_property>
-      <obj_property name="ObjectShortName">mpsum23[23:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/mpsum_ready">
-      <obj_property name="ElementShortName">mpsum_ready</obj_property>
-      <obj_property name="ObjectShortName">mpsum_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/bmp_c">
-      <obj_property name="ElementShortName">bmp_c[23:0]</obj_property>
-      <obj_property name="ObjectShortName">bmp_c[23:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROPIXEL_CHECK_EC2EC5EC8/bmp_ready">
-      <obj_property name="ElementShortName">bmp_ready</obj_property>
-      <obj_property name="ObjectShortName">bmp_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_0">
-      <obj_property name="ElementShortName">mc3x1_0[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_0[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_1">
-      <obj_property name="ElementShortName">mc3x1_1[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_1[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_2">
-      <obj_property name="ElementShortName">mc3x1_2[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_2[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_3">
-      <obj_property name="ElementShortName">mc3x1_3[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_3[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_4">
-      <obj_property name="ElementShortName">mc3x1_4[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_4[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_5">
-      <obj_property name="ElementShortName">mc3x1_5[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_5[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_6">
-      <obj_property name="ElementShortName">mc3x1_6[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_6[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_7">
-      <obj_property name="ElementShortName">mc3x1_7[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_7[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_8">
-      <obj_property name="ElementShortName">mc3x1_8[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_8[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_9">
-      <obj_property name="ElementShortName">mc3x1_9[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_9[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_10">
-      <obj_property name="ElementShortName">mc3x1_10[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_10[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_11">
-      <obj_property name="ElementShortName">mc3x1_11[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_11[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_12">
-      <obj_property name="ElementShortName">mc3x1_12[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_12[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_13">
-      <obj_property name="ElementShortName">mc3x1_13[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_13[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_14">
-      <obj_property name="ElementShortName">mc3x1_14[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_14[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_15">
-      <obj_property name="ElementShortName">mc3x1_15[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_15[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_16">
-      <obj_property name="ElementShortName">mc3x1_16[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_16[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_17">
-      <obj_property name="ElementShortName">mc3x1_17[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_17[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_18">
-      <obj_property name="ElementShortName">mc3x1_18[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_18[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_19">
-      <obj_property name="ElementShortName">mc3x1_19[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_19[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_20">
-      <obj_property name="ElementShortName">mc3x1_20[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_20[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_21">
-      <obj_property name="ElementShortName">mc3x1_21[1:0]</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_21[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/MACROCELL_3x1_EC2EC5EC8/mc3x1_ready">
-      <obj_property name="ElementShortName">mc3x1_ready</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mc_ready">
-      <obj_property name="ElementShortName">mc_ready</obj_property>
-      <obj_property name="ObjectShortName">mc_ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/d_mc_mem">
-      <obj_property name="ElementShortName">d_mc_mem[263:0]</obj_property>
-      <obj_property name="ObjectShortName">d_mc_mem[263:0]</obj_property>
-   </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/state_macrocell_buffer">
-      <obj_property name="ElementShortName">state_macrocell_buffer</obj_property>
-      <obj_property name="ObjectShortName">state_macrocell_buffer</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/we_mc_mem">
-      <obj_property name="ElementShortName">we_mc_mem</obj_property>
-      <obj_property name="ObjectShortName">we_mc_mem</obj_property>
-   </wvobject>
    <wvobject type="vbus" fp_name="vbus717">
       <obj_property name="label">New Virtual Bus 13</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[231]">
-         <obj_property name="ElementShortName">[231]</obj_property>
-         <obj_property name="ObjectShortName">[231]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[230]">
-         <obj_property name="ElementShortName">[230]</obj_property>
-         <obj_property name="ObjectShortName">[230]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[229]">
-         <obj_property name="ElementShortName">[229]</obj_property>
-         <obj_property name="ObjectShortName">[229]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[228]">
-         <obj_property name="ElementShortName">[228]</obj_property>
-         <obj_property name="ObjectShortName">[228]</obj_property>
-      </wvobject>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus712">
       <obj_property name="label">New Virtual Bus 14</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[235]">
-         <obj_property name="ElementShortName">[235]</obj_property>
-         <obj_property name="ObjectShortName">[235]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[234]">
-         <obj_property name="ElementShortName">[234]</obj_property>
-         <obj_property name="ObjectShortName">[234]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[233]">
-         <obj_property name="ElementShortName">[233]</obj_property>
-         <obj_property name="ObjectShortName">[233]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[232]">
-         <obj_property name="ElementShortName">[232]</obj_property>
-         <obj_property name="ObjectShortName">[232]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus707">
       <obj_property name="label">New Virtual Bus 15</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[239]">
-         <obj_property name="ElementShortName">[239]</obj_property>
-         <obj_property name="ObjectShortName">[239]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[238]">
-         <obj_property name="ElementShortName">[238]</obj_property>
-         <obj_property name="ObjectShortName">[238]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[237]">
-         <obj_property name="ElementShortName">[237]</obj_property>
-         <obj_property name="ObjectShortName">[237]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[236]">
-         <obj_property name="ElementShortName">[236]</obj_property>
-         <obj_property name="ObjectShortName">[236]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus702">
       <obj_property name="label">New Virtual Bus 16</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[243]">
-         <obj_property name="ElementShortName">[243]</obj_property>
-         <obj_property name="ObjectShortName">[243]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[242]">
-         <obj_property name="ElementShortName">[242]</obj_property>
-         <obj_property name="ObjectShortName">[242]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[241]">
-         <obj_property name="ElementShortName">[241]</obj_property>
-         <obj_property name="ObjectShortName">[241]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[240]">
-         <obj_property name="ElementShortName">[240]</obj_property>
-         <obj_property name="ObjectShortName">[240]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus697">
       <obj_property name="label">New Virtual Bus 17</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[247]">
-         <obj_property name="ElementShortName">[247]</obj_property>
-         <obj_property name="ObjectShortName">[247]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[246]">
-         <obj_property name="ElementShortName">[246]</obj_property>
-         <obj_property name="ObjectShortName">[246]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[245]">
-         <obj_property name="ElementShortName">[245]</obj_property>
-         <obj_property name="ObjectShortName">[245]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[244]">
-         <obj_property name="ElementShortName">[244]</obj_property>
-         <obj_property name="ObjectShortName">[244]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus692">
       <obj_property name="label">New Virtual Bus 18</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[251]">
-         <obj_property name="ElementShortName">[251]</obj_property>
-         <obj_property name="ObjectShortName">[251]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[250]">
-         <obj_property name="ElementShortName">[250]</obj_property>
-         <obj_property name="ObjectShortName">[250]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[249]">
-         <obj_property name="ElementShortName">[249]</obj_property>
-         <obj_property name="ObjectShortName">[249]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[248]">
-         <obj_property name="ElementShortName">[248]</obj_property>
-         <obj_property name="ObjectShortName">[248]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus687">
       <obj_property name="label">New Virtual Bus 19</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[255]">
-         <obj_property name="ElementShortName">[255]</obj_property>
-         <obj_property name="ObjectShortName">[255]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[254]">
-         <obj_property name="ElementShortName">[254]</obj_property>
-         <obj_property name="ObjectShortName">[254]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[253]">
-         <obj_property name="ElementShortName">[253]</obj_property>
-         <obj_property name="ObjectShortName">[253]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[252]">
-         <obj_property name="ElementShortName">[252]</obj_property>
-         <obj_property name="ObjectShortName">[252]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus682">
       <obj_property name="label">New Virtual Bus 20</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[259]">
-         <obj_property name="ElementShortName">[259]</obj_property>
-         <obj_property name="ObjectShortName">[259]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[258]">
-         <obj_property name="ElementShortName">[258]</obj_property>
-         <obj_property name="ObjectShortName">[258]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[257]">
-         <obj_property name="ElementShortName">[257]</obj_property>
-         <obj_property name="ObjectShortName">[257]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[256]">
-         <obj_property name="ElementShortName">[256]</obj_property>
-         <obj_property name="ObjectShortName">[256]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="vbus" fp_name="vbus677">
       <obj_property name="label">New Virtual Bus 21</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[263]">
-         <obj_property name="ElementShortName">[263]</obj_property>
-         <obj_property name="ObjectShortName">[263]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[262]">
-         <obj_property name="ElementShortName">[262]</obj_property>
-         <obj_property name="ObjectShortName">[262]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[261]">
-         <obj_property name="ElementShortName">[261]</obj_property>
-         <obj_property name="ObjectShortName">[261]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/testbench_SPB2/uut/d_mc_mem[260]">
-         <obj_property name="ElementShortName">[260]</obj_property>
-         <obj_property name="ObjectShortName">[260]</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject type="logic" fp_name="/testbench_SPB2/uut/mc3x1_ready_ec1ec4ec7">
-      <obj_property name="ElementShortName">mc3x1_ready_ec1ec4ec7</obj_property>
-      <obj_property name="ObjectShortName">mc3x1_ready_ec1ec4ec7</obj_property>
+   <wvobject fp_name="divider792" type="divider">
    </wvobject>
-   <wvobject type="other" fp_name="/testbench_SPB2/uut/state_macrocell">
-      <obj_property name="ElementShortName">state_macrocell</obj_property>
-      <obj_property name="ObjectShortName">state_macrocell</obj_property>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/data_spb2_ki">
+      <obj_property name="ElementShortName">data_spb2_ki[17:0]</obj_property>
+      <obj_property name="ObjectShortName">data_spb2_ki[17:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench_SPB2/uut/MPSthr">
-      <obj_property name="ElementShortName">MPSthr[15:0]</obj_property>
-      <obj_property name="ObjectShortName">MPSthr[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="logic" fp_name="/testbench_SPB2/uut/frame_ki">
+      <obj_property name="ElementShortName">frame_ki</obj_property>
+      <obj_property name="ObjectShortName">frame_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/m_axis_tvalid_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tvalid_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/m_axis_tready_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tready_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/m_axis_tdata_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tdata_trg_ki[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata_trg_ki[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench_SPB2/m_axis_tlast_trg_ki">
+      <obj_property name="ElementShortName">m_axis_tlast_trg_ki</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast_trg_ki</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC0">
+      <obj_property name="ElementShortName">pixel_thr_EC0[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC0[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC0">
+      <obj_property name="ElementShortName">ncounter_thr_EC0[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC0[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC1">
+      <obj_property name="ElementShortName">pixel_thr_EC1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC1[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC1">
+      <obj_property name="ElementShortName">ncounter_thr_EC1[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC1[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC2">
+      <obj_property name="ElementShortName">pixel_thr_EC2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC2[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC2">
+      <obj_property name="ElementShortName">ncounter_thr_EC2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC2[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC3">
+      <obj_property name="ElementShortName">pixel_thr_EC3[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC3[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC3">
+      <obj_property name="ElementShortName">ncounter_thr_EC3[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC3[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC4">
+      <obj_property name="ElementShortName">pixel_thr_EC4[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC4[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC4">
+      <obj_property name="ElementShortName">ncounter_thr_EC4[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC4[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC5">
+      <obj_property name="ElementShortName">pixel_thr_EC5[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC5[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC5">
+      <obj_property name="ElementShortName">ncounter_thr_EC5[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC5[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC6">
+      <obj_property name="ElementShortName">pixel_thr_EC6[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC6[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC6">
+      <obj_property name="ElementShortName">ncounter_thr_EC6[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC6[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC7">
+      <obj_property name="ElementShortName">pixel_thr_EC7[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC7[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC7">
+      <obj_property name="ElementShortName">ncounter_thr_EC7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC7[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/pixel_thr_EC8">
+      <obj_property name="ElementShortName">pixel_thr_EC8[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_thr_EC8[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench_SPB2/uut/ncounter_thr_EC8">
+      <obj_property name="ElementShortName">ncounter_thr_EC8[6:0]</obj_property>
+      <obj_property name="ObjectShortName">ncounter_thr_EC8[6:0]</obj_property>
    </wvobject>
 </wave_config>
