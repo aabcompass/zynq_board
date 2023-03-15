@@ -31,7 +31,7 @@ char spare[10000];
 FileRecord files[MAX_FILES];
 extern InstrumentState instrumentState;
 
-u32 filenames_style = FILENAMES_LAB;
+u32 filenames_style = FILENAMES_FLIGHT;
 
 static enum  {
 	no_state = 0,
