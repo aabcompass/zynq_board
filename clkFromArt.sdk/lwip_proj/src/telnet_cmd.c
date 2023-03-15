@@ -949,6 +949,11 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		sprintf(reply, "%d\n\r", FC_getSelfTrgCnt());
 		tcp_write(tpcb, reply, strlen(reply), 1);
 	}
+	else if(strncmp(p->payload, TCP_CMD_L1_GLOB_TRG_CNT, strlen(TCP_CMD_L1_GLOB_TRG_CNT)) == 0)
+	{
+		sprintf(reply, "%d\n\r", FC_getGlobCnt());
+		tcp_write(tpcb, reply, strlen(reply), 1);
+	}
 	else if(strncmp(p->payload, TCP_CMD_CLKB_GET_GTU_CNT, strlen(TCP_CMD_CLKB_GET_GTU_CNT)) == 0)
 	{
 		sprintf(reply, "%d\n\r", ClkbGetCntGTU());

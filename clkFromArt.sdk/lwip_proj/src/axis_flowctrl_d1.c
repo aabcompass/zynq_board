@@ -292,3 +292,8 @@ u32 FC_getSelfTrgCnt()
 {
 	return ((*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_GLOB_CNT*4)) >> 16);
 }
+
+u32 FC_getGlobCnt()
+{
+	return ((*(u32*)(XPAR_AXIS_FLOW_CONTROL_D1_BASEADDR + REGR_TRG_GLOB_CNT*4)) & 0xFFFF);
+}
