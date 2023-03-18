@@ -11,11 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="550000000fs"></ZoomStartTime>
-      <ZoomEndTime time="6360000001fs"></ZoomEndTime>
-      <Cursor1Time time="2200000000fs"></Cursor1Time>
+      <ZoomStartTime time="19520000000fs"></ZoomStartTime>
+      <ZoomEndTime time="21395000001fs"></ZoomEndTime>
+      <Cursor1Time time="22850000000fs"></Cursor1Time>
    </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="386"></NameColumnWidth>
+      <ValueColumnWidth column_width="229"></ValueColumnWidth>
+   </column_width_setting>
    <WVObjectSize size="10" />
+   <wave_markers>
+      <marker label="" time="20350000000" />
+   </wave_markers>
    <wvobject type="logic" fp_name="/hv_tb/PDM_CLK">
       <obj_property name="ElementShortName">PDM_CLK</obj_property>
       <obj_property name="ObjectShortName">PDM_CLK</obj_property>

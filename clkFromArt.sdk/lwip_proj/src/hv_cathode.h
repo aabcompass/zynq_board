@@ -36,6 +36,7 @@
 
 
 void CathodeSetAutoMode(int mode);
+void CathodeApplyAutoMode();
 void TestEC_sig();
 void SetSwitchingPulsesParams(int len0, int len1, int num);
 void ConfADCV();
@@ -45,7 +46,6 @@ void ADCV_set_num(int data);
 
 void UpdateCathodeLevels(uint32_t data);
 uint32_t GetCathodeData();
-void CathodeSetAutoMode(int mode);
 void SetReleaseTime(u32 time_ms);
 void HVPSSetGTUPeriod(u32 freq);
 

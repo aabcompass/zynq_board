@@ -610,7 +610,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		}
 		HV_setCathodeVoltageAll3();
 		HV_turnON_list(turn);
-		CathodeSetAutoMode(1);
+		CathodeApplyAutoMode();
 		SetupHVPSIntrSystem(getIntcPtr()); //This spoil FTP server by unknown reason?
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
@@ -661,6 +661,7 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	else if(sscanf(p->payload, TCP_CMD_HVPS_SW_ON, &param) == 1)
 	{
 		CathodeSetAutoMode(param);
+		CathodeApplyAutoMode();
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}

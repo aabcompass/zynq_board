@@ -22,6 +22,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -47,6 +53,7 @@ architecture Behavioral of hv_tb is
 					CLK_HV                    	 : out std_logic;
 					DATA_HV                     : out std_logic;
 					COMMAND							 : in std_logic_vector(31 downto 0);
+					aera_freq							 : in std_logic_vector(15 downto 0);
 					TRANSMIT 						 : in std_logic;			
 					TEST                        : out std_logic_vector(31 downto 0)
 				);
@@ -79,6 +86,7 @@ begin
 						CLK_HV   =>  open, --                	 : out std_logic;
 						DATA_HV   => open ,  --                : out std_logic;
 						COMMAND	 => COMMAND	,	--				 : in std_logic_vector(31 downto 0);
+						aera_freq => conv_std_logic_vector(9,16),
 						TRANSMIT  => TRANSMIT,		--				 : in std_logic;			
 						TEST    => open    --                : out std_logic_vector(31 downto 0)
 					);

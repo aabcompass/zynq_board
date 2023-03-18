@@ -9,6 +9,7 @@
 #include "xil_types.h"
 
 uint32_t cathode_data;
+uint32_t cathode_sw_mode = 0;
 
 int 	len0 = 3,   //transformer_boost = '1'
 		len1 = 1,   //transformer_boost = '0'
@@ -21,10 +22,20 @@ void TestEC_sig()
 	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_STIM_EC_SIG) = 0;
 }
 
+
+
 void CathodeSetAutoMode(int mode) //1 or 0
 {
-	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_OPT) = mode*(1<<BIT_ADCV_EN);
+	cathode_sw_mode = mode;
+	//*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_OPT) = cathode_sw_mode*(1<<BIT_ADCV_EN);
 }
+
+void CathodeApplyAutoMode() //1 or 0
+{
+	*(u32*)(XPAR_AXI_CATHODE_CTRL_0_BASEADDR + 4*REGW_HVCATH_OPT) = cathode_sw_mode*(1<<BIT_ADCV_EN);
+}
+
+
 
 void ResetADCV()
 {
