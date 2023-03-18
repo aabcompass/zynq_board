@@ -388,30 +388,21 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_GAIN, &param) == 1)
 	{
-		//debugSettings.current_thr = param;
-		instrumentState.curr_gain = param;
-		//PropagateGaintoIndSC(param);
+		//instrumentState.curr_gain = param;
+		PropagateGaintoIndSC(param);
 		SendUserIndSCSettingsToSp3();
-		//LoadSameDataToSlowControl2(param);
-		xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
+		//xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_QDCSUB, &param) == 1)
 	{
-		//debugSettings.current_thr = param;
-		instrumentState.curr_qdcsub = param;
-		//PropagateGaintoIndSC(param);
+		//instrumentState.curr_qdcsub = param;
+		PropagateQdcsubtoIndSC(param);
 		SendUserIndSCSettingsToSp3();
-		//LoadSameDataToSlowControl2(param);
-		xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
+		//xil_printf("curr_gain=%d\n\r", instrumentState.curr_gain);
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
-//		while(1)
-//		{
-//			for(i=0;i<10000;i++);
-//			xil_printf("GetSCCoreStatus()=%d\n\r", GetSCCoreStatus());
-//		}
 	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_RAMP, &param) == 1)
 	{
@@ -1130,7 +1121,7 @@ void SetDefaultParameters()
 	instrumentState.scurve_scan = SCURVE_SCAN_DAC10; //dac10
 	//memset(sci_data, 0, sizeof(sci_data)); //moved to mem_alloc()
 	instrumentState.is_artix_frame_started = 0;
-	instrumentState.curr_gain = 8;
+	//instrumentState.curr_gain = 8;
 	instrumentState.curr_ramp = 1;
 	instrumentState.curr_capa = 1;
 }

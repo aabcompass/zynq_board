@@ -61,7 +61,8 @@ typedef struct
 	uint32_t dac10bit;// bits [31:0]
 	uint8_t pixel_mask[N_OF_PIXELS_PER_PMT]; //bits [607:32]
 	uint8_t dac7bit[N_OF_PIXELS_PER_PMT]; //bits [607:32]
-	uint8_t gain5bit[N_OF_KI_PER_PMT];
+	uint8_t gain5bit[N_OF_PIXELS_PER_PMT];
+	uint8_t qdcsub[N_OF_KI_PER_PMT];
 } SLOWCTRL_SP3_SGL_ASIC_USER_V0; //
 
 typedef struct
@@ -126,5 +127,8 @@ u32 GetSCCoreStatus();
 
 #define SC_TIMEOUT_WAIT_FOR_IDLE	1000
 u32 SC_WaitForCoreIdle();
+
+void PropagateGaintoIndSC(u8 gain_value);
+void PropagateQdcsubtoIndSC(u8 qdcsub_value);
 
 #endif /* SLOW_CONTROL_H_ */
