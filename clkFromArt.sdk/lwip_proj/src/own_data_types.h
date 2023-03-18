@@ -45,8 +45,8 @@ typedef struct
 	int is_artix_loaded;
 	int is_artix_frame_started;
 	u32 ZB_number;
-	u32 curr_dac10;
-	u32 curr_dac7;
+	//u32 curr_dac10;
+	//u32 curr_dac7;
 	u8 curr_gain; //5 bits value
 	u8 curr_qdcsub; //7 bits value
 	u8 curr_ramp;//  bit #8 in slowcontrol
