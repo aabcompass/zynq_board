@@ -136,6 +136,16 @@ void SetIndSCDac7(u32 dac7)
 	ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[current_asic][current_line].dac7bit[current_pixel] = dac7;
 }
 
+void SetIndSCGain(u8 gain)
+{
+	ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[current_asic][current_line].gain5bit[current_pixel] = (gain & 0x1F);
+}
+
+void SetIndSCQdcsub(u8 qdcsub)
+{
+	ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[current_asic][current_line].qdcsub[current_pixel] = (qdcsub & 0x7F);
+}
+
 void SetIndSCPixelMask(u32 pixel_mask)
 {
 	ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[current_asic][current_line].pixel_mask[current_pixel] = pixel_mask;
@@ -159,7 +169,8 @@ u32 GetIndSCPixelMask()
 void SendUserIndSCSettingsToSp3()
 {
 	int i, j, k;
-	u32 s_value, dac10_value, dac7_value, c_pixel, gain_value = 0, qdcsub_value = 0;
+	u32 s_value, dac10_value, dac7_value, c_pixel;
+	u8 gain_value = 0, qdcsub_value = 0;
 	memset((char*)&sc_sp3_all_asic_test, 0, sizeof(sc_sp3_all_asic_test));
 	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
 	{

@@ -34,7 +34,7 @@
 
 #include <stdint.h>
 
-#define ZYNQ3_VER_STRING "v5.12.02"
+#define ZYNQ3_VER_STRING "v5.12.04"
 
 //========================================
 // Constants
@@ -374,18 +374,32 @@ typedef struct
 #define TCP_CMD_SLOWCTRL_ALL_DAC	"slowctrl all dac %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_ALL_GAIN	"slowctrl all gain %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_ALL_QDCSUB	"slowctrl all qdcsub %d" /*Set dac10 value for all ASICs*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_PMT_GAIN	"slowctrl pmt gain %d" /*Set dac10 value for all ASICs*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_PMT_QDCSUB	"slowctrl pmt qdcsub %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_DAC7_10	"slowctrl all dac7 %d dac10 %d" /*Set dac10 value for all ASICs*/
 #define TCP_CMD_SLOWCTRL_ALL_RAMP	"slowctrl all ramp %s" /*Set the bit #8 ramp slow/slowb*/
 #define TCP_CMD_SLOWCTRL_ALL_CAPA	"slowctrl all capa %d" /*bias QDC: '0' capa_1p, '1' capa_10p*/
 #define TCP_CMD_SLOWCTRL_LINE		"slowctrl line %d" /*Set current line*/
 #define TCP_CMD_SLOWCTRL_ASIC		"slowctrl asic %d" /*Set current ASIC in line*/
 #define TCP_CMD_SLOWCTRL_ALL_ASIC	"slowctrl all_asic line %d asic %d dac10 %d dac7 %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d" /*Set DAC7 values for a specified ASIC in a specified line*/
+#define TCP_CMD_SLOWCTRL_ALL_G_ASIC	"slowctrl all_gain_asic line %d asic %d gain %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d" /*Set GAIN values for a specified ASIC in a specified line*/
+#define TCP_CMD_SLOWCTRL_ALL_Q_ASIC	"slowctrl all_qdcsub_asic line %d asic %d qdcsub %d %d %d %d %d %d %d %d" /*Set QDCSUM values for a specified ASIC in a specified line*/
 #define TCP_CMD_SLOWCTRL_PIX		"slowctrl pixel %d" /*Set current pixel in ASIC*/
 #define TCP_CMD_SLOWCTRL_DAC10		"slowctrl dac10 %d" /*Set DAC10 for the current ASIC*/
 #define TCP_CMD_SLOWCTRL_DAC7		"slowctrl dac7 %d" /*Set DAC7 for the current pixel*/
-#define TCP_CMD_SLOWCTRL_APPLY 		"slowctrl apply" /*Apply individual DAC10/7*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_QDCSUB		"slowctrl qdcsub %d" /*Set QDCSUB for the current ASIC*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_GAIN		"slowctrl gain %d" /*Set GAIN for the current pixel*/
+#define TCP_CMD_SLOWCTRL_APPLY 		"slowctrl apply" /*Apply individual DAC10/7/GAIN/QDCSUB*/
 #define TCP_CMD_SLOWCTRL_GET_DAC10	"slowctrl dac10?"/*Get DAC10 for the current ASIC*/
 #define TCP_CMD_SLOWCTRL_GET_DAC7	"slowctrl dac7?"/*Get DAC7 for the current pixel*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_GET_QDCSUB	"slowctrl qdcsub?"/*Get QDCSUB for the current ASIC*/
+///*new!!*/
+//#define TCP_CMD_SLOWCTRL_GET_GAIN	"slowctrl gain?"/*Get GAIN for the current pixel*/
 #define TCP_CMD_SLOWCTRL_SET_PAUSE	"slowctrl scurve pause %d"/*Sets pause between setting thresholds during scurve gathering process*/
 #define TCP_CMD_SLOWCTRL_SPEED		"slowctrl speed %d" /*Set slowcontrol speed (default 128)*/
 #define TCP_CMD_SLOWCTRL_G_CUR_TRH	"slowctrl scurve thr?" /*Returns current threshold during scurve gathering process*/

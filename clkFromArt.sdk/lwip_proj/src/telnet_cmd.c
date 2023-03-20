@@ -473,6 +473,44 @@ void ProcessTelnetCommands(struct tcp_pcb *tpcb, struct pbuf* p, err_t err)
 		char str[] = "Ok\n\r";
 		tcp_write(tpcb, str, sizeof(str), 1);
 	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_G_ASIC, &param, &param2,
+			&mapping_1EC[0], &mapping_1EC[1], &mapping_1EC[2], &mapping_1EC[3],
+			&mapping_1EC[4], &mapping_1EC[5], &mapping_1EC[6], &mapping_1EC[7],
+			&mapping_1EC[8], &mapping_1EC[9], &mapping_1EC[10], &mapping_1EC[11],
+			&mapping_1EC[12], &mapping_1EC[13], &mapping_1EC[14], &mapping_1EC[15],
+			&mapping_1EC[16], &mapping_1EC[17], &mapping_1EC[18], &mapping_1EC[19],
+			&mapping_1EC[20], &mapping_1EC[21], &mapping_1EC[22], &mapping_1EC[23],
+			&mapping_1EC[24], &mapping_1EC[25], &mapping_1EC[26], &mapping_1EC[27],
+			&mapping_1EC[28], &mapping_1EC[29], &mapping_1EC[30], &mapping_1EC[31],
+			&mapping_1EC[32], &mapping_1EC[33], &mapping_1EC[34], &mapping_1EC[35],
+			&mapping_1EC[36], &mapping_1EC[37], &mapping_1EC[38], &mapping_1EC[39],
+			&mapping_1EC[40], &mapping_1EC[41], &mapping_1EC[42], &mapping_1EC[43],
+			&mapping_1EC[44], &mapping_1EC[45], &mapping_1EC[46], &mapping_1EC[47],
+			&mapping_1EC[48], &mapping_1EC[49], &mapping_1EC[50], &mapping_1EC[51],
+			&mapping_1EC[52], &mapping_1EC[53], &mapping_1EC[54], &mapping_1EC[55],
+			&mapping_1EC[56], &mapping_1EC[57], &mapping_1EC[58], &mapping_1EC[59],
+			&mapping_1EC[60], &mapping_1EC[61], &mapping_1EC[62], &mapping_1EC[63]) == N_OF_PIXELS_PER_PMT+2)	{
+		SetIndSCCurrentLine(param);
+		SetIndSCCurrentAsic(param2);
+		for(i=0;i<N_OF_PIXELS_PER_PMT;i++) {
+			SetIndSCCurrentPixel(i);
+			SetIndSCGain(mapping_1EC[i]);
+		}
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
+	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_ALL_Q_ASIC, &param, &param2,
+			&mapping_1EC[0], &mapping_1EC[1], &mapping_1EC[2], &mapping_1EC[3],
+			&mapping_1EC[4], &mapping_1EC[5], &mapping_1EC[6], &mapping_1EC[7]) == N_OF_KI_PER_PMT+2)	{
+		SetIndSCCurrentLine(param);
+		SetIndSCCurrentAsic(param2);
+		for(i=0;i<N_OF_KI_PER_PMT;i++) {
+			SetIndSCCurrentPixel(i);
+			SetIndSCQdcsub(mapping_1EC[i]);
+		}
+		char str[] = "Ok\n\r";
+		tcp_write(tpcb, str, sizeof(str), 1);
+	}
 	else if(sscanf(p->payload, TCP_CMD_SLOWCTRL_PIX, &param) == 1)
 	{
 		SetIndSCCurrentPixel(param);

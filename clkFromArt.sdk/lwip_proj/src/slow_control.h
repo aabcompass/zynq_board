@@ -130,5 +130,7 @@ u32 SC_WaitForCoreIdle();
 
 void PropagateGaintoIndSC(u8 gain_value);
 void PropagateQdcsubtoIndSC(u8 qdcsub_value);
+void SetIndSCQdcsub(u8 qdcsub);
+void SetIndSCGain(u8 gain);
 
 #endif /* SLOW_CONTROL_H_ */
