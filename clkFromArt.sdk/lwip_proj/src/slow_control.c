@@ -73,7 +73,12 @@ void SetDefaultIndSCParameters()
 			{
 				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].dac7bit[k] = DAC7_DEFAULT_VALUE;
 				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].pixel_mask[k] = 1;
+				//ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].gain5bit[k] = GAIN_DEFAULT_VALUE;
 			}
+//			for(k=0;k<N_OF_KI_PER_PMT;k++)
+//			{
+//
+//			}
 		}
 	}
 }
@@ -198,7 +203,7 @@ void SendUserIndSCSettingsToSp3()
 			}
 			for (k=0; k<N_OF_PIXELS_PER_PMT/8; k++)
 			{
-				qdcsub_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].gain5bit[k];
+				qdcsub_value = ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].qdcsub[k];
 				sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k] = qdcsub_value;//instrumentState.curr_qdcsub;
 				//xil_printf("i=%d, j=%d, k=%d, sub=0x%08x\n\r", i, j, k, sc_sp3_all_asic_test.slowctrl_sp3_sgl_asic[j][i].dac_7b_sub[k]);
 			}
@@ -344,7 +349,7 @@ void PropagateQdcsubtoIndSC(u8 qdcsub_value)
 	u32 i,j,k;
 	for(i=0;i<N_OF_ECASIC_PER_PDM;i++)
 		for(j=0;j<N_OF_PMT_PER_ECASIC;j++)
-			for(k=0;k<N_OF_PIXELS_PER_PMT;k++)
+			for(k=0;k<N_OF_KI_PER_PMT;k++)
 				ind_slowctrl_userdata.slowctrl_sp3_sgl_asic[j][i].qdcsub[k] = qdcsub_value;
 }
 

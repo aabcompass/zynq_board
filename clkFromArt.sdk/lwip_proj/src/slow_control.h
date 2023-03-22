@@ -55,6 +55,7 @@
 
 #define DAC7_DEFAULT_VALUE	64
 #define DAC10_NOISY_VALUE	712
+#define GAIN_DEFAULT_VALUE 8
 
 typedef struct
 {
